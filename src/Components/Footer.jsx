@@ -11,8 +11,8 @@ const Footer = () => {
 
           {/* ================= About ================= */}
           <div>
-            <h2 className="text-white text-xl font-bold mb-4">
-              Crystal Jaipuria
+            <h2 className="text-white text-xl font-bold mb-4 ">
+              <span className="text-indigo-600">Crystal Jaipuria</span>
             </h2>
 
             <p className="text-sm leading-6">
@@ -24,7 +24,7 @@ const Footer = () => {
           {/* ================= Store Info ================= */}
           <div>
             <h3 className="text-white font-semibold mb-4">
-              Store Location
+             <span className="text-indigo-600">Store Location</span>
             </h3>
 
             <p className="text-sm flex gap-2 mb-3">
@@ -47,7 +47,7 @@ const Footer = () => {
           {/* ================= Useful Links ================= */}
           <div>
             <h3 className="text-white font-semibold mb-4">
-              Useful Links
+              <span className="text-indigo-600">Useful Links</span>
             </h3>
 
             <ul className="space-y-2 text-sm">
@@ -62,7 +62,7 @@ const Footer = () => {
           {/* ================= Contact ================= */}
           <div>
             <h3 className="text-white font-semibold mb-4">
-              Call Us 24/7
+              <span className="text-indigo-600">Call Us 24/7</span>
             </h3>
 
             <div className="space-y-3 text-sm">
