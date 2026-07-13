@@ -12,6 +12,9 @@ const AddProduct = () => {
     subCategoryId:"",
     stock:"",
     additionalInfo:"",
+    detail:"",
+    weight:"",
+    size:""
   });
 
 const [categories,setCategories] = useState([]);
@@ -151,6 +154,9 @@ const handleCategoryChange = async (e) => {
         subCategoryId:"",
         stock:"",
         additionalInfo:"",
+        detail:"",
+        weight:"",
+        size:""
       });
 
 
@@ -215,6 +221,42 @@ const handleCategoryChange = async (e) => {
               placeholder="Enter product name"
             />
 
+           <div>
+
+              <label className="block mb-2 font-semibold text-gray-700">
+                Details
+              </label>
+
+
+              <textarea
+
+                name="detail"
+
+                value={form.detail}
+
+                onChange={handleChange}
+
+                rows="5"
+
+                className="
+                w-full
+                rounded-xl
+                border
+                px-5
+                py-4
+                bg-gray-50
+                outline-none
+                focus:bg-white
+                focus:ring-2
+                focus:ring-gray-300
+                "
+
+                placeholder="Enter detail about product"
+
+              />
+
+            </div>
+            
 
 
             <div>
@@ -261,7 +303,7 @@ const handleCategoryChange = async (e) => {
               <Input
                 label="Price"
                 name="price"
-                type="number"
+                type="text"
                 value={form.price}
                 onChange={handleChange}
               />
@@ -270,10 +312,28 @@ const handleCategoryChange = async (e) => {
               <Input
                 label="Discount Price"
                 name="discountPrice"
-                type="number"
+                type="text"
                 value={form.discountPrice}
                 onChange={handleChange}
               />
+                  <Input
+                label="Weight"
+                name="weight"
+                type="text"
+                value={form.weight}
+                onChange={handleChange}
+              />
+                  <Input
+                label="Size"
+                name="size"
+                type="text"
+                value={form.size}
+                onChange={handleChange}
+              />
+
+
+
+
               <select name="categoryId" value={form.categoryId} onChange={handleCategoryChange} className="w-full rounded-xl border border-gray-200 bg-gray-50 px-5 py-4 outline-none focus:bg-white focus:ring-2 focus:ring-gray-300">
 
 <option value="">Select Category</option>

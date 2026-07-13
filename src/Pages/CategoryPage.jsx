@@ -12,6 +12,8 @@ const CategoryPage = () => {
 const [products, setProducts] = useState([]);
 const [loadingProducts, setLoadingProducts] = useState(true);
 const [selectedSubCategory, setSelectedSubCategory] = useState(null);
+const [activeCategory, setActiveCategory] = useState(null);
+const [activeSubCategory, setActiveSubCategory] = useState(null);
   useEffect(() => {
     setCategory(null);
     setSubCategories([]);
@@ -108,16 +110,23 @@ setLoadingProducts(false);
 
   return (
     <div
-      key={sub._id}
-      onClick={() => fetchProductsBySubCategory(sub._id)}
-      className="p-3 rounded-lg hover:bg-indigo-50 hover:text-indigo-600 cursor-pointer transition duration-200 flex justify-between items-center"
-    >
-      <span>{sub.name}</span>
+  key={sub._id}
+  onClick={() => {
+    setActiveSubCategory(sub._id);
+    fetchProductsBySubCategory(sub._id);
+  }}
+  className={`p-3 rounded-lg cursor-pointer transition duration-200 flex justify-between items-center ${
+    activeSubCategory === sub._id
+      ? "bg-indigo-50 text-indigo-600"
+      : "hover:bg-indigo-50 hover:text-indigo-600"
+  }`}
+>
+  <span>{sub.name}</span>
 
-      <span className="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">
-        {productCount}
-      </span>
-    </div>
+  <span className="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">
+    {productCount}
+  </span>
+</div>
   );
 })}
         </div>
@@ -158,28 +167,37 @@ setLoadingProducts(false);
           {product.name}
         </h2>
 
-        <p className="text-indigo-600 font-semibold mt-2">
-          Price: ₹{product.price}
-        </p>
+     {product.discountPrice ? (
+  <div className="flex items-center gap-3 mt-2">
+    <span className="text-gray-400 line-through text-sm">
+      ₹{product.price}
+    </span>
 
+    <span className="text-indigo-600 font-bold text-lg">
+      ₹{product.discountPrice}
+    </span>
+  </div>
+) : (
+  <span className="text-indigo-600 font-bold text-lg">
+    ₹{product.price}
+  </span>
+)}
 
         <div className="text-sm text-gray-600 mt-2 space-y-1">
 
           {product.weight && (
             <p>
-              <span className="font-semibold">
-                Weight:
-              </span>{" "}
-              {product.weight}
+              <span className="font-semibold  text-indigo-600">
+                Weight: {" "} {product.weight}
+              </span>
             </p>
           )}
 
           {product.size && (
             <p>
-              <span className="font-semibold">
-                Size:
-              </span>{" "}
-              {product.size}
+              <span className="font-semibold text-indigo-600">
+                Size: {" "} {product.size}
+              </span>
             </p>
           )}
 

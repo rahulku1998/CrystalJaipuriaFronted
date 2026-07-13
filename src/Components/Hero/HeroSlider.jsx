@@ -9,6 +9,9 @@ import "swiper/css/pagination";
 import img1 from "../../assets/images/banner1.webp";
 import img2 from "../../assets/images/mama2.webp";
 import img3 from "../../assets/images/mama3.webp";
+import img4 from "../../assets/images/b.png";
+import img5 from "../../assets/images/ganesh.jpeg";
+import img6 from "../../assets/images/shiva.jpeg";
 
 export default function HeroSlider() {
   return (
@@ -21,9 +24,32 @@ export default function HeroSlider() {
   loop
   navigation
   pagination={{ clickable: true }}
-  className="w-full h-screen"
+  className="w-full  h-screen"
   
 >
+
+  <SwiperSlide className="h-full">
+    <img
+      src={img4}
+      className="w-full h-full object-cover object-center"
+    />
+  </SwiperSlide>
+  
+  <SwiperSlide className="h-full">
+    <img
+      src={img5}
+      className="w-full h-full object-cover object-center"
+    />
+  </SwiperSlide>
+  <SwiperSlide className="h-full">
+    <img
+      src={img6}
+      className="w-full h-full object-cover object-center"
+    />
+  </SwiperSlide>
+
+
+
   <SwiperSlide className="h-full">
     <img
       src={img1}

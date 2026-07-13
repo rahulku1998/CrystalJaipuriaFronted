@@ -21,17 +21,20 @@ import EditProduct from './admin/EditProduct';
 import DeleteProduct from './admin/DeleteProduct';
 import Categories from './admin/Categories';
 import SubCategories from './admin/SubCategories';
+import ScrollTop from "./components/ScrollTop";
 function App() {
 
   return (
     <>
+     <ScrollTop />
        <Navbar />
   <Routes>
  <Route
           path="/"
           element={
             <>
-              <HeroSlider />
+              
+  <HeroSlider />
               <Home />
             </>
           }

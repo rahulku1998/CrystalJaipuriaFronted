@@ -26,15 +26,10 @@ const fetchRelatedProducts = async (product) => {
     const res = await API.get(
       `/products/category/${product.categoryId._id}`
     );
-
-
     setRelatedProducts(res.data.products);
   } catch(err){
-
     console.log(err);
-
   }
-
 };
 
 
@@ -44,7 +39,7 @@ const fetchRelatedProducts = async (product) => {
 
       setProduct(res.data.product);
       fetchRelatedProducts(res.data.product);
-
+            console.log(res.data.product);
       if (res.data.product.images.length > 0) {
         setSelectedImage(res.data.product.images[0].url);
       }
@@ -92,17 +87,22 @@ const linkedinShare = `https://www.linkedin.com/sharing/share-offsite/?url=${enc
 const copyLink = async () => {
   await navigator.clipboard.writeText(shareUrl);
   setCopied(true);
-
   setTimeout(() => {
     setCopied(false);
   }, 2000);
 };
 
   return (
+    
     <div className="max-w-7xl mx-auto px-5 py-10">
-
+       <button
+      onClick={() => navigate((-1))}
+      className="mb-1 flex items-center gap-1 text-indigo-600 font-semibold hover:underline cursor-pointer"
+    >
+      ← Back to Products
+    </button>
+      
       <div className="grid lg:grid-cols-2 gap-12">
-
         {/* LEFT */}
 
         <div>
@@ -145,7 +145,7 @@ const copyLink = async () => {
 
             {product.discountPrice ? (
               <>
-                <span className="text-3xl font-bold text-red-600">
+                <span className="text-3xl font-bold text-indigo-600">
                   ₹{product.discountPrice}
                 </span>
 
@@ -154,12 +154,13 @@ const copyLink = async () => {
                 </span>
               </>
             ) : (
-              <span className="text-3xl font-bold text-red-600">
+              <span className="text-3xl font-bold text-indigo-600">
                 ₹{product.price}
               </span>
             )}
 
           </div>
+
           {product.detail && (
   <div className="mt-5">
 
@@ -175,16 +176,27 @@ const copyLink = async () => {
           
 
           <div className="mt-8 space-y-3">
-
+            
             <p>
-              <span className="font-semibold">Category :</span>{" "}
-              {product.categoryId?.name}
-            </p>
+  {
+  product.weight && (
+    <>
+      <span className="font-semibold text-indigo-600">Weight : {product.weight}</span>{" "}
+      
+    </>
+  )}
+</p>
+<p>
+  {
+  product.size && (
+    <>
+      <span className="font-semibold text-indigo-600">Size :  {product.size}</span>{" "}
+     
+    </>
+  )}
+</p>
 
-            <p>
-              <span className="font-semibold">Sub Category :</span>{" "}
-              {product.subCategoryId?.name}
-            </p>
+            
 
             <p>
               <span className="font-semibold">Availability :</span>{" "}

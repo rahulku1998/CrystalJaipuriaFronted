@@ -17,6 +17,9 @@ const EditProduct = () => {
     subCategoryId: "",
     stock: "",
     additionalInfo: "",
+    detail: "",
+    weight: "",
+    size: ""
   });
 const [categories,setCategories] = useState([]);
 const [subCategories,setSubCategories] = useState([]);
@@ -51,6 +54,9 @@ const [subCategories,setSubCategories] = useState([]);
       subCategoryId: p.subCategoryId?._id || "",
       stock: p.stock || "",
       additionalInfo: p.additionalInfo || "",
+      detail: p.detail || "",
+      weight: p.weight || "",
+      size: p.size || ""
     });
 
     setExistingImages(p.images || []);
@@ -183,7 +189,30 @@ placeholder="Enter product name"
 
 
 
+<div>
 
+<label className="block mb-2 font-semibold text-gray-700">
+Details
+</label>
+
+<textarea
+
+name="detail"
+
+value={form.detail}
+
+onChange={handleChange}
+
+rows="3"
+
+placeholder="Enter product details"
+
+className="w-full rounded-xl border border-gray-200 bg-gray-50 px-5 py-4 outline-none focus:bg-white focus:ring-2 focus:ring-gray-300"
+
+></textarea>
+
+
+</div>
 
 <div>
 
@@ -253,7 +282,23 @@ placeholder="Enter discount price"
 
 />
 
+<Input
+label ="Weight"
+name="weight"
+type="text"
+value={form.weight}
+onChange={handleChange}
+placeholder="Enter weight"
+/>
 
+<Input
+label ="Size"
+name="size"
+type="text"
+value={form.size}
+onChange={handleChange}
+placeholder="Enter size"
+/>
 
 <select
 name="categoryId"
