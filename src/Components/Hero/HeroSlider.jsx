@@ -50,19 +50,19 @@ export default function HeroSlider() {
 
 
 
-  <SwiperSlide className="h-full">
+  {/* <SwiperSlide className="h-full">
     <img
       src={img1}
       className="w-full h-full object-cover object-center"
     />
-  </SwiperSlide>
+  </SwiperSlide> */}
 
-  <SwiperSlide className="h-full">
+  {/* <SwiperSlide className="h-full">
     <img
       src={img2}
       className="w-full h-full object-cover object-center"
     />
-  </SwiperSlide>
+  </SwiperSlide> */}
 
   <SwiperSlide className="h-full">
     <img

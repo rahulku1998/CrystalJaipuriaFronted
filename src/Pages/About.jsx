@@ -1,5 +1,6 @@
 import aboutBanner from "../assets/about/About-Us.webp";
 import workshop from "../assets/about/workshop.webp";
+import StatsSection from "../components/StatsSection";
 const About = () => {
   return (
     <div className="bg-white">
@@ -89,32 +90,7 @@ const About = () => {
     </div>
   </div>
 </section>
-<section className="bg-indigo-600 py-16">
-  <div className="max-w-7xl mx-auto px-6">
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
-      <div>
-        <h2 className="text-4xl font-bold">25+</h2>
-        <p>Years Experience</p>
-      </div>
-
-      <div>
-        <h2 className="text-4xl font-bold">1000+</h2>
-        <p>Happy Customers</p>
-      </div>
-
-      <div>
-        <h2 className="text-4xl font-bold">500+</h2>
-        <p>Products</p>
-      </div>
-
-      <div>
-        <h2 className="text-4xl font-bold">100%</h2>
-        <p>Customer Satisfaction</p>
-      </div>
-
-    </div>
-  </div>
-</section>
+<StatsSection/>
 
 {/* About Our Products */}
 <section className="bg-white py-16">
@@ -198,6 +174,7 @@ const About = () => {
   </div>
 </section>
 
+
 {/* Experience */}
 <section className="py-16">
   <div className="max-w-6xl mx-auto px-6">
@@ -205,7 +182,7 @@ const About = () => {
     <div className="bg-indigo-600 rounded-2xl text-white p-10 text-center">
 
       <h2 className="text-4xl font-bold mb-4">
-        25+ Years of Excellence
+        25+ Years of Excellence 
       </h2>
 
       <p className="leading-8 max-w-4xl mx-auto">
