@@ -13,7 +13,7 @@ import ProductDetails from './Pages/ProductDetails';
 import NotFound from './Pages/NotFound';
 import AdminLogin from './admin/Login';
 import AdminDashboard from './admin/Dashboard';
-import ProtectedRoute from "./components/ProtectedRoute";
+import ProtectedRoute from "./Components/ProtectedRoute";
 import AddProduct from './admin/AddProduct';
 import AddCategory from './admin/Categories';
 import AddSubCategory from './admin/SubCategories';
@@ -21,7 +21,7 @@ import EditProduct from './admin/EditProduct';
 import DeleteProduct from './admin/DeleteProduct';
 import Categories from './admin/Categories';
 import SubCategories from './admin/SubCategories';
-import ScrollTop from "./components/ScrollTop";
+import ScrollTop from "./Components/ScrollTop";
 function App() {
 
   return (

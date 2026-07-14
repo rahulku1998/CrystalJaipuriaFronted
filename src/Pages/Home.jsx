@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import API from "../api/axios";
-import CategorySection from "../components/CategoryCard";
+import CategorySection from "../Components/CategoryCard";
 
 import homeImg from "../assets/images/mama5.png";
-import StatsSection from "../components/StatsSection";
+import StatsSection from "../Components/StatsSection";
 import { Link } from "react-router-dom";
 const Home = () => {
 

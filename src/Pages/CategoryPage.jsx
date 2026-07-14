@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import API from "../api/axios";
-import ProductCard from "../components/ProductCard";
+import ProductCard from "../Components/ProductCard";
 
 const CategoryPage = () => {
   const { slug } = useParams();

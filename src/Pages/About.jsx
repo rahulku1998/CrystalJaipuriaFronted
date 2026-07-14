@@ -1,6 +1,6 @@
 import aboutBanner from "../assets/about/About-Us.webp";
 import workshop from "../assets/about/workshop.webp";
-import StatsSection from "../components/StatsSection";
+import StatsSection from "../Components/StatsSection";
 const About = () => {
   return (
     <div className="bg-white">
