@@ -1,4 +1,6 @@
 import { useState } from "react";
+import API from "../api/axios";
+import toast from "react-hot-toast";
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -13,10 +15,39 @@ const Contact = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("Message sent successfully!");
-    setForm({ name: "", email: "", phone: "", message: "" });
-  };
+  e.preventDefault();
+
+
+  const {
+    name,
+    email,
+    phone,
+    message
+  } = form;
+
+
+  const whatsappMessage = `
+New Inquiry
+
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Message: ${message}
+`;
+
+
+
+  const whatsappURL =
+  `https://wa.me/918306317032?text=${encodeURIComponent(whatsappMessage)}`;
+
+
+  window.open(whatsappURL, "_blank");
+
+
+};
+
+
+
 
   return (
     <div className="bg-white">
