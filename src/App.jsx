@@ -26,6 +26,7 @@ import ScrollTop from "./Components/ScrollTop";
 import FloatingWhatsApp from "./Components/FloatingWhatsApp";
 import Blog from "./Pages/Blog/Blogs";
 import BlogDetails from './Pages/Blog/BlogDetails'
+import Shop from "./Pages/Shop";
 function App() {
 
   return (
@@ -49,6 +50,10 @@ function App() {
   <Route path="/about" element={<About />} />
   <Route path="/contact" element={<Contact />} />
    <Route path="/:slug" element={<CategoryPage />} />
+   <Route 
+ path="/shop" 
+ element={<Shop />} 
+/>
 
         {/* SUBCATEGORY PRODUCTS */}
         <Route path="/subcategory/:id" element={<SubCategoryProducts />} />

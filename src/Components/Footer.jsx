@@ -69,6 +69,15 @@ const Footer = () => {
                   Home
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/shop"
+                  className="hover:text-indigo-400 duration-300 hover:translate-x-2 inline-block"
+                >
+                  Shop
+                </Link>
+              </li>
+
 
               <li>
                 <Link
@@ -79,14 +88,7 @@ const Footer = () => {
                 </Link>
               </li>
 
-              <li>
-                <Link
-                  to="/god-statues"
-                  className="hover:text-indigo-400 duration-300 hover:translate-x-2 inline-block"
-                >
-                  Shop
-                </Link>
-              </li>
+             
 
               <li>
                 <Link

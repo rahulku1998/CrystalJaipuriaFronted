@@ -37,6 +37,19 @@ const CategoryBar = () => {
   Home
 </button>
 
+        <button
+            onClick={() => navigate("/shop")}
+            className={`flex-1 text-center text-sm font-medium transition-colors cursor-pointer ${
+              location.pathname === "/shop"
+                ? "text-indigo-600"
+                : "text-gray-700 hover:text-indigo-600"
+            }`}
+          >
+            Shop
+          </button>
+
+
+
           {/* Dynamic Categories */}
         {categories.map((cat) => (
   <button
@@ -57,6 +70,10 @@ const CategoryBar = () => {
 
 
           {/* Static */}
+           
+
+
+
            <button
             onClick={() => navigate("/blog")}
             className={`flex-1 text-center text-sm font-medium transition-colors cursor-pointer ${
