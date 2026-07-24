@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import BlogItem from "../../components/Blog/BlogItem";
-import BlogSkeleton from "../../components/Blog/BlogSkeleton";
+import BlogItem from "../../Components/Blog/BlogItem";
+import BlogSkeleton from "../../Components/Blog/BlogSkeleton";
 import blogBanner from "../../assets/handi.jpg";
 
 const Blogs = () => {

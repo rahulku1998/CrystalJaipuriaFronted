@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import BlogNotFound from "../../Components/Blog/BlogNotFound";
-import ShareButtons from "../../components/Blog/ShareButtons";
+import ShareButtons from "../../Components/Blog/ShareButtons";
 
 
 const BlogDetails = () => {
