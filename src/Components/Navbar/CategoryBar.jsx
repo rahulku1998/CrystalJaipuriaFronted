@@ -52,7 +52,23 @@ const CategoryBar = () => {
   </button>
 ))}
 
+
+
+
+
           {/* Static */}
+           <button
+            onClick={() => navigate("/blog")}
+            className={`flex-1 text-center text-sm font-medium transition-colors cursor-pointer ${
+              location.pathname === "/blog"
+                ? "text-indigo-600"
+                : "text-gray-700 hover:text-indigo-600"
+            }`}
+          >
+            Our Blog
+          </button>
+         
+
           <button
             onClick={() => navigate("/about")}
             className={`flex-1 text-center text-sm font-medium transition-colors cursor-pointer ${

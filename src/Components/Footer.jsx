@@ -21,28 +21,30 @@ const Footer = () => {
             </h2>
 
             <p className="text-sm leading-7 text-gray-400">
-              Since 1999, Crystal Jaipuria has been delivering premium quality
+              Since 1989, Crystal Jaipuria has been delivering premium quality
               gemstones, crystal idols, bracelets, spiritual products, and
               handcrafted collections across India.
             </p>
 
             <div className="flex gap-4 mt-6">
               <a
-                href="#"
+                href="https://www.instagram.com/crystal_jaipuria/"
+                target="_blank"
                 className="w-10 h-10 rounded-full bg-zinc-800 hover:bg-indigo-600 flex items-center justify-center duration-300"
               >
                 <FaInstagram />
               </a>
 
               <a
-                href="#"
+                href="https://www.facebook.com/profile.php?id=61565599797453"
+                target="_blank"
                 className="w-10 h-10 rounded-full bg-zinc-800 hover:bg-indigo-600 flex items-center justify-center duration-300"
               >
                 <FaFacebookF />
               </a>
 
               <a
-                href="https://wa.me/919828723652"
+                href="https://wa.me/918306317032"
                 target="_blank"
                 rel="noreferrer"
                 className="w-10 h-10 rounded-full bg-zinc-800 hover:bg-green-500 flex items-center justify-center duration-300"
@@ -105,16 +107,16 @@ const Footer = () => {
 
             <div className="space-y-4 text-sm">
               <a
-                href="https://maps.google.com"
+                href="https://www.google.com/maps/place/Crystal+Jaipuria+%E2%80%93+Gemstone+God+Statues+%26+Crystal+Carvings+Manufacturer/@26.7981343,75.7772003,17z/data=!3m1!4b1!4m6!3m5!1s0x396dcb5b941638d5:0xdc6c82ae60c2c87d!8m2!3d26.7981295!4d75.7797752!16s%2Fg%2F11v_90xdgf?entry=ttu&g_ep=EgoyMDI2MDcxOS4wIKXMDSoASAFQAw%3D%3D"
                 target="_blank"
                 rel="noreferrer"
                 className="flex gap-3 hover:text-indigo-400 duration-300"
               >
                 <FaMapMarkerAlt className="mt-1 text-indigo-500" />
                 <span>
-                  Malpura Gate, Hanuman Nagar,
+                  Bajni talai, Crystal Jaipuria, Plot No.03 West Part,
                   <br />
-                  Kishan Colony,
+                  Prabha, Mangal Vihar,
                   <br />
                   Sanganer, Jaipur,
                   <br />
@@ -130,13 +132,13 @@ const Footer = () => {
                 crystaljaipurya@gmail.com
               </a>
 <a
-  href="https://wa.me/919828723652"
+  href="https://wa.me/918306317032"
   target="_blank"
   rel="noopener noreferrer"
   className="flex gap-3 hover:text-indigo-600 duration-300"
 >
   <FaWhatsapp className="mt-1 text-green-600" />
-  +918955613237
+  +918306317032
 </a>
               <p className="text-gray-400">
                 Monday - Saturday
@@ -169,12 +171,7 @@ const Footer = () => {
                 +91 89556 13237
               </a>
 
-              <Link
-                to="/contact"
-                className="inline-block mt-4 bg-indigo-600 hover:bg-indigo-700 px-5 py-3 rounded-lg text-white font-medium duration-300"
-              >
-                Get In Touch
-              </Link>
+              
             </div>
           </div>
         </div>

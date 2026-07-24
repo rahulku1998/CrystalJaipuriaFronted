@@ -20,14 +20,19 @@ import AddSubCategory from './admin/SubCategories';
 import EditProduct from './admin/EditProduct';
 import DeleteProduct from './admin/DeleteProduct';
 import Categories from './admin/Categories';
+import AdminBlogs from './admin/Blog';
 import SubCategories from './admin/SubCategories';
 import ScrollTop from "./Components/ScrollTop";
+import FloatingWhatsApp from "./Components/FloatingWhatsApp";
+import Blog from "./Pages/Blog/Blogs";
+import BlogDetails from './Pages/Blog/BlogDetails'
 function App() {
 
   return (
     <>
      <ScrollTop />
        <Navbar />
+        <FloatingWhatsApp />
   <Routes>
  <Route
           path="/"
@@ -39,6 +44,8 @@ function App() {
             </>
           }
         />
+   <Route path="/blog" element ={<Blog/>}/>
+   <Route path="/blog/:slug" element={<BlogDetails/>}/>
   <Route path="/about" element={<About />} />
   <Route path="/contact" element={<Contact />} />
    <Route path="/:slug" element={<CategoryPage />} />
@@ -76,6 +83,14 @@ function App() {
            <Categories />
            </ProtectedRoute>
           } />
+           <Route path="/admin/blogs" element={
+          <ProtectedRoute>
+           <AdminBlogs />
+           </ProtectedRoute>
+          } />
+
+
+
           <Route path="/admin/subcategories" element={
           <ProtectedRoute>
            <AddSubCategory />

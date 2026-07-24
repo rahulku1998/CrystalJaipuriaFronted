@@ -9,7 +9,7 @@ const AdminDashboard = () => {
   const [categories,setCategories] = useState([]);
   const [subCategories,setSubCategories] = useState([]);
   const [search,setSearch] = useState("");
-
+const [blogs,setBlogs] = useState([]);
   const navigate = useNavigate();
 
 
@@ -20,11 +20,13 @@ const AdminDashboard = () => {
       const productRes = await API.get("/products");
       const catRes = await API.get("/categories");
       const subCatRes = await API.get("/subcategories");
+      const blogRes = await API.get("/blogs");
 
 
       setProducts(productRes.data.products || []);
       setCategories(catRes.data.categories || []);
       setSubCategories(subCatRes.data.subCategories || []);
+      setBlogs(blogRes.data.blogs || []);
 
 
     }catch(err){
@@ -126,6 +128,13 @@ onClick={()=>navigate("/admin/subcategories")}
 📁 Sub Categories
 </button>
 
+<button
+className="adminBtn block w-full text-left cursor-pointer text-indigo-600 hover:text-indigo-800"
+onClick={()=>navigate("/admin/blogs")}
+>
+📝 Blogs
+</button>
+
 
 </div>
 
@@ -154,7 +163,7 @@ Manage your store products and categories
 
 {/* CARDS */}
 
-<div className="grid grid-cols-3 gap-6 mb-10">
+<div className="grid grid-cols-4 gap-6 mb-10">
 
 
 <Card
@@ -178,6 +187,11 @@ value={subCategories.length}
 icon="📁"
 />
 
+<Card
+title="Total Blogs"
+value={blogs.length}
+icon="📝"
+/>
 
 </div>
 
@@ -350,6 +364,144 @@ Delete
 
 </div>
 
+
+
+</div>
+
+
+<div className="bg-white rounded-xl shadow p-6 mt-10">
+
+<div className="flex justify-between mb-5">
+
+<h2 className="text-xl font-bold">
+Blogs
+</h2>
+
+
+<button
+
+onClick={()=>navigate("/admin/blogs")}
+
+className="bg-green-600 text-white px-4 py-2 rounded cursor-pointer"
+
+>
++ Add Blog
+</button>
+
+
+</div>
+
+
+
+<table className="w-full">
+
+<thead>
+
+<tr className="border-b text-left">
+
+<th className="p-3">
+Image
+</th>
+
+<th>
+Title
+</th>
+
+
+
+<th>
+Action
+</th>
+
+
+</tr>
+
+</thead>
+
+
+<tbody>
+
+
+{
+blogs.map((blog)=>(
+
+
+<tr
+key={blog._id}
+className="border-b"
+>
+
+
+<td className="p-3">
+
+<img
+
+src={blog.image}
+
+className="w-14 h-14 rounded object-cover"
+
+/>
+
+</td>
+
+
+<td>
+{blog.title}
+</td>
+
+
+<td>
+{blog.author}
+</td>
+
+
+<td>
+
+
+<button
+
+onClick={()=>navigate(`/admin/edit-blog/${blog._id}`)}
+
+className="bg-blue-600 text-white px-3 py-1 rounded"
+
+>
+Edit
+</button>
+
+
+
+<button
+
+onClick={async()=>{
+
+await API.delete(`/blogs/${blog._id}`);
+fetchData();
+
+}}
+
+className="bg-red-600 text-white px-3 py-1 rounded ml-2"
+
+>
+Delete
+</button>
+
+
+</td>
+
+
+
+</tr>
+
+
+))
+
+}
+
+
+</tbody>
+
+
+</table>
 
 
 </div>

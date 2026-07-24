@@ -93,14 +93,14 @@ const Contact = () => {
           <div className="bg-gray-50 p-6 rounded-xl shadow">
             <h3 className="text-xl font-semibold mb-2">📍 Address</h3>
             <p className="text-gray-600">
-              Malpura Gate, Hanuman Nagar, Kishan Colony, Sanganer, Jaipur, Rajasthan
+              Bajni talai, Crystal Jaipuria, Plot No.03 West Part, Prabha, Mangal Vihar, Sanganer, Jaipur, Rajasthan 302029
             </p>
           </div>
 
           <div className="bg-gray-50 p-6 rounded-xl shadow">
             <h3 className="text-xl font-semibold mb-2">📞 Call Us</h3>
             <a href="tel:+918955613237" className="text-indigo-600 font-medium">
-              +91 8955613237
+              +91 8306317032
             </a>
           </div>
 
@@ -143,13 +143,8 @@ const Contact = () => {
       <section className="w-full px-6 pb-12">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-2xl font-bold mb-4">Our Location</h2> 
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3560.882410774894!2d75.77853122463885!3d26.811872564418394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sMalpura%20gate%2C%20hanuman%20nagar%2C%20kishan%20colony%2C%20Sanganer%2C%20Jaipur%2C%20Rajasthan%20302029!5e0!3m2!1sen!2sus!4v1783082798687!5m2!1sen!2sus"
-            width="100%"
-            height="400"
-            className="rounded-xl border"
-            loading="lazy"
-          ></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3561.31382765867!2d75.77720027463833!3d26.7981342650067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396dcb5b941638d5%3A0xdc6c82ae60c2c87d!2sCrystal%20Jaipuria%20%E2%80%93%20Gemstone%20God%20Statues%20%26%20Crystal%20Carvings%20Manufacturer!5e0!3m2!1sen!2sin!4v1784720127425!5m2!1sen!2sin" width="100%" height="400"  className="rounded-xl border"  loading="lazy"></iframe>
+          
         </div>
       </section>
 

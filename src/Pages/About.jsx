@@ -42,7 +42,7 @@ const About = () => {
               Our Story
             </h2>
 <p className="text-gray-600 leading-8 mb-4">
-  Established in 1999, Crystal Jaipuria has emerged as a trusted name in the gemstone, crystal, spiritual, and handicraft industry. Rooted in the heritage city of Jaipur, Rajasthan, we blend traditional Indian craftsmanship with contemporary design sensibilities to create products that radiate beauty, positivity, and elegance.
+  Established in 1989, Crystal Jaipuria has emerged as a trusted name in the gemstone, crystal, spiritual, and handicraft industry. Rooted in the heritage city of Jaipur, Rajasthan, we blend traditional Indian craftsmanship with contemporary design sensibilities to create products that radiate beauty, positivity, and elegance.
 </p>
 
 <p className="text-gray-600 leading-8 mb-4">
