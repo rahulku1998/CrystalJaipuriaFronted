@@ -106,7 +106,7 @@ lg:min-h-[130px]
         >
 
           <img
-            src="/logo.png"
+            src="/logo.jpeg"
             alt="Crystal Jaipuria Logo"
             className="
             h-10
