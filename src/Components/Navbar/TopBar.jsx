@@ -109,7 +109,7 @@ lg:min-h-[130px]
             src="/logo.jpeg"
             alt="Crystal Jaipuria Logo"
             className="
-            h-10
+            h-12
             sm:h-14
             md:h-16
             lg:h-20
@@ -121,16 +121,17 @@ lg:min-h-[130px]
 
           <p
 className="
-hidden
-sm:block
-text-[10px]
+block
+text-[8px]
+sm:text-[10px]
 md:text-sm
 font-semibold
-tracking-[2px]
+tracking-[1px]
+sm:tracking-[2px]
 md:tracking-[4px]
 text-indigo-600
 uppercase
-mt-2
+mt-1
 whitespace-nowrap
 "
 >
@@ -143,6 +144,21 @@ Luxury Collection of Handicrafts
 
 
         {/* ================= Right Space ================= */}
+        <button
+
+onClick={()=>navigate("/shop")}
+
+className="
+lg:hidden
+text-gray-600
+text-xl
+"
+
+>
+
+<FaSearch/>
+
+</button>
 
        {/* ================= Right Search ================= */}
 

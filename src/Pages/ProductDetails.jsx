@@ -140,7 +140,7 @@ const ProductDetails = () => {
 
 
   const whatsappMessage =
-  `Hi, I am interested in buying "${product.name}". Please share more details.`;
+  `Hi Crystal Jaipuria, I am interested in buying "${product.name}". Please share more details on this Number .`;
 
 
 
