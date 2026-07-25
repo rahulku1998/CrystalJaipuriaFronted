@@ -1,117 +1,477 @@
 import { useEffect, useState } from "react";
-import { useNavigate,useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import API from "../../api/axios";
 
+
 const CategoryBar = () => {
+
+
   const navigate = useNavigate();
   const location = useLocation();
+
+
   const [categories, setCategories] = useState([]);
 
-  useEffect(() => {
-    fetchCategories();
-  }, []);
+  const [visibleItems, setVisibleItems] = useState([]);
 
-  const fetchCategories = async () => {
-    try {
-      const res = await API.get("/categories");
-      setCategories(res.data.categories);
-    } catch (err) {
-      console.error(err);
+  const [hiddenItems, setHiddenItems] = useState([]);
+
+  const [openMore, setOpenMore] = useState(false);
+
+
+
+
+
+
+
+  const staticMenu = [
+
+    {
+      name:"Home",
+      path:"/"
+    },
+
+    {
+      name:"Shop",
+      path:"/shop"
+    },
+
+    {
+      name:"Blog",
+      path:"/blog"
+    },
+
+    {
+      name:"About",
+      path:"/about"
+    },
+
+    {
+      name:"Contact",
+      path:"/contact"
     }
+
+  ];
+
+
+
+
+
+
+
+
+
+  useEffect(()=>{
+
+    fetchCategories();
+
+  },[]);
+
+
+
+
+
+
+
+
+
+  const fetchCategories = async()=>{
+
+    try{
+
+
+      const res = await API.get("/categories");
+
+
+
+      const data = res.data.categories.map(cat=>({
+
+        name:cat.name,
+
+        path:`/${cat.slug}`
+
+      }));
+
+
+      setCategories(data);
+
+
+
+    }
+    catch(err){
+
+      console.log(err);
+
+    }
+
+
   };
 
-  return (
-    <div className="w-full bg-white border-b">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-flow-col auto-cols-fr py-3 px-4">
 
-          {/* Static */}
+
+
+
+
+
+
+
+  useEffect(()=>{
+
+
+    const handleMenu = ()=>{
+
+
+      const allMenu = [
+
+        ...staticMenu.slice(0,2),
+
+        ...categories,
+
+        ...staticMenu.slice(2)
+
+      ];
+
+
+
+
+
+      let width = window.innerWidth;
+
+
+
+
+
+
+      // PC
+      if(width >= 1024){
+
+
+        setVisibleItems(allMenu);
+
+        setHiddenItems([]);
+
+        return;
+
+      }
+
+
+
+
+
+      // Mobile
+
+      if(width < 640){
+
+
+        setVisibleItems(
+          allMenu.slice(0,2)
+        );
+
+
+        setHiddenItems(
+          allMenu.slice(2)
+        );
+
+
+        return;
+
+      }
+
+
+
+
+
+      // Tablet
+
+      setVisibleItems(
+        allMenu.slice(0,5)
+      );
+
+
+      setHiddenItems(
+        allMenu.slice(5)
+      );
+
+
+
+    };
+
+
+
+
+
+    handleMenu();
+
+
+
+    window.addEventListener(
+      "resize",
+      handleMenu
+    );
+
+
+
+    return ()=>{
+
+
+      window.removeEventListener(
+        "resize",
+        handleMenu
+      );
+
+
+    }
+
+
+
+  },[categories]);
+
+
+
+
+
+
+
+
+
+
+
+  const menuClick = (item)=>{
+
+
+    navigate(item.path);
+
+    setOpenMore(false);
+
+
+  };
+
+
+
+
+
+
+
+
+
+
+
+return (
+
+<div className="w-full bg-white border-b shadow-sm">
+
+
+{/* PC NAVBAR */}
+
+
+<div className="hidden lg:block w-full">
+
+
+  <div className="
+    max-w-7xl
+    mx-auto
+    px-6
+  ">
+
+
+    <div className="
+      flex
+      flex-wrap
+      items-center
+      justify-center
+      gap-y-3
+      py-3
+    ">
+
+
+      {
+        [...staticMenu.slice(0,2), ...categories, ...staticMenu.slice(2)]
+        .map((item)=>(
+
+
           <button
-  onClick={() => navigate("/")}
-  className={`flex-1 text-center text-sm font-medium transition-colors cursor-pointer ${
-    location.pathname === "/"
-      ? "text-indigo-600"
-      : "text-gray-700 hover:text-indigo-600"
-  }`}
+
+          key={item.path}
+
+          onClick={()=>menuClick(item)}
+
+          className={`
+            flex-1
+            min-w-fit
+            text-center
+            text-sm
+            font-medium
+            whitespace-nowrap
+            cursor-pointer
+            transition
+            px-3
+            ${
+              location.pathname===item.path
+              ?
+              "text-indigo-600"
+              :
+              "text-gray-700 hover:text-indigo-600"
+            }
+          `}
+
+          >
+
+          {item.name}
+
+          </button>
+
+
+        ))
+      }
+
+
+
+    </div>
+
+
+  </div>
+
+
+</div>
+
+
+
+
+
+
+{/* MOBILE + TABLET */}
+
+<div className="lg:hidden max-w-7xl mx-auto px-4">
+
+
+<div className="flex items-center justify-center gap-5 py-3 flex-wrap">
+
+
+
+{
+
+visibleItems.map(item=>(
+
+
+<button
+
+key={item.path}
+
+onClick={()=>menuClick(item)}
+
+className={`text-sm font-medium whitespace-nowrap cursor-pointer ${
+location.pathname===item.path
+? "text-indigo-600"
+: "text-gray-700 hover:text-indigo-600"
+}`}
+
 >
-  Home
+
+{item.name}
+
 </button>
 
-        <button
-            onClick={() => navigate("/shop")}
-            className={`flex-1 text-center text-sm font-medium transition-colors cursor-pointer ${
-              location.pathname === "/shop"
-                ? "text-indigo-600"
-                : "text-gray-700 hover:text-indigo-600"
-            }`}
-          >
-            Shop
-          </button>
+
+))
 
 
-
-          {/* Dynamic Categories */}
-        {categories.map((cat) => (
-  <button
-    key={cat._id}
-    onClick={() => navigate(`/${cat.slug}`)}
-    className={`flex-1 text-center text-sm font-medium transition-colors cursor-pointer ${
-      location.pathname === `/${cat.slug}`
-        ? "text-indigo-600"
-        : "text-gray-700 hover:text-indigo-600"
-    }`}
-  >
-    {cat.name}
-  </button>
-))}
+}
 
 
 
 
 
-          {/* Static */}
-           
+
+{
+
+hiddenItems.length > 0 && (
+
+
+<div className="relative">
+
+
+<button
+
+onClick={()=>setOpenMore(!openMore)}
+
+className="text-sm font-semibold text-indigo-600 cursor-pointer"
+
+>
+
+☰ More
+
+</button>
 
 
 
-           <button
-            onClick={() => navigate("/blog")}
-            className={`flex-1 text-center text-sm font-medium transition-colors cursor-pointer ${
-              location.pathname === "/blog"
-                ? "text-indigo-600"
-                : "text-gray-700 hover:text-indigo-600"
-            }`}
-          >
-            Our Blog
-          </button>
-         
 
-          <button
-            onClick={() => navigate("/about")}
-            className={`flex-1 text-center text-sm font-medium transition-colors cursor-pointer ${
-              location.pathname === "/about"
-                ? "text-indigo-600"
-                : "text-gray-700 hover:text-indigo-600"
-            }`}
-          >
-            About Us
-          </button>
+{
 
-          <button
-            onClick={() => navigate("/contact")}
-            className={`flex-1 text-center text-sm font-medium transition-colors cursor-pointer ${
-              location.pathname === "/contact"
-                ? "text-indigo-600"
-                : "text-gray-700 hover:text-indigo-600"
-            }`}
-          >
-            Contact
-          </button>
+openMore && (
 
-        </div>
-      </div>
-    </div>
-  );
+
+<div className="absolute right-0 top-8 bg-white border shadow-xl rounded-xl p-4 min-w-[180px] z-50 flex flex-col gap-3">
+
+
+{
+
+hiddenItems.map(item=>(
+
+
+<button
+
+key={item.path}
+
+onClick={()=>menuClick(item)}
+
+className="text-left text-sm cursor-pointer hover:text-indigo-600"
+
+>
+
+{item.name}
+
+</button>
+
+
+))
+
+
+}
+
+
+</div>
+
+
+)
+
+
+}
+
+
+
+</div>
+
+
+)
+
+
+}
+
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+);
+
+
 };
+
 
 export default CategoryBar;

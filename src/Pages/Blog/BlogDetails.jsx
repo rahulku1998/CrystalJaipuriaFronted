@@ -6,148 +6,356 @@ import ShareButtons from "../../Components/Blog/ShareButtons";
 
 
 const BlogDetails = () => {
+
   const { slug } = useParams();
 
   const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
 
 
+
   const fetchBlog = async () => {
+
     try {
+
       const { data } = await axios.get(
         `${import.meta.env.VITE_BASEURL}/blogs/slug/${slug}`
       );
 
       setBlog(data.blog);
 
+
     } catch (error) {
+
       console.log(error);
+
     } finally {
+
       setLoading(false);
+
     }
+
   };
 
 
+
+
   useEffect(() => {
+
     fetchBlog();
+
   }, [slug]);
 
 
 
+
+
+
   if (loading) {
+
     return (
-      <div className="py-20 text-center">
-        <h2 className="text-xl font-semibold">
+
+      <div className="
+        py-16
+        sm:py-20
+        text-center
+        px-4
+      ">
+
+        <h2 className="
+          text-lg
+          sm:text-xl
+          font-semibold
+        ">
           Loading Story...
         </h2>
+
+
       </div>
+
     );
+
   }
 
 
+
+
+
+
   if (!blog) {
+
+    return <BlogNotFound />;
+
+  }
+
+
+
+
+
   return (
-    <BlogNotFound />
-  );
-}
+
+    <section className="
+      bg-[#faf7f2]
+      min-h-screen
+      py-8
+      sm:py-12
+      overflow-hidden
+    ">
 
 
 
-  const shareUrl = window.location.href;
+      <div className="
+        max-w-5xl
+        mx-auto
+        px-4
+        sm:px-6
+      ">
 
 
-  return (
-    <section className="bg-[#faf7f2] min-h-screen py-12">
 
-      <div className="max-w-5xl mx-auto px-4">
 
 
         {/* Blog Container */}
-        <article className="bg-white rounded-2xl shadow-lg overflow-hidden">
+
+
+        <article className="
+          bg-white
+          rounded-xl
+          sm:rounded-2xl
+          shadow-lg
+          overflow-hidden
+        ">
+
+
+
 
 
           {/* Image */}
+
+
           <img
+
             src={blog.coverImage?.url}
+
             alt={blog.title}
-            className="w-full h-[350px] md:h-[500px] object-cover"
+
+            className="
+              w-full
+              h-[220px]
+              sm:h-[350px]
+              md:h-[500px]
+              object-cover
+            "
+
           />
 
 
 
-          <div className="p-8 md:p-12">
+
+
+
+
+          <div className="
+            p-5
+            sm:p-8
+            md:p-12
+          ">
+
+
+
 
 
             {/* Meta */}
-            <div className="flex flex-wrap gap-4 mb-6 text-sm">
 
-              <span className="bg-orange-100 text-orange-700 px-4 py-2 rounded-full">
+
+            <div className="
+              flex
+              flex-wrap
+              items-center
+              gap-3
+              sm:gap-4
+              mb-5
+              text-sm
+            ">
+
+
+
+              <span className="
+                bg-orange-100
+                text-orange-700
+                px-3
+                sm:px-4
+                py-2
+                rounded-full
+              ">
+
                 {blog.category}
+
               </span>
 
 
-              <span className="text-gray-500 flex items-center">
-                📅 {new Date(blog.createdAt).toLocaleDateString("en-IN")}
+
+
+
+              <span className="
+                text-gray-500
+                flex
+                items-center
+                text-xs
+                sm:text-sm
+              ">
+
+                📅 {new Date(blog.createdAt)
+                .toLocaleDateString("en-IN")}
+
               </span>
+
+
+
 
             </div>
+
+
+
+
+
+
 
 
 
             {/* Title */}
-            <h1 className="text-3xl md:text-5xl font-bold text-gray-800 leading-tight mb-8">
+
+
+            <h1 className="
+              text-2xl
+              sm:text-3xl
+              md:text-5xl
+              font-bold
+              text-gray-800
+              leading-tight
+              mb-6
+              sm:mb-8
+            ">
+
               {blog.title}
+
             </h1>
 
 
 
+
+
+
+
+
+
             {/* Content */}
+
+
             <div
               className="
-              text-gray-700 
-              text-lg 
-              leading-9
-              prose 
-              max-w-none
+                text-gray-700
+                text-base
+                sm:text-lg
+                leading-7
+                sm:leading-9
+                prose
+                max-w-none
               "
             >
+
               {blog.content}
+
+
             </div>
+
+
+
+
 
 
 
             {/* Share */}
-           <ShareButtons
-  url={window.location.href}
-  title={blog.title}
-/>
+
+
+            <div className="
+              mt-8
+              sm:mt-10
+            ">
+
+              <ShareButtons
+
+                url={window.location.href}
+
+                title={blog.title}
+
+              />
+
+            </div>
+
+
+
+
+
+
 
 
 
             {/* Back */}
-            <div className="mt-10">
+
+
+            <div className="
+              mt-8
+              sm:mt-10
+            ">
+
 
               <Link
+
                 to="/blog"
-                className="text-orange-600 font-semibold"
+
+                className="
+                  text-orange-600
+                  font-semibold
+                  text-sm
+                  sm:text-base
+                "
+
               >
+
                 ← Back to Stories
+
               </Link>
 
+
             </div>
+
+
+
+
 
 
           </div>
 
 
+
+
         </article>
+
+
+
 
 
       </div>
 
 
+
+
+
     </section>
+
   );
+
 };
 
 

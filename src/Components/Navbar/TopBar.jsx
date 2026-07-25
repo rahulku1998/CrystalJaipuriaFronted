@@ -18,14 +18,16 @@ const TopBar = () => {
         <div className="flex items-center gap-4">
 
           <a
-            href="#"
+            href="https://www.facebook.com/profile.php?id=61565599797453"
+            target="_blank"
             className="w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center hover:bg-indigo-700 transition"
           >
             <FaFacebookF />
           </a>
 
           <a
-            href="#"
+            href="https://www.instagram.com/crystal_jaipuria/"
+            target="_blank"
             className="w-10 h-10 rounded-full bg-pink-500 text-white flex items-center justify-center hover:bg-pink-600 transition"
           >
             <FaInstagram />
@@ -56,9 +58,7 @@ const TopBar = () => {
 
           {/* Search */}
 
-          <button className="text-gray-700 hover:text-indigo-600 transition text-xl">
-            <FaSearch />
-          </button>
+         
 
           {/* Profile */}
 

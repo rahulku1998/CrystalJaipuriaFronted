@@ -6,22 +6,66 @@ const CategorySection = ({ title, slug, products }) => {
 
 return (
 
-<section className="container mx-auto px-5 py-12">
+<section className="
+w-full
+overflow-hidden
+py-10
+sm:py-12
+">
 
 
-<div className="flex justify-between items-center mb-8">
+<div className="
+max-w-7xl
+mx-auto
+px-4
+sm:px-6
+lg:px-8
+">
 
 
-<h2 className="text-3xl font-bold">
+
+{/* HEADER */}
+
+<div className="
+flex
+justify-between
+items-center
+mb-6
+sm:mb-8
+gap-3
+">
+
+
+<h2 className="
+text-2xl
+sm:text-3xl
+font-bold
+text-gray-800
+truncate
+">
+
 {title}
+
 </h2>
 
 
+
 <Link
+
 to={`/${slug}`}
-className="text-indigo-600 font-semibold"
+
+className="
+text-indigo-600
+font-semibold
+text-sm
+sm:text-base
+whitespace-nowrap
+"
+
 >
+
 View All →
+
 </Link>
 
 
@@ -29,53 +73,104 @@ View All →
 
 
 
-<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+
+
+
+
+{/* PRODUCTS */}
+
+
+<div className="
+grid
+
+grid-cols-1
+
+min-[400px]:grid-cols-2
+
+sm:grid-cols-3
+
+md:grid-cols-4
+
+lg:grid-cols-5
+
+gap-4
+
+sm:gap-6
+
+">
+
 
 
 {
-products?.map(product => (
+
+products?.map(product=>(
 
 
 <Link
+
 key={product._id}
+
 to={`/product/${product._id}`}
+
 className="
-rounded-[30px]
-shadow-md
-overflow-hidden
+group
+w-full
 bg-white
+rounded-3xl
+overflow-hidden
+shadow-md
 hover:shadow-xl
 transition
 border
 border-gray-100
 "
+
 >
 
 
+
+{/* IMAGE */}
+
+
 <div
+
 className="
-h-56
+w-full
+h-60
+sm:h-56
+md:h-60
 bg-gray-50
-m-3
-rounded-[25px]
+m-0
+sm:m-3
+sm:w-auto
+rounded-3xl
 flex
 items-center
 justify-center
 overflow-hidden
 "
+
 >
 
 
 <img
+
 loading="lazy"
+
 src={product.images?.[0]?.url}
+
 alt={product.name}
+
 className="
-h-full
 w-full
+h-full
 object-contain
-p-5
+p-4
+group-hover:scale-110
+transition
+duration-300
 "
+
 />
 
 
@@ -83,42 +178,70 @@ p-5
 
 
 
-<div className="px-4 pb-5 text-center">
+
+
+
+
+{/* DETAILS */}
+
+
+<div className="
+px-3
+sm:px-4
+pb-4
+sm:pb-5
+text-center
+">
 
 
 <h3
+
 className="
-text-base
+text-sm
+sm:text-base
 font-semibold
 text-gray-800
-leading-6
-min-h-[48px]
+leading-5
+line-clamp-2
+min-h-[40px]
 "
+
 >
+
 {product.name}
+
 </h3>
 
 
 
+
 <p
+
 className="
 mt-2
-text-lg
+text-base
+sm:text-lg
 font-bold
 text-indigo-600
 "
+
 >
+
 ₹ {product.price}
+
 </p>
 
 
+
 </div>
+
 
 
 </Link>
 
 
 ))
+
 }
 
 
@@ -126,7 +249,13 @@ text-indigo-600
 </div>
 
 
+
+
+</div>
+
+
 </section>
+
 
 )
 
