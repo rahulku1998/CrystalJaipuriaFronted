@@ -7,36 +7,38 @@ const Shop = () => {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
-
+ const [page, setPage] = useState(1);
+const [totalPages, setTotalPages] = useState(1);
 
   const fetchProducts = async () => {
 
-    try {
+  try {
 
-      const res = await API.get("/products");
+    const res = await API.get(`/shop?page=${page}&limit=10`);
 
-      console.log("Products:", res.data);
+    console.log("Products:", res.data);
 
-      setProducts(res.data.products || res.data);
+    setProducts(res.data.products);
+    setTotalPages(res.data.totalPages);
 
-    } catch (error) {
+  } catch (error) {
 
-      console.log("Product fetch error", error);
+    console.log("Product fetch error", error);
 
-    } finally {
+  } finally {
 
-      setLoading(false);
+    setLoading(false);
 
-    }
+  }
 
-  };
+};
 
 
-  useEffect(() => {
+useEffect(() => {
 
-    fetchProducts();
+  fetchProducts();
 
-  }, []);
+}, [page]);
 
 
 
@@ -181,7 +183,74 @@ const Shop = () => {
         }
 
 
+{/* Pagination */}
 
+<div className="flex justify-center items-center gap-3 mt-10">
+
+  <button
+    disabled={page === 1}
+    onClick={() => setPage(page - 1)}
+    className="
+      px-4
+      py-2
+      cursor-pointer
+      rounded-lg
+      bg-gray-200
+      disabled:opacity-50
+    "
+  >
+    Prev
+  </button>
+
+
+  {
+    Array.from({ length: totalPages }, (_, index) => (
+
+      <button
+
+        key={index}
+
+        onClick={() => setPage(index + 1)}
+
+        className={`
+          px-4
+          py-2
+           cursor-pointer
+          rounded-lg
+          ${
+            page === index + 1
+            ? "bg-indigo-600 text-white"
+            : "bg-gray-200"
+          }
+        `}
+      >
+
+        {index + 1}
+
+      </button>
+
+    ))
+  }
+
+
+
+  <button
+    disabled={page === totalPages}
+    onClick={() => setPage(page + 1)}
+    className="
+      px-4
+      py-2
+      cursor-pointer
+      rounded-lg
+      bg-gray-200
+      disabled:opacity-50
+    "
+  >
+    Next
+  </button>
+
+
+</div>
       </div>
 
 

@@ -9,41 +9,31 @@ const Home = () => {
 
   const [products, setProducts] = useState([]);
   const [categories,setCategories] = useState([]);
-
-const fetchCategories = async()=>{
- try{
-  const res = await API.get("/categories");
-  setCategories(res.data.categories);
- }catch(error){
-  console.log(error);
- }
-};
+const [categoryProducts,setCategoryProducts] = useState({});
 
 
 
-  const fetchProducts = async () => {
-    try {
 
-      const res = await API.get(
-        "/products"
-      );
-
-      setProducts(res.data.products);
-
-    } catch (error) {
-
-      console.log(error);
-
-    }
-  };
 
 
   useEffect(() => {
+  const fetchData = async () => {
+    try {
 
-    fetchProducts();
-    fetchCategories();
+      const res = await API.get("/home");
 
-  }, []);
+      setProducts(res.data.latestProducts);
+      setCategories(res.data.categories);
+      setCategoryProducts(res.data.categoryProducts);
+
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  fetchData();
+
+}, []);
 
 
 
@@ -111,7 +101,8 @@ const fetchCategories = async()=>{
         ">
 
           <img
-            src={product.images[0]?.url}
+           loading="lazy"
+           src={product.images[0]?.url}
             alt={product.name}
             className="
               w-full
@@ -160,12 +151,15 @@ const fetchCategories = async()=>{
 
 
       {/* Banner */}
-
+      <Link to='/shop'>
       <img
         src={homeImg}
+        loading="eager"
         alt="Home Banner"
         className="block w-full h-screen object-cover"
       />
+      </Link>
+      
 
 
 
@@ -179,15 +173,15 @@ const fetchCategories = async()=>{
 
   <CategorySection
 
-    key={category._id}
+key={category._id}
 
-    title={category.name}
+title={category.name}
 
-    categoryId={category._id}
+slug={category.slug}
 
-    slug={category.slug}
+products={categoryProducts[category._id] || []}
 
-  />
+/>
 
 
  ))
