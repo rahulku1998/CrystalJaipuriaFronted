@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import API from "../api/axios";
 import ProductCard from "../Components/ProductCard";
-
+import { FaSearch } from "react-icons/fa";
+import { useSearchParams } from "react-router-dom";
 
 const Shop = () => {
 
 
 const [products,setProducts] = useState([]);
-const [search,setSearch] = useState("");
+const [searchParams] = useSearchParams();
+const [search,setSearch] = useState(searchParams.get("search") || "");
 const [loading,setLoading] = useState(true);
 
 const [page,setPage] = useState(1);
@@ -151,6 +153,7 @@ Shop All Products
 w-full
 sm:w-[350px]
 lg:w-[400px]
+relative
 ">
 
 
@@ -173,6 +176,7 @@ className="
 w-full
 px-4
 py-3
+pr-12
 rounded-xl
 border
 bg-white
@@ -180,6 +184,19 @@ shadow-sm
 outline-none
 focus:ring-2
 focus:ring-indigo-500
+"
+
+/>
+
+
+<FaSearch
+
+className="
+absolute
+right-4
+top-1/2
+-translate-y-1/2
+text-gray-500
 "
 
 />
