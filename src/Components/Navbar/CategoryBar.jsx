@@ -265,10 +265,10 @@ location.pathname===item.path
           <h3 className="
           mx-auto
           font-semibold
-          text-gray-700
+          text-indigo-600
           ">
 
-            Categories
+            Explore Collection
 
           </h3>
 
