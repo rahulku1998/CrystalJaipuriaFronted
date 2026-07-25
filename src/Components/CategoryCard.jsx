@@ -83,7 +83,7 @@ View All →
 <div className="
 grid
 
-grid-cols-1
+grid-cols-2
 
 min-[400px]:grid-cols-2
 

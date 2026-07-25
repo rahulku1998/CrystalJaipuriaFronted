@@ -163,7 +163,7 @@ border-gray-100
 
 
 <div className="
-h-64
+h-44
 
 sm:h-56
 
@@ -201,7 +201,7 @@ w-full
 h-full
 object-contain
 
-p-4
+p-2
 sm:p-5
 
 group-hover:scale-110
