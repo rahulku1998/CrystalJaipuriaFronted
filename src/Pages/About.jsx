@@ -141,7 +141,7 @@ const About = () => {
 
               and headquartered at Malpura Gate, Sanganer, Jaipur (PIN:
               302029), Crystal Jaipuria has built a strong legacy of over
-              <strong> 25 years</strong> in manufacturing and wholesale
+              <strong> 35 years</strong> in manufacturing and wholesale
               trading.
 
               Under the leadership of
@@ -566,7 +566,7 @@ const About = () => {
               font-bold
               mb-4
             ">
-              25+ Years of Excellence
+              35+ Years of Excellence
             </h2>
 
 
@@ -579,7 +579,7 @@ const About = () => {
               mx-auto
             ">
 
-              With over <strong>25 years of experience</strong>, Crystal
+              With over <strong>35 years of experience</strong>, Crystal
               Jaipuria has established itself as a trusted name in gemstone
               artistry and handicrafts. Our expertise lies in creating
               exquisite gemstone figures, spiritual god statues, semi-precious
