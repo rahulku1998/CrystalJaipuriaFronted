@@ -118,9 +118,9 @@ const StatsSection = () => {
 const stats = [
 
 {
-number:25,
+number:35,
 suffix:"+",
-title:"Years Experience"
+title:"Manufacturing Excellence"
 },
 
 {
@@ -138,7 +138,7 @@ title:"Products Sold"
 {
 number:100,
 suffix:"%",
-title:"Handcrafted Quality"
+title:"Natural Crystals & Gemstones"
 }
 
 
