@@ -145,7 +145,7 @@ const Footer = () => {
               <p className="text-gray-400">
                 Monday - Saturday
                 <br />
-                8:00 AM - 5:00 PM
+                8:00 AM - 7:30 PM
               </p>
             </div>
           </div>
