@@ -822,7 +822,7 @@ Out Of Stock
 
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-1">
-                  Email <span className="text-red-500">*</span>
+                  Email <span className="text-gray-400">(Optional)</span>
                 </label>
 
                 <input
@@ -882,6 +882,8 @@ Out Of Stock
                   min="1"
                   value={queryForm.quantity}
                   onChange={handleQueryChange}
+                  required
+                  placeholder="Enter quantity"
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition"
                 />
               </div>
@@ -906,7 +908,7 @@ Out Of Stock
             {/* Message */}
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-1">
-                Message <span className="text-gray-400">(Optional)</span>
+                Message <span className="text-red-400">*</span>
               </label>
 
               <textarea
