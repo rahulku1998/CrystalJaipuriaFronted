@@ -52,6 +52,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
 *Quantity:* ${queryForm.quantity}
 *Weight:* ${queryForm.weight || "Not specified"}
 *Message:* ${queryForm.message || "N/A"}
+*Product Link:* ${window.location.href}
   `.trim();
 
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
