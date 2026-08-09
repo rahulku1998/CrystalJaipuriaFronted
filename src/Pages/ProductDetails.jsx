@@ -42,7 +42,7 @@ const handleQuerySubmit = (e) => {
   const whatsappNumber = "918306317032"; // Replace with your WhatsApp number
 
   const message = `
-Hello Crystal, I have a query regarding this product.
+Hello Crystal Jaipuria, I have a query regarding this product.
 
 *Product:* ${product?.name || "N/A"}
 *Full Name:* ${queryForm.fullName}
@@ -830,7 +830,6 @@ Out Of Stock
                   name="email"
                   value={queryForm.email}
                   onChange={handleQueryChange}
-                  required
                   placeholder="Enter your email"
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition"
                 />
@@ -883,7 +882,6 @@ Out Of Stock
                   min="1"
                   value={queryForm.quantity}
                   onChange={handleQueryChange}
-                  required
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition"
                 />
               </div>
@@ -917,6 +915,7 @@ Out Of Stock
                 onChange={handleQueryChange}
                 rows="4"
                 placeholder="Write your query or requirements..."
+                required
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition resize-none"
               />
             </div>
