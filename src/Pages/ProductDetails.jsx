@@ -11,7 +11,69 @@ import {
 } from "react-icons/fa";
 
 
+
 const ProductDetails = () => {
+
+const [querySubmitted, setQuerySubmitted] = useState(false);
+const [showQueryForm, setShowQueryForm] = useState(false);
+
+const [queryForm, setQueryForm] = useState({
+  fullName: "",
+  whatsappNumber: "",
+  email: "",
+  country: "",
+  quantity: 1,
+  weight: "",
+  message: "",
+});
+
+const handleQueryChange = (e) => {
+  const { name, value } = e.target;
+
+  setQueryForm((prev) => ({
+    ...prev,
+    [name]: value,
+  }));
+};
+
+const handleQuerySubmit = (e) => {
+  e.preventDefault();
+
+  const whatsappNumber = "918306317032"; // Replace with your WhatsApp number
+
+  const message = `
+Hello Crystal, I have a query regarding this product.
+
+*Product:* ${product?.name || "N/A"}
+*Full Name:* ${queryForm.fullName}
+*WhatsApp Number:* ${queryForm.whatsappNumber}
+*Email:* ${queryForm.email}
+*Country:* ${queryForm.country}
+*Quantity:* ${queryForm.quantity}
+*Weight:* ${queryForm.weight || "Not specified"}
+*Message:* ${queryForm.message || "N/A"}
+  `.trim();
+
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+    message
+  )}`;
+
+  window.open(whatsappUrl, "_blank");
+  setQuerySubmitted(true);
+
+  setShowQueryForm(false);
+
+  setQueryForm({
+    fullName: "",
+    whatsappNumber: "",
+    email: "",
+    country: "",
+    quantity: 1,
+    weight: "",
+    message: "",
+  });
+};
+
 
 
   const { id } = useParams();
@@ -145,7 +207,7 @@ const ProductDetails = () => {
 
 
   const whatsappLink =
-  `https://wa.me/918955613237?text=${encodeURIComponent(
+  `https://wa.me/918306317032?text=${encodeURIComponent(
     whatsappMessage
   )}`;
 
@@ -603,41 +665,325 @@ Out Of Stock
 
 
 
-<a
+<div className="grid grid-cols-2 gap-4 mt-8">
 
-href={whatsappLink}
+  {/* Row 1 - WhatsApp */}
+  <a
+    href={whatsappLink}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="block text-center bg-green-600 hover:bg-green-700 text-white px-4 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition"
+  >
+    <FaWhatsapp className="inline mr-2" /> Enquire Now
+  </a>
 
-target="_blank"
+  {/* Row 1 - Call Now */}
+  <a
+    href="tel:+918955613237"
+    className="block text-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition"
+  >
+   📞 Call Now
+  </a>
 
-rel="noopener noreferrer"
+  {/* Row 2 - Request a Query */}
+  <button
+    type="button"
+     onClick={() => setShowQueryForm(true)}
+    className="col-span-2 text-center bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition cursor-pointer"
+  >
+    💬 Request a Query
+  </button>
 
-className="
-block
-text-center
-mt-8
-bg-green-600
-hover:bg-green-700
-text-white
-px-6
-py-3
-sm:py-4
-rounded-lg
-text-base
-sm:text-lg
-font-semibold
-transition
-"
+</div>
+{showQueryForm && (
+  <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/50 p-4">
 
->
+    <div className="w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white rounded-2xl shadow-2xl">
 
-Buy on WhatsApp
+      {querySubmitted ? (
 
-</a>
+        /* SUCCESS */
+        <div className="min-h-[400px] flex flex-col items-center justify-center text-center px-6 py-12">
+
+          <div className="w-24 h-24 rounded-full bg-green-100 flex items-center justify-center mb-6">
+            <div className="w-16 h-16 rounded-full bg-green-600 flex items-center justify-center">
+              <span className="text-white text-4xl font-bold">
+                ✓
+              </span>
+            </div>
+          </div>
+
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">
+            Thank You!
+          </h2>
+
+          <p className="mt-3 text-gray-600 text-sm sm:text-base leading-relaxed">
+            Your query has been submitted successfully.
+            <br />
+            Our team will contact you shortly.
+          </p>
+
+          <button
+            type="button"
+            onClick={() => {
+              setShowQueryForm(false);
+              setQuerySubmitted(false);
+            }}
+            className="mt-8 px-8 py-3 bg-gray-800 hover:bg-gray-900 text-white rounded-lg font-semibold transition"
+          >
+            Close
+          </button>
+
+        </div>
+
+      ) : (
+
+        <>
+          {/* Header */}
+          <div className="sticky top-0 z-10 flex items-center justify-between bg-white border-b px-5 sm:px-6 py-4 rounded-t-2xl">
+
+            <div>
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-800">
+                Request a Query
+              </h2>
+
+              <p className="text-sm text-gray-500 mt-1">
+                Send your enquiry directly on WhatsApp
+              </p>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setShowQueryForm(false)}
+              className="flex items-center justify-center w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 text-2xl transition"
+            >
+              ×
+            </button>
+
+          </div>
+
+          {/* Form */}
+          <form
+            onSubmit={handleQuerySubmit}
+            className="p-5 sm:p-6 space-y-4"
+          >
+
+            {/* YAHAN TERA PURA EXISTING FORM SAME RAHEGA */}
+
+            {/* Product Name */}
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-1">
+                Product Name
+              </label>
+
+              <input
+                type="text"
+                value={product?.name || ""}
+                readOnly
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-gray-100 text-gray-600 cursor-not-allowed"
+              />
+            </div>
+
+            {/* Full Name */}
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-1">
+                Full Name <span className="text-red-500">*</span>
+              </label>
+
+              <input
+                type="text"
+                name="fullName"
+                value={queryForm.fullName}
+                onChange={handleQueryChange}
+                required
+                placeholder="Enter your full name"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition"
+              />
+            </div>
+
+            {/* WhatsApp + Email */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-1">
+                  WhatsApp Number <span className="text-red-500">*</span>
+                </label>
+
+                <input
+                  type="tel"
+                  name="whatsappNumber"
+                  value={queryForm.whatsappNumber}
+                  onChange={handleQueryChange}
+                  required
+                  placeholder="Enter WhatsApp number"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-1">
+                  Email <span className="text-red-500">*</span>
+                </label>
+
+                <input
+                  type="email"
+                  name="email"
+                  value={queryForm.email}
+                  onChange={handleQueryChange}
+                  required
+                  placeholder="Enter your email"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition"
+                />
+              </div>
+
+            </div>
+
+            {/* Country */}
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-1">
+                Country <span className="text-red-500">*</span>
+              </label>
+
+              <select
+                name="country"
+                value={queryForm.country}
+                onChange={handleQueryChange}
+                required
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition"
+              >
+                <option value="">Select your country</option>
+                <option value="India">India</option>
+                <option value="United States">United States</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Canada">Canada</option>
+                <option value="Australia">Australia</option>
+                <option value="United Arab Emirates">United Arab Emirates</option>
+                <option value="Saudi Arabia">Saudi Arabia</option>
+                <option value="Singapore">Singapore</option>
+                <option value="Germany">Germany</option>
+                <option value="France">France</option>
+                <option value="Italy">Italy</option>
+                <option value="Spain">Spain</option>
+                <option value="Netherlands">Netherlands</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            {/* Quantity + Weight */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-1">
+                  Quantity <span className="text-red-500">*</span>
+                </label>
+
+                <input
+                  type="number"
+                  name="quantity"
+                  min="1"
+                  value={queryForm.quantity}
+                  onChange={handleQueryChange}
+                  required
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-1">
+                  Weight <span className="text-gray-400">(Optional)</span>
+                </label>
+
+                <input
+                  type="text"
+                  name="weight"
+                  value={queryForm.weight}
+                  onChange={handleQueryChange}
+                  placeholder="e.g. 2 kg"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition"
+                />
+              </div>
+
+            </div>
+
+            {/* Message */}
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-1">
+                Message <span className="text-gray-400">(Optional)</span>
+              </label>
+
+              <textarea
+                name="message"
+                value={queryForm.message}
+                onChange={handleQueryChange}
+                rows="4"
+                placeholder="Write your query or requirements..."
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition resize-none"
+              />
+            </div>
+
+            {/* Submit */}
+            <button
+              type="submit"
+              className="w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-5 py-3.5 rounded-lg font-semibold text-base sm:text-lg transition"
+            >
+              <FaWhatsapp className="text-xl" />
+              Submit Query on WhatsApp
+            </button>
+
+          </form>
+        </>
+
+      )}
+
+    </div>
+  </div>
+)}
 
 
 
 
+<div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
 
+  {/* Authentic Product */}
+  <div className="flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+    <div className="text-2xl">✨</div>
+    <div>
+      <h3 className="font-semibold text-gray-800">
+        100% Authentic
+      </h3>
+      <p className="text-sm text-gray-500">
+        Genuine & Premium Products
+      </p>
+    </div>
+  </div>
+
+  {/* Fast Delivery */}
+  <div className="flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+    <div className="text-2xl">🚚</div>
+    <div>
+      <h3 className="font-semibold text-gray-800">
+        Easy & Fast Delivery
+      </h3>
+      <p className="text-sm text-gray-500">
+        Safe & Quick Doorstep Delivery
+      </p>
+    </div>
+  </div>
+
+  {/* Secure Shopping */}
+  <div className="flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+    <div className="text-2xl">🔒</div>
+    <div>
+      <h3 className="font-semibold text-gray-800">
+        Secure Shopping
+      </h3>
+      <p className="text-sm text-gray-500">
+        Safe & Trusted Experience
+      </p>
+    </div>
+  </div>
+
+</div>
 
 
 
