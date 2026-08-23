@@ -27,12 +27,14 @@ import FloatingWhatsApp from "./Components/FloatingWhatsApp";
 import Blog from "./Pages/Blog/Blogs";
 import BlogDetails from './Pages/Blog/BlogDetails'
 import Shop from "./Pages/Shop";
+import AboutGemstoneSection from './Components/about';
 function App() {
 
   return (
     <>
      <ScrollTop />
        <Navbar />
+       
         <FloatingWhatsApp />
   <Routes>
  <Route

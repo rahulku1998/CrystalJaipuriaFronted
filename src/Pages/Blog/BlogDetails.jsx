@@ -253,21 +253,19 @@ const BlogDetails = () => {
 
 
             <div
-              className="
-                text-gray-700
-                text-base
-                sm:text-lg
-                leading-7
-                sm:leading-9
-                prose
-                max-w-none
-              "
-            >
-
-              {blog.content}
-
-
-            </div>
+  className="
+    text-gray-700
+    text-base
+    sm:text-lg
+    leading-7
+    sm:leading-9
+    prose
+    max-w-none
+    whitespace-pre-line
+  "
+>
+  {blog.content}
+</div>
 
 
 

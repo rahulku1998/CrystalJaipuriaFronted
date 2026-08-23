@@ -5,7 +5,7 @@ import CategorySection from "../Components/CategoryCard";
 import homeImg from "../assets/images/mama5.png";
 import StatsSection from "../Components/StatsSection";
 import { Link } from "react-router-dom";
-
+import AboutGemstoneSection from "../Components/about";
 
 const Home = () => {
 
@@ -52,8 +52,11 @@ fetchData();
 
 return (
 
+
+
 <section className="w-full">
 
+<AboutGemstoneSection/>
 
 
 
