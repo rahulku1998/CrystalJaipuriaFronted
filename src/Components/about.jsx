@@ -2,57 +2,50 @@ import React from "react";
 
 const AboutGemstoneSection = () => {
   return (
-    <section className="relative overflow-hidden bg-[#faf9f6] py-16 sm:py-20 lg:py-24">
-      
+    <section className="relative overflow-hidden bg-[#faf9f6] py-12 sm:py-16 lg:py-20">
       {/* Decorative Background */}
       <div className="absolute -left-32 top-20 h-72 w-72 rounded-full bg-amber-100/40 blur-3xl" />
       <div className="absolute -right-32 bottom-0 h-80 w-80 rounded-full bg-stone-200/50 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid items-center gap-9 lg:grid-cols-2 lg:gap-12">
 
           {/* IMAGE */}
           <div className="relative order-1">
-            
-            {/* Image Frame */}
             <div className="relative overflow-hidden rounded-2xl border border-stone-200 bg-white p-2 shadow-[0_20px_60px_rgba(0,0,0,0.10)]">
-              
               <img
                 src="../Gemstone.webp"
                 alt="Handcrafted gemstone statues and crystal carvings"
-                className="h-[320px] w-full rounded-xl object-cover sm:h-[420px] lg:h-[540px]"
+                className="h-[280px] w-full rounded-xl object-cover sm:h-[360px] lg:h-[470px]"
               />
 
-              {/* Bottom Gradient */}
-              <div className="absolute inset-x-2 bottom-2 h-32 rounded-b-xl bg-gradient-to-t from-black/40 to-transparent" />
+              <div className="absolute inset-x-2 bottom-2 h-28 rounded-b-xl bg-gradient-to-t from-black/40 to-transparent" />
             </div>
 
-            {/* Small Premium Badge */}
-            <div className="absolute -bottom-5 left-5 rounded-xl border border-stone-200 bg-white px-5 py-3 shadow-lg sm:left-8">
-              <p className="text-xs font-medium uppercase tracking-[0.2em] text-stone-500">
+            {/* Premium Badge */}
+            <div className="absolute -bottom-4 left-5 rounded-xl border border-stone-200 bg-white px-4 py-2.5 shadow-lg sm:left-8">
+              <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-stone-500">
                 Jaipur Craftsmanship
               </p>
               <p className="mt-1 text-sm font-semibold text-stone-900">
                 Handcrafted • Export Ready
               </p>
             </div>
-
           </div>
 
           {/* CONTENT */}
           <div className="order-2 lg:pl-4">
 
             {/* Eyebrow */}
-            <div className="mb-5 flex items-center gap-3">
-              <span className="h-px w-10 bg-indigo-600" />
-              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-indigo-700">
+            <div className="mb-4 flex items-center gap-3">
+              <span className="h-px w-8 bg-indigo-600" />
+              <span className="text-xs font-semibold uppercase tracking-[0.22em] text-indigo-700">
                 Crystal Jaipuria
               </span>
             </div>
 
             {/* Heading */}
-            <h2 className="max-w-2xl text-3xl font-semibold leading-tight tracking-tight text-stone-900 sm:text-4xl lg:text-[46px]">
+            <h2 className="max-w-2xl text-3xl font-semibold leading-tight tracking-tight text-stone-900 sm:text-4xl lg:text-[42px]">
               Handcrafted Gemstone Statues & Crystal Carvings Manufacturer
               <span className="block text-indigo-700">
                 in Jaipur, India
@@ -60,8 +53,7 @@ const AboutGemstoneSection = () => {
             </h2>
 
             {/* Content */}
-            <div className="mt-7 space-y-5 text-[15px] leading-7 text-stone-600 sm:text-base sm:leading-8">
-
+            <div className="mt-5 space-y-4 text-[15px] leading-7 text-stone-600 sm:text-base">
               <p>
                 Crystal Jaipuria is a Jaipur, India-based gemstone statue and
                 crystal carvings manufacturer, wholesaler, and supplier,
@@ -88,50 +80,32 @@ const AboutGemstoneSection = () => {
                 UAE, and other international markets with quality-focused
                 sourcing and export-ready products.
               </p>
-
             </div>
 
-            {/* Bottom Highlights */}
-            <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
-
-              <div className="rounded-xl border border-stone-200 bg-white px-4 py-4 shadow-sm">
+            {/* Highlights */}
+            <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
+              <div className="rounded-xl border border-stone-200 bg-white px-3 py-3 shadow-sm">
                 <p className="text-lg font-semibold text-stone-900">100%</p>
-                <p className="mt-1 text-xs text-stone-500">
-                  Handcrafted
-                </p>
+                <p className="mt-1 text-xs text-stone-500">Handcrafted</p>
               </div>
 
-              <div className="rounded-xl border border-stone-200 bg-white px-4 py-4 shadow-sm">
-                <p className="text-lg font-semibold text-stone-900">
-                  Global
-                </p>
-                <p className="mt-1 text-xs text-stone-500">
-                  Shipping
-                </p>
+              <div className="rounded-xl border border-stone-200 bg-white px-3 py-3 shadow-sm">
+                <p className="text-lg font-semibold text-stone-900">Global</p>
+                <p className="mt-1 text-xs text-stone-500">Shipping</p>
               </div>
 
-              <div className="rounded-xl border border-stone-200 bg-white px-4 py-4 shadow-sm">
-                <p className="text-lg font-semibold text-stone-900">
-                  Bulk
-                </p>
-                <p className="mt-1 text-xs text-stone-500">
-                  Orders
-                </p>
+              <div className="rounded-xl border border-stone-200 bg-white px-3 py-3 shadow-sm">
+                <p className="text-lg font-semibold text-stone-900">Bulk</p>
+                <p className="mt-1 text-xs text-stone-500">Orders</p>
               </div>
 
-              <div className="rounded-xl border border-stone-200 bg-white px-4 py-4 shadow-sm">
-                <p className="text-lg font-semibold text-stone-900">
-                  Jaipur
-                </p>
-                <p className="mt-1 text-xs text-stone-500">
-                  India
-                </p>
+              <div className="rounded-xl border border-stone-200 bg-white px-3 py-3 shadow-sm">
+                <p className="text-lg font-semibold text-stone-900">Jaipur</p>
+                <p className="mt-1 text-xs text-stone-500">India</p>
               </div>
-
             </div>
 
           </div>
-
         </div>
       </div>
     </section>
