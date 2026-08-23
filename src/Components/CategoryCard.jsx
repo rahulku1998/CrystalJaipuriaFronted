@@ -238,7 +238,7 @@ text-base
 sm:text-lg
 font-bold
 text-green-700
-"> <spam>price per gram: </spam>₹ {product.pricePerGram}</p>
+"> price per gram:₹ {product.pricePerGram}</p>
 )}
 {product.pricePerCarat && (
 <p className="
@@ -247,7 +247,7 @@ text-base
 sm:text-lg
 font-bold
 text-yellow-700
-"> <spam>price per carat: </spam>₹ {product.pricePerCarat}</p>
+"> price per carat:₹ {product.pricePerCarat}</p>
 )}  
 
 
