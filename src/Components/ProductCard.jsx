@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const ProductCard = ({ product }) => {
   return (
     <Link
-      to={`/product/${product._id}`}
+      to={`/products/${product.slug}`}
       className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group block"
     >
 
@@ -36,17 +36,27 @@ const ProductCard = ({ product }) => {
 
           {product.discountPrice ? (
             <>
-              <p className="text-red-600 font-bold text-xl">
+              <p className="text-indigo-600 font-bold text-xl">
                 ₹{product.discountPrice}
               </p>
 
-              <p className="text-gray-400 line-through text-sm">
+              <p className="text-red-400 line-through text-sm">
                 ₹{product.price}
               </p>
             </>
           ) : (
-            <p className="text-red-600 font-bold text-xl">
+            <p className="text-indigo-600 font-bold text-xl">
               ₹{product.price}
+            </p>
+          )}
+          {product.pricePerGram && (
+            <p className="text-green-700 text-sm">
+              <span>Price/gram: </span>₹{product.pricePerGram}
+            </p>
+          )}
+          {product.pricePerCarat && (
+            <p className="text-yellow-700 text-sm">
+              <span>Price/carat: </span>₹{product.pricePerCarat}
             </p>
           )}
 

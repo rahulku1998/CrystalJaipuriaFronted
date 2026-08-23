@@ -142,7 +142,7 @@ products.slice(0,5).map((product)=>(
 
 key={product._id}
 
-to={`/product/${product._id}`}
+to={`/products/${product.slug}`}
 
 className="
 group
@@ -267,10 +267,44 @@ font-bold
 
 text-indigo-600
 ">
-
+  
+<span>Price: </span>
 ₹ {product.price}
 
 </p>
+
+{product.pricePerGram && (
+<p className="
+mt-2
+
+text-lg
+
+sm:text-xl
+
+font-bold
+
+text-green-700
+">
+<span>price/gram: </span>
+₹ {product.pricePerGram}
+
+</p>
+)}
+{product.pricePerCarat && (
+<p className="
+mt-2
+text-lg
+
+sm:text-xl
+font-bold
+
+text-yellow-700
+">
+  <span>price/carat: </span>
+  ₹ {product.pricePerCarat}
+</p>
+)}
+
 
 
 

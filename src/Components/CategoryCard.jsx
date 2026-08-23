@@ -110,7 +110,7 @@ products?.map(product=>(
 
 key={product._id}
 
-to={`/product/${product._id}`}
+to={`/products/${product.slug}`}
 
 className="
 group
@@ -230,6 +230,26 @@ text-indigo-600
 ₹ {product.price}
 
 </p>
+
+{product.pricePerGram && (
+<p className="
+mt-2  
+text-base
+sm:text-lg
+font-bold
+text-green-700
+"> <spam>price per gram: </spam>₹ {product.pricePerGram}</p>
+)}
+{product.pricePerCarat && (
+<p className="
+mt-2
+text-base
+sm:text-lg
+font-bold
+text-yellow-700
+"> <spam>price per carat: </spam>₹ {product.pricePerCarat}</p>
+)}  
+
 
 
 

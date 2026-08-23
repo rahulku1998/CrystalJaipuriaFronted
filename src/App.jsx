@@ -28,6 +28,7 @@ import Blog from "./Pages/Blog/Blogs";
 import BlogDetails from './Pages/Blog/BlogDetails'
 import Shop from "./Pages/Shop";
 import AboutGemstoneSection from './Components/about';
+import ProductDetailsSlug from './Pages/ProductDetailsSlug';
 function App() {
 
   return (
@@ -61,6 +62,10 @@ function App() {
         <Route path="/subcategory/:id" element={<SubCategoryProducts />} />
 
         {/* PRODUCT DETAILS */}
+        <Route
+  path="/products/:slug"
+  element={<ProductDetailsSlug />}
+/>
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/admin/login" element={<AdminLogin />} />

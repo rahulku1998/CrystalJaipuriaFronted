@@ -19,6 +19,8 @@ const EditProduct = () => {
     additionalInfo: "",
     detail: "",
     weight: "",
+    pricePerGram: "",
+    pricePerCarat: "",
     size: ""
   });
 const [categories,setCategories] = useState([]);
@@ -56,6 +58,8 @@ const [subCategories,setSubCategories] = useState([]);
       additionalInfo: p.additionalInfo || "",
       detail: p.detail || "",
       weight: p.weight || "",
+      pricePerGram: p.pricePerGram || "",
+      pricePerCarat: p.pricePerCarat || "",
       size: p.size || ""
     });
 
@@ -180,7 +184,11 @@ className="space-y-8"
 
 
 <Input
-label="Product Name"
+label={
+<>
+Product Name <span className="text-red-500">*</span>
+</>
+}
 name="name"
 value={form.name}
 onChange={handleChange}
@@ -217,7 +225,7 @@ className="w-full rounded-xl border border-gray-200 bg-gray-50 px-5 py-4 outline
 <div>
 
 <label className="block mb-2 font-semibold text-gray-700">
-Description
+Description <span className="text-red-500">*</span>
 </label>
 
 <textarea
@@ -249,11 +257,15 @@ className="w-full rounded-xl border border-gray-200 bg-gray-50 px-5 py-4 outline
 
 <Input
 
-label="Price"
+label={<>
+
+Price <span className="text-red-500">*</span>
+
+</>}
 
 name="price"
 
-type="number"
+type="text"
 
 value={form.price}
 
@@ -262,6 +274,24 @@ onChange={handleChange}
 placeholder="Enter price"
 
 />
+<Input
+label="Price Per Gram" 
+name="pricePerGram"
+type="text"
+value={form.pricePerGram}
+onChange={handleChange}
+placeholder="Enter price per gram"
+/>
+
+<Input
+label="Price Per Carat"
+name="pricePerCarat"
+type="text" 
+value={form.pricePerCarat}
+onChange={handleChange}
+placeholder="Enter price per carat"
+/>
+
 
 
 
@@ -272,7 +302,7 @@ label="Discount Price"
 
 name="discountPrice"
 
-type="number"
+type="text"
 
 value={form.discountPrice}
 

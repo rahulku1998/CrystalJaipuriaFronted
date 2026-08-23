@@ -147,7 +147,7 @@ setLoadingProducts(false);
     <div
       key={product._id}
       className="bg-white rounded-xl shadow border overflow-hidden cursor-pointer"
-      onClick={() => navigate(`/product/${product._id}`)}
+      onClick={() => navigate(`/products/${product.slug}`)}
     >
 
       {/* Image */}
@@ -169,19 +169,34 @@ setLoadingProducts(false);
 
      {product.discountPrice ? (
   <div className="flex items-center gap-3 mt-2">
-    <span className="text-gray-400 line-through text-sm">
-      ₹{product.price}
-    </span>
-
     <span className="text-indigo-600 font-bold text-lg">
       ₹{product.discountPrice}
     </span>
+    <span className="text-red-600 line-through text-sm">
+      ₹{product.price}
+    </span>
+
+    
   </div>
 ) : (
   <span className="text-indigo-600 font-bold text-lg">
     ₹{product.price}
   </span>
 )}
+
+
+ {product.pricePerGram && (
+  <p className="text-blue-500 text-sm mt-1">
+    Price per gram: ₹{product.pricePerGram}
+  </p>
+ )}
+
+{product.pricePerCarat && (
+  <p className="text-yellow-500 text-sm mt-1">
+    Price per carat: ₹{product.pricePerCarat}
+  </p>
+)}
+
 
         <div className="text-sm text-gray-600 mt-2 space-y-1">
 

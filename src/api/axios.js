@@ -4,14 +4,12 @@ const API = axios.create({
   baseURL: import.meta.env.VITE_BASEURL,
 });
 
-// Auto attach token (for admin routes)
+// Auto attach token
 API.interceptors.request.use((req) => {
-  if (req.url.startsWith("/admin")) {
-    const token = localStorage.getItem("token");
+  const token = localStorage.getItem("token");
 
-    if (token) {
-      req.headers.Authorization = `Bearer ${token}`;
-    }
+  if (token) {
+    req.headers.Authorization = `Bearer ${token}`;
   }
 
   return req;

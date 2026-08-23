@@ -14,6 +14,8 @@ const AddProduct = () => {
     additionalInfo:"",
     detail:"",
     weight:"",
+    pricePerGram:"",
+    pricePerCarat:"",
     size:""
   });
 
@@ -156,6 +158,8 @@ const handleCategoryChange = async (e) => {
         additionalInfo:"",
         detail:"",
         weight:"",
+        pricePerGram:"",
+        pricePerCarat:"",
         size:""
       });
 
@@ -214,9 +218,14 @@ const handleCategoryChange = async (e) => {
 
 
             <Input
-              label="Product Name"
+               label={
+    <>
+      Product Name <span className="text-red-500">*</span>
+    </>
+  }
               name="name"
               value={form.name}
+              required
               onChange={handleChange}
               placeholder="Enter product name"
             />
@@ -262,7 +271,8 @@ const handleCategoryChange = async (e) => {
             <div>
 
               <label className="block mb-2 font-semibold text-gray-700">
-                Description
+
+                Description <span className="text-red-500">*</span>
               </label>
 
 
@@ -301,7 +311,13 @@ const handleCategoryChange = async (e) => {
 
 
               <Input
-                label="Price"
+
+                
+              label={
+                <>
+                  Price <span className="text-red-500">*</span>
+                </>
+              }
                 name="price"
                 type="text"
                 value={form.price}
@@ -316,6 +332,22 @@ const handleCategoryChange = async (e) => {
                 value={form.discountPrice}
                 onChange={handleChange}
               />
+              <Input
+                label="Price Per Gram"
+                name="pricePerGram"
+                type="text"
+                value={form.pricePerGram}
+                onChange={handleChange} 
+                />
+                <Input
+                label="Price Per Carat"
+                name="pricePerCarat"
+                type="text"
+                value={form.pricePerCarat}
+                onChange={handleChange} 
+                />
+
+
                   <Input
                 label="Weight"
                 name="weight"
