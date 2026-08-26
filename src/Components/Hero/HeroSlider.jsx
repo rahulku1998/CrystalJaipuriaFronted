@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
+import {Link} from "react-router-dom";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -23,35 +24,47 @@ export default function HeroSlider() {
       className="w-full"
     >
       <SwiperSlide>
+        <Link to="/shop">
         <img
           src={img7}
           alt="banner"
+          
           className="w-full h-auto block"
         />
+        </Link>
       </SwiperSlide>
 
       <SwiperSlide>
+        <Link to="/shop">
         <img
           src={img8}
           alt="banner"
+          to="/shop"
           className="w-full h-auto block"
         />
+        </Link>
       </SwiperSlide>
 
       <SwiperSlide>
+        <Link to="/shop">
         <img
           src={img9}
+          to="/shop"
           alt="banner"
           className="w-full h-auto block"
         />
+        </Link>
       </SwiperSlide>
 
       <SwiperSlide>
+        <Link to="/shop">
         <img
           src={img10}
+          to="/shop"
           alt="banner"
           className="w-full h-auto block"
         />
+        </Link>
       </SwiperSlide>
     </Swiper>
   );
