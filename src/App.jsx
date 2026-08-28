@@ -5,7 +5,7 @@ import Home from './Pages/Home'
 import HeroSlider from './Components/Hero/HeroSlider'
 import FeaturesBar from './Components/FeaturesBar'
 import About from "./Pages/About";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate, useParams } from "react-router-dom";
 import Contact from './Pages/Contact';
 import CategoryPage from './Pages/CategoryPage';
 import SubCategoryProducts from './Pages/SubCategoryProducts';
@@ -26,6 +26,13 @@ import Blog from "./Pages/Blog/Blogs";
 import BlogDetails from './Pages/Blog/BlogDetails'
 import Shop from "./Pages/Shop";
 import ProductDetailsSlug from './Pages/ProductDetailsSlug';
+
+// Redirect helper for old /products/:slug URLs -> /product/:slug
+const ProductsRedirect = () => {
+  const { slug } = useParams();
+  return <Navigate to={`/product/${slug}`} replace />;
+};
+
 function App() {
 
   return (
@@ -55,9 +62,11 @@ function App() {
         {/* SUBCATEGORY PRODUCTS */}
         <Route path="/subcategory/:id" element={<SubCategoryProducts />} />
 
-        {/* PRODUCT DETAILS */}
-        <Route path="/products/:slug" element={<ProductDetailsSlug />} />
-        <Route path="/product/:id" element={<ProductDetails />} />
+        {/* PRODUCT DETAILS (SINGULAR /product/:slug) */}
+        <Route path="/product/:slug" element={<ProductDetailsSlug />} />
+
+        {/* REDIRECT PLURAL /products/:slug -> /product/:slug */}
+        <Route path="/products/:slug" element={<ProductsRedirect />} />
 
         {/* DYNAMIC CATEGORY */}
         <Route path="/:slug" element={<CategoryPage />} />

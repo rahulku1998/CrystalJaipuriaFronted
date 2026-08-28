@@ -99,8 +99,24 @@ Hello Crystal Jaipuria, I have a query regarding this product.
   const fetchProduct = async () => {
     try {
       setLoading(true);
-      const res = await API.get(`/products/slug/${slug}`);
-      const data = res.data.product;
+      let data = null;
+      try {
+        const res = await API.get(`/products/slug/${slug}`);
+        data = res.data.product;
+      } catch (e) {
+        try {
+          const idRes = await API.get(`/products/${slug}`);
+          data = idRes.data.product;
+        } catch (idErr) {
+          data = null;
+        }
+      }
+
+      if (data?.slug && data.slug !== slug) {
+        navigate(`/product/${data.slug}`, { replace: true });
+        return;
+      }
+
       setProduct(data || null);
 
       if (data?.images?.length > 0) {
@@ -111,7 +127,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
         fetchRelatedProducts(data);
       }
     } catch (err) {
-      console.log("Slug product error:", err);
+      console.log("Product fetch error:", err);
       setProduct(null);
     } finally {
       setLoading(false);
@@ -150,7 +166,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
     return <NotFound />;
   }
 
-  const canonicalUrl = `https://www.crystaljaipuria.com/products/${product.slug || slug}`;
+  const canonicalUrl = `https://www.crystaljaipuria.com/product/${product.slug || slug}`;
   const metaTitle = getProductMetaTitle(product.name);
   const metaDescription = getProductMetaDescription(product);
   const schema = getProductSchema(product, canonicalUrl);
@@ -1121,7 +1137,7 @@ relatedProducts.map((item)=>(
 
 key={item._id}
 
-onClick={()=>navigate(`/products/${item.slug || item._id}`)}
+onClick={()=>navigate(`/product/${item.slug || item._id}`)}
 
 className="
 bg-white

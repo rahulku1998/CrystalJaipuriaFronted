@@ -4,7 +4,7 @@ import { formatPrice } from "../utils/price";
 const ProductCard = ({ product }) => {
   return (
     <Link
-      to={`/products/${product.slug}`}
+      to={`/product/${product.slug}`}
       className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group block"
     >
 

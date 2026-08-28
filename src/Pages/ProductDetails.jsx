@@ -101,7 +101,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
       const data = res.data.product;
 
       if (data?.slug) {
-        navigate(`/products/${data.slug}`, { replace: true });
+        navigate(`/product/${data.slug}`, { replace: true });
         return;
       }
 
@@ -152,7 +152,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
     return <NotFound />;
   }
 
-  const canonicalUrl = `https://www.crystaljaipuria.com/products/${product.slug || id}`;
+  const canonicalUrl = `https://www.crystaljaipuria.com/product/${product.slug || id}`;
   const metaTitle = getProductMetaTitle(product.name);
   const metaDescription = getProductMetaDescription(product);
   const schema = getProductSchema(product, canonicalUrl);
@@ -1125,7 +1125,7 @@ relatedProducts.map((item)=>(
 
 key={item._id}
 
-onClick={()=>navigate(`/products/${item.slug || item._id}`)}
+onClick={()=>navigate(`/product/${item.slug || item._id}`)}
 
 className="
 bg-white

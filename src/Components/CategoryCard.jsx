@@ -111,7 +111,7 @@ products?.map(product=>(
 
 key={product._id}
 
-to={`/products/${product.slug}`}
+to={`/product/${product.slug}`}
 
 className="
 group

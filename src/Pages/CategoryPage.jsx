@@ -262,7 +262,7 @@ const CategoryPage = () => {
                   <div
                     key={product._id}
                     className="bg-white rounded-xl shadow border overflow-hidden cursor-pointer"
-                    onClick={() => navigate(`/products/${product.slug}`)}
+                    onClick={() => navigate(`/product/${product.slug}`)}
                   >
                     {/* Image */}
                     <div className="h-56 w-full overflow-hidden">
