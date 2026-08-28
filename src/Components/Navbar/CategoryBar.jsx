@@ -271,11 +271,13 @@ location.pathname===item.path
             Explore Collection
 
           </h3>
-         <button
-    className="text-xl text-gray-700 hover:text-indigo-600 transition"
-  >
-    <FaShoppingBag />
-  </button>
+          <button
+            onClick={() => navigate("/shop")}
+            className="text-xl text-gray-700 hover:text-indigo-600 transition cursor-pointer"
+            aria-label="Shop"
+          >
+            <FaShoppingBag />
+          </button>
 
         </div>
 
