@@ -20,14 +20,14 @@ export default function HeroSlider() {
         }}
         loop
         pagination={{ clickable: true }}
-        className="w-full aspect-[1898/721] max-h-[721px]"
+        className="w-full h-[250px] sm:h-[340px] md:h-[420px] lg:h-auto lg:aspect-[1898/721] max-h-[721px]"
       >
         <SwiperSlide>
           <Link to="/shop" className="block w-full h-full">
             <img
               src={img7}
               alt="Handcrafted Gemstone Ganesha Idols & Statues for Home & Temple - Crystal Jaipuria"
-              className="w-full h-full aspect-[1898/721] max-h-[721px] object-cover object-center block"
+              className="w-full h-[250px] sm:h-[340px] md:h-[420px] lg:h-full lg:aspect-[1898/721] max-h-[721px] object-cover object-center block"
             />
           </Link>
         </SwiperSlide>
@@ -37,7 +37,7 @@ export default function HeroSlider() {
             <img
               src={img8}
               alt="Natural Gemstone Shivling & Sphatik Shiva Linga Manufacturer in Jaipur - Crystal Jaipuria"
-              className="w-full h-full aspect-[1898/721] max-h-[721px] object-cover object-center block"
+              className="w-full h-[250px] sm:h-[340px] md:h-[420px] lg:h-full lg:aspect-[1898/721] max-h-[721px] object-cover object-center block"
             />
           </Link>
         </SwiperSlide>
@@ -47,7 +47,7 @@ export default function HeroSlider() {
             <img
               src={img10}
               alt="Hand Carved Gemstone Radha Krishna Statues & Spiritual Idols - Crystal Jaipuria"
-              className="w-full h-full aspect-[1898/721] max-h-[721px] object-cover object-center block"
+              className="w-full h-[250px] sm:h-[340px] md:h-[420px] lg:h-full lg:aspect-[1898/721] max-h-[721px] object-cover object-center block"
             />
           </Link>
         </SwiperSlide>
