@@ -472,78 +472,37 @@ mt-5
 ">
 
 
-{
-
-product.discountPrice ? (
-
-<>
-
-<span className="
-text-2xl
-sm:text-3xl
-font-bold
-text-indigo-600
-">
-
-₹{product.discountPrice}
-
-</span>
-
-
-<span className="
-line-through
-text-red-500
-text-lg
-sm:text-xl
-">
-
-₹{product.price}
-
-</span>
-
-
-</>
-
-):(
-
-
-<span className="
-text-2xl
-sm:text-3xl
-font-bold
-text-indigo-600
-">
-
-₹{product.price}
-
-</span>
-
-
-)
-
-
-}
-
-
+{Number(product.discountPrice) > 0 && Number(product.discountPrice) !== Number(product.price) ? (
+  <>
+    <span className="text-2xl sm:text-3xl font-bold text-indigo-600">
+      ₹{product.discountPrice}
+    </span>
+    {Number(product.price) > 0 && (
+      <span className="line-through text-red-500 text-lg sm:text-xl">
+        ₹{product.price}
+      </span>
+    )}
+  </>
+) : (
+  Number(product.price) > 0 && (
+    <span className="text-2xl sm:text-3xl font-bold text-indigo-600">
+      ₹{product.price}
+    </span>
+  )
+)}
 </div>
 
-
-{product.pricePerGram && (
-  <>
-  <span className="text-green-700 text-sm sm:text-base mt-2 block">
+{Number(product.pricePerGram) > 0 && (
+  <span className="text-green-700 text-sm sm:text-base mt-2 block font-medium">
     Price per gram: ₹{product.pricePerGram}
   </span>
-  </> 
-)
-  }
+)}
 
-  {product.pricePerCarat && (
-    <>
-    <span className="text-yellow-700 text-sm sm:text-base mt-2 block">
-      Price per carat: ₹{product.pricePerCarat}
-    </span>
-    </>
-  )}
+{Number(product.pricePerCarat) > 0 && (
+  <span className="text-yellow-700 text-sm sm:text-base mt-2 block font-medium">
+    Price per carat: ₹{product.pricePerCarat}
+  </span>
+)}
 
 
 

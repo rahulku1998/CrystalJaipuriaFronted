@@ -279,29 +279,33 @@ const CategoryPage = () => {
                     <div className="p-3">
                       <h2 className="text-base font-bold">{product.name}</h2>
 
-                      {product.discountPrice ? (
+                      {Number(product.discountPrice) > 0 && Number(product.discountPrice) !== Number(product.price) ? (
                         <div className="flex items-center gap-3 mt-2">
                           <span className="text-indigo-600 font-bold text-lg">
                             ₹{product.discountPrice}
                           </span>
-                          <span className="text-red-600 line-through text-sm">
-                            ₹{product.price}
-                          </span>
+                          {Number(product.price) > 0 && (
+                            <span className="text-red-600 line-through text-sm">
+                              ₹{product.price}
+                            </span>
+                          )}
                         </div>
                       ) : (
-                        <span className="text-indigo-600 font-bold text-lg">
-                          ₹{product.price}
-                        </span>
+                        Number(product.price) > 0 && (
+                          <span className="text-indigo-600 font-bold text-lg mt-2 block">
+                            ₹{product.price}
+                          </span>
+                        )
                       )}
 
-                      {product.pricePerGram && (
-                        <p className="text-blue-500 text-sm mt-1">
+                      {Number(product.pricePerGram) > 0 && (
+                        <p className="text-green-700 text-sm font-medium mt-1">
                           Price per gram: ₹{product.pricePerGram}
                         </p>
                       )}
 
-                      {product.pricePerCarat && (
-                        <p className="text-yellow-500 text-sm mt-1">
+                      {Number(product.pricePerCarat) > 0 && (
+                        <p className="text-yellow-700 text-sm font-medium mt-1">
                           Price per carat: ₹{product.pricePerCarat}
                         </p>
                       )}

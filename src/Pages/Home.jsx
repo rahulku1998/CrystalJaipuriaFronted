@@ -244,53 +244,22 @@ line-clamp-2
 
 
 
-<p className="
-mt-2
-
-text-lg
-
-sm:text-xl
-
-font-bold
-
-text-indigo-600
-">
-  
-<span>Price: </span>
-₹ {product.price}
-
-</p>
-
-{product.pricePerGram && (
-<p className="
-mt-2
-
-text-lg
-
-sm:text-xl
-
-font-bold
-
-text-green-700
-">
-<span>price/gram: </span>
-₹ {product.pricePerGram}
-
-</p>
+{Number(product.price) > 0 && (
+  <p className="mt-2 text-lg sm:text-xl font-bold text-indigo-600">
+    <span>Price: </span>₹ {product.price}
+  </p>
 )}
-{product.pricePerCarat && (
-<p className="
-mt-2
-text-lg
 
-sm:text-xl
-font-bold
+{Number(product.pricePerGram) > 0 && (
+  <p className="mt-1 text-sm sm:text-base font-medium text-green-700">
+    <span>price/gram: </span>₹ {product.pricePerGram}
+  </p>
+)}
 
-text-yellow-700
-">
-  <span>price/carat: </span>
-  ₹ {product.pricePerCarat}
-</p>
+{Number(product.pricePerCarat) > 0 && (
+  <p className="mt-1 text-sm sm:text-base font-medium text-yellow-700">
+    <span>price/carat: </span>₹ {product.pricePerCarat}
+  </p>
 )}
 
 

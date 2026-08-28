@@ -34,28 +34,31 @@ const ProductCard = ({ product }) => {
 
         <div className="mt-4">
 
-          {product.discountPrice ? (
+          {Number(product.discountPrice) > 0 && Number(product.discountPrice) !== Number(product.price) ? (
             <>
               <p className="text-indigo-600 font-bold text-xl">
                 ₹{product.discountPrice}
               </p>
-
-              <p className="text-red-400 line-through text-sm">
-                ₹{product.price}
-              </p>
+              {Number(product.price) > 0 && (
+                <p className="text-red-400 line-through text-sm">
+                  ₹{product.price}
+                </p>
+              )}
             </>
           ) : (
-            <p className="text-indigo-600 font-bold text-xl">
-              ₹{product.price}
-            </p>
+            Number(product.price) > 0 && (
+              <p className="text-indigo-600 font-bold text-xl">
+                ₹{product.price}
+              </p>
+            )
           )}
-          {product.pricePerGram && (
-            <p className="text-green-700 text-sm">
+          {Number(product.pricePerGram) > 0 && (
+            <p className="text-green-700 text-sm font-medium">
               <span>Price/gram: </span>₹{product.pricePerGram}
             </p>
           )}
-          {product.pricePerCarat && (
-            <p className="text-yellow-700 text-sm">
+          {Number(product.pricePerCarat) > 0 && (
+            <p className="text-yellow-700 text-sm font-medium">
               <span>Price/carat: </span>₹{product.pricePerCarat}
             </p>
           )}
