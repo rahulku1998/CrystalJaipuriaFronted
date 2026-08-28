@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import API from "../api/axios";
 import ProductCard from "../Components/ProductCard";
 import SEO from "../Components/SEO";
+import NotFound from "./NotFound";
 
 const SubCategoryProducts = () => {
   const { id } = useParams();
@@ -26,6 +27,7 @@ const SubCategoryProducts = () => {
       }
     } catch (err) {
       console.log(err);
+      setProducts([]);
     } finally {
       setLoading(false);
     }
@@ -53,11 +55,18 @@ const SubCategoryProducts = () => {
     return (
       <>
         {seo}
-        <div className="flex justify-center items-center h-[70vh] text-xl">
-          Loading...
+        <div className="min-h-[60vh] flex items-center justify-center text-xl text-indigo-600 font-medium">
+          <div className="flex flex-col items-center gap-3">
+            <div className="w-10 h-10 border-4 border-indigo-200 border-t-indigo-600 rounded-full animate-spin"></div>
+            <span>Loading Products...</span>
+          </div>
         </div>
       </>
     );
+  }
+
+  if (products.length === 0 && !subCategoryName) {
+    return <NotFound />;
   }
 
   return (

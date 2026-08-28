@@ -1,54 +1,57 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import API from "../api/axios";
-import SEO from "../Components/SEO";
 import { formatPrice } from "../utils/price";
 import {
   getProductMetaTitle,
   getProductMetaDescription,
   getProductSchema,
 } from "../utils/seo";
-
+import NotFound from "./NotFound";
 import {
   FaWhatsapp,
   FaFacebook,
   FaTwitter,
   FaLinkedin,
-  FaLink
+  FaLink,
 } from "react-icons/fa";
-
-
+import SEO from "../Components/SEO";
 
 const ProductDetails = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
 
-const [querySubmitted, setQuerySubmitted] = useState(false);
-const [showQueryForm, setShowQueryForm] = useState(false);
+  const [querySubmitted, setQuerySubmitted] = useState(false);
+  const [showQueryForm, setShowQueryForm] = useState(false);
+  const [queryForm, setQueryForm] = useState({
+    fullName: "",
+    whatsappNumber: "",
+    email: "",
+    country: "",
+    quantity: 1,
+    weight: "",
+    message: "",
+  });
 
-const [queryForm, setQueryForm] = useState({
-  fullName: "",
-  whatsappNumber: "",
-  email: "",
-  country: "",
-  quantity: 1,
-  weight: "",
-  message: "",
-});
+  const [activeTab, setActiveTab] = useState("description");
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [selectedImage, setSelectedImage] = useState("");
+  const [copied, setCopied] = useState(false);
+  const [relatedProducts, setRelatedProducts] = useState([]);
 
-const handleQueryChange = (e) => {
-  const { name, value } = e.target;
+  const handleQueryChange = (e) => {
+    const { name, value } = e.target;
+    setQueryForm((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
 
-  setQueryForm((prev) => ({
-    ...prev,
-    [name]: value,
-  }));
-};
-
-const handleQuerySubmit = (e) => {
-  e.preventDefault();
-
-  const whatsappNumber = "918306317032"; // Replace with your WhatsApp number
-
-  const message = `
+  const handleQuerySubmit = (e) => {
+    e.preventDefault();
+    const whatsappNumber = "918306317032";
+    const message = `
 Hello Crystal Jaipuria, I have a query regarding this product.
 
 *Product:* ${product?.name || "N/A"}
@@ -60,87 +63,40 @@ Hello Crystal Jaipuria, I have a query regarding this product.
 *Weight:* ${queryForm.weight || "Not specified"}
 *Message:* ${queryForm.message || "N/A"}
 *Product Link:* ${window.location.href}
-  `.trim();
+    `.trim();
 
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-    message
-  )}`;
-
-  window.open(whatsappUrl, "_blank");
-  setQuerySubmitted(true);
-
-  setShowQueryForm(false);
-
-  setQueryForm({
-    fullName: "",
-    whatsappNumber: "",
-    email: "",
-    country: "",
-    quantity: 1,
-    weight: "",
-    message: "",
-  });
-};
-
-
-
-  const { id } = useParams();
-
-  const navigate = useNavigate();
-
-
-  const [activeTab, setActiveTab] = useState("description");
-
-  const [product, setProduct] = useState(null);
-
-  const [selectedImage, setSelectedImage] = useState("");
-
-  const [copied, setCopied] = useState(false);
-
-  const [relatedProducts, setRelatedProducts] = useState([]);
-
-
-
-
-
-  useEffect(() => {
-
-    fetchProduct();
-
-  }, [id]);
-
-
-
-
-
-
-  const fetchRelatedProducts = async (product) => {
-
-    try {
-
-      const res = await API.get(
-        `/products/category/${product.categoryId._id}`
-      );
-
-      setRelatedProducts(res.data.products);
-
-
-    } catch(err){
-
-      console.log(err);
-
-    }
-
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank");
+    setQuerySubmitted(true);
+    setShowQueryForm(false);
+    setQueryForm({
+      fullName: "",
+      whatsappNumber: "",
+      email: "",
+      country: "",
+      quantity: 1,
+      weight: "",
+      message: "",
+    });
   };
 
+  useEffect(() => {
+    fetchProduct();
+  }, [id]);
 
-
-
-
-
+  const fetchRelatedProducts = async (prod) => {
+    try {
+      if (!prod?.categoryId?._id) return;
+      const res = await API.get(`/products/category/${prod.categoryId._id}`);
+      setRelatedProducts(res.data.products || []);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const fetchProduct = async () => {
     try {
+      setLoading(true);
       const res = await API.get(`/products/${id}`);
       const data = res.data.product;
 
@@ -149,7 +105,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
         return;
       }
 
-      setProduct(data);
+      setProduct(data || null);
       if (data?.categoryId?._id) {
         fetchRelatedProducts(data);
       }
@@ -158,126 +114,50 @@ Hello Crystal Jaipuria, I have a query regarding this product.
       }
     } catch (err) {
       console.log(err);
+      setProduct(null);
+    } finally {
+      setLoading(false);
     }
   };
 
+  const shareUrl = typeof window !== "undefined" ? window.location.href : "";
+  const shareText = `Check out this amazing product: ${product?.name || ""}`;
+  const whatsappShare = `https://wa.me/?text=${encodeURIComponent(shareText + " " + shareUrl)}`;
+  const facebookShare = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+  const twitterShare = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+  const linkedinShare = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
 
-
-
-
-
-
-
-  if(!product){
-
-    return (
-
-      <div className="
-        min-h-screen
-        flex
-        items-center
-        justify-center
-        text-xl
-        sm:text-2xl
-      ">
-
-        Loading...
-
-      </div>
-
-    );
-
-  }
-
-
-
-
-
-
-
-  const whatsappMessage =
-  `Hi Crystal Jaipuria, I am interested in buying "${product.name}". Please share more details on this Number .`;
-
-
-
-  const whatsappLink =
-  `https://wa.me/918306317032?text=${encodeURIComponent(
-    whatsappMessage
-  )}`;
-
-
-
-
-
-
-  const shareUrl = window.location.href;
-
-
-  const shareText =
-  `Check out this amazing product: ${product.name}`;
-
-
-
-
-
-  const whatsappShare =
-  `https://wa.me/?text=${encodeURIComponent(
-    shareText + " " + shareUrl
-  )}`;
-
-
-
-  const facebookShare =
-  `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-    shareUrl
-  )}`;
-
-
-
-  const twitterShare =
-  `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-    shareText
-  )}&url=${encodeURIComponent(shareUrl)}`;
-
-
-
-
-
-  const linkedinShare =
-  `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-    shareUrl
-  )}`;
-
-
-
-
-
-  const copyLink = async()=>{
-
-    await navigator.clipboard.writeText(shareUrl);
-
-    setCopied(true);
-
-
-    setTimeout(()=>{
-
-      setCopied(false);
-
-    },2000);
-
-
+  const copyLink = async () => {
+    if (typeof navigator !== "undefined" && navigator.clipboard) {
+      await navigator.clipboard.writeText(shareUrl);
+      setCopied(true);
+      setTimeout(() => {
+        setCopied(false);
+      }, 2000);
+    }
   };
 
+  if (loading) {
+    return (
+      <div className="min-h-[65vh] flex items-center justify-center text-xl text-indigo-600 font-medium">
+        <div className="flex flex-col items-center gap-3">
+          <div className="w-10 h-10 border-4 border-indigo-200 border-t-indigo-600 rounded-full animate-spin"></div>
+          <span>Loading Product Details...</span>
+        </div>
+      </div>
+    );
+  }
 
-
-
-
-
+  if (!product) {
+    return <NotFound />;
+  }
 
   const canonicalUrl = `https://www.crystaljaipuria.com/products/${product.slug || id}`;
   const metaTitle = getProductMetaTitle(product.name);
   const metaDescription = getProductMetaDescription(product);
   const schema = getProductSchema(product, canonicalUrl);
+  const whatsappMessage = `Hi Crystal Jaipuria, I am interested in buying "${product.name}". Please share more details on this Number .`;
+  const whatsappLink = `https://wa.me/918306317032?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
     <>
@@ -289,39 +169,13 @@ Hello Crystal Jaipuria, I have a query regarding this product.
         type="product"
         schema={schema}
       />
-    <div className="
-  max-w-7xl
-  mx-auto
-  px-4
-  sm:px-6
-  py-8
-  sm:py-10
-">
-
-
-
-<button
-
-onClick={()=>navigate(-1)}
-
-className="
-mb-5
-flex
-items-center
-gap-1
-text-indigo-600
-font-semibold
-hover:underline
-cursor-pointer
-text-sm
-sm:text-base
-"
-
->
-
-← Back to Products
-
-</button>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+        <button
+          onClick={() => navigate(-1)}
+          className="mb-5 flex items-center gap-1 text-indigo-600 font-semibold hover:underline cursor-pointer text-sm sm:text-base"
+        >
+          ← Back to Products
+        </button>
 
 
 

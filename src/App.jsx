@@ -46,25 +46,21 @@ function App() {
             </>
           }
         />
-   <Route path="/blog" element ={<Blog/>}/>
-   <Route path="/blog/:slug" element={<BlogDetails/>}/>
-  <Route path="/about" element={<About />} />
-  <Route path="/contact" element={<Contact />} />
-   <Route path="/:slug" element={<CategoryPage />} />
-   <Route 
- path="/shop" 
- element={<Shop />} 
-/>
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogDetails />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/shop" element={<Shop />} />
 
         {/* SUBCATEGORY PRODUCTS */}
         <Route path="/subcategory/:id" element={<SubCategoryProducts />} />
 
         {/* PRODUCT DETAILS */}
-        <Route
-  path="/products/:slug"
-  element={<ProductDetailsSlug />}
-/>
+        <Route path="/products/:slug" element={<ProductDetailsSlug />} />
         <Route path="/product/:id" element={<ProductDetails />} />
+
+        {/* DYNAMIC CATEGORY */}
+        <Route path="/:slug" element={<CategoryPage />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={

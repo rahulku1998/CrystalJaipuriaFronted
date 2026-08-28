@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import API from "../api/axios";
 import SEO from "../Components/SEO";
 import { formatPrice } from "../utils/price";
+import NotFound from "./NotFound";
 
 const CATEGORY_SEO = {
   "god-statues": {
@@ -187,22 +188,18 @@ const CategoryPage = () => {
     return (
       <>
         {seo}
-        <div className="p-10 text-center text-xl font-medium">
-          <h2>Loading Products...</h2>
+        <div className="min-h-[60vh] flex items-center justify-center text-xl text-indigo-600 font-medium">
+          <div className="flex flex-col items-center gap-3">
+            <div className="w-10 h-10 border-4 border-indigo-200 border-t-indigo-600 rounded-full animate-spin"></div>
+            <span>Loading Products...</span>
+          </div>
         </div>
       </>
     );
   }
 
   if (!category) {
-    return (
-      <>
-        {seo}
-        <div className="p-10 text-center text-xl">
-          <h2>No Category Found</h2>
-        </div>
-      </>
-    );
+    return <NotFound />;
   }
 
   return (
