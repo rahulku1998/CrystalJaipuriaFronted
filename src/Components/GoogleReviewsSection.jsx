@@ -217,7 +217,7 @@ const GoogleReviewsSection = () => {
             }}
             loop={true}
             spaceBetween={16}
-            slidesPerView={1.12}
+            slidesPerView={1}
             breakpoints={{
               640: {
                 slidesPerView: 2,
