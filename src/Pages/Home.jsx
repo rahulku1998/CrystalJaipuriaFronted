@@ -244,21 +244,12 @@ line-clamp-2
 
 
 
-{Number(product.price) > 0 && (
+{product.price && (
   <p className="mt-2 text-lg sm:text-xl font-bold text-indigo-600">
-    <span>Price: </span>₹ {product.price}
-  </p>
-)}
-
-{Number(product.pricePerGram) > 0 && (
-  <p className="mt-1 text-sm sm:text-base font-medium text-green-700">
-    <span>price/gram: </span>₹ {product.pricePerGram}
-  </p>
-)}
-
-{Number(product.pricePerCarat) > 0 && (
-  <p className="mt-1 text-sm sm:text-base font-medium text-yellow-700">
-    <span>price/carat: </span>₹ {product.pricePerCarat}
+    <span>Price: </span>
+    {String(product.price).trim().startsWith("₹")
+      ? product.price
+      : `₹ ${product.price}`}
   </p>
 )}
 

@@ -268,48 +268,8 @@ name="price"
 type="text"
 
 value={form.price}
-
 onChange={handleChange}
-
-placeholder="Enter price"
-
-/>
-<Input
-label="Price Per Gram" 
-name="pricePerGram"
-type="text"
-value={form.pricePerGram}
-onChange={handleChange}
-placeholder="Enter price per gram"
-/>
-
-<Input
-label="Price Per Carat"
-name="pricePerCarat"
-type="text" 
-value={form.pricePerCarat}
-onChange={handleChange}
-placeholder="Enter price per carat"
-/>
-
-
-
-
-
-<Input
-
-label="Discount Price"
-
-name="discountPrice"
-
-type="text"
-
-value={form.discountPrice}
-
-onChange={handleChange}
-
-placeholder="Enter discount price"
-
+placeholder="e.g. 1000, 6/GRAM, 500/carat"
 />
 
 <Input

@@ -215,21 +215,11 @@ min-h-[40px]
 
 
 
-{Number(product.price) > 0 && (
+{product.price && (
   <p className="mt-2 text-base sm:text-lg font-bold text-indigo-600">
-    ₹ {product.price}
-  </p>
-)}
-
-{Number(product.pricePerGram) > 0 && (
-  <p className="mt-1 text-sm sm:text-base font-medium text-green-700">
-    Price per gram: ₹{product.pricePerGram}
-  </p>
-)}
-
-{Number(product.pricePerCarat) > 0 && (
-  <p className="mt-1 text-sm sm:text-base font-medium text-yellow-700">
-    Price per carat: ₹{product.pricePerCarat}
+    {String(product.price).trim().startsWith("₹")
+      ? product.price
+      : `₹ ${product.price}`}
   </p>
 )}  
 
