@@ -7,6 +7,7 @@ import StatsSection from "../Components/StatsSection";
 import { Link } from "react-router-dom";
 import AboutGemstoneSection from "../Components/about";
 import FAQSection from "../Components/FAQSection";
+import GoogleReviewsSection from "../Components/GoogleReviewsSection";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -395,6 +396,8 @@ products={categoryProducts[category._id] || []}
 
 
 <StatsSection />
+
+<GoogleReviewsSection />
 
 <FAQSection />
 
