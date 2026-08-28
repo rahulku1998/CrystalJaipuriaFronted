@@ -26,12 +26,8 @@ const BlogDetails = () => {
     fetchBlog();
   }, [slug]);
 
-  if (loading) {
-    return (
-      <div className="py-16 sm:py-20 text-center px-4">
-        <h2 className="text-lg sm:text-xl font-semibold">Loading Story...</h2>
-      </div>
-    );
+  if (loading && !blog) {
+    return null;
   }
 
   if (!blog) {

@@ -47,16 +47,7 @@ const Shop = () => {
     />
   );
 
-  if (loading) {
-    return (
-      <>
-        {seo}
-        <div className="min-h-screen flex items-center justify-center">
-          <h2 className="text-xl font-semibold">Loading Products...</h2>
-        </div>
-      </>
-    );
-  }
+
 
   return (
     <>
@@ -83,7 +74,7 @@ const Shop = () => {
             </div>
           </div>
 
-          {filteredProducts.length === 0 ? (
+          {filteredProducts.length === 0 && !loading ? (
             <div className="text-center py-20 text-gray-500 text-lg">
               No Products Found
             </div>

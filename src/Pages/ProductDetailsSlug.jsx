@@ -151,15 +151,8 @@ Hello Crystal Jaipuria, I have a query regarding this product.
     }
   };
 
-  if (loading) {
-    return (
-      <div className="min-h-[65vh] flex items-center justify-center text-xl text-indigo-600 font-medium">
-        <div className="flex flex-col items-center gap-3">
-          <div className="w-10 h-10 border-4 border-indigo-200 border-t-indigo-600 rounded-full animate-spin"></div>
-          <span>Loading Product Details...</span>
-        </div>
-      </div>
-    );
+  if (loading && !product) {
+    return null;
   }
 
   if (!product) {
