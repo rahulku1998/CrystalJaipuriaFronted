@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import API from "../api/axios";
+import RichTextEditor from "../Components/RichTextEditor";
 
 const EditProduct = () => {
   const { id } = useParams();
@@ -223,28 +224,18 @@ className="w-full rounded-xl border border-gray-200 bg-gray-50 px-5 py-4 outline
 </div>
 
 <div>
-
-<label className="block mb-2 font-semibold text-gray-700">
-Description <span className="text-red-500">*</span>
-</label>
-
-<textarea
-
-name="description"
-
-value={form.description}
-
-onChange={handleChange}
-
-rows="5"
-
-placeholder="Enter product description"
-
-className="w-full rounded-xl border border-gray-200 bg-gray-50 px-5 py-4 outline-none focus:bg-white focus:ring-2 focus:ring-gray-300"
-
-></textarea>
-
-
+  <RichTextEditor
+    label={
+      <>
+        Description <span className="text-red-500">*</span>
+      </>
+    }
+    name="description"
+    value={form.description}
+    onChange={handleChange}
+    rows={6}
+    placeholder="Enter product description..."
+  />
 </div>
 
 
@@ -361,29 +352,14 @@ placeholder="Available stock"
 
 
 <div>
-
-<label className="block mb-2 font-semibold text-gray-700">
-Additional Information
-</label>
-
-
-<textarea
-
-name="additionalInfo"
-
-value={form.additionalInfo}
-
-onChange={handleChange}
-
-rows="3"
-
-placeholder="Material, size, color etc."
-
-className="w-full rounded-xl border border-gray-200 bg-gray-50 px-5 py-4 outline-none focus:bg-white focus:ring-2 focus:ring-gray-300"
-
-/>
-
-
+  <RichTextEditor
+    label="Additional Information"
+    name="additionalInfo"
+    value={form.additionalInfo}
+    onChange={handleChange}
+    rows={4}
+    placeholder="Material, size, color, specifications etc."
+  />
 </div>
 
 

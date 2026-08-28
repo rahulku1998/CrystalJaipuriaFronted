@@ -80,9 +80,10 @@ const BlogDetails = () => {
               </h1>
 
               {/* Content */}
-              <div className="text-gray-700 text-base sm:text-lg leading-7 sm:leading-9 prose max-w-none whitespace-pre-line">
-                {blog.content}
-              </div>
+              <div
+                className="text-gray-700 text-base sm:text-lg leading-7 sm:leading-9 prose max-w-none [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_blockquote]:border-l-4 [&_blockquote]:border-orange-500 [&_blockquote]:pl-4 [&_blockquote]:italic [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2"
+                dangerouslySetInnerHTML={{ __html: blog.content }}
+              />
 
               {/* Share */}
               <div className="mt-8 sm:mt-10">

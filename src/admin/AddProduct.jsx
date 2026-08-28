@@ -1,5 +1,6 @@
 import { useState,useEffect } from "react";
 import API from "../api/axios";
+import RichTextEditor from "../Components/RichTextEditor";
 
 const AddProduct = () => {
 
@@ -269,40 +270,18 @@ const handleCategoryChange = async (e) => {
 
 
             <div>
-
-              <label className="block mb-2 font-semibold text-gray-700">
-
-                Description <span className="text-red-500">*</span>
-              </label>
-
-
-              <textarea
-
+              <RichTextEditor
+                label={
+                  <>
+                    Description <span className="text-red-500">*</span>
+                  </>
+                }
                 name="description"
-
                 value={form.description}
-
                 onChange={handleChange}
-
-                rows="5"
-
-                className="
-                w-full
-                rounded-xl
-                border
-                px-5
-                py-4
-                bg-gray-50
-                outline-none
-                focus:bg-white
-                focus:ring-2
-                focus:ring-gray-300
-                "
-
-                placeholder="Enter description"
-
+                rows={6}
+                placeholder="Enter description..."
               />
-
             </div>
 
 
@@ -387,33 +366,14 @@ subCategories.map((sub)=>(
 
 
             <div>
-
-              <label className="block mb-2 font-semibold text-gray-700">
-                Additional Information
-              </label>
-
-
-              <textarea
-
+              <RichTextEditor
+                label="Additional Information"
                 name="additionalInfo"
-
                 value={form.additionalInfo}
-
                 onChange={handleChange}
-
-                rows="3"
-
-                className="
-                w-full
-                rounded-xl
-                border
-                px-5
-                py-4
-                bg-gray-50
-                "
-
+                rows={4}
+                placeholder="Enter additional specifications or details..."
               />
-
             </div>
 
 

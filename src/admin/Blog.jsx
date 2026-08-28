@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import API from "../api/axios";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import RichTextEditor from "../Components/RichTextEditor";
 
 
 const Blog = () => {
@@ -263,13 +264,13 @@ className="w-full border p-3 rounded"
 />
 
 
-<textarea
+<RichTextEditor
+  label="Blog Content"
   name="content"
-  placeholder="Blog Content"
-  rows={8}
+  placeholder="Write your blog story here..."
+  rows={10}
   value={form.content}
   onChange={handleChange}
-  className="w-full border p-3 rounded"
 />
 
 

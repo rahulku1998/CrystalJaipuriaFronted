@@ -1173,52 +1173,21 @@ min-h-[150px]
 ">
 
 
-{
+{activeTab === "description" && (
+  <div
+    className="text-gray-600 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2"
+    dangerouslySetInnerHTML={{ __html: product.description || "No description available." }}
+  />
+)}
 
-activeTab==="description" && (
-
-<p className="
-text-gray-600
-text-sm
-sm:text-base
-leading-7
-sm:leading-8
-">
-
-{product.description}
-
-</p>
-
-)
-
-}
-
-
-
-
-
-{
-
-activeTab==="additional" && (
-
-<p className="
-text-gray-600
-text-sm
-sm:text-base
-leading-7
-sm:leading-8
-">
-
-{
-product.additionalInfo ||
-"No additional information available."
-}
-
-</p>
-
-)
-
-}
+{activeTab === "additional" && (
+  <div
+    className="text-gray-600 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2"
+    dangerouslySetInnerHTML={{
+      __html: product.additionalInfo || "No additional information available.",
+    }}
+  />
+)}
 
 
 
