@@ -1,6 +1,7 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import API from "../api/axios";
 import RichTextEditor from "../Components/RichTextEditor";
+import { FaCloudUploadAlt, FaTimes, FaTrashAlt, FaImages } from "react-icons/fa";
 
 const AddProduct = () => {
 
@@ -96,81 +97,84 @@ const handleCategoryChange = async (e) => {
 
 
 
-  const handleImageChange=(e)=>{
-
+  const handleImageChange = (e) => {
     const files = Array.from(e.target.files);
-
-    setImages(files);
-
-    setPreview(
-      files.map(file=>URL.createObjectURL(file))
-    );
-
+    if (files.length === 0) return;
+    setImages((prev) => [...prev, ...files]);
+    const newPreviews = files.map((file) => URL.createObjectURL(file));
+    setPreview((prev) => [...prev, ...newPreviews]);
+    e.target.value = "";
   };
 
+  const handleRemoveImage = (indexToRemove) => {
+    setImages((prev) => prev.filter((_, i) => i !== indexToRemove));
+    setPreview((prev) => {
+      if (prev[indexToRemove]) URL.revokeObjectURL(prev[indexToRemove]);
+      return prev.filter((_, i) => i !== indexToRemove);
+    });
+  };
 
+  const handleClearAllImages = () => {
+    preview.forEach((url) => URL.revokeObjectURL(url));
+    setImages([]);
+    setPreview([]);
+  };
 
-  const handleSubmit=async(e)=>{
-
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try{
+    if (images.length === 0) {
+      alert("Please upload at least 1 product image.");
+      return;
+    }
 
+    try {
       setLoading(true);
 
       const formData = new FormData();
 
-
-      Object.keys(form).forEach(key=>{
-        formData.append(key,form[key]);
+      Object.keys(form).forEach((key) => {
+        if (form[key] !== "" && form[key] !== null && form[key] !== undefined) {
+          formData.append(key, form[key]);
+        }
       });
 
-
-
-      images.forEach(img=>{
-        formData.append("images",img);
+      images.forEach((img) => {
+        formData.append("images", img);
       });
-
-
 
       await API.post(
         "/products",
         formData,
         {
-          headers:{
-            "Content-Type":"multipart/form-data"
+          headers: {
+            "Content-Type": "multipart/form-data"
           }
         }
       );
 
-
-
       alert("Product Added Successfully");
 
-
       setForm({
-        name:"",
-        description:"",
-        price:"",
-        discountPrice:"",
-        categoryId:"",
-        subCategoryId:"",
-        stock:"",
-        additionalInfo:"",
-        detail:"",
-        weight:"",
-        pricePerGram:"",
-        pricePerCarat:"",
-        size:""
+        name: "",
+        description: "",
+        price: "",
+        discountPrice: "",
+        categoryId: "",
+        subCategoryId: "",
+        stock: "",
+        additionalInfo: "",
+        detail: "",
+        weight: "",
+        pricePerGram: "",
+        pricePerCarat: "",
+        size: ""
       });
-
 
       setImages([]);
       setPreview([]);
 
-
-
-    }catch(err){
+    } catch (err) {
 
       alert(
         err.response?.data?.message ||
@@ -380,55 +384,74 @@ subCategories.map((sub)=>(
 
 
             <div>
-
-
-              <label className="block mb-3 font-semibold">
-                Product Images
-              </label>
-
-
-              <input
-
-                type="file"
-
-                multiple
-
-                onChange={handleImageChange}
-
-                className="border p-3 rounded-xl w-full"
-
-              />
-
-
-              <div className="flex gap-5 flex-wrap mt-5">
-
-
-                {
-                  preview.map((img,index)=>(
-
-                    <img
-
-                      key={index}
-
-                      src={img}
-
-                      className="
-                      w-28
-                      h-28
-                      rounded-xl
-                      object-cover
-                      shadow
-                      "
-
-                    />
-
-                  ))
-                }
-
-
+              <div className="flex items-center justify-between mb-3">
+                <label className="font-semibold text-gray-800 flex items-center gap-2">
+                  <FaImages className="text-indigo-600" />
+                  <span>Product Images (Multiple Supported)</span>
+                </label>
+                {preview.length > 0 && (
+                  <div className="flex items-center gap-3">
+                    <span className="text-xs font-semibold px-2.5 py-1 bg-indigo-50 text-indigo-700 rounded-full border border-indigo-200">
+                      {preview.length} {preview.length === 1 ? "Image" : "Images"} Selected
+                    </span>
+                    <button
+                      type="button"
+                      onClick={handleClearAllImages}
+                      className="text-xs text-red-600 hover:text-red-800 font-medium flex items-center gap-1 cursor-pointer"
+                    >
+                      <FaTrashAlt className="text-xs" />
+                      Clear All
+                    </button>
+                  </div>
+                )}
               </div>
 
+              {/* Upload Drop Area */}
+              <label className="flex flex-col items-center justify-center border-2 border-dashed border-indigo-300 hover:border-indigo-500 bg-indigo-50/40 hover:bg-indigo-50/80 rounded-2xl p-6 cursor-pointer transition-all duration-200 group">
+                <FaCloudUploadAlt className="text-4xl text-indigo-500 group-hover:scale-110 duration-200 mb-2" />
+                <span className="font-semibold text-indigo-900 text-sm sm:text-base">
+                  Click to select multiple images
+                </span>
+                <span className="text-xs text-gray-500 mt-1">
+                  PNG, JPG, WEBP • You can select multiple images or add them one by one
+                </span>
+                <input
+                  type="file"
+                  multiple
+                  accept="image/*"
+                  onChange={handleImageChange}
+                  className="hidden"
+                />
+              </label>
 
+              {/* Image Previews Grid */}
+              {preview.length > 0 && (
+                <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-4 mt-5">
+                  {preview.map((img, index) => (
+                    <div
+                      key={index}
+                      className="relative group rounded-xl overflow-hidden shadow-md border border-gray-200 bg-white aspect-square"
+                    >
+                      <img
+                        src={img}
+                        alt={`Preview ${index + 1}`}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute top-1.5 left-1.5 bg-black/70 text-white text-[10px] px-1.5 py-0.5 rounded font-bold">
+                        #{index + 1}
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => handleRemoveImage(index)}
+                        className="absolute top-1.5 right-1.5 bg-red-600 hover:bg-red-700 text-white p-1.5 rounded-full shadow-lg transition-transform hover:scale-110 cursor-pointer"
+                        title="Remove image"
+                      >
+                        <FaTimes className="text-xs" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
 

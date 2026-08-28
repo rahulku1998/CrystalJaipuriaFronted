@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import API from "../api/axios";
 import RichTextEditor from "../Components/RichTextEditor";
+import { FaCloudUploadAlt, FaTimes, FaTrashAlt, FaImages } from "react-icons/fa";
 
 const EditProduct = () => {
   const { id } = useParams();
@@ -24,9 +25,10 @@ const EditProduct = () => {
     pricePerCarat: "",
     size: ""
   });
-const [categories,setCategories] = useState([]);
-const [subCategories,setSubCategories] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [subCategories, setSubCategories] = useState([]);
   const [images, setImages] = useState([]);
+  const [preview, setPreview] = useState([]);
   const [existingImages, setExistingImages] = useState([]);
 
   // input change
@@ -34,9 +36,32 @@ const [subCategories,setSubCategories] = useState([]);
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // file change
+  // file change (appends new files so multiple clicks/files work seamlessly)
   const handleImageChange = (e) => {
-    setImages(e.target.files);
+    const files = Array.from(e.target.files);
+    if (files.length === 0) return;
+    setImages((prev) => [...prev, ...files]);
+    const newPreviews = files.map((file) => URL.createObjectURL(file));
+    setPreview((prev) => [...prev, ...newPreviews]);
+    e.target.value = "";
+  };
+
+  const handleRemoveNewImage = (indexToRemove) => {
+    setImages((prev) => prev.filter((_, i) => i !== indexToRemove));
+    setPreview((prev) => {
+      if (prev[indexToRemove]) URL.revokeObjectURL(prev[indexToRemove]);
+      return prev.filter((_, i) => i !== indexToRemove);
+    });
+  };
+
+  const handleClearAllNewImages = () => {
+    preview.forEach((url) => URL.revokeObjectURL(url));
+    setImages([]);
+    setPreview([]);
+  };
+
+  const handleRemoveExistingImage = (indexToRemove) => {
+    setExistingImages((prev) => prev.filter((_, i) => i !== indexToRemove));
   };
 
   // fetch product
@@ -125,14 +150,16 @@ res.data.subCategories
       const formData = new FormData();
 
       Object.keys(form).forEach((key) => {
-        if (form[key] !== "") {
+        if (form[key] !== "" && form[key] !== null && form[key] !== undefined) {
           formData.append(key, form[key]);
         }
       });
 
-      for (let i = 0; i < images.length; i++) {
-        formData.append("images", images[i]);
-      }
+      images.forEach((img) => {
+        formData.append("images", img);
+      });
+
+      formData.append("existingImages", JSON.stringify(existingImages));
 
       await API.put(`/products/${id}`, formData, {
         headers: {
@@ -368,78 +395,118 @@ placeholder="Available stock"
 
 
 
-<div>
+            {/* Existing Images */}
+            {existingImages.length > 0 && (
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <h2 className="text-lg font-bold text-gray-800 flex items-center gap-2">
+                    <FaImages className="text-indigo-600" />
+                    <span>Current Product Images</span>
+                  </h2>
+                  <span className="text-xs font-semibold px-2.5 py-1 bg-gray-100 text-gray-700 rounded-full border">
+                    {existingImages.length} {existingImages.length === 1 ? "Image" : "Images"}
+                  </span>
+                </div>
 
+                <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-4">
+                  {existingImages.map((img, index) => (
+                    <div
+                      key={index}
+                      className="relative group rounded-xl overflow-hidden shadow-md border border-gray-200 bg-white aspect-square"
+                    >
+                      <img
+                        src={img.url}
+                        alt={`Product ${index + 1}`}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute top-1.5 left-1.5 bg-black/70 text-white text-[10px] px-1.5 py-0.5 rounded font-bold">
+                        #{index + 1}
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => handleRemoveExistingImage(index)}
+                        className="absolute top-1.5 right-1.5 bg-red-600 hover:bg-red-700 text-white p-1.5 rounded-full shadow-lg transition-transform hover:scale-110 cursor-pointer"
+                        title="Remove existing image"
+                      >
+                        <FaTimes className="text-xs" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
-<h2 className="text-xl font-bold text-gray-800 mb-4">
-Existing Images
-</h2>
+            {/* Upload New Images */}
+            <div>
+              <div className="flex items-center justify-between mb-3">
+                <label className="font-semibold text-gray-800 flex items-center gap-2">
+                  <FaCloudUploadAlt className="text-indigo-600 text-lg" />
+                  <span>Upload More / New Images (Multiple Supported)</span>
+                </label>
+                {preview.length > 0 && (
+                  <div className="flex items-center gap-3">
+                    <span className="text-xs font-semibold px-2.5 py-1 bg-indigo-50 text-indigo-700 rounded-full border border-indigo-200">
+                      {preview.length} New {preview.length === 1 ? "Image" : "Images"} Selected
+                    </span>
+                    <button
+                      type="button"
+                      onClick={handleClearAllNewImages}
+                      className="text-xs text-red-600 hover:text-red-800 font-medium flex items-center gap-1 cursor-pointer"
+                    >
+                      <FaTrashAlt className="text-xs" />
+                      Clear New
+                    </button>
+                  </div>
+                )}
+              </div>
 
+              {/* Upload Drop Area */}
+              <label className="flex flex-col items-center justify-center border-2 border-dashed border-indigo-300 hover:border-indigo-500 bg-indigo-50/40 hover:bg-indigo-50/80 rounded-2xl p-6 cursor-pointer transition-all duration-200 group">
+                <FaCloudUploadAlt className="text-4xl text-indigo-500 group-hover:scale-110 duration-200 mb-2" />
+                <span className="font-semibold text-indigo-900 text-sm sm:text-base">
+                  Click to select multiple new images
+                </span>
+                <span className="text-xs text-gray-500 mt-1">
+                  PNG, JPG, WEBP • You can select multiple images or add them in batches
+                </span>
+                <input
+                  type="file"
+                  multiple
+                  accept="image/*"
+                  onChange={handleImageChange}
+                  className="hidden"
+                />
+              </label>
 
-<div className="flex flex-wrap gap-5">
-
-
-{
-existingImages.map((img,index)=>(
-
-<div
-key={index}
-className="rounded-xl overflow-hidden shadow border"
->
-
-
-<img
-
-src={img.url}
-
-alt="product"
-
-className="w-28 h-28 object-cover"
-
-/>
-
-
-</div>
-
-))
-}
-
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-
-
-<div>
-
-
-<label className="block mb-3 font-semibold text-gray-700">
-Upload New Images
-</label>
-
-
-<input
-
-type="file"
-
-multiple
-
-onChange={handleImageChange}
-
-className="w-full border border-gray-300 rounded-xl p-3 bg-gray-50"
-
-/>
-
-
-</div>
+              {/* New Previews Grid */}
+              {preview.length > 0 && (
+                <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-4 mt-5">
+                  {preview.map((img, index) => (
+                    <div
+                      key={index}
+                      className="relative group rounded-xl overflow-hidden shadow-md border-2 border-indigo-400 bg-white aspect-square"
+                    >
+                      <img
+                        src={img}
+                        alt={`New Preview ${index + 1}`}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute top-1.5 left-1.5 bg-indigo-600 text-white text-[10px] px-1.5 py-0.5 rounded font-bold">
+                        NEW #{index + 1}
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => handleRemoveNewImage(index)}
+                        className="absolute top-1.5 right-1.5 bg-red-600 hover:bg-red-700 text-white p-1.5 rounded-full shadow-lg transition-transform hover:scale-110 cursor-pointer"
+                        title="Remove new image"
+                      >
+                        <FaTimes className="text-xs" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
 
 
 
