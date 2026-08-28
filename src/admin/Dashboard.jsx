@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import API from "../api/axios";
+import { formatPrice } from "../utils/price";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
@@ -305,9 +306,7 @@ className="w-14 h-14 rounded-lg object-cover"
 
 
 
-<td>
-₹{p.price}
-</td>
+<td>{formatPrice(p.price)}</td>
 
 
 

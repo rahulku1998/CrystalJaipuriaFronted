@@ -5,6 +5,7 @@ import SEO from "../Components/SEO";
 import homeImg from "../assets/images/banner-divine.webp";
 import StatsSection from "../Components/StatsSection";
 import { Link } from "react-router-dom";
+import { formatPrice } from "../utils/price";
 import AboutGemstoneSection from "../Components/about";
 import FAQSection from "../Components/FAQSection";
 import GoogleReviewsSection from "../Components/GoogleReviewsSection";
@@ -247,9 +248,7 @@ line-clamp-2
 {product.price && (
   <p className="mt-2 text-lg sm:text-xl font-bold text-indigo-600">
     <span>Price: </span>
-    {String(product.price).trim().startsWith("₹")
-      ? product.price
-      : `₹ ${product.price}`}
+    {formatPrice(product.price)}
   </p>
 )}
 

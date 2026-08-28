@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { formatPrice } from "../utils/price";
 
 const ProductCard = ({ product }) => {
   return (
@@ -35,9 +36,7 @@ const ProductCard = ({ product }) => {
         {product.price && (
           <div className="mt-4">
             <p className="text-indigo-600 font-bold text-xl">
-              {String(product.price).trim().startsWith("₹")
-                ? product.price
-                : `₹${product.price}`}
+              {formatPrice(product.price)}
             </p>
           </div>
         )}

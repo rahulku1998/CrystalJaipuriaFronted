@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import API from "../api/axios";
 import SEO from "../Components/SEO";
+import { formatPrice } from "../utils/price";
 import {
   getProductMetaTitle,
   getProductMetaDescription,
@@ -474,9 +475,7 @@ mt-5
 
 {product.price && (
   <span className="text-2xl sm:text-3xl font-bold text-indigo-600">
-    {String(product.price).trim().startsWith("₹")
-      ? product.price
-      : `₹${product.price}`}
+    {formatPrice(product.price)}
   </span>
 )}
 </div>
@@ -1364,7 +1363,7 @@ line-clamp-2
 
 {item.price && (
   <span className="font-bold text-indigo-600 text-sm sm:text-base">
-    {String(item.price).trim().startsWith("₹") ? item.price : `₹${item.price}`}
+    {formatPrice(item.price)}
   </span>
 )}
 

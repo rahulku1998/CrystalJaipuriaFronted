@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import API from "../api/axios";
 import SEO from "../Components/SEO";
+import { formatPrice } from "../utils/price";
 
 const CATEGORY_SEO = {
   "god-statues": {
@@ -281,9 +282,7 @@ const CategoryPage = () => {
 
                       {product.price && (
                         <span className="text-indigo-600 font-bold text-lg mt-2 block">
-                          {String(product.price).trim().startsWith("₹")
-                            ? product.price
-                            : `₹${product.price}`}
+                          {formatPrice(product.price)}
                         </span>
                       )}
 

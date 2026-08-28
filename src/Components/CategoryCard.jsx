@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { formatPrice } from "../utils/price";
 
 
 const CategorySection = ({ title, slug, products }) => {
@@ -217,9 +218,7 @@ min-h-[40px]
 
 {product.price && (
   <p className="mt-2 text-base sm:text-lg font-bold text-indigo-600">
-    {String(product.price).trim().startsWith("₹")
-      ? product.price
-      : `₹ ${product.price}`}
+    {formatPrice(product.price)}
   </p>
 )}  
 
