@@ -139,13 +139,15 @@ Hello Crystal Jaipuria, I have a query regarding this product.
 const fetchProduct = async () => {
     try {
       const res = await API.get(`/products/slug/${slug}`);
-
       const data = res.data.product;
-
       setProduct(data);
 
-      if (data.images?.length > 0) {
+      if (data?.images?.length > 0) {
         setSelectedImage(data.images[0].url);
+      }
+
+      if (data?.categoryId?._id) {
+        fetchRelatedProducts(data);
       }
     } catch (err) {
       console.log("Slug product error:", err);
@@ -1360,7 +1362,7 @@ relatedProducts.map((item)=>(
 
 key={item._id}
 
-onClick={()=>navigate(`/product/${item._id}`)}
+onClick={()=>navigate(`/products/${item.slug || item._id}`)}
 
 className="
 bg-white

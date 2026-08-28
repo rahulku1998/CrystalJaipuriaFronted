@@ -139,39 +139,25 @@ Hello Crystal Jaipuria, I have a query regarding this product.
 
 
   const fetchProduct = async () => {
-
-
     try {
-
-
       const res = await API.get(`/products/${id}`);
-
-
       const data = res.data.product;
 
-
-      setProduct(data);
-
-
-      fetchRelatedProducts(data);
-
-
-
-      if(data.images.length > 0){
-
-        setSelectedImage(data.images[0].url);
-
+      if (data?.slug) {
+        navigate(`/products/${data.slug}`, { replace: true });
+        return;
       }
 
-
-
-    } catch(err){
-
+      setProduct(data);
+      if (data?.categoryId?._id) {
+        fetchRelatedProducts(data);
+      }
+      if (data?.images?.length > 0) {
+        setSelectedImage(data.images[0].url);
+      }
+    } catch (err) {
       console.log(err);
-
     }
-
-
   };
 
 
@@ -1363,7 +1349,7 @@ relatedProducts.map((item)=>(
 
 key={item._id}
 
-onClick={()=>navigate(`/product/${item._id}`)}
+onClick={()=>navigate(`/products/${item.slug || item._id}`)}
 
 className="
 bg-white
