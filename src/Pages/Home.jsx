@@ -6,6 +6,7 @@ import homeImg from "../assets/images/banner-divine.webp";
 import StatsSection from "../Components/StatsSection";
 import { Link } from "react-router-dom";
 import AboutGemstoneSection from "../Components/about";
+import FAQSection from "../Components/FAQSection";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -394,6 +395,8 @@ products={categoryProducts[category._id] || []}
 
 
 <StatsSection />
+
+<FAQSection />
 
 
 

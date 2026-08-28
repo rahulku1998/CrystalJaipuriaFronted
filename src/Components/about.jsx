@@ -45,12 +45,12 @@ const AboutGemstoneSection = () => {
             </div>
 
             {/* Heading */}
-            <h2 className="max-w-2xl text-3xl font-semibold leading-tight tracking-tight text-stone-900 sm:text-4xl lg:text-[42px]">
-              Handcrafted Gemstone Statues & Crystal Carvings Manufacturer
-              <span className="block text-indigo-700">
-                in Jaipur, India
+            <h1 className="max-w-2xl text-2xl font-bold leading-snug tracking-tight text-stone-900 sm:text-3xl lg:text-[32px] xl:text-[36px]">
+              Handcrafted Gemstone Statues & Crystal Carvings
+              <span className="block text-indigo-700 font-bold mt-1">
+                Manufacturer in Jaipur, India
               </span>
-            </h2>
+            </h1>
 
             {/* Content */}
             <div className="mt-5 space-y-4 text-[15px] leading-7 text-stone-600 sm:text-base">
