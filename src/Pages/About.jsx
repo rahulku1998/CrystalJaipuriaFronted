@@ -1,10 +1,23 @@
 import aboutBanner from "../assets/about/About-Us.webp";
 import workshop from "../assets/about/workshop.webp";
 import StatsSection from "../Components/StatsSection";
+import SEO from "../Components/SEO";
 
 const About = () => {
   return (
-    <div className="bg-white overflow-hidden">
+    <>
+      <SEO
+        title="About Crystal Jaipuria | Gemstone & Handicraft Manufacturer"
+        description="Learn about Crystal Jaipuria, a Jaipur-based gemstone, crystal and handicraft manufacturer with over 35 years of experience in manufacturing and wholesale trading."
+        canonical="https://www.crystaljaipuria.com/about"
+        ogTitle="About Crystal Jaipuria | Gemstone & Handicraft Manufacturer"
+        ogDescription="Discover the story of Crystal Jaipuria, a Jaipur-based gemstone and handicraft manufacturer with over 35 years of experience in manufacturing and wholesale trading."
+        twitterTitle="About Crystal Jaipuria | Gemstone & Handicraft Manufacturer"
+        twitterDescription="Discover the story of Crystal Jaipuria, a Jaipur-based gemstone and handicraft manufacturer with over 35 years of experience in manufacturing and wholesale trading."
+        image="https://www.crystaljaipuria.com/logo.png"
+        type="website"
+      />
+      <div className="bg-white overflow-hidden">
 
       {/* Hero Section */}
       <section className="relative h-[350px] sm:h-[400px] md:h-[450px] w-full">
@@ -801,9 +814,9 @@ const About = () => {
       </section>
 
 
-    </div>
+      </div>
+    </>
   );
 };
-
 
 export default About;

@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import Navbar from './Components/Navbar/Navbar'
 import Footer from './Components/Footer'
@@ -15,19 +14,16 @@ import AdminLogin from './admin/Login';
 import AdminDashboard from './admin/Dashboard';
 import ProtectedRoute from "./Components/ProtectedRoute";
 import AddProduct from './admin/AddProduct';
-import AddCategory from './admin/Categories';
-import AddSubCategory from './admin/SubCategories';
 import EditProduct from './admin/EditProduct';
 import DeleteProduct from './admin/DeleteProduct';
 import Categories from './admin/Categories';
 import AdminBlogs from './admin/Blog';
-import SubCategories from './admin/SubCategories';
+import AddSubCategory from './admin/SubCategories';
 import ScrollTop from "./Components/ScrollTop";
 import FloatingWhatsApp from "./Components/FloatingWhatsApp";
 import Blog from "./Pages/Blog/Blogs";
 import BlogDetails from './Pages/Blog/BlogDetails'
 import Shop from "./Pages/Shop";
-import AboutGemstoneSection from './Components/about';
 import ProductDetailsSlug from './Pages/ProductDetailsSlug';
 function App() {
 

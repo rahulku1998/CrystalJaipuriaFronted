@@ -16,9 +16,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* About */}
           <div>
-            <h2 className="text-2xl font-bold text-white mb-5">
-              Crystal <span className="text-indigo-500">Jaipuria</span>
-            </h2>
+            <Link to="/" className="inline-block hover:opacity-90 transition">
+              <h2 className="text-2xl font-bold text-white mb-5">
+                Crystal <span className="text-indigo-500">Jaipuria</span>
+              </h2>
+            </Link>
 
             <p className="text-sm leading-7 text-gray-400">
               Since 1989, Crystal Jaipuria has been delivering premium quality

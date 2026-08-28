@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import API from "../api/axios";
+import SEO from "../Components/SEO";
+import {
+  getProductMetaTitle,
+  getProductMetaDescription,
+  getProductSchema,
+} from "../utils/seo";
 
 import {
   FaWhatsapp,
@@ -281,9 +287,22 @@ Hello Crystal Jaipuria, I have a query regarding this product.
 
 
 
-return (
+  const canonicalUrl = `https://www.crystaljaipuria.com/products/${product.slug || id}`;
+  const metaTitle = getProductMetaTitle(product.name);
+  const metaDescription = getProductMetaDescription(product);
+  const schema = getProductSchema(product, canonicalUrl);
 
-<div className="
+  return (
+    <>
+      <SEO
+        title={metaTitle}
+        description={metaDescription}
+        canonical={canonicalUrl}
+        image={product.images?.[0]?.url || "https://www.crystaljaipuria.com/logo.png"}
+        type="product"
+        schema={schema}
+      />
+    <div className="
   max-w-7xl
   mx-auto
   px-4
@@ -1460,9 +1479,7 @@ sm:text-base
 
 
 </div>
-
-
-
+</>
 );
 };
 

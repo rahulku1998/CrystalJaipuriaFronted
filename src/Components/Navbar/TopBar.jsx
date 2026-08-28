@@ -4,7 +4,7 @@ import {
   FaInstagram,
   FaSearch,
 } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const TopBar = () => {
 const navigate = useNavigate();
@@ -101,10 +101,10 @@ lg:min-h-[130px]
 
         {/* ================= Center Logo ================= */}
 
-        <div
-          className=" flex flex-col items-center"
+        <Link
+          to="/"
+          className="flex flex-col items-center cursor-pointer group"
         >
-
           <img
             src="/logo.jpeg"
             alt="Crystal Jaipuria Logo"
@@ -115,31 +115,30 @@ lg:min-h-[130px]
             lg:h-20
             w-auto
             object-contain
+            group-hover:opacity-90
+            transition
             "
           />
 
-
           <p
-className="
-block
-text-[8px]
-sm:text-[10px]
-md:text-sm
-font-semibold
-tracking-[1px]
-sm:tracking-[2px]
-md:tracking-[4px]
-text-indigo-600
-uppercase
-mt-1
-whitespace-nowrap
-"
->
-Luxury Collection of Handicrafts
-</p>
-
-
-        </div>
+            className="
+            block
+            text-[8px]
+            sm:text-[10px]
+            md:text-sm
+            font-semibold
+            tracking-[1px]
+            sm:tracking-[2px]
+            md:tracking-[4px]
+            text-indigo-600
+            uppercase
+            mt-1
+            whitespace-nowrap
+            "
+          >
+            Luxury Collection of Handicrafts
+          </p>
+        </Link>
 
 
 

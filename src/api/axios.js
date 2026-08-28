@@ -1,7 +1,9 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: import.meta.env.VITE_BASEURL,
+  baseURL:
+    import.meta.env.VITE_BASEURL ||
+    "https://shop.codewithrahulkumawat.com/api",
 });
 
 // Auto attach token

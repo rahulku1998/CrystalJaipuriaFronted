@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SEO from "../Components/SEO";
 
 const Contact = () => {
 
@@ -50,8 +51,19 @@ Message: ${message}
 
 
   return (
-
-    <div className="bg-white overflow-hidden">
+    <>
+      <SEO
+        title="Contact Crystal Jaipuria | Gemstone Manufacturer & Wholesaler"
+        description="Contact Crystal Jaipuria in Jaipur for gemstone statues, crystal carvings, spiritual products and wholesale enquiries. Get in touch with our team today."
+        canonical="https://www.crystaljaipuria.com/contact"
+        ogTitle="Contact Crystal Jaipuria | Gemstone Manufacturer & Wholesaler"
+        ogDescription="Get in touch with Crystal Jaipuria, Jaipur, for gemstone statues, crystal carvings, spiritual products, manufacturing and wholesale enquiries."
+        twitterTitle="Contact Crystal Jaipuria | Gemstone Manufacturer & Wholesaler"
+        twitterDescription="Get in touch with Crystal Jaipuria, Jaipur, for gemstone statues, crystal carvings, spiritual products, manufacturing and wholesale enquiries."
+        image="https://www.crystaljaipuria.com/logo.png"
+        type="website"
+      />
+      <div className="bg-white overflow-hidden">
 
 
       {/* Header */}
@@ -463,8 +475,8 @@ Message: ${message}
 
 
 
-    </div>
-
+      </div>
+    </>
   );
 };
 

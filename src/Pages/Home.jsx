@@ -1,60 +1,46 @@
 import React, { useEffect, useState } from "react";
 import API from "../api/axios";
 import CategorySection from "../Components/CategoryCard";
-
-import homeImg from "../assets/images/mama5.png";
+import SEO from "../Components/SEO";
+import homeImg from "../assets/images/banner-divine.webp";
 import StatsSection from "../Components/StatsSection";
 import { Link } from "react-router-dom";
 import AboutGemstoneSection from "../Components/about";
 
 const Home = () => {
+  const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [categoryProducts, setCategoryProducts] = useState({});
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await API.get("/home");
+        setProducts(res.data.latestProducts || []);
+        setCategories(res.data.categories || []);
+        setCategoryProducts(res.data.categoryProducts || {});
+      } catch (err) {
+        console.log("Home data fetch error:", err);
+      }
+    };
 
-const [products,setProducts] = useState([]);
-const [categories,setCategories] = useState([]);
-const [categoryProducts,setCategoryProducts] = useState({});
+    fetchData();
+  }, []);
 
-
-
-
-
-useEffect(()=>{
-
-const fetchData = async()=>{
-
-try{
-
-const res = await API.get("/home");
-
-setProducts(res.data.latestProducts);
-setCategories(res.data.categories);
-setCategoryProducts(res.data.categoryProducts);
-
-
-}
-catch(err){
-
-console.log(err);
-
-}
-
-};
-
-
-fetchData();
-
-
-},[]);
-
-
-
-
-
-return (
-
-
-
-<section className="w-full">
+  return (
+    <>
+      <SEO
+        title="Gemstone God Statues Manufacturer in India | Crystal Jaipuria"
+        description="Leading gemstone god statues manufacturer & wholesaler in Jaipur, India. Hand-carved crystal idols, Vastu decor & healing stones. Global shipping since 1989."
+        canonical="https://www.crystaljaipuria.com/"
+        ogTitle="Gemstone God Statues Manufacturer in India | Crystal Jaipuria"
+        ogDescription="Leading manufacturer & wholesaler of authentic gemstone god statues & crystal carvings in Jaipur since 1989. Shop hand-carved Ganesha idols, Vastu products & healing crystals. Worldwide shipping available."
+        twitterTitle="Gemstone God Statues Manufacturer in India | Crystal Jaipuria"
+        twitterDescription="Leading manufacturer & wholesaler of authentic gemstone god statues & crystal carvings in Jaipur since 1989. Shop hand-carved Ganesha idols, Vastu products & healing crystals. Worldwide shipping available."
+        image="https://www.crystaljaipuria.com/logo.png"
+        type="website"
+      />
+      <section className="w-full">
 
 <AboutGemstoneSection/>
 
@@ -345,42 +331,16 @@ text-yellow-700
 
 
 {/* BANNER */}
-
-
-<Link to="/shop">
-
-
-<img
-
-src={homeImg}
-
-loading="eager"
-
-alt="Home Banner"
-
-className="
-block
-
-w-full
-
-h-auto
-
-sm:h-[500px]
-
-md:h-[600px]
-
-lg:h-screen
-
-object-cover
-
-object-center
-
-"
-
-/>
-
-
-</Link>
+<div className="w-full my-6 sm:my-10 overflow-hidden">
+  <Link to="/shop" className="block w-full">
+    <img
+      src={homeImg}
+      loading="eager"
+      alt="Handcrafted Gemstone God Statues, Vastu Decor & Healing Crystals Manufacturer - Crystal Jaipuria"
+      className="w-full aspect-[1898/721] max-h-[721px] object-cover object-center block"
+    />
+  </Link>
+</div>
 
 
 
@@ -682,11 +642,9 @@ Email
 
 
 </section>
-
-
+</>
 );
 
 };
-
 
 export default Home;
