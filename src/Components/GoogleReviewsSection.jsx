@@ -71,15 +71,15 @@ const reviews = [
   },
   {
     id: 6,
-    name: "Mukesh Moond",
-    badge: "Local Guide · 5 reviews",
-    avatar: "M",
+    name: "Lucky Mahendwariya",
+    badge: "1 review · 1 photo",
+    avatar: "L",
     avatarBg: "bg-blue-600",
     time: "5 months ago",
     rating: 5,
     review:
-      "Great experience with Crystal Jaipuria. High quality gemstone statues and crystal carvings. Very cooperative team and genuine wholesale rates. One of the best gemstone manufacturers in Jaipur!",
-    googleUrl: "https://share.google/vHLdhMayGn2mWABop",
+      "I purchased a Green Jade Radha Krishna statue from Crystal Jaipuria. The carving quality is very beautiful and the stone looks genuine. They have a good collection of gemstone idols and prices are negotiable. Highly recommended.",
+    googleUrl: "https://maps.app.goo.gl/AHk7P9q4CV8NcM1q7",
   },
 ];
 
