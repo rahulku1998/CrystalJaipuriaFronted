@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import img7 from "../../assets/images/m1 (1).webp";
-import img7Mob from "../../assets/images/m1 (1)-mob.webp";
+const img7 = "/images/slider-ganesha-desk.webp";
+const img7Mob = "/images/slider-ganesha-mob.webp";
 
-import img8 from "../../assets/images/m1 (2).webp";
-import img8Mob from "../../assets/images/m1 (2)-mob.webp";
+const img8 = "/images/slider-shivling-desk.webp";
+const img8Mob = "/images/slider-shivling-mob.webp";
 
-import img10 from "../../assets/images/m1 (4).webp";
-import img10Mob from "../../assets/images/m1 (4)-mob.webp";
+const img10 = "/images/slider-krishna-desk.webp";
+const img10Mob = "/images/slider-krishna-mob.webp";
 
 export default function HeroSlider() {
   return (

@@ -296,7 +296,8 @@ line-clamp-2
   <Link to="/shop" className="block w-full">
     <img
       src={homeImg}
-      loading="eager"
+      loading="lazy"
+      decoding="async"
       alt="Handcrafted Gemstone God Statues, Vastu Decor & Healing Crystals Manufacturer - Crystal Jaipuria"
       className="w-full aspect-[1898/721] max-h-[721px] object-cover object-center block"
     />

@@ -14,7 +14,9 @@ const AboutGemstoneSection = () => {
           <div className="relative order-1">
             <div className="relative overflow-hidden rounded-2xl border border-stone-200 bg-white p-2 shadow-[0_20px_60px_rgba(0,0,0,0.10)]">
               <img
-                src="../Gemstone.webp"
+                src="/Gemstone.webp"
+                loading="lazy"
+                decoding="async"
                 alt="Handcrafted gemstone statues and crystal carvings"
                 className="h-[280px] w-full rounded-xl object-cover sm:h-[360px] lg:h-[470px]"
               />

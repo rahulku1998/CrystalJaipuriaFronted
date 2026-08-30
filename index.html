@@ -16,6 +16,10 @@
     <link rel="dns-prefetch" href="https://shop.codewithrahulkumawat.com" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     
+    <!-- LCP Hero Banner Preload for Instant First Contentful Paint -->
+    <link rel="preload" as="image" href="/images/slider-ganesha-mob.webp" media="(max-width: 767px)" type="image/webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/slider-ganesha-desk.webp" media="(min-width: 768px)" type="image/webp" fetchpriority="high" />
+    
     <!-- OpenGraph & Twitter Defaults -->
     <meta property="og:site_name" content="Crystal Jaipuria" />
     <meta property="og:type" content="website" />
@@ -28,12 +32,18 @@
     <meta name="twitter:description" content="Leading manufacturer & wholesaler of authentic gemstone god statues & crystal carvings in Jaipur since 1989." />
     <meta name="twitter:image" content="https://www.crystaljaipuria.com/logo.png" />
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-T97ZFVLW');</script>
+    <!-- Google Tag Manager (Deferred to avoid blocking FCP/LCP) -->
+    <script>
+      window.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-T97ZFVLW');
+        }, 1200);
+      });
+    </script>
     <!-- End Google Tag Manager -->
 
     <script type="application/ld+json">
