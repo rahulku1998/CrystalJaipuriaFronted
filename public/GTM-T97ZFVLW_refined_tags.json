@@ -1,6 +1,6 @@
 {
   "exportFormatVersion": 2,
-  "exportTime": "2026-08-30T17:17:25.524Z",
+  "exportTime": "2026-08-30T17:19:35.374Z",
   "containerVersion": {
     "container": {
       "name": "Crystal Jaipuria Enhanced Tracking",
@@ -16,13 +16,18 @@
         "parameter": [
           {
             "type": "TEMPLATE",
-            "key": "measurementId",
+            "key": "measurementIdOverride",
             "value": "G-QRDN0FM5QF"
           },
           {
             "type": "TEMPLATE",
             "key": "eventName",
             "value": "product_image_click"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "sendEcommerceData",
+            "value": "false"
           }
         ],
         "firingTriggerId": [
@@ -35,13 +40,18 @@
         "parameter": [
           {
             "type": "TEMPLATE",
-            "key": "measurementId",
+            "key": "measurementIdOverride",
             "value": "G-QRDN0FM5QF"
           },
           {
             "type": "TEMPLATE",
             "key": "eventName",
             "value": "product_tab_switch"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "sendEcommerceData",
+            "value": "false"
           }
         ],
         "firingTriggerId": [
@@ -54,13 +64,18 @@
         "parameter": [
           {
             "type": "TEMPLATE",
-            "key": "measurementId",
+            "key": "measurementIdOverride",
             "value": "G-QRDN0FM5QF"
           },
           {
             "type": "TEMPLATE",
             "key": "eventName",
             "value": "share_product"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "sendEcommerceData",
+            "value": "false"
           }
         ],
         "firingTriggerId": [
@@ -73,13 +88,18 @@
         "parameter": [
           {
             "type": "TEMPLATE",
-            "key": "measurementId",
+            "key": "measurementIdOverride",
             "value": "G-QRDN0FM5QF"
           },
           {
             "type": "TEMPLATE",
             "key": "eventName",
             "value": "query_modal_open"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "sendEcommerceData",
+            "value": "false"
           }
         ],
         "firingTriggerId": [
@@ -92,13 +112,18 @@
         "parameter": [
           {
             "type": "TEMPLATE",
-            "key": "measurementId",
+            "key": "measurementIdOverride",
             "value": "G-QRDN0FM5QF"
           },
           {
             "type": "TEMPLATE",
             "key": "eventName",
             "value": "hero_banner_click"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "sendEcommerceData",
+            "value": "false"
           }
         ],
         "firingTriggerId": [
@@ -111,13 +136,18 @@
         "parameter": [
           {
             "type": "TEMPLATE",
-            "key": "measurementId",
+            "key": "measurementIdOverride",
             "value": "G-QRDN0FM5QF"
           },
           {
             "type": "TEMPLATE",
             "key": "eventName",
             "value": "search_zero_results"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "sendEcommerceData",
+            "value": "false"
           }
         ],
         "firingTriggerId": [
