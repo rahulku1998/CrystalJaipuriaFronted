@@ -59,7 +59,62 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- Product Pages -->
+  <!-- Dynamic Product Pages (18 Products) -->
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/natural-sphatik-shivling</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/clear-crystal-quartz-shivling-with-shiva-face</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/green-jade-shiva-statue-with-gold-panting</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/natural-rose-quartz-pair-of-swan</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/gemston-ruby-shree-yantra</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/blue-sapphire-carving-shiva-statue</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/green-jade-carved-shree-krishana-statue</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/pyrite-gemston-shivling</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/green-jade-panchmukhi-shivling</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/natural-ruby-shivling</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/green-jade-elephant-staute</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://www.crystaljaipuria.com/product/lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva</loc>
     <changefreq>weekly</changefreq>
@@ -96,7 +151,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Blog Detail Pages -->
+  <!-- Blog Detail Pages (1 Stories) -->
   <url>
     <loc>https://www.crystaljaipuria.com/blog/crystal-statues-a-unique-and-meaningful-gift-idea</loc>
     <changefreq>monthly</changefreq>
