@@ -1,0 +1,263 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-08-30T17:17:25.524Z",
+  "containerVersion": {
+    "container": {
+      "name": "Crystal Jaipuria Enhanced Tracking",
+      "publicId": "GTM-T97ZFVLW",
+      "usageContext": [
+        "WEB"
+      ]
+    },
+    "tag": [
+      {
+        "name": "GA4 - Product Image Click",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "measurementId",
+            "value": "G-QRDN0FM5QF"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "product_image_click"
+          }
+        ],
+        "firingTriggerId": [
+          "201"
+        ]
+      },
+      {
+        "name": "GA4 - Product Tab Switch",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "measurementId",
+            "value": "G-QRDN0FM5QF"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "product_tab_switch"
+          }
+        ],
+        "firingTriggerId": [
+          "202"
+        ]
+      },
+      {
+        "name": "GA4 - Share Product",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "measurementId",
+            "value": "G-QRDN0FM5QF"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "share_product"
+          }
+        ],
+        "firingTriggerId": [
+          "203"
+        ]
+      },
+      {
+        "name": "GA4 - Query Modal Open",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "measurementId",
+            "value": "G-QRDN0FM5QF"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "query_modal_open"
+          }
+        ],
+        "firingTriggerId": [
+          "204"
+        ]
+      },
+      {
+        "name": "GA4 - Hero Banner Click",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "measurementId",
+            "value": "G-QRDN0FM5QF"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "hero_banner_click"
+          }
+        ],
+        "firingTriggerId": [
+          "205"
+        ]
+      },
+      {
+        "name": "GA4 - Search Zero Results",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "measurementId",
+            "value": "G-QRDN0FM5QF"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "search_zero_results"
+          }
+        ],
+        "firingTriggerId": [
+          "206"
+        ]
+      }
+    ],
+    "trigger": [
+      {
+        "triggerId": "201",
+        "name": "Custom Event - product_image_click",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "product_image_click"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "triggerId": "202",
+        "name": "Custom Event - product_tab_switch",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "product_tab_switch"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "triggerId": "203",
+        "name": "Custom Event - share_product",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "share_product"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "triggerId": "204",
+        "name": "Custom Event - query_modal_open",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "query_modal_open"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "triggerId": "205",
+        "name": "Custom Event - hero_banner_click",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "hero_banner_click"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "triggerId": "206",
+        "name": "Custom Event - search_zero_results",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "search_zero_results"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
