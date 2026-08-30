@@ -20,14 +20,16 @@ export default function HeroSlider() {
         }}
         loop
         pagination={{ clickable: true }}
-        className="w-full h-[200px] sm:h-[280px] md:h-[360px] lg:h-auto lg:aspect-[1024/346] max-h-[650px]"
+        className="w-full h-[200px] sm:h-[280px] md:h-[360px] lg:h-auto lg:aspect-[1024/346] max-h-[650px] bg-[#f8f3ea]"
       >
         <SwiperSlide>
           <Link to="/shop" className="block w-full h-full">
             <img
               src={img7}
+              fetchPriority="high"
               alt="Handcrafted Gemstone Ganesha Idols & Pure Crystal Ganesh Statues Manufacturer Jaipur - Crystal Jaipuria"
               className="w-full h-[200px] sm:h-[280px] md:h-[360px] lg:h-full lg:aspect-[1024/346] max-h-[650px] object-cover object-center block"
+              style={{ imageRendering: "-webkit-optimize-contrast" }}
             />
           </Link>
         </SwiperSlide>
@@ -38,6 +40,7 @@ export default function HeroSlider() {
               src={img8}
               alt="Natural Gemstone Shivling, Pure Sphatik Quartz Shiva Linga & Nandi Carvings - Crystal Jaipuria"
               className="w-full h-[200px] sm:h-[280px] md:h-[360px] lg:h-full lg:aspect-[1024/346] max-h-[650px] object-cover object-center block"
+              style={{ imageRendering: "-webkit-optimize-contrast" }}
             />
           </Link>
         </SwiperSlide>
@@ -48,6 +51,7 @@ export default function HeroSlider() {
               src={img10}
               alt="Hand Carved Gemstone Radha Krishna Statues & Natural Stone Deity Idols - Crystal Jaipuria"
               className="w-full h-[200px] sm:h-[280px] md:h-[360px] lg:h-full lg:aspect-[1024/346] max-h-[650px] object-cover object-center block"
+              style={{ imageRendering: "-webkit-optimize-contrast" }}
             />
           </Link>
         </SwiperSlide>
