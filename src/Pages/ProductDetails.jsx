@@ -7,6 +7,12 @@ import {
   getProductMetaDescription,
   getProductSchema,
 } from "../utils/seo";
+import {
+  trackProductView,
+  trackWhatsAppClick,
+  trackInquirySubmit,
+  trackContactClick,
+} from "../utils/analytics";
 import NotFound from "./NotFound";
 import {
   FaWhatsapp,
@@ -65,6 +71,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
 *Product Link:* ${window.location.href}
     `.trim();
 
+    trackInquirySubmit(queryForm, product);
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
     setQuerySubmitted(true);
@@ -106,6 +113,9 @@ Hello Crystal Jaipuria, I have a query regarding this product.
       }
 
       setProduct(data || null);
+      if (data) {
+        trackProductView(data);
+      }
       if (data?.categoryId?._id) {
         fetchRelatedProducts(data);
       }
@@ -478,6 +488,7 @@ Out Of Stock
     href={whatsappLink}
     target="_blank"
     rel="noopener noreferrer"
+    onClick={() => trackWhatsAppClick("product_details_enquire_button", product)}
     className="block text-center bg-green-600 hover:bg-green-700 text-white px-4 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition"
   >
     <FaWhatsapp className="inline mr-2" /> Enquire Now
@@ -486,6 +497,7 @@ Out Of Stock
   {/* Row 1 - Call Now */}
   <a
     href="tel:+918955613237"
+    onClick={() => trackContactClick("phone", "+918955613237")}
     className="block text-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition"
   >
    📞 Call Now

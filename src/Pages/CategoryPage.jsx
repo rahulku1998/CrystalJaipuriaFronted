@@ -4,6 +4,7 @@ import API from "../api/axios";
 import SEO from "../Components/SEO";
 import { formatPrice } from "../utils/price";
 import { getBreadcrumbSchema } from "../utils/seo";
+import { trackCategoryView } from "../utils/analytics";
 import NotFound from "./NotFound";
 
 const CATEGORY_SEO = {
@@ -154,6 +155,7 @@ const CategoryPage = () => {
         (p) => p.categoryId?._id === currentCat._id
       );
       setProducts(filteredProducts);
+      trackCategoryView(currentCat.name, filteredProducts);
     } catch (err) {
       console.log("Category fetch error:", err);
     } finally {

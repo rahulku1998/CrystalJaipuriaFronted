@@ -5,24 +5,18 @@ import {
   FaSearch,
 } from "react-icons/fa";
 import { useNavigate, Link } from "react-router-dom";
+import { trackSearch, trackSocialClick } from "../../utils/analytics";
 
 const TopBar = () => {
 const navigate = useNavigate();
 const [search,setSearch] = useState("");
 
 const handleSearch=(e)=>{
-
-e.preventDefault();
-
-
-
-
-if(search.trim()){
-
-navigate(`/shop?search=${search}`);
-
-}
-
+  e.preventDefault();
+  if(search.trim()){
+    trackSearch(search.trim());
+    navigate(`/shop?search=${search}`);
+  }
 };
 
 
@@ -58,6 +52,7 @@ lg:min-h-[130px]
             href="https://www.facebook.com/profile.php?id=61565599797453"
             target="_blank"
             rel="noreferrer"
+            onClick={() => trackSocialClick("facebook")}
             className="
             w-8 h-8
             sm:w-10 sm:h-10
@@ -79,6 +74,7 @@ lg:min-h-[130px]
             href="https://www.instagram.com/crystal_jaipuria/"
             target="_blank"
             rel="noreferrer"
+            onClick={() => trackSocialClick("instagram")}
             className="
             w-8 h-8
             sm:w-10 sm:h-10

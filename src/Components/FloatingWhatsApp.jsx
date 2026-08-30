@@ -1,4 +1,5 @@
 import { FaWhatsapp } from "react-icons/fa";
+import { trackWhatsAppClick } from "../utils/analytics";
 
 const FloatingWhatsApp = () => {
   const phoneNumber = "918306317032"; 
@@ -11,6 +12,7 @@ const FloatingWhatsApp = () => {
       href={`https://wa.me/${phoneNumber}?text=${message}`}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackWhatsAppClick("floating_whatsapp_widget")}
       className=" fixed
         bottom-20 sm:bottom-6
         right-6
