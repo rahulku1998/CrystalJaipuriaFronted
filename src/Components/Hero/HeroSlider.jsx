@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
+import { trackHeroBannerClick } from "../../utils/analytics";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -28,7 +29,11 @@ export default function HeroSlider() {
         className="w-full aspect-[1920/650] max-h-[650px] bg-[#f8f3ea]"
       >
         <SwiperSlide>
-          <Link to="/shop" className="block w-full h-full">
+          <Link
+            to="/shop"
+            onClick={() => trackHeroBannerClick(1, "Ganesha Banner")}
+            className="block w-full h-full"
+          >
             <picture className="w-full h-full block">
               <source media="(max-width: 767px)" srcSet={img7Mob} type="image/webp" />
               <source media="(min-width: 768px)" srcSet={img7} type="image/webp" />
@@ -48,7 +53,11 @@ export default function HeroSlider() {
         </SwiperSlide>
 
         <SwiperSlide>
-          <Link to="/shop" className="block w-full h-full">
+          <Link
+            to="/shop"
+            onClick={() => trackHeroBannerClick(2, "Shivling Banner")}
+            className="block w-full h-full"
+          >
             <picture className="w-full h-full block">
               <source media="(max-width: 767px)" srcSet={img8Mob} type="image/webp" />
               <source media="(min-width: 768px)" srcSet={img8} type="image/webp" />
@@ -67,7 +76,11 @@ export default function HeroSlider() {
         </SwiperSlide>
 
         <SwiperSlide>
-          <Link to="/shop" className="block w-full h-full">
+          <Link
+            to="/shop"
+            onClick={() => trackHeroBannerClick(3, "Krishna Banner")}
+            className="block w-full h-full"
+          >
             <picture className="w-full h-full block">
               <source media="(max-width: 767px)" srcSet={img10Mob} type="image/webp" />
               <source media="(min-width: 768px)" srcSet={img10} type="image/webp" />

@@ -180,3 +180,94 @@ export const trackSocialClick = (platform) => {
     social_network: platform,
   });
 };
+
+/**
+ * Track Search With Zero Results (Demand discovery tracker)
+ */
+export const trackSearchNoResults = (searchTerm) => {
+  if (!searchTerm) return;
+  pushEvent("search_zero_results", {
+    search_term: searchTerm,
+  });
+};
+
+/**
+ * Track Product Image Gallery / Thumbnail Click (High intent engagement)
+ */
+export const trackGalleryClick = (imageIndex, product = null) => {
+  pushEvent("product_image_click", {
+    image_index: imageIndex,
+    product_name: product?.name || "",
+    product_id: product?._id || "",
+  });
+};
+
+/**
+ * Track Product Tab Switch (Description vs Specifications)
+ */
+export const trackTabSwitch = (tabName, product = null) => {
+  pushEvent("product_tab_switch", {
+    tab_name: tabName,
+    product_name: product?.name || "",
+    product_id: product?._id || "",
+  });
+};
+
+/**
+ * Track Product Share / Copy Link
+ */
+export const trackProductShare = (platform = "copy_link", product = null) => {
+  pushEvent("share_product", {
+    method: platform,
+    product_name: product?.name || "",
+    product_id: product?._id || "",
+  });
+};
+
+/**
+ * Track Inquiry Modal Open
+ */
+export const trackQueryModalOpen = (product = null) => {
+  pushEvent("query_modal_open", {
+    product_name: product?.name || "",
+    product_id: product?._id || "",
+  });
+};
+
+/**
+ * Track FAQ Accordion Open
+ */
+export const trackFaqToggle = (questionTitle) => {
+  pushEvent("faq_toggle_click", {
+    question: questionTitle,
+  });
+};
+
+/**
+ * Track Hero Slider Banner Click
+ */
+export const trackHeroBannerClick = (slideIndex, slideTitle) => {
+  pushEvent("hero_banner_click", {
+    slide_index: slideIndex,
+    slide_title: slideTitle,
+  });
+};
+
+/**
+ * Track Subcategory Filter Selection
+ */
+export const trackSubcategoryFilter = (subcategoryName, categoryName) => {
+  pushEvent("subcategory_filter_click", {
+    subcategory: subcategoryName,
+    category: categoryName,
+  });
+};
+
+/**
+ * Track Google Maps / Location Direction Click
+ */
+export const trackMapClick = () => {
+  pushEvent("location_click", {
+    destination: "Jaipur Workshop",
+  });
+};

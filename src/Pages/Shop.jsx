@@ -4,6 +4,7 @@ import ProductCard from "../Components/ProductCard";
 import SEO from "../Components/SEO";
 import { FaSearch } from "react-icons/fa";
 import { useSearchParams } from "react-router-dom";
+import { trackSearchNoResults } from "../utils/analytics";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
@@ -32,6 +33,12 @@ const Shop = () => {
   const filteredProducts = products.filter((product) =>
     product.name?.toLowerCase().includes(search.toLowerCase())
   );
+
+  useEffect(() => {
+    if (search && filteredProducts.length === 0 && !loading) {
+      trackSearchNoResults(search);
+    }
+  }, [search, filteredProducts.length, loading]);
 
   const seo = (
     <SEO

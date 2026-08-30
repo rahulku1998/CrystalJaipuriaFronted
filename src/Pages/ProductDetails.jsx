@@ -12,6 +12,10 @@ import {
   trackWhatsAppClick,
   trackInquirySubmit,
   trackContactClick,
+  trackGalleryClick,
+  trackTabSwitch,
+  trackProductShare,
+  trackQueryModalOpen,
 } from "../utils/analytics";
 import NotFound from "./NotFound";
 import {
@@ -138,6 +142,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
   const linkedinShare = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
 
   const copyLink = async () => {
+    trackProductShare("copy_link", product);
     if (typeof navigator !== "undefined" && navigator.clipboard) {
       await navigator.clipboard.writeText(shareUrl);
       setCopied(true);
@@ -241,18 +246,21 @@ flex-wrap
 
 {
 
-product.images.map((img)=>(
+product.images.map((img, idx)=>(
 
 
 <img
 
-key={img.public_id}
+key={img.public_id || idx}
 
 src={img.url}
 
 alt={product.name}
 
-onClick={()=>setSelectedImage(img.url)}
+onClick={() => {
+  setSelectedImage(img.url);
+  trackGalleryClick(idx, product);
+}}
 
 className={`
 w-16
@@ -506,7 +514,10 @@ Out Of Stock
   {/* Row 2 - Request a Query */}
   <button
     type="button"
-     onClick={() => setShowQueryForm(true)}
+    onClick={() => {
+      setShowQueryForm(true);
+      trackQueryModalOpen(product);
+    }}
     className="col-span-2 text-center bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition cursor-pointer"
   >
     💬 Request a Query
@@ -837,6 +848,7 @@ items-center
 href={whatsappShare}
 target="_blank"
 rel="noopener noreferrer"
+onClick={() => trackProductShare("whatsapp", product)}
 className="text-green-600 text-3xl hover:scale-110 transition"
 >
 
@@ -850,6 +862,7 @@ className="text-green-600 text-3xl hover:scale-110 transition"
 href={facebookShare}
 target="_blank"
 rel="noopener noreferrer"
+onClick={() => trackProductShare("facebook", product)}
 className="text-blue-600 text-3xl hover:scale-110 transition"
 >
 
@@ -864,6 +877,7 @@ className="text-blue-600 text-3xl hover:scale-110 transition"
 href={twitterShare}
 target="_blank"
 rel="noopener noreferrer"
+onClick={() => trackProductShare("twitter", product)}
 className="text-black text-3xl hover:scale-110 transition"
 >
 
@@ -878,6 +892,7 @@ className="text-black text-3xl hover:scale-110 transition"
 href={linkedinShare}
 target="_blank"
 rel="noopener noreferrer"
+onClick={() => trackProductShare("linkedin", product)}
 className="text-blue-700 text-3xl hover:scale-110 transition"
 >
 
@@ -955,7 +970,10 @@ border-b
 
 <button
 
-onClick={()=>setActiveTab("description")}
+onClick={() => {
+  setActiveTab("description");
+  trackTabSwitch("description", product);
+}}
 
 className={`
 px-5
@@ -990,7 +1008,10 @@ Description
 
 <button
 
-onClick={()=>setActiveTab("additional")}
+onClick={() => {
+  setActiveTab("additional");
+  trackTabSwitch("additional", product);
+}}
 
 className={`
 px-5
