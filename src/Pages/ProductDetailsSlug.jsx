@@ -16,6 +16,16 @@ import {
   FaLinkedin,
   FaLink,
 } from "react-icons/fa";
+import {
+  trackProductView,
+  trackWhatsAppClick,
+  trackContactClick,
+  trackInquirySubmit,
+  trackGalleryClick,
+  trackTabSwitch,
+  trackProductShare,
+  trackQueryModalOpen,
+} from "../utils/analytics";
 
 const ProductDetails = () => {
   const { slug } = useParams();
@@ -66,6 +76,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
     `.trim();
 
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    trackInquirySubmit(product, queryForm);
     window.open(whatsappUrl, "_blank");
     setQuerySubmitted(true);
     setShowQueryForm(false);
@@ -119,6 +130,10 @@ Hello Crystal Jaipuria, I have a query regarding this product.
 
       setProduct(data || null);
 
+      if (data) {
+        trackProductView(data);
+      }
+
       if (data?.images?.length > 0) {
         setSelectedImage(data.images[0].url);
       }
@@ -144,6 +159,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
   const copyLink = async () => {
     if (typeof navigator !== "undefined" && navigator.clipboard) {
       await navigator.clipboard.writeText(shareUrl);
+      trackProductShare(product, "copy_link");
       setCopied(true);
       setTimeout(() => {
         setCopied(false);
@@ -256,7 +272,10 @@ src={img.url}
 
 alt={product.name}
 
-onClick={()=>setSelectedImage(img.url)}
+onClick={() => {
+  setSelectedImage(img.url);
+  trackGalleryClick(product, img.url);
+}}
 
 className={`
 w-16
@@ -490,6 +509,7 @@ Out Of Stock
     href={whatsappLink}
     target="_blank"
     rel="noopener noreferrer"
+    onClick={() => trackWhatsAppClick("product_enquire_button", product)}
     className="block text-center bg-green-600 hover:bg-green-700 text-white px-4 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition"
   >
     <FaWhatsapp className="inline mr-2" /> Enquire Now
@@ -498,6 +518,7 @@ Out Of Stock
   {/* Row 1 - Call Now */}
   <a
     href="tel:+918955613237"
+    onClick={() => trackContactClick("phone", "+918955613237", "product_call_button", product)}
     className="block text-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition"
   >
    📞 Call Now
@@ -506,7 +527,10 @@ Out Of Stock
   {/* Row 2 - Request a Query */}
   <button
     type="button"
-     onClick={() => setShowQueryForm(true)}
+    onClick={() => {
+      setShowQueryForm(true);
+      trackQueryModalOpen(product);
+    }}
     className="col-span-2 text-center bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition cursor-pointer"
   >
     💬 Request a Query
@@ -837,6 +861,7 @@ items-center
 href={whatsappShare}
 target="_blank"
 rel="noopener noreferrer"
+onClick={() => trackProductShare(product, "whatsapp")}
 className="text-green-600 text-3xl hover:scale-110 transition"
 >
 
@@ -850,6 +875,7 @@ className="text-green-600 text-3xl hover:scale-110 transition"
 href={facebookShare}
 target="_blank"
 rel="noopener noreferrer"
+onClick={() => trackProductShare(product, "facebook")}
 className="text-blue-600 text-3xl hover:scale-110 transition"
 >
 
@@ -864,6 +890,7 @@ className="text-blue-600 text-3xl hover:scale-110 transition"
 href={twitterShare}
 target="_blank"
 rel="noopener noreferrer"
+onClick={() => trackProductShare(product, "twitter")}
 className="text-black text-3xl hover:scale-110 transition"
 >
 
@@ -878,6 +905,7 @@ className="text-black text-3xl hover:scale-110 transition"
 href={linkedinShare}
 target="_blank"
 rel="noopener noreferrer"
+onClick={() => trackProductShare(product, "linkedin")}
 className="text-blue-700 text-3xl hover:scale-110 transition"
 >
 
@@ -955,7 +983,10 @@ border-b
 
 <button
 
-onClick={()=>setActiveTab("description")}
+onClick={() => {
+  setActiveTab("description");
+  trackTabSwitch(product, "description");
+}}
 
 className={`
 px-5
@@ -990,7 +1021,10 @@ Description
 
 <button
 
-onClick={()=>setActiveTab("additional")}
+onClick={() => {
+  setActiveTab("additional");
+  trackTabSwitch(product, "additional");
+}}
 
 className={`
 px-5
