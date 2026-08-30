@@ -143,7 +143,7 @@ export const trackInquirySubmit = (formData = {}, product = null) => {
 };
 
 /**
- * Track Product Search (search)
+ * Track Product Search (search + view_search_results)
  */
 export const trackSearch = (searchTerm, resultsCount = 0) => {
   if (!searchTerm) return;
@@ -151,16 +151,25 @@ export const trackSearch = (searchTerm, resultsCount = 0) => {
     search_term: searchTerm,
     results_count: resultsCount,
   });
+  pushEvent("view_search_results", {
+    search_term: searchTerm,
+    results_count: resultsCount,
+  });
 };
 
 /**
- * Track Contact Info Click (Phone / Email)
+ * Track Contact Info Click (Phone / Email / click_to_call)
  */
 export const trackContactClick = (type, detail) => {
   pushEvent("contact_click", {
     contact_type: type,
     contact_detail: detail,
   });
+  if (type === "phone") {
+    pushEvent("click_to_call", {
+      phone_number: detail,
+    });
+  }
 };
 
 /**
