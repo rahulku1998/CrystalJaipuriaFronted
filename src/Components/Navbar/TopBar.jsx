@@ -107,7 +107,7 @@ lg:min-h-[130px]
         >
           <img
             src="/logo.jpeg"
-            alt="Crystal Jaipuria Logo"
+            alt="Crystal Jaipuria - Handcrafted Gemstone Statues & Crystal Manufacturer Jaipur"
             className="
             h-12
             sm:h-14

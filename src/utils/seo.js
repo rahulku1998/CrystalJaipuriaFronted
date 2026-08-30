@@ -67,7 +67,7 @@ export const getProductMetaDescription = (product) => {
 };
 
 /**
- * Generate Google Schema.org Product Structured Data (JSON-LD)
+ * Generate Google Schema.org Product Structured Data (JSON-LD) with BreadcrumbList
  */
 export const getProductSchema = (product, canonicalUrl) => {
   if (!product) return null;
@@ -75,30 +75,83 @@ export const getProductSchema = (product, canonicalUrl) => {
   const price = product.discountPrice || product.price || 0;
   const imageUrl = product.images?.[0]?.url || "https://www.crystaljaipuria.com/logo.png";
   const desc = getProductMetaDescription(product);
+  const categoryName = product.categoryId?.name || "Gemstone Statues";
+  const categorySlug = product.categoryId?.slug || "";
+
+  const breadcrumbs = [
+    { name: "Home", url: "https://www.crystaljaipuria.com/" },
+    { name: "Shop", url: "https://www.crystaljaipuria.com/shop" },
+  ];
+
+  if (categorySlug) {
+    breadcrumbs.push({
+      name: categoryName,
+      url: `https://www.crystaljaipuria.com/${categorySlug}`,
+    });
+  }
+
+  breadcrumbs.push({
+    name: product.name,
+    url: canonicalUrl,
+  });
 
   return {
     "@context": "https://schema.org/",
-    "@type": "Product",
-    "name": product.name,
-    "image": product.images?.map((img) => img.url) || [imageUrl],
-    "description": desc,
-    "sku": product._id,
-    "brand": {
-      "@type": "Brand",
-      "name": "Crystal Jaipuria"
-    },
-    "offers": {
-      "@type": "Offer",
-      "url": canonicalUrl,
-      "priceCurrency": "INR",
-      "price": String(price),
-      "priceValidUntil": "2027-12-31",
-      "availability": "https://schema.org/InStock",
-      "seller": {
-        "@type": "Organization",
-        "name": "Crystal Jaipuria"
+    "@graph": [
+      {
+        "@type": "Product",
+        "@id": `${canonicalUrl}#product`,
+        "name": product.name,
+        "image": product.images?.map((img) => img.url) || [imageUrl],
+        "description": desc,
+        "sku": product._id,
+        "category": categoryName,
+        "brand": {
+          "@type": "Brand",
+          "name": "Crystal Jaipuria"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": canonicalUrl,
+          "priceCurrency": "INR",
+          "price": String(price),
+          "priceValidUntil": "2027-12-31",
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": {
+            "@type": "Organization",
+            "name": "Crystal Jaipuria"
+          }
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${canonicalUrl}#breadcrumb`,
+        "itemListElement": breadcrumbs.map((item, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "name": item.name,
+          "item": item.url
+        }))
       }
-    }
+    ]
+  };
+};
+
+/**
+ * Generate Google Schema.org BreadcrumbList Structured Data (JSON-LD)
+ */
+export const getBreadcrumbSchema = (items) => {
+  if (!items || items.length === 0) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.name,
+      "item": item.url
+    }))
   };
 };
 

@@ -24,7 +24,7 @@ const About = () => {
 
         <img
           src={aboutBanner}
-          alt="About Crystal Jaipuria"
+          alt="Crystal Jaipuria - 35+ Years Handcrafted Gemstone & Crystal Statues Manufacturer in Jaipur"
           className="w-full h-full object-cover object-center"
         />
 
@@ -88,7 +88,7 @@ const About = () => {
 
             <img
               src={workshop}
-              alt="Crystal Jaipuria Workshop"
+              alt="Crystal Jaipuria Artisan Workshop & Hand Carved Gemstone Manufacturing Facility Jaipur"
               className="
                 rounded-xl
                 shadow-lg

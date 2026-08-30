@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import API from "../api/axios";
 import SEO from "../Components/SEO";
 import { formatPrice } from "../utils/price";
+import { getBreadcrumbSchema } from "../utils/seo";
 import NotFound from "./NotFound";
 
 const CATEGORY_SEO = {
@@ -170,6 +171,11 @@ const CategoryPage = () => {
   const canonicalUrl =
     customSeo?.canonical || `https://www.crystaljaipuria.com/${slug}`;
 
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", url: "https://www.crystaljaipuria.com/" },
+    { name: category?.name || customSeo?.title || "Category", url: canonicalUrl },
+  ]);
+
   const seo = (
     <SEO
       title={pageTitle}
@@ -181,6 +187,7 @@ const CategoryPage = () => {
       twitterDescription={customSeo?.twitterDescription || pageDescription}
       image={customSeo?.image || "https://www.crystaljaipuria.com/logo.png"}
       type="website"
+      schema={breadcrumbSchema}
     />
   );
 
