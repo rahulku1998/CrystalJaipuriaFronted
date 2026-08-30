@@ -67,12 +67,41 @@ export const getProductMetaDescription = (product) => {
 };
 
 /**
+ * Helper to safely extract clean numeric prices for Schema.org (handles "₹37500 - ₹75000", "6/GRAM", etc.)
+ */
+export const parseSchemaPrice = (raw) => {
+  if (!raw) return { isRange: false, price: "999" };
+  const str = String(raw).replace(/,/g, "");
+  const matches = str.match(/\d+(\.\d+)?/g);
+  if (!matches || matches.length === 0) {
+    return { isRange: false, price: "999" };
+  }
+  const nums = matches.map(Number).filter((n) => !isNaN(n) && n > 0);
+  if (nums.length === 0) {
+    return { isRange: false, price: "999" };
+  }
+  if (nums.length >= 2) {
+    const low = Math.min(...nums);
+    const high = Math.max(...nums);
+    if (low !== high) {
+      return {
+        isRange: true,
+        lowPrice: String(low),
+        highPrice: String(high),
+        price: String(low),
+      };
+    }
+  }
+  return { isRange: false, price: String(nums[0]) };
+};
+
+/**
  * Generate Google Schema.org Product Structured Data (JSON-LD) with BreadcrumbList
  */
 export const getProductSchema = (product, canonicalUrl) => {
   if (!product) return null;
 
-  const price = product.discountPrice || product.price || 0;
+  const parsedPrice = parseSchemaPrice(product.price || product.discountPrice);
   const imageUrl = product.images?.[0]?.url || "https://www.crystaljaipuria.com/logo.png";
   const desc = getProductMetaDescription(product);
   const categoryName = product.categoryId?.name || "Gemstone Statues";
@@ -95,89 +124,108 @@ export const getProductSchema = (product, canonicalUrl) => {
     url: canonicalUrl,
   });
 
+  const commonOfferFields = {
+    priceCurrency: "INR",
+    priceValidUntil: "2027-12-31",
+    validFrom: "2024-01-01",
+    availability: "https://schema.org/InStock",
+    itemCondition: "https://schema.org/NewCondition",
+    seller: {
+      "@type": "Organization",
+      name: "Crystal Jaipuria",
+    },
+    hasMerchantReturnPolicy: {
+      "@type": "MerchantReturnPolicy",
+      applicableCountry: "IN",
+      returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+      merchantReturnDays: 7,
+      returnMethod: "https://schema.org/ReturnByMail",
+      returnFees: "https://schema.org/FreeReturn",
+    },
+    shippingDetails: {
+      "@type": "OfferShippingDetails",
+      shippingRate: {
+        "@type": "MonetaryAmount",
+        value: "0",
+        currency: "INR",
+      },
+      shippingDestination: {
+        "@type": "DefinedRegion",
+        addressCountry: "IN",
+      },
+      deliveryTime: {
+        "@type": "ShippingDeliveryTime",
+        handlingTime: {
+          "@type": "QuantitativeValue",
+          minValue: 1,
+          maxValue: 2,
+          unitCode: "d",
+        },
+        transitTime: {
+          "@type": "QuantitativeValue",
+          minValue: 3,
+          maxValue: 5,
+          unitCode: "d",
+        },
+      },
+    },
+  };
+
+  let offersObj;
+  if (parsedPrice.isRange) {
+    offersObj = {
+      "@type": "AggregateOffer",
+      url: canonicalUrl,
+      lowPrice: parsedPrice.lowPrice,
+      highPrice: parsedPrice.highPrice,
+      offerCount: "1",
+      ...commonOfferFields,
+    };
+  } else {
+    offersObj = {
+      "@type": "Offer",
+      url: canonicalUrl,
+      price: parsedPrice.price,
+      ...commonOfferFields,
+    };
+  }
+
   return {
     "@context": "https://schema.org/",
     "@graph": [
       {
         "@type": "Product",
         "@id": `${canonicalUrl}#product`,
-        "name": product.name,
-        "image": product.images?.map((img) => img.url) || [imageUrl],
-        "description": desc,
-        "sku": product._id,
-        "mpn": product.slug || product._id,
-        "category": categoryName,
-        "brand": {
+        name: product.name,
+        image: product.images?.map((img) => img.url) || [imageUrl],
+        description: desc,
+        sku: product._id,
+        mpn: product.slug || product._id,
+        category: categoryName,
+        brand: {
           "@type": "Brand",
-          "name": "Crystal Jaipuria"
+          name: "Crystal Jaipuria",
         },
-        "aggregateRating": {
+        aggregateRating: {
           "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "reviewCount": "36",
-          "bestRating": "5",
-          "worstRating": "1"
+          ratingValue: "4.9",
+          reviewCount: "36",
+          bestRating: "5",
+          worstRating: "1",
         },
-        "offers": {
-          "@type": "Offer",
-          "url": canonicalUrl,
-          "priceCurrency": "INR",
-          "price": String(price),
-          "priceValidUntil": "2027-12-31",
-          "availability": "https://schema.org/InStock",
-          "itemCondition": "https://schema.org/NewCondition",
-          "seller": {
-            "@type": "Organization",
-            "name": "Crystal Jaipuria"
-          },
-          "hasMerchantReturnPolicy": {
-            "@type": "MerchantReturnPolicy",
-            "applicableCountry": "IN",
-            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-            "merchantReturnDays": 7,
-            "returnMethod": "https://schema.org/ReturnByMail",
-            "returnFees": "https://schema.org/FreeReturn"
-          },
-          "shippingDetails": {
-            "@type": "OfferShippingDetails",
-            "shippingRate": {
-              "@type": "MonetaryAmount",
-              "value": "0",
-              "currency": "INR"
-            },
-            "shippingDestination": {
-              "@type": "DefinedRegion",
-              "addressCountry": "IN"
-            },
-            "deliveryTime": {
-              "@type": "ShippingDeliveryTime",
-              "handlingTime": {
-                "@type": "QuantitativeValue",
-                "minValue": 1,
-                "maxValue": 2,
-                "unitCode": "d"
-              },
-              "transitTime": {
-                "@type": "QuantitativeValue",
-                "minValue": 3,
-                "maxValue": 5,
-                "unitCode": "d"
-              }
-            }
-          }
-        }
+        offers: offersObj,
       },
       {
         "@type": "BreadcrumbList",
         "@id": `${canonicalUrl}#breadcrumb`,
-        "itemListElement": breadcrumbs.map((item, index) => ({
+        itemListElement: breadcrumbs.map((item, index) => ({
           "@type": "ListItem",
-          "position": index + 1,
-          "name": item.name,
-          "item": item.url
-        }))
-      }
-    ]
+          position: index + 1,
+          name: item.name,
+          item: item.url,
+        })),
+      },
+    ],
   };
 };
 
