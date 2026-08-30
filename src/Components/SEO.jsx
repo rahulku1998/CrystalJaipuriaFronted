@@ -106,12 +106,6 @@ const SEO = ({
       {finalTwTitle && <meta name="twitter:title" content={finalTwTitle} />}
       {finalTwDesc && <meta name="twitter:description" content={finalTwDesc} />}
       {finalTwImage && <meta name="twitter:image" content={finalTwImage} />}
-      {schema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
-      )}
     </>
   );
 };

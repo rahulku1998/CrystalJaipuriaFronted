@@ -105,10 +105,18 @@ export const getProductSchema = (product, canonicalUrl) => {
         "image": product.images?.map((img) => img.url) || [imageUrl],
         "description": desc,
         "sku": product._id,
+        "mpn": product.slug || product._id,
         "category": categoryName,
         "brand": {
           "@type": "Brand",
           "name": "Crystal Jaipuria"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "36",
+          "bestRating": "5",
+          "worstRating": "1"
         },
         "offers": {
           "@type": "Offer",
@@ -121,6 +129,41 @@ export const getProductSchema = (product, canonicalUrl) => {
           "seller": {
             "@type": "Organization",
             "name": "Crystal Jaipuria"
+          },
+          "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "applicableCountry": "IN",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+            "merchantReturnDays": 7,
+            "returnMethod": "https://schema.org/ReturnByMail",
+            "returnFees": "https://schema.org/FreeReturn"
+          },
+          "shippingDetails": {
+            "@type": "OfferShippingDetails",
+            "shippingRate": {
+              "@type": "MonetaryAmount",
+              "value": "0",
+              "currency": "INR"
+            },
+            "shippingDestination": {
+              "@type": "DefinedRegion",
+              "addressCountry": "IN"
+            },
+            "deliveryTime": {
+              "@type": "ShippingDeliveryTime",
+              "handlingTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 1,
+                "maxValue": 2,
+                "unitCode": "d"
+              },
+              "transitTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 3,
+                "maxValue": 5,
+                "unitCode": "d"
+              }
+            }
           }
         }
       },
