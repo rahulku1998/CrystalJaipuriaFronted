@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Product Data Standardizer for Crystal Jaipuria
  * Normalizes price ranges, unit rates (e.g. 6/GRAM), missing weights & dimensions
  * to industry-standard realistic single pricing and precise specs.
@@ -116,6 +116,122 @@ export const STANDARDIZED_SPECS = {
 };
 
 /**
+ * Format and convert any Additional Information string or HTML into standard bullet points
+ * with bold labels (e.g. <strong>Color :</strong> White, <strong>Weight :</strong> 500 Gram)
+ */
+export const formatAdditionalInfo = (inputHtmlOrText, product = {}) => {
+  const slug = (product.slug || "").toLowerCase().trim();
+  const spec = STANDARDIZED_SPECS[slug] || {};
+
+  const cleanWeight = spec.weight || product.weight || "";
+  const cleanSize = spec.size || product.size || "";
+  const cleanDimensions = spec.dimensions || product.dimensions || "";
+
+  if (
+    !inputHtmlOrText ||
+    inputHtmlOrText.trim().length < 5 ||
+    inputHtmlOrText.toLowerCase().includes("all the size and weight")
+  ) {
+    // Generate clean comprehensive default bullet specs
+    const name = product.name || "Handcrafted Gemstone Artifact";
+    const category = product.categoryId?.name || "Natural Gemstones";
+    return `
+<ul class="space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal">
+  <li><strong class="font-bold text-gray-900">Product Name :</strong> ${name}</li>
+  <li><strong class="font-bold text-gray-900">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (est. 1989)</li>
+  <li><strong class="font-bold text-gray-900">Category :</strong> ${category}</li>
+  ${cleanWeight ? `<li><strong class="font-bold text-gray-900">Weight :</strong> ${cleanWeight}</li>` : ""}
+  ${cleanSize ? `<li><strong class="font-bold text-gray-900">Size :</strong> ${cleanSize}</li>` : ""}
+  ${cleanDimensions ? `<li><strong class="font-bold text-gray-900">Dimensions :</strong> ${cleanDimensions}</li>` : ""}
+  <li><strong class="font-bold text-gray-900">Material :</strong> 100% Certified Pure Natural Gemstone</li>
+  <li><strong class="font-bold text-gray-900">Surface Finish :</strong> Highly Polished, Smooth &amp; Lustrous</li>
+  <li><strong class="font-bold text-gray-900">Craftsmanship :</strong> Hand-Carved with Vedic Shilpa Shastra Precision</li>
+  <li><strong class="font-bold text-gray-900">Suitable For :</strong> Home Temple, Pooja Room, Meditation Altar, Vastu &amp; Gifting</li>
+  <li><strong class="font-bold text-gray-900">Country of Origin :</strong> Jaipur, Rajasthan, India</li>
+  <li><strong class="font-bold text-gray-900">Packaging :</strong> Secure, Multi-Layer Shockproof Packaging for Worldwide Shipping</li>
+</ul>
+    `.trim();
+  }
+
+  // Parse existing content
+  let text = inputHtmlOrText
+    .replace(/<\/?(div|p|li|tr|br\s*\/?)>/gi, "\n")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/<[^>]+>/g, ""); // Strip remaining tags
+
+  const rawLines = text.split("\n").map((l) => l.trim()).filter(Boolean);
+  const items = [];
+  const seenKeys = new Set();
+
+  for (const line of rawLines) {
+    const colonIdx = line.indexOf(":");
+    if (colonIdx > 0 && colonIdx < 40) {
+      let key = line.substring(0, colonIdx).trim();
+      let val = line.substring(colonIdx + 1).trim();
+
+      // Normalize key capitalization
+      key = key.replace(/\b\w/g, (c) => c.toUpperCase());
+
+      // Key specific normalizations
+      if (key.toLowerCase() === "colour") key = "Color";
+      if (key.toLowerCase() === "craftmanship") key = "Craftsmanship";
+      if (
+        key.toLowerCase() === "usage/application" ||
+        key.toLowerCase() === "usage / application"
+      ) {
+        key = "Usage & Application";
+      }
+
+      if (val && !seenKeys.has(key.toLowerCase())) {
+        items.push({ key, val });
+        seenKeys.add(key.toLowerCase());
+      }
+    } else {
+      const cleanLine = line.replace(/^[•\-\*\s\d\.]+/, "").trim();
+      if (cleanLine && cleanLine.length > 2) {
+        items.push({ key: "", val: cleanLine });
+      }
+    }
+  }
+
+  // Ensure weight and size from standardizer are included if missing
+  if (cleanWeight && !seenKeys.has("weight")) {
+    items.push({ key: "Weight", val: cleanWeight });
+    seenKeys.add("weight");
+  }
+  if (cleanSize && !seenKeys.has("size") && !seenKeys.has("dimensions")) {
+    items.push({ key: "Size", val: cleanSize });
+    seenKeys.add("size");
+  }
+  if (cleanDimensions && !seenKeys.has("dimensions") && cleanDimensions !== cleanSize) {
+    items.push({ key: "Dimensions", val: cleanDimensions });
+    seenKeys.add("dimensions");
+  }
+  if (!seenKeys.has("brand") && !seenKeys.has("brand & manufacturer")) {
+    items.push({ key: "Brand & Manufacturer", val: "Crystal Jaipuria, Jaipur (est. 1989)" });
+    seenKeys.add("brand");
+  }
+
+  if (items.length === 0) {
+    return inputHtmlOrText;
+  }
+
+  return `
+<ul class="space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal">
+${items
+  .map((item) => {
+    if (item.key) {
+      return `  <li><strong class="font-bold text-gray-900">${item.key} :</strong> ${item.val}</li>`;
+    }
+    return `  <li>${item.val}</li>`;
+  })
+  .join("\n")}
+</ul>
+  `.trim();
+};
+
+/**
  * Standardize any product object with clean single pricing and specs
  */
 export const getStandardizedProduct = (product) => {
@@ -148,11 +264,21 @@ export const getStandardizedProduct = (product) => {
     }
   }
 
+  const dimensions = spec?.dimensions || product.dimensions || standardizedSize;
+  const formattedAdditionalInfo = formatAdditionalInfo(product.additionalInfo, {
+    ...product,
+    slug,
+    weight: standardizedWeight,
+    size: standardizedSize,
+    dimensions,
+  });
+
   return {
     ...product,
     price: standardizedPrice,
     weight: standardizedWeight,
     size: standardizedSize,
-    dimensions: spec?.dimensions || product.dimensions || standardizedSize,
+    dimensions,
+    additionalInfo: formattedAdditionalInfo,
   };
 };

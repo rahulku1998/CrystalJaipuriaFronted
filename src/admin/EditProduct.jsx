@@ -8,6 +8,7 @@ import {
   unpackProductMetadata,
   generateSuperMetaTags,
 } from "../utils/productMetadata";
+import { formatAdditionalInfo } from "../utils/productStandardizer";
 import {
   FaCloudUploadAlt,
   FaTimes,
@@ -93,6 +94,8 @@ const EditProduct = () => {
 
       // Unpack embedded metadata (FAQs, Super Meta Title & Description)
       const unpacked = unpackProductMetadata(p);
+      const cleanAdditionalInfo = unpacked.cleanAdditionalInfo || p.additionalInfo || "";
+      const formattedAdditionalInfo = formatAdditionalInfo(cleanAdditionalInfo, p);
 
       setForm({
         name: p.name || "",
@@ -102,7 +105,7 @@ const EditProduct = () => {
         categoryId: p.categoryId?._id || "",
         subCategoryId: p.subCategoryId?._id || "",
         stock: p.stock || "",
-        additionalInfo: unpacked.cleanAdditionalInfo || p.additionalInfo || "",
+        additionalInfo: formattedAdditionalInfo,
         detail: p.detail || "",
         weight: p.weight || "",
         pricePerGram: p.pricePerGram || "",
