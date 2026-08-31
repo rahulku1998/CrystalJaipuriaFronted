@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import API from "../api/axios";
 import { formatPrice } from "../utils/price";
+import { getStandardizedProduct } from "../utils/productStandardizer";
 import {
   getProductMetaTitle,
   getProductMetaDescription,
@@ -118,9 +119,10 @@ Hello Crystal Jaipuria, I have a query regarding this product.
         return;
       }
 
-      setProduct(data || null);
-      if (data) {
-        trackProductView(data);
+      const standardized = data ? getStandardizedProduct(data) : null;
+      setProduct(standardized || null);
+      if (standardized) {
+        trackProductView(standardized);
       }
       if (data?.categoryId?._id) {
         fetchRelatedProducts(data);
@@ -163,7 +165,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
   }
 
   const canonicalUrl = `https://www.crystaljaipuria.com/product/${product.slug || id}`;
-  const metaTitle = getProductMetaTitle(product.name);
+  const metaTitle = getProductMetaTitle(product.name, product.slug || id);
   const metaDescription = getProductMetaDescription(product);
   const schema = getProductSchema(product, canonicalUrl);
   const whatsappMessage = `Hi Crystal Jaipuria, I am interested in buying "${product.name}". Please share more details on this Number .`;

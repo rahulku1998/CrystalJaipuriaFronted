@@ -312,6 +312,7 @@ className="w-full rounded-xl border border-gray-200 bg-gray-50 px-5 py-4 outline
     onChange={handleChange}
     rows={6}
     placeholder="Enter product description..."
+    currentSlug={form.slug || ""}
   />
 </div>
 
@@ -436,6 +437,7 @@ placeholder="Available stock"
     onChange={handleChange}
     rows={4}
     placeholder="Material, size, color, specifications etc."
+    currentSlug={form.slug || ""}
   />
 </div>
 

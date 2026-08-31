@@ -15,6 +15,7 @@ import {
   generateGeminiContent,
   GEMINI_API_KEY_STORAGE_KEY
 } from "../utils/aiGenerator";
+import { autoInjectInternalLinks } from "../utils/internalLinking";
 
 const AIAssistantModal = ({
   isOpen,
@@ -56,6 +57,9 @@ const AIAssistantModal = ({
     setResult(null);
     try {
       const data = await generateGeminiContent(name, category, apiKey);
+      if (data?.fullDescription) {
+        data.fullDescription = autoInjectInternalLinks(data.fullDescription, "", 3);
+      }
       setResult(data);
     } catch (err) {
       console.error("AI Generation Error:", err);

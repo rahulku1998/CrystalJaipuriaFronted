@@ -1,12 +1,47 @@
 /**
  * SEO helper functions for optimizing title and description lengths
- * Target limits:
- * - Meta Title: ~50-60 characters (max 60 chars)
- * - Meta Description: ~150-160 characters (max 160 chars)
+ * Super SEO Titles designed for Google Search, AI Overviews & High Click-Through Rate (CTR)
  */
 
-export const getProductMetaTitle = (productName) => {
-  if (!productName) return "Crystal Jaipuria | Gemstone Statues";
+const SUPER_TITLE_MAPPINGS = {
+  "natural-sphatik-shivling": "Natural Sphatik Shivling (100% Certified Clear Quartz) | Jaipur Manufacturer",
+  "clear-crystal-quartz-shivling-with-shiva-face": "Clear Quartz Shivling With Shiva Face (Handcrafted Sphatik Murti)",
+  "green-jade-shiva-statue-with-gold-panting": "Green Jade Shiva Statue With 24K Gold Painting | Authentic Jaipur Carving",
+  "natural-rose-quartz-pair-of-swan": "Natural Rose Quartz Pair of Swans for Love & Vastu Harmony",
+  "gemston-ruby-shree-yantra": "Natural Ruby Gemstone Shree Yantra | Vedic Wealth & Prosperity",
+  "blue-sapphire-carving-shiva-statue": "Handcrafted Blue Sapphire Carving Shiva Statue | Jaipur Gemstone Wholesaler",
+  "green-jade-carved-shree-krishana-statue": "Green Jade Carved Shree Krishna Statue | Authentic Jaipur Gemstone Idol",
+  "pyrite-gemston-shivling": "Golden Pyrite Gemstone Shivling (Money Magnet & Vastu) | Crystal Jaipuria",
+  "green-jade-panchmukhi-shivling": "Natural Green Jade Panchmukhi Shivling (5-Faced Shiva) | Jaipur Manufacturer",
+  "natural-ruby-shivling": "Natural Ruby Gemstone Shivling | Certified Precious Gem Carving",
+  "green-jade-elephant-staute": "Handcrafted Green Jade Elephant Statue for Good Luck & Vastu | Jaipur",
+  "lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva": "Natural Lapis Lazuli Shiva Linga With Face | Authentic Gemstone Murti",
+  "green-jade-carving-shiva-face-statue": "Green Jade Carved Shiva Face Idol | Handcrafted Spiritual Decor",
+  "crystal-sphtik-shree-yantra-on-kamal-flower": "Crystal Sphatik Shree Yantra on Kamal Lotus | 100% Pure Clear Quartz",
+  "black-agate-gemstone-carving-of-ganesh": "Natural Black Agate Ganesha Murti for Protection & Prosperity | Jaipur",
+  "gemston-amethyst-diya": "Natural Amethyst Gemstone Diya for Meditation & Temple Pooja",
+  "crystal-clear-mahvaveer-ji-statue": "Crystal Clear Mahaveer Ji Statue | Authentic Digambar & Shwetambar Jain Idol",
+  "amethyst-gemston-angel": "Natural Amethyst Gemstone Guardian Angel for Healing & Positive Energy",
+};
+
+export const getProductMetaTitle = (productName, slug = "") => {
+  if (!productName) return "Crystal Jaipuria | Gemstone Statues & Sphatik Manufacturer";
+
+  // Check direct high-intent mapping
+  const normalizedSlug = (slug || "").toLowerCase().trim();
+  if (normalizedSlug && SUPER_TITLE_MAPPINGS[normalizedSlug]) {
+    return SUPER_TITLE_MAPPINGS[normalizedSlug];
+  }
+
+  // Check matching by product name keyword
+  const lowerName = productName.toLowerCase();
+  for (const [key, superTitle] of Object.entries(SUPER_TITLE_MAPPINGS)) {
+    const keyword = key.replace(/-/g, " ");
+    if (lowerName.includes(keyword) || keyword.includes(lowerName)) {
+      return superTitle;
+    }
+  }
+
   const brand = " | Crystal Jaipuria";
   const cleanName = productName.trim();
 
@@ -14,13 +49,12 @@ export const getProductMetaTitle = (productName) => {
     return `${cleanName}${brand}`;
   }
 
-  const maxNameLen = 60 - brand.length; // 41 chars
+  const maxNameLen = 60 - brand.length;
   let trimmed = cleanName.slice(0, maxNameLen);
   const lastSpace = trimmed.lastIndexOf(" ");
   if (lastSpace > 15) {
     trimmed = trimmed.slice(0, lastSpace);
   }
-  // Strip trailing punctuation and dangling prepositions
   trimmed = trimmed
     .replace(/[\s,\-_|]+$/, "")
     .replace(/\s+(with|of|and|in|for|on|the|a|an|to|from|by)$/i, "")
