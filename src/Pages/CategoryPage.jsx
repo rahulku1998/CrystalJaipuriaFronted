@@ -5,6 +5,7 @@ import SEO from "../Components/SEO";
 import { formatPrice } from "../utils/price";
 import { getBreadcrumbSchema } from "../utils/seo";
 import { trackCategoryView } from "../utils/analytics";
+import { LEGACY_PRODUCTS } from "../utils/legacyProducts";
 import NotFound from "./NotFound";
 
 const CATEGORY_SEO = {
@@ -151,11 +152,12 @@ const CategoryPage = () => {
       );
       setSubCategories(filteredSubs);
 
-      const filteredProducts = (productRes.data.products || []).filter(
+      const liveProducts = (productRes.data.products || []).filter(
         (p) => p.categoryId?._id === currentCat._id
       );
-      setProducts(filteredProducts);
-      trackCategoryView(currentCat.name, filteredProducts);
+
+      setProducts(liveProducts);
+      trackCategoryView(currentCat.name, liveProducts);
     } catch (err) {
       console.log("Category fetch error:", err);
     } finally {

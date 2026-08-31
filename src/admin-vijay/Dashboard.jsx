@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import API from "../api/axios";
 import { formatPrice } from "../utils/price";
 import { useNavigate, Link } from "react-router-dom";
-import { FaDownload, FaExternalLinkAlt, FaRobot, FaSyncAlt, FaFileCode, FaCheckCircle } from "react-icons/fa";
+import { FaDownload, FaExternalLinkAlt, FaRobot, FaSyncAlt, FaFileCode, FaCheckCircle, FaClock } from "react-icons/fa";
+import { LEGACY_PRODUCTS } from "../utils/legacyProducts";
 
 const AdminDashboard = () => {
   const [products, setProducts] = useState([]);
@@ -11,6 +12,9 @@ const AdminDashboard = () => {
   const [search, setSearch] = useState("");
   const [blogs, setBlogs] = useState([]);
   const navigate = useNavigate();
+
+  const liveSlugs = new Set(products.map((p) => p.slug));
+  const pendingCount = LEGACY_PRODUCTS.filter((p) => !liveSlugs.has(p.slug)).length;
 
   const fetchData = async () => {
     try {
@@ -115,6 +119,15 @@ const AdminDashboard = () => {
             onClick={() => navigate("/admin-vijay/dashboard")}
           >
             📊 Dashboard
+          </button>
+          <button
+            className="adminBtn block w-full text-left cursor-pointer bg-amber-500/20 text-amber-300 font-bold border border-amber-400/40 rounded-xl px-3 py-2.5 flex items-center justify-between"
+            onClick={() => navigate("/admin-vijay/pending-products")}
+          >
+            <span>⏳ Pending Listing</span>
+            <span className="bg-amber-400 text-slate-950 text-xs px-2 py-0.5 rounded-full font-extrabold">
+              {pendingCount}
+            </span>
           </button>
           <button
             className="adminBtn cursor-pointer text-indigo-600 hover:text-indigo-800"

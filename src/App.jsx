@@ -30,6 +30,7 @@ import VijayDeleteProduct from './admin-vijay/DeleteProduct';
 import VijayCategories from './admin-vijay/Categories';
 import VijayBlogs from './admin-vijay/Blog';
 import VijaySubCategories from './admin-vijay/SubCategories';
+import VijayPendingProducts from './admin-vijay/PendingProducts';
 import VijayProtectedRoute from './Components/VijayProtectedRoute';
 
 import ScrollTop from "./Components/ScrollTop";
@@ -128,6 +129,11 @@ function App() {
         <Route path="/admin-vijay/dashboard" element={
           <VijayProtectedRoute>
             <VijayDashboard />
+          </VijayProtectedRoute>
+        } />
+        <Route path="/admin-vijay/pending-products" element={
+          <VijayProtectedRoute>
+            <VijayPendingProducts />
           </VijayProtectedRoute>
         } />
         <Route path="/admin-vijay/add-product" element={

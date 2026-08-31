@@ -14,7 +14,7 @@ const ProductCard = ({ product }) => {
       {/* Image */}
       <div className="h-72 bg-gray-100 flex items-center justify-center overflow-hidden">
         <img
-          src={item.images?.[0]?.url}
+          src={typeof item.images?.[0] === 'string' ? item.images[0] : (item.images?.[0]?.url || "/Gemstone.webp")}
           alt={item.name}
           className="max-h-full max-w-full object-contain group-hover:scale-105 duration-500"
         />

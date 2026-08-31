@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import API from "../api/axios";
 import { formatPrice } from "../utils/price";
 import { getStandardizedProduct } from "../utils/productStandardizer";
 import { unpackProductMetadata } from "../utils/productMetadata";
+import { getLegacyProductBySlug } from "../utils/legacyProducts";
 import {
   getProductMetaTitle,
   getProductMetaDescription,
@@ -144,13 +145,17 @@ Hello Crystal Jaipuria, I have a query regarding this product.
       }
 
       let standardized = null;
+      if (!data) {
+        data = getLegacyProductBySlug(slug);
+      }
+
       if (data) {
         const unpacked = unpackProductMetadata(data);
         const mergedData = {
           ...data,
-          faqs: unpacked.faqs,
-          metaTitle: unpacked.metaTitle,
-          metaDescription: unpacked.metaDescription,
+          faqs: unpacked.faqs || data.faqs,
+          metaTitle: unpacked.metaTitle || data.metaTitle,
+          metaDescription: unpacked.metaDescription || data.metaDescription,
           additionalInfo: unpacked.cleanAdditionalInfo || data.additionalInfo
         };
         standardized = getStandardizedProduct(mergedData);
@@ -164,11 +169,22 @@ Hello Crystal Jaipuria, I have a query regarding this product.
         fetchRelatedProducts(data);
       }
       if (data?.images?.length > 0) {
-        setSelectedImage(data.images[0].url);
+        const firstImg = typeof data.images[0] === 'string' ? data.images[0] : (data.images[0]?.url || data.images[0]);
+        setSelectedImage(firstImg);
       }
     } catch (err) {
       console.log(err);
-      setProduct(null);
+      const legacyFallback = getLegacyProductBySlug(slug);
+      if (legacyFallback) {
+        const std = getStandardizedProduct(legacyFallback);
+        setProduct(std);
+        if (std.images?.length > 0) {
+          const firstImg = typeof std.images[0] === 'string' ? std.images[0] : (std.images[0]?.url || std.images[0]);
+          setSelectedImage(firstImg);
+        }
+      } else {
+        setProduct(null);
+      }
     } finally {
       setLoading(false);
     }
@@ -218,7 +234,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
   }
   if (!Array.isArray(productFaqs)) productFaqs = [];
   productFaqs = productFaqs.filter((f) => f && (f.question || f.answer));
-  const hasFaqs = productFaqs.length > 0;
+  const isPendingProduct = Boolean(product._id?.startsWith?.('legacy_') || product.isPending);
 
   return (
     <>
@@ -226,10 +242,17 @@ Hello Crystal Jaipuria, I have a query regarding this product.
         title={metaTitle}
         description={metaDescription}
         canonical={canonicalUrl}
-        image={product.images?.[0]?.url || "https://www.crystaljaipuria.com/logo.png"}
+        image={(typeof product.images?.[0] === 'string' ? product.images[0] : product.images?.[0]?.url) || "https://www.crystaljaipuria.com/logo.png"}
         type="product"
         schema={schema}
+        robots={isPendingProduct ? "noindex, nofollow" : "index, follow"}
       />
+
+      {isPendingProduct && (
+        <div className="bg-amber-50 border-b border-amber-200 py-2.5 px-4 text-center text-xs sm:text-sm text-amber-800 font-medium">
+          🔒 <strong>Pending Product Listing:</strong> This page is protected with <code>noindex, nofollow</code>. Go to <Link to="/admin-vijay/pending-products" className="underline font-bold text-amber-900">Vijay Admin Panel</Link> to attach real photos and make 100% Live!
+        </div>
+      )}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
         {/* Back Button */}
@@ -246,7 +269,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
           <div>
             <div className="w-full h-[320px] sm:h-[440px] lg:h-[500px] bg-gray-50 rounded-2xl shadow-xs border border-gray-200 overflow-hidden flex items-center justify-center p-2">
               <img
-                src={selectedImage}
+                src={selectedImage || (typeof product.images?.[0] === 'string' ? product.images[0] : product.images?.[0]?.url) || "/Gemstone.webp"}
                 alt={product.name}
                 className="max-h-full max-w-full object-contain rounded-xl"
               />
@@ -255,22 +278,22 @@ Hello Crystal Jaipuria, I have a query regarding this product.
             {/* Thumbnails Row */}
             {product.images?.length > 1 && (
               <div className="flex gap-3 mt-4 overflow-x-auto pb-2">
-                {product.images.map((img, idx) => (
-                  <img
-                    key={img.public_id || idx}
-                    src={img.url}
-                    alt={product.name}
-                    onClick={() => {
-                      setSelectedImage(img.url);
-                      trackGalleryClick(idx, product);
-                    }}
-                    className={`w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-xl cursor-pointer border-2 transition-all duration-200 shrink-0 ${
-                      selectedImage === img.url
-                        ? "border-amber-500 shadow-md scale-105"
-                        : "border-gray-200 hover:border-gray-400"
-                    }`}
-                  />
-                ))}
+                {product.images.map((img, idx) => {
+                  const src = typeof img === 'string' ? img : (img?.url || '');
+                  return (
+                    <img
+                      key={img.public_id || idx}
+                      src={src}
+                      alt={`${product.name} - ${idx + 1}`}
+                      onClick={() => {
+                        setSelectedImage(src);
+                      }}
+                      className={`w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-xl border-2 cursor-pointer transition ${
+                        selectedImage === src ? "border-indigo-600 ring-2 ring-indigo-200" : "border-gray-200 hover:border-gray-400"
+                      }`}
+                    />
+                  );
+                })}
               </div>
             )}
           </div>

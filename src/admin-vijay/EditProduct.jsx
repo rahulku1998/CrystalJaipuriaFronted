@@ -9,6 +9,7 @@ import {
   generateSuperMetaTags,
 } from "../utils/productMetadata";
 import { formatAdditionalInfo } from "../utils/productStandardizer";
+import { generateShortDetail } from "../utils/aiGenerator";
 import {
   FaCloudUploadAlt,
   FaTimes,
@@ -18,6 +19,7 @@ import {
   FaQuestionCircle,
   FaMagic,
   FaSearch,
+  FaSpinner,
 } from "react-icons/fa";
 
 const EditProduct = () => {
@@ -26,6 +28,7 @@ const EditProduct = () => {
 
   const [loading, setLoading] = useState(true);
   const [showAiModal, setShowAiModal] = useState(false);
+  const [generatingDetail, setGeneratingDetail] = useState(false);
 
   const [form, setForm] = useState({
     name: "",
@@ -150,6 +153,26 @@ const EditProduct = () => {
 
   const handleRemoveFaq = (index) => {
     setFaqs((prev) => prev.filter((_, i) => i !== index));
+  };
+
+  const handleGenerateShortDetail = async () => {
+    if (!form.name.trim()) {
+      alert("Please enter a product name first!");
+      return;
+    }
+    setGeneratingDetail(true);
+    try {
+      const catName = categories.find((c) => c._id === form.categoryId)?.name || "";
+      const generated = await generateShortDetail(form.name, catName);
+      setForm((prev) => ({
+        ...prev,
+        detail: generated,
+      }));
+    } catch (e) {
+      console.log("Error generating short detail:", e);
+    } finally {
+      setGeneratingDetail(false);
+    }
   };
 
   const handleGenerateSuperMeta = () => {
@@ -296,30 +319,50 @@ placeholder="Enter product name"
 
 
 
-<div>
+            <div>
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+                <label className="font-semibold text-gray-700">
+                  Details (Short Summary)
+                </label>
+                <button
+                  type="button"
+                  onClick={handleGenerateShortDetail}
+                  disabled={generatingDetail}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white text-xs font-bold shadow-xs transition active:scale-95 cursor-pointer disabled:opacity-50"
+                >
+                  {generatingDetail ? (
+                    <FaSpinner className="animate-spin text-xs" />
+                  ) : (
+                    <FaMagic className="text-xs text-amber-200" />
+                  )}
+                  <span>{generatingDetail ? "Generating..." : "✨ AI Generate Short Details (50-55 words)"}</span>
+                </button>
+              </div>
 
-<label className="block mb-2 font-semibold text-gray-700">
-Details
-</label>
+              <textarea
+                name="detail"
+                value={form.detail}
+                onChange={handleChange}
+                rows="4"
+                className="w-full rounded-xl border border-gray-200 bg-gray-50 px-5 py-4 outline-none focus:bg-white focus:ring-2 focus:ring-amber-400 text-sm leading-relaxed"
+                placeholder="Enter concise product details or click 'AI Generate' above (50-55 words max)..."
+              />
 
-<textarea
-
-name="detail"
-
-value={form.detail}
-
-onChange={handleChange}
-
-rows="3"
-
-placeholder="Enter product details"
-
-className="w-full rounded-xl border border-gray-200 bg-gray-50 px-5 py-4 outline-none focus:bg-white focus:ring-2 focus:ring-gray-300"
-
-></textarea>
-
-
-</div>
+              <div className="flex justify-between items-center mt-1 px-1 text-xs">
+                <span className="text-gray-500">Short summary for top product overview &amp; snippet</span>
+                <span
+                  className={`font-mono font-semibold ${
+                    (form.detail?.trim() ? form.detail.trim().split(/\s+/).length : 0) > 55
+                      ? "text-red-600"
+                      : (form.detail?.trim() ? form.detail.trim().split(/\s+/).length : 0) >= 45
+                      ? "text-emerald-600"
+                      : "text-gray-500"
+                  }`}
+                >
+                  {form.detail?.trim() ? form.detail.trim().split(/\s+/).length : 0} / 55 words max
+                </span>
+              </div>
+            </div>
 
 <div>
   <RichTextEditor

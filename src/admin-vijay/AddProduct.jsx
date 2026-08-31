@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import API from "../api/axios";
 import RichTextEditor from "../Components/RichTextEditor";
 import AIAssistantModal from "../Components/AIAssistantModal";
@@ -6,6 +7,7 @@ import {
   packProductMetadata,
   generateSuperMetaTags,
 } from "../utils/productMetadata";
+import { generateShortDetail } from "../utils/aiGenerator";
 import {
   FaCloudUploadAlt,
   FaTimes,
@@ -15,9 +17,13 @@ import {
   FaQuestionCircle,
   FaMagic,
   FaSearch,
+  FaSpinner,
 } from "react-icons/fa";
 
 const AddProduct = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const prefill = location.state?.prefillProduct;
 
   const [form,setForm] = useState({
     name:"",
@@ -39,6 +45,7 @@ const AddProduct = () => {
   const [metaDescription, setMetaDescription] = useState("");
   const [faqs, setFaqs] = useState([{ question: "", answer: "" }]);
   const [showAiModal, setShowAiModal] = useState(false);
+  const [generatingDetail, setGeneratingDetail] = useState(false);
   const [categories,setCategories] = useState([]);
   const [subCategories,setSubCategories] = useState([]);
   const [images,setImages] = useState([]);
@@ -48,6 +55,54 @@ const AddProduct = () => {
 useEffect(()=>{
   fetchCategories();
 },[]);
+
+useEffect(() => {
+  if (prefill && categories.length > 0) {
+    const matchedCat = categories.find(
+      (c) =>
+        c.name.toLowerCase() === prefill.categoryName?.toLowerCase() ||
+        c.slug === prefill.categoryName?.toLowerCase().replace(/\s+/g, "-")
+    );
+
+    setForm((prev) => ({
+      ...prev,
+      name: prefill.name || prev.name,
+      price: prefill.price || prev.price,
+      discountPrice: prefill.discountPrice || prev.discountPrice,
+      categoryId: matchedCat?._id || prev.categoryId,
+      weight: prefill.weight || prev.weight,
+      size: prefill.size || prev.size,
+      detail: prefill.detail || prev.detail,
+      description: prefill.description || prev.description,
+      additionalInfo: prefill.additionalInfo || prev.additionalInfo,
+      stock: "10",
+    }));
+
+    if (prefill.metaTitle) setMetaTitle(prefill.metaTitle);
+    if (prefill.metaDescription) setMetaDescription(prefill.metaDescription);
+    if (prefill.faqs && Array.isArray(prefill.faqs)) setFaqs(prefill.faqs);
+  }
+}, [categories, prefill]);
+
+const handleGenerateShortDetail = async () => {
+  if (!form.name.trim()) {
+    alert("Please enter a product name first!");
+    return;
+  }
+  setGeneratingDetail(true);
+  try {
+    const catName = categories.find((c) => c._id === form.categoryId)?.name || "";
+    const generated = await generateShortDetail(form.name, catName);
+    setForm((prev) => ({
+      ...prev,
+      detail: generated,
+    }));
+  } catch (e) {
+    console.log("Error generating short detail:", e);
+  } finally {
+    setGeneratingDetail(false);
+  }
+};
 
 const fetchCategories = async()=>{
 
@@ -306,40 +361,49 @@ const handleCategoryChange = async (e) => {
               placeholder="Enter product name"
             />
 
-           <div>
-
-              <label className="block mb-2 font-semibold text-gray-700">
-                Details
-              </label>
-
+            <div>
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+                <label className="font-semibold text-gray-700">
+                  Details (Short Summary)
+                </label>
+                <button
+                  type="button"
+                  onClick={handleGenerateShortDetail}
+                  disabled={generatingDetail}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white text-xs font-bold shadow-xs transition active:scale-95 cursor-pointer disabled:opacity-50"
+                >
+                  {generatingDetail ? (
+                    <FaSpinner className="animate-spin text-xs" />
+                  ) : (
+                    <FaMagic className="text-xs text-amber-200" />
+                  )}
+                  <span>{generatingDetail ? "Generating..." : "✨ AI Generate Short Details (50-55 words)"}</span>
+                </button>
+              </div>
 
               <textarea
-
                 name="detail"
-
                 value={form.detail}
-
                 onChange={handleChange}
-
-                rows="5"
-
-                className="
-                w-full
-                rounded-xl
-                border
-                px-5
-                py-4
-                bg-gray-50
-                outline-none
-                focus:bg-white
-                focus:ring-2
-                focus:ring-gray-300
-                "
-
-                placeholder="Enter detail about product"
-
+                rows="4"
+                className="w-full rounded-xl border px-5 py-4 bg-gray-50 outline-none focus:bg-white focus:ring-2 focus:ring-amber-400 text-sm leading-relaxed"
+                placeholder="Enter concise product details or click 'AI Generate' above (50-55 words max)..."
               />
 
+              <div className="flex justify-between items-center mt-1 px-1 text-xs">
+                <span className="text-gray-500">Short summary for top product overview &amp; snippet</span>
+                <span
+                  className={`font-mono font-semibold ${
+                    (form.detail.trim() ? form.detail.trim().split(/\s+/).length : 0) > 55
+                      ? "text-red-600"
+                      : (form.detail.trim() ? form.detail.trim().split(/\s+/).length : 0) >= 45
+                      ? "text-emerald-600"
+                      : "text-gray-500"
+                  }`}
+                >
+                  {form.detail.trim() ? form.detail.trim().split(/\s+/).length : 0} / 55 words max
+                </span>
+              </div>
             </div>
             
 

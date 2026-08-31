@@ -234,3 +234,49 @@ export const generateGeminiContent = async (productName, categoryName = "", user
     return generateBuiltInContent(productName, categoryName);
   }
 };
+
+/**
+ * Generate high-converting Short Details with strict 50-55 words constraint
+ */
+export const generateShortDetail = async (productName, categoryName = "", userApiKey = "") => {
+  const apiKey =
+    userApiKey ||
+    localStorage.getItem(GEMINI_API_KEY_STORAGE_KEY) ||
+    (typeof import.meta !== "undefined" && import.meta.env?.VITE_GEMINI_API_KEY) ||
+    "";
+
+  const stoneKey = detectGemstone(productName + " " + categoryName);
+  const profile = GEMSTONE_PROFILES[stoneKey] || GEMSTONE_PROFILES.sphatik;
+  const cleanName = (productName || "Handcrafted Gemstone Idol").trim();
+
+  const fallback = `Handcrafted ${cleanName} carved from 100% certified natural ${profile.name} by master artisans in Jaipur. Radiates divine spiritual vibrations, harmonizes planetary energies, and purifies surrounding Vastu aura. Ideal for home temple altar, sacred daily worship, meditation, and auspicious spiritual gifting. Comes with secure shockproof packaging and worldwide doorstep delivery.`;
+
+  if (!apiKey) {
+    return fallback;
+  }
+
+  const prompt = `You are a Vedic Gemstone Expert for "Crystal Jaipuria" (Jaipur, India).
+Write a high-converting, authoritative product Short Detail for: "${cleanName}" (${categoryName || 'Gemstone Statues'}).
+STRICT CONSTRAINT: Exactly 50 to 55 words.
+Include: 100% certified natural gemstone, master Jaipur hand-carving, core Vedic/Vastu spiritual benefit, and sacred altar/gifting use.
+Return ONLY the raw plain text paragraph (no markdown formatting, no quotes).`;
+
+  try {
+    const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + apiKey;
+    const response = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: prompt }] }],
+      })
+    });
+
+    if (!response.ok) return fallback;
+    const json = await response.json();
+    const rawText = json?.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
+    return rawText || fallback;
+  } catch (err) {
+    return fallback;
+  }
+};
+

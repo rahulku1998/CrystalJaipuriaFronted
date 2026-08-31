@@ -82,8 +82,9 @@ const generateSitemap = async () => {
     });
   }
 
+  // Only include live database products in sitemap.xml
   if (products.length > 0) {
-    xml += `\n  <!-- Dynamic Product Pages (${products.length} Products) -->\n`;
+    xml += `\n  <!-- Dynamic Product Pages (${products.length} Live Products) -->\n`;
     products.forEach((prod) => {
       const slug = prod.slug || prod._id;
       xml += `  <url>\n`;
