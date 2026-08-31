@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import API from "../api/axios";
 import RichTextEditor from "../Components/RichTextEditor";
+import AIAssistantModal from "../Components/AIAssistantModal";
 import {
   packProductMetadata,
+  generateSuperMetaTags,
 } from "../utils/productMetadata";
 import {
   FaCloudUploadAlt,
@@ -11,6 +13,7 @@ import {
   FaImages,
   FaPlusCircle,
   FaQuestionCircle,
+  FaMagic,
   FaSearch,
 } from "react-icons/fa";
 
@@ -258,10 +261,28 @@ const handleCategoryChange = async (e) => {
               Add New Product
             </h1>
             <p className="text-gray-500 mt-1 text-sm">
-              Fill in the details below to add a new product to your store.
+              Create and manage your store products with SEO & AI Overview optimization
             </p>
           </div>
+
+          <button
+            type="button"
+            onClick={() => setShowAiModal(true)}
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 via-purple-600 to-indigo-600 hover:from-amber-600 hover:to-indigo-700 text-white text-xs sm:text-sm font-bold px-5 py-3 rounded-2xl shadow-lg transition-transform hover:scale-105 active:scale-95 cursor-pointer self-start sm:self-auto"
+          >
+            <FaMagic className="text-amber-200 text-sm" />
+            <span>✨ AI Content & FAQ Assistant</span>
+          </button>
         </div>
+
+        <AIAssistantModal
+          isOpen={showAiModal}
+          onClose={() => setShowAiModal(false)}
+          productName={form.name}
+          categoryName={categories.find((c) => c._id === form.categoryId)?.name || ""}
+          onApplyDescription={(html) => setForm((prev) => ({ ...prev, description: html }))}
+          onApplyFaqs={(generatedFaqs) => setFaqs(generatedFaqs)}
+        />
 
         <div className="bg-white rounded-3xl shadow-xl p-8">
 
@@ -525,9 +546,18 @@ subCategories.map((sub)=>(
                     <span>Super SEO & Meta Tags (Google Search & AI Overviews)</span>
                   </label>
                   <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
-                    Custom title and description for Google search results and social shares.
+                    Custom title and description for Google search results, social shares, and AI bot citations.
                   </p>
                 </div>
+
+                <button
+                  type="button"
+                  onClick={handleGenerateSuperMeta}
+                  className="inline-flex items-center gap-1.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white text-xs font-bold px-4 py-2 rounded-xl shadow-xs transition-transform active:scale-95 cursor-pointer self-start sm:self-auto"
+                >
+                  <FaMagic className="text-amber-300" />
+                  <span>✨ 1-Click Generate Super SEO Tags</span>
+                </button>
               </div>
 
               <div className="space-y-4">

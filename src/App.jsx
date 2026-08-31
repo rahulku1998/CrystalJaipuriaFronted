@@ -20,6 +20,18 @@ import DeleteProduct from './admin/DeleteProduct';
 import Categories from './admin/Categories';
 import AdminBlogs from './admin/Blog';
 import AddSubCategory from './admin/SubCategories';
+
+// Vijay AI Super Admin Panel Components
+import VijayLogin from './admin-vijay/Login';
+import VijayDashboard from './admin-vijay/Dashboard';
+import VijayAddProduct from './admin-vijay/AddProduct';
+import VijayEditProduct from './admin-vijay/EditProduct';
+import VijayDeleteProduct from './admin-vijay/DeleteProduct';
+import VijayCategories from './admin-vijay/Categories';
+import VijayBlogs from './admin-vijay/Blog';
+import VijaySubCategories from './admin-vijay/SubCategories';
+import VijayProtectedRoute from './Components/VijayProtectedRoute';
+
 import ScrollTop from "./Components/ScrollTop";
 import FloatingWhatsApp from "./Components/FloatingWhatsApp";
 import Blog from "./Pages/Blog/Blogs";
@@ -70,49 +82,86 @@ function App() {
 
         {/* DYNAMIC CATEGORY */}
         <Route path="/:slug" element={<CategoryPage />} />
-        <Route path="*" element={<NotFound />} />
+        
+        {/* STANDARD CLIENT ADMIN PANEL (Kishan) */}
+        <Route path="/admin" element={<Navigate to="/admin/dashboard" replace />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={
           <ProtectedRoute>
            <AdminDashboard />
-
           </ProtectedRoute>
-          } />
-          <Route path="/admin/add-product" element={
+        } />
+        <Route path="/admin/add-product" element={
           <ProtectedRoute>
            <AddProduct />
-           </ProtectedRoute>
-          } />
-          <Route path="/admin/edit-product/:id" element={
+          </ProtectedRoute>
+        } />
+        <Route path="/admin/edit-product/:id" element={
           <ProtectedRoute>
            <EditProduct />
-           </ProtectedRoute>
-          } />
-          <Route path="/admin/delete-product/:id" element={
+          </ProtectedRoute>
+        } />
+        <Route path="/admin/delete-product/:id" element={
           <ProtectedRoute>
            <DeleteProduct />
-           </ProtectedRoute>
-          } />
-          <Route path="/admin/categories" element={
+          </ProtectedRoute>
+        } />
+        <Route path="/admin/categories" element={
           <ProtectedRoute>
            <Categories />
-           </ProtectedRoute>
-          } />
-           <Route path="/admin/blogs" element={
+          </ProtectedRoute>
+        } />
+        <Route path="/admin/blogs" element={
           <ProtectedRoute>
            <AdminBlogs />
-           </ProtectedRoute>
-          } />
-
-
-
-          <Route path="/admin/subcategories" element={
+          </ProtectedRoute>
+        } />
+        <Route path="/admin/subcategories" element={
           <ProtectedRoute>
            <AddSubCategory />
-           </ProtectedRoute>
-          } />  
+          </ProtectedRoute>
+        } />
 
+        {/* VIJAY AI SUPER ADMIN PANEL */}
+        <Route path="/admin-vijay" element={<Navigate to="/admin-vijay/dashboard" replace />} />
+        <Route path="/admin-vijay/login" element={<VijayLogin />} />
+        <Route path="/admin-vijay/dashboard" element={
+          <VijayProtectedRoute>
+            <VijayDashboard />
+          </VijayProtectedRoute>
+        } />
+        <Route path="/admin-vijay/add-product" element={
+          <VijayProtectedRoute>
+            <VijayAddProduct />
+          </VijayProtectedRoute>
+        } />
+        <Route path="/admin-vijay/edit-product/:id" element={
+          <VijayProtectedRoute>
+            <VijayEditProduct />
+          </VijayProtectedRoute>
+        } />
+        <Route path="/admin-vijay/delete-product/:id" element={
+          <VijayProtectedRoute>
+            <VijayDeleteProduct />
+          </VijayProtectedRoute>
+        } />
+        <Route path="/admin-vijay/categories" element={
+          <VijayProtectedRoute>
+            <VijayCategories />
+          </VijayProtectedRoute>
+        } />
+        <Route path="/admin-vijay/blogs" element={
+          <VijayProtectedRoute>
+            <VijayBlogs />
+          </VijayProtectedRoute>
+        } />
+        <Route path="/admin-vijay/subcategories" element={
+          <VijayProtectedRoute>
+            <VijaySubCategories />
+          </VijayProtectedRoute>
+        } />
 
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
 
