@@ -17,7 +17,7 @@ const img10Mob = "/images/slider-krishna-mob.webp";
 
 export default function HeroSlider() {
   return (
-    <div className="w-full overflow-hidden">
+    <div className="hidden md:block w-full overflow-hidden">
       <Swiper
         modules={[Autoplay, Pagination]}
         autoplay={{
