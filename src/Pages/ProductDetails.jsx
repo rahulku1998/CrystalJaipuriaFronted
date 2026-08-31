@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import API from "../api/axios";
 import { formatPrice } from "../utils/price";
 import { getStandardizedProduct } from "../utils/productStandardizer";
+import { unpackProductMetadata } from "../utils/productMetadata";
 import {
   getProductMetaTitle,
   getProductMetaDescription,
@@ -119,7 +120,19 @@ Hello Crystal Jaipuria, I have a query regarding this product.
         return;
       }
 
-      const standardized = data ? getStandardizedProduct(data) : null;
+      let standardized = null;
+      if (data) {
+        const unpacked = unpackProductMetadata(data);
+        const mergedData = {
+          ...data,
+          faqs: unpacked.faqs,
+          metaTitle: unpacked.metaTitle,
+          metaDescription: unpacked.metaDescription,
+          additionalInfo: unpacked.cleanAdditionalInfo || data.additionalInfo
+        };
+        standardized = getStandardizedProduct(mergedData);
+      }
+
       setProduct(standardized || null);
       if (standardized) {
         trackProductView(standardized);
@@ -165,8 +178,8 @@ Hello Crystal Jaipuria, I have a query regarding this product.
   }
 
   const canonicalUrl = `https://www.crystaljaipuria.com/product/${product.slug || id}`;
-  const metaTitle = getProductMetaTitle(product.name, product.slug || id);
-  const metaDescription = getProductMetaDescription(product);
+  const metaTitle = product.metaTitle || getProductMetaTitle(product.name, product.slug || id);
+  const metaDescription = product.metaDescription || getProductMetaDescription(product);
   const schema = getProductSchema(product, canonicalUrl);
   const whatsappMessage = `Hi Crystal Jaipuria, I am interested in buying "${product.name}". Please share more details on this Number .`;
   const whatsappLink = `https://wa.me/918306317032?text=${encodeURIComponent(whatsappMessage)}`;

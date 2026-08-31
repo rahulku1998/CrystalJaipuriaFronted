@@ -3,7 +3,21 @@ import { useParams, useNavigate } from "react-router-dom";
 import API from "../api/axios";
 import RichTextEditor from "../Components/RichTextEditor";
 import AIAssistantModal from "../Components/AIAssistantModal";
-import { FaCloudUploadAlt, FaTimes, FaTrashAlt, FaImages, FaPlusCircle, FaQuestionCircle, FaMagic } from "react-icons/fa";
+import {
+  packProductMetadata,
+  unpackProductMetadata,
+  generateSuperMetaTags,
+} from "../utils/productMetadata";
+import {
+  FaCloudUploadAlt,
+  FaTimes,
+  FaTrashAlt,
+  FaImages,
+  FaPlusCircle,
+  FaQuestionCircle,
+  FaMagic,
+  FaSearch,
+} from "react-icons/fa";
 
 const EditProduct = () => {
   const { id } = useParams();
@@ -27,6 +41,8 @@ const EditProduct = () => {
     pricePerCarat: "",
     size: ""
   });
+  const [metaTitle, setMetaTitle] = useState("");
+  const [metaDescription, setMetaDescription] = useState("");
   const [faqs, setFaqs] = useState([{ question: "", answer: "" }]);
   const [categories, setCategories] = useState([]);
   const [subCategories, setSubCategories] = useState([]);
@@ -69,61 +85,55 @@ const EditProduct = () => {
 
   // fetch product
   const fetchProduct = async () => {
-  try {
-    setLoading(true);
+    try {
+      setLoading(true);
 
-    const res = await API.get(`/products/${id}`);
+      const res = await API.get(`/products/${id}`);
+      const p = res.data.product;
 
-    const p = res.data.product;
+      // Unpack embedded metadata (FAQs, Super Meta Title & Description)
+      const unpacked = unpackProductMetadata(p);
 
-    setForm({
-      name: p.name || "",
-      description: p.description || "",
-      price: p.price || "",
-      discountPrice: p.discountPrice || "",
-      categoryId: p.categoryId?._id || "",
-      subCategoryId: p.subCategoryId?._id || "",
-      stock: p.stock || "",
-      additionalInfo: p.additionalInfo || "",
-      detail: p.detail || "",
-      weight: p.weight || "",
-      pricePerGram: p.pricePerGram || "",
-      pricePerCarat: p.pricePerCarat || "",
-      size: p.size || ""
-    });
+      setForm({
+        name: p.name || "",
+        description: p.description || "",
+        price: p.price || "",
+        discountPrice: p.discountPrice || "",
+        categoryId: p.categoryId?._id || "",
+        subCategoryId: p.subCategoryId?._id || "",
+        stock: p.stock || "",
+        additionalInfo: unpacked.cleanAdditionalInfo || p.additionalInfo || "",
+        detail: p.detail || "",
+        weight: p.weight || "",
+        pricePerGram: p.pricePerGram || "",
+        pricePerCarat: p.pricePerCarat || "",
+        size: p.size || "",
+        slug: p.slug || ""
+      });
 
-    setExistingImages(p.images || []);
+      setExistingImages(p.images || []);
+      setMetaTitle(unpacked.metaTitle || "");
+      setMetaDescription(unpacked.metaDescription || "");
 
-    if (p.faqs) {
-      try {
-        const parsed = typeof p.faqs === "string" ? JSON.parse(p.faqs) : p.faqs;
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          setFaqs(parsed);
-        } else {
-          setFaqs([{ question: "", answer: "" }]);
-        }
-      } catch {
+      if (unpacked.faqs && unpacked.faqs.length > 0) {
+        setFaqs(unpacked.faqs);
+      } else {
         setFaqs([{ question: "", answer: "" }]);
       }
-    } else {
-      setFaqs([{ question: "", answer: "" }]);
+
+      if (p.categoryId?._id) {
+        const subRes = await API.get(
+          `/subcategories/category/${p.categoryId._id}`
+        );
+        setSubCategories(subRes.data.subCategories);
+      }
+
+      setLoading(false);
+    } catch (err) {
+      console.log(err);
+      setLoading(false);
     }
-
-    if(p.categoryId?._id){
-      const subRes = await API.get(
-        `/subcategories/category/${p.categoryId._id}`
-      );
-
-      setSubCategories(subRes.data.subCategories);
-    }
-
-    setLoading(false);
-
-  } catch(err){
-    console.log(err);
-    setLoading(false);
-  }
-};
+  };
 
   const handleAddFaq = () => {
     setFaqs((prev) => [...prev, { question: "", answer: "" }]);
@@ -139,41 +149,39 @@ const EditProduct = () => {
     setFaqs((prev) => prev.filter((_, i) => i !== index));
   };
 
+  const handleGenerateSuperMeta = () => {
+    const categoryName = categories.find((c) => c._id === form.categoryId)?.name || "";
+    const generated = generateSuperMetaTags(form.name, categoryName);
+    setMetaTitle(generated.metaTitle);
+    setMetaDescription(generated.metaDescription);
+  };
+
   useEffect(() => {
     fetchProduct();
     fetchCategories();
   }, [id]);
 
-  const fetchCategories = async()=>{
+  const fetchCategories = async () => {
+    try {
+      const res = await API.get("/categories");
+      setCategories(res.data.categories);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-const res = await API.get("/categories");
+  const handleCategoryChange = async (e) => {
+    const categoryId = e.target.value;
+    setForm({
+      ...form,
+      categoryId,
+      subCategoryId: ""
+    });
 
-setCategories(res.data.categories);
+    const res = await API.get(`/subcategories/category/${categoryId}`);
+    setSubCategories(res.data.subCategories);
+  };
 
-};
-const handleCategoryChange = async(e)=>{
-
-const categoryId=e.target.value;
-
-
-setForm({
-...form,
-categoryId,
-subCategoryId:""
-});
-
-
-const res = await API.get(
-`/subcategories/category/${categoryId}`
-);
-
-
-setSubCategories(
-res.data.subCategories
-);
-
-
-};
   // submit update
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -182,7 +190,7 @@ res.data.subCategories
       const formData = new FormData();
 
       Object.keys(form).forEach((key) => {
-        if (form[key] !== "" && form[key] !== null && form[key] !== undefined) {
+        if (key !== "additionalInfo" && form[key] !== "" && form[key] !== null && form[key] !== undefined) {
           formData.append(key, form[key]);
         }
       });
@@ -190,6 +198,17 @@ res.data.subCategories
       // Filter and append valid FAQs
       const validFaqs = faqs.filter((f) => f.question.trim() || f.answer.trim());
       formData.append("faqs", JSON.stringify(validFaqs));
+      formData.append("metaTitle", metaTitle);
+      formData.append("metaDescription", metaDescription);
+
+      // Pack metadata into additionalInfo so backend MongoDB persistence is 100% guaranteed!
+      const packedAdditionalInfo = packProductMetadata({
+        additionalInfo: form.additionalInfo,
+        faqs: validFaqs,
+        metaTitle,
+        metaDescription
+      });
+      formData.append("additionalInfo", packedAdditionalInfo);
 
       images.forEach((img) => {
         formData.append("images", img);
@@ -203,9 +222,8 @@ res.data.subCategories
         },
       });
 
-      alert("Product Updated Successfully");
+      alert("Product & SEO Meta Updated Successfully!");
       navigate("/admin/dashboard");
-
     } catch (err) {
       alert(err.response?.data?.message || "Update failed");
     }
@@ -527,14 +545,94 @@ placeholder="Available stock"
   )}
 </div>
 
+{/* Super SEO Meta Tags Section (Google Search & AI Overview) */}
+<div className="bg-gradient-to-br from-indigo-50/50 via-white to-purple-50/30 border border-indigo-200/80 rounded-2xl p-5 sm:p-6 shadow-xs space-y-4">
+  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-indigo-100 pb-3">
+    <div>
+      <label className="font-bold text-gray-800 text-base sm:text-lg flex items-center gap-2">
+        <FaSearch className="text-indigo-600" />
+        <span>Super SEO & Meta Tags (Google Search & AI Overviews)</span>
+      </label>
+      <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
+        Custom title and description for Google search results, social shares, and AI bot citations.
+      </p>
+    </div>
 
+    <button
+      type="button"
+      onClick={handleGenerateSuperMeta}
+      className="inline-flex items-center gap-1.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white text-xs font-bold px-4 py-2 rounded-xl shadow-xs transition-transform active:scale-95 cursor-pointer self-start sm:self-auto"
+    >
+      <FaMagic className="text-amber-300" />
+      <span>✨ 1-Click Generate Super SEO Tags</span>
+    </button>
+  </div>
 
+  <div className="space-y-4">
+    <div>
+      <div className="flex items-center justify-between mb-1">
+        <label className="text-xs font-semibold text-gray-700">
+          SEO Meta Title
+        </label>
+        <span
+          className={`text-[11px] font-bold ${
+            metaTitle.length > 60 ? "text-amber-600" : "text-gray-400"
+          }`}
+        >
+          {metaTitle.length}/60 chars
+        </span>
+      </div>
+      <input
+        type="text"
+        value={metaTitle}
+        onChange={(e) => setMetaTitle(e.target.value)}
+        placeholder="e.g. Natural Sphatik Shivling (100% Certified Clear Quartz) | Jaipur Manufacturer"
+        className="w-full rounded-xl border border-gray-300 bg-white px-4 py-2.5 text-sm outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400"
+      />
+    </div>
 
+    <div>
+      <div className="flex items-center justify-between mb-1">
+        <label className="text-xs font-semibold text-gray-700">
+          SEO Meta Description
+        </label>
+        <span
+          className={`text-[11px] font-bold ${
+            metaDescription.length > 160 ? "text-amber-600" : "text-gray-400"
+          }`}
+        >
+          {metaDescription.length}/160 chars
+        </span>
+      </div>
+      <textarea
+        rows={3}
+        value={metaDescription}
+        onChange={(e) => setMetaDescription(e.target.value)}
+        placeholder="e.g. Buy handcrafted Natural Sphatik Shivling from Crystal Jaipuria, Jaipur (est. 1989). 100% certified pure natural crystal quartz for home temple & Vastu. Worldwide shipping."
+        className="w-full rounded-xl border border-gray-300 bg-white px-4 py-2.5 text-sm outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 leading-relaxed"
+      />
+    </div>
 
+    {/* Live Google Search Snippet Preview */}
+    <div className="p-3.5 bg-white border border-gray-200 rounded-xl shadow-2xs space-y-1">
+      <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">
+        Google Search Result Preview:
+      </span>
+      <p className="text-xs text-emerald-700 truncate font-mono">
+        https://www.crystaljaipuria.com/product/{form.slug || "product-name"}
+      </p>
+      <p className="text-sm font-semibold text-indigo-800 hover:underline cursor-pointer line-clamp-1">
+        {metaTitle || form.name || "Product Title | Crystal Jaipuria"}
+      </p>
+      <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+        {metaDescription || form.detail || "Product description preview..."}
+      </p>
+    </div>
+  </div>
+</div>
 
-
-            {/* Existing Images */}
-            {existingImages.length > 0 && (
+{/* Existing Images */}
+{existingImages.length > 0 && (
               <div>
                 <div className="flex items-center justify-between mb-3">
                   <h2 className="text-lg font-bold text-gray-800 flex items-center gap-2">
