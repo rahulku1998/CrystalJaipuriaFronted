@@ -207,67 +207,18 @@ Hello Crystal Jaipuria, I have a query regarding this product.
   const whatsappMessage = `Hi Crystal Jaipuria, I am interested in buying "${product.name}". Please share more details on this Number .`;
   const whatsappLink = `https://wa.me/918306317032?text=${encodeURIComponent(whatsappMessage)}`;
 
-  const renderFaqSection = () => {
-    let productFaqs = [];
-    if (product?.faqs) {
-      try {
-        productFaqs = typeof product.faqs === "string" ? JSON.parse(product.faqs) : product.faqs;
-      } catch {
-        productFaqs = [];
-      }
+  // Parse FAQs
+  let productFaqs = [];
+  if (product?.faqs) {
+    try {
+      productFaqs = typeof product.faqs === "string" ? JSON.parse(product.faqs) : product.faqs;
+    } catch {
+      productFaqs = [];
     }
-    if (!Array.isArray(productFaqs)) productFaqs = [];
-    productFaqs = productFaqs.filter((f) => f && (f.question || f.answer));
-
-    if (productFaqs.length === 0) return null;
-
-    return (
-      <div className="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-xs">
-        <div className="p-4 sm:p-5 border-b border-gray-100 bg-stone-50/70 flex items-center justify-between">
-          <div>
-            <span className="text-[11px] font-bold uppercase tracking-wider text-amber-700 bg-amber-100/70 px-2.5 py-0.5 rounded-full">
-              Product FAQs
-            </span>
-            <h2 className="text-base sm:text-lg font-bold text-gray-900 mt-1">
-              Frequently Asked Questions
-            </h2>
-          </div>
-          <span className="text-xs text-gray-400 font-semibold">
-            {productFaqs.length} Q&As
-          </span>
-        </div>
-
-        <div className="p-3 sm:p-4 space-y-2.5 max-h-[380px] sm:max-h-[460px] overflow-y-auto overscroll-contain">
-          {productFaqs.map((faq, index) => (
-            <div
-              key={index}
-              className="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-2xs transition-all duration-200 hover:border-indigo-300"
-            >
-              <button
-                type="button"
-                onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
-                className="w-full flex items-center justify-between p-3.5 sm:p-4 text-left font-semibold text-gray-800 hover:text-indigo-600 transition-colors cursor-pointer text-xs sm:text-sm"
-              >
-                <span className="pr-3">
-                  {index + 1}. {faq.question}
-                </span>
-                <FaChevronDown
-                  className={`text-gray-400 text-xs shrink-0 transition-transform duration-200 ${
-                    openFaqIndex === index ? "rotate-180 text-indigo-600" : ""
-                  }`}
-                />
-              </button>
-              {openFaqIndex === index && (
-                <div className="px-3.5 pb-4 sm:px-4 sm:pb-4 text-xs sm:text-sm text-gray-600 border-t border-gray-100 pt-2.5 leading-relaxed bg-gray-50/50">
-                  {faq.answer}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  };
+  }
+  if (!Array.isArray(productFaqs)) productFaqs = [];
+  productFaqs = productFaqs.filter((f) => f && (f.question || f.answer));
+  const hasFaqs = productFaqs.length > 0;
 
   return (
     <>
@@ -279,1088 +230,596 @@ Hello Crystal Jaipuria, I have a query regarding this product.
         type="product"
         schema={schema}
       />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
+        {/* Back Button */}
         <button
           onClick={() => navigate(-1)}
-          className="mb-5 flex items-center gap-1 text-indigo-600 font-semibold hover:underline cursor-pointer text-sm sm:text-base"
+          className="mb-6 inline-flex items-center gap-1.5 text-indigo-600 font-semibold hover:underline cursor-pointer text-sm sm:text-base"
         >
           ← Back to Products
         </button>
 
-
-
-
-
-
-
-<div className="
-grid
-grid-cols-1
-lg:grid-cols-2
-gap-8
-lg:gap-12
-">
-
-
-
-
-
-
-{/* LEFT IMAGE SECTION */}
-
-
-<div>
-
-
-
-<img
-
-src={selectedImage}
-
-alt={product.name}
-
-className="
-w-full
-h-[300px]
-sm:h-[420px]
-lg:h-[550px]
-object-contain
-rounded-xl
-shadow
-bg-gray-100
-"
-
-/>
-
-
-
-
-
-
-
-<div className="
-flex
-gap-3
-mt-5
-flex-wrap
-">
-
-
-{
-
-product.images.map((img, idx)=>(
-
-
-<img
-
-key={img.public_id || idx}
-
-src={img.url}
-
-alt={product.name}
-
-onClick={() => {
-  setSelectedImage(img.url);
-  trackGalleryClick(idx, product);
-}}
-
-className={`
-w-16
-h-16
-sm:w-20
-sm:h-20
-md:w-24
-md:h-24
-object-cover
-rounded-lg
-cursor-pointer
-border-2
-
-${
-selectedImage === img.url
-?
-"border-orange-500"
-:
-"border-gray-300"
-}
-
-`}
-
-
-/>
-
-
-))
-
-
-}
-
-</div>
-
-{/* Desktop FAQs Placement (Side-by-side with Description) */}
-<div className="hidden lg:block mt-8">
-  {renderFaqSection()}
-</div>
-
-</div>
-
-
-
-
-
-
-
-
-
-{/* RIGHT PRODUCT INFO */}
-
-
-<div>
-
-
-
-<h1 className="
-text-2xl
-sm:text-3xl
-lg:text-4xl
-font-bold
-leading-tight
-">
-
-{product.name}
-
-</h1>
-
-
-
-
-
-
-<div className="
-flex
-flex-wrap
-items-center
-gap-3
-mt-5
-">
-
-
-{product.price && (
-  <span className="text-2xl sm:text-3xl font-bold text-indigo-600">
-    {formatPrice(product.price)}
-  </span>
-)}
-</div>
-
-
-
-
-
-
-
-{
-product.detail && (
-
-<div className="mt-5">
-
-<p className="
-text-gray-600
-text-sm
-sm:text-base
-leading-7
-">
-
-{product.detail}
-
-</p>
-
-</div>
-
-)
-
-}
-
-
-
-
-
-
-
-<div className="
-mt-7
-space-y-3
-text-sm
-sm:text-base
-">
-
-
-{
-
-product.weight && (
-
-<p>
-
-<span className="font-semibold text-indigo-600">
-
-Weight :
-
-</span>
-
-{" "}{product.weight}
-
-</p>
-
-)
-
-}
-
-
-
-
-
-
-{
-
-product.size && (
-
-<p>
-
-<span className="font-semibold text-indigo-600">
-
-Size :
-
-</span>
-
-{" "}{product.size}
-
-</p>
-
-)
-
-}
-
-
-
-
-
-
-
-<p>
-
-<span className="font-semibold">
-
-Availability :
-
-</span>
-
-
-{" "}
-
-
-{
-
-product.stock > 0 ?
-
-
-<span className="text-green-600">
-
-In Stock
-
-</span>
-
-
-:
-
-<span className="text-red-600">
-
-Out Of Stock
-
-</span>
-
-
-}
-
-
-</p>
-
-
-
-</div>
-
-
-
-
-
-
-
-<div className="grid grid-cols-2 gap-4 mt-8">
-
-  {/* Row 1 - WhatsApp */}
-  <a
-    href={whatsappLink}
-    target="_blank"
-    rel="noopener noreferrer"
-    onClick={() => trackWhatsAppClick("product_details_enquire_button", product)}
-    className="block text-center bg-green-600 hover:bg-green-700 text-white px-4 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition"
-  >
-    <FaWhatsapp className="inline mr-2" /> Enquire Now
-  </a>
-
-  {/* Row 1 - Call Now */}
-  <a
-    href="tel:+918955613237"
-    onClick={() => trackContactClick("phone", "+918955613237")}
-    className="block text-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition"
-  >
-   📞 Call Now
-  </a>
-
-  {/* Row 2 - Request a Query */}
-  <button
-    type="button"
-    onClick={() => {
-      setShowQueryForm(true);
-      trackQueryModalOpen(product);
-    }}
-    className="col-span-2 text-center bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition cursor-pointer"
-  >
-    💬 Request a Query
-  </button>
-
-</div>
-{showQueryForm && (
-  <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/50 p-4">
-
-    <div className="w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white rounded-2xl shadow-2xl">
-
-      {querySubmitted ? (
-
-        /* SUCCESS */
-        <div className="min-h-[400px] flex flex-col items-center justify-center text-center px-6 py-12">
-
-          <div className="w-24 h-24 rounded-full bg-green-100 flex items-center justify-center mb-6">
-            <div className="w-16 h-16 rounded-full bg-green-600 flex items-center justify-center">
-              <span className="text-white text-4xl font-bold">
-                ✓
-              </span>
+        {/* TOP SECTION: 2 COLUMNS (Images on Left, Buy Box on Right) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+          {/* LEFT: MAIN IMAGE & THUMBNAILS */}
+          <div>
+            <div className="w-full h-[320px] sm:h-[440px] lg:h-[500px] bg-gray-50 rounded-2xl shadow-xs border border-gray-200 overflow-hidden flex items-center justify-center p-2">
+              <img
+                src={selectedImage}
+                alt={product.name}
+                className="max-h-full max-w-full object-contain rounded-xl"
+              />
             </div>
+
+            {/* Thumbnails Row */}
+            {product.images?.length > 1 && (
+              <div className="flex gap-3 mt-4 overflow-x-auto pb-2">
+                {product.images.map((img, idx) => (
+                  <img
+                    key={img.public_id || idx}
+                    src={img.url}
+                    alt={product.name}
+                    onClick={() => {
+                      setSelectedImage(img.url);
+                      trackGalleryClick(idx, product);
+                    }}
+                    className={`w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-xl cursor-pointer border-2 transition-all duration-200 shrink-0 ${
+                      selectedImage === img.url
+                        ? "border-amber-500 shadow-md scale-105"
+                        : "border-gray-200 hover:border-gray-400"
+                    }`}
+                  />
+                ))}
+              </div>
+            )}
           </div>
 
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">
-            Thank You!
-          </h2>
+          {/* RIGHT: PRODUCT INFO & BUY ACTIONS */}
+          <div className="flex flex-col justify-between">
+            <div>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+                {product.name}
+              </h1>
 
-          <p className="mt-3 text-gray-600 text-sm sm:text-base leading-relaxed">
-            Your query has been submitted successfully.
-            <br />
-            Our team will contact you shortly.
-          </p>
+              {product.price && (
+                <div className="mt-3">
+                  <span className="text-2xl sm:text-3xl font-extrabold text-indigo-600">
+                    {formatPrice(product.price)}
+                  </span>
+                </div>
+              )}
 
-          <button
-            type="button"
-            onClick={() => {
-              setShowQueryForm(false);
-              setQuerySubmitted(false);
-            }}
-            className="mt-8 px-8 py-3 bg-gray-800 hover:bg-gray-900 text-white rounded-lg font-semibold transition"
-          >
-            Close
-          </button>
+              {product.detail && (
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed mt-4">
+                  {product.detail}
+                </p>
+              )}
 
+              {/* Specs Badges */}
+              <div className="flex flex-wrap items-center gap-4 sm:gap-6 mt-5 text-sm sm:text-base text-gray-700">
+                {product.weight && (
+                  <p>
+                    <span className="font-semibold text-indigo-600">Weight :</span> {product.weight}
+                  </p>
+                )}
+                {product.size && (
+                  <p>
+                    <span className="font-semibold text-indigo-600">Size :</span> {product.size}
+                  </p>
+                )}
+                <p>
+                  <span className="font-semibold">Availability :</span>{" "}
+                  {product.stock > 0 ? (
+                    <span className="text-green-600 font-semibold">In Stock</span>
+                  ) : (
+                    <span className="text-red-600 font-semibold">Out Of Stock</span>
+                  )}
+                </p>
+              </div>
+
+              {/* ACTION BUTTONS (Aligned level with bottom of Big Image) */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mt-6">
+                <a
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackWhatsAppClick("product_details_enquire_button", product)}
+                  className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-5 py-3.5 rounded-xl text-base font-semibold shadow-md transition-all active:scale-95"
+                >
+                  <FaWhatsapp className="text-xl" />
+                  <span>Enquire Now</span>
+                </a>
+
+                <a
+                  href="tel:+918955613237"
+                  onClick={() => trackContactClick("phone", "+918955613237")}
+                  className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-3.5 rounded-xl text-base font-semibold shadow-md transition-all active:scale-95"
+                >
+                  <span>📞 Call Now</span>
+                </a>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    setShowQueryForm(true);
+                    trackQueryModalOpen(product);
+                  }}
+                  className="sm:col-span-2 flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-white px-5 py-3.5 rounded-xl text-base font-semibold shadow-md transition-all active:scale-95 cursor-pointer"
+                >
+                  <span>💬 Request a Query</span>
+                </button>
+              </div>
+
+              {/* 3 TRUST FEATURE CARDS (Aligned level with Thumbnails Row) */}
+              <div className="grid grid-cols-3 gap-2.5 sm:gap-3.5 mt-6">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-2 p-3 bg-stone-50 rounded-xl border border-stone-200">
+                  <span className="text-xl shrink-0">✨</span>
+                  <div>
+                    <h3 className="font-bold text-gray-800 text-xs sm:text-sm">100% Authentic</h3>
+                    <p className="text-[11px] text-gray-500 hidden sm:block">Genuine & Certified</p>
+                  </div>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-2 p-3 bg-stone-50 rounded-xl border border-stone-200">
+                  <span className="text-xl shrink-0">🚚</span>
+                  <div>
+                    <h3 className="font-bold text-gray-800 text-xs sm:text-sm">Fast Delivery</h3>
+                    <p className="text-[11px] text-gray-500 hidden sm:block">Safe & Doorstep</p>
+                  </div>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-2 p-3 bg-stone-50 rounded-xl border border-stone-200">
+                  <span className="text-xl shrink-0">🔒</span>
+                  <div>
+                    <h3 className="font-bold text-gray-800 text-xs sm:text-sm">Secure Trust</h3>
+                    <p className="text-[11px] text-gray-500 hidden sm:block">Trusted Since 1989</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* SHARE PRODUCT ROW */}
+              <div className="mt-5 pt-4 border-t border-gray-100 flex items-center justify-between flex-wrap gap-3">
+                <span className="text-xs sm:text-sm font-bold text-gray-700">Share Product:</span>
+                <div className="flex items-center gap-3">
+                  <a
+                    href={whatsappShare}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackProductShare("whatsapp", product)}
+                    className="w-8 h-8 rounded-full bg-green-50 text-green-600 flex items-center justify-center hover:bg-green-600 hover:text-white transition shadow-2xs"
+                    title="Share on WhatsApp"
+                  >
+                    <FaWhatsapp className="text-base" />
+                  </a>
+                  <a
+                    href={facebookShare}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackProductShare("facebook", product)}
+                    className="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition shadow-2xs"
+                    title="Share on Facebook"
+                  >
+                    <FaFacebook className="text-base" />
+                  </a>
+                  <a
+                    href={twitterShare}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackProductShare("twitter", product)}
+                    className="w-8 h-8 rounded-full bg-gray-100 text-gray-800 flex items-center justify-center hover:bg-black hover:text-white transition shadow-2xs"
+                    title="Share on X (Twitter)"
+                  >
+                    <FaTwitter className="text-base" />
+                  </a>
+                  <a
+                    href={linkedinShare}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackProductShare("linkedin", product)}
+                    className="w-8 h-8 rounded-full bg-blue-50 text-blue-700 flex items-center justify-center hover:bg-blue-700 hover:text-white transition shadow-2xs"
+                    title="Share on LinkedIn"
+                  >
+                    <FaLinkedin className="text-base" />
+                  </a>
+                  <button
+                    type="button"
+                    onClick={copyLink}
+                    className="h-8 px-3 rounded-full bg-gray-100 text-gray-700 text-xs font-semibold flex items-center gap-1 hover:bg-gray-200 transition cursor-pointer"
+                    title="Copy Link"
+                  >
+                    <FaLink className="text-xs" />
+                    <span>{copied ? "Copied!" : "Copy"}</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-      ) : (
+        {/* LOWER SECTION: EQUAL LEVEL SIDE-BY-SIDE (FAQs on Left & Description on Right) */}
+        <div className="mt-12 sm:mt-16">
+          {hasFaqs ? (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+              {/* LEFT: FAQs SECTION */}
+              <div className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-xs order-2 lg:order-1">
+                <div className="p-4 sm:p-5 border-b border-gray-100 bg-stone-50/70 flex items-center justify-between">
+                  <div>
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-amber-700 bg-amber-100/70 px-2.5 py-0.5 rounded-full">
+                      Product FAQs
+                    </span>
+                    <h2 className="text-base sm:text-lg font-bold text-gray-900 mt-1">
+                      Frequently Asked Questions
+                    </h2>
+                  </div>
+                  <span className="text-xs text-gray-400 font-semibold">
+                    {productFaqs.length} Q&As
+                  </span>
+                </div>
 
-        <>
-          {/* Header */}
-          <div className="sticky top-0 z-10 flex items-center justify-between bg-white border-b px-5 sm:px-6 py-4 rounded-t-2xl">
+                <div className="p-4 space-y-3 max-h-[380px] sm:max-h-[460px] overflow-y-auto overscroll-contain">
+                  {productFaqs.map((faq, index) => (
+                    <div
+                      key={index}
+                      className="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-2xs transition-all duration-200 hover:border-indigo-300"
+                    >
+                      <button
+                        type="button"
+                        onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
+                        className="w-full flex items-center justify-between p-3.5 sm:p-4 text-left font-semibold text-gray-800 hover:text-indigo-600 transition-colors cursor-pointer text-xs sm:text-sm"
+                      >
+                        <span className="pr-3">
+                          {index + 1}. {faq.question}
+                        </span>
+                        <FaChevronDown
+                          className={`text-gray-400 text-xs shrink-0 transition-transform duration-200 ${
+                            openFaqIndex === index ? "rotate-180 text-indigo-600" : ""
+                          }`}
+                        />
+                      </button>
+                      {openFaqIndex === index && (
+                        <div className="px-3.5 pb-4 sm:px-4 sm:pb-4 text-xs sm:text-sm text-gray-600 border-t border-gray-100 pt-2.5 leading-relaxed bg-gray-50/50">
+                          {faq.answer}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
 
-            <div>
-              <h2 className="text-xl sm:text-2xl font-bold text-gray-800">
-                Request a Query
-              </h2>
+              {/* RIGHT: DESCRIPTION & ADDITIONAL INFORMATION TABS */}
+              <div className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-xs order-1 lg:order-2">
+                {/* Tabs Header */}
+                <div className="flex border-b border-gray-200 bg-stone-50/70">
+                  <button
+                    onClick={() => {
+                      setActiveTab("description");
+                      trackTabSwitch("description", product);
+                    }}
+                    className={`px-5 py-3.5 sm:px-8 sm:py-4 font-semibold text-sm sm:text-base cursor-pointer text-left transition-colors ${
+                      activeTab === "description"
+                        ? "border-b-2 border-indigo-600 text-indigo-600 bg-white"
+                        : "text-gray-500 hover:text-gray-700"
+                    }`}
+                  >
+                    Description
+                  </button>
 
-              <p className="text-sm text-gray-500 mt-1">
-                Send your enquiry directly on WhatsApp
-              </p>
+                  <button
+                    onClick={() => {
+                      setActiveTab("additional");
+                      trackTabSwitch("additional", product);
+                    }}
+                    className={`px-5 py-3.5 sm:px-8 sm:py-4 font-semibold text-sm sm:text-base cursor-pointer text-left transition-colors ${
+                      activeTab === "additional"
+                        ? "border-b-2 border-indigo-600 text-indigo-600 bg-white"
+                        : "text-gray-500 hover:text-gray-700"
+                    }`}
+                  >
+                    Additional Information
+                  </button>
+                </div>
+
+                {/* Tab Content */}
+                <div className="p-5 sm:p-7 min-h-[150px]">
+                  {activeTab === "description" && (
+                    <div className="relative">
+                      <div
+                        className="text-gray-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none max-h-[380px] sm:max-h-[460px] overflow-y-auto pr-3 overscroll-contain focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-gray-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-gray-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-gray-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-gray-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-1.5 [&_p]:my-3 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-indigo-600 [&_a]:underline"
+                        dangerouslySetInnerHTML={{
+                          __html: product.description || "No description available.",
+                        }}
+                      />
+                    </div>
+                  )}
+
+                  {activeTab === "additional" && (
+                    <div
+                      className="text-gray-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none max-h-[380px] sm:max-h-[460px] overflow-y-auto pr-3 overscroll-contain focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-gray-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-gray-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-gray-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-gray-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-1.5 [&_p]:my-3 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-indigo-600 [&_a]:underline"
+                      dangerouslySetInnerHTML={{
+                        __html: product.additionalInfo || "No additional information available.",
+                      }}
+                    />
+                  )}
+                </div>
+              </div>
             </div>
+          ) : (
+            /* Full width Description if product has no FAQs */
+            <div className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-xs">
+              <div className="flex border-b border-gray-200 bg-stone-50/70">
+                <button
+                  onClick={() => {
+                    setActiveTab("description");
+                    trackTabSwitch("description", product);
+                  }}
+                  className={`px-5 py-3.5 sm:px-8 sm:py-4 font-semibold text-sm sm:text-base cursor-pointer text-left transition-colors ${
+                    activeTab === "description"
+                      ? "border-b-2 border-indigo-600 text-indigo-600 bg-white"
+                      : "text-gray-500 hover:text-gray-700"
+                  }`}
+                >
+                  Description
+                </button>
 
-            <button
-              type="button"
-              onClick={() => setShowQueryForm(false)}
-              className="flex items-center justify-center w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 text-2xl transition"
-            >
-              ×
-            </button>
+                <button
+                  onClick={() => {
+                    setActiveTab("additional");
+                    trackTabSwitch("additional", product);
+                  }}
+                  className={`px-5 py-3.5 sm:px-8 sm:py-4 font-semibold text-sm sm:text-base cursor-pointer text-left transition-colors ${
+                    activeTab === "additional"
+                      ? "border-b-2 border-indigo-600 text-indigo-600 bg-white"
+                      : "text-gray-500 hover:text-gray-700"
+                  }`}
+                >
+                  Additional Information
+                </button>
+              </div>
 
+              <div className="p-5 sm:p-7 min-h-[150px]">
+                {activeTab === "description" && (
+                  <div
+                    className="text-gray-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none max-h-[380px] sm:max-h-[460px] overflow-y-auto pr-3 overscroll-contain focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-gray-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-gray-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-gray-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-gray-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-1.5 [&_p]:my-3 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-indigo-600 [&_a]:underline"
+                    dangerouslySetInnerHTML={{
+                      __html: product.description || "No description available.",
+                    }}
+                  />
+                )}
+
+                {activeTab === "additional" && (
+                  <div
+                    className="text-gray-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none max-h-[380px] sm:max-h-[460px] overflow-y-auto pr-3 overscroll-contain focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-gray-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-gray-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-gray-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-gray-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-1.5 [&_p]:my-3 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-indigo-600 [&_a]:underline"
+                    dangerouslySetInnerHTML={{
+                      __html: product.additionalInfo || "No additional information available.",
+                    }}
+                  />
+                )}
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* RELATED PRODUCTS */}
+        {relatedProducts.length > 0 && (
+          <div className="mt-12 sm:mt-16">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-gray-900">
+              You May Also Like
+            </h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
+              {relatedProducts.map((item) => (
+                <div
+                  key={item._id}
+                  onClick={() => navigate(`/product/${item.slug || item._id}`)}
+                  className="bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-lg cursor-pointer overflow-hidden transition"
+                >
+                  <img
+                    src={item.images?.[0]?.url}
+                    alt={item.name}
+                    className="w-full h-32 sm:h-40 lg:h-48 object-cover"
+                  />
+                  <div className="p-3 sm:p-4">
+                    <h3 className="font-semibold text-sm sm:text-base line-clamp-2">
+                      {item.name}
+                    </h3>
+                    <div className="mt-2">
+                      {item.price && (
+                        <span className="font-bold text-indigo-600 text-sm sm:text-base">
+                          {formatPrice(item.price)}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
+        )}
+      </div>
 
-          {/* Form */}
-          <form
-            onSubmit={handleQuerySubmit}
-            className="p-5 sm:p-6 space-y-4"
-          >
-
-            {/* YAHAN TERA PURA EXISTING FORM SAME RAHEGA */}
-
-            {/* Product Name */}
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1">
-                Product Name
-              </label>
-
-              <input
-                type="text"
-                value={product?.name || ""}
-                readOnly
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-gray-100 text-gray-600 cursor-not-allowed"
-              />
-            </div>
-
-            {/* Full Name */}
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1">
-                Full Name <span className="text-red-500">*</span>
-              </label>
-
-              <input
-                type="text"
-                name="fullName"
-                value={queryForm.fullName}
-                onChange={handleQueryChange}
-                required
-                placeholder="Enter your full name"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition"
-              />
-            </div>
-
-            {/* WhatsApp + Email */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1">
-                  WhatsApp Number <span className="text-red-500">*</span>
-                </label>
-
-                <input
-                  type="tel"
-                  name="whatsappNumber"
-                  value={queryForm.whatsappNumber}
-                  onChange={handleQueryChange}
-                  required
-                  placeholder="Enter WhatsApp number"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition"
-                />
+      {/* Query Modal */}
+      {showQueryForm && (
+        <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/50 p-4">
+          <div className="w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white rounded-2xl shadow-2xl">
+            {querySubmitted ? (
+              <div className="min-h-[400px] flex flex-col items-center justify-center text-center px-6 py-12">
+                <div className="w-24 h-24 rounded-full bg-green-100 flex items-center justify-center mb-6">
+                  <div className="w-16 h-16 rounded-full bg-green-600 flex items-center justify-center">
+                    <span className="text-white text-4xl font-bold">✓</span>
+                  </div>
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">Thank You!</h2>
+                <p className="mt-3 text-gray-600 text-sm sm:text-base leading-relaxed">
+                  Your query has been submitted successfully.
+                  <br />
+                  Our team will contact you shortly.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setShowQueryForm(false);
+                    setQuerySubmitted(false);
+                  }}
+                  className="mt-8 px-8 py-3 bg-gray-800 hover:bg-gray-900 text-white rounded-lg font-semibold transition"
+                >
+                  Close
+                </button>
               </div>
-
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1">
-                  Email <span className="text-gray-400">(Optional)</span>
-                </label>
-
-                <input
-                  type="email"
-                  name="email"
-                  value={queryForm.email}
-                  onChange={handleQueryChange}
-                  placeholder="Enter your email"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition"
-                />
-              </div>
-
-            </div>
-
-            {/* Country */}
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1">
-                Country <span className="text-red-500">*</span>
-              </label>
-
-              <select
-                name="country"
-                value={queryForm.country}
-                onChange={handleQueryChange}
-                required
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition"
-              >
-                <option value="">Select your country</option>
-                <option value="India">India</option>
-                <option value="United States">United States</option>
-                <option value="United Kingdom">United Kingdom</option>
-                <option value="Canada">Canada</option>
-                <option value="Australia">Australia</option>
-                <option value="United Arab Emirates">United Arab Emirates</option>
-                <option value="Saudi Arabia">Saudi Arabia</option>
-                <option value="Singapore">Singapore</option>
-                <option value="Germany">Germany</option>
-                <option value="France">France</option>
-                <option value="Italy">Italy</option>
-                <option value="Spain">Spain</option>
-                <option value="Netherlands">Netherlands</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-
-            {/* Quantity + Weight */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1">
-                  Quantity <span className="text-red-500">*</span>
-                </label>
-
-                <input
-                  type="number"
-                  name="quantity"
-                  min="1"
-                  value={queryForm.quantity}
-                  onChange={handleQueryChange}
-                  required
-                  placeholder="Enter quantity"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1">
-                  Weight <span className="text-gray-400">(Optional)</span>
-                </label>
-
-                <input
-                  type="text"
-                  name="weight"
-                  value={queryForm.weight}
-                  onChange={handleQueryChange}
-                  placeholder="e.g. 2 kg"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition"
-                />
-              </div>
-
-            </div>
-
-            {/* Message */}
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1">
-                Message <span className="text-red-400">*</span>
-              </label>
-
-              <textarea
-                name="message"
-                value={queryForm.message}
-                onChange={handleQueryChange}
-                rows="4"
-                placeholder="Write your query or requirements..."
-                required
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition resize-none"
-              />
-            </div>
-
-            {/* Submit */}
-            <button
-              type="submit"
-              className="w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-5 py-3.5 rounded-lg font-semibold text-base sm:text-lg transition"
-            >
-              <FaWhatsapp className="text-xl" />
-              Submit Query on WhatsApp
-            </button>
-
-          </form>
-        </>
-
+            ) : (
+              <>
+                <div className="sticky top-0 z-10 flex items-center justify-between bg-white border-b px-5 sm:px-6 py-4 rounded-t-2xl">
+                  <div>
+                    <h2 className="text-xl sm:text-2xl font-bold text-gray-800">Request a Query</h2>
+                    <p className="text-sm text-gray-500 mt-1">Send your enquiry directly on WhatsApp</p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setShowQueryForm(false)}
+                    className="flex items-center justify-center w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 text-2xl transition"
+                  >
+                    ×
+                  </button>
+                </div>
+                <form onSubmit={handleQuerySubmit} className="p-5 sm:p-6 space-y-4">
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-1">Product Name</label>
+                    <input
+                      type="text"
+                      value={product?.name || ""}
+                      readOnly
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-gray-100 text-gray-600 cursor-not-allowed"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-1">
+                      Full Name <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="fullName"
+                      value={queryForm.fullName}
+                      onChange={handleQueryChange}
+                      required
+                      placeholder="Enter your full name"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition"
+                    />
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-1">
+                        WhatsApp Number <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="tel"
+                        name="whatsappNumber"
+                        value={queryForm.whatsappNumber}
+                        onChange={handleQueryChange}
+                        required
+                        placeholder="Enter WhatsApp number"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-1">
+                        Email <span className="text-gray-400">(Optional)</span>
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={queryForm.email}
+                        onChange={handleQueryChange}
+                        placeholder="Enter your email"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-1">
+                      Country <span className="text-red-500">*</span>
+                    </label>
+                    <select
+                      name="country"
+                      value={queryForm.country}
+                      onChange={handleQueryChange}
+                      required
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition"
+                    >
+                      <option value="">Select your country</option>
+                      <option value="India">India</option>
+                      <option value="United States">United States</option>
+                      <option value="United Kingdom">United Kingdom</option>
+                      <option value="Canada">Canada</option>
+                      <option value="Australia">Australia</option>
+                      <option value="United Arab Emirates">United Arab Emirates</option>
+                      <option value="Saudi Arabia">Saudi Arabia</option>
+                      <option value="Singapore">Singapore</option>
+                      <option value="Germany">Germany</option>
+                      <option value="France">France</option>
+                      <option value="Italy">Italy</option>
+                      <option value="Spain">Spain</option>
+                      <option value="Netherlands">Netherlands</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-1">
+                        Quantity <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="number"
+                        name="quantity"
+                        min="1"
+                        value={queryForm.quantity}
+                        onChange={handleQueryChange}
+                        required
+                        placeholder="Enter quantity"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-1">
+                        Weight <span className="text-gray-400">(Optional)</span>
+                      </label>
+                      <input
+                        type="text"
+                        name="weight"
+                        value={queryForm.weight}
+                        onChange={handleQueryChange}
+                        placeholder="e.g. 2 kg"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-1">
+                      Message <span className="text-red-400">*</span>
+                    </label>
+                    <textarea
+                      name="message"
+                      value={queryForm.message}
+                      onChange={handleQueryChange}
+                      rows="4"
+                      placeholder="Write your query or requirements..."
+                      required
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition resize-none"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-5 py-3.5 rounded-lg font-semibold text-base sm:text-lg transition"
+                  >
+                    <FaWhatsapp className="text-xl" />
+                    Submit Query on WhatsApp
+                  </button>
+                </form>
+              </>
+            )}
+          </div>
+        </div>
       )}
-
-    </div>
-  </div>
-)}
-
-
-
-
-<div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
-
-  {/* Authentic Product */}
-  <div className="flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
-    <div className="text-2xl">✨</div>
-    <div>
-      <h3 className="font-semibold text-gray-800">
-        100% Authentic
-      </h3>
-      <p className="text-sm text-gray-500">
-        Genuine & Premium Products
-      </p>
-    </div>
-  </div>
-
-  {/* Fast Delivery */}
-  <div className="flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
-    <div className="text-2xl">🚚</div>
-    <div>
-      <h3 className="font-semibold text-gray-800">
-        Easy & Fast Delivery
-      </h3>
-      <p className="text-sm text-gray-500">
-        Safe & Quick Doorstep Delivery
-      </p>
-    </div>
-  </div>
-
-  {/* Secure Shopping */}
-  <div className="flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
-    <div className="text-2xl">🔒</div>
-    <div>
-      <h3 className="font-semibold text-gray-800">
-        Secure Shopping
-      </h3>
-      <p className="text-sm text-gray-500">
-        Safe & Trusted Experience
-      </p>
-    </div>
-  </div>
-
-</div>
-
-
-
-{/* SHARE */}
-
-
-<div className="mt-8">
-
-
-<h3 className="
-font-semibold
-text-lg
-sm:text-xl
-mb-4
-">
-
-Share Product
-
-</h3>
-
-
-
-<div className="
-flex
-flex-wrap
-gap-4
-items-center
-">
-
-
-<a
-href={whatsappShare}
-target="_blank"
-rel="noopener noreferrer"
-onClick={() => trackProductShare("whatsapp", product)}
-className="text-green-600 text-3xl hover:scale-110 transition"
->
-
-<FaWhatsapp/>
-
-</a>
-
-
-
-<a
-href={facebookShare}
-target="_blank"
-rel="noopener noreferrer"
-onClick={() => trackProductShare("facebook", product)}
-className="text-blue-600 text-3xl hover:scale-110 transition"
->
-
-<FaFacebook/>
-
-</a>
-
-
-
-
-<a
-href={twitterShare}
-target="_blank"
-rel="noopener noreferrer"
-onClick={() => trackProductShare("twitter", product)}
-className="text-black text-3xl hover:scale-110 transition"
->
-
-<FaTwitter/>
-
-</a>
-
-
-
-
-<a
-href={linkedinShare}
-target="_blank"
-rel="noopener noreferrer"
-onClick={() => trackProductShare("linkedin", product)}
-className="text-blue-700 text-3xl hover:scale-110 transition"
->
-
-<FaLinkedin/>
-
-</a>
-
-
-
-
-
-<button
-
-onClick={copyLink}
-
-className="
-text-gray-700
-text-3xl
-hover:scale-110
-transition
-cursor-pointer
-"
-
->
-
-<FaLink/>
-
-</button>
-
-
-
-</div>
-
-
-
-
-{
-copied && (
-
-<p className="
-text-green-600
-mt-3
-">
-
-Link copied!
-
-</p>
-
-)
-
-}
-
-
-
-</div>
-
-<div className="
-mt-10
-sm:mt-16
-border
-rounded-xl
-overflow-hidden
-">
-
-
-{/* Tabs Header */}
-
-<div className="
-flex
-flex-col
-sm:flex-row
-border-b
-">
-
-
-<button
-
-onClick={() => {
-  setActiveTab("description");
-  trackTabSwitch("description", product);
-}}
-
-className={`
-px-5
-py-3
-sm:px-8
-sm:py-4
-font-semibold
-text-base
-sm:text-lg
-cursor-pointer
-text-left
-
-${
-activeTab==="description"
-?
-"border-b-2 border-indigo-500 text-indigo-600"
-:
-"text-gray-500"
-}
-
-`}
-
->
-
-Description
-
-</button>
-
-
-
-
-
-<button
-
-onClick={() => {
-  setActiveTab("additional");
-  trackTabSwitch("additional", product);
-}}
-
-className={`
-px-5
-py-3
-sm:px-8
-sm:py-4
-font-semibold
-text-base
-sm:text-lg
-cursor-pointer
-text-left
-
-${
-activeTab==="additional"
-?
-"border-b-2 border-indigo-500 text-indigo-600"
-:
-"text-gray-500"
-}
-
-`}
-
->
-
-Additional Information
-
-</button>
-
-
-
-</div>
-
-
-
-
-
-{/* Tab Content */}
-
-
-<div className="p-5 sm:p-8 min-h-[150px]">
-{activeTab === "description" && (
-  <div className="relative">
-    <div
-      className="text-gray-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none max-h-[380px] sm:max-h-[460px] overflow-y-auto pr-3 overscroll-contain focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-gray-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-gray-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-gray-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-gray-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-1.5 [&_p]:my-3 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2"
-      dangerouslySetInnerHTML={{ __html: product.description || "No description available." }}
-    />
-  </div>
-)}
-
-{activeTab === "additional" && (
-  <div
-    className="text-gray-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none max-h-[380px] sm:max-h-[460px] overflow-y-auto pr-3 overscroll-contain focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-gray-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-gray-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-gray-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-gray-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-1.5 [&_p]:my-3 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2"
-    dangerouslySetInnerHTML={{
-      __html: product.additionalInfo || "No additional information available.",
-    }}
-  />
-)}
-</div>
-
-</div>
-
-{/* Mobile / Tablet FAQs Placement (Stacked neatly below Description) */}
-<div className="block lg:hidden mt-8">
-  {renderFaqSection()}
-</div>
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-{/* RELATED PRODUCTS */}
-
-
-{
-
-relatedProducts.length > 0 && (
-
-
-<div className="
-mt-12
-sm:mt-16
-">
-
-
-<h2 className="
-text-2xl
-sm:text-3xl
-font-bold
-mb-6
-sm:mb-8
-">
-
-You May Also Like
-
-</h2>
-
-
-
-
-
-
-<div className="
-grid
-grid-cols-2
-sm:grid-cols-3
-lg:grid-cols-5
-gap-4
-sm:gap-6
-">
-
-
-
-{
-
-relatedProducts.map((item)=>(
-
-
-<div
-
-key={item._id}
-
-onClick={()=>navigate(`/product/${item.slug || item._id}`)}
-
-className="
-bg-white
-rounded-xl
-shadow
-hover:shadow-lg
-cursor-pointer
-overflow-hidden
-transition
-"
-
-
->
-
-
-
-
-<img
-
-src={item.images?.[0]?.url}
-
-alt={item.name}
-
-className="
-w-full
-h-32
-sm:h-40
-lg:h-48
-object-cover
-"
-
-/>
-
-
-
-
-
-
-<div className="
-p-3
-sm:p-4
-">
-
-
-
-<h3 className="
-font-semibold
-text-sm
-sm:text-base
-line-clamp-2
-">
-
-{item.name}
-
-</h3>
-
-
-
-
-
-<div className="mt-2">
-
-
-{item.price && (
-  <span className="font-bold text-indigo-600 text-sm sm:text-base">
-    {formatPrice(item.price)}
-  </span>
-)}
-
-
-
-</div>
-
-
-
-
-</div>
-
-
-
-
-
-</div>
-
-
-
-))
-
-
-}
-
-
-
-
-</div>
-
-
-
-</div>
-
-
-)
-
-
-}
-
-
-
-
-</div>
-</>
-);
+    </>
+  );
 };
-
 
 export default ProductDetails;
