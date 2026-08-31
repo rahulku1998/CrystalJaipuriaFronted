@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import API from "../api/axios";
 import RichTextEditor from "../Components/RichTextEditor";
-import { FaCloudUploadAlt, FaTimes, FaTrashAlt, FaImages } from "react-icons/fa";
+import { FaCloudUploadAlt, FaTimes, FaTrashAlt, FaImages, FaPlusCircle, FaQuestionCircle } from "react-icons/fa";
 
 const EditProduct = () => {
   const { id } = useParams();
@@ -25,6 +25,7 @@ const EditProduct = () => {
     pricePerCarat: "",
     size: ""
   });
+  const [faqs, setFaqs] = useState([{ question: "", answer: "" }]);
   const [categories, setCategories] = useState([]);
   const [subCategories, setSubCategories] = useState([]);
   const [images, setImages] = useState([]);
@@ -91,6 +92,21 @@ const EditProduct = () => {
 
     setExistingImages(p.images || []);
 
+    if (p.faqs) {
+      try {
+        const parsed = typeof p.faqs === "string" ? JSON.parse(p.faqs) : p.faqs;
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          setFaqs(parsed);
+        } else {
+          setFaqs([{ question: "", answer: "" }]);
+        }
+      } catch {
+        setFaqs([{ question: "", answer: "" }]);
+      }
+    } else {
+      setFaqs([{ question: "", answer: "" }]);
+    }
+
     if(p.categoryId?._id){
       const subRes = await API.get(
         `/subcategories/category/${p.categoryId._id}`
@@ -106,6 +122,20 @@ const EditProduct = () => {
     setLoading(false);
   }
 };
+
+  const handleAddFaq = () => {
+    setFaqs((prev) => [...prev, { question: "", answer: "" }]);
+  };
+
+  const handleFaqChange = (index, field, value) => {
+    setFaqs((prev) =>
+      prev.map((faq, i) => (i === index ? { ...faq, [field]: value } : faq))
+    );
+  };
+
+  const handleRemoveFaq = (index) => {
+    setFaqs((prev) => prev.filter((_, i) => i !== index));
+  };
 
   useEffect(() => {
     fetchProduct();
@@ -154,6 +184,10 @@ res.data.subCategories
           formData.append(key, form[key]);
         }
       });
+
+      // Filter and append valid FAQs
+      const validFaqs = faqs.filter((f) => f.question.trim() || f.answer.trim());
+      formData.append("faqs", JSON.stringify(validFaqs));
 
       images.forEach((img) => {
         formData.append("images", img);
@@ -387,6 +421,92 @@ placeholder="Available stock"
     rows={4}
     placeholder="Material, size, color, specifications etc."
   />
+</div>
+
+{/* Product FAQs Section */}
+<div className="bg-white border border-gray-200 rounded-2xl p-5 sm:p-6 shadow-xs">
+  <div className="flex items-center justify-between mb-4">
+    <div>
+      <label className="font-bold text-gray-800 text-base sm:text-lg flex items-center gap-2">
+        <FaQuestionCircle className="text-amber-500" />
+        <span>Product FAQs (Frequently Asked Questions)</span>
+      </label>
+      <p className="text-xs sm:text-sm text-gray-500 mt-1">
+        Add questions & answers for this product. If left empty, no FAQ section will appear on the product page.
+      </p>
+    </div>
+    <button
+      type="button"
+      onClick={handleAddFaq}
+      className="inline-flex items-center gap-1.5 bg-amber-50 hover:bg-amber-100 text-amber-700 text-xs sm:text-sm font-semibold px-3.5 py-2 rounded-xl border border-amber-200 transition-colors cursor-pointer"
+    >
+      <FaPlusCircle className="text-sm" />
+      <span>Add FAQ</span>
+    </button>
+  </div>
+
+  {faqs.length === 0 ? (
+    <div className="text-center py-6 border border-dashed border-gray-200 rounded-xl bg-gray-50">
+      <p className="text-sm text-gray-400">No FAQs added yet.</p>
+      <button
+        type="button"
+        onClick={handleAddFaq}
+        className="mt-2 text-xs font-semibold text-indigo-600 hover:underline"
+      >
+        + Add first FAQ
+      </button>
+    </div>
+  ) : (
+    <div className="space-y-4">
+      {faqs.map((faq, index) => (
+        <div
+          key={index}
+          className="p-4 rounded-xl border border-gray-200 bg-gray-50/60 relative space-y-3"
+        >
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">
+              FAQ #{index + 1}
+            </span>
+            <button
+              type="button"
+              onClick={() => handleRemoveFaq(index)}
+              className="text-red-500 hover:text-red-700 text-xs flex items-center gap-1 font-medium cursor-pointer"
+              title="Delete FAQ"
+            >
+              <FaTrashAlt className="text-xs" />
+              <span>Remove</span>
+            </button>
+          </div>
+
+          <div>
+            <label className="block text-xs font-semibold text-gray-700 mb-1">
+              Question
+            </label>
+            <input
+              type="text"
+              value={faq.question}
+              onChange={(e) => handleFaqChange(index, "question", e.target.value)}
+              placeholder="e.g. Is this Sphatik Shivling energized and authentic?"
+              className="w-full rounded-lg border border-gray-300 bg-white px-3.5 py-2.5 text-sm outline-none focus:ring-2 focus:ring-amber-300 focus:border-amber-400"
+            />
+          </div>
+
+          <div>
+            <label className="block text-xs font-semibold text-gray-700 mb-1">
+              Answer
+            </label>
+            <textarea
+              rows={2}
+              value={faq.answer}
+              onChange={(e) => handleFaqChange(index, "answer", e.target.value)}
+              placeholder="e.g. Yes, all our gemstone statues are carved from 100% natural, certified gemstones and safely packaged."
+              className="w-full rounded-lg border border-gray-300 bg-white px-3.5 py-2.5 text-sm outline-none focus:ring-2 focus:ring-amber-300 focus:border-amber-400 leading-relaxed"
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+  )}
 </div>
 
 

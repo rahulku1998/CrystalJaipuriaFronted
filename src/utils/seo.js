@@ -190,42 +190,70 @@ export const getProductSchema = (product, canonicalUrl) => {
     };
   }
 
+  const graph = [
+    {
+      "@type": "Product",
+      "@id": `${canonicalUrl}#product`,
+      name: product.name,
+      image: product.images?.map((img) => img.url) || [imageUrl],
+      description: desc,
+      sku: product._id,
+      mpn: product.slug || product._id,
+      category: categoryName,
+      brand: {
+        "@type": "Brand",
+        name: "Crystal Jaipuria",
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.9",
+        reviewCount: "36",
+        bestRating: "5",
+        worstRating: "1",
+      },
+      offers: offersObj,
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      itemListElement: breadcrumbs.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.name,
+        item: item.url,
+      })),
+    },
+  ];
+
+  if (product.faqs) {
+    let parsedFaqs = [];
+    try {
+      parsedFaqs = typeof product.faqs === "string" ? JSON.parse(product.faqs) : product.faqs;
+    } catch {
+      parsedFaqs = [];
+    }
+    if (Array.isArray(parsedFaqs) && parsedFaqs.length > 0) {
+      const validFaqs = parsedFaqs.filter((f) => f.question && f.answer);
+      if (validFaqs.length > 0) {
+        graph.push({
+          "@type": "FAQPage",
+          "@id": `${canonicalUrl}#faq`,
+          mainEntity: validFaqs.map((f) => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: f.answer,
+            },
+          })),
+        });
+      }
+    }
+  }
+
   return {
     "@context": "https://schema.org/",
-    "@graph": [
-      {
-        "@type": "Product",
-        "@id": `${canonicalUrl}#product`,
-        name: product.name,
-        image: product.images?.map((img) => img.url) || [imageUrl],
-        description: desc,
-        sku: product._id,
-        mpn: product.slug || product._id,
-        category: categoryName,
-        brand: {
-          "@type": "Brand",
-          name: "Crystal Jaipuria",
-        },
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: "4.9",
-          reviewCount: "36",
-          bestRating: "5",
-          worstRating: "1",
-        },
-        offers: offersObj,
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": `${canonicalUrl}#breadcrumb`,
-        itemListElement: breadcrumbs.map((item, index) => ({
-          "@type": "ListItem",
-          position: index + 1,
-          name: item.name,
-          item: item.url,
-        })),
-      },
-    ],
+    "@graph": graph,
   };
 };
 

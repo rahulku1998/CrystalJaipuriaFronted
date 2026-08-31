@@ -181,20 +181,61 @@ const RichTextEditor = ({ label, name, value = "", onChange, rows = 6, placehold
               <FaStrikethrough className="text-xs" />
             </button>
 
-            <span className="h-4 w-px bg-gray-300 mx-1" />
-
-            {/* Heading Select */}
-            <select
-              onChange={handleHeading}
-              defaultValue=""
-              className="h-7 rounded border border-gray-300 bg-white px-2 text-xs text-gray-700 shadow-xs outline-none hover:bg-gray-50 cursor-pointer"
-            >
-              <option value="">Paragraph</option>
-              <option value="h1">Heading 1</option>
-              <option value="h2">Heading 2</option>
-              <option value="h3">Heading 3</option>
-              <option value="h4">Heading 4</option>
-            </select>
+            {/* Headings Pills (H1, H2, H3, H4, Paragraph) */}
+            <div className="flex items-center gap-0.5 bg-gray-200/70 p-0.5 rounded border border-gray-300">
+              <button
+                type="button"
+                title="Heading 2 (Main Section Heading)"
+                onMouseDown={(e) => e.preventDefault()}
+                onClick={() => {
+                  if (editorRef.current) editorRef.current.focus();
+                  try { document.execCommand("formatBlock", false, "<h2>"); } catch { document.execCommand("formatBlock", false, "h2"); }
+                  handleVisualInput();
+                }}
+                className="h-6 px-1.5 flex items-center justify-center rounded bg-white text-gray-800 text-xs font-bold hover:bg-indigo-50 hover:text-indigo-600 active:scale-95 cursor-pointer"
+              >
+                H2
+              </button>
+              <button
+                type="button"
+                title="Heading 3 (Sub-heading)"
+                onMouseDown={(e) => e.preventDefault()}
+                onClick={() => {
+                  if (editorRef.current) editorRef.current.focus();
+                  try { document.execCommand("formatBlock", false, "<h3>"); } catch { document.execCommand("formatBlock", false, "h3"); }
+                  handleVisualInput();
+                }}
+                className="h-6 px-1.5 flex items-center justify-center rounded bg-white text-gray-800 text-xs font-bold hover:bg-indigo-50 hover:text-indigo-600 active:scale-95 cursor-pointer"
+              >
+                H3
+              </button>
+              <button
+                type="button"
+                title="Heading 4 (Small Heading)"
+                onMouseDown={(e) => e.preventDefault()}
+                onClick={() => {
+                  if (editorRef.current) editorRef.current.focus();
+                  try { document.execCommand("formatBlock", false, "<h4>"); } catch { document.execCommand("formatBlock", false, "h4"); }
+                  handleVisualInput();
+                }}
+                className="h-6 px-1.5 flex items-center justify-center rounded bg-white text-gray-800 text-xs font-bold hover:bg-indigo-50 hover:text-indigo-600 active:scale-95 cursor-pointer"
+              >
+                H4
+              </button>
+              <button
+                type="button"
+                title="Normal Paragraph"
+                onMouseDown={(e) => e.preventDefault()}
+                onClick={() => {
+                  if (editorRef.current) editorRef.current.focus();
+                  try { document.execCommand("formatBlock", false, "<p>"); } catch { document.execCommand("formatBlock", false, "p"); }
+                  handleVisualInput();
+                }}
+                className="h-6 px-1.5 flex items-center justify-center rounded bg-white text-gray-700 text-xs font-semibold hover:bg-indigo-50 hover:text-indigo-600 active:scale-95 cursor-pointer"
+              >
+                ¶ P
+              </button>
+            </div>
 
             <span className="h-4 w-px bg-gray-300 mx-1" />
 
@@ -326,7 +367,7 @@ const RichTextEditor = ({ label, name, value = "", onChange, rows = 6, placehold
             contentEditable
             onInput={handleVisualInput}
             onBlur={handleVisualInput}
-            className="w-full min-h-[160px] p-4 text-sm text-gray-800 outline-none leading-relaxed overflow-y-auto focus:bg-white bg-white prose max-w-none [&_blockquote]:border-l-4 [&_blockquote]:border-indigo-400 [&_blockquote]:pl-3 [&_blockquote]:italic [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2"
+            className="w-full min-h-[160px] p-4 text-sm text-gray-800 outline-none leading-relaxed overflow-y-auto focus:bg-white bg-white prose max-w-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:my-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:my-3 [&_h2]:text-gray-900 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:my-2 [&_h3]:text-gray-800 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:my-1.5 [&_blockquote]:border-l-4 [&_blockquote]:border-indigo-400 [&_blockquote]:pl-3 [&_blockquote]:italic [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2"
             style={{ minHeight: `${rows * 28}px` }}
             placeholder={placeholder}
           />

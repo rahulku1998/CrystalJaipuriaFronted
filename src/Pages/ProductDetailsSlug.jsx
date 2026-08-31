@@ -1,13 +1,22 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import API from "../api/axios";
-import SEO from "../Components/SEO";
 import { formatPrice } from "../utils/price";
 import {
   getProductMetaTitle,
   getProductMetaDescription,
   getProductSchema,
 } from "../utils/seo";
+import {
+  trackProductView,
+  trackWhatsAppClick,
+  trackInquirySubmit,
+  trackContactClick,
+  trackGalleryClick,
+  trackTabSwitch,
+  trackProductShare,
+  trackQueryModalOpen,
+} from "../utils/analytics";
 import NotFound from "./NotFound";
 import {
   FaWhatsapp,
@@ -15,17 +24,9 @@ import {
   FaTwitter,
   FaLinkedin,
   FaLink,
+  FaChevronDown,
 } from "react-icons/fa";
-import {
-  trackProductView,
-  trackWhatsAppClick,
-  trackContactClick,
-  trackInquirySubmit,
-  trackGalleryClick,
-  trackTabSwitch,
-  trackProductShare,
-  trackQueryModalOpen,
-} from "../utils/analytics";
+import SEO from "../Components/SEO";
 
 const ProductDetails = () => {
   const { slug } = useParams();
@@ -33,6 +34,7 @@ const ProductDetails = () => {
 
   const [querySubmitted, setQuerySubmitted] = useState(false);
   const [showQueryForm, setShowQueryForm] = useState(false);
+  const [openFaqIndex, setOpenFaqIndex] = useState(0);
   const [queryForm, setQueryForm] = useState({
     fullName: "",
     whatsappNumber: "",
@@ -75,8 +77,8 @@ Hello Crystal Jaipuria, I have a query regarding this product.
 *Product Link:* ${window.location.href}
     `.trim();
 
+    trackInquirySubmit(queryForm, product);
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-    trackInquirySubmit(product, queryForm);
     window.open(whatsappUrl, "_blank");
     setQuerySubmitted(true);
     setShowQueryForm(false);
@@ -128,28 +130,36 @@ Hello Crystal Jaipuria, I have a query regarding this product.
         return;
       }
 
-      setProduct(data || null);
+      // Automatically strip junk query parameters from browser URL
+      if (typeof window !== "undefined" && window.location.search) {
+        const searchParams = new URLSearchParams(window.location.search);
+        const allowedMarketingKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid"];
+        const hasOnlyMarketing = Array.from(searchParams.keys()).every((k) => allowedMarketingKeys.includes(k));
+        if (!hasOnlyMarketing) {
+          const cleanPath = `/product/${data?.slug || slug}`;
+          window.history.replaceState(null, "", cleanPath);
+        }
+      }
 
+      setProduct(data || null);
       if (data) {
         trackProductView(data);
       }
-
-      if (data?.images?.length > 0) {
-        setSelectedImage(data.images[0].url);
-      }
-
       if (data?.categoryId?._id) {
         fetchRelatedProducts(data);
       }
+      if (data?.images?.length > 0) {
+        setSelectedImage(data.images[0].url);
+      }
     } catch (err) {
-      console.log("Product fetch error:", err);
+      console.log(err);
       setProduct(null);
     } finally {
       setLoading(false);
     }
   };
 
-  const shareUrl = typeof window !== "undefined" ? window.location.href : "";
+  const shareUrl = typeof window !== "undefined" ? `${window.location.origin}/product/${product?.slug || slug}` : "";
   const shareText = `Check out this amazing product: ${product?.name || ""}`;
   const whatsappShare = `https://wa.me/?text=${encodeURIComponent(shareText + " " + shareUrl)}`;
   const facebookShare = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
@@ -157,9 +167,9 @@ Hello Crystal Jaipuria, I have a query regarding this product.
   const linkedinShare = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
 
   const copyLink = async () => {
+    trackProductShare("copy_link", product);
     if (typeof navigator !== "undefined" && navigator.clipboard) {
       await navigator.clipboard.writeText(shareUrl);
-      trackProductShare(product, "copy_link");
       setCopied(true);
       setTimeout(() => {
         setCopied(false);
@@ -261,12 +271,12 @@ flex-wrap
 
 {
 
-product.images.map((img)=>(
+product.images.map((img, idx)=>(
 
 
 <img
 
-key={img.public_id}
+key={img.public_id || idx}
 
 src={img.url}
 
@@ -274,7 +284,7 @@ alt={product.name}
 
 onClick={() => {
   setSelectedImage(img.url);
-  trackGalleryClick(product, img.url);
+  trackGalleryClick(idx, product);
 }}
 
 className={`
@@ -362,6 +372,8 @@ mt-5
   </span>
 )}
 </div>
+
+
 
 
 
@@ -509,7 +521,7 @@ Out Of Stock
     href={whatsappLink}
     target="_blank"
     rel="noopener noreferrer"
-    onClick={() => trackWhatsAppClick("product_enquire_button", product)}
+    onClick={() => trackWhatsAppClick("product_details_enquire_button", product)}
     className="block text-center bg-green-600 hover:bg-green-700 text-white px-4 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition"
   >
     <FaWhatsapp className="inline mr-2" /> Enquire Now
@@ -518,7 +530,7 @@ Out Of Stock
   {/* Row 1 - Call Now */}
   <a
     href="tel:+918955613237"
-    onClick={() => trackContactClick("phone", "+918955613237", "product_call_button", product)}
+    onClick={() => trackContactClick("phone", "+918955613237")}
     className="block text-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition"
   >
    📞 Call Now
@@ -861,7 +873,7 @@ items-center
 href={whatsappShare}
 target="_blank"
 rel="noopener noreferrer"
-onClick={() => trackProductShare(product, "whatsapp")}
+onClick={() => trackProductShare("whatsapp", product)}
 className="text-green-600 text-3xl hover:scale-110 transition"
 >
 
@@ -875,7 +887,7 @@ className="text-green-600 text-3xl hover:scale-110 transition"
 href={facebookShare}
 target="_blank"
 rel="noopener noreferrer"
-onClick={() => trackProductShare(product, "facebook")}
+onClick={() => trackProductShare("facebook", product)}
 className="text-blue-600 text-3xl hover:scale-110 transition"
 >
 
@@ -890,7 +902,7 @@ className="text-blue-600 text-3xl hover:scale-110 transition"
 href={twitterShare}
 target="_blank"
 rel="noopener noreferrer"
-onClick={() => trackProductShare(product, "twitter")}
+onClick={() => trackProductShare("twitter", product)}
 className="text-black text-3xl hover:scale-110 transition"
 >
 
@@ -905,7 +917,7 @@ className="text-black text-3xl hover:scale-110 transition"
 href={linkedinShare}
 target="_blank"
 rel="noopener noreferrer"
-onClick={() => trackProductShare(product, "linkedin")}
+onClick={() => trackProductShare("linkedin", product)}
 className="text-blue-700 text-3xl hover:scale-110 transition"
 >
 
@@ -985,7 +997,7 @@ border-b
 
 onClick={() => {
   setActiveTab("description");
-  trackTabSwitch(product, "description");
+  trackTabSwitch("description", product);
 }}
 
 className={`
@@ -1023,7 +1035,7 @@ Description
 
 onClick={() => {
   setActiveTab("additional");
-  trackTabSwitch(product, "additional");
+  trackTabSwitch("additional", product);
 }}
 
 className={`
@@ -1064,36 +1076,88 @@ Additional Information
 {/* Tab Content */}
 
 
-<div className="
-p-5
-sm:p-8
-min-h-[150px]
-">
-
-
+<div className="p-5 sm:p-8 min-h-[150px]">
 {activeTab === "description" && (
-  <div
-    className="text-gray-600 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2"
-    dangerouslySetInnerHTML={{ __html: product.description || "No description available." }}
-  />
+  <div className="relative">
+    <div
+      className="text-gray-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none max-h-[380px] sm:max-h-[460px] overflow-y-auto pr-3 overscroll-contain focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-gray-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-gray-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-gray-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-gray-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-1.5 [&_p]:my-3 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2"
+      dangerouslySetInnerHTML={{ __html: product.description || "No description available." }}
+    />
+  </div>
 )}
 
 {activeTab === "additional" && (
   <div
-    className="text-gray-600 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2"
+    className="text-gray-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none max-h-[380px] sm:max-h-[460px] overflow-y-auto pr-3 overscroll-contain focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-gray-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-gray-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-gray-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-gray-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-1.5 [&_p]:my-3 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2"
     dangerouslySetInnerHTML={{
       __html: product.additionalInfo || "No additional information available.",
     }}
   />
 )}
-
-
+</div>
 
 </div>
 
+{/* PRODUCT FAQS SECTION (Only shown if product has FAQs added in Admin Panel) */}
+{(() => {
+  let productFaqs = [];
+  if (product?.faqs) {
+    try {
+      productFaqs = typeof product.faqs === "string" ? JSON.parse(product.faqs) : product.faqs;
+    } catch {
+      productFaqs = [];
+    }
+  }
+  if (!Array.isArray(productFaqs)) productFaqs = [];
+  productFaqs = productFaqs.filter((f) => f && f.question && f.answer);
 
+  if (productFaqs.length === 0) return null;
 
-</div>
+  return (
+    <div className="mt-12 sm:mt-16 bg-gradient-to-b from-stone-50/70 to-white border border-stone-200/80 rounded-2xl p-6 sm:p-10 shadow-xs">
+      <div className="text-center max-w-2xl mx-auto mb-8">
+        <span className="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-100/70 px-3 py-1 rounded-full">
+          Frequently Asked Questions
+        </span>
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mt-2">
+          Questions About This Product
+        </h2>
+        <p className="text-gray-500 text-sm mt-1">
+          Everything you need to know before buying {product.name}
+        </p>
+      </div>
+
+      <div className="max-w-3xl mx-auto space-y-3">
+        {productFaqs.map((faq, index) => (
+          <div
+            key={index}
+            className="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-xs transition-all duration-200 hover:border-indigo-300"
+          >
+            <button
+              type="button"
+              onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
+              className="w-full flex items-center justify-between p-4 sm:p-5 text-left font-semibold text-gray-800 hover:text-indigo-600 transition-colors cursor-pointer"
+            >
+              <span className="text-sm sm:text-base pr-4">
+                {index + 1}. {faq.question}
+              </span>
+              <FaChevronDown
+                className={`text-gray-400 text-xs sm:text-sm shrink-0 transition-transform duration-200 ${
+                  openFaqIndex === index ? "rotate-180 text-indigo-600" : ""
+                }`}
+              />
+            </button>
+            {openFaqIndex === index && (
+              <div className="px-4 pb-5 sm:px-5 sm:pb-6 text-sm sm:text-base text-gray-600 border-t border-gray-100 pt-3 leading-relaxed">
+                {faq.answer}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+})()}
 
 
 
@@ -1281,146 +1345,3 @@ line-clamp-2
 
 
 export default ProductDetails;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import { useEffect, useState } from "react";
-// import { useParams } from "react-router-dom";
-// import API from "../api/axios";
-
-// const ProductDetailsSlug = () => {
-//   const { slug } = useParams();
-
-//   const [product, setProduct] = useState(null);
-//   const [selectedImage, setSelectedImage] = useState("");
-
-//   useEffect(() => {
-//     if (slug) {
-//       fetchProduct();
-//     }
-//   }, [slug]);
-
-//   const fetchProduct = async () => {
-//     try {
-//       const res = await API.get(`/products/slug/${slug}`);
-
-//       const data = res.data.product;
-
-//       setProduct(data);
-
-//       if (data.images?.length > 0) {
-//         setSelectedImage(data.images[0].url);
-//       }
-//     } catch (err) {
-//       console.log("Slug product error:", err);
-//     }
-//   };
-
-//   if (!product) {
-//     return (
-//       <div className="min-h-screen flex items-center justify-center text-xl">
-//         Loading...
-//       </div>
-//     );
-//   }
-
-//   return (
-//     <div className="max-w-7xl mx-auto px-4 py-10">
-
-//       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-
-//         {/* IMAGE */}
-
-//         <div>
-//           <img
-//             src={selectedImage}
-//             alt={product.name}
-//             className="w-full h-[300px] sm:h-[450px] lg:h-[550px] object-contain rounded-xl bg-gray-100"
-//           />
-
-//           <div className="flex gap-3 mt-5 flex-wrap">
-//             {product.images?.map((img) => (
-//               <img
-//                 key={img.public_id}
-//                 src={img.url}
-//                 alt={product.name}
-//                 onClick={() => setSelectedImage(img.url)}
-//                 className={`w-20 h-20 object-cover rounded-lg cursor-pointer border-2 ${
-//                   selectedImage === img.url
-//                     ? "border-orange-500"
-//                     : "border-gray-300"
-//                 }`}
-//               />
-//             ))}
-//           </div>
-//         </div>
-
-//         {/* PRODUCT INFO */}
-
-//         <div>
-//           <h1 className="text-3xl lg:text-4xl font-bold">
-//             {product.name}
-//           </h1>
-
-//           <div className="flex gap-3 mt-5">
-//             {product.discountPrice ? (
-//               <>
-//                 <span className="text-3xl font-bold text-indigo-600">
-//                   ₹{product.discountPrice}
-//                 </span>
-
-//                 <span className="text-xl line-through text-gray-500">
-//                   ₹{product.price}
-//                 </span>
-//               </>
-//             ) : (
-//               <span className="text-3xl font-bold text-indigo-600">
-//                 ₹{product.price}
-//               </span>
-//             )}
-//           </div>
-
-//           <p className="mt-5 text-gray-600 leading-7">
-//             {product.description}
-//           </p>
-
-//           {product.weight && (
-//             <p className="mt-5">
-//               <b>Weight:</b> {product.weight}
-//             </p>
-//           )}
-
-//           {product.size && (
-//             <p className="mt-2">
-//               <b>Size:</b> {product.size}
-//             </p>
-//           )}
-//         </div>
-
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ProductDetailsSlug;

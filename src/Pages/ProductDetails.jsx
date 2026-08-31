@@ -24,6 +24,7 @@ import {
   FaTwitter,
   FaLinkedin,
   FaLink,
+  FaChevronDown,
 } from "react-icons/fa";
 import SEO from "../Components/SEO";
 
@@ -33,6 +34,7 @@ const ProductDetails = () => {
 
   const [querySubmitted, setQuerySubmitted] = useState(false);
   const [showQueryForm, setShowQueryForm] = useState(false);
+  const [openFaqIndex, setOpenFaqIndex] = useState(0);
   const [queryForm, setQueryForm] = useState({
     fullName: "",
     whatsappNumber: "",
@@ -1051,36 +1053,88 @@ Additional Information
 {/* Tab Content */}
 
 
-<div className="
-p-5
-sm:p-8
-min-h-[150px]
-">
-
-
+<div className="p-5 sm:p-8 min-h-[150px]">
 {activeTab === "description" && (
-  <div
-    className="text-gray-600 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2"
-    dangerouslySetInnerHTML={{ __html: product.description || "No description available." }}
-  />
+  <div className="relative">
+    <div
+      className="text-gray-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none max-h-[380px] sm:max-h-[460px] overflow-y-auto pr-3 overscroll-contain focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-gray-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-gray-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-gray-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-gray-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-1.5 [&_p]:my-3 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2"
+      dangerouslySetInnerHTML={{ __html: product.description || "No description available." }}
+    />
+  </div>
 )}
 
 {activeTab === "additional" && (
   <div
-    className="text-gray-600 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2"
+    className="text-gray-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none max-h-[380px] sm:max-h-[460px] overflow-y-auto pr-3 overscroll-contain focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-gray-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-gray-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-gray-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-gray-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-1.5 [&_p]:my-3 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2"
     dangerouslySetInnerHTML={{
       __html: product.additionalInfo || "No additional information available.",
     }}
   />
 )}
-
-
+</div>
 
 </div>
 
+{/* PRODUCT FAQS SECTION (Only shown if product has FAQs added in Admin Panel) */}
+{(() => {
+  let productFaqs = [];
+  if (product?.faqs) {
+    try {
+      productFaqs = typeof product.faqs === "string" ? JSON.parse(product.faqs) : product.faqs;
+    } catch {
+      productFaqs = [];
+    }
+  }
+  if (!Array.isArray(productFaqs)) productFaqs = [];
+  productFaqs = productFaqs.filter((f) => f && f.question && f.answer);
 
+  if (productFaqs.length === 0) return null;
 
-</div>
+  return (
+    <div className="mt-12 sm:mt-16 bg-gradient-to-b from-stone-50/70 to-white border border-stone-200/80 rounded-2xl p-6 sm:p-10 shadow-xs">
+      <div className="text-center max-w-2xl mx-auto mb-8">
+        <span className="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-100/70 px-3 py-1 rounded-full">
+          Frequently Asked Questions
+        </span>
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mt-2">
+          Questions About This Product
+        </h2>
+        <p className="text-gray-500 text-sm mt-1">
+          Everything you need to know before buying {product.name}
+        </p>
+      </div>
+
+      <div className="max-w-3xl mx-auto space-y-3">
+        {productFaqs.map((faq, index) => (
+          <div
+            key={index}
+            className="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-xs transition-all duration-200 hover:border-indigo-300"
+          >
+            <button
+              type="button"
+              onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
+              className="w-full flex items-center justify-between p-4 sm:p-5 text-left font-semibold text-gray-800 hover:text-indigo-600 transition-colors cursor-pointer"
+            >
+              <span className="text-sm sm:text-base pr-4">
+                {index + 1}. {faq.question}
+              </span>
+              <FaChevronDown
+                className={`text-gray-400 text-xs sm:text-sm shrink-0 transition-transform duration-200 ${
+                  openFaqIndex === index ? "rotate-180 text-indigo-600" : ""
+                }`}
+              />
+            </button>
+            {openFaqIndex === index && (
+              <div className="px-4 pb-5 sm:px-5 sm:pb-6 text-sm sm:text-base text-gray-600 border-t border-gray-100 pt-3 leading-relaxed">
+                {faq.answer}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+})()}
 
 
 

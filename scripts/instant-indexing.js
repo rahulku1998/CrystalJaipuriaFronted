@@ -1,4 +1,4 @@
-﻿import fs from "fs";
+import fs from "fs";
 import path from "path";
 import https from "https";
 import crypto from "crypto";
@@ -203,7 +203,8 @@ const runInstantIndexing = async () => {
 
   if (fs.existsSync(serviceAccountPath)) {
     try {
-      const sa = JSON.parse(fs.readFileSync(serviceAccountPath, "utf8"));
+      const raw = fs.readFileSync(serviceAccountPath, "utf8").replace(/^\uFEFF/, "");
+      const sa = JSON.parse(raw);
       const token = await getGoogleAccessToken(sa);
 
       if (token) {
