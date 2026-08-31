@@ -207,6 +207,68 @@ Hello Crystal Jaipuria, I have a query regarding this product.
   const whatsappMessage = `Hi Crystal Jaipuria, I am interested in buying "${product.name}". Please share more details on this Number .`;
   const whatsappLink = `https://wa.me/918306317032?text=${encodeURIComponent(whatsappMessage)}`;
 
+  const renderFaqSection = () => {
+    let productFaqs = [];
+    if (product?.faqs) {
+      try {
+        productFaqs = typeof product.faqs === "string" ? JSON.parse(product.faqs) : product.faqs;
+      } catch {
+        productFaqs = [];
+      }
+    }
+    if (!Array.isArray(productFaqs)) productFaqs = [];
+    productFaqs = productFaqs.filter((f) => f && (f.question || f.answer));
+
+    if (productFaqs.length === 0) return null;
+
+    return (
+      <div className="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-xs">
+        <div className="p-4 sm:p-5 border-b border-gray-100 bg-stone-50/70 flex items-center justify-between">
+          <div>
+            <span className="text-[11px] font-bold uppercase tracking-wider text-amber-700 bg-amber-100/70 px-2.5 py-0.5 rounded-full">
+              Product FAQs
+            </span>
+            <h2 className="text-base sm:text-lg font-bold text-gray-900 mt-1">
+              Frequently Asked Questions
+            </h2>
+          </div>
+          <span className="text-xs text-gray-400 font-semibold">
+            {productFaqs.length} Q&As
+          </span>
+        </div>
+
+        <div className="p-3 sm:p-4 space-y-2.5 max-h-[380px] sm:max-h-[460px] overflow-y-auto overscroll-contain">
+          {productFaqs.map((faq, index) => (
+            <div
+              key={index}
+              className="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-2xs transition-all duration-200 hover:border-indigo-300"
+            >
+              <button
+                type="button"
+                onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
+                className="w-full flex items-center justify-between p-3.5 sm:p-4 text-left font-semibold text-gray-800 hover:text-indigo-600 transition-colors cursor-pointer text-xs sm:text-sm"
+              >
+                <span className="pr-3">
+                  {index + 1}. {faq.question}
+                </span>
+                <FaChevronDown
+                  className={`text-gray-400 text-xs shrink-0 transition-transform duration-200 ${
+                    openFaqIndex === index ? "rotate-180 text-indigo-600" : ""
+                  }`}
+                />
+              </button>
+              {openFaqIndex === index && (
+                <div className="px-3.5 pb-4 sm:px-4 sm:pb-4 text-xs sm:text-sm text-gray-600 border-t border-gray-100 pt-2.5 leading-relaxed bg-gray-50/50">
+                  {faq.answer}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <>
       <SEO
@@ -333,10 +395,12 @@ selectedImage === img.url
 
 }
 
-
-
 </div>
 
+{/* Desktop FAQs Placement (Side-by-side with Description) */}
+<div className="hidden lg:block mt-8">
+  {renderFaqSection()}
+</div>
 
 </div>
 
@@ -1113,70 +1177,10 @@ Additional Information
 
 </div>
 
-{/* PRODUCT FAQS SECTION (Only shown if product has FAQs added in Admin Panel) */}
-{(() => {
-  let productFaqs = [];
-  if (product?.faqs) {
-    try {
-      productFaqs = typeof product.faqs === "string" ? JSON.parse(product.faqs) : product.faqs;
-    } catch {
-      productFaqs = [];
-    }
-  }
-  if (!Array.isArray(productFaqs)) productFaqs = [];
-  productFaqs = productFaqs.filter((f) => f && f.question && f.answer);
-
-  if (productFaqs.length === 0) return null;
-
-  return (
-    <div className="mt-12 sm:mt-16 bg-gradient-to-b from-stone-50/70 to-white border border-stone-200/80 rounded-2xl p-6 sm:p-10 shadow-xs">
-      <div className="text-center max-w-2xl mx-auto mb-8">
-        <span className="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-100/70 px-3 py-1 rounded-full">
-          Frequently Asked Questions
-        </span>
-        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mt-2">
-          Questions About This Product
-        </h2>
-        <p className="text-gray-500 text-sm mt-1">
-          Everything you need to know before buying {product.name}
-        </p>
-      </div>
-
-      <div className="max-w-3xl mx-auto space-y-3">
-        {productFaqs.map((faq, index) => (
-          <div
-            key={index}
-            className="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-xs transition-all duration-200 hover:border-indigo-300"
-          >
-            <button
-              type="button"
-              onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
-              className="w-full flex items-center justify-between p-4 sm:p-5 text-left font-semibold text-gray-800 hover:text-indigo-600 transition-colors cursor-pointer"
-            >
-              <span className="text-sm sm:text-base pr-4">
-                {index + 1}. {faq.question}
-              </span>
-              <FaChevronDown
-                className={`text-gray-400 text-xs sm:text-sm shrink-0 transition-transform duration-200 ${
-                  openFaqIndex === index ? "rotate-180 text-indigo-600" : ""
-                }`}
-              />
-            </button>
-            {openFaqIndex === index && (
-              <div className="px-4 pb-5 sm:px-5 sm:pb-6 text-sm sm:text-base text-gray-600 border-t border-gray-100 pt-3 leading-relaxed">
-                {faq.answer}
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-})()}
-
-
-
-
+{/* Mobile / Tablet FAQs Placement (Stacked neatly below Description) */}
+<div className="block lg:hidden mt-8">
+  {renderFaqSection()}
+</div>
 
 </div>
 
