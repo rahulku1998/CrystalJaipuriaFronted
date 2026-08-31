@@ -46,7 +46,7 @@ export default function FeaturesBar() {
   return (
     <section 
       aria-label="Crystal Jaipuria Value Propositions"
-      className="w-full bg-[#fcfbf9] border-y border-stone-200/80 py-4 sm:py-6 shadow-[0_2px_12px_rgba(0,0,0,0.02)]"
+      className="hidden md:block w-full bg-[#fcfbf9] border-y border-stone-200/80 py-4 sm:py-6 shadow-[0_2px_12px_rgba(0,0,0,0.02)]"
     >
       <div className="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8">
         {/* Mobile: 3 items per line (2 lines total), Desktop: 6 items in 1 line */}
