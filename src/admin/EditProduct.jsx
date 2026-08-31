@@ -2,13 +2,15 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import API from "../api/axios";
 import RichTextEditor from "../Components/RichTextEditor";
-import { FaCloudUploadAlt, FaTimes, FaTrashAlt, FaImages, FaPlusCircle, FaQuestionCircle } from "react-icons/fa";
+import AIAssistantModal from "../Components/AIAssistantModal";
+import { FaCloudUploadAlt, FaTimes, FaTrashAlt, FaImages, FaPlusCircle, FaQuestionCircle, FaMagic } from "react-icons/fa";
 
 const EditProduct = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState(true);
+  const [showAiModal, setShowAiModal] = useState(false);
 
   const [form, setForm] = useState({
     name: "",
@@ -220,20 +222,34 @@ res.data.subCategories
 
 <div className="max-w-5xl mx-auto">
 
+<div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+  <div>
+    <h1 className="text-3xl sm:text-4xl font-bold text-gray-800">
+      Edit Product
+    </h1>
+    <p className="text-gray-500 mt-1 text-sm">
+      Update product details with SEO & AI Overview optimization
+    </p>
+  </div>
 
-<div className="mb-10">
-
-<h1 className="text-4xl font-bold text-gray-800">
-Edit Product
-</h1>
-
-<p className="text-gray-500 mt-2">
-Update product information and images
-</p>
-
+  <button
+    type="button"
+    onClick={() => setShowAiModal(true)}
+    className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 via-purple-600 to-indigo-600 hover:from-amber-600 hover:to-indigo-700 text-white text-xs sm:text-sm font-bold px-5 py-3 rounded-2xl shadow-lg transition-transform hover:scale-105 active:scale-95 cursor-pointer self-start sm:self-auto"
+  >
+    <FaMagic className="text-amber-200 text-sm" />
+    <span>✨ AI Content & FAQ Assistant</span>
+  </button>
 </div>
 
-
+<AIAssistantModal
+  isOpen={showAiModal}
+  onClose={() => setShowAiModal(false)}
+  productName={form.name}
+  categoryName={categories.find((c) => c._id === form.categoryId)?.name || ""}
+  onApplyDescription={(html) => setForm((prev) => ({ ...prev, description: html }))}
+  onApplyFaqs={(generatedFaqs) => setFaqs(generatedFaqs)}
+/>
 
 <div className="bg-white rounded-3xl shadow-xl p-8">
 
