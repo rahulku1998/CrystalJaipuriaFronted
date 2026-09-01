@@ -46,6 +46,16 @@ const ProductsRedirect = () => {
   return <Navigate to={`/product/${slug}`} replace />;
 };
 
+// Redirect helper for old /products/detail/:id legacy URLs from previous website
+const LegacyDetailRedirect = () => {
+  const { id } = useParams();
+  // Pure numeric IDs (like 9144744230) are from old store, redirect cleanly to /shop catalog
+  if (!id || /^\d+$/.test(id)) {
+    return <Navigate to="/shop" replace />;
+  }
+  return <Navigate to={`/product/${id}`} replace />;
+};
+
 function App() {
 
   return (
@@ -81,6 +91,12 @@ function App() {
 
         {/* REDIRECT PLURAL /products/:slug -> /product/:slug */}
         <Route path="/products/:slug" element={<ProductsRedirect />} />
+
+        {/* REDIRECT LEGACY OLD WEBSITE /products/detail/:id -> /shop */}
+        <Route path="/products/detail/:id" element={<LegacyDetailRedirect />} />
+        <Route path="/products/detail" element={<Navigate to="/shop" replace />} />
+        <Route path="/product/detail/:id" element={<LegacyDetailRedirect />} />
+        <Route path="/product/detail" element={<Navigate to="/shop" replace />} />
 
         {/* DYNAMIC CATEGORY */}
         <Route path="/:slug" element={<CategoryPage />} />
