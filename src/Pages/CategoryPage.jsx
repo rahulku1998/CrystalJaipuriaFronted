@@ -139,6 +139,21 @@ const CategoryPage = () => {
       );
 
       if (!currentCat) {
+        // Check if slug matches a product
+        const allProds = productRes.data?.products || productRes.data || [];
+        const matchedProd = allProds.find((p) => p.slug === slug || p._id === slug);
+        if (matchedProd) {
+          navigate(`/product/${matchedProd.slug || matchedProd._id}`, { replace: true });
+          return;
+        }
+
+        // Check legacy products
+        const legacyMatch = LEGACY_PRODUCTS.find((p) => p.slug === slug);
+        if (legacyMatch) {
+          navigate(`/product/${legacyMatch.slug}`, { replace: true });
+          return;
+        }
+
         setCategory(null);
         setSubCategories([]);
         setLoadingProducts(false);

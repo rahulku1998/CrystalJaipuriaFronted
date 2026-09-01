@@ -123,18 +123,47 @@ Hello Crystal Jaipuria, I have a query regarding this product.
       // 1. Try DB fetch by slug
       try {
         const res = await API.get(`/products/slug/${cleanSlug}`);
-        data = res.data?.product || res.data;
-      } catch (e) {
-        // 2. Try DB fetch by ID if slug is MongoDB ID
+        const resData = res.data?.product || (res.data?.name ? res.data : null);
+        if (resData && (resData.name || resData._id)) {
+          data = resData;
+        }
+      } catch {
+        data = null;
+      }
+
+      // 2. Try DB fetch by ID if slug is MongoDB ID
+      if (!data) {
         try {
           const idRes = await API.get(`/products/${cleanSlug}`);
-          data = idRes.data?.product || idRes.data;
-        } catch (idErr) {
+          const idData = idRes.data?.product || (idRes.data?.name ? idRes.data : null);
+          if (idData && (idData.name || idData._id)) {
+            data = idData;
+          }
+        } catch {
           data = null;
         }
       }
 
-      // 3. Fallback to legacy products registry
+      // 3. Fallback to full products catalog search
+      if (!data) {
+        try {
+          const allRes = await API.get("/products");
+          const allProds = allRes.data?.products || allRes.data || [];
+          const found = allProds.find(
+            (p) =>
+              (p.slug && p.slug.toLowerCase() === cleanSlug) ||
+              p._id === cleanSlug ||
+              (p.name && p.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") === cleanSlug)
+          );
+          if (found) {
+            data = found;
+          }
+        } catch {
+          // ignore
+        }
+      }
+
+      // 4. Fallback to legacy products registry
       if (!data) {
         data = getLegacyProductBySlug(cleanSlug);
       }
