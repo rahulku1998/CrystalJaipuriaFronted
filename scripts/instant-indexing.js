@@ -66,8 +66,22 @@ const pingUrl = (urlStr) => {
   });
 };
 
+const getGoogleServerTime = () => {
+  return new Promise((resolve) => {
+    https
+      .get("https://www.google.com", (res) => {
+        if (res.headers.date) {
+          resolve(Math.floor(new Date(res.headers.date).getTime() / 1000));
+        } else {
+          resolve(Math.floor(Date.now() / 1000));
+        }
+      })
+      .on("error", () => resolve(Math.floor(Date.now() / 1000)));
+  });
+};
+
 const getGoogleAccessToken = async (serviceAccount) => {
-  const now = Math.floor(Date.now() / 1000);
+  const now = await getGoogleServerTime();
   const header = { alg: "RS256", typ: "JWT" };
   const claimSet = {
     iss: serviceAccount.client_email,
