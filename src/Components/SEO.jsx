@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { optimizeCloudinaryUrl } from "../utils/imageOptimizer";
 
 const SEO = ({
   title,
@@ -73,6 +74,24 @@ const SEO = ({
       setMeta("name", "twitter:title", finalTwTitle);
       if (finalTwDesc) setMeta("name", "twitter:description", finalTwDesc);
       if (finalTwImage) setMeta("name", "twitter:image", finalTwImage);
+
+      // Dynamic High-Priority LCP Image Preload for Mobile & Desktop
+      const existingPreload = document.getElementById("lcp-image-preload");
+      if (type === "product" && image && image.startsWith("http") && !image.includes("logo.png")) {
+        const optimizedImg = optimizeCloudinaryUrl(image, 800);
+        let preloadTag = existingPreload;
+        if (!preloadTag) {
+          preloadTag = document.createElement("link");
+          preloadTag.id = "lcp-image-preload";
+          preloadTag.rel = "preload";
+          preloadTag.as = "image";
+          preloadTag.setAttribute("fetchpriority", "high");
+          document.head?.appendChild(preloadTag);
+        }
+        preloadTag.href = optimizedImg;
+      } else if (existingPreload) {
+        existingPreload.remove();
+      }
 
       // Dynamic Schema Injection
       if (schema) {

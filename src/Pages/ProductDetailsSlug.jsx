@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import API from "../api/axios";
 import { formatPrice } from "../utils/price";
+import { optimizeCloudinaryUrl } from "../utils/imageOptimizer";
 import { getStandardizedProduct } from "../utils/productStandardizer";
 import { unpackProductMetadata } from "../utils/productMetadata";
 import { getLegacyProductBySlug } from "../utils/legacyProducts";
@@ -300,10 +301,15 @@ Hello Crystal Jaipuria, I have a query regarding this product.
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* LEFT: MAIN IMAGE & THUMBNAILS */}
           <div>
-            <div className="w-full h-[320px] sm:h-[440px] lg:h-[500px] bg-gray-50 rounded-2xl shadow-xs border border-gray-200 overflow-hidden flex items-center justify-center p-2">
+            <div className="w-full aspect-square sm:aspect-[4/3] lg:aspect-square max-h-[500px] bg-gray-50 rounded-2xl shadow-xs border border-gray-200 overflow-hidden flex items-center justify-center p-2">
               <img
-                src={selectedImage || (typeof product.images?.[0] === 'string' ? product.images[0] : product.images?.[0]?.url) || "/Gemstone.webp"}
+                src={optimizeCloudinaryUrl(selectedImage || (typeof product.images?.[0] === 'string' ? product.images[0] : product.images?.[0]?.url) || "/Gemstone.webp", 800)}
                 alt={product.name}
+                width="600"
+                height="600"
+                fetchPriority="high"
+                loading="eager"
+                decoding="async"
                 className="max-h-full max-w-full object-contain rounded-xl"
               />
             </div>
@@ -312,17 +318,22 @@ Hello Crystal Jaipuria, I have a query regarding this product.
             {Array.isArray(product.images) && product.images.length > 1 && (
               <div className="flex gap-3 mt-4 overflow-x-auto pb-2">
                 {product.images.map((img, idx) => {
-                  const src = typeof img === 'string' ? img : (img?.url || '');
+                  const rawSrc = typeof img === 'string' ? img : (img?.url || '');
+                  const thumbSrc = optimizeCloudinaryUrl(rawSrc, 160);
                   return (
                     <img
                       key={img.public_id || idx}
-                      src={src}
+                      src={thumbSrc}
                       alt={`${product.name} - ${idx + 1}`}
+                      width="80"
+                      height="80"
+                      loading="lazy"
+                      decoding="async"
                       onClick={() => {
-                        setSelectedImage(src);
+                        setSelectedImage(rawSrc);
                       }}
                       className={`w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-xl border-2 cursor-pointer transition ${
-                        selectedImage === src ? "border-indigo-600 ring-2 ring-indigo-200" : "border-gray-200 hover:border-gray-400"
+                        (selectedImage || (typeof product.images?.[0] === 'string' ? product.images[0] : product.images?.[0]?.url)) === rawSrc ? "border-indigo-600 ring-2 ring-indigo-200" : "border-gray-200 hover:border-gray-400"
                       }`}
                     />
                   );

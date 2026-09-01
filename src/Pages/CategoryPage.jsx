@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import API from "../api/axios";
 import SEO from "../Components/SEO";
 import { formatPrice } from "../utils/price";
+import { optimizeCloudinaryUrl } from "../utils/imageOptimizer";
 import { getBreadcrumbSchema } from "../utils/seo";
 import { trackCategoryView } from "../utils/analytics";
 import { LEGACY_PRODUCTS } from "../utils/legacyProducts";
@@ -281,10 +282,14 @@ const CategoryPage = () => {
                     onClick={() => navigate(`/product/${product.slug}`)}
                   >
                     {/* Image */}
-                    <div className="h-56 w-full overflow-hidden">
+                    <div className="h-56 w-full overflow-hidden bg-gray-50 flex items-center justify-center aspect-[4/3]">
                       <img
-                        src={product.images?.[0]?.url}
+                        src={optimizeCloudinaryUrl(product.images?.[0]?.url, 450)}
                         alt={product.name}
+                        width="300"
+                        height="224"
+                        loading="lazy"
+                        decoding="async"
                         className="h-full w-full object-cover"
                       />
                     </div>

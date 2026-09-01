@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { formatPrice } from "../utils/price";
+import { optimizeCloudinaryUrl } from "../utils/imageOptimizer";
 import { getStandardizedProduct } from "../utils/productStandardizer";
 
 const ProductCard = ({ product }) => {
@@ -12,11 +13,13 @@ const ProductCard = ({ product }) => {
       className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group block"
     >
       {/* Image */}
-      <div className="h-72 bg-gray-100 flex items-center justify-center overflow-hidden">
+      <div className="h-72 bg-gray-100 flex items-center justify-center overflow-hidden aspect-square">
         <img
           loading="lazy"
           decoding="async"
-          src={typeof item.images?.[0] === 'string' ? item.images[0] : (item.images?.[0]?.url || "/Gemstone.webp")}
+          width="300"
+          height="300"
+          src={optimizeCloudinaryUrl(typeof item.images?.[0] === 'string' ? item.images[0] : (item.images?.[0]?.url || "/Gemstone.webp"), 450)}
           alt={item.name}
           className="max-h-full max-w-full object-contain group-hover:scale-105 duration-500"
         />

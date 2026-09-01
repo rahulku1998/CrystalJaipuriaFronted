@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import API from "../api/axios";
 import { formatPrice } from "../utils/price";
+import { optimizeCloudinaryUrl } from "../utils/imageOptimizer";
 import { getStandardizedProduct } from "../utils/productStandardizer";
 import { unpackProductMetadata } from "../utils/productMetadata";
 import {
@@ -213,10 +214,15 @@ Hello Crystal Jaipuria, I have a query regarding this product.
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* LEFT: MAIN IMAGE & THUMBNAILS */}
           <div>
-            <div className="w-full h-[320px] sm:h-[440px] lg:h-[500px] bg-gray-50 rounded-2xl shadow-xs border border-gray-200 overflow-hidden flex items-center justify-center p-2">
+            <div className="w-full aspect-square sm:aspect-[4/3] lg:aspect-square max-h-[500px] bg-gray-50 rounded-2xl shadow-xs border border-gray-200 overflow-hidden flex items-center justify-center p-2">
               <img
-                src={selectedImage}
+                src={optimizeCloudinaryUrl(selectedImage, 800)}
                 alt={product.name}
+                width="600"
+                height="600"
+                fetchPriority="high"
+                loading="eager"
+                decoding="async"
                 className="max-h-full max-w-full object-contain rounded-xl"
               />
             </div>
@@ -227,8 +233,12 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                 {product.images.map((img, idx) => (
                   <img
                     key={img.public_id || idx}
-                    src={img.url}
-                    alt={product.name}
+                    src={optimizeCloudinaryUrl(img.url, 160)}
+                    alt={`${product.name} thumbnail ${idx + 1}`}
+                    width="80"
+                    height="80"
+                    loading="lazy"
+                    decoding="async"
                     onClick={() => {
                       setSelectedImage(img.url);
                       trackGalleryClick(idx, product);
