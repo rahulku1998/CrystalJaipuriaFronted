@@ -29,7 +29,11 @@ const ProductCard = ({ product }) => {
         </h2>
 
         <p className="text-gray-500 text-sm mt-2 line-clamp-2">
-          {item.description}
+          {String(item.detail || item.description || "")
+            .replace(/<[^>]*>?/gm, "")
+            .replace(/&nbsp;/g, " ")
+            .replace(/\s+/g, " ")
+            .trim()}
         </p>
 
         {item.price && (

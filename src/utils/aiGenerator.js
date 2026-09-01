@@ -175,15 +175,18 @@ export const detectArchetype = (text = "") => {
 
 export const detectGemstone = (text = "") => {
   const lower = text.toLowerCase();
-  if (lower.includes("sphatik") || lower.includes("clear quartz") || lower.includes("crystal quartz") || lower.includes("crystal clear") || lower.includes("quartz")) return "sphatik";
-  if (lower.includes("jade") || lower.includes("green")) return "green-jade";
-  if (lower.includes("rose quartz") || lower.includes("pink")) return "rose-quartz";
+  // Check multi-word and specific gemstones first to avoid false quartz/crystal matching
+  if (lower.includes("rose quartz") || lower.includes("pink quartz") || lower.includes("gulabi")) return "rose-quartz";
+  if (lower.includes("green jade") || lower.includes("columbian green") || lower.includes("jade")) return "green-jade";
+  if (lower.includes("aventurine") || lower.includes("avernturine")) return "green-jade";
   if (lower.includes("amethyst") || lower.includes("jamunia") || lower.includes("purple")) return "amethyst";
-  if (lower.includes("ruby") || lower.includes("manik")) return "ruby";
-  if (lower.includes("pyrite") || lower.includes("golden")) return "pyrite";
-  if (lower.includes("lapis") || lower.includes("lajward")) return "lapis-lazuli";
-  if (lower.includes("black agate") || lower.includes("agate") || lower.includes("hakik")) return "black-agate";
+  if (lower.includes("ruby") || lower.includes("manik") || lower.includes("rube")) return "ruby";
+  if (lower.includes("pyrite") || lower.includes("golden") || lower.includes("fool's gold")) return "pyrite";
+  if (lower.includes("lapis") || lower.includes("lajward") || lower.includes("blue sapphire") || lower.includes("neelam")) return "lapis-lazuli";
+  if (lower.includes("black agate") || lower.includes("black jade") || lower.includes("agate") || lower.includes("hakik")) return "black-agate";
   if (lower.includes("sodalite")) return "sodalite";
+  if (lower.includes("tiger eye") || lower.includes("tigereye")) return "pyrite";
+  if (lower.includes("sphatik") || lower.includes("clear quartz") || lower.includes("crystal quartz") || lower.includes("crystal clear") || lower.includes("quartz") || lower.includes("crystal")) return "sphatik";
   return "sphatik";
 };
 
@@ -406,6 +409,44 @@ export const generateBuiltInContent = (productName, categoryName = "") => {
       ];
       break;
 
+    case "swan":
+      archetypeTitle = "Sacred Hamsa Vastu Symbolism & Harmonic Resonance";
+      archetypedetails = 
+        `<p>Carved with graceful contours by master generational lapidaries in Jaipur, this ${cleanName} portrays the divine Hamsa (Pair of Sacred Swans), revered across Vedic and Vastu traditions:</p>` +
+        `<ul>` +
+        `  <li><strong>Eternal Devotion &amp; Pure Love:</strong> The paired swans represent lifelong companionship, emotional fidelity, and tender marital harmony, making them an auspicious presence in master bedrooms and living spaces.</li>` +
+        `  <li><strong>Heart Chakra (Anahata) Healing:</strong> Carved from natural ${stone.name}, it radiates gentle frequencies that dissolve emotional distress, soften interpersonal conflict, and foster affectionate understanding.</li>` +
+        `  <li><strong>Vastu Harmony (South-West Placement):</strong> In classical Vastu Shastra, keeping a paired bird or swan carving in the South-West sector of the home stabilizes family relationships and attracts mutual respect.</li>` +
+        `</ul>`;
+
+      specificFaqs = [
+        {
+          question: `Where is the ideal Vastu direction to place this ${cleanName} at home?`,
+          answer: `According to Vastu Shastra, placing a pair of swans in the South-West corner of the master bedroom or living room attracts love, harmony, and relationship stability. It can also be placed in the North or East quadrant for peaceful home vibrations.`
+        },
+        {
+          question: `What is the significance of a Pair of Swans (Hans Jodi) in Vedic traditions?`,
+          answer: `In Indian philosophy, the Hamsa symbolizes pure discernment, sacred fidelity, and divine grace. A swan pair represents enduring love, mutual trust, and spiritual unity between partners.`
+        },
+        {
+          question: `Is this ${cleanName} carved from 100% genuine natural ${stone.name}?`,
+          answer: `Yes, 100%. Every piece is individually hand-carved from natural earth-mined ${stone.name} at Crystal Jaipuria workshops in Jaipur. We use zero artificial glass, resin, or synthetic dye.`
+        },
+        {
+          question: `How should this gemstone carving be cleaned and maintained?`,
+          answer: `${stone.careVidhi}`
+        },
+        {
+          question: `Does this piece make a suitable anniversary or wedding gift?`,
+          answer: `Yes, it is one of the most cherished Vastu gifts for newly married couples, housewarmings, and wedding anniversaries, symbolizing pure, lifelong partnership and emotional peace.`
+        },
+        {
+          question: `How do you ensure safe, damage-free delivery for delicate swan carvings?`,
+          answer: `The delicate neck and wing curves are buffered in custom-molded high-density shockproof foam within reinforced export packaging, backed by 100% insured delivery worldwide.`
+        }
+      ];
+      break;
+
     default:
       archetypeTitle = "Artisanal Iconography & Sacred Energetic Essence";
       archetypedetails = 
@@ -444,51 +485,31 @@ export const generateBuiltInContent = (productName, categoryName = "") => {
       ];
   }
 
-  // Generate 4 distinct narrative hooks based on narrative style
+  // Generate a clean, natural, and engaging opening paragraph
   let citationHook = "";
-  let sectionOneHeading = "";
-  let sectionOneBody = "";
-  let sectionTwoHeading = "";
-  let sectionTwoBody = "";
-
-  if (narrativeStyle === 0) {
-    // Style A: Vedic Iconography & Shastric Authority
-    citationHook = `Handcrafted from 100% certified natural ${stone.name}, this ${cleanName} is sculpted in Jaipur, India by master lapidary artisans following classical Vedic Shilpa Shastras. Revered for its deep resonance with the ${stone.chakra} and planetary ruler ${stone.planet}, it serves as an authentic spiritual focal point for home sanctums, Vastu alignment, and auspicious worship.`;
-    sectionOneHeading = archetypeTitle;
-    sectionOneBody = archetypedetails;
-    sectionTwoHeading = "Gemological Provenance & Jaipur Lapidary Heritage";
-    sectionTwoBody = `<p>Every specimen is carved from a single, hand-selected rough crystal at Crystal Jaipuria's generational artisan workshops in Jaipur (Est. 1989). We preserve the natural crystalline lattice of genuine ${stone.name} (${stone.mineral}), guaranteeing an authentic Mohs hardness of ${stone.hardness} without synthetic polymer coatings or resin casting.</p>`;
-  } else if (narrativeStyle === 1) {
-    // Style B: Lapidary Mastery & Gemological Authenticity
-    citationHook = `Carved from a single rough block of authentic ${stone.name} (${stone.mineral}) at Crystal Jaipuria (Jaipur, India), this ${cleanName} embodies over 35 years of master stone-carving heritage. Each piece displays natural crystal inclusions, a verified ${stone.hardness} Mohs hardness, and balanced energetic resonance suited for sacred shrines and holistic living.`;
-    sectionOneHeading = "Mineralogical Integrity & Artisanal Execution";
-    sectionOneBody = 
-      `<p>In an era dominated by molded synthetic glass and colored resin knock-offs, this ${cleanName} stands as a testament to genuine mineral craftsmanship. Extracted from certified earth deposits, the rough gemstone is precision-cut using diamond lapidary wheels and finished with water-based abrasive slurries to achieve a deep, natural, tactile polish.</p>` +
-      `<p><strong>Gemological Identification:</strong> ${stone.authenticityTest}</p>`;
-    sectionTwoHeading = archetypeTitle;
-    sectionTwoBody = archetypedetails;
-  } else if (narrativeStyle === 2) {
-    // Style C: Spatial Vastu & Bio-Energy Harmonization
-    citationHook = `Engineered for spatial bio-energy balance, this natural ${stone.name} ${cleanName} is sculpted by Jaipur artisans to purify ambient environmental vibrations and neutralize household Vastu doshas. Attuned to ${stone.deity} and the ${stone.chakra}, it anchors peaceful prosperity and mental clarity in residential and workspace altars.`;
-    sectionOneHeading = "Spatial Vastu Calibration & Ambient Energy Dynamics";
-    sectionOneBody = 
-      `<p>According to Vedic Vastu architecture, natural gemstone crystals function as ambient bio-capacitors that absorb erratic electromagnetic dissonance and radiate steady, grounding energetic frequencies. Placing this ${cleanName} in the North, North-East, or East sector of your room initiates a soothing energetic equilibrium.</p>` +
-      `<p><strong>Energetic Attributes:</strong> Fosters ${stone.vibeKeywords.join(", ")} while harmonizing the ${stone.chakra}.</p>`;
-    sectionTwoHeading = archetypeTitle;
-    sectionTwoBody = archetypedetails;
+  if (archetype === "swan") {
+    citationHook = `Handcrafted from certified ${stone.name}, this exquisite ${cleanName} is hand-carved by master generational artisans at Crystal Jaipuria, Jaipur (est. 1989). Revered in Vedic Vastu traditions as an auspicious symbol of pure love, marital fidelity, and emotional harmony, this graceful pair of swans is designed for bedroom decor, living room Vastu placement, and meaningful anniversary gifting.`;
+  } else if (archetype === "shivling") {
+    citationHook = `Handcrafted from certified ${stone.name}, this sacred ${cleanName} is sculpted by generational master artisans at Crystal Jaipuria, Jaipur (est. 1989). Carved in accordance with classical Vedic Shilpa Shastras, this sacred piece is designed for daily Jalabhishek, home temple worship, Vastu purification, and deep spiritual meditation.`;
+  } else if (archetype === "ganesha") {
+    citationHook = `Handcrafted from certified ${stone.name}, this auspicious ${cleanName} is sculpted by master artisans at Crystal Jaipuria, Jaipur (est. 1989). Revered as Vighnaharta (the remover of obstacles) and the harbinger of prosperity, this divine idol brings peaceful energy, good fortune, and aesthetic grace to home temples, office desks, and sacred spaces.`;
+  } else if (archetype === "shree-yantra") {
+    citationHook = `Handcrafted from certified ${stone.name}, this sacred 3D Meru ${cleanName} is carved with precise sacred geometry by master lapidaries at Crystal Jaipuria, Jaipur (est. 1989). Revered as the King of Yantras (Yantraraja), it continuously attracts financial abundance, purifies surrounding Vastu energy, and elevates spiritual meditation.`;
+  } else if (archetype === "jain") {
+    citationHook = `Handcrafted from certified ${stone.name}, this serene ${cleanName} is sculpted by master artisans at Crystal Jaipuria, Jaipur (est. 1989). Depicting the Tirthankara in deep Padmasana meditation, this sacred murti radiates pure Ahimsa (non-violence), peace, and spiritual tranquility, making it an auspicious centerpiece for home shrines and Jain worship.`;
+  } else if (archetype === "angel") {
+    citationHook = `Handcrafted from certified ${stone.name}, this beautiful Guardian ${cleanName} is carved by master artisans at Crystal Jaipuria, Jaipur (est. 1989). Radiating gentle celestial frequencies, it aids in auric shielding, emotional healing, and mental peace, making it an ideal companion for bedside tables, meditation corners, and meaningful spiritual gifting.`;
   } else {
-    // Style D: Consecration Manual & Sacred Puja Sadhana
-    citationHook = `Sculpted by master lapidaries at Crystal Jaipuria (Jaipur, Rajasthan), this ${cleanName} in natural certified ${stone.name} is meticulously prepared for sacred daily puja, ritual abhishekam, and lifelong devotional sadhana. Aligned with ${stone.deity}, it brings divine auspiciousness and spiritual protection to the devotee's family altar.`;
-    sectionOneHeading = archetypeTitle;
-    sectionOneBody = archetypedetails;
-    sectionTwoHeading = "Puja Consecration, Cleansing & Daily Vidhi";
-    sectionTwoBody = 
-      `<p>To awaken the full spiritual potential of this sacred artifact, establish it upon a clean wooden altar cloth on an auspicious morning facing East or North. ${stone.careVidhi}</p>` +
-      `<p><strong>Sacred Mantra Resonance:</strong> Regular chanting of relevant Vedic mantras before this natural ${stone.name} murti amplifies meditative focus and invites celestial guardianship into the home.</p>`;
+    citationHook = `Handcrafted from certified ${stone.name}, this elegant ${cleanName} is sculpted by master generational artisans at Crystal Jaipuria, Jaipur (est. 1989). Combining classical craftsmanship with authentic earth-mined gemstone, it radiates positive vibrations and brings timeless spiritual elegance to home sanctums, office spaces, and sacred altars.`;
   }
 
+  const sectionOneHeading = archetypeTitle;
+  const sectionOneBody = archetypedetails;
+  const sectionTwoHeading = "Gemological Provenance & Jaipur Lapidary Heritage";
+  const sectionTwoBody = `<p>Every specimen is carved from a single, hand-selected rough crystal at Crystal Jaipuria's generational artisan workshops in Jaipur (Est. 1989). We preserve the natural crystalline lattice of genuine ${stone.name}, guaranteeing authentic earth-mined quality without synthetic polymer coatings or resin casting.</p><p><strong>Authenticity Identification:</strong> ${stone.authenticityTest}</p>`;
+
   const fullDescription =
-    `<p class="lead font-medium text-gray-800 text-base sm:text-lg mb-6 leading-relaxed"><strong>${citationHook}</strong></p>\n\n` +
+    `<p><strong>${citationHook}</strong></p>\n\n` +
     `<h2>${sectionOneHeading}</h2>\n${sectionOneBody}\n\n` +
     `<h2>${sectionTwoHeading}</h2>\n${sectionTwoBody}\n\n` +
     `<h2>Technical & Gemological Specifications</h2>\n` +
