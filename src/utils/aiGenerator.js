@@ -12,6 +12,66 @@
 
 export const GEMINI_API_KEY_STORAGE_KEY = "crystal_gemini_api_key";
 
+/**
+ * Intelligent Title Case & Sacred Sanskrit Capitalization Formatter
+ */
+export const toProperTitleCase = (str = "") => {
+  if (!str) return "";
+  const minorWords = new Set(["a", "an", "the", "and", "but", "or", "for", "nor", "on", "at", "to", "from", "by", "with", "in", "of"]);
+  const specialCases = {
+    sio2: "SiO2",
+    al2o3: "Al2O3",
+    "al2o3:fe": "Al2O3:Fe",
+    "al2o3:cr": "Al2O3:Cr",
+    fes2: "FeS2",
+    emf: "EMF",
+    ri: "RI",
+    sg: "SG",
+    "3d": "3D",
+    "2d": "2D",
+    vastu: "Vastu",
+    shilpa: "Shilpa",
+    shastra: "Shastra",
+    shiva: "Shiva",
+    shivling: "Shivling",
+    ganesha: "Ganesha",
+    ganpati: "Ganpati",
+    jaipur: "Jaipur",
+    jaipuria: "Jaipuria",
+    sphatik: "Sphatik",
+    neelam: "Neelam",
+    pukhraj: "Pukhraj",
+    manik: "Manik",
+    panna: "Panna",
+    tirthankara: "Tirthankara",
+    mahavira: "Mahavira",
+    parshvanath: "Parshvanath",
+    abhishek: "Abhishek",
+    abhishekam: "Abhishekam",
+    gangajal: "Gangajal",
+    dhoop: "Dhoop",
+    puja: "Puja",
+    mandir: "Mandir",
+    ishanya: "Ishanya"
+  };
+
+  return str
+    .trim()
+    .split(/\s+/)
+    .map((word, index) => {
+      if (!word) return "";
+      const cleanWord = word.replace(/[^a-zA-Z0-9:]/g, "").toLowerCase();
+      if (specialCases[cleanWord]) {
+        return word.replace(new RegExp(cleanWord, "i"), specialCases[cleanWord]);
+      }
+      if (index > 0 && minorWords.has(word.toLowerCase())) {
+        return word.toLowerCase();
+      }
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    })
+    .join(" ");
+};
+
 // ==========================================
 // 1. VERIFIED GEMOLOGICAL KNOWLEDGE DATABASE
 // ==========================================
@@ -292,7 +352,7 @@ export const detectArchetype = (text = "") => {
 // 3. ZERO-BOILERPLATE KNOWLEDGE ENGINE
 // ==========================================
 export const generateBuiltInContent = (productName, categoryName = "") => {
-  const cleanName = productName.trim() || "Handcrafted Gemstone Sacred Idol";
+  const cleanName = toProperTitleCase(productName.trim() || "Handcrafted Gemstone Sacred Idol");
   const stoneKey = detectGemstone(cleanName + " " + categoryName);
   const archetype = detectArchetype(cleanName + " " + categoryName);
   const stone = GEMSTONE_PROFILES[stoneKey] || GEMSTONE_PROFILES.sphatik;
@@ -636,9 +696,17 @@ export const generateBuiltInContent = (productName, categoryName = "") => {
 
   const fullDescription =
     `<p><strong>${citationHook}</strong></p>\n\n` +
+    `<div style="background:#f0fdf4; border-left:4px solid #16a34a; padding:14px 18px; margin:20px 0; border-radius:10px;">\n` +
+    `  <strong style="color:#15803d; font-size:14.5px;">🌿 Sacred Vastu &amp; Consecration Vidhi:</strong>\n` +
+    `  <p style="color:#166534; font-size:13.5px; margin:6px 0 0 0; line-height:1.6;">Establish upon a clean wooden chowki in the North-East (Ishanya Kon) or East quadrant. Pair with a pure cow ghee diya or fragrant sandalwood dhoop incense to anchor continuous positive vibrations in your space.</p>\n` +
+    `</div>\n\n` +
     `<h2>${sectionOneHeading}</h2>\n${sectionOneBody}\n\n` +
     `<h2>${sectionTwoHeading}</h2>\n${sectionTwoBody}\n\n` +
-    `<h2>Technical & Gemological Specifications</h2>\n` +
+    `<div style="background:#f8fafc; border:1px solid #e2e8f0; padding:14px 18px; margin:20px 0; border-radius:10px;">\n` +
+    `  <strong style="color:#1e293b; font-size:14.5px;">💎 100% Genuine Earth-Mined Guarantee:</strong>\n` +
+    `  <p style="color:#475569; font-size:13.5px; margin:6px 0 0 0; line-height:1.6;">Hand-sculpted from certified natural gemstone at Crystal Jaipuria lapidary workshops in Jaipur (est. 1989). Guaranteed zero synthetic resin casting or artificial pressed glass.</p>\n` +
+    `</div>\n\n` +
+    `<h2>Technical &amp; Gemological Specifications</h2>\n` +
     `<table style="width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;">\n` +
     `  <thead>\n` +
     `    <tr style="background:#f8fafc;">\n` +
@@ -656,12 +724,25 @@ export const generateBuiltInContent = (productName, categoryName = "") => {
     `  </tbody>\n` +
     `</table>`;
 
+  const metaTitle = `${cleanName} | Handcrafted Jaipur | Crystal Jaipuria`.slice(0, 60);
+  const metaDescription = `Buy authentic handcrafted ${cleanName} in certified ${stone.name} from Crystal Jaipuria, Jaipur (est. 1989). 100% natural, Vastu certified with worldwide express delivery.`.slice(0, 160);
+  const wordCount = fullDescription.replace(/<[^>]*>?/gm, "").split(/\s+/).filter(Boolean).length;
+  const readingTime = `${Math.max(1, Math.ceil(wordCount / 200))} min read`;
+
   return {
+    cleanName,
     citationHook,
     fullDescription,
     faqs: specificFaqs,
     gemstoneType: stone.name,
     archetype,
+    metaTitle,
+    metaDescription,
+    stats: {
+      wordCount,
+      readingTime,
+      faqCount: specificFaqs.length
+    },
     isVerified: true,
     verificationStatus: "Verified 100% Accurate",
     verificationChecks: [

@@ -293,6 +293,11 @@ const EditProduct = () => {
   categoryName={categories.find((c) => c._id === form.categoryId)?.name || ""}
   onApplyDescription={(html) => setForm((prev) => ({ ...prev, description: html }))}
   onApplyFaqs={(generatedFaqs) => setFaqs(generatedFaqs)}
+  onApplyMeta={(meta) => {
+    if (meta?.metaTitle) setMetaTitle(meta.metaTitle);
+    if (meta?.metaDescription) setMetaDescription(meta.metaDescription);
+  }}
+  onApplyName={(formattedName) => setForm((prev) => ({ ...prev, name: formattedName }))}
 />
 
 <div className="bg-white rounded-3xl shadow-xl p-8">

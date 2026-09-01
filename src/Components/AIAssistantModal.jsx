@@ -13,6 +13,7 @@ import {
 } from "react-icons/fa";
 import {
   generateGeminiContent,
+  toProperTitleCase,
   GEMINI_API_KEY_STORAGE_KEY
 } from "../utils/aiGenerator";
 import { autoInjectInternalLinks } from "../utils/internalLinking";
@@ -23,7 +24,9 @@ const AIAssistantModal = ({
   productName = "",
   categoryName = "",
   onApplyDescription,
-  onApplyFaqs
+  onApplyFaqs,
+  onApplyMeta,
+  onApplyName
 }) => {
   const [activeTab, setActiveTab] = useState("generate");
   const [name, setName] = useState(productName || "");
@@ -91,12 +94,38 @@ const AIAssistantModal = ({
     }
   };
 
+  const handleFormatName = () => {
+    if (name) {
+      setName(toProperTitleCase(name));
+    }
+  };
+
+  const handleApplyMeta = () => {
+    if (onApplyMeta && (result?.metaTitle || result?.metaDescription)) {
+      onApplyMeta({
+        metaTitle: result.metaTitle,
+        metaDescription: result.metaDescription
+      });
+      setAppliedSection("meta");
+      setTimeout(() => setAppliedSection(""), 2500);
+    }
+  };
+
   const handleApplyAll = () => {
     if (result?.fullDescription && onApplyDescription) {
       onApplyDescription(result.fullDescription);
     }
     if (result?.faqs?.length > 0 && onApplyFaqs) {
       onApplyFaqs(result.faqs);
+    }
+    if (onApplyMeta && (result?.metaTitle || result?.metaDescription)) {
+      onApplyMeta({
+        metaTitle: result.metaTitle,
+        metaDescription: result.metaDescription
+      });
+    }
+    if (onApplyName && result?.cleanName) {
+      onApplyName(result.cleanName);
     }
     setAppliedSection("all");
     setTimeout(() => {
@@ -210,13 +239,26 @@ const AIAssistantModal = ({
               <div className="bg-stone-50 border border-stone-200 rounded-2xl p-5 space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">
-                      Product Name
-                    </label>
+                    <div className="flex items-center justify-between mb-1">
+                      <label className="text-xs font-bold text-gray-700 uppercase tracking-wider">
+                        Product Name
+                      </label>
+                      <button
+                        type="button"
+                        onClick={handleFormatName}
+                        className="text-[11px] font-semibold text-indigo-600 hover:text-indigo-800 flex items-center gap-1 cursor-pointer"
+                        title="Auto-Capitalize with Proper Title Case"
+                      >
+                        <span>✨ Format Title</span>
+                      </button>
+                    </div>
                     <input
                       type="text"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
+                      onBlur={() => {
+                        if (name) setName(toProperTitleCase(name));
+                      }}
                       placeholder="e.g. Natural Sphatik Shivling"
                       className="w-full rounded-xl border border-gray-300 bg-white px-4 py-2.5 text-sm outline-none focus:ring-2 focus:ring-indigo-400"
                     />
@@ -289,6 +331,63 @@ const AIAssistantModal = ({
                       </div>
                     )}
                   </div>
+
+                  {/* Content Quality & Reading Metrics */}
+                  {result.stats && (
+                    <div className="flex flex-wrap items-center gap-3 bg-indigo-50/70 border border-indigo-100 rounded-2xl px-4 py-3 text-xs text-indigo-950 font-medium shadow-2xs">
+                      <span>📊 <strong>Word Count:</strong> {result.stats.wordCount} words</span>
+                      <span className="text-indigo-300">•</span>
+                      <span>⏱ <strong>Reading Time:</strong> {result.stats.readingTime}</span>
+                      <span className="text-indigo-300">•</span>
+                      <span>❓ <strong>Verified FAQs:</strong> {result.stats.faqCount} Q&amp;As</span>
+                      <span className="text-indigo-300">•</span>
+                      <span>💎 <strong>Mineral:</strong> {result.gemstoneType}</span>
+                    </div>
+                  )}
+
+                  {/* Google SERP Snippet Preview */}
+                  {(result.metaTitle || result.metaDescription) && (
+                    <div className="bg-white border border-gray-200 rounded-2xl p-4 shadow-2xs space-y-2">
+                      <div className="flex items-center justify-between border-b pb-2">
+                        <span className="text-xs font-extrabold uppercase tracking-wider text-gray-600 flex items-center gap-1.5">
+                          <span>🔍 Google Search Result Snippet Preview</span>
+                        </span>
+                        <div className="flex items-center gap-2">
+                          {onApplyMeta && (
+                            <button
+                              type="button"
+                              onClick={handleApplyMeta}
+                              className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-700 hover:bg-indigo-100 flex items-center gap-1 cursor-pointer transition"
+                            >
+                              {appliedSection === "meta" ? "✔ Applied to SEO" : "Apply to SEO"}
+                            </button>
+                          )}
+                          <button
+                            type="button"
+                            onClick={() => handleCopy(`${result.metaTitle}\n${result.metaDescription}`, "meta")}
+                            className="text-xs font-semibold text-gray-600 hover:text-indigo-600 flex items-center gap-1 cursor-pointer"
+                          >
+                            {copiedSection === "meta" ? (
+                              <span className="text-green-600 font-bold flex items-center gap-1">✔ Copied</span>
+                            ) : (
+                              <>
+                                <FaCopy /> Copy Meta
+                              </>
+                            )}
+                          </button>
+                        </div>
+                      </div>
+                      <div className="text-sm sm:text-base font-semibold text-blue-700 hover:underline cursor-pointer">
+                        {result.metaTitle}
+                      </div>
+                      <div className="text-xs text-emerald-700 font-mono truncate">
+                        https://www.crystaljaipuria.com/product/{(result.cleanName || name).toLowerCase().replace(/[^a-z0-9]+/g, "-")}
+                      </div>
+                      <p className="text-xs text-gray-600 leading-relaxed">
+                        {result.metaDescription}
+                      </p>
+                    </div>
+                  )}
 
                   {/* AI Overview Citation Hook Card */}
                   <div className="bg-gradient-to-br from-indigo-50/80 via-white to-purple-50/60 border border-indigo-200/80 rounded-2xl p-5 shadow-xs">
