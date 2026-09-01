@@ -1,5 +1,4 @@
 import { getProductMetaTitle } from "./seo.js";
-import { detectGemstone } from "./aiGenerator.js";
 
 /**
  * Packs FAQs, custom Meta Title, and custom Meta Description into product data
@@ -103,9 +102,8 @@ export const unpackProductMetadata = (product) => {
 /**
  * Generate 1-Click Super SEO Meta Title and Description for Admin Panel
  */
-export const generateSuperMetaTags = (productName = "", categoryName = "") => {
+export const generateSuperMetaTags = (productName = "") => {
   const cleanName = productName.trim() || "Gemstone God Statue";
-  const stoneKey = detectGemstone(`${cleanName} ${categoryName}`);
 
   // Generate Super Title
   const superTitle = getProductMetaTitle(cleanName);

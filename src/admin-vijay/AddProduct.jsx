@@ -285,6 +285,7 @@ const handleCategoryChange = async (e) => {
       setFaqs([{ question: "", answer: "" }]);
       setImages([]);
       setPreview([]);
+      navigate(prefill ? "/admin-vijay/pending-products" : "/admin-vijay/dashboard");
 
     } catch (err) {
 

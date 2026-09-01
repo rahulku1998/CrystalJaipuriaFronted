@@ -5,7 +5,6 @@ import SEO from "../Components/SEO";
 import { FaSearch } from "react-icons/fa";
 import { useSearchParams } from "react-router-dom";
 import { trackSearchNoResults } from "../utils/analytics";
-import { LEGACY_PRODUCTS } from "../utils/legacyProducts";
 
 const ITEMS_PER_PAGE = 15;
 

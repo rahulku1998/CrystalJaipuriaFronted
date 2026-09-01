@@ -7,11 +7,8 @@ import {
   FaSearch,
   FaImage,
   FaArrowRight,
-  FaCheckCircle,
   FaClock,
   FaShieldAlt,
-  FaExternalLinkAlt,
-  FaPlus,
   FaFilter,
 } from "react-icons/fa";
 

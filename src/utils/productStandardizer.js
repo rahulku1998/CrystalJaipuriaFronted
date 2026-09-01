@@ -188,7 +188,7 @@ export const formatAdditionalInfo = (inputHtmlOrText, product = {}) => {
         seenKeys.add(key.toLowerCase());
       }
     } else {
-      const cleanLine = line.replace(/^[•\-\*\s\d\.]+/, "").trim();
+      const cleanLine = line.replace(/^[•\-*\s\d.]+/, "").trim();
       if (cleanLine && cleanLine.length > 2) {
         items.push({ key: "", val: cleanLine });
       }

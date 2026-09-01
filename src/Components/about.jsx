@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaWhatsapp, FaGem } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 
 const AboutGemstoneSection = () => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaHome, FaShoppingBag, FaWhatsapp, FaGem, FaSearch } from "react-icons/fa";
+import { FaHome, FaShoppingBag, FaWhatsapp, FaGem } from "react-icons/fa";
 import SEO from "../Components/SEO";
 
 const NotFound = () => {
