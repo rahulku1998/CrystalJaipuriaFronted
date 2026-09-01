@@ -3,6 +3,7 @@ import API from "../api/axios";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import RichTextEditor from "../Components/RichTextEditor";
+import AIBlogAssistantModal from "../Components/AIBlogAssistantModal";
 
 
 const Blog = () => {
@@ -15,6 +16,7 @@ const [form, setForm] = useState({
 });
 
 const [image, setImage] = useState(null);
+const [showAiModal, setShowAiModal] = useState(false);
 
 
 const [editId,setEditId] = useState(null);
@@ -200,14 +202,33 @@ Blog Management
 
 <div className="bg-white shadow rounded-xl p-6 mb-8">
 
+<div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5 border-b pb-4">
+  <h2 className="text-xl font-bold text-gray-800">
+    {editId ? "Edit Blog" : "Add New Blog"}
+  </h2>
 
-<h2 className="text-xl font-bold mb-5">
+  <button
+    type="button"
+    onClick={() => setShowAiModal(true)}
+    className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 via-orange-500 to-indigo-600 hover:from-amber-600 hover:to-indigo-700 text-white font-bold text-xs sm:text-sm px-5 py-2.5 rounded-xl shadow-md transition-all active:scale-95 cursor-pointer w-fit"
+  >
+    <span>✨ AI Blog Assistant &amp; Topic Strategist</span>
+  </button>
+</div>
 
-{
-editId ? "Edit Blog" : "Add New Blog"
-}
-
-</h2>
+<AIBlogAssistantModal
+  isOpen={showAiModal}
+  onClose={() => setShowAiModal(false)}
+  onApplyBlog={(aiData) => {
+    setForm((prev) => ({
+      ...prev,
+      title: aiData.title || prev.title,
+      description: aiData.description || prev.description,
+      content: aiData.content || prev.content
+    }));
+    toast.success("1000-1500 words article applied successfully!");
+  }}
+/>
 
 
 
