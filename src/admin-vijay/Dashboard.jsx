@@ -2,8 +2,25 @@ import { useEffect, useState } from "react";
 import API from "../api/axios";
 import { formatPrice } from "../utils/price";
 import { useNavigate, Link } from "react-router-dom";
-import { FaDownload, FaExternalLinkAlt, FaRobot, FaSyncAlt, FaFileCode, FaCheckCircle, FaClock } from "react-icons/fa";
+import {
+  FaDownload,
+  FaExternalLinkAlt,
+  FaRobot,
+  FaSyncAlt,
+  FaFileCode,
+  FaCheckCircle,
+  FaClock,
+  FaFire,
+  FaGlobeAmericas,
+  FaCoins,
+  FaRocket,
+  FaEye,
+  FaChartLine,
+  FaShieldAlt
+} from "react-icons/fa";
 import { LEGACY_PRODUCTS } from "../utils/legacyProducts";
+import { MARKET_OPPORTUNITIES, scanLiveMarketOpportunities } from "../utils/marketDemandScout.js";
+import MarketDemandScoutModal from "../Components/MarketDemandScoutModal.jsx";
 
 const AdminDashboard = () => {
   const [products, setProducts] = useState([]);
@@ -11,6 +28,10 @@ const AdminDashboard = () => {
   const [subCategories, setSubCategories] = useState([]);
   const [search, setSearch] = useState("");
   const [blogs, setBlogs] = useState([]);
+  const [opportunities, setOpportunities] = useState(MARKET_OPPORTUNITIES);
+  const [selectedTag, setSelectedTag] = useState("ALL");
+  const [selectedOpportunity, setSelectedOpportunity] = useState(null);
+  const [scanningAi, setScanningAi] = useState(false);
   const navigate = useNavigate();
 
   const liveSlugs = new Set(products.map((p) => p.slug));
@@ -227,6 +248,159 @@ const AdminDashboard = () => {
             </div>
           </div>
         </div>
+
+        {/* AI GEMSTONE MARKET DEMAND, EXPORT RADAR & OPPORTUNITY SCOUT */}
+        <div className="bg-white rounded-2xl shadow-md border border-gray-200 p-6 mb-8 space-y-6">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b pb-5">
+            <div>
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="w-8 h-8 rounded-xl bg-gradient-to-tr from-amber-500 to-orange-500 text-white flex items-center justify-center text-sm shadow-xs">
+                  <FaRocket />
+                </span>
+                <h2 className="text-xl font-bold text-gray-900">
+                  AI Gemstone Market Demand &amp; Export Radar
+                </h2>
+                <span className="text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300">
+                  100% Success Intelligence
+                </span>
+              </div>
+              <p className="text-xs text-gray-500 mt-1">
+                Scans live search engine volume, US/UK export pricing, competitor gaps &amp; sweet-spot margins to launch high-converting gemstone products.
+              </p>
+            </div>
+
+            <div className="flex items-center gap-2.5">
+              <button
+                type="button"
+                disabled={scanningAi}
+                onClick={async () => {
+                  setScanningAi(true);
+                  try {
+                    const fresh = await scanLiveMarketOpportunities();
+                    setOpportunities(fresh);
+                  } catch (e) {
+                    console.error(e);
+                  } finally {
+                    setScanningAi(false);
+                  }
+                }}
+                className="inline-flex items-center gap-2 bg-stone-900 hover:bg-stone-800 text-white px-4 py-2 rounded-xl text-xs font-bold transition shadow-xs disabled:opacity-50 cursor-pointer"
+              >
+                <FaSyncAlt className={scanningAi ? "animate-spin text-amber-400" : "text-amber-400"} />
+                <span>{scanningAi ? "Scanning Global Markets..." : "Scan Fresh with AI"}</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Filter Pills */}
+          <div className="flex items-center gap-2 overflow-x-auto pb-1 text-xs font-bold scrollbar-none">
+            {[
+              { key: "ALL", label: `All Opportunities (${opportunities.length})` },
+              { key: "trending", label: "🔥 Trending Viral" },
+              { key: "export", label: "🌍 High Export Demand (USA/UK)" },
+              { key: "margin", label: "💰 70%+ Profit Margin" },
+              { key: "vastu", label: "🌿 Vastu Best-Sellers" },
+              { key: "low-competition", label: "⚡ Low Competition Gaps" },
+            ].map((f) => (
+              <button
+                key={f.key}
+                type="button"
+                onClick={() => setSelectedTag(f.key)}
+                className={`px-3.5 py-1.5 rounded-xl whitespace-nowrap transition cursor-pointer ${
+                  selectedTag === f.key
+                    ? "bg-indigo-600 text-white shadow-xs"
+                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                }`}
+              >
+                {f.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Opportunities Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+            {opportunities
+              .filter((opp) => selectedTag === "ALL" || opp.tag === selectedTag)
+              .map((opp) => (
+                <div
+                  key={opp.id}
+                  className="group bg-stone-50/50 hover:bg-white border border-gray-200 hover:border-indigo-400 rounded-2xl p-4 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between"
+                >
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="text-[10px] font-black uppercase px-2 py-0.5 rounded-full bg-amber-400 text-stone-900">
+                        {opp.badge}
+                      </span>
+                      <div className="flex items-center gap-1.5 text-xs font-black text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded-md border border-indigo-100">
+                        <span>Score:</span>
+                        <span className="text-amber-600">{opp.opportunityScore}/100</span>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h4 className="font-bold text-sm text-gray-900 group-hover:text-indigo-600 transition-colors leading-snug">
+                        {opp.name}
+                      </h4>
+                      <span className="text-[11px] font-semibold text-gray-400">
+                        Category: {opp.categoryName}
+                      </span>
+                    </div>
+
+                    {/* Metrics Badges */}
+                    <div className="grid grid-cols-2 gap-2 text-xs pt-1">
+                      <div className="bg-white p-2 rounded-xl border border-gray-200">
+                        <span className="text-[10px] text-gray-400 block">Search Volume</span>
+                        <span className="font-bold text-gray-800">{opp.searchVolume}</span>
+                        <span className="text-[10px] text-emerald-600 font-bold block">{opp.growthRate}</span>
+                      </div>
+                      <div className="bg-white p-2 rounded-xl border border-gray-200">
+                        <span className="text-[10px] text-gray-400 block">Sweet-Spot Price</span>
+                        <span className="font-extrabold text-indigo-600">{opp.pricing?.sweetSpotPrice}</span>
+                        <span className="text-[10px] text-emerald-600 font-bold block">{opp.pricing?.profitMargin}</span>
+                      </div>
+                    </div>
+
+                    {/* Moat Teaser */}
+                    <p className="text-[11px] text-gray-500 line-clamp-2 italic bg-white/60 p-2 rounded-lg border border-gray-100">
+                      💡 <strong>Moat:</strong> {opp.jaipurAdvantage}
+                    </p>
+                  </div>
+
+                  {/* Card Action Buttons */}
+                  <div className="mt-4 pt-3 border-t border-gray-200/80 flex items-center justify-between gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setSelectedOpportunity(opp)}
+                      className="text-xs font-bold text-indigo-600 hover:text-indigo-800 flex items-center gap-1.5 cursor-pointer py-1.5 px-2.5 rounded-lg hover:bg-indigo-50"
+                    >
+                      <FaEye />
+                      <span>View Dossier</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() =>
+                        navigate("/admin-vijay/add-product", {
+                          state: { prefill: opp.prefillData }
+                        })
+                      }
+                      className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-1.5 px-3 rounded-xl shadow-xs flex items-center gap-1.5 transition active:scale-95 cursor-pointer"
+                    >
+                      <FaRocket className="text-[10px]" />
+                      <span>Launch</span>
+                    </button>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </div>
+
+        {/* Modal for Intelligence Dossier */}
+        <MarketDemandScoutModal
+          isOpen={Boolean(selectedOpportunity)}
+          onClose={() => setSelectedOpportunity(null)}
+          opportunity={selectedOpportunity}
+        />
 
         {/* PRODUCT SECTION */}
         <div className="bg-white rounded-xl shadow p-6">
