@@ -21,65 +21,77 @@ const SEO = ({
   const finalTwImage = twitterImage || image;
 
   useEffect(() => {
-    if (typeof document === "undefined") return;
+    try {
+      if (typeof document === "undefined") return;
 
-    if (title) {
-      document.title = title;
-    }
-
-    const setMeta = (attrName, attrValue, content) => {
-      if (!content) return;
-      let tag = document.querySelector(`meta[${attrName}="${attrValue}"]`);
-      if (!tag) {
-        tag = document.createElement("meta");
-        tag.setAttribute(attrName, attrValue);
-        document.head.appendChild(tag);
+      if (title) {
+        document.title = title;
       }
-      tag.setAttribute("content", content);
-    };
 
-    const setCanonical = (url) => {
-      if (!url) return;
-      let tag = document.querySelector('link[rel="canonical"]');
-      if (!tag) {
-        tag = document.createElement("link");
-        tag.setAttribute("rel", "canonical");
-        document.head.appendChild(tag);
+      const setMeta = (attrName, attrValue, content) => {
+        if (!content) return;
+        try {
+          let tag = document.querySelector(`meta[${attrName}="${attrValue}"]`);
+          if (!tag) {
+            tag = document.createElement("meta");
+            tag.setAttribute(attrName, attrValue);
+            document.head?.appendChild(tag);
+          }
+          tag?.setAttribute("content", content);
+        } catch {
+          // ignore
+        }
+      };
+
+      const setCanonical = (url) => {
+        if (!url) return;
+        try {
+          let tag = document.querySelector('link[rel="canonical"]');
+          if (!tag) {
+            tag = document.createElement("link");
+            tag.setAttribute("rel", "canonical");
+            document.head?.appendChild(tag);
+          }
+          tag?.setAttribute("href", url);
+        } catch {
+          // ignore
+        }
+      };
+
+      if (description) setMeta("name", "description", description);
+      if (canonical) setCanonical(canonical);
+      if (robots) setMeta("name", "robots", robots);
+
+      setMeta("property", "og:title", finalOgTitle);
+      setMeta("property", "og:site_name", "Crystal Jaipuria");
+      if (canonical) setMeta("property", "og:url", canonical);
+      if (finalOgDesc) setMeta("property", "og:description", finalOgDesc);
+      setMeta("property", "og:type", type);
+      if (image) setMeta("property", "og:image", image);
+
+      setMeta("name", "twitter:card", "summary_large_image");
+      setMeta("name", "twitter:title", finalTwTitle);
+      if (finalTwDesc) setMeta("name", "twitter:description", finalTwDesc);
+      if (finalTwImage) setMeta("name", "twitter:image", finalTwImage);
+
+      // Dynamic Schema Injection
+      if (schema) {
+        let scriptTag = document.getElementById("page-dynamic-schema");
+        if (!scriptTag) {
+          scriptTag = document.createElement("script");
+          scriptTag.id = "page-dynamic-schema";
+          scriptTag.type = "application/ld+json";
+          document.head?.appendChild(scriptTag);
+        }
+        scriptTag.text = JSON.stringify(schema);
+      } else {
+        const existingScript = document.getElementById("page-dynamic-schema");
+        if (existingScript) {
+          existingScript.remove();
+        }
       }
-      tag.setAttribute("href", url);
-    };
-
-    if (description) setMeta("name", "description", description);
-    if (canonical) setCanonical(canonical);
-    if (robots) setMeta("name", "robots", robots);
-
-    setMeta("property", "og:title", finalOgTitle);
-    setMeta("property", "og:site_name", "Crystal Jaipuria");
-    if (canonical) setMeta("property", "og:url", canonical);
-    if (finalOgDesc) setMeta("property", "og:description", finalOgDesc);
-    setMeta("property", "og:type", type);
-    if (image) setMeta("property", "og:image", image);
-
-    setMeta("name", "twitter:card", "summary_large_image");
-    setMeta("name", "twitter:title", finalTwTitle);
-    if (finalTwDesc) setMeta("name", "twitter:description", finalTwDesc);
-    if (finalTwImage) setMeta("name", "twitter:image", finalTwImage);
-
-    // Dynamic Schema Injection
-    if (schema) {
-      let scriptTag = document.getElementById("page-dynamic-schema");
-      if (!scriptTag) {
-        scriptTag = document.createElement("script");
-        scriptTag.id = "page-dynamic-schema";
-        scriptTag.type = "application/ld+json";
-        document.head.appendChild(scriptTag);
-      }
-      scriptTag.text = JSON.stringify(schema);
-    } else {
-      const existingScript = document.getElementById("page-dynamic-schema");
-      if (existingScript) {
-        existingScript.remove();
-      }
+    } catch (err) {
+      console.warn("SEO tag injection error:", err);
     }
   }, [
     title,

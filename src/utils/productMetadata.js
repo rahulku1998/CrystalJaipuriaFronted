@@ -1,5 +1,5 @@
-﻿import { getProductMetaTitle } from "./seo";
-import { detectGemstone } from "./aiGenerator";
+import { getProductMetaTitle } from "./seo.js";
+import { detectGemstone } from "./aiGenerator.js";
 
 /**
  * Packs FAQs, custom Meta Title, and custom Meta Description into product data
