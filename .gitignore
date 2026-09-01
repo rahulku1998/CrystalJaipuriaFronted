@@ -26,3 +26,4 @@ dist-ssr
 service-account.json
 service-account*.json
 
+.vercel
