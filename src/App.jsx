@@ -39,21 +39,12 @@ import Blog from "./Pages/Blog/Blogs";
 import BlogDetails from './Pages/Blog/BlogDetails'
 import Shop from "./Pages/Shop";
 import ProductDetailsSlug from './Pages/ProductDetailsSlug';
+import SpamRemoved from './Pages/SpamRemoved';
 
 // Redirect helper for old /products/:slug URLs -> /product/:slug
 const ProductsRedirect = () => {
   const { slug } = useParams();
   return <Navigate to={`/product/${slug}`} replace />;
-};
-
-// Redirect helper for old /products/detail/:id legacy URLs from previous website
-const LegacyDetailRedirect = () => {
-  const { id } = useParams();
-  // Pure numeric IDs (like 9144744230) are from old store, redirect cleanly to /shop catalog
-  if (!id || /^\d+$/.test(id)) {
-    return <Navigate to="/shop" replace />;
-  }
-  return <Navigate to={`/product/${id}`} replace />;
 };
 
 function App() {
@@ -92,11 +83,13 @@ function App() {
         {/* REDIRECT PLURAL /products/:slug -> /product/:slug */}
         <Route path="/products/:slug" element={<ProductsRedirect />} />
 
-        {/* REDIRECT LEGACY OLD WEBSITE /products/detail/:id -> /shop */}
-        <Route path="/products/detail/:id" element={<LegacyDetailRedirect />} />
-        <Route path="/products/detail" element={<Navigate to="/shop" replace />} />
-        <Route path="/product/detail/:id" element={<LegacyDetailRedirect />} />
-        <Route path="/product/detail" element={<Navigate to="/shop" replace />} />
+        {/* 410 GONE FOR LEGACY JAPANESE HACKED SPAM URLS (/products/detail/*) */}
+        <Route path="/products/detail/:id" element={<SpamRemoved />} />
+        <Route path="/products/detail/*" element={<SpamRemoved />} />
+        <Route path="/products/detail" element={<SpamRemoved />} />
+        <Route path="/product/detail/:id" element={<SpamRemoved />} />
+        <Route path="/product/detail/*" element={<SpamRemoved />} />
+        <Route path="/product/detail" element={<SpamRemoved />} />
 
         {/* DYNAMIC CATEGORY */}
         <Route path="/:slug" element={<CategoryPage />} />
