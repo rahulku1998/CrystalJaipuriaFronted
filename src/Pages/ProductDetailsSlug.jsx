@@ -15,7 +15,6 @@ import {
   trackWhatsAppClick,
   trackInquirySubmit,
   trackContactClick,
-  trackGalleryClick,
   trackTabSwitch,
   trackProductShare,
   trackQueryModalOpen,
@@ -287,7 +286,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
             </div>
 
             {/* Thumbnails Row */}
-            {product.images?.length > 1 && (
+            {Array.isArray(product.images) && product.images.length > 1 && (
               <div className="flex gap-3 mt-4 overflow-x-auto pb-2">
                 {product.images.map((img, idx) => {
                   const src = typeof img === 'string' ? img : (img?.url || '');
@@ -635,37 +634,42 @@ Hello Crystal Jaipuria, I have a query regarding this product.
         </div>
 
         {/* RELATED PRODUCTS */}
-        {relatedProducts.length > 0 && (
+        {Array.isArray(relatedProducts) && relatedProducts.length > 0 && (
           <div className="mt-12 sm:mt-16">
             <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-gray-900">
               You May Also Like
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
-              {relatedProducts.map((item) => (
-                <div
-                  key={item._id}
-                  onClick={() => navigate(`/product/${item.slug || item._id}`)}
-                  className="bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-lg cursor-pointer overflow-hidden transition"
-                >
-                  <img
-                    src={typeof item.images?.[0] === 'string' ? item.images[0] : (item.images?.[0]?.url || "/Gemstone.webp")}
-                    alt={item.name}
-                    className="w-full h-32 sm:h-40 lg:h-48 object-contain p-2 bg-gray-50"
-                  />
-                  <div className="p-3 sm:p-4">
-                    <h3 className="font-semibold text-sm sm:text-base line-clamp-2">
-                      {item.name}
-                    </h3>
-                    <div className="mt-2">
-                      {item.price && (
-                        <span className="font-bold text-indigo-600 text-sm sm:text-base">
-                          {formatPrice(item.price)}
-                        </span>
-                      )}
+              {relatedProducts.map((item) => {
+                const itemImg = Array.isArray(item.images)
+                  ? (typeof item.images[0] === 'string' ? item.images[0] : (item.images[0]?.url || "/Gemstone.webp"))
+                  : (typeof item.images === 'string' ? item.images : "/Gemstone.webp");
+                return (
+                  <div
+                    key={item._id}
+                    onClick={() => navigate(`/product/${item.slug || item._id}`)}
+                    className="bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-lg cursor-pointer overflow-hidden transition"
+                  >
+                    <img
+                      src={itemImg}
+                      alt={item.name}
+                      className="w-full h-32 sm:h-40 lg:h-48 object-contain p-2 bg-gray-50"
+                    />
+                    <div className="p-3 sm:p-4">
+                      <h3 className="font-semibold text-sm sm:text-base line-clamp-2">
+                        {item.name}
+                      </h3>
+                      <div className="mt-2">
+                        {item.price && (
+                          <span className="font-bold text-indigo-600 text-sm sm:text-base">
+                            {formatPrice(item.price)}
+                          </span>
+                        )}
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         )}

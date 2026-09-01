@@ -9,7 +9,6 @@ import { Routes, Route, Navigate, useParams } from "react-router-dom";
 import Contact from './Pages/Contact';
 import CategoryPage from './Pages/CategoryPage';
 import SubCategoryProducts from './Pages/SubCategoryProducts';
-import ProductDetails from './Pages/ProductDetails';
 import NotFound from './Pages/NotFound';
 import ErrorBoundary from './Components/ErrorBoundary';
 import AdminLogin from './admin/Login';

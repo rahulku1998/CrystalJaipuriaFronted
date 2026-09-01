@@ -38,6 +38,9 @@ class ErrorBoundary extends React.Component {
             </button>
             <Link
               to="/shop"
+              onClick={() => {
+                this.setState({ hasError: false, error: null });
+              }}
               className="px-5 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-xl text-sm font-semibold transition"
             >
               Back to Shop

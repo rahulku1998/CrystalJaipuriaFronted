@@ -136,7 +136,11 @@ export const getProductSchema = (product, canonicalUrl) => {
   if (!product) return null;
 
   const parsedPrice = parseSchemaPrice(product.price || product.discountPrice);
-  const imageUrl = product.images?.[0]?.url || "https://www.crystaljaipuria.com/logo.png";
+  const imageUrl =
+    (Array.isArray(product.images) && product.images[0]?.url) ||
+    (Array.isArray(product.images) && typeof product.images[0] === "string" ? product.images[0] : null) ||
+    (typeof product.images === "string" ? product.images : null) ||
+    "https://www.crystaljaipuria.com/logo.png";
   const desc = getProductMetaDescription(product);
   const categoryName = product.categoryId?.name || "Gemstone Statues";
   const categorySlug = product.categoryId?.slug || "";
@@ -229,7 +233,9 @@ export const getProductSchema = (product, canonicalUrl) => {
       "@type": "Product",
       "@id": `${canonicalUrl}#product`,
       name: product.name,
-      image: product.images?.map((img) => (typeof img === 'string' ? img : (img?.url || imageUrl))) || [imageUrl],
+      image: Array.isArray(product.images)
+        ? product.images.map((img) => (typeof img === "string" ? img : img?.url || imageUrl))
+        : [imageUrl],
       description: desc,
       sku: product._id,
       mpn: product.slug || product._id,
