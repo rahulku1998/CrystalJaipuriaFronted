@@ -11,6 +11,7 @@ import CategoryPage from './Pages/CategoryPage';
 import SubCategoryProducts from './Pages/SubCategoryProducts';
 import ProductDetails from './Pages/ProductDetails';
 import NotFound from './Pages/NotFound';
+import ErrorBoundary from './Components/ErrorBoundary';
 import AdminLogin from './admin/Login';
 import AdminDashboard from './admin/Dashboard';
 import ProtectedRoute from "./Components/ProtectedRoute";
@@ -53,8 +54,9 @@ function App() {
      <ScrollTop />
        <Navbar />
        
-        <FloatingWhatsApp />
-  <Routes>
+      <FloatingWhatsApp />
+      <ErrorBoundary>
+        <Routes>
  <Route
           path="/"
           element={
@@ -169,6 +171,7 @@ function App() {
 
         <Route path="*" element={<NotFound />} />
       </Routes>
+      </ErrorBoundary>
 
 
        <Footer />

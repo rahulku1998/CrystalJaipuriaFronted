@@ -229,7 +229,7 @@ export const getProductSchema = (product, canonicalUrl) => {
       "@type": "Product",
       "@id": `${canonicalUrl}#product`,
       name: product.name,
-      image: product.images?.map((img) => img.url) || [imageUrl],
+      image: product.images?.map((img) => (typeof img === 'string' ? img : (img?.url || imageUrl))) || [imageUrl],
       description: desc,
       sku: product._id,
       mpn: product.slug || product._id,
