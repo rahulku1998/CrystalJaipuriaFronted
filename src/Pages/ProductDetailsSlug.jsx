@@ -287,12 +287,6 @@ Hello Crystal Jaipuria, I have a query regarding this product.
         robots={isPendingProduct ? "noindex, nofollow" : "index, follow"}
       />
 
-      {isPendingProduct && (
-        <div className="bg-amber-50 border-b border-amber-200 py-2.5 px-4 text-center text-xs sm:text-sm text-amber-800 font-medium">
-          🔒 <strong>Pending Product Listing:</strong> This page is protected with <code>noindex, nofollow</code>. Go to <Link to="/admin-vijay/pending-products" className="underline font-bold text-amber-900">Vijay Admin Panel</Link> to attach real photos and make 100% Live!
-        </div>
-      )}
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
         {/* Back Button */}
         <button
