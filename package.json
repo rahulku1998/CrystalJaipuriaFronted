@@ -8,7 +8,7 @@
     "prebuild": "node scripts/generate-sitemap.js",
     "sitemap": "node scripts/generate-sitemap.js",
     "index": "node scripts/instant-indexing.js",
-    "build": "node scripts/generate-sitemap.js && vite build",
+    "build": "vite build",
     "lint": "oxlint",
     "preview": "vite preview"
   },
