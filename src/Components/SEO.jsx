@@ -12,6 +12,7 @@ const SEO = ({
   twitterDescription,
   twitterImage,
   schema,
+  robots = "index, follow",
 }) => {
   const finalOgTitle = ogTitle || title;
   const finalOgDesc = ogDescription || description;
@@ -20,6 +21,8 @@ const SEO = ({
   const finalTwImage = twitterImage || image;
 
   useEffect(() => {
+    if (typeof document === "undefined") return;
+
     if (title) {
       document.title = title;
     }
@@ -48,6 +51,7 @@ const SEO = ({
 
     if (description) setMeta("name", "description", description);
     if (canonical) setCanonical(canonical);
+    if (robots) setMeta("name", "robots", robots);
 
     setMeta("property", "og:title", finalOgTitle);
     setMeta("property", "og:site_name", "Crystal Jaipuria");
@@ -89,25 +93,10 @@ const SEO = ({
     finalTwDesc,
     finalTwImage,
     schema,
+    robots,
   ]);
 
-  return (
-    <>
-      {title && <title>{title}</title>}
-      {description && <meta name="description" content={description} />}
-      {canonical && <link rel="canonical" href={canonical} />}
-      {finalOgTitle && <meta property="og:title" content={finalOgTitle} />}
-      {finalOgDesc && <meta property="og:description" content={finalOgDesc} />}
-      {canonical && <meta property="og:url" content={canonical} />}
-      <meta property="og:type" content={type} />
-      <meta property="og:site_name" content="Crystal Jaipuria" />
-      {image && <meta property="og:image" content={image} />}
-      <meta name="twitter:card" content="summary_large_image" />
-      {finalTwTitle && <meta name="twitter:title" content={finalTwTitle} />}
-      {finalTwDesc && <meta name="twitter:description" content={finalTwDesc} />}
-      {finalTwImage && <meta name="twitter:image" content={finalTwImage} />}
-    </>
-  );
+  return null;
 };
 
 export default SEO;
