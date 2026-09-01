@@ -104,33 +104,40 @@ Hello Crystal Jaipuria, I have a query regarding this product.
 
   const fetchRelatedProducts = async (prod) => {
     try {
-      if (!prod?.categoryId?._id) return;
-      const res = await API.get(`/products/category/${prod.categoryId._id}`);
-      setRelatedProducts(res.data.products || []);
+      const catId = prod?.categoryId?._id || (typeof prod?.categoryId === 'string' ? prod.categoryId : null);
+      if (!catId) return;
+      const res = await API.get(`/products/category/${catId}`);
+      const related = (res.data?.products || []).filter((p) => (p.slug || p._id) !== (prod.slug || prod._id));
+      setRelatedProducts(related);
     } catch (err) {
-      console.log(err);
+      console.log("Error fetching related products:", err);
     }
   };
 
   const fetchProduct = async () => {
     try {
       setLoading(true);
+      const cleanSlug = String(slug || "").trim().toLowerCase().replace(/^\/product\//, "").replace(/\/$/, "");
+
       let data = null;
+
+      // 1. Try DB fetch by slug
       try {
-        const res = await API.get(`/products/slug/${slug}`);
-        data = res.data.product;
+        const res = await API.get(`/products/slug/${cleanSlug}`);
+        data = res.data?.product || res.data;
       } catch (e) {
+        // 2. Try DB fetch by ID if slug is MongoDB ID
         try {
-          const idRes = await API.get(`/products/${slug}`);
-          data = idRes.data.product;
+          const idRes = await API.get(`/products/${cleanSlug}`);
+          data = idRes.data?.product || idRes.data;
         } catch (idErr) {
           data = null;
         }
       }
 
-      if (data?.slug && data.slug !== slug) {
-        navigate(`/product/${data.slug}`, { replace: true });
-        return;
+      // 3. Fallback to legacy products registry
+      if (!data) {
+        data = getLegacyProductBySlug(cleanSlug);
       }
 
       // Automatically strip junk query parameters from browser URL
@@ -139,49 +146,47 @@ Hello Crystal Jaipuria, I have a query regarding this product.
         const allowedMarketingKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid"];
         const hasOnlyMarketing = Array.from(searchParams.keys()).every((k) => allowedMarketingKeys.includes(k));
         if (!hasOnlyMarketing) {
-          const cleanPath = `/product/${data?.slug || slug}`;
+          const cleanPath = `/product/${data?.slug || cleanSlug}`;
           window.history.replaceState(null, "", cleanPath);
         }
       }
 
       let standardized = null;
-      if (!data) {
-        data = getLegacyProductBySlug(slug);
-      }
-
       if (data) {
         const unpacked = unpackProductMetadata(data);
         const mergedData = {
           ...data,
-          faqs: unpacked.faqs || data.faqs,
+          faqs: (unpacked.faqs && unpacked.faqs.length > 0) ? unpacked.faqs : data.faqs,
           metaTitle: unpacked.metaTitle || data.metaTitle,
           metaDescription: unpacked.metaDescription || data.metaDescription,
-          additionalInfo: unpacked.cleanAdditionalInfo || data.additionalInfo
+          additionalInfo: unpacked.cleanAdditionalInfo || data.additionalInfo,
         };
         standardized = getStandardizedProduct(mergedData);
       }
 
       setProduct(standardized || null);
+
       if (standardized) {
         trackProductView(standardized);
-      }
-      if (data?.categoryId?._id) {
-        fetchRelatedProducts(data);
-      }
-      if (data?.images?.length > 0) {
-        const firstImg = typeof data.images[0] === 'string' ? data.images[0] : (data.images[0]?.url || data.images[0]);
-        setSelectedImage(firstImg);
+        fetchRelatedProducts(standardized);
+
+        if (standardized?.images?.length > 0) {
+          const firstImg = typeof standardized.images[0] === 'string'
+            ? standardized.images[0]
+            : (standardized.images[0]?.url || "/Gemstone.webp");
+          setSelectedImage(firstImg);
+        } else {
+          setSelectedImage("/Gemstone.webp");
+        }
       }
     } catch (err) {
-      console.log(err);
-      const legacyFallback = getLegacyProductBySlug(slug);
+      console.error("Error in fetchProduct:", err);
+      const cleanSlug = String(slug || "").trim().toLowerCase().replace(/^\/product\//, "").replace(/\/$/, "");
+      const legacyFallback = getLegacyProductBySlug(cleanSlug);
       if (legacyFallback) {
         const std = getStandardizedProduct(legacyFallback);
         setProduct(std);
-        if (std.images?.length > 0) {
-          const firstImg = typeof std.images[0] === 'string' ? std.images[0] : (std.images[0]?.url || std.images[0]);
-          setSelectedImage(firstImg);
-        }
+        setSelectedImage(std.images?.[0] || "/Gemstone.webp");
       } else {
         setProduct(null);
       }
@@ -209,7 +214,12 @@ Hello Crystal Jaipuria, I have a query regarding this product.
   };
 
   if (loading && !product) {
-    return null;
+    return (
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-20 min-h-[60vh] flex flex-col items-center justify-center">
+        <div className="w-12 h-12 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin mb-4"></div>
+        <p className="text-gray-500 font-medium text-sm">Loading product details...</p>
+      </div>
+    );
   }
 
   if (!product) {
@@ -637,9 +647,9 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                   className="bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-lg cursor-pointer overflow-hidden transition"
                 >
                   <img
-                    src={item.images?.[0]?.url}
+                    src={typeof item.images?.[0] === 'string' ? item.images[0] : (item.images?.[0]?.url || "/Gemstone.webp")}
                     alt={item.name}
-                    className="w-full h-32 sm:h-40 lg:h-48 object-cover"
+                    className="w-full h-32 sm:h-40 lg:h-48 object-contain p-2 bg-gray-50"
                   />
                   <div className="p-3 sm:p-4">
                     <h3 className="font-semibold text-sm sm:text-base line-clamp-2">
