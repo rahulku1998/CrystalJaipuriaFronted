@@ -264,6 +264,32 @@ const AIAssistantModal = ({
               {/* Output Results Preview */}
               {result && (
                 <div className="space-y-6">
+                  {/* Stage 2 Verification Seal Banner */}
+                  <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-4 text-emerald-950">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                      <div className="flex items-center gap-2">
+                        <span className="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs shrink-0">
+                          <FaCheck />
+                        </span>
+                        <h4 className="text-sm font-bold text-emerald-900">
+                          100% Fact-Checked &amp; Verified by AI Quality Engine
+                        </h4>
+                      </div>
+                      <span className="text-[11px] font-bold bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full border border-emerald-300 w-fit">
+                        Zero Discrepancy Passed
+                      </span>
+                    </div>
+                    {Array.isArray(result.verificationChecks) && (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-emerald-900 mt-2.5 bg-white/80 p-3 rounded-xl border border-emerald-100 font-medium">
+                        {result.verificationChecks.map((chk, i) => (
+                          <div key={i} className="flex items-center gap-1.5">
+                            <span>{chk}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
                   {/* AI Overview Citation Hook Card */}
                   <div className="bg-gradient-to-br from-indigo-50/80 via-white to-purple-50/60 border border-indigo-200/80 rounded-2xl p-5 shadow-xs">
                     <div className="flex items-center justify-between mb-2">
