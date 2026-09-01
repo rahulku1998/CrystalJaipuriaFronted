@@ -153,6 +153,78 @@ const generateSitemap = async () => {
   const llmsPath = path.join(publicDir, "llms.txt");
   fs.writeFileSync(llmsPath, llms, "utf-8");
   console.log(`Successfully generated ${llmsPath}!`);
+
+  // ==========================================
+  // Generate Google Merchant Center & GMB Feed
+  // ==========================================
+  let gmcXml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
+  gmcXml += `<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">\n`;
+  gmcXml += `  <channel>\n`;
+  gmcXml += `    <title>Crystal Jaipuria - Authentic Gemstone Statues &amp; Handicrafts</title>\n`;
+  gmcXml += `    <link>${BASE_URL}</link>\n`;
+  gmcXml += `    <description>100% Certified natural gemstone god statues, crystal carvings, Shivlings and spiritual products from Jaipur manufacturer since 1989.</description>\n`;
+
+  products.forEach((prod) => {
+    const slug = prod.slug || prod._id;
+    const prodUrl = `${BASE_URL}/product/${slug}`;
+    const cleanName = (prod.name || "Gemstone Product").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    const cleanDesc = (prod.detail || prod.description || cleanName)
+      .replace(/<[^>]*>?/gm, "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/\r?\n|\r/g, " ")
+      .trim()
+      .slice(0, 1000);
+
+    let priceNum = 999;
+    if (typeof prod.price === "number" && prod.price > 0) {
+      priceNum = prod.price;
+    } else if (typeof prod.discountPrice === "number" && prod.discountPrice > 0) {
+      priceNum = prod.discountPrice;
+    } else {
+      const raw = String(prod.price || prod.discountPrice || "999").replace(/,/g, "");
+      const match = raw.match(/\d+(\.\d+)?/);
+      if (match && Number(match[0]) > 0) {
+        priceNum = Number(match[0]);
+      }
+    }
+    const imageMain = typeof prod.images?.[0] === "string" ? prod.images[0] : (prod.images?.[0]?.url || `${BASE_URL}/Gemstone.webp`);
+    const categoryName = prod.categoryId?.name ? prod.categoryId.name.replace(/&/g, "&amp;") : "Gemstones";
+
+    gmcXml += `    <item>\n`;
+    gmcXml += `      <g:id>${prod._id}</g:id>\n`;
+    gmcXml += `      <g:title>${cleanName}</g:title>\n`;
+    gmcXml += `      <g:description>${cleanDesc}</g:description>\n`;
+    gmcXml += `      <g:link>${prodUrl}</g:link>\n`;
+    gmcXml += `      <g:image_link>${imageMain}</g:image_link>\n`;
+    if (prod.images && prod.images.length > 1) {
+      const extraImg = typeof prod.images[1] === "string" ? prod.images[1] : prod.images[1]?.url;
+      if (extraImg) {
+        gmcXml += `      <g:additional_image_link>${extraImg}</g:additional_image_link>\n`;
+      }
+    }
+    gmcXml += `      <g:availability>${(prod.stock === 0 || prod.stock === "0") ? "out_of_stock" : "in_stock"}</g:availability>\n`;
+    gmcXml += `      <g:price>${priceNum.toFixed(2)} INR</g:price>\n`;
+    gmcXml += `      <g:brand>Crystal Jaipuria</g:brand>\n`;
+    gmcXml += `      <g:condition>new</g:condition>\n`;
+    gmcXml += `      <g:google_product_category>Religious &amp; Ceremonial &gt; Religious Items</g:google_product_category>\n`;
+    gmcXml += `      <g:product_type>Gemstones &gt; ${categoryName}</g:product_type>\n`;
+    gmcXml += `      <g:identifier_exists>no</g:identifier_exists>\n`;
+    gmcXml += `      <g:shipping>\n`;
+    gmcXml += `        <g:country>IN</g:country>\n`;
+    gmcXml += `        <g:service>Standard Safe Delivery</g:service>\n`;
+    gmcXml += `        <g:price>0.00 INR</g:price>\n`;
+    gmcXml += `      </g:shipping>\n`;
+    gmcXml += `    </item>\n`;
+  });
+
+  gmcXml += `  </channel>\n`;
+  gmcXml += `</rss>\n`;
+
+  const gmcPath = path.join(publicDir, "google-products.xml");
+  fs.writeFileSync(gmcPath, gmcXml, "utf-8");
+  console.log(`Successfully generated ${gmcPath}!`);
 };
 
 generateSitemap();
