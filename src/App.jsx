@@ -47,6 +47,12 @@ const ProductsRedirect = () => {
   return <Navigate to={`/product/${slug}`} replace />;
 };
 
+// Redirect helper for old WooCommerce /product-category/:slug -> /:slug
+const ProductCategoryRedirect = () => {
+  const { slug } = useParams();
+  return <Navigate to={slug ? `/${slug}` : "/shop"} replace />;
+};
+
 function App() {
 
   return (
@@ -90,6 +96,15 @@ function App() {
         <Route path="/product/detail/:id" element={<SpamRemoved />} />
         <Route path="/product/detail/*" element={<SpamRemoved />} />
         <Route path="/product/detail" element={<SpamRemoved />} />
+
+        {/* REDIRECT OLD WOOCOMMERCE /product-category/:slug -> /:slug */}
+        <Route path="/product-category/:slug" element={<ProductCategoryRedirect />} />
+        <Route path="/product-category" element={<Navigate to="/shop" replace />} />
+        <Route path="/product-tag/:slug" element={<Navigate to="/shop" replace />} />
+        <Route path="/product-tag" element={<Navigate to="/shop" replace />} />
+        <Route path="/cart" element={<Navigate to="/shop" replace />} />
+        <Route path="/checkout" element={<Navigate to="/shop" replace />} />
+        <Route path="/my-account" element={<Navigate to="/" replace />} />
 
         {/* DYNAMIC CATEGORY */}
         <Route path="/:slug" element={<CategoryPage />} />
