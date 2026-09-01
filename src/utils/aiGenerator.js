@@ -160,8 +160,16 @@ export const generateBuiltInContent = (productName, categoryName = "") => {
       answer: profile.careVidhi + " You may also chant the relevant deity mantras and offer fresh flowers, dhoop, and pure devotion to invoke divine blessings."
     },
     {
+      question: "Can we perform daily water or milk Abhishek on this " + cleanName + "?",
+      answer: "Yes, authentic natural " + profile.name + " is non-porous and naturally suited for sacred daily Jalabhishek with pure water, raw cow milk, and Gangajal. Always wipe dry with a soft clean cotton cloth after puja."
+    },
+    {
+      question: "What spiritual and astrological benefits does " + cleanName + " offer?",
+      answer: "Associated with " + profile.deity + " and " + profile.planet + ", keeping this " + cleanName + " balances surrounding aura vibrations, dispels negative energies, and attracts immense peace, mental clarity, and prosperity."
+    },
+    {
       question: "Do you offer worldwide shipping and custom size orders for wholesale buyers?",
-      answer: "Yes! Crystal Jaipuria ships worldwide with premium shockproof export packing. We also undertake bulk custom carving orders for temples, collectors, and spiritual retailers."
+      answer: "Yes! Crystal Jaipuria ships worldwide with premium shockproof multi-layer export packing. We also undertake bulk custom carving orders for temples, collectors, and spiritual retailers worldwide."
     }
   ];
 
@@ -186,7 +194,7 @@ export const generateGeminiContent = async (productName, categoryName = "", user
 
   const prompt =
     'You are a World-Class Gemstone & Vedic Deity Expert for "Crystal Jaipuria" (a premier handcrafted gemstone god statues & crystal carving manufacturer in Jaipur, India since 1989).\n\n' +
-    'TASK: Generate Generative Engine Optimization (GEO) content and high-intent FAQs for Google AI Overview, Perplexity, and ChatGPT search.\n\n' +
+    'TASK: Generate Generative Engine Optimization (GEO) content and at least 5 to 6 high-intent FAQs (MINIMUM 5 FAQs REQUIRED) for Google AI Overview, Perplexity, and ChatGPT search.\n\n' +
     'Product Name: "' + productName + '"\n' +
     'Category: "' + (categoryName || 'Gemstone Statues') + '"\n\n' +
     'Generate a valid JSON object with the following EXACT structure:\n' +
@@ -194,13 +202,15 @@ export const generateGeminiContent = async (productName, categoryName = "", user
     '  "citationHook": "A 2-3 line concise, factual citation summary explaining who makes it, material, authenticity in Jaipur, and primary spiritual/Vastu use case.",\n' +
     '  "fullDescription": "Rich HTML string containing <h2>Spiritual Significance</h2>, <h2>Traditional Benefits</h2> (with bullet points <li>), <h2>Care & Vastu Placement</h2>, and an HTML <table> of specifications. Use <h2> and <h3> for headings. Do NOT wrap in markdown code blocks.",\n' +
     '  "faqs": [\n' +
-    '    {\n      "question": "Exact high-intent question asked by buyers (e.g. authenticity, placement, care, bulk shipping)",\n      "answer": "Clear, authoritative 2-3 sentence answer establishing Crystal Jaipuria as the authentic Jaipur manufacturer."\n    },\n' +
-    '    {\n      "question": "...",\n      "answer": "..."\n    },\n' +
-    '    {\n      "question": "...",\n      "answer": "..."\n    },\n' +
-    '    {\n      "question": "...",\n      "answer": "..."\n    }\n' +
+    '    {\n      "question": "Exact high-intent question 1 (e.g. authenticity & certification)",\n      "answer": "Clear, authoritative answer establishing Crystal Jaipuria as the authentic Jaipur manufacturer."\n    },\n' +
+    '    {\n      "question": "Exact high-intent question 2 (e.g. Vastu direction & home placement)",\n      "answer": "..."\n    },\n' +
+    '    {\n      "question": "Exact high-intent question 3 (e.g. cleansing, energizing & care vidhi)",\n      "answer": "..."\n    },\n' +
+    '    {\n      "question": "Exact high-intent question 4 (e.g. daily abhishek or puja rituals)",\n      "answer": "..."\n    },\n' +
+    '    {\n      "question": "Exact high-intent question 5 (e.g. spiritual & astrological benefits)",\n      "answer": "..."\n    },\n' +
+    '    {\n      "question": "Exact high-intent question 6 (e.g. worldwide safe delivery & bulk wholesale)",\n      "answer": "..."\n    }\n' +
     '  ]\n' +
     '}\n\n' +
-    'Return ONLY valid JSON.';
+    'Ensure that the "faqs" array contains AT LEAST 5 FAQs (minimum 5, preferably 6). Return ONLY valid JSON.';
 
   try {
     const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + apiKey;
@@ -223,10 +233,21 @@ export const generateGeminiContent = async (productName, categoryName = "", user
     if (!rawText) return generateBuiltInContent(productName, categoryName);
 
     const parsed = JSON.parse(rawText);
+    let resultFaqs = Array.isArray(parsed.faqs) ? parsed.faqs : [];
+    if (resultFaqs.length < 5) {
+      const fallbackData = generateBuiltInContent(productName, categoryName);
+      const existingQs = new Set(resultFaqs.map((f) => (f.question || "").toLowerCase().trim()));
+      fallbackData.faqs.forEach((fb) => {
+        if (resultFaqs.length < 5 && !existingQs.has(fb.question.toLowerCase().trim())) {
+          resultFaqs.push(fb);
+        }
+      });
+    }
+
     return {
       citationHook: parsed.citationHook || "",
       fullDescription: parsed.fullDescription || "",
-      faqs: parsed.faqs || [],
+      faqs: resultFaqs,
       gemstoneType: "AI Generated"
     };
   } catch (err) {
