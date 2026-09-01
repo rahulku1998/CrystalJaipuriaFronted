@@ -155,11 +155,9 @@ overflow-hidden
 
 
 <img
-
 loading="lazy"
-
-src={product.images?.[0]?.url}
-
+decoding="async"
+src={typeof product.images?.[0] === 'string' ? product.images[0] : (product.images?.[0]?.url || "/Gemstone.webp")}
 alt={product.name}
 
 className="
