@@ -244,6 +244,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
   }
   if (!Array.isArray(productFaqs)) productFaqs = [];
   productFaqs = productFaqs.filter((f) => f && (f.question || f.answer));
+  const hasFaqs = productFaqs.length > 0;
   const isPendingProduct = Boolean(product._id?.startsWith?.('legacy_') || product.isPending);
 
   return (
