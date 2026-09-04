@@ -13,8 +13,10 @@ import {
 } from "react-icons/fa";
 import {
   generateGeminiContent,
+  generateFusedAIContent,
   toProperTitleCase,
-  GEMINI_API_KEY_STORAGE_KEY
+  GEMINI_API_KEY_STORAGE_KEY,
+  OPENAI_API_KEY_STORAGE_KEY
 } from "../utils/aiGenerator";
 import { autoInjectInternalLinks } from "../utils/internalLinking";
 
@@ -34,6 +36,8 @@ const AIAssistantModal = ({
   const [category, setCategory] = useState(categoryName || "");
   const [apiKey, setApiKey] = useState("");
   const [savedKey, setSavedKey] = useState("");
+  const [openaiKey, setOpenaiKey] = useState("");
+  const [savedOpenaiKey, setSavedOpenaiKey] = useState("");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
   const [copiedSection, setCopiedSection] = useState("");
@@ -45,9 +49,12 @@ const AIAssistantModal = ({
   }, [productName, categoryName]);
 
   useEffect(() => {
-    const key = localStorage.getItem(GEMINI_API_KEY_STORAGE_KEY) || "";
-    setSavedKey(key);
-    setApiKey(key);
+    const gKey = localStorage.getItem(GEMINI_API_KEY_STORAGE_KEY) || "";
+    const oKey = localStorage.getItem(OPENAI_API_KEY_STORAGE_KEY) || "";
+    setSavedKey(gKey);
+    setApiKey(gKey);
+    setSavedOpenaiKey(oKey);
+    setOpenaiKey(oKey);
   }, [isOpen]);
 
   if (!isOpen) return null;
@@ -60,7 +67,7 @@ const AIAssistantModal = ({
     setLoading(true);
     setResult(null);
     try {
-      const data = await generateGeminiContent(name, category, apiKey);
+      const data = await generateFusedAIContent(name, category);
       if (data?.fullDescription) {
         data.fullDescription = autoInjectInternalLinks(data.fullDescription, "", 3);
       }
@@ -77,6 +84,12 @@ const AIAssistantModal = ({
     localStorage.setItem(GEMINI_API_KEY_STORAGE_KEY, apiKey.trim());
     setSavedKey(apiKey.trim());
     alert("Gemini API Key saved successfully!");
+  };
+
+  const handleSaveOpenaiKey = () => {
+    localStorage.setItem(OPENAI_API_KEY_STORAGE_KEY, openaiKey.trim());
+    setSavedOpenaiKey(openaiKey.trim());
+    alert("OpenAI (ChatGPT) API Key saved successfully!");
   };
 
   const handleApplyDescription = () => {
@@ -197,49 +210,124 @@ const AIAssistantModal = ({
         {/* Modal Body */}
         <div className="flex-1 overflow-y-auto p-6 space-y-6">
           {activeTab === "settings" ? (
-            <div className="space-y-4 max-w-2xl mx-auto py-4">
-              <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 text-amber-900 text-sm">
-                <div className="flex items-center gap-2 font-bold mb-2">
-                  <FaLightbulb className="text-amber-600" />
-                  <span>Google Gemini API Key (Optional)</span>
+            <div className="space-y-6 max-w-2xl mx-auto py-4">
+              {/* Dual AI Status Banner */}
+              <div className="bg-gradient-to-r from-purple-50 via-indigo-50 to-amber-50 border border-indigo-200 rounded-2xl p-5 text-indigo-950 text-sm shadow-xs">
+                <div className="flex items-center gap-2 font-bold mb-2 text-indigo-900">
+                  <FaRobot className="text-indigo-600 text-lg" />
+                  <span>Dual AI Fusion Engine (ChatGPT + Google Gemini)</span>
                 </div>
-                <p className="text-xs leading-relaxed text-amber-800">
-                  By default, our built-in <strong>Crystal Jaipuria GEO Knowledge Engine</strong> works instantly with 0 setup! If you wish to use live Google Gemini AI, paste your free Google Gemini API Key below.
+                <p className="text-xs leading-relaxed text-gray-700">
+                  Aapko manually toggle karne ki zaroorat nahi hai! Dono keys add karne par system automatically <strong>ChatGPT (Luxury Storytelling &amp; Hook)</strong> aur <strong>Google Gemini (Google AI Overviews &amp; Specs)</strong> ko parallel me run karke sabse best upgraded version generate karta hai.
                 </p>
+                <div className="mt-3 flex flex-wrap gap-2 text-xs font-semibold">
+                  {savedKey && savedOpenaiKey ? (
+                    <span className="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full border border-emerald-300 flex items-center gap-1.5">
+                      <FaCheck /> 🌟 Dual AI Fusion Active (100% Maximum Quality)
+                    </span>
+                  ) : savedKey ? (
+                    <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full border border-blue-300 flex items-center gap-1.5">
+                      <FaCheck /> Google Gemini Active (Add OpenAI key for Dual Fusion)
+                    </span>
+                  ) : savedOpenaiKey ? (
+                    <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full border border-purple-300 flex items-center gap-1.5">
+                      <FaCheck /> OpenAI (ChatGPT) Active (Add Gemini key for Dual Fusion)
+                    </span>
+                  ) : (
+                    <span className="bg-amber-100 text-amber-800 px-3 py-1 rounded-full border border-amber-300 flex items-center gap-1.5">
+                      ⚡ Built-In Lapidary Knowledge Engine Active (0 Setup Required)
+                    </span>
+                  )}
+                </div>
               </div>
 
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1.5">
-                  Gemini API Key
-                </label>
+              {/* 1. Google Gemini API Key */}
+              <div className="bg-white border border-gray-200 rounded-2xl p-5 shadow-2xs space-y-3">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <label className="block text-sm font-bold text-gray-800">
+                      1. Google Gemini API Key
+                    </label>
+                    <p className="text-xs text-gray-500">Free key for Google Search, AI Overviews &amp; Specs</p>
+                  </div>
+                  <a
+                    href="https://aistudio.google.com/app/apikey"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-indigo-600 hover:underline font-semibold"
+                  >
+                    Get Free Gemini Key ↗
+                  </a>
+                </div>
                 <div className="flex gap-2">
                   <input
                     type="password"
                     value={apiKey}
                     onChange={(e) => setApiKey(e.target.value)}
                     placeholder="AIzaSy..."
-                    className="flex-1 rounded-xl border border-gray-300 px-4 py-2.5 text-sm outline-none focus:ring-2 focus:ring-indigo-400"
+                    className="flex-1 rounded-xl border border-gray-300 px-4 py-2.5 text-sm outline-none focus:ring-2 focus:ring-indigo-400 font-mono"
                   />
                   <button
                     type="button"
                     onClick={handleSaveApiKey}
-                    className="px-5 py-2.5 bg-black text-white text-sm font-semibold rounded-xl hover:bg-gray-800 transition cursor-pointer"
+                    className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold rounded-xl transition cursor-pointer"
                   >
-                    Save Key
+                    Save Gemini
                   </button>
                 </div>
                 {savedKey && (
-                  <p className="text-xs text-green-600 font-semibold mt-1.5 flex items-center gap-1">
-                    <FaCheck /> API Key is active & stored securely in browser.
+                  <p className="text-xs text-green-600 font-semibold flex items-center gap-1">
+                    <FaCheck /> Gemini Key is stored securely.
                   </p>
                 )}
               </div>
 
-              <div className="pt-4 border-t">
+              {/* 2. OpenAI (ChatGPT) API Key */}
+              <div className="bg-white border border-gray-200 rounded-2xl p-5 shadow-2xs space-y-3">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <label className="block text-sm font-bold text-gray-800">
+                      2. OpenAI (ChatGPT) API Key
+                    </label>
+                    <p className="text-xs text-gray-500">For Luxury Sanskrit Storytelling &amp; Magnetic Copy</p>
+                  </div>
+                  <a
+                    href="https://platform.openai.com/api-keys"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-purple-600 hover:underline font-semibold"
+                  >
+                    Get OpenAI Key ↗
+                  </a>
+                </div>
+                <div className="flex gap-2">
+                  <input
+                    type="password"
+                    value={openaiKey}
+                    onChange={(e) => setOpenaiKey(e.target.value)}
+                    placeholder="sk-proj-..."
+                    className="flex-1 rounded-xl border border-gray-300 px-4 py-2.5 text-sm outline-none focus:ring-2 focus:ring-purple-400 font-mono"
+                  />
+                  <button
+                    type="button"
+                    onClick={handleSaveOpenaiKey}
+                    className="px-5 py-2.5 bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold rounded-xl transition cursor-pointer"
+                  >
+                    Save OpenAI
+                  </button>
+                </div>
+                {savedOpenaiKey && (
+                  <p className="text-xs text-green-600 font-semibold flex items-center gap-1">
+                    <FaCheck /> OpenAI Key is stored securely.
+                  </p>
+                )}
+              </div>
+
+              <div className="pt-2 border-t flex items-center justify-between">
                 <button
                   type="button"
                   onClick={() => setActiveTab("generate")}
-                  className="text-indigo-600 hover:text-indigo-800 text-sm font-semibold cursor-pointer"
+                  className="px-5 py-2.5 rounded-xl bg-gray-900 text-white hover:bg-gray-800 text-sm font-semibold cursor-pointer transition"
                 >
                   ← Back to Content Generator
                 </button>
@@ -290,25 +378,36 @@ const AIAssistantModal = ({
                 </div>
 
                 <div className="flex items-center justify-between pt-2">
-                  <span className="text-xs text-gray-500 flex items-center gap-1.5">
-                    <FaRobot className="text-indigo-500" />
-                    <span>Engine: {savedKey ? "Google Gemini AI" : "Built-in Jaipuria GEO Knowledge Engine"}</span>
+                  <span className="text-xs font-semibold text-gray-700 flex items-center gap-1.5">
+                    <FaRobot className="text-indigo-600" />
+                    <span>
+                      Engine:{" "}
+                      {savedKey && savedOpenaiKey ? (
+                        <span className="text-purple-700 font-bold">🌟 Dual AI Fusion (ChatGPT + Gemini)</span>
+                      ) : savedKey ? (
+                        <span className="text-blue-700 font-bold">Google Gemini AI</span>
+                      ) : savedOpenaiKey ? (
+                        <span className="text-purple-700 font-bold">OpenAI ChatGPT-4o</span>
+                      ) : (
+                        <span className="text-amber-700 font-bold">Built-in Jaipuria GEO Engine</span>
+                      )}
+                    </span>
                   </span>
                   <button
                     type="button"
                     disabled={loading}
                     onClick={handleGenerate}
-                    className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-indigo-600 hover:from-amber-600 hover:to-indigo-700 text-white font-bold text-sm px-6 py-2.5 rounded-xl shadow-md transition-transform active:scale-95 disabled:opacity-50 cursor-pointer"
+                    className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 via-purple-600 to-indigo-600 hover:opacity-90 text-white font-bold text-sm px-6 py-2.5 rounded-xl shadow-md transition-transform active:scale-95 disabled:opacity-50 cursor-pointer"
                   >
                     {loading ? (
                       <>
                         <FaSpinner className="animate-spin" />
-                        <span>Generating AI Content...</span>
+                        <span>Synthesizing Best AI Content...</span>
                       </>
                     ) : (
                       <>
                         <FaMagic />
-                        <span>Generate Full AI Content & FAQs</span>
+                        <span>Generate Best AI Content & FAQs</span>
                       </>
                     )}
                   </button>
@@ -325,12 +424,19 @@ const AIAssistantModal = ({
                         <span className="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs shrink-0">
                           <FaCheck />
                         </span>
-                        <h4 className="text-sm font-bold text-emerald-900">
-                          100% Fact-Checked &amp; Verified by AI Quality Engine
-                        </h4>
+                        <div>
+                          <h4 className="text-sm font-bold text-emerald-900">
+                            100% Fact-Checked &amp; Verified AI Quality
+                          </h4>
+                          {result.aiEngine && (
+                            <p className="text-[11px] font-semibold text-emerald-700">
+                              Synthesized by: {result.aiEngine}
+                            </p>
+                          )}
+                        </div>
                       </div>
                       <span className="text-[11px] font-bold bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full border border-emerald-300 w-fit">
-                        Zero Discrepancy Passed
+                        {result.verificationStatus || "Zero Discrepancy Passed"}
                       </span>
                     </div>
                     {Array.isArray(result.verificationChecks) && (

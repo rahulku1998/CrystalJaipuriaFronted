@@ -393,15 +393,22 @@ OUTPUT FORMAT: Return strictly valid JSON matching this schema:
 }`;
 
   try {
-    const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + apiKey;
-    const response = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        contents: [{ parts: [{ text: prompt }] }],
-        generationConfig: { responseMimeType: "application/json" }
-      })
-    });
+    const callBlogGemini = async (modelName) => {
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
+      return fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }],
+          generationConfig: { responseMimeType: "application/json" }
+        })
+      });
+    };
+
+    let response = await callBlogGemini("gemini-2.0-flash");
+    if (!response.ok) {
+      response = await callBlogGemini("gemini-1.5-flash");
+    }
 
     if (!response.ok) return verifiedFallback;
 
