@@ -168,9 +168,20 @@ Hello Crystal Jaipuria, I have a query regarding this product.
         }
       }
 
-      // 4. Fallback to legacy products registry
+      // 4. Fallback to legacy products registry (with auto-sync to live DB product if already published)
       if (!data) {
-        data = getLegacyProductBySlug(cleanSlug);
+        const leg = getLegacyProductBySlug(cleanSlug);
+        if (leg) {
+          try {
+            const allRes = await API.get("/products");
+            const allProds = allRes.data?.products || allRes.data || [];
+            const norm = (s) => (s || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+            const liveMatch = allProds.find((p) => norm(p.name) === norm(leg.name));
+            data = liveMatch || leg;
+          } catch {
+            data = leg;
+          }
+        }
       }
 
       // Automatically strip junk query parameters from browser URL

@@ -79,7 +79,12 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- Dynamic Product Pages (18 Live Products) -->
+  <!-- Dynamic Product Pages (19 Live Products) -->
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/natural-opal-stone-shivling</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://www.crystaljaipuria.com/product/natural-sphatik-shivling</loc>
     <changefreq>weekly</changefreq>

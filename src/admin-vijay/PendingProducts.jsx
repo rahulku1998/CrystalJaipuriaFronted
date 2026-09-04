@@ -40,12 +40,26 @@ const PendingProducts = () => {
     fetchDbData();
   }, []);
 
-  const liveSlugs = new Set(dbProducts.map((p) => p.slug));
+  const normalize = (str) => (str || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+
+  const liveSlugs = new Set(dbProducts.map((p) => (p.slug || "").toLowerCase().trim()));
+  const liveNormalizedNames = new Set(dbProducts.map((p) => normalize(p.name)));
 
   // Only take products that are NOT yet live in the database
-  const onlyPendingProducts = LEGACY_PRODUCTS.filter(
-    (prod) => !liveSlugs.has(prod.slug)
-  );
+  const onlyPendingProducts = LEGACY_PRODUCTS.filter((prod) => {
+    // 1. Exact slug match
+    if (liveSlugs.has((prod.slug || "").toLowerCase().trim())) return false;
+
+    // 2. Normalized product name match (e.g. "Natural Opal Stone Shivling")
+    const normName = normalize(prod.name);
+    if (liveNormalizedNames.has(normName)) return false;
+
+    // 3. Name slugified match
+    const nameSlug = (prod.name || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    if (liveSlugs.has(nameSlug)) return false;
+
+    return true;
+  });
 
   const pendingCount = onlyPendingProducts.length;
   const liveCount = dbProducts.length;

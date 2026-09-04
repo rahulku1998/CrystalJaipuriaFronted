@@ -34,8 +34,16 @@ const AdminDashboard = () => {
   const [scanningAi, setScanningAi] = useState(false);
   const navigate = useNavigate();
 
-  const liveSlugs = new Set(products.map((p) => p.slug));
-  const pendingCount = LEGACY_PRODUCTS.filter((p) => !liveSlugs.has(p.slug)).length;
+  const normalize = (str) => (str || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+  const liveSlugs = new Set(products.map((p) => (p.slug || "").toLowerCase().trim()));
+  const liveNormalizedNames = new Set(products.map((p) => normalize(p.name)));
+  const pendingCount = LEGACY_PRODUCTS.filter((p) => {
+    if (liveSlugs.has((p.slug || "").toLowerCase().trim())) return false;
+    if (liveNormalizedNames.has(normalize(p.name))) return false;
+    const nameSlug = (p.name || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    if (liveSlugs.has(nameSlug)) return false;
+    return true;
+  }).length;
 
   const fetchData = async () => {
     try {
