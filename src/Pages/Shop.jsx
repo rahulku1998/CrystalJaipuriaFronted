@@ -71,11 +71,11 @@ const Shop = () => {
   return (
     <>
       {seo}
-      <div className="min-h-screen bg-gray-50 py-8 sm:py-10">
+      <div className="min-h-screen bg-[#FAF9F6] py-5 sm:py-10">
         <div className="max-w-[1400px] mx-auto px-3 sm:px-5 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-5 mb-8">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 sm:mb-8">
             <div>
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800">
+              <h1 className="text-xl sm:text-3xl lg:text-4xl font-bold text-gray-850">
                 Shop All Products
               </h1>
               <p className="text-xs sm:text-sm text-gray-500 mt-1">

@@ -7,6 +7,7 @@ import { optimizeCloudinaryUrl } from "../utils/imageOptimizer";
 import { getBreadcrumbSchema } from "../utils/seo";
 import { trackCategoryView } from "../utils/analytics";
 import { LEGACY_PRODUCTS } from "../utils/legacyProducts";
+import ProductCard from "../Components/ProductCard";
 import NotFound from "./NotFound";
 
 const CATEGORY_SEO = {
@@ -222,22 +223,75 @@ const CategoryPage = () => {
   return (
     <>
       {seo}
-      <div className="max-w-7xl mx-auto p-6">
-        <h1 className="text-3xl font-bold mb-6">
-          <span className="text-indigo-600">All {category.name}</span>
-        </h1>
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 py-6 sm:py-8">
+        <div className="flex items-center justify-between mb-4 sm:mb-6">
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-850">
+            All <span className="text-amber-800">{category.name}</span>
+          </h1>
+          <span className="text-xs sm:text-sm text-gray-500 font-medium">
+            {products.length} Products
+          </span>
+        </div>
+
+        {/* Mobile Horizontal Subcategory Filter Bar */}
+        {subCategories.length > 0 && (
+          <div className="flex md:hidden overflow-x-auto gap-2 pb-2 mb-4 scrollbar-none">
+            <button
+              onClick={() => {
+                setActiveSubCategory(null);
+                fetchData();
+              }}
+              className={`px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition cursor-pointer ${
+                activeSubCategory === null
+                  ? "bg-amber-800 text-white"
+                  : "bg-stone-100 text-stone-700 hover:bg-stone-200"
+              }`}
+            >
+              All
+            </button>
+            {subCategories.map((sub) => (
+              <button
+                key={sub._id}
+                onClick={() => {
+                  setActiveSubCategory(sub._id);
+                  fetchProductsBySubCategory(sub._id);
+                }}
+                className={`px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition cursor-pointer ${
+                  activeSubCategory === sub._id
+                    ? "bg-amber-800 text-white"
+                    : "bg-stone-100 text-stone-700 hover:bg-stone-200"
+                }`}
+              >
+                {sub.name}
+              </button>
+            ))}
+          </div>
+        )}
 
         <div className="flex flex-col md:flex-row gap-6">
-          {/* Left Sidebar */}
-          <div className="md:w-1/4 w-full bg-white rounded-xl shadow border p-4 h-fit">
-            <h2 className="text-lg font-semibold mb-4 border-b pb-2">
+          {/* Desktop Left Sidebar */}
+          <div className="hidden md:block md:w-1/4 w-full bg-white rounded-2xl shadow-sm border border-stone-200 p-5 h-fit">
+            <h2 className="text-base font-bold text-gray-800 mb-4 border-b pb-2">
               Sub Categories
             </h2>
 
             {subCategories.length === 0 ? (
-              <p>No Subcategories Found</p>
+              <p className="text-sm text-gray-400">No Subcategories Found</p>
             ) : (
-              <div className="space-y-2">
+              <div className="space-y-1.5">
+                <div
+                  onClick={() => {
+                    setActiveSubCategory(null);
+                    fetchData();
+                  }}
+                  className={`p-2.5 rounded-xl cursor-pointer transition text-sm font-medium flex justify-between items-center ${
+                    activeSubCategory === null
+                      ? "bg-amber-50 text-amber-900 font-semibold"
+                      : "hover:bg-stone-50 text-stone-700"
+                  }`}
+                >
+                  <span>All {category.name}</span>
+                </div>
                 {subCategories.map((sub) => {
                   const productCount = products.filter(
                     (product) => product.subCategoryId?._id === sub._id
@@ -250,14 +304,14 @@ const CategoryPage = () => {
                         setActiveSubCategory(sub._id);
                         fetchProductsBySubCategory(sub._id);
                       }}
-                      className={`p-3 rounded-lg cursor-pointer transition duration-200 flex justify-between items-center ${
+                      className={`p-2.5 rounded-xl cursor-pointer transition text-sm flex justify-between items-center ${
                         activeSubCategory === sub._id
-                          ? "bg-indigo-50 text-indigo-600"
-                          : "hover:bg-indigo-50 hover:text-indigo-600"
+                          ? "bg-amber-50 text-amber-900 font-semibold"
+                          : "hover:bg-stone-50 text-stone-700"
                       }`}
                     >
                       <span>{sub.name}</span>
-                      <span className="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">
+                      <span className="bg-stone-100 text-stone-600 px-2 py-0.5 rounded-full text-xs font-medium">
                         {productCount}
                       </span>
                     </div>
@@ -267,62 +321,16 @@ const CategoryPage = () => {
             )}
           </div>
 
-          {/* Right Content */}
+          {/* Right Products Content - 2-2 grid on mobile */}
           <div className="md:w-3/4 w-full">
             {products.length === 0 ? (
-              <div className="text-center py-10 text-indigo-600">
-                No Products Found
+              <div className="text-center py-16 bg-white rounded-2xl border border-stone-200 text-stone-500 text-sm">
+                No Products Found in this category
               </div>
             ) : (
-              <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
                 {products.map((product) => (
-                  <div
-                    key={product._id}
-                    className="bg-white rounded-xl shadow border overflow-hidden cursor-pointer"
-                    onClick={() => navigate(`/product/${product.slug}`)}
-                  >
-                    {/* Image */}
-                    <div className="h-56 w-full overflow-hidden bg-gray-50 flex items-center justify-center aspect-[4/3]">
-                      <img
-                        src={optimizeCloudinaryUrl(product.images?.[0]?.url, 450)}
-                        alt={product.name}
-                        width="300"
-                        height="224"
-                        loading="lazy"
-                        decoding="async"
-                        className="h-full w-full object-cover"
-                      />
-                    </div>
-
-                    {/* Details */}
-                    <div className="p-3">
-                      <h2 className="text-base font-bold">{product.name}</h2>
-
-                      {product.price && (
-                        <span className="text-indigo-600 font-bold text-lg mt-2 block">
-                          {formatPrice(product.price)}
-                        </span>
-                      )}
-
-                      <div className="text-sm text-gray-600 mt-2 space-y-1">
-                        {product.weight && (
-                          <p>
-                            <span className="font-semibold text-indigo-600">
-                              Weight: {product.weight}
-                            </span>
-                          </p>
-                        )}
-
-                        {product.size && (
-                          <p>
-                            <span className="font-semibold text-indigo-600">
-                              Size: {product.size}
-                            </span>
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                  </div>
+                  <ProductCard key={product._id} product={product} />
                 ))}
               </div>
             )}

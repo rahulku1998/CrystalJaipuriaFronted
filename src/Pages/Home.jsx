@@ -155,28 +155,16 @@ border-gray-100
 
 
 <div className="
-h-44
-
-sm:h-56
-
-md:h-60
-
-lg:h-64
-
-bg-gray-50
-
-rounded-3xl
-
-m-3
-
+w-full
+aspect-square
+bg-[#FAF8F5]
+rounded-2xl
 overflow-hidden
-
 flex
-
 items-center
-
 justify-center
-
+p-2
+sm:p-3
 ">
 
 

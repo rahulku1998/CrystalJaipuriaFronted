@@ -10,51 +10,62 @@ const ProductCard = ({ product }) => {
   return (
     <Link
       to={`/product/${item.slug || item._id}`}
-      className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group block"
+      className="bg-white rounded-xl sm:rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-amber-200 transition-all duration-300 overflow-hidden group flex flex-col h-full"
     >
-      {/* Image */}
-      <div className="h-72 bg-gray-100 flex items-center justify-center overflow-hidden aspect-square">
+      {/* Image Container - Strictly responsive 1:1 square ratio with zero cropping */}
+      <div className="w-full aspect-square bg-[#FAF8F5] relative overflow-hidden flex items-center justify-center p-1.5 sm:p-2.5">
         <img
           loading="lazy"
           decoding="async"
-          width="300"
-          height="300"
+          width="400"
+          height="400"
           src={optimizeCloudinaryUrl(
             typeof item.images?.[0] === 'string' ? item.images[0] : (item.images?.[0]?.url || "/Gemstone.webp"),
-            450,
+            500,
             item.slug || item.name
           )}
           alt={`${item.name} - 100% Natural Certified Gemstone Handicraft | Crystal Jaipuria`}
-          className="max-h-full max-w-full object-contain group-hover:scale-105 duration-500"
+          className="w-full h-full object-contain rounded-lg sm:rounded-xl group-hover:scale-105 transition-transform duration-500"
         />
+
+        {/* 100% Certified Micro Badge */}
+        <span className="absolute top-2 left-2 bg-amber-600/90 text-white text-[9px] sm:text-[10px] font-semibold px-1.5 py-0.5 rounded shadow-xs tracking-wide">
+          100% Certified
+        </span>
       </div>
 
       {/* Content */}
-      <div className="p-4">
-        <h2 className="text-lg font-semibold line-clamp-1">
-          {item.name}
-        </h2>
+      <div className="p-2.5 sm:p-4 flex flex-col flex-grow justify-between">
+        <div>
+          <h2 className="text-xs sm:text-sm md:text-base font-bold text-gray-800 group-hover:text-amber-800 transition-colors line-clamp-2 leading-snug min-h-[2rem] sm:min-h-[2.5rem]">
+            {item.name}
+          </h2>
 
-        <p className="text-gray-500 text-sm mt-2 line-clamp-2">
-          {String(item.detail || item.description || "")
-            .replace(/<[^>]*>?/gm, "")
-            .replace(/&nbsp;/g, " ")
-            .replace(/\s+/g, " ")
-            .trim()}
-        </p>
+          <p className="hidden sm:block text-gray-500 text-xs mt-1.5 line-clamp-1">
+            {String(item.detail || item.description || "")
+              .replace(/<[^>]*>?/gm, "")
+              .replace(/&nbsp;/g, " ")
+              .replace(/\s+/g, " ")
+              .trim()}
+          </p>
+        </div>
 
-        {item.price && (
-          <div className="mt-4 flex items-center justify-between">
-            <p className="text-indigo-600 font-bold text-xl">
+        {/* Price & Weight Footer */}
+        <div className="mt-2 sm:mt-3 pt-2 border-t border-gray-100 flex items-center justify-between gap-1 flex-wrap">
+          {item.price ? (
+            <p className="text-amber-800 font-extrabold text-sm sm:text-base md:text-lg">
               {formatPrice(item.price)}
             </p>
-            {item.weight && (
-              <span className="text-xs text-gray-400 font-medium">
-                {item.weight}
-              </span>
-            )}
-          </div>
-        )}
+          ) : (
+            <span className="text-xs text-amber-700 font-semibold">Inquire Price</span>
+          )}
+
+          {item.weight && (
+            <span className="text-[10px] sm:text-xs bg-stone-100 text-stone-600 px-1.5 py-0.5 rounded font-medium truncate max-w-[80px] sm:max-w-none">
+              {item.weight}
+            </span>
+          )}
+        </div>
       </div>
     </Link>
   );
