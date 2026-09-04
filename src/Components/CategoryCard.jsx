@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { formatPrice } from "../utils/price";
+import { optimizeCloudinaryUrl } from "../utils/imageOptimizer";
 
 
 const CategorySection = ({ title, slug, products }) => {
@@ -157,8 +158,12 @@ overflow-hidden
 <img
 loading="lazy"
 decoding="async"
-src={typeof product.images?.[0] === 'string' ? product.images[0] : (product.images?.[0]?.url || "/Gemstone.webp")}
-alt={product.name}
+src={optimizeCloudinaryUrl(
+  typeof product.images?.[0] === 'string' ? product.images[0] : (product.images?.[0]?.url || "/Gemstone.webp"),
+  450,
+  product.slug || product.name
+)}
+alt={`${product.name} - 100% Natural Certified Gemstone | Crystal Jaipuria`}
 
 className="
 w-full

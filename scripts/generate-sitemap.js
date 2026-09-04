@@ -62,7 +62,7 @@ const generateSitemap = async () => {
   ];
 
   let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
-  xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
+  xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n`;
 
   xml += `  <!-- Core Static Pages -->\n`;
   staticPages.forEach((page) => {
@@ -91,8 +91,20 @@ const generateSitemap = async () => {
     xml += `\n  <!-- Dynamic Product Pages (${products.length} Live Products) -->\n`;
     products.forEach((prod) => {
       const slug = prod.slug || prod._id;
+      const cleanName = (prod.name || "Gemstone Product").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+      const cleanProductSlug = (prod.slug || slug || "product").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+      let imageMain = typeof prod.images?.[0] === "string" ? prod.images[0] : (prod.images?.[0]?.url || `${BASE_URL}/Gemstone.webp`);
+      if (imageMain.includes("cloudinary.com")) {
+        imageMain = imageMain
+          .replace(/\/image\/upload\/(?:[^\/]+\/)?/, "/images/f_jpg,q_auto:good,w_1200,c_limit/")
+          .replace(/\.[a-zA-Z0-9]+(?:\?.*)?$/, "") + `/${cleanProductSlug}.jpg`;
+      }
       xml += `  <url>\n`;
       xml += `    <loc>${BASE_URL}/product/${slug}</loc>\n`;
+      xml += `    <image:image>\n`;
+      xml += `      <image:loc>${imageMain}</image:loc>\n`;
+      xml += `      <image:title>${cleanName} | Crystal Jaipuria</image:title>\n`;
+      xml += `    </image:image>\n`;
       xml += `    <changefreq>weekly</changefreq>\n`;
       xml += `    <priority>0.8</priority>\n`;
       xml += `  </url>\n`;
@@ -193,9 +205,12 @@ const generateSitemap = async () => {
         priceNum = Number(match[0]);
       }
     }
+    const cleanProductSlug = (prod.slug || slug || "product").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
     let imageMain = typeof prod.images?.[0] === "string" ? prod.images[0] : (prod.images?.[0]?.url || `${BASE_URL}/Gemstone.webp`);
     if (imageMain.includes("cloudinary.com")) {
-      imageMain = imageMain.replace(/\.webp($|\?)/, ".jpg$1");
+      imageMain = imageMain
+        .replace(/\/image\/upload\/(?:[^\/]+\/)?/, "/images/f_jpg,q_auto:good,w_1200,c_limit/")
+        .replace(/\.[a-zA-Z0-9]+(?:\?.*)?$/, "") + `/${cleanProductSlug}.jpg`;
     }
     const categoryName = prod.categoryId?.name ? prod.categoryId.name.replace(/&/g, "&amp;") : "Gemstones";
 
@@ -209,7 +224,9 @@ const generateSitemap = async () => {
       let extraImg = typeof prod.images[1] === "string" ? prod.images[1] : prod.images[1]?.url;
       if (extraImg) {
         if (extraImg.includes("cloudinary.com")) {
-          extraImg = extraImg.replace(/\.webp($|\?)/, ".jpg$1");
+          extraImg = extraImg
+            .replace(/\/image\/upload\/(?:[^\/]+\/)?/, "/images/f_jpg,q_auto:good,w_1200,c_limit/")
+            .replace(/\.[a-zA-Z0-9]+(?:\?.*)?$/, "") + `/${cleanProductSlug}-2.jpg`;
         }
         gmcXml += `      <g:additional_image_link>${extraImg}</g:additional_image_link>\n`;
       }

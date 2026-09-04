@@ -294,8 +294,10 @@ const fetchCategories = async()=>{
       });
       formData.append("additionalInfo", packedAdditionalInfo);
 
-      images.forEach((img) => {
-        formData.append("images", img);
+      const seoImageSlug = (form.name || "product").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+      images.forEach((img, idx) => {
+        const ext = (img.name?.split(".").pop() || "jpg").toLowerCase();
+        formData.append("images", img, `${seoImageSlug}-${idx + 1}.${ext}`);
       });
 
       await API.post(

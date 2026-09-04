@@ -19,8 +19,12 @@ const ProductCard = ({ product }) => {
           decoding="async"
           width="300"
           height="300"
-          src={optimizeCloudinaryUrl(typeof item.images?.[0] === 'string' ? item.images[0] : (item.images?.[0]?.url || "/Gemstone.webp"), 450)}
-          alt={item.name}
+          src={optimizeCloudinaryUrl(
+            typeof item.images?.[0] === 'string' ? item.images[0] : (item.images?.[0]?.url || "/Gemstone.webp"),
+            450,
+            item.slug || item.name
+          )}
+          alt={`${item.name} - 100% Natural Certified Gemstone Handicraft | Crystal Jaipuria`}
           className="max-h-full max-w-full object-contain group-hover:scale-105 duration-500"
         />
       </div>

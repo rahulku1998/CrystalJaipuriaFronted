@@ -318,8 +318,12 @@ Hello Crystal Jaipuria, I have a query regarding this product.
           <div>
             <div className="w-full aspect-square sm:aspect-[4/3] lg:aspect-square max-h-[500px] bg-gray-50 rounded-2xl shadow-xs border border-gray-200 overflow-hidden flex items-center justify-center p-2">
               <img
-                src={optimizeCloudinaryUrl(selectedImage || (typeof product.images?.[0] === 'string' ? product.images[0] : product.images?.[0]?.url) || "/Gemstone.webp", 800)}
-                alt={product.name}
+                src={optimizeCloudinaryUrl(
+                  selectedImage || (typeof product.images?.[0] === 'string' ? product.images[0] : product.images?.[0]?.url) || "/Gemstone.webp",
+                  800,
+                  product.slug || product.name
+                )}
+                alt={`${product.name} - 100% Certified Natural Gemstone Idol by Crystal Jaipuria, Jaipur`}
                 width="600"
                 height="600"
                 fetchPriority="high"
@@ -334,12 +338,12 @@ Hello Crystal Jaipuria, I have a query regarding this product.
               <div className="flex gap-3 mt-4 overflow-x-auto pb-2">
                 {product.images.map((img, idx) => {
                   const rawSrc = typeof img === 'string' ? img : (img?.url || '');
-                  const thumbSrc = optimizeCloudinaryUrl(rawSrc, 160);
+                  const thumbSrc = optimizeCloudinaryUrl(rawSrc, 160, `${product.slug || product.name}-view-${idx + 1}`);
                   return (
                     <img
                       key={img.public_id || idx}
                       src={thumbSrc}
-                      alt={`${product.name} - ${idx + 1}`}
+                      alt={`${product.name} - Handcrafted Gemstone Idol View ${idx + 1}`}
                       width="80"
                       height="80"
                       loading="lazy"
