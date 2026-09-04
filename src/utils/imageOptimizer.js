@@ -1,32 +1,26 @@
 /**
- * Cloudinary on-the-fly Image Optimization & SEO Asset Delivery Utility
- * Serves images through our branded domain proxy:
- * https://www.crystaljaipuria.com/product-images/.../<cleanSlug>.webp
- * Guarantees that Google and visitors see only your brand domain (crystaljaipuria.com)!
+ * Clean Static WebP Image Delivery Utility
+ * Delivers clean static image paths: /images/<clean-slug>.webp
+ * (Exactly like homeslider: /images/slider-shivling-desk.webp)
  */
 export const optimizeCloudinaryUrl = (url, width = 800, seoSlug = "") => {
-  if (!url || typeof url !== "string") return url || "/Gemstone.webp";
-  if (!url.includes("res.cloudinary.com")) return url;
+  if (!url || typeof url !== "string") return "/images/slider-shivling-desk.webp";
 
   const cleanSlug = (seoSlug || "")
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 
-  // If SEO slug is provided, deliver through custom domain proxy with product name
+  // If clean product slug is available, deliver clean static WebP image directly from /images/
   if (cleanSlug) {
-    let cleanPath = url.replace(
-      /^https:\/\/res\.cloudinary\.com\/[^\/]+\/(?:image\/upload|images)\/(?:[^\/]+\/)?/,
-      `/product-images/f_auto,q_auto:good,w_${width},c_limit/`
-    );
-    cleanPath = cleanPath.replace(/\.[a-zA-Z0-9]+(?:\?.*)?$/, "");
-    return `${cleanPath}/${cleanSlug}.webp`;
+    return `/images/${cleanSlug}.webp`;
   }
 
-  // Fallback to custom domain proxy path
-  let cleanPath = url.replace(
-    /^https:\/\/res\.cloudinary\.com\/[^\/]+\/(?:image\/upload|images)\/(?:[^\/]+\/)?/,
-    `/product-images/f_auto,q_auto:good,w_${width},c_limit/`
-  );
-  return cleanPath;
+  // If URL is already a clean static image path
+  if (url.startsWith("/images/") || url.startsWith("/assets/")) {
+    return url;
+  }
+
+  // Fallback if no slug: try to extract image filename or return default
+  return url;
 };

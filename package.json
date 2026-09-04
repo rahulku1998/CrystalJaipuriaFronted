@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prebuild": "node scripts/generate-sitemap.js",
+    "prebuild": "node scripts/sync-images.js && node scripts/generate-sitemap.js",
+    "sync:images": "node scripts/sync-images.js",
     "sitemap": "node scripts/generate-sitemap.js",
     "index": "node scripts/instant-indexing.js",
     "build": "vite build",

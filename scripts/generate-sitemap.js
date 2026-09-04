@@ -93,12 +93,7 @@ const generateSitemap = async () => {
       const slug = prod.slug || prod._id;
       const cleanName = (prod.name || "Gemstone Product").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
       const cleanProductSlug = (prod.slug || slug || "product").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-      let imageMain = typeof prod.images?.[0] === "string" ? prod.images[0] : (prod.images?.[0]?.url || `${BASE_URL}/Gemstone.webp`);
-      if (imageMain.includes("cloudinary.com")) {
-        imageMain = imageMain
-          .replace(/^https:\/\/res\.cloudinary\.com\/[^\/]+\/(?:image\/upload|images)\/(?:[^\/]+\/)?/, `${BASE_URL}/product-images/f_auto,q_auto:good,w_1200,c_limit/`)
-          .replace(/\.[a-zA-Z0-9]+(?:\?.*)?$/, "") + `/${cleanProductSlug}.webp`;
-      }
+      const imageMain = `${BASE_URL}/images/${cleanProductSlug}.webp`;
       xml += `  <url>\n`;
       xml += `    <loc>${BASE_URL}/product/${slug}</loc>\n`;
       xml += `    <image:image>\n`;
@@ -206,12 +201,7 @@ const generateSitemap = async () => {
       }
     }
     const cleanProductSlug = (prod.slug || slug || "product").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-    let imageMain = typeof prod.images?.[0] === "string" ? prod.images[0] : (prod.images?.[0]?.url || `${BASE_URL}/Gemstone.webp`);
-    if (imageMain.includes("cloudinary.com")) {
-      imageMain = imageMain
-        .replace(/^https:\/\/res\.cloudinary\.com\/[^\/]+\/(?:image\/upload|images)\/(?:[^\/]+\/)?/, `${BASE_URL}/product-images/f_jpg,q_auto:good,w_1200,c_limit/`)
-        .replace(/\.[a-zA-Z0-9]+(?:\?.*)?$/, "") + `/${cleanProductSlug}.jpg`;
-    }
+    const imageMain = `${BASE_URL}/images/${cleanProductSlug}.webp`;
     const categoryName = prod.categoryId?.name ? prod.categoryId.name.replace(/&/g, "&amp;") : "Gemstones";
 
     gmcXml += `    <item>\n`;
@@ -221,15 +211,8 @@ const generateSitemap = async () => {
     gmcXml += `      <g:link>${prodUrl}</g:link>\n`;
     gmcXml += `      <g:image_link>${imageMain}</g:image_link>\n`;
     if (prod.images && prod.images.length > 1) {
-      let extraImg = typeof prod.images[1] === "string" ? prod.images[1] : prod.images[1]?.url;
-      if (extraImg) {
-        if (extraImg.includes("cloudinary.com")) {
-          extraImg = extraImg
-            .replace(/^https:\/\/res\.cloudinary\.com\/[^\/]+\/(?:image\/upload|images)\/(?:[^\/]+\/)?/, `${BASE_URL}/product-images/f_jpg,q_auto:good,w_1200,c_limit/`)
-            .replace(/\.[a-zA-Z0-9]+(?:\?.*)?$/, "") + `/${cleanProductSlug}-2.jpg`;
-        }
-        gmcXml += `      <g:additional_image_link>${extraImg}</g:additional_image_link>\n`;
-      }
+      const extraImg = `${BASE_URL}/images/${cleanProductSlug}-2.webp`;
+      gmcXml += `      <g:additional_image_link>${extraImg}</g:additional_image_link>\n`;
     }
     gmcXml += `      <g:availability>${(prod.stock === 0 || prod.stock === "0") ? "out_of_stock" : "in_stock"}</g:availability>\n`;
     gmcXml += `      <g:price>${priceNum.toFixed(2)} INR</g:price>\n`;
