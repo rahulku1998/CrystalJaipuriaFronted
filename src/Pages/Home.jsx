@@ -360,9 +360,7 @@ WhatsApp Us
 
 <a
 
-href="https://mail.google.com/mail/?view=cm&fs=1&to=crystaljaipurya@gmail.com"
-
-target="_blank"
+href="mailto:crystaljaipurya@gmail.com"
 
 className="
 px-8

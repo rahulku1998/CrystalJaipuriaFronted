@@ -231,6 +231,16 @@ ${items
   `.trim();
 };
 
+export const STANDARDIZED_NAMES = {
+  "gemston-ruby-shree-yantra": "Natural Gemstone Ruby Shree Yantra",
+  "gemston-amethyst-diya": "Natural Amethyst Gemstone Diya",
+  "crystal-clear-mahvaveer-ji-statue": "Crystal Clear Mahaveer Ji Statue",
+  "crystal-sphtik-shree-yantra-on-kamal-flower": "Crystal Sphatik Shree Yantra On Lotus Flower",
+  "green-jade-elephant-staute": "Green Jade Elephant Statue",
+  "green-jade-shiva-statue-with-gold-panting": "Green Jade Shiva Statue With Gold Painting",
+  "green-jade-carved-shree-krishana-statue": "Green Jade Carved Shree Krishna Statue"
+};
+
 /**
  * Standardize any product object with clean single pricing and specs
  */
@@ -239,6 +249,7 @@ export const getStandardizedProduct = (product) => {
 
   const slug = (product.slug || "").toLowerCase().trim();
   const spec = STANDARDIZED_SPECS[slug];
+  const cleanName = STANDARDIZED_NAMES[slug] || product.name;
 
   let standardizedPrice = product.price;
   let standardizedWeight = product.weight;
@@ -267,6 +278,7 @@ export const getStandardizedProduct = (product) => {
   const dimensions = spec?.dimensions || product.dimensions || standardizedSize;
   const formattedAdditionalInfo = formatAdditionalInfo(product.additionalInfo, {
     ...product,
+    name: cleanName,
     slug,
     weight: standardizedWeight,
     size: standardizedSize,
@@ -275,6 +287,7 @@ export const getStandardizedProduct = (product) => {
 
   return {
     ...product,
+    name: cleanName,
     price: standardizedPrice,
     weight: standardizedWeight,
     size: standardizedSize,

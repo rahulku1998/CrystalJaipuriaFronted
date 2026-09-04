@@ -309,10 +309,10 @@ Message: ${message}
 
 
             <a
-              href="tel:+918306317032"
-              className="text-indigo-600 font-medium"
+              href="tel:+918955613237"
+              className="text-indigo-600 font-medium hover:underline"
             >
-              +91 8306317032
+              Call Us
             </a>
 
 
