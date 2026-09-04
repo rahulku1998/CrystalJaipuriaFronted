@@ -193,7 +193,10 @@ const generateSitemap = async () => {
         priceNum = Number(match[0]);
       }
     }
-    const imageMain = typeof prod.images?.[0] === "string" ? prod.images[0] : (prod.images?.[0]?.url || `${BASE_URL}/Gemstone.webp`);
+    let imageMain = typeof prod.images?.[0] === "string" ? prod.images[0] : (prod.images?.[0]?.url || `${BASE_URL}/Gemstone.webp`);
+    if (imageMain.includes("cloudinary.com")) {
+      imageMain = imageMain.replace(/\.webp($|\?)/, ".jpg$1");
+    }
     const categoryName = prod.categoryId?.name ? prod.categoryId.name.replace(/&/g, "&amp;") : "Gemstones";
 
     gmcXml += `    <item>\n`;
@@ -203,8 +206,11 @@ const generateSitemap = async () => {
     gmcXml += `      <g:link>${prodUrl}</g:link>\n`;
     gmcXml += `      <g:image_link>${imageMain}</g:image_link>\n`;
     if (prod.images && prod.images.length > 1) {
-      const extraImg = typeof prod.images[1] === "string" ? prod.images[1] : prod.images[1]?.url;
+      let extraImg = typeof prod.images[1] === "string" ? prod.images[1] : prod.images[1]?.url;
       if (extraImg) {
+        if (extraImg.includes("cloudinary.com")) {
+          extraImg = extraImg.replace(/\.webp($|\?)/, ".jpg$1");
+        }
         gmcXml += `      <g:additional_image_link>${extraImg}</g:additional_image_link>\n`;
       }
     }
