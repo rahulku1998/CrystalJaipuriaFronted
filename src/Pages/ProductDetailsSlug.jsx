@@ -3,9 +3,8 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import API from "../api/axios";
 import { formatPrice } from "../utils/price";
 import { optimizeCloudinaryUrl } from "../utils/imageOptimizer";
-import { getStandardizedProduct } from "../utils/productStandardizer";
 import { unpackProductMetadata } from "../utils/productMetadata";
-import { getLegacyProductBySlug } from "../utils/legacyProducts";
+import { getLegacyProductBySlug, resolveProductSlug } from "../utils/legacyProducts";
 import {
   getProductMetaTitle,
   getProductMetaDescription,
@@ -120,8 +119,13 @@ Hello Crystal Jaipuria, I have a query regarding this product.
 
   const fetchProduct = async () => {
     try {
+      const rawSlug = String(slug || "").trim().toLowerCase().replace(/^\/product\//, "").replace(/\/$/, "");
+      const cleanSlug = resolveProductSlug(rawSlug);
+      if (rawSlug !== cleanSlug) {
+        navigate(`/product/${cleanSlug}`, { replace: true });
+        return;
+      }
       setLoading(true);
-      const cleanSlug = String(slug || "").trim().toLowerCase().replace(/^\/product\//, "").replace(/\/$/, "");
 
       let data = null;
 

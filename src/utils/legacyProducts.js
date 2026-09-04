@@ -1,404 +1,6 @@
 // Auto-generated legacy products registry for Google Search Console recovery
 export const LEGACY_PRODUCTS = [
   {
-    "_id": "legacy_natural-ruby-shivling",
-    "name": "Natural Ruby Shivling",
-    "slug": "natural-ruby-shivling",
-    "price": 8500,
-    "discountPrice": 11475,
-    "stock": 5,
-    "categoryId": {
-      "_id": "6a55bc292dcf49aacd71ef65",
-      "name": "Shivling",
-      "slug": "shivling"
-    },
-    "images": [
-      "/Gemstone.webp"
-    ],
-    "detail": "Authentic handcrafted Natural Ruby (Manik) Shivling carved from certified natural ruby stone for Surya planetary strength, prosperity and spiritual leadership.",
-    "description": "<h2>About Natural Ruby Shivling</h2><p>Authentic handcrafted Natural Ruby (Manik) Shivling carved from certified natural ruby stone for Surya planetary strength, prosperity and spiritual leadership.</p><h3>Key Spiritual &amp; Astrological Benefits</h3><ul><li><strong>Authentic Vedic Craftsmanship:</strong> Handcrafted by generational master artisans in Jaipur according to Shilpa Shastra guidelines.</li><li><strong>100% Certified Natural Gemstone:</strong> Carved from genuine, unheated natural gemstone possessing high spiritual energy vibrations.</li><li><strong>Vastu &amp; Spiritual Energy:</strong> Neutralizes household vastu doshas and purifies the surrounding electromagnetic aura.</li><li><strong>Puja &amp; Consecration:</strong> Ideal for home temple, daily abhishek, meditation altar, and spiritual gifting.</li></ul><h3>Packaging &amp; Worldwide Safe Delivery</h3><p>Each product is carefully packaged in shockproof multi-layered protective casing to guarantee 100% safe, damage-free doorstep delivery worldwide.</p>",
-    "additionalInfo": "<ul><li><strong>Color :</strong> Deep Purplish Red</li><li><strong>Weight :</strong> 350 Grams - 1.5 Kg</li><li><strong>Dimension :</strong> 3.5 x 2.5 x 4.0 Inches</li><li><strong>Material :</strong> 100% Certified Natural Ruby Gemstone (Manikya)</li><li><strong>Country of Origin :</strong> Handcrafted in Jaipur, India (Est. 1989)</li><li><strong>Certification :</strong> 100% Certified Authentic Natural Gemstone</li></ul>",
-    "weight": "350 Grams - 1.5 Kg",
-    "size": "3.5 x 2.5 x 4.0 Inches",
-    "metaTitle": "Natural Ruby Shivling (100% Certified Manikya) | Crystal Jaipuria",
-    "metaDescription": "Buy hand-carved Natural Ruby Shivling from Jaipur manufacturer. 100% certified pure Manik stone for home temple, wealth, Sun planet power and Vastu peace.",
-    "faqs": [
-      {
-        "question": "What are the benefits of Natural Ruby Shivling?",
-        "answer": "Ruby Shivling represents the Sun (Surya) and cosmic energy. Worshipping it blesses the devotee with leadership, health, name, fame, and deep spiritual enlightenment."
-      },
-      {
-        "question": "How to do abhishek on Ruby Shivling?",
-        "answer": "Daily Jalabhishek with pure water, Ganga jal, raw cow milk, and applying white sandalwood paste (Chandan) is highly auspicious."
-      }
-    ],
-    "isStandardized": true
-  },
-  {
-    "_id": "legacy_gemston-ruby-shree-yantra",
-    "name": "Natural Ruby Shree Yantra",
-    "slug": "gemston-ruby-shree-yantra",
-    "price": 3500,
-    "discountPrice": 4725,
-    "stock": 5,
-    "categoryId": {
-      "_id": "6a55bc362dcf49aacd71ef66",
-      "name": "Shree Yantra",
-      "slug": "shree-yantra"
-    },
-    "images": [
-      "/Gemstone.webp"
-    ],
-    "detail": "Sacred 3D Meru Natural Ruby Shree Yantra hand-carved with precise Vedic geometry for Mahalakshmi blessings, immense wealth, and vastu aura purification.",
-    "description": "<h2>About Natural Ruby Shree Yantra</h2><p>Sacred 3D Meru Natural Ruby Shree Yantra hand-carved with precise Vedic geometry for Mahalakshmi blessings, immense wealth, and vastu aura purification.</p><h3>Key Spiritual &amp; Astrological Benefits</h3><ul><li><strong>Authentic Vedic Craftsmanship:</strong> Handcrafted by generational master artisans in Jaipur according to Shilpa Shastra guidelines.</li><li><strong>100% Certified Natural Gemstone:</strong> Carved from genuine, unheated natural gemstone possessing high spiritual energy vibrations.</li><li><strong>Vastu &amp; Spiritual Energy:</strong> Neutralizes household vastu doshas and purifies the surrounding electromagnetic aura.</li><li><strong>Puja &amp; Consecration:</strong> Ideal for home temple, daily abhishek, meditation altar, and spiritual gifting.</li></ul><h3>Packaging &amp; Worldwide Safe Delivery</h3><p>Each product is carefully packaged in shockproof multi-layered protective casing to guarantee 100% safe, damage-free doorstep delivery worldwide.</p>",
-    "additionalInfo": "<ul><li><strong>Color :</strong> Rich Deep Red</li><li><strong>Weight :</strong> 250 Grams</li><li><strong>Dimension :</strong> 2.5 x 2.5 x 3.0 Inches</li><li><strong>Material :</strong> 100% Certified Pure Natural Ruby</li><li><strong>Country of Origin :</strong> Handcrafted in Jaipur, India (Est. 1989)</li><li><strong>Certification :</strong> 100% Certified Authentic Natural Gemstone</li></ul>",
-    "weight": "250 Grams",
-    "size": "2.5 x 2.5 x 3.0 Inches",
-    "metaTitle": "Natural Ruby Shree Yantra 3D Meru | Crystal Jaipuria",
-    "metaDescription": "Shop handcrafted Natural Ruby Shree Yantra from Jaipur manufacturer (est. 1989). 100% certified pure ruby for wealth, prosperity and Lakshmi puja.",
-    "faqs": [
-      {
-        "question": "What is the significance of Ruby Shree Yantra?",
-        "answer": "Ruby Shree Yantra combines the royal wealth energy of Goddess Mahalakshmi with the planetary brilliance of the Sun (Surya)."
-      }
-    ],
-    "isStandardized": true
-  },
-  {
-    "_id": "legacy_blue-sapphire-carving-shiva-statue",
-    "name": "Blue Sapphire Carving Shiva Statue",
-    "slug": "blue-sapphire-carving-shiva-statue",
-    "price": 9500,
-    "discountPrice": 12825,
-    "stock": 5,
-    "categoryId": {
-      "_id": "6a55bb1f2e9a358fc926cbab",
-      "name": "God Statues",
-      "slug": "god-statues"
-    },
-    "images": [
-      "/Gemstone.webp"
-    ],
-    "detail": "Master artisan carved Lord Shiva meditative idol in precious Blue Sapphire / Celestial Blue gemstone for Saturn harmony, deep focus, and supreme protection.",
-    "description": "<h2>About Blue Sapphire Carving Shiva Statue</h2><p>Master artisan carved Lord Shiva meditative idol in precious Blue Sapphire / Celestial Blue gemstone for Saturn harmony, deep focus, and supreme protection.</p><h3>Key Spiritual &amp; Astrological Benefits</h3><ul><li><strong>Authentic Vedic Craftsmanship:</strong> Handcrafted by generational master artisans in Jaipur according to Shilpa Shastra guidelines.</li><li><strong>100% Certified Natural Gemstone:</strong> Carved from genuine, unheated natural gemstone possessing high spiritual energy vibrations.</li><li><strong>Vastu &amp; Spiritual Energy:</strong> Neutralizes household vastu doshas and purifies the surrounding electromagnetic aura.</li><li><strong>Puja &amp; Consecration:</strong> Ideal for home temple, daily abhishek, meditation altar, and spiritual gifting.</li></ul><h3>Packaging &amp; Worldwide Safe Delivery</h3><p>Each product is carefully packaged in shockproof multi-layered protective casing to guarantee 100% safe, damage-free doorstep delivery worldwide.</p>",
-    "additionalInfo": "<ul><li><strong>Color :</strong> Deep Celestial Indigo Blue</li><li><strong>Weight :</strong> 450 Grams</li><li><strong>Dimension :</strong> 4.5 x 3.0 x 2.2 Inches</li><li><strong>Material :</strong> 100% Certified Natural Blue Sapphire / Sodalite Gemstone</li><li><strong>Country of Origin :</strong> Handcrafted in Jaipur, India (Est. 1989)</li><li><strong>Certification :</strong> 100% Certified Authentic Natural Gemstone</li></ul>",
-    "weight": "450 Grams",
-    "size": "4.5 x 3.0 x 2.2 Inches",
-    "metaTitle": "Blue Sapphire Shiva Statue Handcrafted | Crystal Jaipuria",
-    "metaDescription": "Buy hand-carved Blue Sapphire Lord Shiva idol from Jaipur manufacturer. 100% certified natural gemstone statue for meditation room, home altar and Vastu.",
-    "faqs": [
-      {
-        "question": "Where should we place Blue Sapphire Shiva Statue?",
-        "answer": "Place the Shiva idol facing East or North in your home temple or meditation room."
-      }
-    ],
-    "isStandardized": true
-  },
-  {
-    "_id": "legacy_green-jade-shiva-statue-with-gold-panting",
-    "name": "Green Jade Shiva Statue With Gold Painting",
-    "slug": "green-jade-shiva-statue-with-gold-panting",
-    "price": 25000,
-    "discountPrice": 33750,
-    "stock": 5,
-    "categoryId": {
-      "_id": "6a55bb1f2e9a358fc926cbab",
-      "name": "God Statues",
-      "slug": "god-statues"
-    },
-    "images": [
-      "/Gemstone.webp"
-    ],
-    "detail": "Luxurious Green Jade Lord Shiva meditative statue embellished with handcrafted pure gold painting work. Inspires prosperity, heart chakra healing, and divine bliss.",
-    "description": "<h2>About Green Jade Shiva Statue With Gold Painting</h2><p>Luxurious Green Jade Lord Shiva meditative statue embellished with handcrafted pure gold painting work. Inspires prosperity, heart chakra healing, and divine bliss.</p><h3>Key Spiritual &amp; Astrological Benefits</h3><ul><li><strong>Authentic Vedic Craftsmanship:</strong> Handcrafted by generational master artisans in Jaipur according to Shilpa Shastra guidelines.</li><li><strong>100% Certified Natural Gemstone:</strong> Carved from genuine, unheated natural gemstone possessing high spiritual energy vibrations.</li><li><strong>Vastu &amp; Spiritual Energy:</strong> Neutralizes household vastu doshas and purifies the surrounding electromagnetic aura.</li><li><strong>Puja &amp; Consecration:</strong> Ideal for home temple, daily abhishek, meditation altar, and spiritual gifting.</li></ul><h3>Packaging &amp; Worldwide Safe Delivery</h3><p>Each product is carefully packaged in shockproof multi-layered protective casing to guarantee 100% safe, damage-free doorstep delivery worldwide.</p>",
-    "additionalInfo": "<ul><li><strong>Color :</strong> Emerald Green with 24K Gold Leaf Accents</li><li><strong>Weight :</strong> 1.8 Kg</li><li><strong>Dimension :</strong> 7.5 x 5.0 x 3.5 Inches</li><li><strong>Material :</strong> 100% Certified Natural Green Jade Gemstone</li><li><strong>Country of Origin :</strong> Handcrafted in Jaipur, India (Est. 1989)</li><li><strong>Certification :</strong> 100% Certified Authentic Natural Gemstone</li></ul>",
-    "weight": "1.8 Kg",
-    "size": "7.5 x 5.0 x 3.5 Inches",
-    "metaTitle": "Green Jade Shiva Statue with Gold Painting | Crystal Jaipuria",
-    "metaDescription": "Exquisite Green Jade Lord Shiva idol with pure 24K gold painted highlights. Direct manufacturer price from Jaipur. 100% certified pure natural jade.",
-    "faqs": [
-      {
-        "question": "Is the gold painting durable on Green Jade?",
-        "answer": "Yes, our master artisans use traditional heritage techniques that ensure permanent, lasting luster for regular temple worship."
-      }
-    ],
-    "isStandardized": true
-  },
-  {
-    "_id": "legacy_green-jade-panchmukhi-shivling",
-    "name": "Green Jade Panchmukhi Shivling",
-    "slug": "green-jade-panchmukhi-shivling",
-    "price": 8500,
-    "discountPrice": 11475,
-    "stock": 5,
-    "categoryId": {
-      "_id": "6a55bc292dcf49aacd71ef65",
-      "name": "Shivling",
-      "slug": "shivling"
-    },
-    "images": [
-      "/Gemstone.webp"
-    ],
-    "detail": "Rare sacred Green Jade Panchmukhi (5-Faced) Shivling representing Sadyojata, Vamadeva, Aghora, Tatpurusha, and Ishana for all-round spiritual liberation.",
-    "description": "<h2>About Green Jade Panchmukhi Shivling</h2><p>Rare sacred Green Jade Panchmukhi (5-Faced) Shivling representing Sadyojata, Vamadeva, Aghora, Tatpurusha, and Ishana for all-round spiritual liberation.</p><h3>Key Spiritual &amp; Astrological Benefits</h3><ul><li><strong>Authentic Vedic Craftsmanship:</strong> Handcrafted by generational master artisans in Jaipur according to Shilpa Shastra guidelines.</li><li><strong>100% Certified Natural Gemstone:</strong> Carved from genuine, unheated natural gemstone possessing high spiritual energy vibrations.</li><li><strong>Vastu &amp; Spiritual Energy:</strong> Neutralizes household vastu doshas and purifies the surrounding electromagnetic aura.</li><li><strong>Puja &amp; Consecration:</strong> Ideal for home temple, daily abhishek, meditation altar, and spiritual gifting.</li></ul><h3>Packaging &amp; Worldwide Safe Delivery</h3><p>Each product is carefully packaged in shockproof multi-layered protective casing to guarantee 100% safe, damage-free doorstep delivery worldwide.</p>",
-    "additionalInfo": "<ul><li><strong>Color :</strong> Lustrous Emerald Green</li><li><strong>Weight :</strong> 850 Grams</li><li><strong>Dimension :</strong> 5.0 x 3.5 x 4.0 Inches</li><li><strong>Material :</strong> 100% Certified Pure Green Jade Gemstone</li><li><strong>Country of Origin :</strong> Handcrafted in Jaipur, India (Est. 1989)</li><li><strong>Certification :</strong> 100% Certified Authentic Natural Gemstone</li></ul>",
-    "weight": "850 Grams",
-    "size": "5.0 x 3.5 x 4.0 Inches",
-    "metaTitle": "Green Jade Panchmukhi Shivling Handcrafted | Crystal Jaipuria",
-    "metaDescription": "Buy rare 5-Faced Green Jade Panchmukhi Shivling from Jaipur manufacturer. 100% certified natural gemstone for home temple and daily Rudrabhishek.",
-    "faqs": [
-      {
-        "question": "What is the power of Panchmukhi Shivling?",
-        "answer": "Panchmukhi Shivling embodies the 5 elements and 5 divine faces of Lord Shiva, removing all negative energies and granting Moksha and prosperity."
-      }
-    ],
-    "isStandardized": true
-  },
-  {
-    "_id": "legacy_opal-ston-shivling",
-    "name": "Natural Opal Stone Shivling",
-    "slug": "opal-ston-shivling",
-    "price": 3500,
-    "discountPrice": 4725,
-    "stock": 5,
-    "categoryId": {
-      "_id": "6a55bc292dcf49aacd71ef65",
-      "name": "Shivling",
-      "slug": "shivling"
-    },
-    "images": [
-      "/Gemstone.webp"
-    ],
-    "detail": "Handcrafted Natural Opal Stone Shivling representing peace, cosmic consciousness, and planetary healing for home temple & daily abhishek.",
-    "description": "<h2>About Natural Opal Stone Shivling</h2><p>Handcrafted Natural Opal Stone Shivling representing peace, cosmic consciousness, and planetary healing for home temple & daily abhishek.</p><h3>Key Spiritual &amp; Astrological Benefits</h3><ul><li><strong>Authentic Vedic Craftsmanship:</strong> Handcrafted by generational master artisans in Jaipur according to Shilpa Shastra guidelines.</li><li><strong>100% Certified Natural Gemstone:</strong> Carved from genuine, unheated natural gemstone possessing high spiritual energy vibrations.</li><li><strong>Vastu &amp; Spiritual Energy:</strong> Neutralizes household vastu doshas and purifies the surrounding electromagnetic aura.</li><li><strong>Puja &amp; Consecration:</strong> Ideal for home temple, daily abhishek, meditation altar, and spiritual gifting.</li></ul><h3>Packaging &amp; Worldwide Safe Delivery</h3><p>Each product is carefully packaged in shockproof multi-layered protective casing to guarantee 100% safe, damage-free doorstep delivery worldwide.</p>",
-    "additionalInfo": "<ul><li><strong>Color :</strong> Iridescent Milky Opal</li><li><strong>Weight :</strong> 350 Grams</li><li><strong>Dimension :</strong> 3.5 x 2.2 x 2.5 Inches</li><li><strong>Material :</strong> 100% Certified Pure Natural Opal Gemstone</li><li><strong>Country of Origin :</strong> Handcrafted in Jaipur, India (Est. 1989)</li><li><strong>Certification :</strong> 100% Certified Authentic Natural Gemstone</li></ul>",
-    "weight": "350 Grams",
-    "size": "3.5 x 2.2 x 2.5 Inches",
-    "metaTitle": "Natural Opal Stone Shivling (100% Certified) | Crystal Jaipuria",
-    "metaDescription": "Buy pure handcrafted Natural Opal Stone Shivling for home mandir. Promotes spiritual intuition, peace and Venus planetary blessings. Jaipur manufacturer pricing.",
-    "faqs": [
-      {
-        "question": "What are the spiritual benefits of Opal Stone Shivling?",
-        "answer": "Opal Stone Shivling represents peace, emotional balance, Venus planetary strength, and spiritual intuition. Doing Jalabhishek brings harmony and positive cosmic vibrations."
-      },
-      {
-        "question": "Is this Opal Shivling made of 100% natural gemstone?",
-        "answer": "Yes, all our gemstone Shivlings are handcrafted from 100% certified authentic natural gemstones by master artisans in Jaipur."
-      }
-    ],
-    "isStandardized": true
-  },
-  {
-    "_id": "legacy_green-jade-carved-shree-krishana-statue",
-    "name": "Green Jade Carved Shree Krishna Statue",
-    "slug": "green-jade-carved-shree-krishana-statue",
-    "price": 32000,
-    "discountPrice": 43200,
-    "stock": 5,
-    "categoryId": {
-      "_id": "6a55bb1f2e9a358fc926cbab",
-      "name": "God Statues",
-      "slug": "god-statues"
-    },
-    "images": [
-      "/Gemstone.webp"
-    ],
-    "detail": "Exquisitely sculpted Lord Krishna playing the divine flute in pure natural Green Jade stone. Brings joy, unconditional love, harmony, and prosperity into the home.",
-    "description": "<h2>About Green Jade Carved Shree Krishna Statue</h2><p>Exquisitely sculpted Lord Krishna playing the divine flute in pure natural Green Jade stone. Brings joy, unconditional love, harmony, and prosperity into the home.</p><h3>Key Spiritual &amp; Astrological Benefits</h3><ul><li><strong>Authentic Vedic Craftsmanship:</strong> Handcrafted by generational master artisans in Jaipur according to Shilpa Shastra guidelines.</li><li><strong>100% Certified Natural Gemstone:</strong> Carved from genuine, unheated natural gemstone possessing high spiritual energy vibrations.</li><li><strong>Vastu &amp; Spiritual Energy:</strong> Neutralizes household vastu doshas and purifies the surrounding electromagnetic aura.</li><li><strong>Puja &amp; Consecration:</strong> Ideal for home temple, daily abhishek, meditation altar, and spiritual gifting.</li></ul><h3>Packaging &amp; Worldwide Safe Delivery</h3><p>Each product is carefully packaged in shockproof multi-layered protective casing to guarantee 100% safe, damage-free doorstep delivery worldwide.</p>",
-    "additionalInfo": "<ul><li><strong>Color :</strong> Natural Deep Green</li><li><strong>Weight :</strong> 2.2 Kg</li><li><strong>Dimension :</strong> 9.0 x 4.5 x 3.0 Inches</li><li><strong>Material :</strong> 100% Certified Pure Green Jade Gemstone</li><li><strong>Country of Origin :</strong> Handcrafted in Jaipur, India (Est. 1989)</li><li><strong>Certification :</strong> 100% Certified Authentic Natural Gemstone</li></ul>",
-    "weight": "2.2 Kg",
-    "size": "9.0 x 4.5 x 3.0 Inches",
-    "metaTitle": "Green Jade Shree Krishna Statue Hand-Carved | Crystal Jaipuria",
-    "metaDescription": "Buy hand-carved Green Jade Krishna idol with flute from Jaipur manufacturer. 100% certified natural gemstone statue for living room, temple and gifting.",
-    "faqs": [
-      {
-        "question": "What are the benefits of keeping Green Jade Krishna?",
-        "answer": "Green Jade resonates with the Anahata (Heart) Chakra, attracting peace, harmonious relationships, health, and spiritual joy."
-      }
-    ],
-    "isStandardized": true
-  },
-  {
-    "_id": "legacy_natural-rose-quartz-pair-of-swan",
-    "name": "Natural Rose Quartz Pair of Swan",
-    "slug": "natural-rose-quartz-pair-of-swan",
-    "price": 1200,
-    "discountPrice": 1620,
-    "stock": 5,
-    "categoryId": {
-      "_id": "6a55bc492dcf49aacd71ef68",
-      "name": "Crystal Statues",
-      "slug": "crystal-statues"
-    },
-    "images": [
-      "/Gemstone.webp"
-    ],
-    "detail": "Handcrafted Rose Quartz Love Birds / Pair of Swans. A potent Feng Shui and Vastu cure for bedroom love, marital harmony, and affectionate relationships.",
-    "description": "<h2>About Natural Rose Quartz Pair of Swan</h2><p>Handcrafted Rose Quartz Love Birds / Pair of Swans. A potent Feng Shui and Vastu cure for bedroom love, marital harmony, and affectionate relationships.</p><h3>Key Spiritual &amp; Astrological Benefits</h3><ul><li><strong>Authentic Vedic Craftsmanship:</strong> Handcrafted by generational master artisans in Jaipur according to Shilpa Shastra guidelines.</li><li><strong>100% Certified Natural Gemstone:</strong> Carved from genuine, unheated natural gemstone possessing high spiritual energy vibrations.</li><li><strong>Vastu &amp; Spiritual Energy:</strong> Neutralizes household vastu doshas and purifies the surrounding electromagnetic aura.</li><li><strong>Puja &amp; Consecration:</strong> Ideal for home temple, daily abhishek, meditation altar, and spiritual gifting.</li></ul><h3>Packaging &amp; Worldwide Safe Delivery</h3><p>Each product is carefully packaged in shockproof multi-layered protective casing to guarantee 100% safe, damage-free doorstep delivery worldwide.</p>",
-    "additionalInfo": "<ul><li><strong>Color :</strong> Soft Translucent Pastel Pink</li><li><strong>Weight :</strong> 280 Grams</li><li><strong>Dimension :</strong> 3.0 x 2.0 x 2.5 Inches</li><li><strong>Material :</strong> 100% Certified Natural Rose Quartz</li><li><strong>Country of Origin :</strong> Handcrafted in Jaipur, India (Est. 1989)</li><li><strong>Certification :</strong> 100% Certified Authentic Natural Gemstone</li></ul>",
-    "weight": "280 Grams",
-    "size": "3.0 x 2.0 x 2.5 Inches",
-    "metaTitle": "Natural Rose Quartz Pair of Swan (Love Birds) | Crystal Jaipuria",
-    "metaDescription": "Buy pure Rose Quartz Pair of Swans for bedroom love and marital relationship harmony. 100% certified natural crystal carved in Jaipur.",
-    "faqs": [
-      {
-        "question": "Where to place Rose Quartz Swans in the home?",
-        "answer": "Place the pair of swans in the South-West corner of the master bedroom or living room to boost relationship love and understanding."
-      }
-    ],
-    "isStandardized": true
-  },
-  {
-    "_id": "legacy_pyrite-gemston-shivling",
-    "name": "Natural Pyrite Gemstone Shivling",
-    "slug": "pyrite-gemston-shivling",
-    "price": 750,
-    "discountPrice": 1013,
-    "stock": 5,
-    "categoryId": {
-      "_id": "6a55bc292dcf49aacd71ef65",
-      "name": "Shivling",
-      "slug": "shivling"
-    },
-    "images": [
-      "/Gemstone.webp"
-    ],
-    "detail": "High-vibration Golden Pyrite Shivling known as the stone of wealth, financial manifestation, willpower, and solar plexus activation.",
-    "description": "<h2>About Natural Pyrite Gemstone Shivling</h2><p>High-vibration Golden Pyrite Shivling known as the stone of wealth, financial manifestation, willpower, and solar plexus activation.</p><h3>Key Spiritual &amp; Astrological Benefits</h3><ul><li><strong>Authentic Vedic Craftsmanship:</strong> Handcrafted by generational master artisans in Jaipur according to Shilpa Shastra guidelines.</li><li><strong>100% Certified Natural Gemstone:</strong> Carved from genuine, unheated natural gemstone possessing high spiritual energy vibrations.</li><li><strong>Vastu &amp; Spiritual Energy:</strong> Neutralizes household vastu doshas and purifies the surrounding electromagnetic aura.</li><li><strong>Puja &amp; Consecration:</strong> Ideal for home temple, daily abhishek, meditation altar, and spiritual gifting.</li></ul><h3>Packaging &amp; Worldwide Safe Delivery</h3><p>Each product is carefully packaged in shockproof multi-layered protective casing to guarantee 100% safe, damage-free doorstep delivery worldwide.</p>",
-    "additionalInfo": "<ul><li><strong>Color :</strong> Metallic Golden Shimmer</li><li><strong>Weight :</strong> 200 Grams</li><li><strong>Dimension :</strong> 2.5 x 1.8 x 2.2 Inches</li><li><strong>Material :</strong> 100% Certified Natural Golden Pyrite (Fool's Gold)</li><li><strong>Country of Origin :</strong> Handcrafted in Jaipur, India (Est. 1989)</li><li><strong>Certification :</strong> 100% Certified Authentic Natural Gemstone</li></ul>",
-    "weight": "200 Grams",
-    "size": "2.5 x 1.8 x 2.2 Inches",
-    "metaTitle": "Natural Golden Pyrite Shivling for Wealth | Crystal Jaipuria",
-    "metaDescription": "Shop handcrafted Golden Pyrite Gemstone Shivling from Jaipur. Attracts money luck, abundance and strong auric protection. 100% certified stone.",
-    "faqs": [
-      {
-        "question": "What is the power of Pyrite Shivling?",
-        "answer": "Pyrite attracts financial abundance, shields against negative energy, and enhances vitality and confidence during prayer."
-      }
-    ],
-    "isStandardized": true
-  },
-  {
-    "_id": "legacy_clear-crystal-quartz-shivling-with-shiva-face",
-    "name": "Clear Crystal Quartz Shivling With Shiva Face",
-    "slug": "clear-crystal-quartz-shivling-with-shiva-face",
-    "price": 45000,
-    "discountPrice": 60750,
-    "stock": 5,
-    "categoryId": {
-      "_id": "6a55bc292dcf49aacd71ef65",
-      "name": "Shivling",
-      "slug": "shivling"
-    },
-    "images": [
-      "/Gemstone.webp"
-    ],
-    "detail": "Magnificent hand-carved Natural Sphatik (Clear Quartz) Shivling featuring a detailed 3D carving of Lord Shiva's face on the lingam. Radiates supreme purity and peace.",
-    "description": "<h2>About Clear Crystal Quartz Shivling With Shiva Face</h2><p>Magnificent hand-carved Natural Sphatik (Clear Quartz) Shivling featuring a detailed 3D carving of Lord Shiva's face on the lingam. Radiates supreme purity and peace.</p><h3>Key Spiritual &amp; Astrological Benefits</h3><ul><li><strong>Authentic Vedic Craftsmanship:</strong> Handcrafted by generational master artisans in Jaipur according to Shilpa Shastra guidelines.</li><li><strong>100% Certified Natural Gemstone:</strong> Carved from genuine, unheated natural gemstone possessing high spiritual energy vibrations.</li><li><strong>Vastu &amp; Spiritual Energy:</strong> Neutralizes household vastu doshas and purifies the surrounding electromagnetic aura.</li><li><strong>Puja &amp; Consecration:</strong> Ideal for home temple, daily abhishek, meditation altar, and spiritual gifting.</li></ul><h3>Packaging &amp; Worldwide Safe Delivery</h3><p>Each product is carefully packaged in shockproof multi-layered protective casing to guarantee 100% safe, damage-free doorstep delivery worldwide.</p>",
-    "additionalInfo": "<ul><li><strong>Color :</strong> Water-Clear Transparent Quartz</li><li><strong>Weight :</strong> 2.5 Kg</li><li><strong>Dimension :</strong> 8.0 x 5.0 x 6.0 Inches</li><li><strong>Material :</strong> 100% Certified Pure Natural Sphatik (Clear Quartz)</li><li><strong>Country of Origin :</strong> Handcrafted in Jaipur, India (Est. 1989)</li><li><strong>Certification :</strong> 100% Certified Authentic Natural Gemstone</li></ul>",
-    "weight": "2.5 Kg",
-    "size": "8.0 x 5.0 x 6.0 Inches",
-    "metaTitle": "Clear Crystal Quartz Shivling with Shiva Face | Crystal Jaipuria",
-    "metaDescription": "Buy museum-grade 100% pure Clear Sphatik Quartz Shivling with hand-carved Shiva face. Direct manufacturer pricing from Jaipur with authenticity certificate.",
-    "faqs": [
-      {
-        "question": "How is Sphatik Shivling with Shiva face energized?",
-        "answer": "Each crystal piece is washed in sacred Ganga water and energized with Maha Mrityunjaya mantras before safe dispatch."
-      }
-    ],
-    "isStandardized": true
-  },
-  {
-    "_id": "legacy_green-jade-carving-shiva-face-statue",
-    "name": "Green Jade Carving Shiva Face Statue",
-    "slug": "green-jade-carving-shiva-face-statue",
-    "price": 37500,
-    "discountPrice": 50625,
-    "stock": 5,
-    "categoryId": {
-      "_id": "6a55bb1f2e9a358fc926cbab",
-      "name": "God Statues",
-      "slug": "god-statues"
-    },
-    "images": [
-      "/Gemstone.webp"
-    ],
-    "detail": "Masterpiece Green Jade Lord Shiva face sculpture with serene meditative expression, third eye detailing, and crescent moon carved from natural single-block jade.",
-    "description": "<h2>About Green Jade Carving Shiva Face Statue</h2><p>Masterpiece Green Jade Lord Shiva face sculpture with serene meditative expression, third eye detailing, and crescent moon carved from natural single-block jade.</p><h3>Key Spiritual &amp; Astrological Benefits</h3><ul><li><strong>Authentic Vedic Craftsmanship:</strong> Handcrafted by generational master artisans in Jaipur according to Shilpa Shastra guidelines.</li><li><strong>100% Certified Natural Gemstone:</strong> Carved from genuine, unheated natural gemstone possessing high spiritual energy vibrations.</li><li><strong>Vastu &amp; Spiritual Energy:</strong> Neutralizes household vastu doshas and purifies the surrounding electromagnetic aura.</li><li><strong>Puja &amp; Consecration:</strong> Ideal for home temple, daily abhishek, meditation altar, and spiritual gifting.</li></ul><h3>Packaging &amp; Worldwide Safe Delivery</h3><p>Each product is carefully packaged in shockproof multi-layered protective casing to guarantee 100% safe, damage-free doorstep delivery worldwide.</p>",
-    "additionalInfo": "<ul><li><strong>Color :</strong> Lush Forest Green</li><li><strong>Weight :</strong> 3.0 Kg</li><li><strong>Dimension :</strong> 9.5 x 6.0 x 4.0 Inches</li><li><strong>Material :</strong> 100% Certified Natural Green Jade</li><li><strong>Country of Origin :</strong> Handcrafted in Jaipur, India (Est. 1989)</li><li><strong>Certification :</strong> 100% Certified Authentic Natural Gemstone</li></ul>",
-    "weight": "3.0 Kg",
-    "size": "9.5 x 6.0 x 4.0 Inches",
-    "metaTitle": "Green Jade Shiva Face Carving Statue (3 Kg) | Crystal Jaipuria",
-    "metaDescription": "Shop hand-carved Green Jade Shiva Face Idol from Jaipur manufacturer. Single solid gemstone carving for luxury temple, meditation hall and office decor.",
-    "faqs": [
-      {
-        "question": "Is this carved from a single piece of stone?",
-        "answer": "Yes, our Shiva face sculptures are carved out of a single monolithic piece of certified natural Green Jade."
-      }
-    ],
-    "isStandardized": true
-  },
-  {
-    "_id": "legacy_lapis-lazuli-carving-shiva-face-idol",
-    "name": "Natural Lapis Lazuli Shiva Face Carving Idol",
-    "slug": "lapis-lazuli-carving-shiva-face-idol",
-    "price": 18500,
-    "discountPrice": 24975,
-    "stock": 5,
-    "categoryId": {
-      "_id": "6a55bb1f2e9a358fc926cbab",
-      "name": "God Statues",
-      "slug": "god-statues"
-    },
-    "images": [
-      "/Gemstone.webp"
-    ],
-    "detail": "Exquisitely hand-carved Lord Shiva Face idol in authentic deep blue Lapis Lazuli stone with natural golden pyrite specks.",
-    "description": "<h2>About Natural Lapis Lazuli Shiva Face Carving Idol</h2><p>Exquisitely hand-carved Lord Shiva Face idol in authentic deep blue Lapis Lazuli stone with natural golden pyrite specks.</p><h3>Key Spiritual &amp; Astrological Benefits</h3><ul><li><strong>Authentic Vedic Craftsmanship:</strong> Handcrafted by generational master artisans in Jaipur according to Shilpa Shastra guidelines.</li><li><strong>100% Certified Natural Gemstone:</strong> Carved from genuine, unheated natural gemstone possessing high spiritual energy vibrations.</li><li><strong>Vastu &amp; Spiritual Energy:</strong> Neutralizes household vastu doshas and purifies the surrounding electromagnetic aura.</li><li><strong>Puja &amp; Consecration:</strong> Ideal for home temple, daily abhishek, meditation altar, and spiritual gifting.</li></ul><h3>Packaging &amp; Worldwide Safe Delivery</h3><p>Each product is carefully packaged in shockproof multi-layered protective casing to guarantee 100% safe, damage-free doorstep delivery worldwide.</p>",
-    "additionalInfo": "<ul><li><strong>Color :</strong> Deep Celestial Royal Blue with Golden Pyrite Flecks</li><li><strong>Weight :</strong> 1.2 Kg</li><li><strong>Dimension :</strong> 6.5 x 4.2 x 3.5 Inches</li><li><strong>Material :</strong> 100% Certified Natural Lapis Lazuli Gemstone</li><li><strong>Country of Origin :</strong> Handcrafted in Jaipur, India (Est. 1989)</li><li><strong>Certification :</strong> 100% Certified Authentic Natural Gemstone</li></ul>",
-    "weight": "1.2 Kg",
-    "size": "6.5 x 4.2 x 3.5 Inches",
-    "metaTitle": "Natural Lapis Lazuli Shiva Face Idol Carving | Crystal Jaipuria",
-    "metaDescription": "Buy hand-carved Natural Lapis Lazuli Shiva Face idol from Jaipur manufacturer. 100% pure royal blue stone for third-eye awakening and Vastu protection.",
-    "faqs": [
-      {
-        "question": "What is the significance of Lapis Lazuli Shiva Face?",
-        "answer": "Lapis Lazuli is a sacred stone associated with the Third Eye Chakra, wisdom, truth, and protection from negative energies."
-      }
-    ],
-    "isStandardized": true
-  },
-  {
-    "_id": "legacy_natural-lapis-lazuli-lord-krishan-statue",
-    "name": "Natural Lapis Lazuli Lord Krishna Statue",
-    "slug": "natural-lapis-lazuli-lord-krishan-statue",
-    "price": 22000,
-    "discountPrice": 29700,
-    "stock": 5,
-    "categoryId": {
-      "_id": "6a55bb1f2e9a358fc926cbab",
-      "name": "God Statues",
-      "slug": "god-statues"
-    },
-    "images": [
-      "/Gemstone.webp"
-    ],
-    "detail": "Handcrafted Shyam Sundar Lord Krishna idol carved in rare celestial blue Lapis Lazuli stone. Brings divine love, wisdom, and peaceful aura.",
-    "description": "<h2>About Natural Lapis Lazuli Lord Krishna Statue</h2><p>Handcrafted Shyam Sundar Lord Krishna idol carved in rare celestial blue Lapis Lazuli stone. Brings divine love, wisdom, and peaceful aura.</p><h3>Key Spiritual &amp; Astrological Benefits</h3><ul><li><strong>Authentic Vedic Craftsmanship:</strong> Handcrafted by generational master artisans in Jaipur according to Shilpa Shastra guidelines.</li><li><strong>100% Certified Natural Gemstone:</strong> Carved from genuine, unheated natural gemstone possessing high spiritual energy vibrations.</li><li><strong>Vastu &amp; Spiritual Energy:</strong> Neutralizes household vastu doshas and purifies the surrounding electromagnetic aura.</li><li><strong>Puja &amp; Consecration:</strong> Ideal for home temple, daily abhishek, meditation altar, and spiritual gifting.</li></ul><h3>Packaging &amp; Worldwide Safe Delivery</h3><p>Each product is carefully packaged in shockproof multi-layered protective casing to guarantee 100% safe, damage-free doorstep delivery worldwide.</p>",
-    "additionalInfo": "<ul><li><strong>Color :</strong> Deep Royal Blue with Golden Mineral Specks</li><li><strong>Weight :</strong> 1.5 Kg</li><li><strong>Dimension :</strong> 8.0 x 4.0 x 2.8 Inches</li><li><strong>Material :</strong> 100% Certified Natural Lapis Lazuli</li><li><strong>Country of Origin :</strong> Handcrafted in Jaipur, India (Est. 1989)</li><li><strong>Certification :</strong> 100% Certified Authentic Natural Gemstone</li></ul>",
-    "weight": "1.5 Kg",
-    "size": "8.0 x 4.0 x 2.8 Inches",
-    "metaTitle": "Natural Lapis Lazuli Krishna Statue Hand-Carved | Crystal Jaipuria",
-    "metaDescription": "Buy divine Lapis Lazuli Lord Krishna idol from Jaipur artisan workshop. 100% natural royal blue gemstone for home mandir and spiritual gifts.",
-    "faqs": [
-      {
-        "question": "Why is Krishna carved in Lapis Lazuli?",
-        "answer": "Lapis Lazuli's celestial blue color represents the cosmic infinite nature (Neel-Varna) of Lord Krishna."
-      }
-    ],
-    "isStandardized": true
-  },
-  {
     "_id": "legacy_shyana-murti-in-natural-columbian-green-jade",
     "name": "Shyana Murti in Natural Columbian Green Jade",
     "slug": "shyana-murti-in-natural-columbian-green-jade",
@@ -699,36 +301,6 @@ export const LEGACY_PRODUCTS = [
     "isStandardized": true
   },
   {
-    "_id": "legacy_crystal-clear-mahvaveer-ji-statue",
-    "name": "Crystal Clear Mahaveer Ji Statue",
-    "slug": "crystal-clear-mahvaveer-ji-statue",
-    "price": 25000,
-    "discountPrice": 33750,
-    "stock": 5,
-    "categoryId": {
-      "_id": "6a55bb1f2e9a358fc926cbab",
-      "name": "God Statues",
-      "slug": "god-statues"
-    },
-    "images": [
-      "/Gemstone.webp"
-    ],
-    "detail": "Magnificent 24th Tirthankar Bhagwan Mahaveer Ji statue hand-carved from pure natural clear crystal quartz. Radiates eternal peace, non-violence, and spiritual enlightenment.",
-    "description": "<h2>About Crystal Clear Mahaveer Ji Statue</h2><p>Magnificent 24th Tirthankar Bhagwan Mahaveer Ji statue hand-carved from pure natural clear crystal quartz. Radiates eternal peace, non-violence, and spiritual enlightenment.</p><h3>Key Spiritual &amp; Astrological Benefits</h3><ul><li><strong>Authentic Vedic Craftsmanship:</strong> Handcrafted by generational master artisans in Jaipur according to Shilpa Shastra guidelines.</li><li><strong>100% Certified Natural Gemstone:</strong> Carved from genuine, unheated natural gemstone possessing high spiritual energy vibrations.</li><li><strong>Vastu &amp; Spiritual Energy:</strong> Neutralizes household vastu doshas and purifies the surrounding electromagnetic aura.</li><li><strong>Puja &amp; Consecration:</strong> Ideal for home temple, daily abhishek, meditation altar, and spiritual gifting.</li></ul><h3>Packaging &amp; Worldwide Safe Delivery</h3><p>Each product is carefully packaged in shockproof multi-layered protective casing to guarantee 100% safe, damage-free doorstep delivery worldwide.</p>",
-    "additionalInfo": "<ul><li><strong>Color :</strong> 100% Transparent Crystal Clear Sphatik</li><li><strong>Weight :</strong> 1.5 Kg</li><li><strong>Dimension :</strong> 7.5 x 4.5 x 3.0 Inches</li><li><strong>Material :</strong> 100% Certified Pure Natural Quartz (Sphatik)</li><li><strong>Country of Origin :</strong> Handcrafted in Jaipur, India (Est. 1989)</li><li><strong>Certification :</strong> 100% Certified Authentic Natural Gemstone</li></ul>",
-    "weight": "1.5 Kg",
-    "size": "7.5 x 4.5 x 3.0 Inches",
-    "metaTitle": "Crystal Clear Mahaveer Ji Statue (Sphatik) | Crystal Jaipuria",
-    "metaDescription": "Buy 100% pure Sphatik Clear Quartz Bhagwan Mahaveer idol from Jaipur manufacturer. Certified natural crystal for Jain Ghar Derasar and meditation room.",
-    "faqs": [
-      {
-        "question": "What is the quality of the quartz crystal?",
-        "answer": "Carved from 100% natural, flawless gem-quality clear quartz mined responsibly and polished by master artisans."
-      }
-    ],
-    "isStandardized": true
-  },
-  {
     "_id": "legacy_amethyst-gemston-shiva-face",
     "name": "Natural Amethyst Gemstone Shiva Face Idol",
     "slug": "amethyst-gemston-shiva-face",
@@ -784,36 +356,6 @@ export const LEGACY_PRODUCTS = [
       {
         "question": "How to clean Rose Quartz idols?",
         "answer": "Wipe gently with soft cotton cloth and lukewarm water. Avoid harsh chemical cleaners to preserve its natural crystal sheen."
-      }
-    ],
-    "isStandardized": true
-  },
-  {
-    "_id": "legacy_lapis-lazuli-carved-shiva-face",
-    "name": "Lapis Lazuli Carved Shiva Face",
-    "slug": "lapis-lazuli-carved-shiva-face",
-    "price": 15500,
-    "discountPrice": 20925,
-    "stock": 5,
-    "categoryId": {
-      "_id": "6a55bb1f2e9a358fc926cbab",
-      "name": "God Statues",
-      "slug": "god-statues"
-    },
-    "images": [
-      "/Gemstone.webp"
-    ],
-    "detail": "Serene Lord Shiva face sculpture carved from solid natural Lapis Lazuli stone. Protects against malefic planetary forces and elevates meditative consciousness.",
-    "description": "<h2>About Lapis Lazuli Carved Shiva Face</h2><p>Serene Lord Shiva face sculpture carved from solid natural Lapis Lazuli stone. Protects against malefic planetary forces and elevates meditative consciousness.</p><h3>Key Spiritual &amp; Astrological Benefits</h3><ul><li><strong>Authentic Vedic Craftsmanship:</strong> Handcrafted by generational master artisans in Jaipur according to Shilpa Shastra guidelines.</li><li><strong>100% Certified Natural Gemstone:</strong> Carved from genuine, unheated natural gemstone possessing high spiritual energy vibrations.</li><li><strong>Vastu &amp; Spiritual Energy:</strong> Neutralizes household vastu doshas and purifies the surrounding electromagnetic aura.</li><li><strong>Puja &amp; Consecration:</strong> Ideal for home temple, daily abhishek, meditation altar, and spiritual gifting.</li></ul><h3>Packaging &amp; Worldwide Safe Delivery</h3><p>Each product is carefully packaged in shockproof multi-layered protective casing to guarantee 100% safe, damage-free doorstep delivery worldwide.</p>",
-    "additionalInfo": "<ul><li><strong>Color :</strong> Midnight Blue with Golden Pyrite Inclusions</li><li><strong>Weight :</strong> 1.0 Kg</li><li><strong>Dimension :</strong> 5.8 x 3.8 x 3.0 Inches</li><li><strong>Material :</strong> 100% Certified Pure Lapis Lazuli Gemstone</li><li><strong>Country of Origin :</strong> Handcrafted in Jaipur, India (Est. 1989)</li><li><strong>Certification :</strong> 100% Certified Authentic Natural Gemstone</li></ul>",
-    "weight": "1.0 Kg",
-    "size": "5.8 x 3.8 x 3.0 Inches",
-    "metaTitle": "Lapis Lazuli Shiva Face Sculpture | Crystal Jaipuria",
-    "metaDescription": "Buy authentic Lapis Lazuli Shiva Face carving from Jaipur manufacturer (since 1989). 100% certified natural gemstone for sacred home altar.",
-    "faqs": [
-      {
-        "question": "What are the golden specks in Lapis Lazuli?",
-        "answer": "The golden specks are natural Pyrite inclusions, which prove the 100% authenticity of genuine Afghan/Indian Lapis Lazuli."
       }
     ],
     "isStandardized": true
@@ -1029,66 +571,6 @@ export const LEGACY_PRODUCTS = [
     "isStandardized": true
   },
   {
-    "_id": "legacy_clear-crystal-shivling",
-    "name": "Natural Clear Crystal Sphatik Shivling",
-    "slug": "clear-crystal-shivling",
-    "price": 2000,
-    "discountPrice": 2700,
-    "stock": 5,
-    "categoryId": {
-      "_id": "6a55bc292dcf49aacd71ef65",
-      "name": "Shivling",
-      "slug": "shivling"
-    },
-    "images": [
-      "/Gemstone.webp"
-    ],
-    "detail": "Vedic Pure Natural Sphatik (Clear Quartz) Shivling. Cold to touch, 100% certified natural gemstone that purifies vastu doshas and brings peace to home temples.",
-    "description": "<h2>About Natural Clear Crystal Sphatik Shivling</h2><p>Vedic Pure Natural Sphatik (Clear Quartz) Shivling. Cold to touch, 100% certified natural gemstone that purifies vastu doshas and brings peace to home temples.</p><h3>Key Spiritual &amp; Astrological Benefits</h3><ul><li><strong>Authentic Vedic Craftsmanship:</strong> Handcrafted by generational master artisans in Jaipur according to Shilpa Shastra guidelines.</li><li><strong>100% Certified Natural Gemstone:</strong> Carved from genuine, unheated natural gemstone possessing high spiritual energy vibrations.</li><li><strong>Vastu &amp; Spiritual Energy:</strong> Neutralizes household vastu doshas and purifies the surrounding electromagnetic aura.</li><li><strong>Puja &amp; Consecration:</strong> Ideal for home temple, daily abhishek, meditation altar, and spiritual gifting.</li></ul><h3>Packaging &amp; Worldwide Safe Delivery</h3><p>Each product is carefully packaged in shockproof multi-layered protective casing to guarantee 100% safe, damage-free doorstep delivery worldwide.</p>",
-    "additionalInfo": "<ul><li><strong>Color :</strong> Transparent Water-Clear Quartz</li><li><strong>Weight :</strong> 300 Grams - 1.0 Kg</li><li><strong>Dimension :</strong> 3.0 x 2.0 x 2.5 Inches</li><li><strong>Material :</strong> 100% Certified Pure Natural Sphatik (Clear Quartz)</li><li><strong>Country of Origin :</strong> Handcrafted in Jaipur, India (Est. 1989)</li><li><strong>Certification :</strong> 100% Certified Authentic Natural Gemstone</li></ul>",
-    "weight": "300 Grams - 1.0 Kg",
-    "size": "3.0 x 2.0 x 2.5 Inches",
-    "metaTitle": "Natural Sphatik Clear Crystal Shivling | Crystal Jaipuria",
-    "metaDescription": "Buy 100% certified authentic Natural Sphatik Shivling from Jaipur manufacturer (est. 1989). Factory direct prices, worldwide express shipping.",
-    "faqs": [
-      {
-        "question": "How to verify real Sphatik Shivling?",
-        "answer": "Original Sphatik remains naturally cold to touch even in warm rooms and displays natural crystal inclusions without air bubbles."
-      }
-    ],
-    "isStandardized": true
-  },
-  {
-    "_id": "legacy_gemston-amethyst-diya",
-    "name": "Natural Amethyst Gemstone Diya",
-    "slug": "gemston-amethyst-diya",
-    "price": 650,
-    "discountPrice": 878,
-    "stock": 5,
-    "categoryId": {
-      "_id": "6a55bc522dcf49aacd71ef69",
-      "name": "Diya",
-      "slug": "diya"
-    },
-    "images": [
-      "/Gemstone.webp"
-    ],
-    "detail": "Sacred hand-carved Natural Amethyst Puja Diya / Oil Lamp. Lighting camphor or ghee in an Amethyst diya purifies household air and raises spiritual frequencies.",
-    "description": "<h2>About Natural Amethyst Gemstone Diya</h2><p>Sacred hand-carved Natural Amethyst Puja Diya / Oil Lamp. Lighting camphor or ghee in an Amethyst diya purifies household air and raises spiritual frequencies.</p><h3>Key Spiritual &amp; Astrological Benefits</h3><ul><li><strong>Authentic Vedic Craftsmanship:</strong> Handcrafted by generational master artisans in Jaipur according to Shilpa Shastra guidelines.</li><li><strong>100% Certified Natural Gemstone:</strong> Carved from genuine, unheated natural gemstone possessing high spiritual energy vibrations.</li><li><strong>Vastu &amp; Spiritual Energy:</strong> Neutralizes household vastu doshas and purifies the surrounding electromagnetic aura.</li><li><strong>Puja &amp; Consecration:</strong> Ideal for home temple, daily abhishek, meditation altar, and spiritual gifting.</li></ul><h3>Packaging &amp; Worldwide Safe Delivery</h3><p>Each product is carefully packaged in shockproof multi-layered protective casing to guarantee 100% safe, damage-free doorstep delivery worldwide.</p>",
-    "additionalInfo": "<ul><li><strong>Color :</strong> Translucent Deep Purple</li><li><strong>Weight :</strong> 150 Grams</li><li><strong>Dimension :</strong> 2.5 x 2.5 x 1.2 Inches</li><li><strong>Material :</strong> 100% Certified Natural Amethyst Gemstone</li><li><strong>Country of Origin :</strong> Handcrafted in Jaipur, India (Est. 1989)</li><li><strong>Certification :</strong> 100% Certified Authentic Natural Gemstone</li></ul>",
-    "weight": "150 Grams",
-    "size": "2.5 x 2.5 x 1.2 Inches",
-    "metaTitle": "Natural Amethyst Gemstone Puja Diya | Crystal Jaipuria",
-    "metaDescription": "Buy hand-carved Amethyst Gemstone Diya for mandir daily aarti. 100% natural purple crystal from Jaipur manufacturer.",
-    "faqs": [
-      {
-        "question": "Can we use this Diya for daily oil/ghee lighting?",
-        "answer": "Yes, it is carved from durable natural gemstone suitable for ghee wicks, oil, and camphor aarti."
-      }
-    ],
-    "isStandardized": true
-  },
-  {
     "_id": "legacy_red-jasper-gemston-shivling",
     "name": "Natural Red Jasper Gemstone Shivling",
     "slug": "red-jasper-gemston-shivling",
@@ -1114,36 +596,6 @@ export const LEGACY_PRODUCTS = [
       {
         "question": "What are the benefits of Red Jasper Shivling?",
         "answer": "Red Jasper is the stone of vitality, stamina, and Mangal Dosha pacification, strengthening life force energy."
-      }
-    ],
-    "isStandardized": true
-  },
-  {
-    "_id": "legacy_black-agate-gemstone-carving-of-ganesh",
-    "name": "Black Agate Gemstone Carving of Ganesh",
-    "slug": "black-agate-gemstone-carving-of-ganesh",
-    "price": 12000,
-    "discountPrice": 16200,
-    "stock": 5,
-    "categoryId": {
-      "_id": "6a55bb1f2e9a358fc926cbab",
-      "name": "God Statues",
-      "slug": "god-statues"
-    },
-    "images": [
-      "/Gemstone.webp"
-    ],
-    "detail": "Protective Lord Ganesha idol sculpted in genuine Black Agate (Kala Hakik). Removes obstacles, wards off evil eye (Buri Nazar), and stabilizes financial wealth.",
-    "description": "<h2>About Black Agate Gemstone Carving of Ganesh</h2><p>Protective Lord Ganesha idol sculpted in genuine Black Agate (Kala Hakik). Removes obstacles, wards off evil eye (Buri Nazar), and stabilizes financial wealth.</p><h3>Key Spiritual &amp; Astrological Benefits</h3><ul><li><strong>Authentic Vedic Craftsmanship:</strong> Handcrafted by generational master artisans in Jaipur according to Shilpa Shastra guidelines.</li><li><strong>100% Certified Natural Gemstone:</strong> Carved from genuine, unheated natural gemstone possessing high spiritual energy vibrations.</li><li><strong>Vastu &amp; Spiritual Energy:</strong> Neutralizes household vastu doshas and purifies the surrounding electromagnetic aura.</li><li><strong>Puja &amp; Consecration:</strong> Ideal for home temple, daily abhishek, meditation altar, and spiritual gifting.</li></ul><h3>Packaging &amp; Worldwide Safe Delivery</h3><p>Each product is carefully packaged in shockproof multi-layered protective casing to guarantee 100% safe, damage-free doorstep delivery worldwide.</p>",
-    "additionalInfo": "<ul><li><strong>Color :</strong> Glossy Pitch Black Agate</li><li><strong>Weight :</strong> 1.2 Kg</li><li><strong>Dimension :</strong> 6.0 x 4.0 x 2.8 Inches</li><li><strong>Material :</strong> 100% Certified Natural Black Agate (Kala Hakik)</li><li><strong>Country of Origin :</strong> Handcrafted in Jaipur, India (Est. 1989)</li><li><strong>Certification :</strong> 100% Certified Authentic Natural Gemstone</li></ul>",
-    "weight": "1.2 Kg",
-    "size": "6.0 x 4.0 x 2.8 Inches",
-    "metaTitle": "Black Agate Ganesha Statue (Kala Hakik) | Crystal Jaipuria",
-    "metaDescription": "Buy hand-carved Black Agate Ganesha idol from Jaipur manufacturer. 100% certified natural Hakik gemstone for powerful evil eye protection and success.",
-    "faqs": [
-      {
-        "question": "What is the power of Black Agate Ganesha?",
-        "answer": "Black Agate is renowned for absorbing negative energies, shielding the home from dark forces, and ensuring steady prosperity."
       }
     ],
     "isStandardized": true
@@ -1354,36 +806,6 @@ export const LEGACY_PRODUCTS = [
       {
         "question": "Does the blue flash show in normal room light?",
         "answer": "Yes, as light shifts across the surface, brilliant peacock blue and golden fire flashes illuminate the carving."
-      }
-    ],
-    "isStandardized": true
-  },
-  {
-    "_id": "legacy_lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva",
-    "name": "Lapis Lazuli Gemstone Shiva Linga with Face of Shiva",
-    "slug": "lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva",
-    "price": 19500,
-    "discountPrice": 26325,
-    "stock": 5,
-    "categoryId": {
-      "_id": "6a55bc292dcf49aacd71ef65",
-      "name": "Shivling",
-      "slug": "shivling"
-    },
-    "images": [
-      "/Gemstone.webp"
-    ],
-    "detail": "Master artisan carved Lapis Lazuli Mukhalingam (Shivalinga with Shiva Face). Connects with cosmic Third Eye energies and purifies surrounding aura.",
-    "description": "<h2>About Lapis Lazuli Gemstone Shiva Linga with Face of Shiva</h2><p>Master artisan carved Lapis Lazuli Mukhalingam (Shivalinga with Shiva Face). Connects with cosmic Third Eye energies and purifies surrounding aura.</p><h3>Key Spiritual &amp; Astrological Benefits</h3><ul><li><strong>Authentic Vedic Craftsmanship:</strong> Handcrafted by generational master artisans in Jaipur according to Shilpa Shastra guidelines.</li><li><strong>100% Certified Natural Gemstone:</strong> Carved from genuine, unheated natural gemstone possessing high spiritual energy vibrations.</li><li><strong>Vastu &amp; Spiritual Energy:</strong> Neutralizes household vastu doshas and purifies the surrounding electromagnetic aura.</li><li><strong>Puja &amp; Consecration:</strong> Ideal for home temple, daily abhishek, meditation altar, and spiritual gifting.</li></ul><h3>Packaging &amp; Worldwide Safe Delivery</h3><p>Each product is carefully packaged in shockproof multi-layered protective casing to guarantee 100% safe, damage-free doorstep delivery worldwide.</p>",
-    "additionalInfo": "<ul><li><strong>Color :</strong> Deep Celestial Blue with Golden Flecks</li><li><strong>Weight :</strong> 1.4 Kg</li><li><strong>Dimension :</strong> 6.5 x 4.0 x 4.5 Inches</li><li><strong>Material :</strong> 100% Certified Natural Lapis Lazuli Gemstone</li><li><strong>Country of Origin :</strong> Handcrafted in Jaipur, India (Est. 1989)</li><li><strong>Certification :</strong> 100% Certified Authentic Natural Gemstone</li></ul>",
-    "weight": "1.4 Kg",
-    "size": "6.5 x 4.0 x 4.5 Inches",
-    "metaTitle": "Lapis Lazuli Shiva Lingam with Shiva Face | Crystal Jaipuria",
-    "metaDescription": "Buy rare Lapis Lazuli Mukhalingam from Jaipur manufacturer. 100% certified natural royal blue stone for home temple, daily abhishek and Vastu protection.",
-    "faqs": [
-      {
-        "question": "What is a Mukhalingam?",
-        "answer": "A Mukhalingam is a sacred Shiva Lingam that features the carved face of Lord Shiva, allowing direct eye-to-eye devotion during puja."
       }
     ],
     "isStandardized": true
@@ -1809,36 +1231,6 @@ export const LEGACY_PRODUCTS = [
     "isStandardized": true
   },
   {
-    "_id": "legacy_green-jade-shiva-face-with-gold-panting",
-    "name": "Green Jade Shiva Face With Gold Painting",
-    "slug": "green-jade-shiva-face-with-gold-panting",
-    "price": 26000,
-    "discountPrice": 35100,
-    "stock": 5,
-    "categoryId": {
-      "_id": "6a55bb1f2e9a358fc926cbab",
-      "name": "God Statues",
-      "slug": "god-statues"
-    },
-    "images": [
-      "/Gemstone.webp"
-    ],
-    "detail": "Hand-carved Green Jade Lord Shiva Face statue detailed with pure 24K gold leaf painting on Tripundra, third eye, and crescent moon.",
-    "description": "<h2>About Green Jade Shiva Face With Gold Painting</h2><p>Hand-carved Green Jade Lord Shiva Face statue detailed with pure 24K gold leaf painting on Tripundra, third eye, and crescent moon.</p><h3>Key Spiritual &amp; Astrological Benefits</h3><ul><li><strong>Authentic Vedic Craftsmanship:</strong> Handcrafted by generational master artisans in Jaipur according to Shilpa Shastra guidelines.</li><li><strong>100% Certified Natural Gemstone:</strong> Carved from genuine, unheated natural gemstone possessing high spiritual energy vibrations.</li><li><strong>Vastu &amp; Spiritual Energy:</strong> Neutralizes household vastu doshas and purifies the surrounding electromagnetic aura.</li><li><strong>Puja &amp; Consecration:</strong> Ideal for home temple, daily abhishek, meditation altar, and spiritual gifting.</li></ul><h3>Packaging &amp; Worldwide Safe Delivery</h3><p>Each product is carefully packaged in shockproof multi-layered protective casing to guarantee 100% safe, damage-free doorstep delivery worldwide.</p>",
-    "additionalInfo": "<ul><li><strong>Color :</strong> Emerald Green with 24K Gold Highlights</li><li><strong>Weight :</strong> 1.7 Kg</li><li><strong>Dimension :</strong> 7.5 x 4.8 x 3.2 Inches</li><li><strong>Material :</strong> 100% Certified Natural Green Jade</li><li><strong>Country of Origin :</strong> Handcrafted in Jaipur, India (Est. 1989)</li><li><strong>Certification :</strong> 100% Certified Authentic Natural Gemstone</li></ul>",
-    "weight": "1.7 Kg",
-    "size": "7.5 x 4.8 x 3.2 Inches",
-    "metaTitle": "Green Jade Shiva Face with Gold Painting | Crystal Jaipuria",
-    "metaDescription": "Shop exquisite Green Jade Shiva Face with 24K gold painted accents from Jaipur manufacturer. 100% certified natural stone for luxury home altar.",
-    "faqs": [
-      {
-        "question": "Will the gold paint fade over time?",
-        "answer": "No, traditional gold leaf lacquer bonding ensures permanent brilliance."
-      }
-    ],
-    "isStandardized": true
-  },
-  {
     "_id": "legacy_natural-tiger-eye-stone-carved-ganesha-statue",
     "name": "Natural Tiger Eye Stone Carved Ganesha Statue",
     "slug": "natural-tiger-eye-stone-carved-ganesha-statue",
@@ -2109,36 +1501,6 @@ export const LEGACY_PRODUCTS = [
     "isStandardized": true
   },
   {
-    "_id": "legacy_gemston-green-avernturine-shiva-head",
-    "name": "Green Aventurine Shiva Head Gemstone Carving",
-    "slug": "gemston-green-avernturine-shiva-head",
-    "price": 13500,
-    "discountPrice": 18225,
-    "stock": 5,
-    "categoryId": {
-      "_id": "6a55bb1f2e9a358fc926cbab",
-      "name": "God Statues",
-      "slug": "god-statues"
-    },
-    "images": [
-      "/Gemstone.webp"
-    ],
-    "detail": "Lord Shiva Head sculpture hand-carved in glittering Green Aventurine gemstone. Inspires healing, spiritual peace, and emotional rejuvenation.",
-    "description": "<h2>About Green Aventurine Shiva Head Gemstone Carving</h2><p>Lord Shiva Head sculpture hand-carved in glittering Green Aventurine gemstone. Inspires healing, spiritual peace, and emotional rejuvenation.</p><h3>Key Spiritual &amp; Astrological Benefits</h3><ul><li><strong>Authentic Vedic Craftsmanship:</strong> Handcrafted by generational master artisans in Jaipur according to Shilpa Shastra guidelines.</li><li><strong>100% Certified Natural Gemstone:</strong> Carved from genuine, unheated natural gemstone possessing high spiritual energy vibrations.</li><li><strong>Vastu &amp; Spiritual Energy:</strong> Neutralizes household vastu doshas and purifies the surrounding electromagnetic aura.</li><li><strong>Puja &amp; Consecration:</strong> Ideal for home temple, daily abhishek, meditation altar, and spiritual gifting.</li></ul><h3>Packaging &amp; Worldwide Safe Delivery</h3><p>Each product is carefully packaged in shockproof multi-layered protective casing to guarantee 100% safe, damage-free doorstep delivery worldwide.</p>",
-    "additionalInfo": "<ul><li><strong>Color :</strong> Sparkling Jade Green</li><li><strong>Weight :</strong> 1.0 Kg</li><li><strong>Dimension :</strong> 5.8 x 4.0 x 2.8 Inches</li><li><strong>Material :</strong> 100% Certified Natural Green Aventurine</li><li><strong>Country of Origin :</strong> Handcrafted in Jaipur, India (Est. 1989)</li><li><strong>Certification :</strong> 100% Certified Authentic Natural Gemstone</li></ul>",
-    "weight": "1.0 Kg",
-    "size": "5.8 x 4.0 x 2.8 Inches",
-    "metaTitle": "Green Aventurine Shiva Head Carving | Crystal Jaipuria",
-    "metaDescription": "Buy hand-carved Green Aventurine Shiva Head from Jaipur manufacturer. 100% certified natural gemstone statue for home altar and meditation room.",
-    "faqs": [
-      {
-        "question": "Where should this be placed?",
-        "answer": "Place facing North or East on a raised wooden or marble chowki."
-      }
-    ],
-    "isStandardized": true
-  },
-  {
     "_id": "legacy_selenite-angel",
     "name": "Natural Selenite Carved Healing Angel",
     "slug": "selenite-angel",
@@ -2200,6 +1562,24 @@ export const LEGACY_PRODUCTS = [
   }
 ];
 
+export const SLUG_ALIASES = {
+  "clear-crystal-shivling": "natural-sphatik-shivling",
+  "lapis-lazuli-carved-shiva-face": "natural-lapis-lazuli-shiva-face-carving-idol",
+  "green-jade-shiva-face-with-gold-panting": "green-jade-shiva-statue-with-gold-panting",
+  "gemston-green-avernturine-shiva-head": "green-aventurine-carving-shiva-face-statue",
+  "opal-ston-shivling": "natural-opal-stone-shivling",
+  "natural-lapis-lazuli-lord-krishan-statue": "natural-lapis-lazuli-lord-krishna-statue",
+  "lapis-lazuli-carving-shiva-face-idol": "natural-lapis-lazuli-shiva-face-carving-idol",
+  "green-jade-carved-shree-krishana-statue": "green-jade-carved-shree-krishana-statue",
+  "crystal-clear-mahvaveer-ji-statue": "crystal-clear-mahvaveer-ji-statue"
+};
+
+export function resolveProductSlug(slug) {
+  if (!slug) return slug;
+  const clean = String(slug).trim().toLowerCase().replace(/^\/product\//, "").replace(/\/$/, "");
+  return SLUG_ALIASES[clean] || clean;
+}
+
 export const LEGACY_PRODUCT_MAP = new Map(
   LEGACY_PRODUCTS.map(p => [p.slug, p])
 );
@@ -2207,5 +1587,6 @@ export const LEGACY_PRODUCT_MAP = new Map(
 export function getLegacyProductBySlug(slug) {
   if (!slug) return null;
   const cleanSlug = String(slug).trim().toLowerCase().replace(/^\/product\//, "").replace(/\/$/, "");
-  return LEGACY_PRODUCT_MAP.get(cleanSlug) || null;
+  const resolved = resolveProductSlug(cleanSlug);
+  return LEGACY_PRODUCT_MAP.get(resolved) || null;
 }
