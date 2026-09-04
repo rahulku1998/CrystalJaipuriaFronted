@@ -4,6 +4,9 @@
  */
 
 const SUPER_TITLE_MAPPINGS = {
+  "natural-opal-stone-shivling": "Natural Opal Stone Shivling (Certified Upal Ratna) | Crystal Jaipuria",
+  "natural-lapis-lazuli-lord-krishna-statue": "Natural Lapis Lazuli Lord Krishna Statue | Authentic Gemstone Murti",
+  "natural-lapis-lazuli-shiva-face-carving-idol": "Natural Lapis Lazuli Shiva Face Carving Idol | Jaipur Gemstone Murti",
   "natural-sphatik-shivling": "Natural Sphatik Shivling (100% Certified Clear Quartz) | Jaipur Manufacturer",
   "clear-crystal-quartz-shivling-with-shiva-face": "Clear Quartz Shivling With Shiva Face (Handcrafted Sphatik Murti)",
   "green-jade-shiva-statue-with-gold-panting": "Green Jade Shiva Statue With 24K Gold Painting | Authentic Jaipur Carving",

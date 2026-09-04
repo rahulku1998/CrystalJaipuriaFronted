@@ -300,6 +300,7 @@ const EditProduct = () => {
     if (meta?.metaDescription) setMetaDescription(meta.metaDescription);
   }}
   onApplyName={(formattedName) => setForm((prev) => ({ ...prev, name: formattedName }))}
+  onApplyDetail={(detailText) => setForm((prev) => ({ ...prev, detail: detailText }))}
 />
 
 <div className="bg-white rounded-3xl shadow-xl p-8">

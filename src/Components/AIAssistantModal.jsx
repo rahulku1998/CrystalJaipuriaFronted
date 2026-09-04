@@ -26,7 +26,8 @@ const AIAssistantModal = ({
   onApplyDescription,
   onApplyFaqs,
   onApplyMeta,
-  onApplyName
+  onApplyName,
+  onApplyDetail
 }) => {
   const [activeTab, setActiveTab] = useState("generate");
   const [name, setName] = useState(productName || "");
@@ -111,6 +112,14 @@ const AIAssistantModal = ({
     }
   };
 
+  const handleApplyDetail = () => {
+    if (result?.citationHook && onApplyDetail) {
+      onApplyDetail(result.citationHook);
+      setAppliedSection("hook");
+      setTimeout(() => setAppliedSection(""), 2500);
+    }
+  };
+
   const handleApplyAll = () => {
     if (result?.fullDescription && onApplyDescription) {
       onApplyDescription(result.fullDescription);
@@ -126,6 +135,9 @@ const AIAssistantModal = ({
     }
     if (onApplyName && result?.cleanName) {
       onApplyName(result.cleanName);
+    }
+    if (onApplyDetail && result?.citationHook) {
+      onApplyDetail(result.citationHook);
     }
     setAppliedSection("all");
     setTimeout(() => {
@@ -395,21 +407,32 @@ const AIAssistantModal = ({
                       <span className="text-xs font-extrabold uppercase tracking-wider text-indigo-700 bg-indigo-100 px-3 py-0.5 rounded-full flex items-center gap-1">
                         <FaLightbulb /> Google AI Overview Citation Summary
                       </span>
-                      <button
-                        type="button"
-                        onClick={() => handleCopy(result.citationHook, "hook")}
-                        className="text-xs font-semibold text-gray-600 hover:text-indigo-600 flex items-center gap-1 cursor-pointer"
-                      >
-                        {copiedSection === "hook" ? (
-                          <span className="text-green-600 font-bold flex items-center gap-1">
-                            <FaCheck /> Copied!
-                          </span>
-                        ) : (
-                          <>
-                            <FaCopy /> Copy
-                          </>
+                      <div className="flex items-center gap-2">
+                        {onApplyDetail && (
+                          <button
+                            type="button"
+                            onClick={handleApplyDetail}
+                            className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-indigo-100 text-indigo-700 hover:bg-indigo-200 flex items-center gap-1 cursor-pointer transition"
+                          >
+                            {appliedSection === "hook" ? "✔ Applied to Details" : "Apply to Details"}
+                          </button>
                         )}
-                      </button>
+                        <button
+                          type="button"
+                          onClick={() => handleCopy(result.citationHook, "hook")}
+                          className="text-xs font-semibold text-gray-600 hover:text-indigo-600 flex items-center gap-1 cursor-pointer"
+                        >
+                          {copiedSection === "hook" ? (
+                            <span className="text-green-600 font-bold flex items-center gap-1">
+                              <FaCheck /> Copied!
+                            </span>
+                          ) : (
+                            <>
+                              <FaCopy /> Copy
+                            </>
+                          )}
+                        </button>
+                      </div>
                     </div>
                     <p className="text-sm font-medium text-gray-800 leading-relaxed italic bg-white/70 p-3 rounded-xl border border-indigo-100">
                       "{result.citationHook}"

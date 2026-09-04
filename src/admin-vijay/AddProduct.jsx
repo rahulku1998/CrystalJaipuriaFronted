@@ -98,6 +98,22 @@ useEffect(() => {
     if (prefill.metaTitle) setMetaTitle(prefill.metaTitle);
     if (prefill.metaDescription) setMetaDescription(prefill.metaDescription);
     if (prefill.faqs && Array.isArray(prefill.faqs)) setFaqs(prefill.faqs);
+
+    // Auto-load prefill image so user is not blocked from publishing
+    if (prefill.slug) {
+      const cleanSlug = prefill.slug.toLowerCase().trim();
+      const imgPath = `/images/${cleanSlug}.webp`;
+      fetch(imgPath)
+        .then((r) => (r.ok ? r.blob() : null))
+        .then((blob) => {
+          if (blob) {
+            const file = new File([blob], `${cleanSlug}.webp`, { type: blob.type || "image/webp" });
+            setImages([file]);
+            setPreview([imgPath]);
+          }
+        })
+        .catch(() => {});
+    }
   }
 }, [categories, prefill]);
 
@@ -391,6 +407,7 @@ const fetchCategories = async()=>{
             if (meta?.metaDescription) setMetaDescription(meta.metaDescription);
           }}
           onApplyName={(formattedName) => setForm((prev) => ({ ...prev, name: formattedName }))}
+          onApplyDetail={(detailText) => setForm((prev) => ({ ...prev, detail: detailText }))}
         />
 
         <div className="bg-white rounded-3xl shadow-xl p-8">

@@ -785,26 +785,37 @@ export const generateGeminiContent = async (productName, categoryName = "", user
     `FORMAT SPECIFICATIONS:\n` +
     `- citationHook: A clean, natural opening paragraph (NO formulas like (SiO2) in the first sentence). Plain, elegant English.\n` +
     `- fullDescription: High-authority HTML containing creative <h2> headings, detailed shastric paragraphs, <ul><li> bullet points, and an HTML <table> of certified gemological specifications.\n` +
+    `- metaTitle: High-CTR Google SEO title under 60 characters (e.g. "${productName} | Crystal Jaipuria").\n` +
+    `- metaDescription: Compelling meta description under 160 characters.\n` +
     `- faqs: Exactly 5 or 6 high-intent, buyer-centric FAQs addressing specific Vastu directions, daily abhishek, authenticity tests, and ritual maintenance.\n\n` +
     `OUTPUT: Valid JSON only matching this schema:\n` +
     `{\n` +
     `  "citationHook": "Clean opening sentence...",\n` +
     `  "fullDescription": "<p><strong>Clean opening...</strong></p><h2>...</h2>...",\n` +
+    `  "metaTitle": "Title here...",\n` +
+    `  "metaDescription": "Description here...",\n` +
     `  "faqs": [\n` +
     `    { "question": "...", "answer": "..." }\n` +
     `  ]\n` +
     `}`;
 
   try {
-    const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + apiKey;
-    const response = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        contents: [{ parts: [{ text: prompt }] }],
-        generationConfig: { responseMimeType: "application/json" }
-      })
-    });
+    const callGemini = async (modelName) => {
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
+      return fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }],
+          generationConfig: { responseMimeType: "application/json" }
+        })
+      });
+    };
+
+    let response = await callGemini("gemini-1.5-flash");
+    if (!response.ok) {
+      response = await callGemini("gemini-2.0-flash");
+    }
 
     if (!response.ok) {
       return verifiedBase;
@@ -830,19 +841,24 @@ export const generateGeminiContent = async (productName, categoryName = "", user
     // Stage 2 Verification Check on Gemini Output
     const generatedHook = parsed.citationHook || verifiedBase.citationHook;
     let generatedDesc = parsed.fullDescription || verifiedBase.fullDescription;
+    const generatedMetaTitle = parsed.metaTitle || verifiedBase.metaTitle;
+    const generatedMetaDesc = parsed.metaDescription || verifiedBase.metaDescription;
 
     // Verify stone name consistency in Gemini output:
-    // If Gemini accidentally hallucinated a wrong stone name, enforce the verified stone
     if (!generatedDesc.toLowerCase().includes(stoneKey.replace('-', ' ')) && !generatedDesc.toLowerCase().includes(stone.name.toLowerCase().slice(0, 8))) {
       generatedDesc = verifiedBase.fullDescription;
     }
 
     return {
+      cleanName: verifiedBase.cleanName,
+      metaTitle: generatedMetaTitle,
+      metaDescription: generatedMetaDesc,
       citationHook: generatedHook,
       fullDescription: generatedDesc,
       faqs: resultFaqs,
       gemstoneType: stone.name,
       archetype,
+      stats: verifiedBase.stats,
       isVerified: true,
       verificationStatus: "Verified 100% Accurate",
       verificationChecks: [
@@ -895,14 +911,21 @@ Include: 100% certified natural gemstone, master Jaipur hand-carving, core Vedic
 Return ONLY the raw plain text paragraph (no markdown formatting, no quotes).`;
 
   try {
-    const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + apiKey;
-    const response = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        contents: [{ parts: [{ text: prompt }] }],
-      })
-    });
+    const callShortGemini = async (modelName) => {
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
+      return fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }],
+        }),
+      });
+    };
+
+    let response = await callShortGemini("gemini-1.5-flash");
+    if (!response.ok) {
+      response = await callShortGemini("gemini-2.0-flash");
+    }
 
     if (!response.ok) return fallback;
     const json = await response.json();

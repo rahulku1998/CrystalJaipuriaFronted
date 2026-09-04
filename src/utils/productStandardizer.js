@@ -5,6 +5,24 @@
  */
 
 export const STANDARDIZED_SPECS = {
+  "natural-opal-stone-shivling": {
+    price: 3500,
+    weight: "200 Gram",
+    size: "3.0 Inch",
+    dimensions: "7.6 x 5.0 x 5.0 cm",
+  },
+  "natural-lapis-lazuli-lord-krishna-statue": {
+    price: 22000,
+    weight: "1.8 Kg",
+    size: "7.5 Inch",
+    dimensions: "19.0 x 8.5 x 6.0 cm",
+  },
+  "natural-lapis-lazuli-shiva-face-carving-idol": {
+    price: 18500,
+    weight: "1.5 Kg",
+    size: "6.5 Inch",
+    dimensions: "16.5 x 9.0 x 6.5 cm",
+  },
   "natural-sphatik-shivling": {
     price: 2000,
     weight: "60 Gram",
@@ -285,6 +303,32 @@ export const getStandardizedProduct = (product) => {
     dimensions,
   });
 
+  let cleanDescription = product.description;
+  if (slug === "natural-opal-stone-shivling" && cleanDescription) {
+    cleanDescription = cleanDescription
+      .replace(/Natural Sphatik \(100% Certified Clear Quartz\)/gi, "Certified Natural Opal Stone (Upal Gemstone)")
+      .replace(/Natural Sphatik/gi, "Natural Opal Stone")
+      .replace(/100% Certified Clear Quartz/gi, "100% Certified Natural Opal Stone")
+      .replace(/Clear Quartz/gi, "Opal Gemstone")
+      .replace(/Sphatik/gi, "Opal Stone");
+  }
+  if (cleanDescription) {
+    cleanDescription = cleanDescription
+      .replace(/Gold Panting/gi, "Gold Painting")
+      .replace(/Elephant Staute/gi, "Elephant Statue")
+      .replace(/Gemston /gi, "Gemstone ")
+      .replace(/Mahvaveer/gi, "Mahaveer");
+  }
+
+  let cleanDetail = product.detail;
+  if (cleanDetail) {
+    cleanDetail = cleanDetail
+      .replace(/Gold Panting/gi, "Gold Painting")
+      .replace(/Elephant Staute/gi, "Elephant Statue")
+      .replace(/Gemston /gi, "Gemstone ")
+      .replace(/Mahvaveer/gi, "Mahaveer");
+  }
+
   return {
     ...product,
     name: cleanName,
@@ -292,6 +336,8 @@ export const getStandardizedProduct = (product) => {
     weight: standardizedWeight,
     size: standardizedSize,
     dimensions,
+    detail: cleanDetail,
+    description: cleanDescription,
     additionalInfo: formattedAdditionalInfo,
   };
 };
