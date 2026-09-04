@@ -780,7 +780,6 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                   </form>
                 </>
               )}
-        )}
 
         {/* INSTANT BUY NOW / CHECKOUT MODAL (Google Merchant Center Requirement) */}
         <BuyNowModal

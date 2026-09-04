@@ -10,6 +10,7 @@
     "sitemap": "node scripts/generate-sitemap.js",
     "index": "node scripts/instant-indexing.js",
     "build": "vite build",
+    "verify": "node scripts/verify-health.cjs",
     "lint": "oxlint",
     "preview": "vite preview"
   },
