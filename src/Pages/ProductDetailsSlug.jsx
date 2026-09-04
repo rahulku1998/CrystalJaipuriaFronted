@@ -4,7 +4,7 @@ import API from "../api/axios";
 import { formatPrice } from "../utils/price";
 import { optimizeCloudinaryUrl } from "../utils/imageOptimizer";
 import { unpackProductMetadata } from "../utils/productMetadata";
-import { getStandardizedProduct } from "../utils/productStandardizer";
+import { getStandardizedProduct, getSacredShloka } from "../utils/productStandardizer";
 import { getLegacyProductBySlug, resolveProductSlug } from "../utils/legacyProducts";
 import {
   getProductMetaTitle,
@@ -297,6 +297,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
   productFaqs = productFaqs.filter((f) => f && (f.question || f.answer));
   const hasFaqs = productFaqs.length > 0;
   const isPendingProduct = Boolean(product._id?.startsWith?.('legacy_') || product.isPending);
+  const sacredShloka = getSacredShloka(product?.slug || product?.name);
 
   return (
     <>
@@ -489,29 +490,29 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                 </div>
               </div>
 
-              {/* 3 TRUST FEATURE CARDS (Aligned level with Thumbnails Row) */}
-              <div className="grid grid-cols-3 gap-2.5 sm:gap-3.5 mt-6">
-                <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-2 p-3 bg-stone-50 rounded-xl border border-stone-200">
-                  <span className="text-xl shrink-0">✨</span>
+              {/* 3 HIGH-TRUST VEDIC & LAB FEATURE CARDS */}
+              <div className="grid grid-cols-3 gap-2 sm:gap-3.5 mt-6">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-1.5 sm:gap-2 p-2.5 sm:p-3 bg-amber-50/70 rounded-xl border border-amber-200/70">
+                  <span className="text-lg sm:text-xl shrink-0">🕉️</span>
                   <div>
-                    <h3 className="font-bold text-gray-800 text-xs sm:text-sm">100% Authentic</h3>
-                    <p className="text-[11px] text-gray-500 hidden sm:block">Genuine & Certified</p>
+                    <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Pran Pratishtha</h3>
+                    <p className="text-[11px] text-amber-900 font-medium hidden sm:block">Gangajal Cleansed</p>
                   </div>
                 </div>
 
-                <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-2 p-3 bg-stone-50 rounded-xl border border-stone-200">
-                  <span className="text-xl shrink-0">🚚</span>
+                <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-1.5 sm:gap-2 p-2.5 sm:p-3 bg-stone-50 rounded-xl border border-stone-200">
+                  <span className="text-lg sm:text-xl shrink-0">🔬</span>
                   <div>
-                    <h3 className="font-bold text-gray-800 text-xs sm:text-sm">Fast Delivery</h3>
-                    <p className="text-[11px] text-gray-500 hidden sm:block">Safe & Doorstep</p>
+                    <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Lab Certified</h3>
+                    <p className="text-[11px] text-gray-500 hidden sm:block">100% Earth-Mined</p>
                   </div>
                 </div>
 
-                <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-2 p-3 bg-stone-50 rounded-xl border border-stone-200">
-                  <span className="text-xl shrink-0">🔒</span>
+                <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-1.5 sm:gap-2 p-2.5 sm:p-3 bg-stone-50 rounded-xl border border-stone-200">
+                  <span className="text-lg sm:text-xl shrink-0">🏛️</span>
                   <div>
-                    <h3 className="font-bold text-gray-800 text-xs sm:text-sm">Secure Trust</h3>
-                    <p className="text-[11px] text-gray-500 hidden sm:block">Trusted Since 1989</p>
+                    <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Jaipur Karigar</h3>
+                    <p className="text-[11px] text-gray-500 hidden sm:block">Direct Lapidary (1989)</p>
                   </div>
                 </div>
               </div>
@@ -662,6 +663,20 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                 <div className="p-5 sm:p-7 min-h-[150px]">
                   {activeTab === "description" && (
                     <div className="relative">
+                      {sacredShloka && (
+                        <div className="mb-4 p-3 sm:p-3.5 bg-gradient-to-r from-amber-50/90 via-stone-50 to-orange-50/70 border-l-3 border-amber-500 rounded-r-xl shadow-2xs">
+                          <div className="flex items-center justify-between text-[11px] font-bold text-amber-800 uppercase tracking-wider mb-1">
+                            <span>🕉️ {sacredShloka.source}</span>
+                            <span className="text-amber-700/80 font-semibold">Authentic Vedic Consecration</span>
+                          </div>
+                          <p className="font-bold text-gray-900 text-xs sm:text-sm tracking-wide font-serif">
+                            {sacredShloka.shloka}
+                          </p>
+                          <p className="text-[11px] sm:text-xs text-gray-600 italic mt-0.5">
+                            "{sacredShloka.meaning}"
+                          </p>
+                        </div>
+                      )}
                       <div
                         className="text-gray-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none max-h-[380px] sm:max-h-[460px] overflow-y-auto pr-3 overscroll-contain focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-gray-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-gray-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-gray-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-gray-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-1.5 [&_p]:my-3 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-indigo-600 [&_a]:underline"
                         dangerouslySetInnerHTML={{
@@ -717,12 +732,28 @@ Hello Crystal Jaipuria, I have a query regarding this product.
 
               <div className="p-5 sm:p-7 min-h-[150px]">
                 {activeTab === "description" && (
-                  <div
-                    className="text-gray-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none max-h-[380px] sm:max-h-[460px] overflow-y-auto pr-3 overscroll-contain focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-gray-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-gray-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-gray-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-gray-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-1.5 [&_p]:my-3 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-indigo-600 [&_a]:underline"
-                    dangerouslySetInnerHTML={{
-                      __html: product.description || "No description available.",
-                    }}
-                  />
+                  <div className="relative">
+                    {sacredShloka && (
+                      <div className="mb-4 p-3 sm:p-3.5 bg-gradient-to-r from-amber-50/90 via-stone-50 to-orange-50/70 border-l-3 border-amber-500 rounded-r-xl shadow-2xs">
+                        <div className="flex items-center justify-between text-[11px] font-bold text-amber-800 uppercase tracking-wider mb-1">
+                          <span>🕉️ {sacredShloka.source}</span>
+                          <span className="text-amber-700/80 font-semibold">Authentic Vedic Consecration</span>
+                        </div>
+                        <p className="font-bold text-gray-900 text-xs sm:text-sm tracking-wide font-serif">
+                          {sacredShloka.shloka}
+                        </p>
+                        <p className="text-[11px] sm:text-xs text-gray-600 italic mt-0.5">
+                          "{sacredShloka.meaning}"
+                        </p>
+                      </div>
+                    )}
+                    <div
+                      className="text-gray-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none max-h-[380px] sm:max-h-[460px] overflow-y-auto pr-3 overscroll-contain focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-gray-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-gray-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-gray-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-gray-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-1.5 [&_p]:my-3 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-indigo-600 [&_a]:underline"
+                      dangerouslySetInnerHTML={{
+                        __html: product.description || "No description available.",
+                      }}
+                    />
+                  </div>
                 )}
 
                 {activeTab === "additional" && (

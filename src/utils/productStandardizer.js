@@ -133,6 +133,50 @@ export const STANDARDIZED_SPECS = {
   },
 };
 
+export const SACRED_SHLOKAS = {
+  shivling: {
+    shloka: "स्फटिकस्य प्रपूजनात् सर्वकामसमृद्धिः स्यात्।",
+    source: "Shiva Purana",
+    meaning: "Sacred Shivling worship bestows peace, spiritual vitality, and fulfillment of noble desires.",
+  },
+  shiva: {
+    shloka: "ध्यायेन्नित्यं महेशं रजतगिरिनिभं चारुचंद्रावतंसम्।",
+    source: "Dhyana Shloka",
+    meaning: "Meditate upon Lord Shiva, serene like a silver peak, radiating supreme consciousness.",
+  },
+  "shree-yantra": {
+    shloka: "ॐ श्रीं ह्रीं क्लीं त्रिभुवन महालक्ष्म्यै अस्मांक दारिद्र्य नाशय नाशय प्रसीद प्रसीद।",
+    source: "Lakshmi Suktam",
+    meaning: "Invoking supreme Mahalakshmi to dispel lack and usher continuous abundance and grace.",
+  },
+  ganesha: {
+    shloka: "वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ। निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥",
+    source: "Ganapati Dhyanam",
+    meaning: "Salutations to Lord Ganesha, remover of obstacles and harbinger of success.",
+  },
+  krishna: {
+    shloka: "वसुदेवसुतं देवं कंसचाणूरमर्दनम्। देवकीपरमानन्दं कृष्णं वन्दे जगद्गुरुम्॥",
+    source: "Gita Dhyanam",
+    meaning: "Salutations to Lord Krishna, the supreme divine guide, radiating joy and wisdom.",
+  },
+  jain: {
+    shloka: "नमो अरिहंताणं नमो सिद्धाणं नमो आयरियाणं। नमो उवज्झायाणं नमो लोए सव्व साहूणं॥",
+    source: "Ṇamōkāra Mahamantra",
+    meaning: "Universal veneration to the enlightened conquerors, teachers, and seekers of Ahimsa.",
+  },
+};
+
+export const getSacredShloka = (nameOrSlug = "") => {
+  const text = (nameOrSlug || "").toLowerCase();
+  if (text.includes("shivling") || text.includes("lingam") || text.includes("shiva-linga")) return SACRED_SHLOKAS.shivling;
+  if (text.includes("shree yantra") || text.includes("shree-yantra") || text.includes("meru")) return SACRED_SHLOKAS["shree-yantra"];
+  if (text.includes("ganesh") || text.includes("ganpati")) return SACRED_SHLOKAS.ganesha;
+  if (text.includes("krishna") || text.includes("krishana") || text.includes("radha")) return SACRED_SHLOKAS.krishna;
+  if (text.includes("shiva") || text.includes("shiv")) return SACRED_SHLOKAS.shiva;
+  if (text.includes("mahvaveer") || text.includes("mahaveer") || text.includes("jain")) return SACRED_SHLOKAS.jain;
+  return null;
+};
+
 /**
  * Format and convert any Additional Information string or HTML into standard bullet points
  * with bold labels (e.g. <strong>Color :</strong> White, <strong>Weight :</strong> 500 Gram)
@@ -229,6 +273,20 @@ export const formatAdditionalInfo = (inputHtmlOrText, product = {}) => {
   if (!seenKeys.has("brand") && !seenKeys.has("brand & manufacturer")) {
     items.push({ key: "Brand & Manufacturer", val: "Crystal Jaipuria, Jaipur (est. 1989)" });
     seenKeys.add("brand");
+  }
+  if (!seenKeys.has("consecration & energization") && !seenKeys.has("pran pratishtha")) {
+    items.push({
+      key: "Consecration & Energization",
+      val: "Purified with sacred Gangajal and energized prior to shockproof dispatch."
+    });
+    seenKeys.add("consecration & energization");
+  }
+  if (!seenKeys.has("natural stone note") && !seenKeys.has("stone authenticity")) {
+    items.push({
+      key: "Natural Stone Note",
+      val: "100% Earth-mined gemstone with characteristic mineral fingerprints (0% synthetic glass/resin)."
+    });
+    seenKeys.add("natural stone note");
   }
 
   if (items.length === 0) {

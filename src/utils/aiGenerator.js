@@ -785,7 +785,7 @@ export const generateGeminiContent = async (productName, categoryName = "", user
     `4. The sacred subject is: "${productName}" (Archetype: ${archetype.toUpperCase()}). Discuss its exact classical iconography, mudras, and Sanskrit symbolism.\n\n` +
     `FORMAT SPECIFICATIONS:\n` +
     `- citationHook: A clean, natural opening paragraph (NO formulas like (SiO2) in the first sentence). Plain, elegant English.\n` +
-    `- fullDescription: High-authority HTML containing creative <h2> headings, detailed shastric paragraphs, <ul><li> bullet points, and an HTML <table> of certified gemological specifications.\n` +
+    `- fullDescription: High-authority, concise HTML (clean and crisp, under 250 words total). Must include: 1 concise Sanskrit Shloka quote with meaning, Gangajal Pran Pratishtha consecration note, natural mineral veining disclosure (certifying zero glass/resin), and an HTML <table> of certified gemological specifications.\n` +
     `- metaTitle: High-CTR Google SEO title under 60 characters (e.g. "${productName} | Crystal Jaipuria").\n` +
     `- metaDescription: Compelling meta description under 160 characters.\n` +
     `- faqs: Exactly 5 or 6 high-intent, buyer-centric FAQs addressing specific Vastu directions, daily abhishek, authenticity tests, and ritual maintenance.\n\n` +
@@ -960,7 +960,7 @@ Archetype: "${archetype.toUpperCase()}"
 
 Write an exquisite, captivating, conversion-focused product listing:
 1. citationHook: An emotionally magnetic 50-55 word luxury hook highlighting genuine Jaipur lapidary craft, Vastu aura, and spiritual elevation.
-2. fullDescription: High-converting HTML with creative <h2> subheadings (Sacred Heritage & Shastric Mudras, Vastu Energy Alignment, Master Artisan Craftsmanship), philosophical shastric insights, bullet points, and an HTML <table> of certified gemological specifications.
+2. fullDescription: Concise, high-converting HTML (crisp & elegant, under 250 words total). Must include: 1 concise Sanskrit Shloka quote with meaning, Gangajal Pran Pratishtha consecration note, natural mineral veining disclosure (certifying zero glass/resin), and an HTML <table> of certified gemological specifications.
 3. metaTitle: High-CTR Google SEO title under 60 characters.
 4. metaDescription: Compelling meta description under 160 characters.
 5. faqs: Exactly 5 or 6 buyer-focused questions answering care, rituals, authenticity, and placement.
