@@ -1,261 +1,35 @@
 import { Link } from "react-router-dom";
-import { formatPrice } from "../utils/price";
-import { optimizeCloudinaryUrl } from "../utils/imageOptimizer";
-
+import ProductCard from "./ProductCard";
 
 const CategorySection = ({ title, slug, products }) => {
-
-
-return (
-
-<section className="
-w-full
-overflow-hidden
-py-10
-sm:py-12
-">
-
-
-<div className="
-max-w-7xl
-mx-auto
-px-4
-sm:px-6
-lg:px-8
-">
-
-
-
-{/* HEADER */}
-
-<div className="
-flex
-justify-between
-items-center
-mb-6
-sm:mb-8
-gap-3
-">
-
-
-<h2 className="
-text-2xl
-sm:text-3xl
-font-bold
-text-gray-800
-truncate
-">
-
-{title}
-
-</h2>
-
-
-
-<Link
-
-to={`/${slug}`}
-
-className="
-text-indigo-600
-font-semibold
-text-sm
-sm:text-base
-whitespace-nowrap
-"
-
->
-
-View All →
-
-</Link>
-
-
-</div>
-
-
-
-
-
-
-
-{/* PRODUCTS */}
-
-
-<div className="
-grid
-
-grid-cols-2
-
-min-[400px]:grid-cols-2
-
-sm:grid-cols-3
-
-md:grid-cols-4
-
-lg:grid-cols-5
-
-gap-4
-
-sm:gap-6
-
-">
-
-
-
-{
-
-products?.map(product=>(
-
-
-<Link
-
-key={product._id}
-
-to={`/product/${product.slug}`}
-
-className="
-group
-w-full
-bg-white
-rounded-3xl
-overflow-hidden
-shadow-md
-hover:shadow-xl
-transition
-border
-border-gray-100
-"
-
->
-
-
-
-{/* IMAGE */}
-
-
-<div
-
-className="
-w-full
-h-60
-sm:h-56
-md:h-60
-bg-gray-50
-m-0
-sm:m-3
-sm:w-auto
-rounded-3xl
-flex
-items-center
-justify-center
-overflow-hidden
-"
-
->
-
-
-<img
-loading="lazy"
-decoding="async"
-src={optimizeCloudinaryUrl(
-  typeof product.images?.[0] === 'string' ? product.images[0] : (product.images?.[0]?.url || "/Gemstone.webp"),
-  450,
-  product.slug || product.name
-)}
-alt={`${product.name} - 100% Natural Certified Gemstone | Crystal Jaipuria`}
-
-className="
-w-full
-h-full
-object-contain
-p-4
-group-hover:scale-110
-transition
-duration-300
-"
-
-/>
-
-
-</div>
-
-
-
-
-
-
-
-{/* DETAILS */}
-
-
-<div className="
-px-3
-sm:px-4
-pb-4
-sm:pb-5
-text-center
-">
-
-
-<h3
-
-className="
-text-sm
-sm:text-base
-font-semibold
-text-gray-800
-leading-5
-line-clamp-2
-min-h-[40px]
-"
-
->
-
-{product.name}
-
-</h3>
-
-
-
-
-{product.price && (
-  <p className="mt-2 text-base sm:text-lg font-bold text-indigo-600">
-    {formatPrice(product.price)}
-  </p>
-)}  
-
-
-
-
-</div>
-
-
-
-</Link>
-
-
-))
-
-}
-
-
-
-</div>
-
-
-
-
-</div>
-
-
-</section>
-
-
-)
-
-
-}
-
+  if (!products || products.length === 0) return null;
+
+  return (
+    <section className="w-full overflow-hidden py-6 sm:py-10">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        {/* HEADER */}
+        <div className="flex justify-between items-center mb-4 sm:mb-6 gap-3">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-850 truncate">
+            {title}
+          </h2>
+          <Link
+            to={`/${slug}`}
+            className="text-amber-800 hover:text-amber-900 font-semibold text-xs sm:text-sm whitespace-nowrap transition flex items-center gap-1"
+          >
+            <span>View All</span>
+            <span>→</span>
+          </Link>
+        </div>
+
+        {/* PRODUCTS GRID - 2-2 on mobile */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4 lg:gap-6">
+          {products.slice(0, 10).map((product) => (
+            <ProductCard key={product._id || product.slug} product={product} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default CategorySection;

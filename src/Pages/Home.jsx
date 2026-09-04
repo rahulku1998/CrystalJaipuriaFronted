@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import API from "../api/axios";
 import CategorySection from "../Components/CategoryCard";
+import ProductCard from "../Components/ProductCard";
 import SEO from "../Components/SEO";
 import homeImg from "../assets/images/banner-divine.webp";
 import StatsSection from "../Components/StatsSection";
@@ -50,222 +51,32 @@ const Home = () => {
 
 
 
-{/* PRODUCTS SECTION */}
-
-
-<div className="
-container
-mx-auto
-
-px-4
-sm:px-6
-lg:px-8
-
-py-10
-sm:py-14
-lg:py-16
-">
-
-
-
-<div className="
-flex
-justify-between
-items-center
-mb-6
-sm:mb-8
-">
-
-
-<h2 className="
-text-2xl
-sm:text-3xl
-lg:text-4xl
-font-bold
-text-gray-800
-">
-
-Our Products
-
-</h2>
-
-
-</div>
-
-
-
-
-
-
-
-<div className="
-grid
-
-grid-cols-2
-
-sm:grid-cols-2
-
-md:grid-cols-3
-
-lg:grid-cols-4
-
-xl:grid-cols-5
-
-gap-3
-
-sm:gap-4
-
-">
-
-
-
-
-
-{
-
-products.slice(0,5).map((product)=>(
-
-
-
-<Link
-
-key={product._id}
-
-to={`/product/${product.slug}`}
-
-className="
-group
-bg-white
-rounded-3xl
-overflow-hidden
-shadow-md
-hover:shadow-xl
-transition-all
-duration-300
-cursor-pointer
-border
-border-gray-100
-"
-
->
-
-
-
-{/* IMAGE */}
-
-
-<div className="
-w-full
-aspect-square
-bg-[#FAF8F5]
-rounded-2xl
-overflow-hidden
-flex
-items-center
-justify-center
-p-2
-sm:p-3
-">
-
-
-<img
-
-loading="lazy"
-
-src={product.images?.[0]?.url}
-
-alt={product.name}
-
-className="
-w-full
-h-full
-object-contain
-
-p-2
-sm:p-5
-
-group-hover:scale-110
-
-transition-transform
-
-duration-300
-"
-
-/>
-
-
-</div>
-
-
-
-
-
-{/* DETAILS */}
-
-
-
-<div className="
-px-3
-sm:px-4
-pb-5
-text-center
-">
-
-
-<h3 className="
-text-base
-
-sm:text-lg
-
-font-semibold
-
-text-gray-800
-
-break-words
-
-line-clamp-2
-
-">
-
-{product.name}
-
-</h3>
-
-
-
-{product.price && (
-  <p className="mt-2 text-lg sm:text-xl font-bold text-indigo-600">
-    <span>Price: </span>
-    {formatPrice(product.price)}
-  </p>
-)}
-
-
-
-
-</div>
-
-
-
-
-</Link>
-
-
-
-))
-
-
-}
-
-
-
-
-
-</div>
-
-
-
-</div>
+      {/* PRODUCTS SECTION */}
+      <div className="container mx-auto px-3 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="flex justify-between items-center mb-4 sm:mb-6 gap-3">
+          <div>
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-850">
+              Our Products
+            </h2>
+            <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
+              Handcrafted, certified gemstone idols &amp; sacred Vedic decor
+            </p>
+          </div>
+          <Link
+            to="/shop"
+            className="text-amber-800 hover:text-amber-900 font-semibold text-xs sm:text-sm whitespace-nowrap transition flex items-center gap-1"
+          >
+            <span>View All</span>
+            <span>→</span>
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4 lg:gap-6">
+          {products.slice(0, 10).map((product) => (
+            <ProductCard key={product._id || product.slug} product={product} />
+          ))}
+        </div>
+      </div>
 
 
 
