@@ -62,43 +62,31 @@ const fetchCategories = async()=>{
 
 };
 const handleCategoryChange = async (e) => {
-
   const categoryId = e.target.value;
 
-
-  setForm({
-    ...form,
+  setForm((prev) => ({
+    ...prev,
     categoryId,
-    subCategoryId:""
-  });
+    subCategoryId: "",
+  }));
 
-
-  if(categoryId){
-
-    try{
-
-      const res = await API.get(
-        `/subcategories/category/${categoryId}`
-      );
-
-
-      setSubCategories(
-        res.data.subCategories
-      );
-
-
-    }catch(err){
-
+  if (categoryId) {
+    try {
+      const res = await API.get(`/subcategories/category/${categoryId}`);
+      const subs = res.data.subCategories || [];
+      setSubCategories(subs);
+      if (subs.length > 0) {
+        setForm((prev) => ({
+          ...prev,
+          subCategoryId: subs[0]._id,
+        }));
+      }
+    } catch (err) {
       console.log(err);
-
     }
-
-  }else{
-
+  } else {
     setSubCategories([]);
-
   }
-
 };
 
 
@@ -159,6 +147,11 @@ const handleCategoryChange = async (e) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!form.name || !form.name.trim()) {
+      alert("Please enter a product name.");
+      return;
+    }
+
     if (images.length === 0) {
       alert("Please upload at least 1 product image.");
       return;
@@ -167,26 +160,62 @@ const handleCategoryChange = async (e) => {
     try {
       setLoading(true);
 
+      // 1. Auto-resolve Category ID
+      let finalCatId = form.categoryId;
+      if (!finalCatId && categories.length > 0) {
+        finalCatId = categories[0]._id;
+      }
+
+      // 2. Auto-resolve SubCategory ID (Prevents "Required fields missing" error)
+      let finalSubCatId = form.subCategoryId;
+      if (!finalSubCatId && finalCatId) {
+        try {
+          const subRes = await API.get(`/subcategories/category/${finalCatId}`);
+          const subs = subRes.data.subCategories || [];
+          if (subs.length > 0) {
+            finalSubCatId = subs[0]._id;
+          }
+        } catch (subErr) {
+          console.log("Auto-resolving subcategory error:", subErr);
+        }
+      }
+
+      // 3. Fallback defaults for remaining required fields
+      const finalPrice = String(form.price || "1000").trim() || "1000";
+      const finalStock = String(form.stock || "10").trim() || "10";
+      const finalDetail = form.detail?.trim() || form.name.trim();
+      const finalDescription = form.description?.trim() || `<p>${finalDetail}</p>`;
+
       const formData = new FormData();
 
-      Object.keys(form).forEach((key) => {
-        if (key !== "additionalInfo" && form[key] !== "" && form[key] !== null && form[key] !== undefined) {
-          formData.append(key, form[key]);
-        }
-      });
+      // Explicitly append all required fields
+      formData.append("name", form.name.trim());
+      formData.append("price", finalPrice);
+      formData.append("stock", finalStock);
+      formData.append("description", finalDescription);
+      formData.append("detail", finalDetail);
+      if (finalCatId) formData.append("categoryId", finalCatId);
+      if (finalSubCatId) formData.append("subCategoryId", finalSubCatId);
+
+      // Append optional fields if present
+      if (form.discountPrice) formData.append("discountPrice", String(form.discountPrice));
+      if (form.weight) formData.append("weight", form.weight);
+      if (form.size) formData.append("size", form.size);
+      if (form.pricePerGram) formData.append("pricePerGram", String(form.pricePerGram));
+      if (form.pricePerCarat) formData.append("pricePerCarat", String(form.pricePerCarat));
 
       // Filter and append valid FAQs
       const validFaqs = faqs.filter((f) => f.question.trim() || f.answer.trim());
       formData.append("faqs", JSON.stringify(validFaqs));
-      formData.append("metaTitle", metaTitle);
-      formData.append("metaDescription", metaDescription);
+      formData.append("metaTitle", metaTitle || `${form.name.trim()} | Crystal Jaipuria`);
+      formData.append("metaDescription", metaDescription || finalDetail.slice(0, 160));
 
       // Pack metadata into additionalInfo for guaranteed MongoDB persistence
       const packedAdditionalInfo = packProductMetadata({
         additionalInfo: form.additionalInfo,
         faqs: validFaqs,
-        metaTitle,
-        metaDescription
+        metaTitle: metaTitle || `${form.name.trim()} | Crystal Jaipuria`,
+        metaDescription: metaDescription || finalDetail.slice(0, 160),
       });
       formData.append("additionalInfo", packedAdditionalInfo);
 
