@@ -35,20 +35,10 @@ const ProductCard = ({ product }) => {
       </div>
 
       {/* Content */}
-      <div className="p-2.5 sm:p-4 flex flex-col flex-grow justify-between">
-        <div>
-          <h2 className="text-xs sm:text-sm md:text-base font-bold text-gray-800 group-hover:text-amber-800 transition-colors line-clamp-2 leading-snug min-h-[2rem] sm:min-h-[2.5rem]">
-            {item.name}
-          </h2>
-
-          <p className="hidden sm:block text-gray-500 text-xs mt-1.5 line-clamp-1">
-            {String(item.detail || item.description || "")
-              .replace(/<[^>]*>?/gm, "")
-              .replace(/&nbsp;/g, " ")
-              .replace(/\s+/g, " ")
-              .trim()}
-          </p>
-        </div>
+      <div className="p-2.5 sm:p-3.5 flex flex-col flex-grow justify-between">
+        <h2 className="text-xs sm:text-sm md:text-base font-bold text-gray-800 group-hover:text-amber-800 transition-colors line-clamp-2 leading-snug min-h-[2rem] sm:min-h-[2.5rem]">
+          {item.name}
+        </h2>
 
         {/* Price & Weight Footer */}
         <div className="mt-2 sm:mt-3 pt-2 border-t border-gray-100 flex items-center justify-between gap-1 flex-wrap">
