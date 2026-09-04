@@ -490,33 +490,6 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                 </div>
               </div>
 
-              {/* 3 HIGH-TRUST VEDIC & LAB FEATURE CARDS */}
-              <div className="grid grid-cols-3 gap-2 sm:gap-3.5 mt-6">
-                <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-1.5 sm:gap-2 p-2.5 sm:p-3 bg-amber-50/70 rounded-xl border border-amber-200/70">
-                  <span className="text-lg sm:text-xl shrink-0">🕉️</span>
-                  <div>
-                    <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Pran Pratishtha</h3>
-                    <p className="text-[11px] text-amber-900 font-medium hidden sm:block">Gangajal Cleansed</p>
-                  </div>
-                </div>
-
-                <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-1.5 sm:gap-2 p-2.5 sm:p-3 bg-stone-50 rounded-xl border border-stone-200">
-                  <span className="text-lg sm:text-xl shrink-0">🔬</span>
-                  <div>
-                    <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Lab Certified</h3>
-                    <p className="text-[11px] text-gray-500 hidden sm:block">100% Earth-Mined</p>
-                  </div>
-                </div>
-
-                <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-1.5 sm:gap-2 p-2.5 sm:p-3 bg-stone-50 rounded-xl border border-stone-200">
-                  <span className="text-lg sm:text-xl shrink-0">🏛️</span>
-                  <div>
-                    <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Jaipur Karigar</h3>
-                    <p className="text-[11px] text-gray-500 hidden sm:block">Direct Lapidary (1989)</p>
-                  </div>
-                </div>
-              </div>
-
               {/* SHARE PRODUCT ROW */}
               <div className="mt-5 pt-4 border-t border-gray-100 flex items-center justify-between flex-wrap gap-3">
                 <span className="text-xs sm:text-sm font-bold text-gray-700">Share Product:</span>
