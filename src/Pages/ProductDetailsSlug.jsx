@@ -4,6 +4,7 @@ import API from "../api/axios";
 import { formatPrice } from "../utils/price";
 import { optimizeCloudinaryUrl } from "../utils/imageOptimizer";
 import { unpackProductMetadata } from "../utils/productMetadata";
+import { getStandardizedProduct } from "../utils/productStandardizer";
 import { getLegacyProductBySlug, resolveProductSlug } from "../utils/legacyProducts";
 import {
   getProductMetaTitle,
