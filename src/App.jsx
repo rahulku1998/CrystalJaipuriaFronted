@@ -40,6 +40,10 @@ import BlogDetails from './Pages/Blog/BlogDetails'
 import Shop from "./Pages/Shop";
 import ProductDetailsSlug from './Pages/ProductDetailsSlug';
 import SpamRemoved from './Pages/SpamRemoved';
+import ShippingPolicy from './Pages/Policies/ShippingPolicy';
+import RefundPolicy from './Pages/Policies/RefundPolicy';
+import PrivacyPolicy from './Pages/Policies/PrivacyPolicy';
+import TermsConditions from './Pages/Policies/TermsConditions';
 
 // Redirect helper for old /products/:slug URLs -> /product/:slug
 const ProductsRedirect = () => {
@@ -79,6 +83,14 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/shop" element={<Shop />} />
+
+        {/* CUSTOMER POLICIES (Google Merchant Center Compliance) */}
+        <Route path="/shipping-policy" element={<ShippingPolicy />} />
+        <Route path="/refund-policy" element={<RefundPolicy />} />
+        <Route path="/return-policy" element={<Navigate to="/refund-policy" replace />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-and-conditions" element={<TermsConditions />} />
+        <Route path="/terms" element={<Navigate to="/terms-and-conditions" replace />} />
 
         {/* SUBCATEGORY PRODUCTS */}
         <Route path="/subcategory/:id" element={<SubCategoryProducts />} />

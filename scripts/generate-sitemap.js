@@ -55,6 +55,10 @@ const generateSitemap = async () => {
     { url: `${BASE_URL}/blog`, changefreq: "weekly", priority: "0.8" },
     { url: `${BASE_URL}/about`, changefreq: "monthly", priority: "0.7" },
     { url: `${BASE_URL}/contact`, changefreq: "monthly", priority: "0.7" },
+    { url: `${BASE_URL}/shipping-policy`, changefreq: "monthly", priority: "0.6" },
+    { url: `${BASE_URL}/refund-policy`, changefreq: "monthly", priority: "0.6" },
+    { url: `${BASE_URL}/privacy-policy`, changefreq: "monthly", priority: "0.6" },
+    { url: `${BASE_URL}/terms-and-conditions`, changefreq: "monthly", priority: "0.6" },
   ];
 
   let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
@@ -207,10 +211,12 @@ const generateSitemap = async () => {
     gmcXml += `      <g:availability>${(prod.stock === 0 || prod.stock === "0") ? "out_of_stock" : "in_stock"}</g:availability>\n`;
     gmcXml += `      <g:price>${priceNum.toFixed(2)} INR</g:price>\n`;
     gmcXml += `      <g:brand>Crystal Jaipuria</g:brand>\n`;
+    gmcXml += `      <g:mpn>${slug}</g:mpn>\n`;
     gmcXml += `      <g:condition>new</g:condition>\n`;
     gmcXml += `      <g:google_product_category>Religious &amp; Ceremonial &gt; Religious Items</g:google_product_category>\n`;
     gmcXml += `      <g:product_type>Gemstones &gt; ${categoryName}</g:product_type>\n`;
     gmcXml += `      <g:identifier_exists>no</g:identifier_exists>\n`;
+    gmcXml += `      <g:transit_time_label>Standard 3-7 Days</g:transit_time_label>\n`;
     gmcXml += `      <g:shipping>\n`;
     gmcXml += `        <g:country>IN</g:country>\n`;
     gmcXml += `        <g:service>Standard Safe Delivery</g:service>\n`;

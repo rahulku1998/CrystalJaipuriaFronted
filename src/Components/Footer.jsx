@@ -298,8 +298,30 @@ const Footer = () => {
 
         </div>
 
+        {/* Customer Policies & Trust Bar (Mandatory for Google Merchant Center) */}
+        <div className="border-t border-slate-300 mt-10 pt-6 flex flex-wrap justify-center sm:justify-start items-center gap-x-6 gap-y-2 text-xs font-semibold text-slate-600">
+          <span className="text-slate-400 font-bold uppercase tracking-wider text-[11px]">
+            Store Policies:
+          </span>
+          <Link to="/shipping-policy" className="hover:text-indigo-600 transition hover:underline">
+            Shipping &amp; Delivery Policy
+          </Link>
+          <span className="text-slate-300">•</span>
+          <Link to="/refund-policy" className="hover:text-indigo-600 transition hover:underline">
+            Refund &amp; Return Policy (7 Days)
+          </Link>
+          <span className="text-slate-300">•</span>
+          <Link to="/privacy-policy" className="hover:text-indigo-600 transition hover:underline">
+            Privacy Policy
+          </Link>
+          <span className="text-slate-300">•</span>
+          <Link to="/terms-and-conditions" className="hover:text-indigo-600 transition hover:underline">
+            Terms &amp; Conditions
+          </Link>
+        </div>
+
         {/* Bottom Copyright Bar */}
-        <div className="border-t border-slate-300 mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm text-slate-500 gap-4">
+        <div className="border-t border-slate-200 mt-6 pt-5 flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm text-slate-500 gap-4">
           <p className="text-center sm:text-left">
             © {new Date().getFullYear()} <strong className="text-slate-800 font-bold">Crystal Jaipuria</strong>. All Rights Reserved. (Jaipur, India)
           </p>

@@ -28,13 +28,17 @@ import {
   FaLinkedin,
   FaLink,
   FaChevronDown,
+  FaPhoneAlt,
+  FaBolt,
 } from "react-icons/fa";
 import SEO from "../Components/SEO";
+import BuyNowModal from "../Components/BuyNowModal";
 
 const ProductDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
+  const [showBuyModal, setShowBuyModal] = useState(false);
   const [querySubmitted, setQuerySubmitted] = useState(false);
   const [showQueryForm, setShowQueryForm] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
@@ -297,37 +301,60 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                 </p>
               </div>
 
-              {/* ACTION BUTTONS (Aligned level with bottom of Big Image) */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mt-6">
-                <a
-                  href={whatsappLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => trackWhatsAppClick("product_details_enquire_button", product)}
-                  className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-5 py-3.5 rounded-xl text-base font-semibold shadow-md transition-all active:scale-95"
-                >
-                  <FaWhatsapp className="text-xl" />
-                  <span>Enquire Now</span>
-                </a>
+              {/* ACTION BUTTONS (Clean Neutral 2x2 Layout with Colorful Icons & Hover States) */}
+              <div className="space-y-2.5 sm:space-y-3 mt-6">
+                {/* ROW 1: PRIMARY ORDERING ACTIONS (2x2 Grid on Mobile & Desktop) */}
+                <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
+                  {/* BUTTON 1: BUY NOW (Google Merchant Center Requirement) */}
+                  <button
+                    type="button"
+                    onClick={() => setShowBuyModal(true)}
+                    className="group w-full flex items-center justify-center gap-1.5 sm:gap-2 bg-white hover:bg-emerald-600 text-gray-800 hover:text-white border-2 border-gray-300 hover:border-emerald-600 py-3 sm:py-3.5 px-2 sm:px-4 rounded-xl sm:rounded-2xl text-xs sm:text-base font-bold shadow-2xs hover:shadow-md transition-all duration-200 active:scale-95 cursor-pointer"
+                  >
+                    <FaBolt className="text-amber-500 group-hover:text-amber-200 text-base sm:text-lg transition-colors shrink-0" />
+                    <span>Buy Now</span>
+                  </button>
 
-                <a
-                  href="tel:+918955613237"
-                  onClick={() => trackContactClick("phone", "+918955613237")}
-                  className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-3.5 rounded-xl text-base font-semibold shadow-md transition-all active:scale-95"
-                >
-                  <span>📞 Call Now</span>
-                </a>
+                  {/* BUTTON 2: WHATSAPP ENQUIRY */}
+                  <a
+                    href={whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackWhatsAppClick("product_details_enquire_button", product)}
+                    className="group w-full flex items-center justify-center gap-1.5 sm:gap-2 bg-white hover:bg-emerald-600 text-gray-800 hover:text-white border border-gray-300 hover:border-emerald-600 py-3 sm:py-3.5 px-2 sm:px-4 rounded-xl sm:rounded-2xl text-xs sm:text-base font-bold shadow-2xs hover:shadow-md transition-all duration-200 active:scale-95"
+                  >
+                    <FaWhatsapp className="text-emerald-600 group-hover:text-white text-base sm:text-xl transition-colors shrink-0" />
+                    <span>WhatsApp Enquiry</span>
+                  </a>
+                </div>
 
-                <button
-                  type="button"
-                  onClick={() => {
-                    setShowQueryForm(true);
-                    trackQueryModalOpen(product);
-                  }}
-                  className="sm:col-span-2 flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-white px-5 py-3.5 rounded-xl text-base font-semibold shadow-md transition-all active:scale-95 cursor-pointer"
-                >
-                  <span>💬 Request a Query</span>
-                </button>
+                {/* ROW 2: DIRECT CONSULTATION & CUSTOMIZATION (2x2 Grid on Mobile & Desktop) */}
+                <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
+                  {/* BUTTON 3: CALL DIRECTLY */}
+                  <a
+                    href="tel:+918955613237"
+                    onClick={() => trackContactClick("phone", "+918955613237")}
+                    className="group w-full flex items-center justify-center gap-1.5 sm:gap-2 bg-white hover:bg-blue-600 text-gray-800 hover:text-white border border-gray-300 hover:border-blue-600 py-2.5 sm:py-3 px-2 sm:px-4 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-semibold shadow-2xs hover:shadow-md transition-all duration-200 active:scale-95"
+                  >
+                    <FaPhoneAlt className="text-blue-600 group-hover:text-white text-xs sm:text-sm transition-colors shrink-0" />
+                    <span className="hidden sm:inline">Call Us (+91 89556 13237)</span>
+                    <span className="sm:hidden">Call Us</span>
+                  </a>
+
+                  {/* BUTTON 4: CUSTOM SPECIFICATION & BULK */}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowQueryForm(true);
+                      trackQueryModalOpen(product);
+                    }}
+                    className="group w-full flex items-center justify-center gap-1.5 sm:gap-2 bg-white hover:bg-amber-500 text-gray-800 hover:text-white border border-gray-300 hover:border-amber-500 py-2.5 sm:py-3 px-2 sm:px-4 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-semibold shadow-2xs hover:shadow-md transition-all duration-200 active:scale-95 cursor-pointer"
+                  >
+                    <span className="text-amber-500 group-hover:scale-125 transition-transform text-sm sm:text-base shrink-0">✨</span>
+                    <span className="hidden sm:inline">Custom Size &amp; Bulk Specs</span>
+                    <span className="sm:hidden">Custom / Bulk</span>
+                  </button>
+                </div>
               </div>
 
               {/* 3 TRUST FEATURE CARDS (Aligned level with Thumbnails Row) */}
@@ -753,9 +780,14 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                   </form>
                 </>
               )}
-            </div>
-          </div>
         )}
+
+        {/* INSTANT BUY NOW / CHECKOUT MODAL (Google Merchant Center Requirement) */}
+        <BuyNowModal
+          isOpen={showBuyModal}
+          onClose={() => setShowBuyModal(false)}
+          product={product}
+        />
       </div>
     </>
   );
