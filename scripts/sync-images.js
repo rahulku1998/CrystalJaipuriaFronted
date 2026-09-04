@@ -24,49 +24,28 @@ export const syncImages = async () => {
       const slug = prod.slug || prod._id;
       const cleanSlug = slug.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
-      // 1. Main image
-      const mainUrl = typeof prod.images?.[0] === "string" ? prod.images[0] : prod.images?.[0]?.url;
-      if (mainUrl) {
-        const outName = `${cleanSlug}.webp`;
-        const targetPath = path.join(imagesDir, outName);
-        const prodSubPath = path.join(productsDir, outName);
+      // Sync all images for this product (main + secondary views)
+      if (Array.isArray(prod.images)) {
+        for (let i = 0; i < prod.images.length; i++) {
+          const imgUrl = typeof prod.images[i] === "string" ? prod.images[i] : prod.images[i]?.url;
+          if (!imgUrl) continue;
 
-        if (!fs.existsSync(targetPath)) {
-          try {
-            const imgRes = await fetch(mainUrl);
-            const buf = Buffer.from(await imgRes.arrayBuffer());
-            await sharp(buf)
-              .resize({ width: 1200, withoutEnlargement: true })
-              .webp({ quality: 85 })
-              .toFile(targetPath);
-            fs.copyFileSync(targetPath, prodSubPath);
-            console.log(`✓ Saved /images/${outName}`);
-          } catch (e) {
-            console.log(`Failed to process ${outName}:`, e.message);
-          }
-        }
-      }
+          const outName = i === 0 ? `${cleanSlug}.webp` : `${cleanSlug}-${i + 1}.webp`;
+          const targetPath = path.join(imagesDir, outName);
+          const prodSubPath = path.join(productsDir, outName);
 
-      // 2. Secondary image
-      if (prod.images && prod.images.length > 1) {
-        const secUrl = typeof prod.images[1] === "string" ? prod.images[1] : prod.images[1]?.url;
-        if (secUrl) {
-          const outNameSec = `${cleanSlug}-2.webp`;
-          const targetPathSec = path.join(imagesDir, outNameSec);
-          const prodSubPathSec = path.join(productsDir, outNameSec);
-
-          if (!fs.existsSync(targetPathSec)) {
+          if (!fs.existsSync(targetPath)) {
             try {
-              const imgRes = await fetch(secUrl);
+              const imgRes = await fetch(imgUrl);
               const buf = Buffer.from(await imgRes.arrayBuffer());
               await sharp(buf)
                 .resize({ width: 1200, withoutEnlargement: true })
                 .webp({ quality: 85 })
-                .toFile(targetPathSec);
-              fs.copyFileSync(targetPathSec, prodSubPathSec);
-              console.log(`✓ Saved /images/${outNameSec}`);
+                .toFile(targetPath);
+              fs.copyFileSync(targetPath, prodSubPath);
+              console.log(`✓ Saved /images/${outName}`);
             } catch (e) {
-              console.log(`Failed to process ${outNameSec}:`, e.message);
+              console.log(`Failed to process ${outName}:`, e.message);
             }
           }
         }

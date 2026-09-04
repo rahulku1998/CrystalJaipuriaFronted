@@ -56,6 +56,7 @@ const ProductDetails = () => {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState("");
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [copied, setCopied] = useState(false);
   const [relatedProducts, setRelatedProducts] = useState([]);
 
@@ -219,6 +220,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
         trackProductView(standardized);
         fetchRelatedProducts(standardized);
 
+        setSelectedImageIndex(0);
         if (standardized?.images?.length > 0) {
           const firstImg = typeof standardized.images[0] === 'string'
             ? standardized.images[0]
@@ -322,20 +324,32 @@ Hello Crystal Jaipuria, I have a query regarding this product.
           {/* LEFT: MAIN IMAGE & THUMBNAILS */}
           <div>
             <div className="w-full aspect-square sm:aspect-[4/3] lg:aspect-square max-h-[500px] bg-gray-50 rounded-2xl shadow-xs border border-gray-200 overflow-hidden flex items-center justify-center p-2">
-              <img
-                src={optimizeCloudinaryUrl(
-                  selectedImage || (typeof product.images?.[0] === 'string' ? product.images[0] : product.images?.[0]?.url) || "/Gemstone.webp",
-                  800,
-                  product.slug || product.name
-                )}
-                alt={`${product.name} - 100% Certified Natural Gemstone Idol by Crystal Jaipuria, Jaipur`}
-                width="600"
-                height="600"
-                fetchPriority="high"
-                loading="eager"
-                decoding="async"
-                className="max-h-full max-w-full object-contain rounded-xl"
-              />
+              {(() => {
+                const activeImg = (Array.isArray(product.images) && product.images[selectedImageIndex]) || product.images?.[0];
+                const activeRaw = typeof activeImg === 'string' ? activeImg : (activeImg?.url || "/Gemstone.webp");
+                const cleanSlug = (product.slug || product.name || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+                const activeClean = selectedImageIndex === 0 
+                  ? `/images/${cleanSlug}.webp` 
+                  : `/images/${cleanSlug}-${selectedImageIndex + 1}.webp`;
+
+                return (
+                  <img
+                    src={activeClean}
+                    onError={(e) => {
+                      if (e.target.src !== activeRaw) {
+                        e.target.src = activeRaw;
+                      }
+                    }}
+                    alt={`${product.name} - 100% Certified Natural Gemstone Idol by Crystal Jaipuria, Jaipur`}
+                    width="600"
+                    height="600"
+                    fetchPriority="high"
+                    loading="eager"
+                    decoding="async"
+                    className="max-h-full max-w-full object-contain rounded-xl"
+                  />
+                );
+              })()}
             </div>
 
             {/* Thumbnails Row */}
@@ -343,21 +357,31 @@ Hello Crystal Jaipuria, I have a query regarding this product.
               <div className="flex gap-3 mt-4 overflow-x-auto pb-2">
                 {product.images.map((img, idx) => {
                   const rawSrc = typeof img === 'string' ? img : (img?.url || '');
-                  const thumbSrc = optimizeCloudinaryUrl(rawSrc, 160, `${product.slug || product.name}-view-${idx + 1}`);
+                  const cleanSlug = (product.slug || product.name || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+                  const thumbClean = idx === 0 
+                    ? `/images/${cleanSlug}.webp` 
+                    : `/images/${cleanSlug}-${idx + 1}.webp`;
+
                   return (
                     <img
                       key={img.public_id || idx}
-                      src={thumbSrc}
+                      src={thumbClean}
+                      onError={(e) => {
+                        if (e.target.src !== rawSrc) {
+                          e.target.src = rawSrc;
+                        }
+                      }}
                       alt={`${product.name} - Handcrafted Gemstone Idol View ${idx + 1}`}
                       width="80"
                       height="80"
                       loading="lazy"
                       decoding="async"
                       onClick={() => {
+                        setSelectedImageIndex(idx);
                         setSelectedImage(rawSrc);
                       }}
                       className={`w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-xl border-2 cursor-pointer transition ${
-                        (selectedImage || (typeof product.images?.[0] === 'string' ? product.images[0] : product.images?.[0]?.url)) === rawSrc ? "border-indigo-600 ring-2 ring-indigo-200" : "border-gray-200 hover:border-gray-400"
+                        selectedImageIndex === idx ? "border-amber-700 ring-2 ring-amber-200" : "border-gray-200 hover:border-gray-400"
                       }`}
                     />
                   );
