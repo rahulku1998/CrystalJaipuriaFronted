@@ -96,8 +96,8 @@ const generateSitemap = async () => {
       let imageMain = typeof prod.images?.[0] === "string" ? prod.images[0] : (prod.images?.[0]?.url || `${BASE_URL}/Gemstone.webp`);
       if (imageMain.includes("cloudinary.com")) {
         imageMain = imageMain
-          .replace(/\/image\/upload\/(?:[^\/]+\/)?/, "/images/f_jpg,q_auto:good,w_1200,c_limit/")
-          .replace(/\.[a-zA-Z0-9]+(?:\?.*)?$/, "") + `/${cleanProductSlug}.jpg`;
+          .replace(/^https:\/\/res\.cloudinary\.com\/[^\/]+\/(?:image\/upload|images)\/(?:[^\/]+\/)?/, `${BASE_URL}/product-images/f_auto,q_auto:good,w_1200,c_limit/`)
+          .replace(/\.[a-zA-Z0-9]+(?:\?.*)?$/, "") + `/${cleanProductSlug}.webp`;
       }
       xml += `  <url>\n`;
       xml += `    <loc>${BASE_URL}/product/${slug}</loc>\n`;
@@ -209,7 +209,7 @@ const generateSitemap = async () => {
     let imageMain = typeof prod.images?.[0] === "string" ? prod.images[0] : (prod.images?.[0]?.url || `${BASE_URL}/Gemstone.webp`);
     if (imageMain.includes("cloudinary.com")) {
       imageMain = imageMain
-        .replace(/\/image\/upload\/(?:[^\/]+\/)?/, "/images/f_jpg,q_auto:good,w_1200,c_limit/")
+        .replace(/^https:\/\/res\.cloudinary\.com\/[^\/]+\/(?:image\/upload|images)\/(?:[^\/]+\/)?/, `${BASE_URL}/product-images/f_jpg,q_auto:good,w_1200,c_limit/`)
         .replace(/\.[a-zA-Z0-9]+(?:\?.*)?$/, "") + `/${cleanProductSlug}.jpg`;
     }
     const categoryName = prod.categoryId?.name ? prod.categoryId.name.replace(/&/g, "&amp;") : "Gemstones";
@@ -225,7 +225,7 @@ const generateSitemap = async () => {
       if (extraImg) {
         if (extraImg.includes("cloudinary.com")) {
           extraImg = extraImg
-            .replace(/\/image\/upload\/(?:[^\/]+\/)?/, "/images/f_jpg,q_auto:good,w_1200,c_limit/")
+            .replace(/^https:\/\/res\.cloudinary\.com\/[^\/]+\/(?:image\/upload|images)\/(?:[^\/]+\/)?/, `${BASE_URL}/product-images/f_jpg,q_auto:good,w_1200,c_limit/`)
             .replace(/\.[a-zA-Z0-9]+(?:\?.*)?$/, "") + `/${cleanProductSlug}-2.jpg`;
         }
         gmcXml += `      <g:additional_image_link>${extraImg}</g:additional_image_link>\n`;

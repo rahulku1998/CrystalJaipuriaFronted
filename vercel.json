@@ -56,9 +56,26 @@
           "value": "noindex, nofollow, noarchive"
         }
       ]
+    },
+    {
+      "source": "/product-images/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
     }
   ],
   "rewrites": [
+    {
+      "source": "/product-images/:path*",
+      "destination": "https://res.cloudinary.com/dd6akzezt/images/:path*"
+    },
     {
       "source": "/(.*)",
       "destination": "/index.html"

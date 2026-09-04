@@ -1,7 +1,8 @@
 /**
  * Cloudinary on-the-fly Image Optimization & SEO Asset Delivery Utility
- * 1. Automatically serves SEO-friendly URL ending with /<product-name-slug>.jpg for top Image SEO
- * 2. Adds f_auto (AVIF/WebP), q_auto:good (optimal compression), and responsive width scaling
+ * Serves images through our branded domain proxy:
+ * https://www.crystaljaipuria.com/product-images/.../<cleanSlug>.webp
+ * Guarantees that Google and visitors see only your brand domain (crystaljaipuria.com)!
  */
 export const optimizeCloudinaryUrl = (url, width = 800, seoSlug = "") => {
   if (!url || typeof url !== "string") return url || "/Gemstone.webp";
@@ -12,25 +13,20 @@ export const optimizeCloudinaryUrl = (url, width = 800, seoSlug = "") => {
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 
-  // If SEO slug is provided, deliver via Cloudinary's dynamic SEO root URL
+  // If SEO slug is provided, deliver through custom domain proxy with product name
   if (cleanSlug) {
-    let cleanUrl = url;
-    cleanUrl = cleanUrl.replace(
-      /\/image\/upload\/(?:[^\/]+\/)?/,
-      `/images/f_auto,q_auto:good,w_${width},c_limit/`
+    let cleanPath = url.replace(
+      /^https:\/\/res\.cloudinary\.com\/[^\/]+\/(?:image\/upload|images)\/(?:[^\/]+\/)?/,
+      `/product-images/f_auto,q_auto:good,w_${width},c_limit/`
     );
-    cleanUrl = cleanUrl.replace(/\.[a-zA-Z0-9]+(?:\?.*)?$/, "");
-    return `${cleanUrl}/${cleanSlug}.jpg`;
+    cleanPath = cleanPath.replace(/\.[a-zA-Z0-9]+(?:\?.*)?$/, "");
+    return `${cleanPath}/${cleanSlug}.webp`;
   }
 
-  // Fallback to standard Cloudinary image transformations
-  if (url.includes("/image/upload/")) {
-    if (url.includes("/f_auto") || url.includes("/q_auto")) return url;
-    return url.replace(
-      "/image/upload/",
-      `/image/upload/f_auto,q_auto:good,w_${width},c_limit/`
-    );
-  }
-
-  return url;
+  // Fallback to custom domain proxy path
+  let cleanPath = url.replace(
+    /^https:\/\/res\.cloudinary\.com\/[^\/]+\/(?:image\/upload|images)\/(?:[^\/]+\/)?/,
+    `/product-images/f_auto,q_auto:good,w_${width},c_limit/`
+  );
+  return cleanPath;
 };

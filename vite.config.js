@@ -5,6 +5,15 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  server: {
+    proxy: {
+      '/product-images': {
+        target: 'https://res.cloudinary.com/dd6akzezt/images',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/product-images/, ''),
+      },
+    },
+  },
   build: {
     cssCodeSplit: true,
     chunkSizeWarningLimit: 600,
