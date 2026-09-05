@@ -13,7 +13,8 @@ const AboutGemstoneSection = () => {
             <div className="relative w-full max-w-[480px] aspect-square rounded-2xl overflow-hidden border border-stone-200 bg-white p-2 shadow-lg group">
               <img
                 src="/Gemstone.webp"
-                loading="lazy"
+                loading="eager"
+                fetchPriority="high"
                 decoding="async"
                 alt="Handcrafted gemstone statues and crystal carvings manufacturer in Jaipur"
                 className="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-103"

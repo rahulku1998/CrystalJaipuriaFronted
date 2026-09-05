@@ -248,29 +248,25 @@ location.pathname===item.path
 
 
           <button
-
-          onClick={()=>setOpenMenu(true)}
-
-          className="
-          text-xl
-          text-gray-700
-          ">
-
+            onClick={() => setOpenMenu(true)}
+            aria-label="Open navigation menu"
+            className="
+            text-xl
+            text-gray-700
+            cursor-pointer
+            "
+          >
             <FaBars/>
-
           </button>
-
-
 
           <h3 className="
           mx-auto
           font-semibold
           text-indigo-600
           ">
-
             Explore Collection
-
           </h3>
+
           <button
             onClick={() => navigate("/shop")}
             className="text-xl text-gray-700 hover:text-indigo-600 transition cursor-pointer"
@@ -281,17 +277,7 @@ location.pathname===item.path
 
         </div>
 
-
-
-
-
-
-
-
-
         {/* SIDE DRAWER */}
-
-
 
         {
         openMenu &&
@@ -303,7 +289,6 @@ location.pathname===item.path
         z-50
         ">
 
-
           <div className="
           w-72
           h-full
@@ -312,19 +297,16 @@ location.pathname===item.path
           shadow-xl
           ">
 
-
-
             <button
-
-            onClick={()=>setOpenMenu(false)}
-
-            className="
-            text-xl
-            mb-5
-            ">
-
+              onClick={() => setOpenMenu(false)}
+              aria-label="Close navigation menu"
+              className="
+              text-xl
+              mb-5
+              cursor-pointer
+              "
+            >
               ✕
-
             </button>
 
 

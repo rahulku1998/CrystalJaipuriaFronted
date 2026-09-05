@@ -52,6 +52,7 @@ lg:min-h-[130px]
             href="https://www.facebook.com/profile.php?id=61565599797453"
             target="_blank"
             rel="noreferrer"
+            aria-label="Visit our Facebook profile"
             onClick={() => trackSocialClick("facebook")}
             className="
             w-8 h-8
@@ -74,6 +75,7 @@ lg:min-h-[130px]
             href="https://www.instagram.com/crystal_jaipuria/"
             target="_blank"
             rel="noreferrer"
+            aria-label="Visit our Instagram profile"
             onClick={() => trackSocialClick("instagram")}
             className="
             w-8 h-8
@@ -140,94 +142,72 @@ lg:min-h-[130px]
 
         {/* ================= Right Space ================= */}
         <button
-
-onClick={()=>navigate("/shop")}
-
-className="
-lg:hidden
-text-gray-600
-text-xl
-"
-
->
-
-<FaSearch/>
-
-</button>
+          onClick={() => navigate("/shop")}
+          aria-label="Search products"
+          className="
+          lg:hidden
+          text-gray-600
+          text-xl
+          cursor-pointer
+          "
+        >
+          <FaSearch />
+        </button>
 
        {/* ================= Right Search ================= */}
 
-<div
-className="
-hidden
-lg:flex
-items-center
-w-[250px]
-"
->
+        <div
+          className="
+          hidden
+          lg:flex
+          items-center
+          w-[250px]
+          "
+        >
+          <form
+            onSubmit={handleSearch}
+            className="
+            flex
+            items-center
+            w-full
+            relative
+            "
+          >
+            <input
+              type="text"
+              placeholder="Search products..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="
+              w-full
+              px-4
+              py-2.5
+              pr-10
+              rounded-full
+              border
+              border-gray-300
+              text-sm
+              outline-none
+              focus:ring-2
+              focus:ring-indigo-500
+              "
+            />
 
-
-<form
-onSubmit={handleSearch}
-className="
-flex
-items-center
-w-full
-relative
-"
->
-
-
-<input
-
-type="text"
-
-placeholder="Search products..."
-
-value={search}
-
-onChange={(e)=>setSearch(e.target.value)}
-
-className="
-w-full
-px-4
-py-2.5
-pr-10
-rounded-full
-border
-border-gray-300
-text-sm
-outline-none
-focus:ring-2
-focus:ring-indigo-500
-"
-
-/>
-
-
-<button
-
-type="submit"
-
-className="
-absolute
-right-4
-text-gray-500
-cursor-pointer
-hover:text-indigo-600
-"
-
->
-
-<FaSearch/>
-
-</button>
-
-
-</form>
-
-
-</div>
+            <button
+              type="submit"
+              aria-label="Submit search"
+              className="
+              absolute
+              right-4
+              text-gray-500
+              cursor-pointer
+              hover:text-indigo-600
+              "
+            >
+              <FaSearch />
+            </button>
+          </form>
+        </div>
 
 
       </div>
