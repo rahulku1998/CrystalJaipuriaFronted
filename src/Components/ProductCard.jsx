@@ -7,6 +7,22 @@ const ProductCard = ({ product }) => {
   const item = getStandardizedProduct(product);
   if (!item) return null;
 
+  const rawImage = typeof item.images?.[0] === 'string'
+    ? item.images[0]
+    : (item.images?.[0]?.url || "/Gemstone.webp");
+
+  // Fast on-the-fly Cloudinary optimization for instant crisp delivery
+  const optimizedRaw = (rawImage && rawImage.includes("res.cloudinary.com") && rawImage.includes("/image/upload/"))
+    ? (rawImage.includes("/f_auto") ? rawImage : rawImage.replace("/image/upload/", "/image/upload/f_auto,q_auto:good,w_500,c_limit/"))
+    : rawImage;
+
+  const cleanSlug = (item.slug || item.name || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+
+  const initialSrc = cleanSlug ? `/images/${cleanSlug}.webp` : optimizedRaw;
+
   return (
     <Link
       to={`/product/${item.slug || item._id}`}
@@ -19,11 +35,18 @@ const ProductCard = ({ product }) => {
           decoding="async"
           width="400"
           height="400"
-          src={optimizeCloudinaryUrl(
-            typeof item.images?.[0] === 'string' ? item.images[0] : (item.images?.[0]?.url || "/Gemstone.webp"),
-            500,
-            item.slug || item.name
-          )}
+          src={initialSrc}
+          onError={(e) => {
+            // If static /images/<slug>.webp doesn't exist on server yet (newly added product),
+            // immediately fallback to live Cloudinary image URL!
+            if (e.target.src !== optimizedRaw && optimizedRaw) {
+              e.target.src = optimizedRaw;
+            } else if (e.target.src !== rawImage && rawImage) {
+              e.target.src = rawImage;
+            } else if (!e.target.src.endsWith("/Gemstone.webp")) {
+              e.target.src = "/Gemstone.webp";
+            }
+          }}
           alt={`${item.name} - 100% Natural Certified Gemstone Handicraft | Crystal Jaipuria`}
           className="w-full h-full object-contain rounded-lg sm:rounded-xl group-hover:scale-105 transition-transform duration-500"
         />

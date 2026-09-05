@@ -79,7 +79,106 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- Dynamic Product Pages (21 Live Products) -->
+  <!-- Dynamic Product Pages (32 Live Products) -->
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/rose-quartz-carved-shree-krishna-ji-idol</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/rose-quartz-carved-shree-krishna-ji-idol.webp</image:loc>
+      <image:title>Rose Quartz Carved Shree Krishna Ji Idol | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/natural-amethyst-gemstone-shiva-face-idol</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-amethyst-gemstone-shiva-face-idol.webp</image:loc>
+      <image:title>Natural Amethyst Gemstone Shiva Face Idol | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/green-jade-mahalakshmi-ji-idol</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/green-jade-mahalakshmi-ji-idol.webp</image:loc>
+      <image:title>Green Jade Mahalakshmi Ji Idol | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/green-aventurine-parshvanath-ji-statue</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/green-aventurine-parshvanath-ji-statue.webp</image:loc>
+      <image:title>Green Aventurine Parshvanath Ji Statue | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/green-jade-goddess-maa-saraswati-carving</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/green-jade-goddess-maa-saraswati-carving.webp</image:loc>
+      <image:title>Green Jade Goddess Maa Saraswati Carving | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/smokey-quartz-crystal-shiva-face-idol</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/smokey-quartz-crystal-shiva-face-idol.webp</image:loc>
+      <image:title>Smokey Quartz Crystal Shiva Face Idol | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/green-jade-radha-krishna-statue-carving</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/green-jade-radha-krishna-statue-carving.webp</image:loc>
+      <image:title>Green Jade Radha Krishna Statue Carving | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/natural-labradorite-gemstone-shivling</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-labradorite-gemstone-shivling.webp</image:loc>
+      <image:title>Natural Labradorite Gemstone Shivling | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/rose-quartz-shiva-statue-with-gold-painting</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/rose-quartz-shiva-statue-with-gold-painting.webp</image:loc>
+      <image:title>Rose Quartz Shiva Statue with Gold Painting | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/natural-howlite-gemstone-shivling</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-howlite-gemstone-shivling.webp</image:loc>
+      <image:title>Natural Howlite Gemstone Shivling | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/natural-tiger-eye-gemstone-shivling</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-tiger-eye-gemstone-shivling.webp</image:loc>
+      <image:title>Natural Tiger Eye Gemstone Shivling | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://www.crystaljaipuria.com/product/natural-lapis-lazuli-lord-krishna-statue</loc>
     <image:image>
