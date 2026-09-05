@@ -204,10 +204,18 @@ const generateSitemap = async () => {
     const imageMain = `${BASE_URL}/images/${cleanProductSlug}.webp`;
     const categoryName = prod.categoryId?.name ? prod.categoryId.name.replace(/&/g, "&amp;") : "Gemstones";
 
+    const isPanchmukhi = (prod.slug === "green-jade-panchmukhi-shivling");
+    const feedTitle = isPanchmukhi
+      ? "Natural Green Jade Stone Panchmukhi Shivling (500g, 4.5&quot;) - 100% Certified"
+      : cleanName;
+    const feedDesc = isPanchmukhi
+      ? "100% Certified Natural Green Jade Stone Panchmukhi Shivling (500g, 4.5 Inches) handcrafted by Jaipur master artisans. Sacred Pashupatinath Mahadev Swaroop with 5 divine faces (Sadyojata, Vamadeva, Aghora, Tatpurusha, Ishana) for home pooja and Jalabhishek at factory direct price."
+      : cleanDesc;
+
     gmcXml += `    <item>\n`;
     gmcXml += `      <g:id>${prod._id}</g:id>\n`;
-    gmcXml += `      <g:title>${cleanName}</g:title>\n`;
-    gmcXml += `      <g:description>${cleanDesc}</g:description>\n`;
+    gmcXml += `      <g:title>${feedTitle}</g:title>\n`;
+    gmcXml += `      <g:description>${feedDesc}</g:description>\n`;
     gmcXml += `      <g:link>${prodUrl}</g:link>\n`;
     gmcXml += `      <g:image_link>${imageMain}</g:image_link>\n`;
     if (prod.images && prod.images.length > 1) {
@@ -222,6 +230,12 @@ const generateSitemap = async () => {
     gmcXml += `      <g:google_product_category>Religious &amp; Ceremonial &gt; Religious Items</g:google_product_category>\n`;
     gmcXml += `      <g:product_type>Gemstones &gt; ${categoryName}</g:product_type>\n`;
     gmcXml += `      <g:identifier_exists>no</g:identifier_exists>\n`;
+    if (isPanchmukhi) {
+      gmcXml += `      <g:color>Green</g:color>\n`;
+      gmcXml += `      <g:material>Natural Green Jade</g:material>\n`;
+      gmcXml += `      <g:size>4.5 Inch</g:size>\n`;
+      gmcXml += `      <g:shipping_weight>500 g</g:shipping_weight>\n`;
+    }
     gmcXml += `      <g:transit_time_label>Standard 3-7 Days</g:transit_time_label>\n`;
     gmcXml += `      <g:shipping>\n`;
     gmcXml += `        <g:country>IN</g:country>\n`;

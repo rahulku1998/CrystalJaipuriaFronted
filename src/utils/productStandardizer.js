@@ -73,8 +73,8 @@ export const STANDARDIZED_SPECS = {
   },
   "green-jade-panchmukhi-shivling": {
     price: 5000,
-    weight: "500 Gram",
-    size: "4.5 Inch",
+    weight: "500 Grams (apx.)",
+    size: "4.5 Inches",
     dimensions: "11.4 x 8.0 x 8.0 cm",
   },
   "natural-ruby-shivling": {
@@ -314,7 +314,8 @@ export const STANDARDIZED_NAMES = {
   "crystal-sphtik-shree-yantra-on-kamal-flower": "Crystal Sphatik Shree Yantra On Lotus Flower",
   "green-jade-elephant-staute": "Green Jade Elephant Statue",
   "green-jade-shiva-statue-with-gold-panting": "Green Jade Shiva Statue With Gold Painting",
-  "green-jade-carved-shree-krishana-statue": "Green Jade Carved Shree Krishna Statue"
+  "green-jade-carved-shree-krishana-statue": "Green Jade Carved Shree Krishna Statue",
+  "green-jade-panchmukhi-shivling": "Natural Green Jade Stone Panchmukhi Shivling (500g, 4.5\")"
 };
 
 /**
@@ -370,6 +371,39 @@ export const getStandardizedProduct = (product) => {
       .replace(/Clear Quartz/gi, "Opal Gemstone")
       .replace(/Sphatik/gi, "Opal Stone");
   }
+
+  if (slug === "green-jade-panchmukhi-shivling") {
+    cleanDescription = `
+<p class="mb-4">Experience the divine presence of Lord Shiva with the <strong>Natural Green Jade Stone Panchmukhi Shivling</strong> (500g, 4.5 Inches) hand-carved by master artisans at Crystal Jaipuria, Jaipur. This sacred idol represents the revered <strong>Pashupatinath Mahadev Swaroop</strong> featuring five distinct faces (Panchmukh) symbolizing the five cosmic elements (Panchamahabhuta) and eternal aspects of Lord Shiva.</p>
+
+<h3 class="text-lg font-bold text-slate-900 mt-6 mb-3">Significance of the 5 Sacred Divine Faces (Panchamukha)</h3>
+<ul class="list-disc pl-5 space-y-2 mb-6">
+  <li><strong>Sadyojata (West Face) :</strong> Represents Earth (Prithvi Tattva) and the divine power of Creation (Srishti). Bestows new beginnings, physical strength, and grounding energy.</li>
+  <li><strong>Vamadeva (North Face) :</strong> Represents Water (Jala Tattva) and Preservation (Sthiti). Radiates maternal compassion, emotional healing, and prosperity.</li>
+  <li><strong>Aghora (South Face) :</strong> Represents Fire (Agni Tattva) and Rejuvenation (Samhara). Dispels negativity, fear, evil eye, and planetary afflictions.</li>
+  <li><strong>Tatpurusha (East Face) :</strong> Represents Air (Vayu Tattva) and Spiritual Wisdom (Tirobhava). Enhances mental clarity, meditation, and inner peace.</li>
+  <li><strong>Ishana (Zenith / Upward Face) :</strong> Represents Ether/Space (Akasha Tattva) and Supreme Liberation (Anugraha / Moksha). Radiates ultimate cosmic consciousness.</li>
+</ul>
+
+<h3 class="text-lg font-bold text-slate-900 mt-6 mb-3">Product Specifications &amp; Dimension Details</h3>
+<div class="overflow-x-auto my-4">
+  <table class="w-full text-sm border border-slate-200 rounded-lg">
+    <tbody>
+      <tr class="border-b border-slate-100 bg-slate-50"><td class="p-2.5 font-bold text-slate-900">Gemstone Material</td><td class="p-2.5 text-slate-700">100% Certified Natural Green Jade (Earth-Mined)</td></tr>
+      <tr class="border-b border-slate-100"><td class="p-2.5 font-bold text-slate-900">Height</td><td class="p-2.5 text-slate-700">4.5 Inches (approx. 11.4 cm)</td></tr>
+      <tr class="border-b border-slate-100 bg-slate-50"><td class="p-2.5 font-bold text-slate-900">Base Width</td><td class="p-2.5 text-slate-700">3.1 Inches (approx. 8.0 cm)</td></tr>
+      <tr class="border-b border-slate-100"><td class="p-2.5 font-bold text-slate-900">Weight</td><td class="p-2.5 text-slate-700">500 Grams (approx.) &bull; Custom orders up to 2.5 kg available</td></tr>
+      <tr class="border-b border-slate-100 bg-slate-50"><td class="p-2.5 font-bold text-slate-900">Spiritual Swaroop</td><td class="p-2.5 text-slate-700">Pashupatinath Mahadev 5-Faced Shiva Lingam</td></tr>
+      <tr class="border-b border-slate-100"><td class="p-2.5 font-bold text-slate-900">Color &amp; Finish</td><td class="p-2.5 text-slate-700">Natural Deep Forest Green &bull; Smooth Mirror Polish</td></tr>
+      <tr class="bg-slate-50"><td class="p-2.5 font-bold text-slate-900">Origin &amp; Certification</td><td class="p-2.5 text-slate-700">Jaipur Heritage Workshop &bull; Lab Certificate Included</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h3 class="text-lg font-bold text-slate-900 mt-6 mb-3">Vastu Placement &amp; Jalabhishek Pooja Vidhi</h3>
+<p class="mb-4">Place this Green Jade Panchmukhi Shivling in your home temple, pooja room, or meditation altar with the Yoni base facing North or East. Natural Green Jade is an authentic non-porous stone, making it completely safe for daily sacred Jalabhishek, raw milk snan, honey, and sacred chandan offerings while chanting <em>"Om Namah Shivaya"</em>.</p>
+`.trim();
+  }
   if (cleanDescription) {
     cleanDescription = cleanDescription
       .replace(/Gold Panting/gi, "Gold Painting")
@@ -379,7 +413,9 @@ export const getStandardizedProduct = (product) => {
   }
 
   let cleanDetail = product.detail;
-  if (cleanDetail) {
+  if (slug === "green-jade-panchmukhi-shivling") {
+    cleanDetail = "Buy 100% Certified Natural Green Jade Stone Panchmukhi Shivling (500g, 4.5 Inches) handcrafted in Jaipur, India. Sacred Pashupatinath Mahadev Swaroop with 5 divine faces for home temple pooja, Jalabhishek, and Vastu prosperity at factory direct price.";
+  } else if (cleanDetail) {
     cleanDetail = cleanDetail
       .replace(/Gold Panting/gi, "Gold Painting")
       .replace(/Elephant Staute/gi, "Elephant Statue")
