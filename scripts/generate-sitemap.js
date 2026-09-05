@@ -204,11 +204,95 @@ const generateSitemap = async () => {
     const imageMain = `${BASE_URL}/images/${cleanProductSlug}.webp`;
     const categoryName = prod.categoryId?.name ? prod.categoryId.name.replace(/&/g, "&amp;") : "Gemstones";
 
-    const isPanchmukhi = (prod.slug === "green-jade-panchmukhi-shivling");
-    const feedTitle = isPanchmukhi
-      ? "Natural Green Jade Stone Panchmukhi Shivling (500g, 4.5&quot;) - 100% Certified"
-      : cleanName;
-    const feedDesc = isPanchmukhi
+    const titleSlug = `${cleanName} ${slug}`.toLowerCase();
+    const text = `${titleSlug} ${prod.detail || ""} ${prod.description || ""}`.toLowerCase();
+
+    let material = "100% Certified Natural Gemstone";
+    let color = "Natural";
+
+    if (titleSlug.includes("green aventurine") || (!titleSlug.includes("jade") && text.includes("green aventurine"))) {
+      material = "Natural Green Aventurine";
+      color = "Green";
+    } else if (titleSlug.includes("smokey quartz") || text.includes("smokey quartz")) {
+      material = "Natural Smokey Quartz";
+      color = "Smoky Brown";
+    } else if (titleSlug.includes("tiger eye") || text.includes("tiger eye")) {
+      material = "Natural Tiger Eye Gemstone";
+      color = "Golden Brown";
+    } else if (titleSlug.includes("labradorite") || text.includes("labradorite")) {
+      material = "Natural Labradorite Gemstone";
+      color = "Grey with Peacock Blue Flash";
+    } else if (titleSlug.includes("howlite") || text.includes("howlite")) {
+      material = "Natural Howlite Gemstone";
+      color = "White with Grey Veins";
+    } else if (titleSlug.includes("rose quartz") || text.includes("rose quartz")) {
+      material = "Natural Rose Quartz";
+      color = "Pink";
+    } else if (titleSlug.includes("lapis lazuli") || text.includes("lapis lazuli") || titleSlug.includes("lapis")) {
+      material = "Natural Lapis Lazuli";
+      color = "Royal Blue";
+    } else if (titleSlug.includes("ruby") || text.includes("ruby")) {
+      material = "Natural Ruby Gemstone";
+      color = "Red";
+    } else if (titleSlug.includes("amethyst") || text.includes("amethyst")) {
+      material = "Natural Amethyst";
+      color = "Purple";
+    } else if (titleSlug.includes("pyrite") || text.includes("pyrite")) {
+      material = "Natural Golden Pyrite";
+      color = "Golden Metallic";
+    } else if (titleSlug.includes("black agate") || text.includes("black agate") || titleSlug.includes("agate")) {
+      material = "Natural Black Agate";
+      color = "Black";
+    } else if (titleSlug.includes("opal") || text.includes("opal")) {
+      material = "Natural Opal Stone";
+      color = "White Iridescent";
+    } else if (titleSlug.includes("sapphire") || text.includes("sapphire")) {
+      material = "Natural Blue Sapphire";
+      color = "Deep Blue";
+    } else if (titleSlug.includes("green jade") || titleSlug.includes("jade") || text.includes("green jade") || text.includes("jade")) {
+      material = "Natural Green Jade";
+      color = "Green";
+    } else if (text.includes("sphatik") || text.includes("clear quartz") || text.includes("clear crystal") || text.includes("crystal clear")) {
+      material = "Natural Sphatik (Clear Quartz)";
+      color = "Clear";
+    }
+
+    // Weight extraction (e.g. "500 g", "1.8 kg", "60 g")
+    let shippingWeight = "";
+    const weightStr = String(prod.weight || "");
+    if (weightStr && weightStr !== "N/A") {
+      const wMatch = weightStr.match(/(\d+(\.\d+)?)\s*(kg|gram|g|gm)/i);
+      if (wMatch) {
+        const num = wMatch[1];
+        const unit = wMatch[3].toLowerCase().startsWith("k") ? "kg" : "g";
+        shippingWeight = `${num} ${unit}`;
+      }
+    }
+
+    // Size extraction (e.g. "4.5 Inch", "2.5 Inch")
+    let size = "";
+    const sizeStr = String(prod.size || "");
+    if (sizeStr && sizeStr !== "N/A") {
+      const sMatch = sizeStr.match(/(\d+(\.\d+)?)\s*(inch|inches|cm|mm|")/i);
+      if (sMatch) {
+        size = `${sMatch[1]} Inch`;
+      } else {
+        size = sizeStr.split("-")[0].trim();
+      }
+    }
+
+    // Feed Title with Weight & Size for high CTR & #1 Google Shopping ranking
+    let feedTitle = cleanName;
+    if (slug === "green-jade-panchmukhi-shivling") {
+      feedTitle = "Natural Green Jade Stone Panchmukhi Shivling (500g, 4.5&quot;) - 100% Certified";
+    } else if (!feedTitle.includes("(") && (shippingWeight || size)) {
+      const specLabel = [shippingWeight, size].filter(Boolean).join(", ");
+      feedTitle = `${cleanName} (${specLabel}) - 100% Certified`;
+    } else if (!feedTitle.includes("100% Certified") && !feedTitle.includes("Certified")) {
+      feedTitle = `${cleanName} - 100% Certified`;
+    }
+
+    const feedDesc = (slug === "green-jade-panchmukhi-shivling")
       ? "100% Certified Natural Green Jade Stone Panchmukhi Shivling (500g, 4.5 Inches) handcrafted by Jaipur master artisans. Sacred Pashupatinath Mahadev Swaroop with 5 divine faces (Sadyojata, Vamadeva, Aghora, Tatpurusha, Ishana) for home pooja and Jalabhishek at factory direct price."
       : cleanDesc;
 
@@ -230,11 +314,13 @@ const generateSitemap = async () => {
     gmcXml += `      <g:google_product_category>Religious &amp; Ceremonial &gt; Religious Items</g:google_product_category>\n`;
     gmcXml += `      <g:product_type>Gemstones &gt; ${categoryName}</g:product_type>\n`;
     gmcXml += `      <g:identifier_exists>no</g:identifier_exists>\n`;
-    if (isPanchmukhi) {
-      gmcXml += `      <g:color>Green</g:color>\n`;
-      gmcXml += `      <g:material>Natural Green Jade</g:material>\n`;
-      gmcXml += `      <g:size>4.5 Inch</g:size>\n`;
-      gmcXml += `      <g:shipping_weight>500 g</g:shipping_weight>\n`;
+    gmcXml += `      <g:color>${color}</g:color>\n`;
+    gmcXml += `      <g:material>${material}</g:material>\n`;
+    if (size) {
+      gmcXml += `      <g:size>${size}</g:size>\n`;
+    }
+    if (shippingWeight) {
+      gmcXml += `      <g:shipping_weight>${shippingWeight}</g:shipping_weight>\n`;
     }
     gmcXml += `      <g:transit_time_label>Standard 3-7 Days</g:transit_time_label>\n`;
     gmcXml += `      <g:shipping>\n`;
