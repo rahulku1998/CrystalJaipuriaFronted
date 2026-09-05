@@ -167,6 +167,10 @@ const runInstantIndexing = async () => {
     `${BASE_URL}/blog`,
     `${BASE_URL}/about`,
     `${BASE_URL}/contact`,
+    `${BASE_URL}/shipping-policy`,
+    `${BASE_URL}/refund-policy`,
+    `${BASE_URL}/privacy-policy`,
+    `${BASE_URL}/terms-and-conditions`,
   ];
 
   categories.forEach((cat) => {
@@ -182,6 +186,12 @@ const runInstantIndexing = async () => {
     const slug = b.slug || b._id;
     urlList.push(`${BASE_URL}/blog/${slug}`);
   });
+
+  const purgeUrlList = [
+    `${BASE_URL}/information/privacy_policy.html`,
+    `${BASE_URL}/information/privacy_policy.html/`,
+    `${BASE_URL}/information`,
+  ];
 
   console.log(`📦 Total ${urlList.length} Live URLs collected for instant indexing.`);
 
@@ -223,6 +233,25 @@ const runInstantIndexing = async () => {
 
       if (token) {
         console.log(`   🔑 Google OAuth Token Acquired for ${sa.client_email}`);
+
+        // A. Submit Deletion for legacy malware / purged URLs
+        console.log("\n   🗑️ Purging legacy malware & obsolete URLs from Google Index...");
+        for (const purgedUrl of purgeUrlList) {
+          const res = await postJSON(
+            "https://indexing.googleapis.com/v3/urlNotifications:publish",
+            { url: purgedUrl, type: "URL_DELETED" },
+            { Authorization: `Bearer ${token}` }
+          );
+          if (res.status === 200) {
+            console.log(`   🚫 Google De-Index Request Sent: ${purgedUrl}`);
+          } else {
+            console.log(`   ℹ️ [${purgedUrl}] Google Response: ${res.status}`);
+          }
+          await new Promise((r) => setTimeout(r, 150));
+        }
+
+        // B. Submit all active Live URLs
+        console.log(`\n   ⚡ Submitting ${urlList.length} Live URLs for Googlebot indexing...`);
         let count = 0;
         for (const url of urlList) {
           const res = await postJSON(

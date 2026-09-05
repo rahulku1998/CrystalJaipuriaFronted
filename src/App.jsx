@@ -101,13 +101,16 @@ function App() {
         {/* REDIRECT PLURAL /products/:slug -> /product/:slug */}
         <Route path="/products/:slug" element={<ProductsRedirect />} />
 
-        {/* 410 GONE FOR LEGACY JAPANESE HACKED SPAM URLS (/products/detail/*) */}
+        {/* 410 GONE FOR LEGACY JAPANESE HACKED SPAM URLS (/products/detail/*) & MALWARE BACKDOOR URLS (/information/*) */}
         <Route path="/products/detail/:id" element={<SpamRemoved />} />
         <Route path="/products/detail/*" element={<SpamRemoved />} />
         <Route path="/products/detail" element={<SpamRemoved />} />
         <Route path="/product/detail/:id" element={<SpamRemoved />} />
         <Route path="/product/detail/*" element={<SpamRemoved />} />
         <Route path="/product/detail" element={<SpamRemoved />} />
+        <Route path="/information/:slug" element={<SpamRemoved />} />
+        <Route path="/information/*" element={<SpamRemoved />} />
+        <Route path="/information" element={<SpamRemoved />} />
 
         {/* REDIRECT OLD WOOCOMMERCE /product-category/:slug -> /:slug */}
         <Route path="/product-category/:slug" element={<ProductCategoryRedirect />} />

@@ -311,20 +311,37 @@ Hello Crystal Jaipuria, I have a query regarding this product.
         robots={isPendingProduct ? "noindex, nofollow" : "index, follow"}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
-        {/* Back Button */}
-        <button
-          onClick={() => navigate(-1)}
-          className="mb-6 inline-flex items-center gap-1.5 text-indigo-600 font-semibold hover:underline cursor-pointer text-sm sm:text-base"
-        >
-          ← Back to Products
-        </button>
+    <div className="min-h-screen bg-white">
+      {/* SECTION 1: HERO PRODUCT SHOWCASE (PURE CRISP WHITE) */}
+      <div className="bg-white pt-3 pb-10 sm:pb-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          {/* Top Breadcrumb & Back Bar */}
+          <div className="mb-6 flex items-center justify-between flex-wrap gap-2 text-xs sm:text-sm text-slate-500 pb-3 border-b border-slate-100">
+            <div className="flex items-center gap-1.5 flex-wrap">
+              <Link to="/" className="hover:text-indigo-600 transition">Home</Link>
+              <span className="text-slate-300">/</span>
+              <Link to="/shop" className="hover:text-indigo-600 transition">Shop</Link>
+              {product?.categoryId?.name && (
+                <>
+                  <span className="text-slate-300">/</span>
+                  <span className="text-slate-700 font-medium">{product.categoryId.name}</span>
+                </>
+              )}
+              <span className="text-slate-300">/</span>
+              <span className="text-slate-900 font-semibold truncate max-w-[180px] sm:max-w-[280px]">{product?.name}</span>
+            </div>
+            <button
+              onClick={() => navigate(-1)}
+              className="inline-flex items-center gap-1 text-indigo-600 font-semibold hover:underline cursor-pointer text-xs sm:text-sm"
+            >
+              ← Back
+            </button>
+          </div>
 
-        {/* TOP SECTION: 2 COLUMNS (Images on Left, Buy Box on Right) */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-          {/* LEFT: MAIN IMAGE & THUMBNAILS */}
-          <div>
-            <div className="w-full aspect-square sm:aspect-[4/3] lg:aspect-square max-h-[500px] bg-gray-50 rounded-2xl shadow-xs border border-gray-200 overflow-hidden flex items-center justify-center p-2">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-start">
+            {/* LEFT: MAIN IMAGE & THUMBNAILS */}
+            <div>
+              <div className="w-full aspect-square sm:aspect-[4/3] lg:aspect-square max-h-[520px] bg-[#f8fafc] rounded-3xl border border-slate-200/80 overflow-hidden flex items-center justify-center p-3 shadow-xs">
               {(() => {
                 const activeImg = (Array.isArray(product.images) && product.images[selectedImageIndex]) || product.images?.[0];
                 const activeRaw = typeof activeImg === 'string' ? activeImg : (activeImg?.url || "/Gemstone.webp");
@@ -548,49 +565,59 @@ Hello Crystal Jaipuria, I have a query regarding this product.
             </div>
           </div>
         </div>
+      </div>
+    </div>
 
-        {/* LOWER SECTION: EQUAL LEVEL SIDE-BY-SIDE (FAQs on Left & Description on Right) */}
-        <div className="mt-12 sm:mt-16">
+      {/* SECTION 2: SPECIFICATIONS & FAQs (APPLE-STYLE SOFT PLATINUM ARCHITECTURAL BAND) */}
+      <div className="bg-[#f8fafc] border-y border-slate-200/80 py-12 sm:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="mb-6 sm:mb-8 text-center sm:text-left">
+            <span className="text-xs font-bold uppercase tracking-widest text-indigo-600 bg-indigo-50 border border-indigo-100 px-3 py-1 rounded-full">
+              Product Intelligence & Authenticity
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">
+              Specifications & Vedic Details
+            </h2>
+          </div>
+
           {hasFaqs ? (
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
               {/* LEFT: FAQs SECTION */}
-              <div className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-xs order-2 lg:order-1">
-                <div className="p-4 sm:p-5 border-b border-gray-100 bg-stone-50/70 flex items-center justify-between">
-                  <div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-amber-700 bg-amber-100/70 px-2.5 py-0.5 rounded-full">
-                      Product FAQs
-                    </span>
-                    <h2 className="text-base sm:text-lg font-bold text-gray-900 mt-1">
+              <div className="border border-slate-200/90 rounded-2xl overflow-hidden bg-white shadow-xs order-2 lg:order-1">
+                <div className="p-4 sm:p-5 border-b border-slate-100 bg-white flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-indigo-600"></span>
+                    <h3 className="text-base sm:text-lg font-bold text-slate-900">
                       Frequently Asked Questions
-                    </h2>
+                    </h3>
                   </div>
-                  <span className="text-xs text-gray-400 font-semibold">
+                  <span className="text-xs text-slate-500 font-semibold px-2.5 py-0.5 rounded-full bg-slate-100 border border-slate-200">
                     {productFaqs.length} Q&As
                   </span>
                 </div>
 
-                <div className="p-4 space-y-3 max-h-[380px] sm:max-h-[460px] overflow-y-auto overscroll-contain">
+                <div className="p-4 space-y-3 max-h-[420px] sm:max-h-[480px] overflow-y-auto overscroll-contain">
                   {productFaqs.map((faq, index) => (
                     <div
                       key={index}
-                      className="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-2xs transition-all duration-200 hover:border-indigo-300"
+                      className="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-2xs transition-all duration-200 hover:border-indigo-300"
                     >
                       <button
                         type="button"
                         onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
-                        className="w-full flex items-center justify-between p-3.5 sm:p-4 text-left font-semibold text-gray-800 hover:text-indigo-600 transition-colors cursor-pointer text-xs sm:text-sm"
+                        className="w-full flex items-center justify-between p-3.5 sm:p-4 text-left font-semibold text-slate-800 hover:text-indigo-600 transition-colors cursor-pointer text-xs sm:text-sm"
                       >
                         <span className="pr-3">
                           {index + 1}. {faq.question}
                         </span>
                         <FaChevronDown
-                          className={`text-gray-400 text-xs shrink-0 transition-transform duration-200 ${
+                          className={`text-slate-400 text-xs shrink-0 transition-transform duration-200 ${
                             openFaqIndex === index ? "rotate-180 text-indigo-600" : ""
                           }`}
                         />
                       </button>
                       {openFaqIndex === index && (
-                        <div className="px-3.5 pb-4 sm:px-4 sm:pb-4 text-xs sm:text-sm text-gray-600 border-t border-gray-100 pt-2.5 leading-relaxed bg-gray-50/50">
+                        <div className="px-3.5 pb-4 sm:px-4 sm:pb-4 text-xs sm:text-sm text-slate-600 border-t border-slate-100 pt-2.5 leading-relaxed bg-slate-50/50">
                           {faq.answer}
                         </div>
                       )}
@@ -600,9 +627,9 @@ Hello Crystal Jaipuria, I have a query regarding this product.
               </div>
 
               {/* RIGHT: DESCRIPTION & ADDITIONAL INFORMATION TABS */}
-              <div className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-xs order-1 lg:order-2">
+              <div className="border border-slate-200/90 rounded-2xl overflow-hidden bg-white shadow-xs order-1 lg:order-2">
                 {/* Tabs Header */}
-                <div className="flex border-b border-gray-200 bg-stone-50/70">
+                <div className="flex border-b border-slate-200 bg-slate-50/70">
                   <button
                     onClick={() => {
                       setActiveTab("description");
@@ -611,7 +638,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                     className={`px-5 py-3.5 sm:px-8 sm:py-4 font-semibold text-sm sm:text-base cursor-pointer text-left transition-colors ${
                       activeTab === "description"
                         ? "border-b-2 border-indigo-600 text-indigo-600 bg-white"
-                        : "text-gray-500 hover:text-gray-700"
+                        : "text-slate-500 hover:text-slate-800"
                     }`}
                   >
                     Description
@@ -625,7 +652,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                     className={`px-5 py-3.5 sm:px-8 sm:py-4 font-semibold text-sm sm:text-base cursor-pointer text-left transition-colors ${
                       activeTab === "additional"
                         ? "border-b-2 border-indigo-600 text-indigo-600 bg-white"
-                        : "text-gray-500 hover:text-gray-700"
+                        : "text-slate-500 hover:text-slate-800"
                     }`}
                   >
                     Additional Information
@@ -633,35 +660,30 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                 </div>
 
                 {/* Tab Content */}
-                <div className="p-5 sm:p-7 min-h-[150px]">
-                  {activeTab === "description" && (
-                    <div className="relative">
+                <div className="p-4 sm:p-6 text-slate-700 text-sm sm:text-base leading-relaxed max-h-[420px] sm:max-h-[480px] overflow-y-auto overscroll-contain">
+                  {activeTab === "description" ? (
+                    <div>
+                      {/* Sacred Sanskrit Shloka Box */}
                       {sacredShloka && (
-                        <div className="mb-4 p-3 sm:p-3.5 bg-gradient-to-r from-amber-50/90 via-stone-50 to-orange-50/70 border-l-3 border-amber-500 rounded-r-xl shadow-2xs">
-                          <div className="flex items-center justify-between text-[11px] font-bold text-amber-800 uppercase tracking-wider mb-1">
-                            <span>🕉️ {sacredShloka.source}</span>
-                            <span className="text-amber-700/80 font-semibold">Authentic Vedic Consecration</span>
-                          </div>
-                          <p className="font-bold text-gray-900 text-xs sm:text-sm tracking-wide font-serif">
+                        <div className="mb-4 p-3.5 sm:p-4 rounded-xl bg-amber-50/80 border border-amber-200/80 text-amber-950">
+                          <p className="text-xs sm:text-sm font-serif font-bold italic tracking-wide text-amber-900 text-center leading-relaxed">
                             {sacredShloka.shloka}
                           </p>
-                          <p className="text-[11px] sm:text-xs text-gray-600 italic mt-0.5">
-                            "{sacredShloka.meaning}"
+                          <p className="text-[11px] sm:text-xs text-amber-800/90 text-center mt-1.5 font-medium">
+                            {sacredShloka.meaning}
                           </p>
                         </div>
                       )}
                       <div
-                        className="text-gray-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none max-h-[380px] sm:max-h-[460px] overflow-y-auto pr-3 overscroll-contain focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-gray-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-gray-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-gray-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-gray-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-1.5 [&_p]:my-3 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-indigo-600 [&_a]:underline"
+                        className="text-slate-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none max-h-[380px] sm:max-h-[440px] overflow-y-auto pr-3 overscroll-contain focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-slate-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-slate-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-slate-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-slate-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-1.5 [&_p]:my-3 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-indigo-600 [&_a]:underline"
                         dangerouslySetInnerHTML={{
                           __html: product.description || "No description available.",
                         }}
                       />
                     </div>
-                  )}
-
-                  {activeTab === "additional" && (
+                  ) : (
                     <div
-                      className="text-gray-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none max-h-[380px] sm:max-h-[460px] overflow-y-auto pr-3 overscroll-contain focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-gray-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-gray-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-gray-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-gray-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-2 [&_p]:my-3 [&_strong]:font-bold [&_strong]:text-gray-900 [&_b]:font-bold [&_b]:text-gray-900 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-indigo-600 [&_a]:underline"
+                      className="text-slate-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none max-h-[380px] sm:max-h-[440px] overflow-y-auto pr-3 overscroll-contain focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-slate-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-slate-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-slate-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-slate-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-2 [&_p]:my-3 [&_strong]:font-bold [&_strong]:text-slate-900 [&_b]:font-bold [&_b]:text-slate-900 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-indigo-600 [&_a]:underline"
                       dangerouslySetInnerHTML={{
                         __html: product.additionalInfo || "No additional information available.",
                       }}
@@ -671,9 +693,8 @@ Hello Crystal Jaipuria, I have a query regarding this product.
               </div>
             </div>
           ) : (
-            /* Full width Description if product has no FAQs */
-            <div className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-xs">
-              <div className="flex border-b border-gray-200 bg-stone-50/70">
+            <div className="max-w-4xl mx-auto border border-slate-200/90 rounded-2xl overflow-hidden bg-white shadow-xs">
+              <div className="flex border-b border-slate-200 bg-slate-50/70">
                 <button
                   onClick={() => {
                     setActiveTab("description");
@@ -682,7 +703,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                   className={`px-5 py-3.5 sm:px-8 sm:py-4 font-semibold text-sm sm:text-base cursor-pointer text-left transition-colors ${
                     activeTab === "description"
                       ? "border-b-2 border-indigo-600 text-indigo-600 bg-white"
-                      : "text-gray-500 hover:text-gray-700"
+                      : "text-slate-500 hover:text-slate-800"
                   }`}
                 >
                   Description
@@ -696,42 +717,36 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                   className={`px-5 py-3.5 sm:px-8 sm:py-4 font-semibold text-sm sm:text-base cursor-pointer text-left transition-colors ${
                     activeTab === "additional"
                       ? "border-b-2 border-indigo-600 text-indigo-600 bg-white"
-                      : "text-gray-500 hover:text-gray-700"
+                      : "text-slate-500 hover:text-slate-800"
                   }`}
                 >
                   Additional Information
                 </button>
               </div>
 
-              <div className="p-5 sm:p-7 min-h-[150px]">
-                {activeTab === "description" && (
-                  <div className="relative">
+              <div className="p-5 sm:p-8 text-slate-700 text-sm sm:text-base leading-relaxed">
+                {activeTab === "description" ? (
+                  <div>
                     {sacredShloka && (
-                      <div className="mb-4 p-3 sm:p-3.5 bg-gradient-to-r from-amber-50/90 via-stone-50 to-orange-50/70 border-l-3 border-amber-500 rounded-r-xl shadow-2xs">
-                        <div className="flex items-center justify-between text-[11px] font-bold text-amber-800 uppercase tracking-wider mb-1">
-                          <span>🕉️ {sacredShloka.source}</span>
-                          <span className="text-amber-700/80 font-semibold">Authentic Vedic Consecration</span>
-                        </div>
-                        <p className="font-bold text-gray-900 text-xs sm:text-sm tracking-wide font-serif">
+                      <div className="mb-4 p-3.5 sm:p-4 rounded-xl bg-amber-50/80 border border-amber-200/80 text-amber-950">
+                        <p className="text-xs sm:text-sm font-serif font-bold italic tracking-wide text-amber-900 text-center leading-relaxed">
                           {sacredShloka.shloka}
                         </p>
-                        <p className="text-[11px] sm:text-xs text-gray-600 italic mt-0.5">
-                          "{sacredShloka.meaning}"
+                        <p className="text-[11px] sm:text-xs text-amber-800/90 text-center mt-1.5 font-medium">
+                          {sacredShloka.meaning}
                         </p>
                       </div>
                     )}
                     <div
-                      className="text-gray-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none max-h-[380px] sm:max-h-[460px] overflow-y-auto pr-3 overscroll-contain focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-gray-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-gray-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-gray-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-gray-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-1.5 [&_p]:my-3 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-indigo-600 [&_a]:underline"
+                      className="text-slate-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none max-h-[380px] sm:max-h-[440px] overflow-y-auto pr-3 overscroll-contain focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-slate-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-slate-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-slate-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-slate-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-1.5 [&_p]:my-3 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-indigo-600 [&_a]:underline"
                       dangerouslySetInnerHTML={{
                         __html: product.description || "No description available.",
                       }}
                     />
                   </div>
-                )}
-
-                {activeTab === "additional" && (
+                ) : (
                   <div
-                    className="text-gray-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none max-h-[380px] sm:max-h-[460px] overflow-y-auto pr-3 overscroll-contain focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-gray-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-gray-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-gray-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-gray-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-2 [&_p]:my-3 [&_strong]:font-bold [&_strong]:text-gray-900 [&_b]:font-bold [&_b]:text-gray-900 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-indigo-600 [&_a]:underline"
+                    className="text-slate-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none max-h-[380px] sm:max-h-[440px] overflow-y-auto pr-3 overscroll-contain focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-slate-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-slate-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-slate-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-slate-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-2 [&_p]:my-3 [&_strong]:font-bold [&_strong]:text-slate-900 [&_b]:font-bold [&_b]:text-slate-900 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-indigo-600 [&_a]:underline"
                     dangerouslySetInnerHTML={{
                       __html: product.additionalInfo || "No additional information available.",
                     }}
@@ -741,13 +756,23 @@ Hello Crystal Jaipuria, I have a query regarding this product.
             </div>
           )}
         </div>
+      </div>
 
-        {/* RELATED PRODUCTS */}
-        {Array.isArray(relatedProducts) && relatedProducts.length > 0 && (
-          <div className="mt-12 sm:mt-16">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-gray-900">
-              You May Also Like
-            </h2>
+      {/* SECTION 3: RELATED PRODUCTS (CRISP WHITE SHOWCASE) */}
+      {Array.isArray(relatedProducts) && relatedProducts.length > 0 && (
+        <div className="bg-white py-12 sm:py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="flex items-center justify-between mb-8">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-widest text-indigo-600">Curated For You</span>
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
+                  You May Also Like
+                </h2>
+              </div>
+              <Link to="/shop" className="text-xs sm:text-sm font-semibold text-indigo-600 hover:text-indigo-800 transition">
+                View All →
+              </Link>
+            </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
               {relatedProducts.map((item) => {
                 const itemImg = Array.isArray(item.images)
@@ -757,20 +782,22 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                   <div
                     key={item._id}
                     onClick={() => navigate(`/product/${item.slug || item._id}`)}
-                    className="bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-lg cursor-pointer overflow-hidden transition"
+                    className="bg-white rounded-2xl border border-slate-200 hover:border-indigo-300 hover:shadow-lg cursor-pointer overflow-hidden transition-all duration-300 group"
                   >
-                    <img
-                      src={itemImg}
-                      alt={item.name}
-                      className="w-full h-32 sm:h-40 lg:h-48 object-contain p-2 bg-gray-50"
-                    />
-                    <div className="p-3 sm:p-4">
-                      <h3 className="font-semibold text-sm sm:text-base line-clamp-2">
+                    <div className="aspect-square bg-slate-50/60 flex items-center justify-center p-3 overflow-hidden border-b border-slate-100">
+                      <img
+                        src={itemImg}
+                        alt={item.name}
+                        className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="p-3.5 sm:p-4">
+                      <h3 className="font-semibold text-xs sm:text-sm text-slate-800 line-clamp-2 group-hover:text-indigo-600 transition-colors">
                         {item.name}
                       </h3>
-                      <div className="mt-2">
+                      <div className="mt-2.5">
                         {item.price && (
-                          <span className="font-bold text-indigo-600 text-sm sm:text-base">
+                          <span className="font-bold text-slate-900 text-sm sm:text-base">
                             {formatPrice(item.price)}
                           </span>
                         )}
@@ -781,8 +808,9 @@ Hello Crystal Jaipuria, I have a query regarding this product.
               })}
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
+    </div>
 
       {/* Query Modal */}
       {showQueryForm && (
