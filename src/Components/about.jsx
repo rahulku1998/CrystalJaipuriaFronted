@@ -16,6 +16,8 @@ const AboutGemstoneSection = () => {
                 loading="eager"
                 fetchPriority="high"
                 decoding="async"
+                width="480"
+                height="480"
                 alt="Handcrafted gemstone statues and crystal carvings manufacturer in Jaipur"
                 className="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-103"
               />
@@ -58,12 +60,12 @@ const AboutGemstoneSection = () => {
             </div>
 
             {/* Heading (Optimized font size) */}
-            <h2 className="text-xl sm:text-2xl lg:text-[25px] font-bold tracking-tight text-stone-900 leading-tight">
+            <h1 className="text-xl sm:text-2xl lg:text-[25px] font-bold tracking-tight text-stone-900 leading-tight">
               Handcrafted Gemstone Statues &amp; Crystal Carvings{" "}
               <span className="text-indigo-600 block mt-0.5">
                 Manufacturer in Jaipur, India
               </span>
-            </h2>
+            </h1>
 
             {/* Crisp Summary Text */}
             <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">

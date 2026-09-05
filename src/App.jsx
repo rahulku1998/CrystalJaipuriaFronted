@@ -1,49 +1,53 @@
+import React, { Suspense, lazy } from 'react'
 import './App.css'
 import Navbar from './Components/Navbar/Navbar'
 import Footer from './Components/Footer'
 import Home from './Pages/Home'
 import HeroSlider from './Components/Hero/HeroSlider'
 import FeaturesBar from './Components/FeaturesBar'
-import About from "./Pages/About";
 import { Routes, Route, Navigate, useParams } from "react-router-dom";
-import Contact from './Pages/Contact';
-import CategoryPage from './Pages/CategoryPage';
-import SubCategoryProducts from './Pages/SubCategoryProducts';
-import NotFound from './Pages/NotFound';
 import ErrorBoundary from './Components/ErrorBoundary';
-import AdminLogin from './admin/Login';
-import AdminDashboard from './admin/Dashboard';
 import ProtectedRoute from "./Components/ProtectedRoute";
-import AddProduct from './admin/AddProduct';
-import EditProduct from './admin/EditProduct';
-import DeleteProduct from './admin/DeleteProduct';
-import Categories from './admin/Categories';
-import AdminBlogs from './admin/Blog';
-import AddSubCategory from './admin/SubCategories';
-
-// Vijay AI Super Admin Panel Components
-import VijayLogin from './admin-vijay/Login';
-import VijayDashboard from './admin-vijay/Dashboard';
-import VijayAddProduct from './admin-vijay/AddProduct';
-import VijayEditProduct from './admin-vijay/EditProduct';
-import VijayDeleteProduct from './admin-vijay/DeleteProduct';
-import VijayCategories from './admin-vijay/Categories';
-import VijayBlogs from './admin-vijay/Blog';
-import VijaySubCategories from './admin-vijay/SubCategories';
-import VijayPendingProducts from './admin-vijay/PendingProducts';
 import VijayProtectedRoute from './Components/VijayProtectedRoute';
-
 import ScrollTop from "./Components/ScrollTop";
 import FloatingWhatsApp from "./Components/FloatingWhatsApp";
-import Blog from "./Pages/Blog/Blogs";
-import BlogDetails from './Pages/Blog/BlogDetails'
-import Shop from "./Pages/Shop";
-import ProductDetailsSlug from './Pages/ProductDetailsSlug';
-import SpamRemoved from './Pages/SpamRemoved';
-import ShippingPolicy from './Pages/Policies/ShippingPolicy';
-import RefundPolicy from './Pages/Policies/RefundPolicy';
-import PrivacyPolicy from './Pages/Policies/PrivacyPolicy';
-import TermsConditions from './Pages/Policies/TermsConditions';
+
+// Lazy-loaded customer-facing pages (code-split for blazing mobile performance)
+const About = lazy(() => import("./Pages/About"));
+const Contact = lazy(() => import('./Pages/Contact'));
+const CategoryPage = lazy(() => import('./Pages/CategoryPage'));
+const SubCategoryProducts = lazy(() => import('./Pages/SubCategoryProducts'));
+const NotFound = lazy(() => import('./Pages/NotFound'));
+const Blog = lazy(() => import("./Pages/Blog/Blogs"));
+const BlogDetails = lazy(() => import('./Pages/Blog/BlogDetails'));
+const Shop = lazy(() => import("./Pages/Shop"));
+const ProductDetailsSlug = lazy(() => import('./Pages/ProductDetailsSlug'));
+const SpamRemoved = lazy(() => import('./Pages/SpamRemoved'));
+const ShippingPolicy = lazy(() => import('./Pages/Policies/ShippingPolicy'));
+const RefundPolicy = lazy(() => import('./Pages/Policies/RefundPolicy'));
+const PrivacyPolicy = lazy(() => import('./Pages/Policies/PrivacyPolicy'));
+const TermsConditions = lazy(() => import('./Pages/Policies/TermsConditions'));
+
+// Lazy-loaded Standard Admin (Kishan)
+const AdminLogin = lazy(() => import('./admin/Login'));
+const AdminDashboard = lazy(() => import('./admin/Dashboard'));
+const AddProduct = lazy(() => import('./admin/AddProduct'));
+const EditProduct = lazy(() => import('./admin/EditProduct'));
+const DeleteProduct = lazy(() => import('./admin/DeleteProduct'));
+const Categories = lazy(() => import('./admin/Categories'));
+const AdminBlogs = lazy(() => import('./admin/Blog'));
+const AddSubCategory = lazy(() => import('./admin/SubCategories'));
+
+// Lazy-loaded Vijay AI Super Admin Panel
+const VijayLogin = lazy(() => import('./admin-vijay/Login'));
+const VijayDashboard = lazy(() => import('./admin-vijay/Dashboard'));
+const VijayAddProduct = lazy(() => import('./admin-vijay/AddProduct'));
+const VijayEditProduct = lazy(() => import('./admin-vijay/EditProduct'));
+const VijayDeleteProduct = lazy(() => import('./admin-vijay/DeleteProduct'));
+const VijayCategories = lazy(() => import('./admin-vijay/Categories'));
+const VijayBlogs = lazy(() => import('./admin-vijay/Blog'));
+const VijaySubCategories = lazy(() => import('./admin-vijay/SubCategories'));
+const VijayPendingProducts = lazy(() => import('./admin-vijay/PendingProducts'));
 
 // Redirect helper for old /products/:slug URLs -> /product/:slug
 const ProductsRedirect = () => {
@@ -65,19 +69,20 @@ function App() {
        <Navbar />
        
       <FloatingWhatsApp />
-      <ErrorBoundary>
-        <Routes>
- <Route
-          path="/"
-          element={
-            <>
-              
-  <HeroSlider />
-  <FeaturesBar />
-              <Home />
-            </>
-          }
-        />
+      <main id="main-content" className="flex-grow">
+        <ErrorBoundary>
+          <Suspense fallback={<div className="min-h-[50vh] flex items-center justify-center"><div className="w-8 h-8 border-3 border-indigo-600 border-t-transparent rounded-full animate-spin" /></div>}>
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <>
+                    <HeroSlider />
+                    <FeaturesBar />
+                    <Home />
+                  </>
+                }
+              />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogDetails />} />
         <Route path="/about" element={<About />} />
@@ -208,9 +213,10 @@ function App() {
         } />
 
         <Route path="*" element={<NotFound />} />
-      </Routes>
-      </ErrorBoundary>
-
+            </Routes>
+          </Suspense>
+        </ErrorBoundary>
+      </main>
 
        <Footer />
     </>

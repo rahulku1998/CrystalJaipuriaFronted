@@ -259,13 +259,13 @@ location.pathname===item.path
             <FaBars/>
           </button>
 
-          <h3 className="
+          <span className="
           mx-auto
           font-semibold
           text-indigo-600
           ">
             Explore Collection
-          </h3>
+          </span>
 
           <button
             onClick={() => navigate("/shop")}
