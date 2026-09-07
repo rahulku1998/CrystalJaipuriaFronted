@@ -309,39 +309,39 @@ const Footer = () => {
 
         {/* Customer Policies & Trust Bar (Mandatory for Google Merchant Center) */}
         <div className="border-t border-slate-300 mt-10 pt-6">
-          <div className="text-center mb-3.5">
+          <div className="text-left mb-3">
             <span className="text-slate-500 font-bold uppercase tracking-wider text-[11px]">
               Store Policies &amp; Customer Protection
             </span>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs font-semibold text-slate-700">
+          <div className="flex flex-wrap items-center justify-start gap-2 sm:gap-3 text-xs font-semibold text-slate-700">
             <Link
               to="/shipping-policy"
-              className="px-3.5 py-1.5 rounded-lg bg-white/90 border border-slate-200/90 hover:border-indigo-400 hover:text-indigo-600 transition shadow-2xs text-center"
+              className="px-3.5 py-1.5 rounded-lg bg-white/90 border border-slate-200/90 hover:border-indigo-400 hover:text-indigo-600 transition shadow-2xs text-left"
             >
               Shipping &amp; Delivery Policy
             </Link>
             <Link
               to="/refund-policy"
-              className="px-3.5 py-1.5 rounded-lg bg-white/90 border border-slate-200/90 hover:border-indigo-400 hover:text-indigo-600 transition shadow-2xs text-center"
+              className="px-3.5 py-1.5 rounded-lg bg-white/90 border border-slate-200/90 hover:border-indigo-400 hover:text-indigo-600 transition shadow-2xs text-left"
             >
               Refund &amp; Return Policy (7 Days)
             </Link>
             <Link
               to="/privacy-policy"
-              className="px-3.5 py-1.5 rounded-lg bg-white/90 border border-slate-200/90 hover:border-indigo-400 hover:text-indigo-600 transition shadow-2xs text-center"
+              className="px-3.5 py-1.5 rounded-lg bg-white/90 border border-slate-200/90 hover:border-indigo-400 hover:text-indigo-600 transition shadow-2xs text-left"
             >
               Privacy Policy
             </Link>
             <Link
               to="/terms-and-conditions"
-              className="px-3.5 py-1.5 rounded-lg bg-white/90 border border-slate-200/90 hover:border-indigo-400 hover:text-indigo-600 transition shadow-2xs text-center"
+              className="px-3.5 py-1.5 rounded-lg bg-white/90 border border-slate-200/90 hover:border-indigo-400 hover:text-indigo-600 transition shadow-2xs text-left"
             >
               Terms &amp; Conditions
             </Link>
             <Link
               to="/gemstone-authenticity-guide"
-              className="px-3.5 py-1.5 rounded-lg bg-white/90 border border-slate-200/90 hover:border-indigo-400 hover:text-indigo-600 transition shadow-2xs text-center"
+              className="px-3.5 py-1.5 rounded-lg bg-white/90 border border-slate-200/90 hover:border-indigo-400 hover:text-indigo-600 transition shadow-2xs text-left"
             >
               Gemstone Authenticity Guide
             </Link>
@@ -349,12 +349,12 @@ const Footer = () => {
         </div>
 
         {/* Bottom Copyright Bar */}
-        <div className="border-t border-slate-200 mt-6 pt-5 flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm text-slate-500 gap-3 text-center sm:text-left">
-          <p>
+        <div className="border-t border-slate-200 mt-6 pt-5 flex flex-col sm:flex-row justify-between items-start sm:items-center text-xs sm:text-sm text-slate-500 gap-2.5 text-left">
+          <p className="text-left">
             © {new Date().getFullYear()} <strong className="text-slate-800 font-bold">Crystal Jaipuria</strong>. All Rights Reserved. (Jaipur, India)
           </p>
 
-          <p>
+          <p className="text-left sm:text-right">
             Designed &amp; Developed with <span className="text-red-500">❤️</span> by{" "}
             <a
               href="https://www.codewithrahulkumawat.com/contact"

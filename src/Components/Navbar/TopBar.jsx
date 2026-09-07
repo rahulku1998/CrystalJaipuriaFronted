@@ -3,8 +3,8 @@ import {
   FaFacebookF,
   FaInstagram,
   FaSearch,
+  FaBars,
 } from "react-icons/fa";
-import { BsThreeDotsVertical } from "react-icons/bs";
 import { useNavigate, Link } from "react-router-dom";
 import { trackSearch, trackSocialClick } from "../../utils/analytics";
 
@@ -26,25 +26,25 @@ const TopBar = ({ onOpenMenu }) => {
         className="
         max-w-7xl mx-auto
         px-3 sm:px-5 lg:px-8
-        min-h-[85px]
-        sm:min-h-[110px]
-        lg:min-h-[125px]
+        min-h-[64px]
+        sm:min-h-[95px]
+        lg:min-h-[120px]
         flex
         items-center
         justify-between
         "
       >
-        {/* ================= Left: 3-dot on Mobile, Social Icons on Desktop ================= */}
+        {/* ================= Left: Hamburger Menu on Mobile, Social Icons on Desktop ================= */}
         <div className="flex items-center">
-          {/* Mobile 3-dot Menu Button */}
+          {/* Mobile Hamburger Menu Button */}
           <button
             type="button"
             onClick={onOpenMenu}
             aria-label="Open navigation menu"
             className="
               sm:hidden
-              w-9 h-9
-              rounded-xl
+              w-8 h-8
+              rounded-lg
               bg-slate-100
               hover:bg-slate-200
               text-slate-700
@@ -57,7 +57,7 @@ const TopBar = ({ onOpenMenu }) => {
               shadow-2xs
             "
           >
-            <BsThreeDotsVertical className="text-lg text-slate-700" />
+            <FaBars className="text-sm text-slate-700" />
           </button>
 
           {/* Desktop Social Icons */}
@@ -122,9 +122,9 @@ const TopBar = ({ onOpenMenu }) => {
             src="/logo.jpeg"
             alt="Crystal Jaipuria - Handcrafted Gemstone Statues & Crystal Manufacturer Jaipur"
             className="
-            h-11
-            sm:h-14
-            md:h-16
+            h-8
+            sm:h-12
+            md:h-14
             lg:h-18
             w-auto
             object-contain
@@ -136,16 +136,16 @@ const TopBar = ({ onOpenMenu }) => {
           <p
             className="
             block
-            text-[8px]
-            sm:text-[10px]
+            text-[7px]
+            sm:text-[9px]
             md:text-xs
             font-semibold
-            tracking-[1.5px]
+            tracking-[1px]
             sm:tracking-[2px]
             md:tracking-[3px]
             text-indigo-600
             uppercase
-            mt-1
+            mt-0.5
             whitespace-nowrap
             "
           >
@@ -161,8 +161,8 @@ const TopBar = ({ onOpenMenu }) => {
             aria-label="Search products"
             className="
             lg:hidden
-            w-9 h-9
-            rounded-xl
+            w-8 h-8
+            rounded-lg
             bg-slate-100
             hover:bg-slate-200
             text-slate-700
@@ -175,7 +175,7 @@ const TopBar = ({ onOpenMenu }) => {
             shadow-2xs
             "
           >
-            <FaSearch className="text-sm text-slate-700" />
+            <FaSearch className="text-xs text-slate-700" />
           </button>
 
        {/* ================= Right Search ================= */}
