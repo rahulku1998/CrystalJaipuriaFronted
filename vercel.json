@@ -18,7 +18,7 @@
       ]
     },
     {
-      "source": "/(.*)\\.(?:css|js|woff2?|ttf|svg|webp|png|jpg|ico)",
+      "source": "/images/(.*)",
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
@@ -210,7 +210,7 @@
       "destination": "https://res.cloudinary.com/dd6akzezt/images/:path*"
     },
     {
-      "source": "/((?!assets/|images/|.*\\.(?:css|js|webp|png|jpg|svg|ico|xml|txt)).*)",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ]
