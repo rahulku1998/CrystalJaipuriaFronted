@@ -128,7 +128,7 @@ const generateSitemap = async () => {
   let llms = `# Crystal Jaipuria\n\n`;
   llms += `> Leading manufacturer, wholesaler, and exporter of authentic gemstone god statues, hand-carved crystal idols, Shivlings, Shree Yantra, Vastu decor, and spiritual healing products in Jaipur, India since 1989.\n\n`;
   llms += `## Overview\n`;
-  llms += `Crystal Jaipuria is a trusted Jaipur-based gemstone and crystal carving manufacturer with over 35 years of heritage in artisan craftsmanship, wholesale supply, and international export. Every idol and artifact is hand-carved by master artisans using 100% natural, certified gemstones and crystals.\n\n`;
+  llms += `Crystal Jaipuria is a trusted Jaipur-based gemstone and crystal carving manufacturer with over 35 years of heritage in artisan craftsmanship, wholesale supply, and international export. Every idol and artifact is hand-carved by master artisans using authentic natural gemstones and crystals.\n\n`;
   llms += `## Key Product Categories\n`;
   categories.forEach((cat) => {
     if (cat.slug && cat.name) {
@@ -147,8 +147,15 @@ const generateSitemap = async () => {
     llms += `\n## Live Products Catalog (${products.length} Products)\n`;
     products.forEach((prod) => {
       const slug = prod.slug || prod._id;
-      const desc = (prod.detail || prod.description || "").replace(/<[^>]*>?/gm, "").slice(0, 100);
-      llms += `- [${prod.name}](${BASE_URL}/product/${slug}): ${desc || "Handcrafted natural gemstone product by Crystal Jaipuria."}\n`;
+      const desc = (prod.detail || prod.description || "")
+        .replace(/<[^>]*>?/gm, "")
+        .replace(/100%\s*certified\s*/gi, "authentic ")
+        .slice(0, 100);
+      const cleanProdName = (prod.name || "")
+        .replace(/\s*-\s*100%\s*certified/gi, "")
+        .replace(/\s*100%\s*certified/gi, "")
+        .trim();
+      llms += `- [${cleanProdName}](${BASE_URL}/product/${slug}): ${desc || "Handcrafted natural gemstone product by Crystal Jaipuria."}\n`;
     });
   }
 
@@ -173,14 +180,21 @@ const generateSitemap = async () => {
   gmcXml += `  <channel>\n`;
   gmcXml += `    <title>Crystal Jaipuria - Authentic Gemstone Statues &amp; Handicrafts</title>\n`;
   gmcXml += `    <link>${BASE_URL}</link>\n`;
-  gmcXml += `    <description>100% Certified natural gemstone god statues, crystal carvings, Shivlings and spiritual products from Jaipur manufacturer since 1989.</description>\n`;
+  gmcXml += `    <description>Authentic natural gemstone god statues, crystal carvings, Shivlings and spiritual products from Jaipur manufacturer since 1989.</description>\n`;
 
   products.forEach((prod) => {
     const slug = prod.slug || prod._id;
     const prodUrl = `${BASE_URL}/product/${slug}`;
-    const cleanName = (prod.name || "Gemstone Product").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    const cleanName = (prod.name || "Gemstone Product")
+      .replace(/\s*-\s*100%\s*certified/gi, "")
+      .replace(/\s*100%\s*certified/gi, "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .trim();
     const cleanDesc = (prod.detail || prod.description || cleanName)
       .replace(/<[^>]*>?/gm, "")
+      .replace(/100%\s*certified\s*/gi, "")
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
@@ -207,7 +221,7 @@ const generateSitemap = async () => {
     const titleSlug = `${cleanName} ${slug}`.toLowerCase();
     const text = `${titleSlug} ${prod.detail || ""} ${prod.description || ""}`.toLowerCase();
 
-    let material = "100% Certified Natural Gemstone";
+    let material = "Natural Gemstone";
     let color = "Natural";
 
     if (titleSlug.includes("green aventurine") || (!titleSlug.includes("jade") && text.includes("green aventurine"))) {
@@ -281,19 +295,23 @@ const generateSitemap = async () => {
       }
     }
 
-    // Feed Title with Weight & Size for high CTR & #1 Google Shopping ranking
+    // Feed Title with Weight & Size for clean Google Shopping policy compliance
     let feedTitle = cleanName;
     if (slug === "green-jade-panchmukhi-shivling") {
-      feedTitle = "Natural Green Jade Stone Panchmukhi Shivling (500g, 4.5&quot;) - 100% Certified";
+      feedTitle = "Natural Green Jade Stone Panchmukhi Shivling (500g, 4.5&quot;)";
     } else if (!feedTitle.includes("(") && (shippingWeight || size)) {
       const specLabel = [shippingWeight, size].filter(Boolean).join(", ");
-      feedTitle = `${cleanName} (${specLabel}) - 100% Certified`;
-    } else if (!feedTitle.includes("100% Certified") && !feedTitle.includes("Certified")) {
-      feedTitle = `${cleanName} - 100% Certified`;
+      feedTitle = `${cleanName} (${specLabel})`;
     }
 
+    feedTitle = feedTitle
+      .replace(/\s*-\s*100%\s*certified/gi, "")
+      .replace(/\s*100%\s*certified/gi, "")
+      .replace(/\s{2,}/g, " ")
+      .trim();
+
     const feedDesc = (slug === "green-jade-panchmukhi-shivling")
-      ? "100% Certified Natural Green Jade Stone Panchmukhi Shivling (500g, 4.5 Inches) handcrafted by Jaipur master artisans. Sacred Pashupatinath Mahadev Swaroop with 5 divine faces (Sadyojata, Vamadeva, Aghora, Tatpurusha, Ishana) for home pooja and Jalabhishek at factory direct price."
+      ? "Authentic Natural Green Jade Stone Panchmukhi Shivling (500g, 4.5 Inches) handcrafted by Jaipur master artisans. Sacred Pashupatinath Mahadev Swaroop with 5 divine faces (Sadyojata, Vamadeva, Aghora, Tatpurusha, Ishana) for home pooja and Jalabhishek at factory direct price."
       : cleanDesc;
 
     gmcXml += `    <item>\n`;

@@ -213,7 +213,7 @@ const CategoryPage = () => {
   );
 
   if (loadingProducts && !category) {
-    return seo;
+    return null;
   }
 
   if (!category) {

@@ -20,6 +20,7 @@ const NotFound = () => {
         description="The page you are looking for does not exist. Explore authentic handcrafted gemstone statues, Shivlings, Shree Yantra, and crystal spiritual decor from Crystal Jaipuria."
         canonical="https://www.crystaljaipuria.com/404"
         image="https://www.crystaljaipuria.com/logo.png"
+        robots="noindex, nofollow, noarchive"
       />
 
       <div className="min-h-[85vh] bg-gradient-to-b from-[#fdfbf7] via-[#faf5eb] to-[#f5ede0] flex items-center justify-center px-4 py-12 sm:py-16">

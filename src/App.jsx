@@ -116,6 +116,12 @@ function App() {
         <Route path="/information/:slug" element={<SpamRemoved />} />
         <Route path="/information/*" element={<SpamRemoved />} />
         <Route path="/information" element={<SpamRemoved />} />
+        <Route path="/CSFTop/*" element={<SpamRemoved />} />
+        <Route path="/CSFTop" element={<SpamRemoved />} />
+        <Route path="/renga/*" element={<SpamRemoved />} />
+        <Route path="/renga" element={<SpamRemoved />} />
+        <Route path="/home-*" element={<SpamRemoved />} />
+        <Route path="/shop-*" element={<SpamRemoved />} />
 
         {/* REDIRECT OLD WOOCOMMERCE /product-category/:slug -> /:slug */}
         <Route path="/product-category/:slug" element={<ProductCategoryRedirect />} />
