@@ -251,7 +251,8 @@ const EditProduct = () => {
         additionalInfo: form.additionalInfo,
         faqs: validFaqs,
         metaTitle,
-        metaDescription
+        metaDescription,
+        galleryOrder: gallery.filter((item) => item.type === "existing").map((item) => item.url)
       });
       formData.append("additionalInfo", packedAdditionalInfo);
 
@@ -266,37 +267,15 @@ const EditProduct = () => {
         return;
       }
 
-      const hasNewFiles = gallery.some((item) => item.type === "new");
-
-      if (hasNewFiles) {
-        // Convert all gallery items to Files in their exact chosen sequence
-        const preparedFiles = await Promise.all(
-          gallery.map(async (item, idx) => {
-            const ext = item.type === "new"
-              ? (item.file.name.split(".").pop() || "webp").toLowerCase()
-              : (item.url.includes(".png") ? "png" : item.url.includes(".webp") ? "webp" : "jpg");
-            const cleanFileName = idx === 0 ? `${seoImageSlug}.${ext}` : `${seoImageSlug}-${idx + 1}.${ext}`;
-
-            if (item.type === "new") {
-              return new File([item.file], cleanFileName, { type: item.file.type || "image/webp" });
-            } else {
-              try {
-                const res = await fetch(item.url);
-                if (!res.ok) return null;
-                const blob = await res.blob();
-                return new File([blob], cleanFileName, { type: blob.type || "image/webp" });
-              } catch (e) {
-                console.warn("Could not fetch existing image blob:", e);
-                return null;
-              }
-            }
-          })
-        );
-
-        preparedFiles.filter(Boolean).forEach((file) => {
-          formData.append("images", file);
-        });
-      }
+      // Safely append new uploaded files with clean SEO naming
+      gallery.forEach((item, idx) => {
+        if (item.type === "new" && item.file) {
+          const ext = (item.file.name.split(".").pop() || "webp").toLowerCase();
+          const cleanFileName = idx === 0 ? `${seoImageSlug}.${ext}` : `${seoImageSlug}-${idx + 1}.${ext}`;
+          const renamedFile = new File([item.file], cleanFileName, { type: item.file.type || "image/webp" });
+          formData.append("images", renamedFile);
+        }
+      });
 
       // Always pass existing images in their exact reordered sequence
       const orderedExisting = gallery

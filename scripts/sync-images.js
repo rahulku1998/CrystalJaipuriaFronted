@@ -20,9 +20,37 @@ export const syncImages = async () => {
 
     console.log(`Syncing ${products.length} product images to clean static .webp...`);
 
+    const PROTECTED_STUDIO_SLUGS = new Set([
+      "natural-amethyst-gemstone-shiva-face-idol",
+      "gemston-ruby-shree-yantra",
+      "green-aventurine-parshvanath-ji-statue",
+      "green-jade-goddess-maa-saraswati-carving",
+      "green-jade-mahalakshmi-ji-idol",
+      "green-jade-radha-krishna-statue-carving",
+      "natural-howlite-gemstone-shivling",
+      "natural-labradorite-gemstone-shivling",
+      "natural-lapis-lazuli-lord-krishna-statue",
+      "natural-lapis-lazuli-shiva-face-carving-idol",
+      "natural-sphatik-shivling",
+      "natural-opal-stone-shivling",
+      "rose-quartz-carved-shree-krishna-ji-idol",
+      "rose-quartz-carved-shree-krishan-ji-idol",
+      "natural-rose-quartz-pair-of-swan",
+      "rose-quartz-shiva-statue-with-gold-painting",
+      "smokey-quartz-crystal-shiva-face-idol",
+      "natural-tiger-eye-gemstone-shivling",
+      "mahalakshmi-idol-in-natural-columbian-green-jade"
+    ]);
+
     for (const prod of products) {
       const slug = prod.slug || prod._id;
       const cleanSlug = slug.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
+      // For protected studio products, retain the new studio photo as #1
+      if (PROTECTED_STUDIO_SLUGS.has(cleanSlug)) {
+        console.log(`⭐ Preserving studio photo for ${cleanSlug}`);
+        continue;
+      }
 
       // Sync all images for this product (main + secondary views)
       if (Array.isArray(prod.images)) {

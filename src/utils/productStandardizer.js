@@ -334,10 +334,12 @@ export const MULTI_IMAGE_SLUGS = new Set([
   "natural-sphatik-shivling",
   "natural-opal-stone-shivling",
   "rose-quartz-carved-shree-krishna-ji-idol",
+  "rose-quartz-carved-shree-krishan-ji-idol",
   "natural-rose-quartz-pair-of-swan",
   "rose-quartz-shiva-statue-with-gold-painting",
   "smokey-quartz-crystal-shiva-face-idol",
   "natural-tiger-eye-gemstone-shivling",
+  "mahalakshmi-idol-in-natural-columbian-green-jade",
 ]);
 
 /**
@@ -450,13 +452,21 @@ export const getStandardizedProduct = (product) => {
     ? [...product.images] 
     : [{ url: `/images/${slug}.webp`, public_id: `products/${slug}` }];
 
-  if (standardizedImages.length <= 1 && MULTI_IMAGE_SLUGS.has(slug)) {
-    const firstImg = standardizedImages[0];
-    const firstUrl = typeof firstImg === 'string' ? firstImg : (firstImg?.url || `/images/${slug}.webp`);
-    standardizedImages = [
-      typeof firstImg === 'object' && firstImg !== null ? firstImg : { url: firstUrl, public_id: `products/${slug}` },
-      { url: `/images/${slug}-2.webp`, public_id: `products/${slug}-2` }
-    ];
+  if (MULTI_IMAGE_SLUGS.has(slug)) {
+    // 1st / Featured image is ALWAYS the pristine new studio photo
+    const featuredStudioImg = { url: `/images/${slug}.webp`, public_id: `products/${slug}` };
+
+    // 2nd / Alternate image is the secondary studio view or original image
+    let secondImgUrl = `/images/${slug}-2.webp`;
+    if (standardizedImages.length > 0) {
+      const rawFirst = typeof standardizedImages[0] === "string" ? standardizedImages[0] : standardizedImages[0]?.url;
+      if (rawFirst && !rawFirst.includes(`/images/${slug}.webp`)) {
+        secondImgUrl = rawFirst;
+      }
+    }
+    const secondImg = { url: secondImgUrl, public_id: `products/${slug}-2` };
+
+    standardizedImages = [featuredStudioImg, secondImg];
   }
 
   return {

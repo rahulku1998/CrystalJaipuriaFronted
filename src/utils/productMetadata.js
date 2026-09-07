@@ -9,11 +9,13 @@ export const packProductMetadata = ({
   faqs = [],
   metaTitle = "",
   metaDescription = "",
+  galleryOrder = [],
 }) => {
   // Strip any old embedded metadata first
   let cleanInfo = (additionalInfo || "")
     .replace(/<!-- FAQS_JSON:[\s\S]*?-->/g, "")
     .replace(/<!-- SEO_META:[\s\S]*?-->/g, "")
+    .replace(/<!-- GALLERY_ORDER:[\s\S]*?-->/g, "")
     .trim();
 
   // Valid FAQs only
@@ -35,6 +37,10 @@ export const packProductMetadata = ({
     packed += `\n<!-- SEO_META:${JSON.stringify(metaObj)} -->`;
   }
 
+  if (Array.isArray(galleryOrder) && galleryOrder.length > 0) {
+    packed += `\n<!-- GALLERY_ORDER:${JSON.stringify(galleryOrder)} -->`;
+  }
+
   return packed;
 };
 
@@ -47,6 +53,7 @@ export const unpackProductMetadata = (product) => {
       faqs: [],
       metaTitle: "",
       metaDescription: "",
+      galleryOrder: [],
       cleanAdditionalInfo: "",
     };
   }
@@ -55,6 +62,7 @@ export const unpackProductMetadata = (product) => {
   let faqs = [];
   let metaTitle = product.metaTitle || "";
   let metaDescription = product.metaDescription || "";
+  let galleryOrder = [];
 
   // 1. Direct field check
   if (product.faqs) {
@@ -86,15 +94,26 @@ export const unpackProductMetadata = (product) => {
     }
   }
 
+  const galleryMatch = rawInfo.match(/<!-- GALLERY_ORDER:([\s\S]*?)-->/);
+  if (galleryMatch && galleryMatch[1]) {
+    try {
+      galleryOrder = JSON.parse(galleryMatch[1]);
+    } catch (e) {
+      console.warn("Failed to parse embedded gallery order:", e);
+    }
+  }
+
   const cleanAdditionalInfo = rawInfo
     .replace(/<!-- FAQS_JSON:[\s\S]*?-->/g, "")
     .replace(/<!-- SEO_META:[\s\S]*?-->/g, "")
+    .replace(/<!-- GALLERY_ORDER:[\s\S]*?-->/g, "")
     .trim();
 
   return {
     faqs: Array.isArray(faqs) ? faqs : [],
     metaTitle: metaTitle || "",
     metaDescription: metaDescription || "",
+    galleryOrder: Array.isArray(galleryOrder) ? galleryOrder : [],
     cleanAdditionalInfo,
   };
 };
