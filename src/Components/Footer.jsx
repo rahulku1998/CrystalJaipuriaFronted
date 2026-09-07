@@ -54,7 +54,7 @@ const Footer = () => {
       </div>
 
       {/* Main Footer Grid */}
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 py-12 sm:py-16">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 pt-10 sm:pt-14 pb-28 sm:pb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 items-start">
           
           {/* Column 1: Brand & Logo (Span 4) */}
@@ -308,38 +308,53 @@ const Footer = () => {
         </div>
 
         {/* Customer Policies & Trust Bar (Mandatory for Google Merchant Center) */}
-        <div className="border-t border-slate-300 mt-10 pt-6 flex flex-wrap justify-center sm:justify-start items-center gap-x-6 gap-y-2 text-xs font-semibold text-slate-600">
-          <span className="text-slate-400 font-bold uppercase tracking-wider text-[11px]">
-            Store Policies:
-          </span>
-          <Link to="/shipping-policy" className="hover:text-indigo-600 transition hover:underline">
-            Shipping &amp; Delivery Policy
-          </Link>
-          <span className="text-slate-300">•</span>
-          <Link to="/refund-policy" className="hover:text-indigo-600 transition hover:underline">
-            Refund &amp; Return Policy (7 Days)
-          </Link>
-          <span className="text-slate-300">•</span>
-          <Link to="/privacy-policy" className="hover:text-indigo-600 transition hover:underline">
-            Privacy Policy
-          </Link>
-          <span className="text-slate-300">•</span>
-          <Link to="/terms-and-conditions" className="hover:text-indigo-600 transition hover:underline">
-            Terms &amp; Conditions
-          </Link>
-          <span className="text-slate-300">•</span>
-          <Link to="/gemstone-authenticity-guide" className="hover:text-indigo-600 transition hover:underline">
-            Gemstone Authenticity Guide
-          </Link>
+        <div className="border-t border-slate-300 mt-10 pt-6">
+          <div className="text-center mb-3.5">
+            <span className="text-slate-500 font-bold uppercase tracking-wider text-[11px]">
+              Store Policies &amp; Customer Protection
+            </span>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs font-semibold text-slate-700">
+            <Link
+              to="/shipping-policy"
+              className="px-3.5 py-1.5 rounded-lg bg-white/90 border border-slate-200/90 hover:border-indigo-400 hover:text-indigo-600 transition shadow-2xs text-center"
+            >
+              Shipping &amp; Delivery Policy
+            </Link>
+            <Link
+              to="/refund-policy"
+              className="px-3.5 py-1.5 rounded-lg bg-white/90 border border-slate-200/90 hover:border-indigo-400 hover:text-indigo-600 transition shadow-2xs text-center"
+            >
+              Refund &amp; Return Policy (7 Days)
+            </Link>
+            <Link
+              to="/privacy-policy"
+              className="px-3.5 py-1.5 rounded-lg bg-white/90 border border-slate-200/90 hover:border-indigo-400 hover:text-indigo-600 transition shadow-2xs text-center"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              to="/terms-and-conditions"
+              className="px-3.5 py-1.5 rounded-lg bg-white/90 border border-slate-200/90 hover:border-indigo-400 hover:text-indigo-600 transition shadow-2xs text-center"
+            >
+              Terms &amp; Conditions
+            </Link>
+            <Link
+              to="/gemstone-authenticity-guide"
+              className="px-3.5 py-1.5 rounded-lg bg-white/90 border border-slate-200/90 hover:border-indigo-400 hover:text-indigo-600 transition shadow-2xs text-center"
+            >
+              Gemstone Authenticity Guide
+            </Link>
+          </div>
         </div>
 
         {/* Bottom Copyright Bar */}
-        <div className="border-t border-slate-200 mt-6 pt-5 flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm text-slate-500 gap-4">
-          <p className="text-center sm:text-left">
+        <div className="border-t border-slate-200 mt-6 pt-5 flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm text-slate-500 gap-3 text-center sm:text-left">
+          <p>
             © {new Date().getFullYear()} <strong className="text-slate-800 font-bold">Crystal Jaipuria</strong>. All Rights Reserved. (Jaipur, India)
           </p>
 
-          <p className="text-center sm:text-right">
+          <p>
             Designed &amp; Developed with <span className="text-red-500">❤️</span> by{" "}
             <a
               href="https://www.codewithrahulkumawat.com/contact"
