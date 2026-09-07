@@ -27,6 +27,7 @@ const ShippingPolicy = lazy(() => import('./Pages/Policies/ShippingPolicy'));
 const RefundPolicy = lazy(() => import('./Pages/Policies/RefundPolicy'));
 const PrivacyPolicy = lazy(() => import('./Pages/Policies/PrivacyPolicy'));
 const TermsConditions = lazy(() => import('./Pages/Policies/TermsConditions'));
+const GemstoneAuthenticityGuide = lazy(() => import('./Pages/GemstoneAuthenticityGuide'));
 
 // Lazy-loaded Standard Admin (Kishan)
 const AdminLogin = lazy(() => import('./admin/Login'));
@@ -96,6 +97,10 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsConditions />} />
         <Route path="/terms" element={<Navigate to="/terms-and-conditions" replace />} />
+
+        {/* HIGH-INTENT AEO/GEO AUTHENTICITY GUIDE */}
+        <Route path="/gemstone-authenticity-guide" element={<GemstoneAuthenticityGuide />} />
+        <Route path="/authenticity-guide" element={<Navigate to="/gemstone-authenticity-guide" replace />} />
 
         {/* SUBCATEGORY PRODUCTS */}
         <Route path="/subcategory/:id" element={<SubCategoryProducts />} />

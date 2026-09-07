@@ -10,6 +10,7 @@ import {
   getProductMetaTitle,
   getProductMetaDescription,
   getProductSchema,
+  getDefaultProductFaqs,
 } from "../utils/seo";
 import {
   trackProductView,
@@ -284,7 +285,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
   const whatsappMessage = `Hi Crystal Jaipuria, I am interested in buying "${product.name}". Please share more details on this Number .`;
   const whatsappLink = `https://wa.me/918306317032?text=${encodeURIComponent(whatsappMessage)}`;
 
-  // Parse FAQs
+  // Parse FAQs with authentic gemstone fallback
   let productFaqs = [];
   if (product?.faqs) {
     try {
@@ -295,6 +296,9 @@ Hello Crystal Jaipuria, I have a query regarding this product.
   }
   if (!Array.isArray(productFaqs)) productFaqs = [];
   productFaqs = productFaqs.filter((f) => f && (f.question || f.answer));
+  if (productFaqs.length === 0 && product?.name) {
+    productFaqs = getDefaultProductFaqs(product.name);
+  }
   const hasFaqs = productFaqs.length > 0;
   const isPendingProduct = Boolean(product._id?.startsWith?.('legacy_') || product.isPending);
   const sacredShloka = getSacredShloka(product?.slug || product?.name);
@@ -507,6 +511,40 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                 </div>
               </div>
 
+              {/* TRUST & AUTHENTICITY ASSURANCE (GEO & CONVERSION BOOSTER) */}
+              <div className="mt-5 p-4 rounded-2xl bg-amber-50/70 border border-amber-200/80 space-y-2.5 shadow-2xs">
+                <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-800">
+                  <span className="text-base text-amber-600 shrink-0">🛡️</span>
+                  <div>
+                    <span className="font-bold text-slate-900">100% Natural Earth-Mined Gemstone: </span>
+                    <span className="text-slate-600">Handcrafted by hereditary master carvers in Jaipur, Rajasthan. Zero synthetic resin or plastic melts.</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-800">
+                  <span className="text-base text-emerald-600 shrink-0">📦</span>
+                  <div>
+                    <span className="font-bold text-slate-900">Sacred Shockproof Packaging: </span>
+                    <span className="text-slate-600">Triple-layer protective packaging for 100% breakage-free delivery across India.</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-800">
+                  <span className="text-base text-indigo-600 shrink-0">🔄</span>
+                  <div>
+                    <span className="font-bold text-slate-900">7-Day Easy Returns &amp; Replacements: </span>
+                    <span className="text-slate-600">Complete peace of mind with dedicated Jaipur artisan support (+91 83063 17032).</span>
+                  </div>
+                </div>
+                <div className="pt-2 border-t border-amber-200/60 flex items-center justify-between text-[11px] sm:text-xs">
+                  <span className="text-amber-950 font-semibold">How to identify genuine gemstones?</span>
+                  <Link
+                    to="/gemstone-authenticity-guide"
+                    className="text-indigo-700 font-bold hover:underline flex items-center gap-1"
+                  >
+                    Read Authenticity Guide &rarr;
+                  </Link>
+                </div>
+              </div>
+
               {/* SHARE PRODUCT ROW */}
               <div className="mt-5 pt-4 border-t border-gray-100 flex items-center justify-between flex-wrap gap-3">
                 <span className="text-xs sm:text-sm font-bold text-gray-700">Share Product:</span>
@@ -596,7 +634,8 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                   </span>
                 </div>
 
-                <div className="p-4 space-y-3 max-h-[420px] sm:max-h-[480px] overflow-y-auto overscroll-contain">
+                {/* FAQ List - Clean Natural Height (Zero Inner Scrollbars) */}
+                <div className="p-4 space-y-3">
                   {productFaqs.map((faq, index) => (
                     <div
                       key={index}

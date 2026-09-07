@@ -171,6 +171,15 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  to="/gemstone-authenticity-guide"
+                  className="text-slate-700 hover:text-indigo-600 transition-colors flex items-center gap-2 group font-medium"
+                >
+                  <FaChevronRight className="text-[11px] text-slate-400 group-hover:text-indigo-600 group-hover:translate-x-1 transition-all" />
+                  <span>Authenticity Guide</span>
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/contact"
                   className="text-slate-700 hover:text-indigo-600 transition-colors flex items-center gap-2 group font-medium"
                 >
@@ -317,6 +326,10 @@ const Footer = () => {
           <span className="text-slate-300">•</span>
           <Link to="/terms-and-conditions" className="hover:text-indigo-600 transition hover:underline">
             Terms &amp; Conditions
+          </Link>
+          <span className="text-slate-300">•</span>
+          <Link to="/gemstone-authenticity-guide" className="hover:text-indigo-600 transition hover:underline">
+            Gemstone Authenticity Guide
           </Link>
         </div>
 

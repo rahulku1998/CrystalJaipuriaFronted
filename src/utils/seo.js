@@ -142,6 +142,32 @@ export const parseSchemaPrice = (raw) => {
 };
 
 /**
+ * Default high-intent gemstone FAQs for GEO, AEO, and Google Rich Snippets
+ */
+export const getDefaultProductFaqs = (productName = "Gemstone Idol") => [
+  {
+    question: `How can I verify that this ${productName} is 100% natural gemstone and not glass or synthetic resin?`,
+    answer: `All our gemstone sculptures are handcrafted directly from natural earth-mined stones in Jaipur. Genuine natural gemstones exhibit organic internal inclusions, micro-veins, and remain naturally cool to the touch at room temperature, unlike plastic polymers or glass imitations.`,
+  },
+  {
+    question: `Can I perform daily Jalabhishekam, Milk, or Panchamrit Puja on this idol?`,
+    answer: `Yes, authentic natural gemstones (such as Sphatik Quartz, Green Jade, Black Agate, and Narmadeshwar stone) are naturally dense and water-resistant. You can safely perform daily Vedic Puja, Jalabhishekam, and Panchamrit rituals.`,
+  },
+  {
+    question: `How is the gemstone idol packaged to prevent transit breakage?`,
+    answer: `Every sculpture undergoes triple-layer protective sacred packaging: multi-layer shockproof air bubble cushioning, rigid thermocol casing, and reinforced corrugated boxing to guarantee 100% breakage-free delivery across India and worldwide.`,
+  },
+  {
+    question: `Where is this crafted and dispatched from?`,
+    answer: `Hand-carved and directly dispatched by hereditary master stone carvers from Crystal Jaipuria's artisan workshop in Sanganer, Jaipur, Rajasthan (crafting sacred gemstone murti art since 1989).`,
+  },
+  {
+    question: `What is your return and replacement policy?`,
+    answer: `We provide a 7-day hassle-free return and replacement policy. In the rare event of transit damage or customer dissatisfaction, our Jaipur customer support team (+91 83063 17032) provides immediate replacement or full refund.`,
+  },
+];
+
+/**
  * Generate Google Schema.org Product Structured Data (JSON-LD) with BreadcrumbList
  */
 export const getProductSchema = (product, canonicalUrl) => {
@@ -277,30 +303,31 @@ export const getProductSchema = (product, canonicalUrl) => {
     },
   ];
 
+  let parsedFaqs = [];
   if (product.faqs) {
-    let parsedFaqs = [];
     try {
       parsedFaqs = typeof product.faqs === "string" ? JSON.parse(product.faqs) : product.faqs;
     } catch {
       parsedFaqs = [];
     }
-    if (Array.isArray(parsedFaqs) && parsedFaqs.length > 0) {
-      const validFaqs = parsedFaqs.filter((f) => f.question && f.answer);
-      if (validFaqs.length > 0) {
-        graph.push({
-          "@type": "FAQPage",
-          "@id": `${canonicalUrl}#faq`,
-          mainEntity: validFaqs.map((f) => ({
-            "@type": "Question",
-            name: f.question,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: f.answer,
-            },
-          })),
-        });
-      }
-    }
+  }
+  if (!Array.isArray(parsedFaqs) || parsedFaqs.length === 0) {
+    parsedFaqs = getDefaultProductFaqs(product.name);
+  }
+  const validFaqs = (parsedFaqs || []).filter((f) => f && f.question && f.answer);
+  if (validFaqs.length > 0) {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      mainEntity: validFaqs.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: f.answer,
+        },
+      })),
+    });
   }
 
   return {

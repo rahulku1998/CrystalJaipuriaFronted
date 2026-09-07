@@ -59,6 +59,7 @@ const generateSitemap = async () => {
     { url: `${BASE_URL}/refund-policy`, changefreq: "monthly", priority: "0.6" },
     { url: `${BASE_URL}/privacy-policy`, changefreq: "monthly", priority: "0.6" },
     { url: `${BASE_URL}/terms-and-conditions`, changefreq: "monthly", priority: "0.6" },
+    { url: `${BASE_URL}/gemstone-authenticity-guide`, changefreq: "weekly", priority: "0.8" },
   ];
 
   let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
@@ -142,6 +143,7 @@ const generateSitemap = async () => {
   llms += `- [Our Blog](${BASE_URL}/blog): Insights on gemstones, Vastu guidelines, crystal healing, and Indian handicrafts.\n`;
   llms += `- [About Us](${BASE_URL}/about): Brand history, 35+ years of craftsmanship, workshop details, and values.\n`;
   llms += `- [Contact Us](${BASE_URL}/contact): Direct contact, manufacturing queries, and wholesale inquiries.\n`;
+  llms += `- [Gemstone Authenticity Guide](${BASE_URL}/gemstone-authenticity-guide): Authoritative guide on verifying 100% natural earth-mined gemstones, cold-touch tests, inclusion checks, and Vedic Shilpa Shastra care.\n`;
 
   if (products.length > 0) {
     llms += `\n## Live Products Catalog (${products.length} Products)\n`;

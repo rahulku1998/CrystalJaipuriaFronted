@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import API from "../api/axios";
 import { formatPrice } from "../utils/price";
 import { optimizeCloudinaryUrl } from "../utils/imageOptimizer";
@@ -9,6 +9,7 @@ import {
   getProductMetaTitle,
   getProductMetaDescription,
   getProductSchema,
+  getDefaultProductFaqs,
 } from "../utils/seo";
 import {
   trackProductView,
@@ -189,7 +190,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
   const whatsappMessage = `Hi Crystal Jaipuria, I am interested in buying "${product.name}". Please share more details on this Number .`;
   const whatsappLink = `https://wa.me/918306317032?text=${encodeURIComponent(whatsappMessage)}`;
 
-  // Parse FAQs
+  // Parse FAQs with authentic gemstone fallback
   let productFaqs = [];
   if (product?.faqs) {
     try {
@@ -200,6 +201,9 @@ Hello Crystal Jaipuria, I have a query regarding this product.
   }
   if (!Array.isArray(productFaqs)) productFaqs = [];
   productFaqs = productFaqs.filter((f) => f && (f.question || f.answer));
+  if (productFaqs.length === 0 && product?.name) {
+    productFaqs = getDefaultProductFaqs(product.name);
+  }
   const hasFaqs = productFaqs.length > 0;
 
   return (
@@ -384,6 +388,16 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                 </div>
               </div>
 
+              <div className="mt-3.5 p-3 rounded-xl bg-amber-50/70 border border-amber-200/80 flex items-center justify-between text-xs">
+                <span className="text-amber-950 font-medium">✨ How to verify genuine earth-mined gemstone?</span>
+                <Link
+                  to="/gemstone-authenticity-guide"
+                  className="text-indigo-700 font-bold hover:underline shrink-0 ml-2"
+                >
+                  Read Authenticity Guide &rarr;
+                </Link>
+              </div>
+
               {/* SHARE PRODUCT ROW */}
               <div className="mt-5 pt-4 border-t border-gray-100 flex items-center justify-between flex-wrap gap-3">
                 <span className="text-xs sm:text-sm font-bold text-gray-700">Share Product:</span>
@@ -463,7 +477,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                   </span>
                 </div>
 
-                <div className="p-4 space-y-3 max-h-[380px] sm:max-h-[460px] overflow-y-auto overscroll-contain">
+                <div className="p-4 space-y-3">
                   {productFaqs.map((faq, index) => (
                     <div
                       key={index}
