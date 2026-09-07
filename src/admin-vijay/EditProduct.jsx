@@ -51,41 +51,51 @@ const EditProduct = () => {
   const [faqs, setFaqs] = useState([{ question: "", answer: "" }]);
   const [categories, setCategories] = useState([]);
   const [subCategories, setSubCategories] = useState([]);
-  const [images, setImages] = useState([]);
-  const [preview, setPreview] = useState([]);
-  const [existingImages, setExistingImages] = useState([]);
+  const [gallery, setGallery] = useState([]);
 
   // input change
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // file change (appends new files so multiple clicks/files work seamlessly)
+  // file change: appends new files to the unified gallery
   const handleImageChange = (e) => {
     const files = Array.from(e.target.files);
     if (files.length === 0) return;
-    setImages((prev) => [...prev, ...files]);
-    const newPreviews = files.map((file) => URL.createObjectURL(file));
-    setPreview((prev) => [...prev, ...newPreviews]);
+    const newItems = files.map((file, idx) => ({
+      id: `new-${Date.now()}-${idx}-${Math.random().toString(36).slice(2, 7)}`,
+      type: "new",
+      url: URL.createObjectURL(file),
+      file: file,
+    }));
+    setGallery((prev) => [...prev, ...newItems]);
     e.target.value = "";
   };
 
-  const handleRemoveNewImage = (indexToRemove) => {
-    setImages((prev) => prev.filter((_, i) => i !== indexToRemove));
-    setPreview((prev) => {
-      if (prev[indexToRemove]) URL.revokeObjectURL(prev[indexToRemove]);
-      return prev.filter((_, i) => i !== indexToRemove);
+  // Live Shuffle / Reorder Handlers
+  const handleMoveImage = (fromIndex, toIndex) => {
+    if (toIndex < 0 || toIndex >= gallery.length) return;
+    setGallery((prev) => {
+      const updated = [...prev];
+      const [moved] = updated.splice(fromIndex, 1);
+      updated.splice(toIndex, 0, moved);
+      return updated;
     });
   };
 
-  const handleClearAllNewImages = () => {
-    preview.forEach((url) => URL.revokeObjectURL(url));
-    setImages([]);
-    setPreview([]);
+  const handleSetFeatured = (index) => {
+    if (index === 0) return;
+    handleMoveImage(index, 0);
   };
 
-  const handleRemoveExistingImage = (indexToRemove) => {
-    setExistingImages((prev) => prev.filter((_, i) => i !== indexToRemove));
+  const handleRemoveImageItem = (index) => {
+    setGallery((prev) => {
+      const item = prev[index];
+      if (item.type === "new" && item.url) {
+        URL.revokeObjectURL(item.url);
+      }
+      return prev.filter((_, i) => i !== index);
+    });
   };
 
   // fetch product
@@ -118,7 +128,14 @@ const EditProduct = () => {
         slug: p.slug || ""
       });
 
-      setExistingImages(p.images || []);
+      const rawImages = p.images || [];
+      const initialGallery = rawImages.map((img, idx) => ({
+        id: `existing-${idx}-${Date.now()}`,
+        type: "existing",
+        url: typeof img === "string" ? img : (img?.url || ""),
+        raw: img,
+      }));
+      setGallery(initialGallery);
       setMetaTitle(unpacked.metaTitle || "");
       setMetaDescription(unpacked.metaDescription || "");
 
@@ -238,37 +255,54 @@ const EditProduct = () => {
       });
       formData.append("additionalInfo", packedAdditionalInfo);
 
-      const seoImageSlug = (form.name || "product").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+      const seoImageSlug = (form.name || "product")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "");
 
-      // If user uploaded new images:
-      // Convert kept existing images to Files so backend preserves BOTH existing and newly uploaded images!
-      if (images.length > 0) {
-        const existingFiles = await Promise.all(
-          existingImages.map(async (img, idx) => {
-            try {
-              const url = typeof img === "string" ? img : img?.url;
-              if (!url) return null;
-              const res = await fetch(url);
-              if (!res.ok) return null;
-              const blob = await res.blob();
-              const ext = blob.type.includes("webp") ? "webp" : "jpg";
-              return new File([blob], `${seoImageSlug}-view-${idx + 1}.${ext}`, { type: blob.type });
-            } catch (e) {
-              console.warn("Could not fetch existing image blob:", e);
-              return null;
+      if (gallery.length === 0) {
+        alert("Please ensure the product has at least 1 image.");
+        setSubmitting(false);
+        return;
+      }
+
+      const hasNewFiles = gallery.some((item) => item.type === "new");
+
+      if (hasNewFiles) {
+        // Convert all gallery items to Files in their exact chosen sequence
+        const preparedFiles = await Promise.all(
+          gallery.map(async (item, idx) => {
+            const ext = item.type === "new"
+              ? (item.file.name.split(".").pop() || "webp").toLowerCase()
+              : (item.url.includes(".png") ? "png" : item.url.includes(".webp") ? "webp" : "jpg");
+            const cleanFileName = idx === 0 ? `${seoImageSlug}.${ext}` : `${seoImageSlug}-${idx + 1}.${ext}`;
+
+            if (item.type === "new") {
+              return new File([item.file], cleanFileName, { type: item.file.type || "image/webp" });
+            } else {
+              try {
+                const res = await fetch(item.url);
+                if (!res.ok) return null;
+                const blob = await res.blob();
+                return new File([blob], cleanFileName, { type: blob.type || "image/webp" });
+              } catch (e) {
+                console.warn("Could not fetch existing image blob:", e);
+                return null;
+              }
             }
           })
         );
 
-        const allImages = [...existingFiles.filter(Boolean), ...images];
-        allImages.forEach((img, idx) => {
-          const ext = (img.name?.split(".").pop() || "webp").toLowerCase();
-          const cleanFileName = idx === 0 ? `${seoImageSlug}.${ext}` : `${seoImageSlug}-${idx + 1}.${ext}`;
-          formData.append("images", img, cleanFileName);
+        preparedFiles.filter(Boolean).forEach((file) => {
+          formData.append("images", file);
         });
       }
 
-      formData.append("existingImages", JSON.stringify(existingImages));
+      // Always pass existing images in their exact reordered sequence
+      const orderedExisting = gallery
+        .filter((item) => item.type === "existing")
+        .map((item) => item.raw);
+      formData.append("existingImages", JSON.stringify(orderedExisting));
 
       await API.put(`/products/${id}`, formData, {
         headers: {
@@ -713,79 +747,120 @@ placeholder="Available stock"
   </div>
 </div>
 
-{/* Existing Images */}
-{existingImages.length > 0 && (
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <h2 className="text-lg font-bold text-gray-800 flex items-center gap-2">
-                    <FaImages className="text-indigo-600" />
-                    <span>Current Product Images</span>
+            {/* Product Image Manager with Live Reorder / Shuffle */}
+            <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 pb-3 border-b border-gray-100">
+                <div>
+                  <h2 className="text-lg font-bold text-gray-900 flex items-center gap-2">
+                    <FaImages className="text-amber-500" />
+                    <span>Product Images &amp; Sequence Order</span>
                   </h2>
-                  <span className="text-xs font-semibold px-2.5 py-1 bg-gray-100 text-gray-700 rounded-full border">
-                    {existingImages.length} {existingImages.length === 1 ? "Image" : "Images"}
-                  </span>
+                  <p className="text-xs text-gray-500 mt-0.5">
+                    Image at <strong>#1 (Featured)</strong> is displayed on home page, cards, and Google Shopping. Use arrows or &quot;⭐ Make 1st&quot; to shuffle order.
+                  </p>
                 </div>
+                <span className="text-xs font-semibold px-3 py-1 bg-amber-50 text-amber-700 rounded-full border border-amber-200 self-start sm:self-auto">
+                  {gallery.length} {gallery.length === 1 ? "Image" : "Images"} Total
+                </span>
+              </div>
 
-                <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-4">
-                  {existingImages.map((img, index) => (
+              {/* Unified Gallery Grid */}
+              {gallery.length > 0 ? (
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-6">
+                  {gallery.map((item, index) => (
                     <div
-                      key={index}
-                      className="relative group rounded-xl overflow-hidden shadow-md border border-gray-200 bg-white aspect-square"
+                      key={item.id}
+                      className={`relative rounded-xl overflow-hidden border-2 transition-all shadow-sm bg-gray-50 flex flex-col justify-between ${
+                        index === 0
+                          ? "border-amber-500 ring-2 ring-amber-300/60 bg-amber-50/20"
+                          : "border-gray-200 hover:border-gray-400"
+                      }`}
                     >
-                      <img
-                        src={img.url}
-                        alt={`Product ${index + 1}`}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                      <div className="absolute top-1.5 left-1.5 bg-black/70 text-white text-[10px] px-1.5 py-0.5 rounded font-bold">
-                        #{index + 1}
+                      {/* Image Display */}
+                      <div className="relative aspect-square w-full bg-white flex items-center justify-center overflow-hidden">
+                        <img
+                          src={item.url}
+                          alt={`Product View ${index + 1}`}
+                          className="w-full h-full object-contain p-2"
+                        />
+                        {/* Position Badge */}
+                        <div className="absolute top-2 left-2 flex items-center gap-1.5 z-10">
+                          {index === 0 ? (
+                            <span className="bg-amber-500 text-white text-xs font-bold px-2.5 py-1 rounded-md shadow-md flex items-center gap-1">
+                              ⭐ 1st (Featured)
+                            </span>
+                          ) : (
+                            <span className="bg-gray-900/80 text-white text-xs font-semibold px-2 py-1 rounded-md shadow-md">
+                              #{index + 1} View
+                            </span>
+                          )}
+                          {item.type === "new" && (
+                            <span className="bg-emerald-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded shadow">
+                              NEW
+                            </span>
+                          )}
+                        </div>
                       </div>
-                      <button
-                        type="button"
-                        onClick={() => handleRemoveExistingImage(index)}
-                        className="absolute top-1.5 right-1.5 bg-red-600 hover:bg-red-700 text-white p-1.5 rounded-full shadow-lg transition-transform hover:scale-110 cursor-pointer"
-                        title="Remove existing image"
-                      >
-                        <FaTimes className="text-xs" />
-                      </button>
+
+                      {/* Controls Bar */}
+                      <div className="p-2.5 bg-white border-t border-gray-200 flex items-center justify-between gap-1">
+                        <div className="flex items-center gap-1">
+                          <button
+                            type="button"
+                            disabled={index === 0}
+                            onClick={() => handleMoveImage(index, index - 1)}
+                            className="w-8 h-8 rounded-lg bg-gray-100 hover:bg-gray-200 disabled:opacity-30 disabled:cursor-not-allowed text-gray-800 font-bold flex items-center justify-center text-sm transition cursor-pointer"
+                            title="Move Left (Earlier in sequence)"
+                          >
+                            ◀
+                          </button>
+                          <button
+                            type="button"
+                            disabled={index === gallery.length - 1}
+                            onClick={() => handleMoveImage(index, index + 1)}
+                            className="w-8 h-8 rounded-lg bg-gray-100 hover:bg-gray-200 disabled:opacity-30 disabled:cursor-not-allowed text-gray-800 font-bold flex items-center justify-center text-sm transition cursor-pointer"
+                            title="Move Right (Later in sequence)"
+                          >
+                            ▶
+                          </button>
+                          {index !== 0 && (
+                            <button
+                              type="button"
+                              onClick={() => handleSetFeatured(index)}
+                              className="px-2 h-8 rounded-lg bg-amber-50 border border-amber-300 text-amber-800 hover:bg-amber-100 text-xs font-bold flex items-center gap-1 transition cursor-pointer"
+                              title="Make this image #1 Featured"
+                            >
+                              ⭐ Make 1st
+                            </button>
+                          )}
+                        </div>
+
+                        <button
+                          type="button"
+                          onClick={() => handleRemoveImageItem(index)}
+                          className="w-8 h-8 rounded-lg bg-red-50 hover:bg-red-100 text-red-600 flex items-center justify-center transition text-sm cursor-pointer"
+                          title="Remove Image"
+                        >
+                          <FaTrashAlt />
+                        </button>
+                      </div>
                     </div>
                   ))}
                 </div>
-              </div>
-            )}
+              ) : (
+                <div className="p-6 text-center text-gray-500 bg-gray-50 rounded-xl border border-dashed border-gray-300 mb-6">
+                  No images currently selected. Please upload at least one product image below.
+                </div>
+              )}
 
-            {/* Upload New Images */}
-            <div>
-              <div className="flex items-center justify-between mb-3">
-                <label className="font-semibold text-gray-800 flex items-center gap-2">
-                  <FaCloudUploadAlt className="text-indigo-600 text-lg" />
-                  <span>Upload More / New Images (Multiple Supported)</span>
-                </label>
-                {preview.length > 0 && (
-                  <div className="flex items-center gap-3">
-                    <span className="text-xs font-semibold px-2.5 py-1 bg-indigo-50 text-indigo-700 rounded-full border border-indigo-200">
-                      {preview.length} New {preview.length === 1 ? "Image" : "Images"} Selected
-                    </span>
-                    <button
-                      type="button"
-                      onClick={handleClearAllNewImages}
-                      className="text-xs text-red-600 hover:text-red-800 font-medium flex items-center gap-1 cursor-pointer"
-                    >
-                      <FaTrashAlt className="text-xs" />
-                      Clear New
-                    </button>
-                  </div>
-                )}
-              </div>
-
-              {/* Upload Drop Area */}
-              <label className="flex flex-col items-center justify-center border-2 border-dashed border-indigo-300 hover:border-indigo-500 bg-indigo-50/40 hover:bg-indigo-50/80 rounded-2xl p-6 cursor-pointer transition-all duration-200 group">
+              {/* Upload Drop Area for New Images */}
+              <label className="flex flex-col items-center justify-center border-2 border-dashed border-indigo-300 hover:border-indigo-500 bg-indigo-50/30 hover:bg-indigo-50/70 rounded-2xl p-6 cursor-pointer transition-all duration-200 group">
                 <FaCloudUploadAlt className="text-4xl text-indigo-500 group-hover:scale-110 duration-200 mb-2" />
-                <span className="font-semibold text-indigo-900 text-sm sm:text-base">
-                  Click to select multiple new images
+                <span className="font-semibold text-indigo-950 text-sm sm:text-base">
+                  Click to add more images (Select one or multiple)
                 </span>
                 <span className="text-xs text-gray-500 mt-1">
-                  PNG, JPG, WEBP • You can select multiple images or add them in batches
+                  PNG, JPG, WEBP • Newly added images will appear above and can be shuffled or set as Featured
                 </span>
                 <input
                   type="file"
@@ -795,35 +870,6 @@ placeholder="Available stock"
                   className="hidden"
                 />
               </label>
-
-              {/* New Previews Grid */}
-              {preview.length > 0 && (
-                <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-4 mt-5">
-                  {preview.map((img, index) => (
-                    <div
-                      key={index}
-                      className="relative group rounded-xl overflow-hidden shadow-md border-2 border-indigo-400 bg-white aspect-square"
-                    >
-                      <img
-                        src={img}
-                        alt={`New Preview ${index + 1}`}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                      <div className="absolute top-1.5 left-1.5 bg-indigo-600 text-white text-[10px] px-1.5 py-0.5 rounded font-bold">
-                        NEW #{index + 1}
-                      </div>
-                      <button
-                        type="button"
-                        onClick={() => handleRemoveNewImage(index)}
-                        className="absolute top-1.5 right-1.5 bg-red-600 hover:bg-red-700 text-white p-1.5 rounded-full shadow-lg transition-transform hover:scale-110 cursor-pointer"
-                        title="Remove new image"
-                      >
-                        <FaTimes className="text-xs" />
-                      </button>
-                    </div>
-                  ))}
-                </div>
-              )}
             </div>
 
 
