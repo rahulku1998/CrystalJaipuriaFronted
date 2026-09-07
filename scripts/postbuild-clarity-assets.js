@@ -18,16 +18,21 @@ export const postbuildClarityAssets = () => {
   const mainCss = files.find((f) => f.startsWith("index-") && f.endsWith(".css"));
   const swiperCss = files.find((f) => f.startsWith("vendor-swiper-") && f.endsWith(".css"));
 
+  const publicAssetsDir = path.resolve(__dirname, "../public/assets");
+  if (!fs.existsSync(publicAssetsDir)) fs.mkdirSync(publicAssetsDir, { recursive: true });
+
   if (mainCss) {
     fs.copyFileSync(path.join(distAssetsDir, mainCss), path.join(distAssetsDir, "index.css"));
     fs.copyFileSync(path.join(distAssetsDir, mainCss), path.join(distDir, "index.css"));
-    console.log(`✓ Copied ${mainCss} to dist/assets/index.css (Clarity Replay Fallback)`);
+    fs.copyFileSync(path.join(distAssetsDir, mainCss), path.join(publicAssetsDir, "index.css"));
+    console.log(`✓ Copied ${mainCss} to dist/assets/index.css & public/assets/index.css`);
   }
 
   if (swiperCss) {
     fs.copyFileSync(path.join(distAssetsDir, swiperCss), path.join(distAssetsDir, "vendor-swiper.css"));
     fs.copyFileSync(path.join(distAssetsDir, swiperCss), path.join(distDir, "vendor-swiper.css"));
-    console.log(`✓ Copied ${swiperCss} to dist/assets/vendor-swiper.css (Clarity Replay Fallback)`);
+    fs.copyFileSync(path.join(distAssetsDir, swiperCss), path.join(publicAssetsDir, "vendor-swiper.css"));
+    console.log(`✓ Copied ${swiperCss} to dist/assets/vendor-swiper.css & public/assets/vendor-swiper.css`);
   }
 };
 
