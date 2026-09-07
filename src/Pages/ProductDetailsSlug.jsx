@@ -362,7 +362,11 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                         e.target.src = activeRaw;
                       }
                     }}
-                    alt={`${product.name} - 100% Certified Natural Gemstone Idol by Crystal Jaipuria, Jaipur`}
+                    alt={
+                      selectedImageIndex === 0
+                        ? `${product.name} - Natural Hand-Carved Gemstone Idol by Crystal Jaipuria, Jaipur`
+                        : `${product.name} - Handcrafted Gemstone Idol Alternate View ${selectedImageIndex + 1} | Crystal Jaipuria`
+                    }
                     width="600"
                     height="600"
                     fetchPriority="high"
@@ -393,7 +397,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                           e.target.src = rawSrc;
                         }
                       }}
-                      alt={`${product.name} - Handcrafted Gemstone Idol View ${idx + 1}`}
+                      alt={`${product.name} - Handcrafted Gemstone Idol Alternate Angle View ${idx + 1} | Crystal Jaipuria`}
                       width="80"
                       height="80"
                       loading="lazy"

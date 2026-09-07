@@ -318,8 +318,30 @@ export const STANDARDIZED_NAMES = {
   "green-jade-panchmukhi-shivling": "Natural Green Jade Stone Panchmukhi Shivling (500g, 4.5\")"
 };
 
+export const MULTI_IMAGE_SLUGS = new Set([
+  "amethyst-gemston-angel",
+  "crystal-sphtik-shree-yantra-on-kamal-flower",
+  "natural-amethyst-gemstone-shiva-face-idol",
+  "gemston-ruby-shree-yantra",
+  "green-aventurine-parshvanath-ji-statue",
+  "green-jade-goddess-maa-saraswati-carving",
+  "green-jade-mahalakshmi-ji-idol",
+  "green-jade-radha-krishna-statue-carving",
+  "natural-howlite-gemstone-shivling",
+  "natural-labradorite-gemstone-shivling",
+  "natural-lapis-lazuli-lord-krishna-statue",
+  "natural-lapis-lazuli-shiva-face-carving-idol",
+  "natural-sphatik-shivling",
+  "natural-opal-stone-shivling",
+  "rose-quartz-carved-shree-krishna-ji-idol",
+  "natural-rose-quartz-pair-of-swan",
+  "rose-quartz-shiva-statue-with-gold-painting",
+  "smokey-quartz-crystal-shiva-face-idol",
+  "natural-tiger-eye-gemstone-shivling",
+]);
+
 /**
- * Standardize any product object with clean single pricing and specs
+ * Standardize any product object with clean single pricing, specs, and gallery images
  */
 export const getStandardizedProduct = (product) => {
   if (!product) return product;
@@ -423,6 +445,20 @@ export const getStandardizedProduct = (product) => {
       .replace(/Mahvaveer/gi, "Mahaveer");
   }
 
+  // Populate multiple images if available
+  let standardizedImages = Array.isArray(product.images) && product.images.length > 0 
+    ? [...product.images] 
+    : [{ url: `/images/${slug}.webp`, public_id: `products/${slug}` }];
+
+  if (standardizedImages.length <= 1 && MULTI_IMAGE_SLUGS.has(slug)) {
+    const firstImg = standardizedImages[0];
+    const firstUrl = typeof firstImg === 'string' ? firstImg : (firstImg?.url || `/images/${slug}.webp`);
+    standardizedImages = [
+      typeof firstImg === 'object' && firstImg !== null ? firstImg : { url: firstUrl, public_id: `products/${slug}` },
+      { url: `/images/${slug}-2.webp`, public_id: `products/${slug}-2` }
+    ];
+  }
+
   return {
     ...product,
     name: cleanName,
@@ -433,5 +469,6 @@ export const getStandardizedProduct = (product) => {
     detail: cleanDetail,
     description: cleanDescription,
     additionalInfo: formattedAdditionalInfo,
+    images: standardizedImages,
   };
 };

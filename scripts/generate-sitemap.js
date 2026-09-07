@@ -101,6 +101,15 @@ const generateSitemap = async () => {
       xml += `      <image:loc>${imageMain}</image:loc>\n`;
       xml += `      <image:title>${cleanName} | Crystal Jaipuria</image:title>\n`;
       xml += `    </image:image>\n`;
+
+      const secImgPath = path.join(__dirname, `../public/images/${cleanProductSlug}-2.webp`);
+      if (fs.existsSync(secImgPath)) {
+        xml += `    <image:image>\n`;
+        xml += `      <image:loc>${BASE_URL}/images/${cleanProductSlug}-2.webp</image:loc>\n`;
+        xml += `      <image:title>${cleanName} - Alternate View | Crystal Jaipuria</image:title>\n`;
+        xml += `    </image:image>\n`;
+      }
+
       xml += `    <changefreq>weekly</changefreq>\n`;
       xml += `    <priority>0.8</priority>\n`;
       xml += `  </url>\n`;
@@ -322,7 +331,8 @@ const generateSitemap = async () => {
     gmcXml += `      <g:description>${feedDesc}</g:description>\n`;
     gmcXml += `      <g:link>${prodUrl}</g:link>\n`;
     gmcXml += `      <g:image_link>${imageMain}</g:image_link>\n`;
-    if (prod.images && prod.images.length > 1) {
+    const secImgPath = path.join(__dirname, `../public/images/${cleanProductSlug}-2.webp`);
+    if (fs.existsSync(secImgPath) || (prod.images && prod.images.length > 1)) {
       const extraImg = `${BASE_URL}/images/${cleanProductSlug}-2.webp`;
       gmcXml += `      <g:additional_image_link>${extraImg}</g:additional_image_link>\n`;
     }

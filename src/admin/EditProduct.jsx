@@ -22,6 +22,7 @@ const EditProduct = () => {
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState(true);
+  const [submitting, setSubmitting] = useState(false);
   const [showAiModal, setShowAiModal] = useState(false);
 
   const [form, setForm] = useState({
@@ -187,6 +188,7 @@ const EditProduct = () => {
     e.preventDefault();
 
     try {
+      setSubmitting(true);
       const formData = new FormData();
 
       Object.keys(form).forEach((key) => {
@@ -210,10 +212,44 @@ const EditProduct = () => {
       });
       formData.append("additionalInfo", packedAdditionalInfo);
 
-      images.forEach((img) => {
-        formData.append("images", img);
-      });
+      const seoImageSlug = (form.name || "product").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
+      // If user uploaded new images:
+      // Convert kept existing images to Files so backend preserves BOTH existing and newly uploaded images!
+      if (images.length > 0) {
+        const existingFiles = await Promise.all(
+          existingImages.map(async (img, idx) => {
+            try {
+              const url = typeof img === "string" ? img : img?.url;
+              if (!url) return null;
+              const res = await fetch(url);
+              const blob = await res.blob();
+              const ext = blob.type.includes("png") ? "png" : blob.type.includes("webp") ? "webp" : "jpg";
+              const filename = idx === 0 ? `${seoImageSlug}.${ext}` : `${seoImageSlug}-${idx + 1}.${ext}`;
+              return new File([blob], filename, { type: blob.type || "image/jpeg" });
+            } catch (fetchErr) {
+              console.warn("Could not convert existing image to File:", fetchErr);
+              return null;
+            }
+          })
+        );
+
+        // 1. Append existing files first
+        existingFiles.filter(Boolean).forEach((file) => {
+          formData.append("images", file);
+        });
+
+        // 2. Append new files renamed with clean SEO slug
+        images.forEach((file, idx) => {
+          const fileIndex = existingFiles.filter(Boolean).length + idx;
+          const ext = file.name.split(".").pop() || "jpg";
+          const newFileName = fileIndex === 0 ? `${seoImageSlug}.${ext}` : `${seoImageSlug}-${fileIndex + 1}.${ext}`;
+          const renamedFile = new File([file], newFileName, { type: file.type });
+          formData.append("images", renamedFile);
+        });
+      }
+
+      // Always pass existingImages as fallback
       formData.append("existingImages", JSON.stringify(existingImages));
 
       await API.put(`/products/${id}`, formData, {
@@ -226,6 +262,8 @@ const EditProduct = () => {
       navigate("/admin/dashboard");
     } catch (err) {
       alert(err.response?.data?.message || "Update failed");
+    } finally {
+      setSubmitting(false);
     }
   };
   
@@ -647,15 +685,13 @@ placeholder="Available stock"
 
 
 <button
-
-type="submit"
-
-className="w-full bg-black text-white py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition shadow-lg"
-
+  type="submit"
+  disabled={submitting}
+  className={`w-full py-4 rounded-xl font-semibold text-lg transition shadow-lg ${
+    submitting ? "bg-gray-400 cursor-not-allowed text-white" : "bg-black text-white hover:bg-gray-800"
+  }`}
 >
-
-Update Product
-
+  {submitting ? "Uploading & Updating Images..." : "Update Product"}
 </button>
 
 
