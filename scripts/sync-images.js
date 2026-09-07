@@ -34,19 +34,17 @@ export const syncImages = async () => {
           const targetPath = path.join(imagesDir, outName);
           const prodSubPath = path.join(productsDir, outName);
 
-          if (!fs.existsSync(targetPath)) {
-            try {
-              const imgRes = await fetch(imgUrl);
-              const buf = Buffer.from(await imgRes.arrayBuffer());
-              await sharp(buf)
-                .resize({ width: 1200, withoutEnlargement: true })
-                .webp({ quality: 85 })
-                .toFile(targetPath);
-              fs.copyFileSync(targetPath, prodSubPath);
-              console.log(`✓ Saved /images/${outName}`);
-            } catch (e) {
-              console.log(`Failed to process ${outName}:`, e.message);
-            }
+          try {
+            const imgRes = await fetch(imgUrl);
+            const buf = Buffer.from(await imgRes.arrayBuffer());
+            await sharp(buf)
+              .resize({ width: 1200, withoutEnlargement: true })
+              .webp({ quality: 85 })
+              .toFile(targetPath);
+            fs.copyFileSync(targetPath, prodSubPath);
+            console.log(`✓ Synced /images/${outName}`);
+          } catch (e) {
+            console.log(`Failed to process ${outName}:`, e.message);
           }
         }
       }

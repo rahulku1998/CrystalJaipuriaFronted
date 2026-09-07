@@ -171,15 +171,23 @@ const runInstantIndexing = async () => {
     `${BASE_URL}/refund-policy`,
     `${BASE_URL}/privacy-policy`,
     `${BASE_URL}/terms-and-conditions`,
+    `${BASE_URL}/gemstone-authenticity-guide`,
   ];
 
   categories.forEach((cat) => {
     if (cat.slug) urlList.push(`${BASE_URL}/${cat.slug}`);
   });
 
+  const imageUrlList = [];
+
   products.forEach((prod) => {
     const slug = prod.slug || prod._id;
     urlList.push(`${BASE_URL}/product/${slug}`);
+    const cleanProductSlug = (prod.slug || slug || "product").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    imageUrlList.push(`${BASE_URL}/images/${cleanProductSlug}.webp`);
+    if (prod.images && prod.images.length > 1) {
+      imageUrlList.push(`${BASE_URL}/images/${cleanProductSlug}-2.webp`);
+    }
   });
 
   blogs.forEach((b) => {
@@ -193,7 +201,9 @@ const runInstantIndexing = async () => {
     `${BASE_URL}/information`,
   ];
 
-  console.log(`📦 Total ${urlList.length} Live URLs collected for instant indexing.`);
+  const allUrlsAndImages = [...urlList, ...imageUrlList];
+
+  console.log(`📦 Total ${urlList.length} Live Pages + ${imageUrlList.length} Product Images collected for instant indexing.`);
 
   // 1. IndexNow (Bing / Search Engine Coalition)
   console.log("\n1️⃣ Pinging IndexNow API (Bing / Microsoft Instant Indexing)...");
@@ -202,11 +212,11 @@ const runInstantIndexing = async () => {
       host: "www.crystaljaipuria.com",
       key: INDEXNOW_KEY,
       keyLocation: `${BASE_URL}/${INDEXNOW_KEY}.txt`,
-      urlList: urlList,
+      urlList: allUrlsAndImages,
     };
     const indexNowRes = await postJSON("https://api.indexnow.org/IndexNow", indexNowPayload);
     if (indexNowRes.status === 200 || indexNowRes.status === 202) {
-      console.log(`   ✅ IndexNow: Successfully submitted ${urlList.length} URLs (Status: ${indexNowRes.status})!`);
+      console.log(`   ✅ IndexNow: Successfully submitted ${allUrlsAndImages.length} URLs & Images (Status: ${indexNowRes.status})!`);
     } else {
       console.log(`   ℹ️  IndexNow status: ${indexNowRes.status} (Key will activate once deployed)`);
     }
