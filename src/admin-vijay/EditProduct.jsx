@@ -53,6 +53,7 @@ const EditProduct = () => {
   const [categories, setCategories] = useState([]);
   const [subCategories, setSubCategories] = useState([]);
   const [gallery, setGallery] = useState([]);
+  const [initialGalleryUrls, setInitialGalleryUrls] = useState([]);
 
   // input change
   const handleChange = (e) => {
@@ -137,6 +138,7 @@ const EditProduct = () => {
         raw: img,
       }));
       setGallery(initialGallery);
+      setInitialGalleryUrls(initialGallery.map((item) => item.url));
       setMetaTitle(unpacked.metaTitle || "");
       setMetaDescription(unpacked.metaDescription || "");
 
@@ -268,14 +270,44 @@ const EditProduct = () => {
         return;
       }
 
-      // Safely compress and append new uploaded files with clean SEO naming
-      for (let idx = 0; idx < gallery.length; idx++) {
-        const item = gallery[idx];
-        if (item.type === "new" && item.file) {
-          const compressed = await compressImageForUpload(item.file);
-          const ext = (compressed.name?.split(".").pop() || "webp").toLowerCase();
+      // Check if gallery was changed by user (new images added, existing removed, or sequence changed)
+      const hasNewImages = gallery.some((item) => item.type === "new");
+      const currentUrls = gallery.map((item) => item.url);
+      const galleryChanged =
+        hasNewImages ||
+        currentUrls.length !== initialGalleryUrls.length ||
+        currentUrls.some((url, idx) => url !== initialGalleryUrls[idx]);
+
+      if (galleryChanged) {
+        // User modified images or order: convert all gallery items into Files in the exact user sequence.
+        // This guarantees:
+        // 1. Existing images are preserved when adding new images.
+        // 2. Newly added or reordered image at #1 becomes the true main featured image.
+        // 3. Any shuffle order is 100% saved in the database.
+        for (let idx = 0; idx < gallery.length; idx++) {
+          const item = gallery[idx];
+          const ext = "webp";
           const cleanFileName = idx === 0 ? `${seoImageSlug}.${ext}` : `${seoImageSlug}-${idx + 1}.${ext}`;
-          formData.append("images", compressed, cleanFileName);
+
+          if (item.type === "new" && item.file) {
+            const compressed = await compressImageForUpload(item.file);
+            formData.append("images", compressed, cleanFileName);
+          } else if (item.type === "existing") {
+            try {
+              const imgUrl = typeof item.raw === "string" ? item.raw : (item.raw?.url || item.url);
+              if (imgUrl) {
+                const res = await fetch(imgUrl);
+                if (res.ok) {
+                  const blob = await res.blob();
+                  const file = new File([blob], cleanFileName, { type: blob.type || "image/webp" });
+                  const compressed = await compressImageForUpload(file);
+                  formData.append("images", compressed, cleanFileName);
+                }
+              }
+            } catch (fetchErr) {
+              console.warn("Could not fetch existing image blob:", fetchErr);
+            }
+          }
         }
       }
 

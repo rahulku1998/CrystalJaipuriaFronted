@@ -31,7 +31,6 @@ export const syncImages = async () => {
       "natural-labradorite-gemstone-shivling",
       "natural-lapis-lazuli-lord-krishna-statue",
       "natural-lapis-lazuli-shiva-face-carving-idol",
-      "natural-sphatik-shivling",
       "natural-opal-stone-shivling",
       "rose-quartz-carved-shree-krishna-ji-idol",
       "rose-quartz-carved-shree-krishan-ji-idol",

@@ -46,6 +46,7 @@ const EditProduct = () => {
   const [categories, setCategories] = useState([]);
   const [subCategories, setSubCategories] = useState([]);
   const [gallery, setGallery] = useState([]);
+  const [initialGalleryUrls, setInitialGalleryUrls] = useState([]);
 
   // input change
   const handleChange = (e) => {
@@ -130,6 +131,7 @@ const EditProduct = () => {
         raw: img,
       }));
       setGallery(initialGallery);
+      setInitialGalleryUrls(initialGallery.map((item) => item.url));
       setMetaTitle(unpacked.metaTitle || "");
       setMetaDescription(unpacked.metaDescription || "");
 
@@ -241,15 +243,42 @@ const EditProduct = () => {
         return;
       }
 
-      // Safely append new uploaded files with clean SEO naming
-      gallery.forEach((item, idx) => {
-        if (item.type === "new" && item.file) {
-          const ext = (item.file.name.split(".").pop() || "webp").toLowerCase();
+      // Check if gallery was changed by user (new images added, existing removed, or sequence changed)
+      const hasNewImages = gallery.some((item) => item.type === "new");
+      const currentUrls = gallery.map((item) => item.url);
+      const galleryChanged =
+        hasNewImages ||
+        currentUrls.length !== initialGalleryUrls.length ||
+        currentUrls.some((url, idx) => url !== initialGalleryUrls[idx]);
+
+      if (galleryChanged) {
+        // User modified images or order: convert all gallery items into Files in the exact user sequence.
+        for (let idx = 0; idx < gallery.length; idx++) {
+          const item = gallery[idx];
+          const ext = "webp";
           const cleanFileName = idx === 0 ? `${seoImageSlug}.${ext}` : `${seoImageSlug}-${idx + 1}.${ext}`;
-          const renamedFile = new File([item.file], cleanFileName, { type: item.file.type || "image/webp" });
-          formData.append("images", renamedFile);
+
+          if (item.type === "new" && item.file) {
+            const compressed = await compressImageForUpload(item.file);
+            formData.append("images", compressed, cleanFileName);
+          } else if (item.type === "existing") {
+            try {
+              const imgUrl = typeof item.raw === "string" ? item.raw : (item.raw?.url || item.url);
+              if (imgUrl) {
+                const res = await fetch(imgUrl);
+                if (res.ok) {
+                  const blob = await res.blob();
+                  const file = new File([blob], cleanFileName, { type: blob.type || "image/webp" });
+                  const compressed = await compressImageForUpload(file);
+                  formData.append("images", compressed, cleanFileName);
+                }
+              }
+            } catch (fetchErr) {
+              console.warn("Could not fetch existing image blob:", fetchErr);
+            }
+          }
         }
-      });
+      }
 
       // Always pass existing images in their exact reordered sequence
       const orderedExisting = gallery
@@ -257,11 +286,7 @@ const EditProduct = () => {
         .map((item) => item.raw);
       formData.append("existingImages", JSON.stringify(orderedExisting));
 
-      await API.put(`/products/${id}`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      await API.put(`/products/${id}`, formData);
 
       alert("Product & SEO Meta Updated Successfully!");
       navigate("/admin/dashboard");
