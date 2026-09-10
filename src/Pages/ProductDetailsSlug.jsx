@@ -357,6 +357,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
 
                 return (
                   <img
+                    key={`main-img-${selectedImageIndex}`}
                     src={activeClean}
                     onError={(e) => {
                       if (e.target.src !== activeRaw) {
