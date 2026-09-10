@@ -44,7 +44,6 @@ const ProductDetails = () => {
   const [showQueryForm, setShowQueryForm] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
   const [descExpanded, setDescExpanded] = useState(false);
-  const [faqExpanded, setFaqExpanded] = useState(false);
   const [queryForm, setQueryForm] = useState({
     fullName: "",
     whatsappNumber: "",
@@ -462,13 +461,9 @@ Hello Crystal Jaipuria, I have a query regarding this product.
         {/* LOWER SECTION: EQUAL LEVEL SIDE-BY-SIDE (FAQs on Left & Description on Right) */}
         <div className="mt-12 sm:mt-16">
           {hasFaqs ? (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
-              {/* LEFT: FAQs SECTION */}
-              <div
-                className={`border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-xs order-2 lg:order-1 flex flex-col transition-all duration-300 ${
-                  faqExpanded ? "h-auto" : "h-[480px] sm:h-[540px] lg:h-[620px]"
-                }`}
-              >
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-start">
+              {/* LEFT: FAQs SECTION (Natural Accordion Flow - No Slider) */}
+              <div className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-xs order-2 lg:order-1 flex flex-col">
                 {/* FAQ Header */}
                 <div className="h-14 sm:h-16 px-4 sm:px-5 border-b border-gray-100 bg-stone-50/70 flex items-center justify-between shrink-0">
                   <div>
@@ -484,8 +479,8 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                   </span>
                 </div>
 
-                {/* FAQ List - Single Smooth Slider */}
-                <div className="flex-1 overflow-y-auto p-4 sm:p-5 space-y-3 overscroll-contain custom-single-slider">
+                {/* FAQ List - Clean Natural Accordion (Zero Slider / Zero Inner Scrollbars) */}
+                <div className="p-4 sm:p-5 space-y-3">
                   {productFaqs.map((faq, index) => (
                     <div
                       key={index}
@@ -512,23 +507,6 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                       )}
                     </div>
                   ))}
-                </div>
-
-                {/* FAQ Footer Bar */}
-                <div className="p-3 bg-stone-50/90 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 shrink-0">
-                  <span className="flex items-center gap-1.5 font-medium text-gray-600">
-                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
-                    <span>Single Slider · {productFaqs.length} Q&As</span>
-                  </span>
-                  <button
-                    type="button"
-                    onClick={() => setFaqExpanded(!faqExpanded)}
-                    className="px-2.5 py-1 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold transition cursor-pointer flex items-center gap-1 text-xs"
-                    title={faqExpanded ? "Collapse View" : "Expand Full View"}
-                  >
-                    <span>{faqExpanded ? "Collapse" : "Expand"}</span>
-                    <FaChevronDown className={`text-[10px] transition-transform duration-200 ${faqExpanded ? "rotate-180" : ""}`} />
-                  </button>
                 </div>
               </div>
 
