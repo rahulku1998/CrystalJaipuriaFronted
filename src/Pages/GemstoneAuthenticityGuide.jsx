@@ -152,12 +152,8 @@ const GemstoneAuthenticityGuide = () => {
       <SEO
         title="How to Identify Authentic Gemstone Shivling & Murti | Authenticity Guide | Crystal Jaipuria"
         description="Master guide on how to test authentic gemstone Shivlings, Sphatik idols, and healing crystals. Learn the Cold-Touch test, inclusions check, and Vedic Pran Pratishtha rituals from Jaipur artisans."
-        canonicalUrl="https://www.crystaljaipuria.com/gemstone-authenticity-guide"
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(guideSchema) }}
+        canonical="https://www.crystaljaipuria.com/gemstone-authenticity-guide"
+        schema={guideSchema}
       />
 
       <div className="bg-stone-50 min-h-screen py-10 sm:py-16">

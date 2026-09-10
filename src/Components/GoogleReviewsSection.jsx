@@ -7,6 +7,7 @@ import { FcGoogle } from "react-icons/fc";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import { GOOGLE_BUSINESS_STATS } from "../config/businessStats";
 
 const reviews = [
   {
@@ -83,8 +84,7 @@ const reviews = [
   },
 ];
 
-const GOOGLE_REVIEW_URL =
-  "https://www.google.com/maps/place/Crystal+Jaipuria/data=!4m2!3m1!1s0x0:0xdc6c82ae60c2c87d?sa=X&ved=1t:2428&ictx=111";
+const GOOGLE_REVIEW_URL = GOOGLE_BUSINESS_STATS.businessUrl;
 
 const GoogleReviewsSection = () => {
   const prevRef = useRef(null);
@@ -94,23 +94,24 @@ const GoogleReviewsSection = () => {
   const reviewSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": "https://www.crystaljaipuria.com/#localbusiness",
     "name": "Crystal Jaipuria",
     "image": "https://www.crystaljaipuria.com/logo.png",
     "url": "https://www.crystaljaipuria.com/",
-    "telephone": "08955613237",
+    "telephone": GOOGLE_BUSINESS_STATS.phone,
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "West Part, Prabha Mangal Vihar, Plot No.03, Mod, Sanganer, Muhana",
-      "addressLocality": "Jaipur",
-      "addressRegion": "Rajasthan",
-      "postalCode": "302029",
-      "addressCountry": "IN",
+      "streetAddress": GOOGLE_BUSINESS_STATS.address.streetAddress,
+      "addressLocality": GOOGLE_BUSINESS_STATS.address.addressLocality,
+      "addressRegion": GOOGLE_BUSINESS_STATS.address.addressRegion,
+      "postalCode": GOOGLE_BUSINESS_STATS.address.postalCode,
+      "addressCountry": GOOGLE_BUSINESS_STATS.address.addressCountry,
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "39",
+      "ratingValue": String(GOOGLE_BUSINESS_STATS.rating),
+      "reviewCount": String(GOOGLE_BUSINESS_STATS.reviewCount),
       "bestRating": "5",
       "worstRating": "1",
     },
@@ -155,7 +156,7 @@ const GoogleReviewsSection = () => {
             {/* Google Rating Badge */}
             <div className="mt-2.5 flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm">
               <div className="flex items-center gap-1.5 font-bold text-stone-900">
-                <span className="text-base font-extrabold text-stone-900">5.0</span>
+                <span className="text-base font-extrabold text-stone-900">{GOOGLE_BUSINESS_STATS.rating}</span>
                 <div className="flex items-center gap-0.5 text-amber-400 text-xs">
                   <FaStar />
                   <FaStar />
@@ -165,7 +166,7 @@ const GoogleReviewsSection = () => {
                 </div>
               </div>
               <span className="text-stone-300">•</span>
-              <span className="font-medium text-stone-600">39 Google reviews</span>
+              <span className="font-medium text-stone-600">{GOOGLE_BUSINESS_STATS.reviewsLabel}</span>
               <span className="hidden sm:inline text-stone-300">•</span>
               <span className="hidden sm:inline-flex items-center gap-1 text-emerald-700 font-medium">
                 <MdVerified className="text-sm text-emerald-600" />
@@ -177,7 +178,7 @@ const GoogleReviewsSection = () => {
           {/* Action Button & Carousel Controls */}
           <div className="flex items-center justify-between md:justify-end gap-3 pt-2 md:pt-0">
             <a
-              href={GOOGLE_REVIEW_URL}
+              href={GOOGLE_BUSINESS_STATS.writeReviewUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-xl border border-stone-300 bg-white px-4 py-2 text-xs sm:text-sm font-semibold text-stone-800 shadow-sm transition-all hover:bg-stone-50 hover:border-indigo-500 hover:text-indigo-600 active:scale-[0.98]"

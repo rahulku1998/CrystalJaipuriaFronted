@@ -2,6 +2,8 @@
  * SEO helper functions for optimizing title and description lengths
  * Super SEO Titles designed for Google Search, AI Overviews & High Click-Through Rate (CTR)
  */
+import { GOOGLE_BUSINESS_STATS } from "../config/businessStats";
+
 
 const SUPER_TITLE_MAPPINGS = {
   "natural-opal-stone-shivling": "Natural Opal Stone Shivling (Certified Upal Ratna) | Crystal Jaipuria",
@@ -167,6 +169,14 @@ export const getDefaultProductFaqs = (productName = "Gemstone Idol") => [
   },
 ];
 
+export const toAbsoluteUrl = (url) => {
+  if (!url) return "https://www.crystaljaipuria.com/logo.png";
+  if (typeof url !== "string") return "https://www.crystaljaipuria.com/logo.png";
+  if (url.startsWith("http://") || url.startsWith("https://")) return url;
+  const clean = url.startsWith("/") ? url : `/${url}`;
+  return `https://www.crystaljaipuria.com${clean}`;
+};
+
 /**
  * Generate Google Schema.org Product Structured Data (JSON-LD) with BreadcrumbList
  */
@@ -174,11 +184,12 @@ export const getProductSchema = (product, canonicalUrl) => {
   if (!product) return null;
 
   const parsedPrice = parseSchemaPrice(product.price || product.discountPrice);
-  const imageUrl =
+  const rawImageUrl =
     (Array.isArray(product.images) && product.images[0]?.url) ||
     (Array.isArray(product.images) && typeof product.images[0] === "string" ? product.images[0] : null) ||
     (typeof product.images === "string" ? product.images : null) ||
     "https://www.crystaljaipuria.com/logo.png";
+  const imageUrl = toAbsoluteUrl(rawImageUrl);
   const desc = getProductMetaDescription(product);
   const categoryName = product.categoryId?.name || "Gemstone Statues";
   const categorySlug = product.categoryId?.slug || "";
@@ -271,8 +282,8 @@ export const getProductSchema = (product, canonicalUrl) => {
       "@type": "Product",
       "@id": `${canonicalUrl}#product`,
       name: product.name,
-      image: Array.isArray(product.images)
-        ? product.images.map((img) => (typeof img === "string" ? img : img?.url || imageUrl))
+      image: Array.isArray(product.images) && product.images.length > 0
+        ? product.images.map((img) => toAbsoluteUrl(typeof img === "string" ? img : img?.url || imageUrl))
         : [imageUrl],
       description: desc,
       sku: product._id,
@@ -284,8 +295,8 @@ export const getProductSchema = (product, canonicalUrl) => {
       },
       aggregateRating: {
         "@type": "AggregateRating",
-        ratingValue: "4.9",
-        reviewCount: "36",
+        ratingValue: String(GOOGLE_BUSINESS_STATS.rating),
+        reviewCount: String(GOOGLE_BUSINESS_STATS.reviewCount),
         bestRating: "5",
         worstRating: "1",
       },
@@ -364,7 +375,7 @@ export const getArticleSchema = (blog, canonicalUrl) => {
     "@type": "BlogPosting",
     "headline": blog.title,
     "description": blog.description || blog.title,
-    "image": blog.coverImage?.url || "https://www.crystaljaipuria.com/logo.png",
+    "image": toAbsoluteUrl(blog.coverImage?.url || "https://www.crystaljaipuria.com/logo.png"),
     "datePublished": blog.createdAt || new Date().toISOString(),
     "dateModified": blog.updatedAt || blog.createdAt || new Date().toISOString(),
     "author": {
