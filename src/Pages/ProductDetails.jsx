@@ -43,6 +43,8 @@ const ProductDetails = () => {
   const [querySubmitted, setQuerySubmitted] = useState(false);
   const [showQueryForm, setShowQueryForm] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
+  const [descExpanded, setDescExpanded] = useState(false);
+  const [faqExpanded, setFaqExpanded] = useState(false);
   const [queryForm, setQueryForm] = useState({
     fullName: "",
     whatsappNumber: "",
@@ -460,24 +462,30 @@ Hello Crystal Jaipuria, I have a query regarding this product.
         {/* LOWER SECTION: EQUAL LEVEL SIDE-BY-SIDE (FAQs on Left & Description on Right) */}
         <div className="mt-12 sm:mt-16">
           {hasFaqs ? (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
               {/* LEFT: FAQs SECTION */}
-              <div className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-xs order-2 lg:order-1">
-                <div className="p-4 sm:p-5 border-b border-gray-100 bg-stone-50/70 flex items-center justify-between">
+              <div
+                className={`border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-xs order-2 lg:order-1 flex flex-col transition-all duration-300 ${
+                  faqExpanded ? "h-auto" : "h-[480px] sm:h-[540px] lg:h-[620px]"
+                }`}
+              >
+                {/* FAQ Header */}
+                <div className="h-14 sm:h-16 px-4 sm:px-5 border-b border-gray-100 bg-stone-50/70 flex items-center justify-between shrink-0">
                   <div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-amber-700 bg-amber-100/70 px-2.5 py-0.5 rounded-full">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-700 bg-indigo-50 border border-indigo-100 px-2.5 py-0.5 rounded-full">
                       Product FAQs
                     </span>
-                    <h2 className="text-base sm:text-lg font-bold text-gray-900 mt-1">
+                    <h2 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900 mt-1">
                       Frequently Asked Questions
                     </h2>
                   </div>
-                  <span className="text-xs text-gray-400 font-semibold">
+                  <span className="text-xs text-gray-400 font-semibold px-2.5 py-0.5 rounded-full bg-slate-100 border border-slate-200">
                     {productFaqs.length} Q&As
                   </span>
                 </div>
 
-                <div className="p-4 space-y-3">
+                {/* FAQ List - Single Smooth Slider */}
+                <div className="flex-1 overflow-y-auto p-4 sm:p-5 space-y-3 overscroll-contain custom-single-slider">
                   {productFaqs.map((faq, index) => (
                     <div
                       key={index}
@@ -505,43 +513,70 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                     </div>
                   ))}
                 </div>
+
+                {/* FAQ Footer Bar */}
+                <div className="p-3 bg-stone-50/90 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 shrink-0">
+                  <span className="flex items-center gap-1.5 font-medium text-gray-600">
+                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
+                    <span>Single Slider · {productFaqs.length} Q&As</span>
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setFaqExpanded(!faqExpanded)}
+                    className="px-2.5 py-1 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold transition cursor-pointer flex items-center gap-1 text-xs"
+                    title={faqExpanded ? "Collapse View" : "Expand Full View"}
+                  >
+                    <span>{faqExpanded ? "Collapse" : "Expand"}</span>
+                    <FaChevronDown className={`text-[10px] transition-transform duration-200 ${faqExpanded ? "rotate-180" : ""}`} />
+                  </button>
+                </div>
               </div>
 
               {/* RIGHT: DESCRIPTION & ADDITIONAL INFORMATION TABS */}
-              <div className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-xs order-1 lg:order-2">
+              <div
+                className={`border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-xs order-1 lg:order-2 flex flex-col transition-all duration-300 ${
+                  descExpanded ? "h-auto" : "h-[480px] sm:h-[540px] lg:h-[620px]"
+                }`}
+              >
                 {/* Tabs Header */}
-                <div className="flex border-b border-gray-200 bg-stone-50/70">
-                  <button
-                    onClick={() => {
-                      setActiveTab("description");
-                      trackTabSwitch("description", product);
-                    }}
-                    className={`px-5 py-3.5 sm:px-8 sm:py-4 font-semibold text-sm sm:text-base cursor-pointer text-left transition-colors ${
-                      activeTab === "description"
-                        ? "border-b-2 border-indigo-600 text-indigo-600 bg-white"
-                        : "text-gray-500 hover:text-gray-700"
-                    }`}
-                  >
-                    Description
-                  </button>
+                <div className="h-14 sm:h-16 flex border-b border-gray-200 bg-stone-50/70 shrink-0 items-center justify-between">
+                  <div className="flex h-full">
+                    <button
+                      onClick={() => {
+                        setActiveTab("description");
+                        trackTabSwitch("description", product);
+                      }}
+                      className={`h-full px-4 sm:px-7 font-semibold text-xs sm:text-sm lg:text-base cursor-pointer text-left transition-colors flex items-center ${
+                        activeTab === "description"
+                          ? "border-b-2 border-indigo-600 text-indigo-600 bg-white"
+                          : "text-gray-500 hover:text-gray-700"
+                      }`}
+                    >
+                      Description
+                    </button>
 
-                  <button
-                    onClick={() => {
-                      setActiveTab("additional");
-                      trackTabSwitch("additional", product);
-                    }}
-                    className={`px-5 py-3.5 sm:px-8 sm:py-4 font-semibold text-sm sm:text-base cursor-pointer text-left transition-colors ${
-                      activeTab === "additional"
-                        ? "border-b-2 border-indigo-600 text-indigo-600 bg-white"
-                        : "text-gray-500 hover:text-gray-700"
-                    }`}
-                  >
-                    Additional Information
-                  </button>
+                    <button
+                      onClick={() => {
+                        setActiveTab("additional");
+                        trackTabSwitch("additional", product);
+                      }}
+                      className={`h-full px-4 sm:px-7 font-semibold text-xs sm:text-sm lg:text-base cursor-pointer text-left transition-colors flex items-center ${
+                        activeTab === "additional"
+                          ? "border-b-2 border-indigo-600 text-indigo-600 bg-white"
+                          : "text-gray-500 hover:text-gray-700"
+                      }`}
+                    >
+                      Additional Information
+                    </button>
+                  </div>
+
+                  <span className="text-[11px] font-semibold text-indigo-600 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 mr-3 hidden sm:inline-block">
+                    Verified
+                  </span>
                 </div>
 
-                {/* Tab Content - Clean Natural Height (Only 1 Screen Scrollbar) */}
-                <div className="p-5 sm:p-7 min-h-[150px]">
+                {/* Tab Content - ONLY SINGLE SLIDER */}
+                <div className="flex-1 overflow-y-auto p-4 sm:p-6 text-gray-700 text-sm sm:text-base leading-relaxed overscroll-contain custom-single-slider">
                   {activeTab === "description" && (
                     <div className="relative">
                       <div
@@ -562,42 +597,65 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                     />
                   )}
                 </div>
+
+                {/* Description Footer Bar */}
+                <div className="p-3 bg-stone-50/90 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 shrink-0">
+                  <span className="flex items-center gap-1.5 font-medium text-gray-600">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span className="hidden sm:inline">Single Slider · </span>Scroll to explore
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setDescExpanded(!descExpanded)}
+                    className="px-2.5 py-1 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-600 font-semibold transition cursor-pointer flex items-center gap-1 text-xs"
+                    title={descExpanded ? "Collapse View" : "Expand Full View"}
+                  >
+                    <span>{descExpanded ? "Collapse" : "Expand"}</span>
+                    <FaChevronDown className={`text-[10px] transition-transform duration-200 ${descExpanded ? "rotate-180" : ""}`} />
+                  </button>
+                </div>
               </div>
             </div>
           ) : (
             /* Full width Description if product has no FAQs */
-            <div className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-xs">
-              <div className="flex border-b border-gray-200 bg-stone-50/70">
-                <button
-                  onClick={() => {
-                    setActiveTab("description");
-                    trackTabSwitch("description", product);
-                  }}
-                  className={`px-5 py-3.5 sm:px-8 sm:py-4 font-semibold text-sm sm:text-base cursor-pointer text-left transition-colors ${
-                    activeTab === "description"
-                      ? "border-b-2 border-indigo-600 text-indigo-600 bg-white"
-                      : "text-gray-500 hover:text-gray-700"
-                  }`}
-                >
-                  Description
-                </button>
+            <div
+              className={`max-w-4xl mx-auto border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-xs flex flex-col transition-all duration-300 ${
+                descExpanded ? "h-auto" : "h-[480px] sm:h-[540px] lg:h-[620px]"
+              }`}
+            >
+              <div className="h-14 sm:h-16 flex border-b border-gray-200 bg-stone-50/70 shrink-0 items-center justify-between">
+                <div className="flex h-full">
+                  <button
+                    onClick={() => {
+                      setActiveTab("description");
+                      trackTabSwitch("description", product);
+                    }}
+                    className={`h-full px-5 sm:px-8 font-semibold text-xs sm:text-sm lg:text-base cursor-pointer text-left transition-colors flex items-center ${
+                      activeTab === "description"
+                        ? "border-b-2 border-indigo-600 text-indigo-600 bg-white"
+                        : "text-gray-500 hover:text-gray-700"
+                    }`}
+                  >
+                    Description
+                  </button>
 
-                <button
-                  onClick={() => {
-                    setActiveTab("additional");
-                    trackTabSwitch("additional", product);
-                  }}
-                  className={`px-5 py-3.5 sm:px-8 sm:py-4 font-semibold text-sm sm:text-base cursor-pointer text-left transition-colors ${
-                    activeTab === "additional"
-                      ? "border-b-2 border-indigo-600 text-indigo-600 bg-white"
-                      : "text-gray-500 hover:text-gray-700"
-                  }`}
-                >
-                  Additional Information
-                </button>
+                  <button
+                    onClick={() => {
+                      setActiveTab("additional");
+                      trackTabSwitch("additional", product);
+                    }}
+                    className={`h-full px-5 sm:px-8 font-semibold text-xs sm:text-sm lg:text-base cursor-pointer text-left transition-colors flex items-center ${
+                      activeTab === "additional"
+                        ? "border-b-2 border-indigo-600 text-indigo-600 bg-white"
+                        : "text-gray-500 hover:text-gray-700"
+                    }`}
+                  >
+                    Additional Information
+                  </button>
+                </div>
               </div>
 
-              <div className="p-5 sm:p-7 min-h-[150px]">
+              <div className="flex-1 overflow-y-auto p-5 sm:p-7 text-gray-700 text-sm sm:text-base leading-relaxed overscroll-contain custom-single-slider">
                 {activeTab === "description" && (
                   <div
                     className="text-gray-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-gray-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-gray-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-gray-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-gray-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-1.5 [&_p]:my-3 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-indigo-600 [&_a]:underline"
@@ -615,6 +673,22 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                     }}
                   />
                 )}
+              </div>
+
+              <div className="p-3 bg-stone-50/90 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 shrink-0">
+                <span className="flex items-center gap-1.5 font-medium text-gray-600">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span className="hidden sm:inline">Single Slider · </span>Scroll to explore
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setDescExpanded(!descExpanded)}
+                  className="px-2.5 py-1 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-600 font-semibold transition cursor-pointer flex items-center gap-1 text-xs"
+                  title={descExpanded ? "Collapse View" : "Expand Full View"}
+                >
+                  <span>{descExpanded ? "Collapse" : "Expand"}</span>
+                  <FaChevronDown className={`text-[10px] transition-transform duration-200 ${descExpanded ? "rotate-180" : ""}`} />
+                </button>
               </div>
             </div>
           )}

@@ -84,7 +84,97 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- Dynamic Product Pages (32 Live Products) -->
+  <!-- Dynamic Product Pages (42 Live Products) -->
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/blue-sodalite-carved-ganesha-statue</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/blue-sodalite-carved-ganesha-statue.webp</image:loc>
+      <image:title>Blue Sodalite Carved Ganesha Statue | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/rose-quartz-ganesha-with-gold-painted</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/rose-quartz-ganesha-with-gold-painted.webp</image:loc>
+      <image:title>Rose Quartz Ganesha with Gold Painted | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/blue-sodalite-carved-lord-shiva-statue</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/blue-sodalite-carved-lord-shiva-statue.webp</image:loc>
+      <image:title>Blue Sodalite Carved Lord Shiva Statue | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/natural-blue-sodalite-hanuman-ji-statue</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-blue-sodalite-hanuman-ji-statue.webp</image:loc>
+      <image:title>Natural Blue Sodalite Hanuman Ji Statue | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/natural-red-jasper-gemstone-shivling</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-red-jasper-gemstone-shivling.webp</image:loc>
+      <image:title>Natural Red Jasper Gemstone Shivling | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/blue-sodalite-carving-shiva-face-idol</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/blue-sodalite-carving-shiva-face-idol.webp</image:loc>
+      <image:title>Blue Sodalite Carving Shiva Face Idol | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/labradorite-power-mini-shiva-face</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/labradorite-power-mini-shiva-face.webp</image:loc>
+      <image:title>Labradorite Power Mini Shiva Face | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/natural-yellow-jade-ganesha-statue</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-yellow-jade-ganesha-statue.webp</image:loc>
+      <image:title>Natural Yellow Jade Ganesha Statue | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/rose-quartz-bhagwan-mahaveer-statue</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/rose-quartz-bhagwan-mahaveer-statue.webp</image:loc>
+      <image:title>Rose Quartz Bhagwan Mahaveer Statue | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/tiger-eye-carving-shiva-statue</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/tiger-eye-carving-shiva-statue.webp</image:loc>
+      <image:title>Tiger Eye Carving Shiva Statue | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://www.crystaljaipuria.com/product/rose-quartz-carved-shree-krishna-ji-idol</loc>
     <image:image>

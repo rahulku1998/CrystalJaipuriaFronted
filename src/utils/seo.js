@@ -2,7 +2,7 @@
  * SEO helper functions for optimizing title and description lengths
  * Super SEO Titles designed for Google Search, AI Overviews & High Click-Through Rate (CTR)
  */
-import { GOOGLE_BUSINESS_STATS } from "../config/businessStats";
+import { GOOGLE_BUSINESS_STATS } from "../config/businessStats.js";
 
 
 const SUPER_TITLE_MAPPINGS = {
