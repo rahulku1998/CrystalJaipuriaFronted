@@ -8,6 +8,7 @@ import {
   generateSuperMetaTags,
 } from "../utils/productMetadata";
 import { generateShortDetail } from "../utils/aiGenerator";
+import { compressImageForUpload } from "../utils/imageOptimizer";
 import {
   FaCloudUploadAlt,
   FaTimes,
@@ -334,21 +335,15 @@ const fetchCategories = async()=>{
       formData.append("additionalInfo", packedAdditionalInfo);
 
       const seoImageSlug = (form.name || "product").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-      gallery.forEach((item, idx) => {
-        const ext = (item.file.name?.split(".").pop() || "webp").toLowerCase();
+      for (let idx = 0; idx < gallery.length; idx++) {
+        const item = gallery[idx];
+        const compressed = await compressImageForUpload(item.file);
+        const ext = (compressed.name?.split(".").pop() || "webp").toLowerCase();
         const cleanFileName = idx === 0 ? `${seoImageSlug}.${ext}` : `${seoImageSlug}-${idx + 1}.${ext}`;
-        formData.append("images", item.file, cleanFileName);
-      });
+        formData.append("images", compressed, cleanFileName);
+      }
 
-      await API.post(
-        "/products",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data"
-          }
-        }
-      );
+      await API.post("/products", formData);
 
       alert("Product & Super SEO Meta Added Successfully!");
 
@@ -375,12 +370,13 @@ const fetchCategories = async()=>{
       navigate(prefill ? "/admin-vijay/pending-products" : "/admin-vijay/dashboard");
 
     } catch (err) {
-
-      alert(
+      console.error("Add product error:", err);
+      const errMsg =
         err.response?.data?.message ||
-        "Something went wrong"
-      );
-
+        err.response?.data?.error ||
+        err.message ||
+        "Something went wrong";
+      alert(`Failed to add product: ${errMsg}`);
     }
     finally{
 

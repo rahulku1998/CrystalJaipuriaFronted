@@ -636,7 +636,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                 >
                   <img
                     src={item.images?.[0]?.url}
-                    alt={item.name}
+                    alt={`${item.name} - Handcrafted Gemstone Idol by Crystal Jaipuria`}
                     className="w-full h-36 sm:h-44 lg:h-48 object-contain bg-gray-50 p-2"
                   />
                   <div className="p-3 sm:p-4">

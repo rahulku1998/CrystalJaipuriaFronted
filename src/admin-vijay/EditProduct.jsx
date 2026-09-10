@@ -10,6 +10,7 @@ import {
 } from "../utils/productMetadata";
 import { formatAdditionalInfo } from "../utils/productStandardizer";
 import { generateShortDetail } from "../utils/aiGenerator";
+import { compressImageForUpload } from "../utils/imageOptimizer";
 import {
   FaCloudUploadAlt,
   FaTimes,
@@ -267,15 +268,16 @@ const EditProduct = () => {
         return;
       }
 
-      // Safely append new uploaded files with clean SEO naming
-      gallery.forEach((item, idx) => {
+      // Safely compress and append new uploaded files with clean SEO naming
+      for (let idx = 0; idx < gallery.length; idx++) {
+        const item = gallery[idx];
         if (item.type === "new" && item.file) {
-          const ext = (item.file.name.split(".").pop() || "webp").toLowerCase();
+          const compressed = await compressImageForUpload(item.file);
+          const ext = (compressed.name?.split(".").pop() || "webp").toLowerCase();
           const cleanFileName = idx === 0 ? `${seoImageSlug}.${ext}` : `${seoImageSlug}-${idx + 1}.${ext}`;
-          const renamedFile = new File([item.file], cleanFileName, { type: item.file.type || "image/webp" });
-          formData.append("images", renamedFile);
+          formData.append("images", compressed, cleanFileName);
         }
-      });
+      }
 
       // Always pass existing images in their exact reordered sequence
       const orderedExisting = gallery
@@ -283,16 +285,18 @@ const EditProduct = () => {
         .map((item) => item.raw);
       formData.append("existingImages", JSON.stringify(orderedExisting));
 
-      await API.put(`/products/${id}`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      await API.put(`/products/${id}`, formData);
 
       alert("Product & SEO Meta Updated Successfully!");
       navigate("/admin-vijay/dashboard");
     } catch (err) {
-      alert(err.response?.data?.message || "Update failed");
+      console.error("Edit product error:", err);
+      const errMsg =
+        err.response?.data?.message ||
+        err.response?.data?.error ||
+        err.message ||
+        "Update failed";
+      alert(`Failed to update product: ${errMsg}`);
     } finally {
       setSubmitting(false);
     }

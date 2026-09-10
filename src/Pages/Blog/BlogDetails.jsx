@@ -54,7 +54,7 @@ const BlogDetails = () => {
             {/* Image */}
             <img
               src={blog.coverImage?.url}
-              alt={blog.title}
+              alt={`${blog.title} - Crystal Jaipuria Jaipur`}
               className="w-full h-[220px] sm:h-[350px] md:h-[500px] object-cover"
             />
 

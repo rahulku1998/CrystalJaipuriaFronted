@@ -830,7 +830,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                     <div className="aspect-square bg-slate-50/60 flex items-center justify-center p-3 overflow-hidden border-b border-slate-100">
                       <img
                         src={itemImg}
-                        alt={item.name}
+                        alt={`${item.name} - Handcrafted Gemstone Idol by Crystal Jaipuria`}
                         className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>

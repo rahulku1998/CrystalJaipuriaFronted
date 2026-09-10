@@ -7,7 +7,7 @@ const BlogItem = ({ blog }) => {
       {/* Blog Image */}
       <img
         src={blog.coverImage?.url}
-        alt={blog.title}
+        alt={`${blog.title} - Crystal Jaipuria Blog`}
         className="w-full h-[350px] object-cover"
       />
 

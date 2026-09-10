@@ -119,7 +119,7 @@ const CategoryBar = ({ mobileMenuOpen, setMobileMenuOpen }) => {
               <div className="flex items-center gap-2.5">
                 <img
                   src="/logo.jpeg"
-                  alt="Crystal Jaipuria"
+                  alt="Crystal Jaipuria - Handcrafted Gemstone Statues & Crystal Manufacturer Jaipur"
                   className="h-9 w-auto object-contain"
                 />
                 <div>
