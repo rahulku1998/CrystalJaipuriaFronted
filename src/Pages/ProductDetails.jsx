@@ -235,7 +235,10 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                 loading="eager"
                 decoding="async"
                 onError={(e) => {
-                  if (!e.target.src.endsWith("/Gemstone.webp")) {
+                  const rawFallback = (Array.isArray(product.images) && product.images[0]?.url) || (product.images?.[0]);
+                  if (rawFallback && typeof rawFallback === "string" && e.target.src !== rawFallback) {
+                    e.target.src = rawFallback;
+                  } else if (!e.target.src.endsWith("/Gemstone.webp")) {
                     e.target.src = "/Gemstone.webp";
                   }
                 }}
@@ -253,7 +256,10 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                       key={img.public_id || `thumb-${idx}`}
                       src={thumbSrc}
                       onError={(e) => {
-                        if (!e.target.src.endsWith("/Gemstone.webp")) {
+                        const rawFallback = typeof img === 'string' ? img : (img?.url || '');
+                        if (rawFallback && e.target.src !== rawFallback) {
+                          e.target.src = rawFallback;
+                        } else if (!e.target.src.endsWith("/Gemstone.webp")) {
                           e.target.src = "/Gemstone.webp";
                         }
                       }}

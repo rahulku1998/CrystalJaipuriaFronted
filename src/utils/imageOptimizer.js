@@ -19,37 +19,123 @@ export const PROTECTED_STUDIO_SLUGS = new Set([
   "mahalakshmi-idol-in-natural-columbian-green-jade"
 ]);
 
+export const STATIC_CATALOG_SLUGS = new Set([
+  "amethyst-gemston-angel",
+  "black-agate-gemstone-carving-of-ganesh",
+  "blue-sapphire-carving-shiva-statue",
+  "blue-sodalite-carved-ganesha-statue",
+  "blue-sodalite-carved-lord-shiva-statue",
+  "blue-sodalite-carving-shiva-face-idol",
+  "clear-crystal-quartz-shivling-with-shiva-face",
+  "crystal-clear-mahvaveer-ji-statue",
+  "crystal-ganesha",
+  "crystal-shivling",
+  "crystal-shree-yantra",
+  "crystal-sphtik-shree-yantra-on-kamal-flower",
+  "gemston-amethyst-diya",
+  "gemston-ruby-shree-yantra",
+  "green-aventurine-parshvanath-ji-statue",
+  "green-jade-carved-shree-krishana-statue",
+  "green-jade-carving-shiva-face-statue",
+  "green-jade-elephant-staute",
+  "green-jade-ganesha",
+  "green-jade-goddess-maa-saraswati-carving",
+  "green-jade-mahalakshmi-ji-idol",
+  "green-jade-panchmukhi-shivling",
+  "green-jade-radha-krishna-statue-carving",
+  "green-jade-shiva-statue-with-gold-panting",
+  "green-jade-shivling",
+  "green-jade-shree-yantra",
+  "labradorite-power-mini-shiva-face",
+  "lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva",
+  "natural-amethyst-gemstone-shiva-face-idol",
+  "natural-blue-sodalite-hanuman-ji-statue",
+  "natural-howlite-gemstone-shivling",
+  "natural-labradorite-gemstone-shivling",
+  "natural-lapis-lazuli-lord-krishna-statue",
+  "natural-lapis-lazuli-shiva-face-carving-idol",
+  "natural-opal-stone-shivling",
+  "natural-red-jasper-gemstone-shivling",
+  "natural-rose-quartz-pair-of-swan",
+  "natural-ruby-shivling",
+  "natural-sphatik-shivling",
+  "natural-tiger-eye-gemstone-shivling",
+  "natural-yellow-jade-ganesha-statue",
+  "pyrite-gemston-shivling",
+  "rose-quartz-bhagwan-mahaveer-statue",
+  "rose-quartz-carved-shree-krishna-ji-idol",
+  "rose-quartz-carved-shree-krishan-ji-idol",
+  "rose-quartz-ganesha",
+  "rose-quartz-ganesha-with-gold-painted",
+  "rose-quartz-shiva-statue-with-gold-painting",
+  "smokey-quartz-crystal-shiva-face-idol",
+  "tiger-eye-carving-shiva-statue"
+]);
+
 /**
- * Universal bulletproof Product Image resolver - Pure Local Static WebP
- * 100% eliminated Cloudinary from the client-side system.
- * All product photos are served from clean local static paths:
- * Primary: /images/<clean-slug>.webp
- * Alternate Angle: /images/<clean-slug>-2.webp, etc.
+ * Universal bulletproof Product Image resolver
+ * - Serves clean local static WebP assets for all 49 core catalog products.
+ * - Dynamically supports newly added products from Admin Panel with zero delay.
  */
-export const getProductImageUrl = (product, index = 0) => {
+export const getProductImageUrl = (product, index = 0, width = 800) => {
   if (!product) return "/Gemstone.webp";
+
+  const images = Array.isArray(product.images)
+    ? product.images
+    : (product.image ? [product.image] : []);
+
+  const imgItem = images[index] || (index === 0 ? images[0] : null);
+  const rawUrl = typeof imgItem === "string" ? imgItem : (imgItem?.url || "");
 
   const cleanSlug = (product.slug || product.name || "")
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 
-  if (!cleanSlug) return "/Gemstone.webp";
-
-  if (index === 0) {
-    return `/images/${cleanSlug}.webp`;
+  // 1. Core catalog studio products: serve pristine local static WebP
+  if (cleanSlug && STATIC_CATALOG_SLUGS.has(cleanSlug)) {
+    if (index === 0) {
+      return `/images/${cleanSlug}.webp`;
+    }
+    return `/images/${cleanSlug}-${index + 1}.webp`;
   }
 
-  return `/images/${cleanSlug}-${index + 1}.webp`;
+  // 2. If it is already a local static path
+  if (rawUrl && (rawUrl.startsWith("/images/") || rawUrl.startsWith("/assets/"))) {
+    return rawUrl;
+  }
+
+  // 3. Newly added products from Admin: immediately deliver live uploaded photo
+  if (rawUrl && (rawUrl.startsWith("http://") || rawUrl.startsWith("https://"))) {
+    return optimizeCloudinaryUrl(rawUrl, width);
+  }
+
+  // 4. Fallback to clean slug static path if exists
+  if (cleanSlug) {
+    return index === 0 ? `/images/${cleanSlug}.webp` : `/images/${cleanSlug}-${index + 1}.webp`;
+  }
+
+  return "/Gemstone.webp";
 };
 
 /**
- * Clean Static WebP Image Delivery Utility (0% Cloudinary)
+ * Responsive Image Delivery Utility
+ * Formats remote Cloudinary URLs for fast loading or returns static paths.
  */
-export const optimizeCloudinaryUrl = (url, _width = 800, seoSlug = "") => {
+export const optimizeCloudinaryUrl = (url, width = 800, seoSlug = "") => {
   if (!url || typeof url !== "string") return "/Gemstone.webp";
 
   if (url.startsWith("/images/") || url.startsWith("/assets/")) {
+    return url;
+  }
+
+  if (url.includes("res.cloudinary.com") && url.includes("/image/upload/")) {
+    return url.includes("/f_auto")
+      ? url
+      : url.replace("/image/upload/", `/image/upload/f_auto,q_auto:good,w_${width},c_limit/`);
+  }
+
+  if (url.startsWith("http://") || url.startsWith("https://")) {
     return url;
   }
 

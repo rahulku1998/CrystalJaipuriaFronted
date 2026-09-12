@@ -84,7 +84,34 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- Dynamic Product Pages (49 Live Products) -->
+  <!-- Dynamic Product Pages (52 Live Products) -->
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/australian-jade-ganesha-carving</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/australian-jade-ganesha-carving.webp</image:loc>
+      <image:title>Australian Jade Ganesha Carving | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/hand-carved-ruby-ganesha</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/hand-carved-ruby-ganesha.webp</image:loc>
+      <image:title>Hand Carved Ruby Ganesha | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/natural-ruby-radha-krishna-idol-hand-carved</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-ruby-radha-krishna-idol-hand-carved.webp</image:loc>
+      <image:title>Natural Ruby Radha Krishna Idol Hand Carved | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://www.crystaljaipuria.com/product/crystal-shree-yantra</loc>
     <image:image>

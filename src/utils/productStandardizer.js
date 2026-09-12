@@ -1,3 +1,5 @@
+import { STATIC_CATALOG_SLUGS } from "./imageOptimizer.js";
+
 /**
  * Product Data Standardizer for Crystal Jaipuria
  * Normalizes price ranges, unit rates (e.g. 6/GRAM), missing weights & dimensions
@@ -455,7 +457,7 @@ export const getStandardizedProduct = (product) => {
       .replace(/Mahvaveer/gi, "Mahaveer");
   }
 
-  // Bulletproof Pure Local Static WebP Delivery (100% Zero Cloudinary)
+  // Bulletproof Pure Local Static WebP Delivery for Catalog & Live Support for Dynamic Products
   let standardizedImages = [];
   if (slug === "natural-sphatik-shivling") {
     standardizedImages = [
@@ -468,6 +470,15 @@ export const getStandardizedProduct = (product) => {
       { url: `/images/${slug}.webp`, public_id: `products/${slug}` },
       { url: `/images/${slug}-2.webp`, public_id: `products/${slug}-2` },
     ];
+  } else if (STATIC_CATALOG_SLUGS.has(slug)) {
+    standardizedImages = [
+      { url: `/images/${slug}.webp`, public_id: `products/${slug}` },
+    ];
+  } else if (Array.isArray(product.images) && product.images.length > 0) {
+    // Preserve uploaded images for newly added admin products!
+    standardizedImages = product.images.map((img) =>
+      typeof img === "string" ? { url: img, public_id: img } : img
+    );
   } else if (slug) {
     standardizedImages = [
       { url: `/images/${slug}.webp`, public_id: `products/${slug}` },

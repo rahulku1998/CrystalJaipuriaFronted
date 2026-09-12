@@ -25,7 +25,10 @@ const ProductCard = ({ product, headingTag = "p" }) => {
           height="400"
           src={initialSrc}
           onError={(e) => {
-            if (!e.target.src.endsWith("/Gemstone.webp")) {
+            const rawFallback = typeof item.images?.[0] === 'string' ? item.images[0] : item.images?.[0]?.url;
+            if (rawFallback && e.target.src !== rawFallback) {
+              e.target.src = rawFallback;
+            } else if (!e.target.src.endsWith("/Gemstone.webp")) {
               e.target.src = "/Gemstone.webp";
             }
           }}
