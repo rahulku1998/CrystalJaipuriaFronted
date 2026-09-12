@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { STANDARDIZED_SPECS } from "../src/utils/productStandardizer.js";
+import { CATEGORY_CONTENT } from "../src/utils/categoryContent.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -394,8 +395,12 @@ export const runPrerender = async () => {
   categories.forEach((cat) => {
     if (!cat.slug) return;
     const catName = cat.name || cat.slug;
-    const catTitle = `${catName} - Handcrafted Gemstone Idols | Crystal Jaipuria`;
-    const catDesc = `Explore authentic hand-carved ${catName} in natural gemstones and pure crystals. Factory direct wholesale prices from master artisans in Jaipur since 1989.`;
+    const catContent = CATEGORY_CONTENT[cat.slug] || null;
+    const catTitle = catContent?.title || `${catName} - Handcrafted Gemstone Idols | Crystal Jaipuria`;
+    const catDesc =
+      catContent?.description ||
+      `Explore authentic hand-carved ${catName} in natural gemstones and pure crystals. Factory direct wholesale prices from master artisans in Jaipur since 1989.`;
+    const catCanonical = catContent?.canonical || `${BASE_URL}/${cat.slug}`;
 
     const catProducts = products.filter(
       (p) =>
@@ -442,6 +447,38 @@ export const runPrerender = async () => {
       })
       .join("\n");
 
+    const guideHtml = catContent?.intro
+      ? `
+        <div style="margin-top:40px;background:#FAF8F5;border-radius:16px;padding:24px;border:1px solid #f1f5f9;">
+          <h2 style="font-size:20px;font-weight:800;color:#0f172a;margin-bottom:12px;">✨ ${escapeHtml(catContent.headline || `About ${catName}`)}</h2>
+          <p style="font-size:14px;color:#475569;line-height:1.7;margin-bottom:16px;">${escapeHtml(catContent.intro)}</p>
+          <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:13px;font-weight:700;color:#334155;">
+            <span>✓ 100% Certified Natural Crystals</span>
+            <span>✓ Jaipur Heritage Hand-Carving</span>
+            <span>✓ Safe Insured Worldwide Shipping</span>
+          </div>
+        </div>
+      `
+      : "";
+
+    const faqsHtml = catContent?.faqs?.length
+      ? `
+        <div style="margin-top:24px;background:#ffffff;border-radius:16px;padding:24px;border:1px solid #e2e8f0;">
+          <h3 style="font-size:18px;font-weight:800;color:#0f172a;margin-bottom:16px;">❓ Frequently Asked Questions about ${escapeHtml(catName)}</h3>
+          ${catContent.faqs
+            .map(
+              (f) => `
+            <div style="margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #f1f5f9;">
+              <h4 style="font-size:14px;font-weight:700;color:#1e293b;margin-bottom:6px;">${escapeHtml(f.question)}</h4>
+              <p style="font-size:13px;color:#475569;line-height:1.6;margin:0;">${escapeHtml(f.answer)}</p>
+            </div>
+          `
+            )
+            .join("")}
+        </div>
+      `
+      : "";
+
     const categoryBodyPreview = `
       <div style="max-width:1200px;margin:0 auto;padding:24px 16px;font-family:system-ui,-apple-system,sans-serif;">
         <div style="margin-bottom:24px;">
@@ -451,41 +488,67 @@ export const runPrerender = async () => {
         <div style="display:grid;grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));gap:16px;">
           ${cardsHtml}
         </div>
+        ${guideHtml}
+        ${faqsHtml}
       </div>
     `.trim();
 
-    const catSchema = {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      "@id": `${BASE_URL}/${cat.slug}#collection`,
-      name: catTitle,
-      description: catDesc,
-      url: `${BASE_URL}/${cat.slug}`,
-      breadcrumb: {
+    const catGraphElements = [
+      {
+        "@type": "CollectionPage",
+        "@id": `${catCanonical}#collection`,
+        name: catTitle,
+        description: catDesc,
+        url: catCanonical,
+      },
+      {
         "@type": "BreadcrumbList",
+        "@id": `${catCanonical}#breadcrumb`,
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: `${BASE_URL}/` },
           { "@type": "ListItem", position: 2, name: "Shop", item: `${BASE_URL}/shop` },
-          { "@type": "ListItem", position: 3, name: catName, item: `${BASE_URL}/${cat.slug}` }
-        ]
+          { "@type": "ListItem", position: 3, name: catName, item: catCanonical },
+        ],
       },
-      mainEntity: {
+      {
         "@type": "ItemList",
+        "@id": `${catCanonical}#itemlist`,
+        numberOfItems: catProducts.length,
         itemListElement: catProducts.map((p, idx) => ({
           "@type": "ListItem",
           position: idx + 1,
           url: `${BASE_URL}/product/${p.slug || p._id}`,
-          name: p.name
-        }))
-      }
+          name: p.name,
+        })),
+      },
+    ];
+
+    if (catContent?.faqs?.length) {
+      catGraphElements.push({
+        "@type": "FAQPage",
+        "@id": `${catCanonical}#faq`,
+        mainEntity: catContent.faqs.map((f) => ({
+          "@type": "Question",
+          name: f.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: f.answer,
+          },
+        })),
+      });
+    }
+
+    const catSchema = {
+      "@context": "https://schema.org",
+      "@graph": catGraphElements,
     };
 
     const catHtml = buildPageHtml({
       title: catTitle,
       description: catDesc,
-      canonical: `${BASE_URL}/${cat.slug}`,
-      ogTitle: catTitle,
-      ogDescription: catDesc,
+      canonical: catCanonical,
+      ogTitle: catContent?.ogTitle || catTitle,
+      ogDescription: catContent?.ogDescription || catDesc,
       ogImage: `${BASE_URL}/logo.png`,
       schema: catSchema,
       bodyContent: categoryBodyPreview,

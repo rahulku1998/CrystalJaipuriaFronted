@@ -10,6 +10,7 @@ import { LEGACY_PRODUCTS } from "../utils/legacyProducts";
 import ProductCard from "../Components/ProductCard";
 import BrandLoader from "../Components/BrandLoader";
 import NotFound from "./NotFound";
+import { CATEGORY_CONTENT } from "../utils/categoryContent";
 
 const CATEGORY_SEO = {
   "god-statues": {
@@ -205,6 +206,11 @@ const CategoryPage = () => {
   const [allCategoryProducts, setAllCategoryProducts] = useState(() => initialCached?.prods || []);
   const [loadingProducts, setLoadingProducts] = useState(() => !initialCached);
   const [activeSubCategory, setActiveSubCategory] = useState(null);
+  const [openFaqIndex, setOpenFaqIndex] = useState(null);
+
+  const toggleFaq = (idx) => {
+    setOpenFaqIndex((prev) => (prev === idx ? null : idx));
+  };
 
   useEffect(() => {
     const cached = getCachedCategoryData();
@@ -337,33 +343,81 @@ const CategoryPage = () => {
     }
   };
 
+  const categoryContent = CATEGORY_CONTENT[cleanSlug] || null;
   const customSeo = CATEGORY_SEO[cleanSlug];
   const pageTitle =
+    categoryContent?.title ||
     customSeo?.title ||
     `${category?.name || "Products"} | Crystal Jaipuria`;
   const pageDescription =
+    categoryContent?.description ||
     customSeo?.description ||
     `Explore handcrafted ${category?.name || "crystal items"} from Crystal Jaipuria, Jaipur, India.`;
   const canonicalUrl =
-    customSeo?.canonical || `https://www.crystaljaipuria.com/${cleanSlug}`;
+    categoryContent?.canonical ||
+    customSeo?.canonical ||
+    `https://www.crystaljaipuria.com/${cleanSlug}`;
 
-  const breadcrumbSchema = getBreadcrumbSchema([
-    { name: "Home", url: "https://www.crystaljaipuria.com/" },
-    { name: category?.name || customSeo?.title || "Category", url: canonicalUrl },
-  ]);
+  const graphSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": `${canonicalUrl}#collection`,
+        name: pageTitle,
+        description: pageDescription,
+        url: canonicalUrl,
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${canonicalUrl}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://www.crystaljaipuria.com/" },
+          { "@type": "ListItem", position: 2, name: category?.name || "Category", item: canonicalUrl },
+        ],
+      },
+      {
+        "@type": "ItemList",
+        "@id": `${canonicalUrl}#itemlist`,
+        numberOfItems: products.length,
+        itemListElement: products.slice(0, 50).map((p, idx) => ({
+          "@type": "ListItem",
+          position: idx + 1,
+          url: `https://www.crystaljaipuria.com/product/${p.slug || p._id}`,
+          name: p.name,
+        })),
+      },
+      ...(categoryContent?.faqs?.length
+        ? [
+            {
+              "@type": "FAQPage",
+              "@id": `${canonicalUrl}#faq`,
+              mainEntity: categoryContent.faqs.map((f) => ({
+                "@type": "Question",
+                name: f.question,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: f.answer,
+                },
+              })),
+            },
+          ]
+        : []),
+    ],
+  };
 
   const seo = (
     <SEO
       title={pageTitle}
       description={pageDescription}
       canonical={canonicalUrl}
-      ogTitle={customSeo?.ogTitle || pageTitle}
-      ogDescription={customSeo?.ogDescription || pageDescription}
-      twitterTitle={customSeo?.twitterTitle || pageTitle}
-      twitterDescription={customSeo?.twitterDescription || pageDescription}
+      ogTitle={categoryContent?.ogTitle || customSeo?.ogTitle || pageTitle}
+      ogDescription={categoryContent?.ogDescription || customSeo?.ogDescription || pageDescription}
+      twitterTitle={categoryContent?.ogTitle || customSeo?.twitterTitle || pageTitle}
+      twitterDescription={categoryContent?.ogDescription || customSeo?.twitterDescription || pageDescription}
       image={customSeo?.image || "https://www.crystaljaipuria.com/logo.png"}
       type="website"
-      schema={breadcrumbSchema}
+      schema={graphSchema}
     />
   );
 
@@ -518,6 +572,84 @@ const CategoryPage = () => {
             )}
           </div>
         </div>
+
+        {/* SEO Category Guide & FAQ Section */}
+        {categoryContent && (
+          <section className="mt-14 pt-10 border-t border-stone-200/90" aria-label={`About ${category.name}`}>
+            {/* Buying Guide & Overview */}
+            <div className="bg-gradient-to-br from-stone-50 via-amber-50/25 to-stone-50 rounded-2xl p-6 sm:p-8 border border-stone-200/80 mb-8 shadow-xs">
+              <div className="flex items-center gap-2.5 mb-3">
+                <span className="text-xl">✨</span>
+                <h2 className="text-lg sm:text-xl font-bold text-gray-900 tracking-tight">
+                  {categoryContent.headline}
+                </h2>
+              </div>
+              <p className="text-stone-700 text-sm sm:text-base leading-relaxed mb-6 max-w-4xl">
+                {categoryContent.intro}
+              </p>
+
+              {/* Trust & Quality Badges */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-5 border-t border-stone-200/60">
+                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-stone-700">
+                  <span className="text-emerald-700 font-bold text-base">✓</span>
+                  <span>100% Certified Natural Crystals</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-stone-700">
+                  <span className="text-amber-800 font-bold text-base">✓</span>
+                  <span>Jaipur Heritage Hand-Carving</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-stone-700">
+                  <span className="text-blue-700 font-bold text-base">✓</span>
+                  <span>Safe Insured Worldwide Shipping</span>
+                </div>
+              </div>
+            </div>
+
+            {/* FAQ Accordion */}
+            {categoryContent.faqs?.length > 0 && (
+              <div className="bg-white rounded-2xl p-6 sm:p-8 border border-stone-200/80 shadow-xs">
+                <div className="flex items-center gap-2.5 mb-6">
+                  <span className="text-amber-800 text-xl font-bold">❓</span>
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900">
+                    Frequently Asked Questions about {category.name}
+                  </h3>
+                </div>
+                <div className="space-y-3">
+                  {categoryContent.faqs.map((faq, idx) => {
+                    const isOpen = openFaqIndex === idx;
+                    return (
+                      <div
+                        key={idx}
+                        className="border border-stone-200/80 rounded-xl overflow-hidden transition-colors"
+                      >
+                        <button
+                          type="button"
+                          onClick={() => toggleFaq(idx)}
+                          className="w-full text-left p-4 sm:p-4.5 bg-stone-50/60 hover:bg-stone-50 flex items-center justify-between gap-4 font-semibold text-stone-800 text-sm sm:text-base cursor-pointer transition-colors"
+                          aria-expanded={isOpen}
+                        >
+                          <span>{faq.question}</span>
+                          <span
+                            className={`text-stone-400 font-bold text-lg flex-shrink-0 transition-transform duration-200 ${
+                              isOpen ? "rotate-180 text-amber-800" : ""
+                            }`}
+                          >
+                            ▾
+                          </span>
+                        </button>
+                        {isOpen && (
+                          <div className="p-4 sm:p-4.5 bg-white text-stone-600 text-sm leading-relaxed border-t border-stone-100">
+                            {faq.answer}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </section>
+        )}
       </div>
     </>
   );

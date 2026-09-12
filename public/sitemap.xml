@@ -517,6 +517,10 @@
       <image:loc>https://www.crystaljaipuria.com/images/pyrite-gemston-shivling.webp</image:loc>
       <image:title>Pyrite Gemston Shivling | Crystal Jaipuria</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/pyrite-gemston-shivling-2.webp</image:loc>
+      <image:title>Pyrite Gemston Shivling - Alternate View | Crystal Jaipuria</image:title>
+    </image:image>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -596,6 +600,10 @@
     <image:image>
       <image:loc>https://www.crystaljaipuria.com/images/gemston-amethyst-diya.webp</image:loc>
       <image:title>Gemston Amethyst Diya | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/gemston-amethyst-diya-2.webp</image:loc>
+      <image:title>Gemston Amethyst Diya - Alternate View | Crystal Jaipuria</image:title>
     </image:image>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
