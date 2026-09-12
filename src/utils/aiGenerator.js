@@ -464,7 +464,7 @@ export const generateAdditionalInfoHtml = (cleanName, stone, archetype, weight, 
   return `
 <ul class="space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal">
   <li><strong class="font-bold text-gray-900">Product Name :</strong> ${cleanName}</li>
-  <li><strong class="font-bold text-gray-900">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Johari Bazar, Jaipur (Est. 1989)</li>
+  <li><strong class="font-bold text-gray-900">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>
   <li><strong class="font-bold text-gray-900">Material Composition :</strong> 100% Certified Earth-Mined Natural ${stone.name} (${stone.mineral})</li>
   <li><strong class="font-bold text-gray-900">Mineral Hardness :</strong> ${stone.hardness} on Mohs Scale (Exceptional durability &amp; scratch resistance)</li>
   <li><strong class="font-bold text-gray-900">Estimated Weight :</strong> ${weight}</li>
@@ -918,9 +918,9 @@ export const generateBuiltInContent = (productName, categoryName = "") => {
   const sectionOneHeading = archetypeTitle;
   const sectionOneBody = archetypedetails;
   const sectionTwoHeading = "Gemological Provenance & Jaipur Lapidary Heritage";
-  const sectionTwoBody = `<p>Every specimen is carved from a single, hand-selected rough crystal at Crystal Jaipuria's generational artisan workshops in Johari Bazar, Jaipur (Est. 1989). We preserve the natural crystalline lattice of genuine ${stone.name}, guaranteeing authentic earth-mined quality without synthetic polymer coatings or resin casting.</p><p><strong>Authenticity Identification:</strong> ${stone.authenticityTest}</p>`;
+  const sectionTwoBody = `<p>Every specimen is carved from a single, hand-selected rough crystal at Crystal Jaipuria's generational artisan workshops in Jaipur (Est. 1989). We preserve the natural crystalline lattice of genuine ${stone.name}, guaranteeing authentic earth-mined quality without synthetic polymer coatings or resin casting.</p><p><strong>Authenticity Identification:</strong> ${stone.authenticityTest}</p>`;
 
-  const competitorKeywordsIntro = `<p>Looking to <strong>buy authentic ${cleanName} online</strong>? Hand-carved with precision by generational master lapidaries at Crystal Jaipuria in Johari Bazar, Jaipur (est. 1989), this genuine earth-mined gemstone masterpiece offers direct Jaipur manufacturer pricing, Vedic Agama Shastra adherence, and complete lab certification.</p>`;
+  const competitorKeywordsIntro = `<p>Looking to <strong>buy authentic ${cleanName} online</strong>? Hand-carved with precision by generational master lapidaries at Crystal Jaipuria, Jaipur (est. 1989), this genuine earth-mined gemstone masterpiece offers direct Jaipur manufacturer pricing, Vedic Agama Shastra adherence, and complete lab certification.</p>`;
 
   const fullDescription =
     `<p><strong>${citationHook}</strong></p>\n\n` +
@@ -950,7 +950,7 @@ export const generateBuiltInContent = (productName, categoryName = "") => {
     `    <tr style="background:#f8fafc;">\n      <td style="border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;">Size &amp; Dimensions</td>\n      <td style="border:1px solid #e2e8f0; padding:9px 14px; color:#475569;">${specs.size} (${specs.dimensions})</td>\n    </tr>\n` +
     `    <tr>\n      <td style="border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;">Crystal Structure &amp; Hardness</td>\n      <td style="border:1px solid #e2e8f0; padding:9px 14px; color:#475569;">${stone.crystalSystem} • ${stone.hardness}</td>\n    </tr>\n` +
     `    <tr style="background:#f8fafc;">\n      <td style="border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;">Optical / Density Metrics</td>\n      <td style="border:1px solid #e2e8f0; padding:9px 14px; color:#475569;">RI: ${stone.refractiveIndex} • SG: ${stone.specificGravity}</td>\n    </tr>\n` +
-    `    <tr>\n      <td style="border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;">Lapidary Provenance</td>\n      <td style="border:1px solid #e2e8f0; padding:9px 14px; color:#475569;">Johari Bazar, Jaipur, Rajasthan, India (Est. 1989)</td>\n    </tr>\n` +
+    `    <tr>\n      <td style="border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;">Lapidary Provenance</td>\n      <td style="border:1px solid #e2e8f0; padding:9px 14px; color:#475569;">Hand-carved in Jaipur, Rajasthan, India (Est. 1989)</td>\n    </tr>\n` +
     `    <tr style="background:#f8fafc;">\n      <td style="border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;">Primary Vastu Direction</td>\n      <td style="border:1px solid #e2e8f0; padding:9px 14px; color:#475569;">North-East (Ishanya), North, or East Altar</td>\n    </tr>\n` +
     `    <tr>\n      <td style="border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;">Authenticity Guarantee</td>\n      <td style="border:1px solid #e2e8f0; padding:9px 14px; color:#475569;">100% Earth-Mined Natural Gemstone (Zero Synthetic Resin / Glass)</td>\n    </tr>\n` +
     `  </tbody>\n` +
@@ -1022,7 +1022,7 @@ export const generateGeminiContent = async (productName, categoryName = "", user
     `- citationHook: A clean, natural opening paragraph (NO formulas like (SiO2) in the first sentence). Plain, elegant English.\n` +
     `- weight: Realistic estimated weight (e.g. "${verifiedBase.weight}").\n` +
     `- size: Realistic estimated size & dimensions (e.g. "${verifiedBase.size}").\n` +
-    `- additionalInfo: Complete HTML <ul> list with 10-12 comprehensive specifications including Product Name, Brand & Manufacturer (Crystal Jaipuria, Johari Bazar, Jaipur Est. 1989), Material Composition, Mineral Hardness, Estimated Weight, Size & Dimensions, Lapidary Craftsmanship, Surface Finish, Vedic Consecration & Care, Auspicious Vastu Direction, Authenticity Guarantee, and Packaging.\n` +
+    `- additionalInfo: Complete HTML <ul> list with 10-12 comprehensive specifications including Product Name, Brand & Manufacturer (Crystal Jaipuria, Jaipur Est. 1989), Material Composition, Mineral Hardness, Estimated Weight, Size & Dimensions, Lapidary Craftsmanship, Surface Finish, Vedic Consecration & Care, Auspicious Vastu Direction, Authenticity Guarantee, and Packaging.\n` +
     `- fullDescription: High-authority, concise HTML (clean and crisp, under 250 words total). Naturally incorporate commercial keywords (e.g. "buy authentic ${verifiedBase.cleanName.toLowerCase()} online", "jaipur manufacturer", "lab certified", "vedic agama shastras"). Must include: 1 concise Sanskrit Shloka quote with meaning, Gangajal Pran Pratishtha consecration note, natural mineral veining disclosure, and an HTML <table> of certified gemological specifications including weight and size.\n` +
     `- metaTitle: High-CTR, competitor-beating Google SEO title under 60 characters with commercial triggers (e.g. "${verifiedBase.metaTitle}"). Do NOT use boring repetitive templates!\n` +
     `- metaDescription: Compelling commercial meta description under 160 characters (e.g. "${verifiedBase.metaDescription}").\n` +
@@ -1215,7 +1215,7 @@ Write an exquisite, captivating, conversion-focused product listing:
 1. citationHook: An emotionally magnetic 50-55 word luxury hook highlighting genuine Jaipur lapidary craft, Vastu aura, and spiritual elevation.
 2. weight: Realistic estimated weight (e.g. "${verifiedBase.weight}").
 3. size: Realistic estimated size & dimensions (e.g. "${verifiedBase.size}").
-4. additionalInfo: Complete HTML <ul> list with 10-12 comprehensive specifications including Product Name, Brand & Manufacturer (Crystal Jaipuria, Johari Bazar, Jaipur Est. 1989), Material Composition, Mineral Hardness, Estimated Weight, Size & Dimensions, Lapidary Craftsmanship, Surface Finish, Vedic Consecration & Care, Auspicious Vastu Direction, Authenticity Guarantee, and Packaging.
+4. additionalInfo: Complete HTML <ul> list with 10-12 comprehensive specifications including Product Name, Brand & Manufacturer (Crystal Jaipuria, Jaipur Est. 1989), Material Composition, Mineral Hardness, Estimated Weight, Size & Dimensions, Lapidary Craftsmanship, Surface Finish, Vedic Consecration & Care, Auspicious Vastu Direction, Authenticity Guarantee, and Packaging.
 5. fullDescription: Concise, high-converting HTML (crisp & elegant, under 250 words total) with commercial keywords ("buy authentic online", "jaipur manufacturer", "lab certified"). Must include: 1 concise Sanskrit Shloka quote with meaning, Gangajal Pran Pratishtha consecration note, natural mineral veining disclosure (certifying zero glass/resin), and an HTML <table> of certified gemological specifications including weight and size.
 6. metaTitle: High-CTR Google SEO title under 60 characters with commercial triggers (e.g. "${verifiedBase.metaTitle}").
 7. metaDescription: Compelling meta description under 160 characters (e.g. "${verifiedBase.metaDescription}").
