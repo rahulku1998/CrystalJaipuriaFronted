@@ -34,6 +34,7 @@ import {
 } from "react-icons/fa";
 import SEO from "../Components/SEO";
 import BuyNowModal from "../Components/BuyNowModal";
+import BrandLoader from "../Components/BrandLoader";
 
 const ProductDetails = () => {
   const { slug } = useParams();
@@ -284,12 +285,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
   };
 
   if (loading && !product) {
-    return (
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-20 min-h-[60vh] flex flex-col items-center justify-center">
-        <div className="w-12 h-12 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin mb-4"></div>
-        <p className="text-gray-500 font-medium text-sm">Loading product details...</p>
-      </div>
-    );
+    return <BrandLoader message="Loading authentic gemstone idol..." minHeight="65vh" />;
   }
 
   if (!product) {

@@ -11,6 +11,7 @@ import ProtectedRoute from "./Components/ProtectedRoute";
 import VijayProtectedRoute from './Components/VijayProtectedRoute';
 import ScrollTop from "./Components/ScrollTop";
 import FloatingWhatsApp from "./Components/FloatingWhatsApp";
+import BrandLoader from "./Components/BrandLoader";
 
 // Lazy-loaded customer-facing pages (code-split for blazing mobile performance)
 const About = lazy(() => import("./Pages/About"));
@@ -90,7 +91,7 @@ function App() {
       <FloatingWhatsApp />
       <main id="main-content" className="flex-grow">
         <ErrorBoundary>
-          <Suspense fallback={<div className="min-h-[50vh] flex items-center justify-center"><div className="w-8 h-8 border-3 border-indigo-600 border-t-transparent rounded-full animate-spin" /></div>}>
+          <Suspense fallback={<BrandLoader minHeight="50vh" message="Loading..." />}>
             <Routes>
               <Route
                 path="/"
