@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import aboutBanner from "../assets/about/About-Us.webp";
 import workshop from "../assets/about/workshop.webp";
 import StatsSection from "../Components/StatsSection";
@@ -157,12 +158,8 @@ const About = () => {
               <span className="text-indigo-600 font-medium">
                 CEO Krishan Kumawat
               </span>
-              , we specialize in semi-precious stone statues, gemstone
-              carvings, deity figures, and handcrafted artistic creations.
+              , we specialize in semi-precious <Link to="/crystal-statues" className="text-amber-800 hover:text-amber-900 font-semibold underline underline-offset-2 decoration-amber-300">crystal statues</Link>, sacred <Link to="/shivling" className="text-amber-800 hover:text-amber-900 font-semibold underline underline-offset-2 decoration-amber-300">gemstone Shivlings</Link>, and handcrafted <Link to="/god-statues" className="text-amber-800 hover:text-amber-900 font-semibold underline underline-offset-2 decoration-amber-300">deity figures</Link>.
             </p>
-
-
-
 
             <p className="
               text-gray-600
@@ -171,13 +168,7 @@ const About = () => {
               leading-7
               sm:leading-8
             ">
-
-              Every creation at Crystal Jaipuria is crafted with precision,
-              authenticity, and care. From spiritual idols and healing crystals
-              to handcrafted jewellery and puja essentials, our products are
-              designed to bring harmony, beauty, and positive energy into
-              everyday life.
-
+              Every creation at Crystal Jaipuria is crafted with precision, authenticity, and care. From sacred <Link to="/shree-yantra" className="text-amber-800 hover:text-amber-900 font-semibold underline underline-offset-2 decoration-amber-300">Shree Yantras</Link> and healing <Link to="/angel" className="text-amber-800 hover:text-amber-900 font-semibold underline underline-offset-2 decoration-amber-300">crystal angels</Link> to authentic puja essentials and <Link to="/diya" className="text-amber-800 hover:text-amber-900 font-semibold underline underline-offset-2 decoration-amber-300">gemstone Diyas</Link>, every piece is 100% natural and certified. Learn how we test genuine crystals in our <Link to="/gemstone-authenticity-guide" className="text-indigo-600 hover:text-indigo-800 font-bold underline underline-offset-2">Gemstone Authenticity Guide</Link>.
             </p>
 
 

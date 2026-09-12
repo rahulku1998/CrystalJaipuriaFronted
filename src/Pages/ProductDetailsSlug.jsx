@@ -129,11 +129,72 @@ Hello Crystal Jaipuria, I have a query regarding this product.
     try {
       const catId = prod?.categoryId?._id || (typeof prod?.categoryId === 'string' ? prod.categoryId : null);
       if (!catId) return;
+
       const res = await API.get(`/products/category/${catId}`);
-      const related = (res.data?.products || [])
-        .filter((p) => (p.slug || p._id) !== (prod.slug || prod._id))
-        .slice(0, 5);
-      setRelatedProducts(related);
+      let candidates = (res.data?.products || []).filter(
+        (p) => (p.slug || p._id) !== (prod.slug || prod._id)
+      );
+
+      // If category has fewer than 5 items, supplement from all products for broad matching
+      if (candidates.length < 5) {
+        try {
+          const allRes = await API.get("/products");
+          const allProds = (allRes.data?.products || allRes.data || []).filter(
+            (p) => (p.slug || p._id) !== (prod.slug || prod._id)
+          );
+          const existingIds = new Set(candidates.map((c) => c._id || c.slug));
+          for (const p of allProds) {
+            if (!existingIds.has(p._id || p.slug)) {
+              candidates.push(p);
+            }
+          }
+        } catch {
+          // ignore
+        }
+      }
+
+      // Entity-Smart Relevance Scoring (Material + Deity + Category)
+      const currentText = `${prod.name || ""} ${prod.slug || ""}`.toLowerCase();
+      const MATERIALS = [
+        "ruby", "sphatik", "quartz", "jade", "rose quartz", "amethyst", 
+        "lapis lazuli", "lapis", "agate", "aventurine", "labradorite", 
+        "howlite", "opal", "tiger eye", "sapphire", "pyrite", "selenite"
+      ];
+      const DEITIES = [
+        "shivling", "shiva", "shree yantra", "yantra", "ganesha", "ganesh", 
+        "krishna", "mahalakshmi", "lakshmi", "saraswati", "hanuman", 
+        "mahaveer", "parshvanath", "angel", "diya", "elephant", "swan"
+      ];
+
+      const currentMaterials = MATERIALS.filter((m) => currentText.includes(m));
+      const currentDeities = DEITIES.filter((d) => currentText.includes(d));
+
+      const scored = candidates.map((item) => {
+        const itemText = `${item.name || ""} ${item.slug || ""}`.toLowerCase();
+        let score = 0;
+
+        // Same material match (+10 points) - e.g. Ruby with Ruby, Jade with Jade
+        for (const mat of currentMaterials) {
+          if (itemText.includes(mat)) score += 10;
+        }
+
+        // Same deity / form match (+6 points) - e.g. Shiva with Shiva, Ganesha with Ganesha
+        for (const deity of currentDeities) {
+          if (itemText.includes(deity)) score += 6;
+        }
+
+        // Same category (+2 points)
+        if (item.categoryId?._id === catId || item.categoryId === catId) {
+          score += 2;
+        }
+
+        return { item, score };
+      });
+
+      scored.sort((a, b) => b.score - a.score);
+      const topRelated = scored.slice(0, 5).map((s) => s.item);
+
+      setRelatedProducts(topRelated);
     } catch (err) {
       console.log("Error fetching related products:", err);
     }

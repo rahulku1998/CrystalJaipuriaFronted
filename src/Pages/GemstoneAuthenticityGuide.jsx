@@ -21,8 +21,23 @@ const GemstoneAuthenticityGuide = () => {
       icon: <FaTemperatureLow className="text-2xl text-cyan-600" />,
       title: "1. The Cold-Touch Thermal Test",
       method: "Hold the stone to your cheek or in your palm at room temperature.",
-      genuine:
-        "Natural gemstones (like Sphatik Quartz, Jade, Agate) have high thermal conductivity and naturally remain cool to the touch for the first few seconds.",
+      genuine: (
+        <>
+          Natural gemstones (like{" "}
+          <Link to="/product/natural-sphatik-shivling" className="text-cyan-800 font-semibold underline underline-offset-2 hover:text-cyan-950">
+            Sphatik Quartz
+          </Link>
+          ,{" "}
+          <Link to="/product/green-jade-elephant-staute" className="text-cyan-800 font-semibold underline underline-offset-2 hover:text-cyan-950">
+            Green Jade
+          </Link>
+          , or{" "}
+          <Link to="/product/gemston-ruby-shree-yantra" className="text-cyan-800 font-semibold underline underline-offset-2 hover:text-cyan-950">
+            Natural Ruby
+          </Link>
+          ) have high thermal conductivity and naturally remain cool to the touch for the first few seconds.
+        </>
+      ),
       fake: "Glass and resin quickly absorb body heat and warm up almost instantly.",
     },
     {
@@ -45,8 +60,19 @@ const GemstoneAuthenticityGuide = () => {
       icon: <FaWater className="text-2xl text-blue-600" />,
       title: "4. Water & Jalabhishekam Stability",
       method: "Perform daily Puja, Jalabhishekam, and Panchamrit rituals with water, milk, and curd.",
-      genuine:
-        "Earth-mined gemstones are impervious to natural water and milk. Their polish and structural integrity remain intact for generations.",
+      genuine: (
+        <>
+          Earth-mined gemstones like{" "}
+          <Link to="/product/lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva" className="text-blue-800 font-semibold underline underline-offset-2 hover:text-blue-950">
+            Natural Lapis Lazuli
+          </Link>{" "}
+          and{" "}
+          <Link to="/product/natural-ruby-shivling" className="text-blue-800 font-semibold underline underline-offset-2 hover:text-blue-950">
+            Ruby Shivling
+          </Link>{" "}
+          are impervious to natural water and milk. Their polish and structural integrity remain intact for generations.
+        </>
+      ),
       fake: "Cheap dyed stones or chemically treated resin can leach toxic chemical colors or develop surface fogging over time.",
     },
   ];
@@ -280,6 +306,96 @@ const GemstoneAuthenticityGuide = () => {
                   Wipe with a soft cotton muslin cloth after daily Puja. Avoid harsh chemical detergents or abrasive brushes.
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* CERTIFIED AUTHENTIC GEMSTONE IDOLS SHOWCASE */}
+          <div className="mt-14 bg-stone-50/80 rounded-3xl p-6 sm:p-8 border border-stone-200 shadow-xs space-y-6">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+              <div>
+                <span className="text-[11px] font-extrabold uppercase tracking-widest text-amber-700 bg-amber-100/70 px-2.5 py-1 rounded-full border border-amber-200">
+                  Certified In Our Jaipur Workshop
+                </span>
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mt-2">
+                  Explore 100% Certified Authentic Carvings
+                </h2>
+                <p className="text-xs sm:text-sm text-gray-600 mt-1">
+                  Each piece is handcrafted from genuine geological rough stones with laboratory authenticity.
+                </p>
+              </div>
+              <Link
+                to="/shop"
+                className="text-xs sm:text-sm font-bold text-indigo-600 hover:text-indigo-800 flex items-center gap-1 shrink-0"
+              >
+                <span>View Full Catalog</span>
+                <span>→</span>
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+              {[
+                {
+                  slug: "natural-sphatik-shivling",
+                  name: "Natural Sphatik Shivling",
+                  material: "100% Pure Quartz",
+                  price: "₹1,250",
+                  img: "/images/natural-sphatik-shivling.webp"
+                },
+                {
+                  slug: "gemston-ruby-shree-yantra",
+                  name: "Natural Ruby Shree Yantra",
+                  material: "Certified Ruby",
+                  price: "₹750",
+                  img: "/images/gemston-ruby-shree-yantra.webp"
+                },
+                {
+                  slug: "green-jade-elephant-staute",
+                  name: "Green Jade Elephant Statue",
+                  material: "Natural Columbian Jade",
+                  price: "₹1,850",
+                  img: "/images/green-jade-elephant-staute.webp"
+                },
+                {
+                  slug: "lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva",
+                  name: "Lapis Lazuli Shiva Linga",
+                  material: "Certified Lapis Lazuli",
+                  price: "₹1,450",
+                  img: "/images/lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva.webp"
+                }
+              ].map((item) => (
+                <Link
+                  key={item.slug}
+                  to={`/product/${item.slug}`}
+                  className="bg-white rounded-2xl border border-stone-200/80 p-3 hover:shadow-md hover:border-amber-300 transition-all flex flex-col justify-between group"
+                >
+                  <div className="w-full aspect-square bg-[#FAF8F5] rounded-xl overflow-hidden flex items-center justify-center p-2">
+                    <img
+                      src={item.img}
+                      alt={item.name}
+                      width="200"
+                      height="200"
+                      loading="lazy"
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform"
+                    />
+                  </div>
+                  <div className="mt-2.5 flex-1 flex flex-col justify-between">
+                    <div>
+                      <span className="text-[10px] font-semibold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200/60">
+                        {item.material}
+                      </span>
+                      <h3 className="font-bold text-xs sm:text-sm text-gray-900 line-clamp-2 mt-1 group-hover:text-amber-800">
+                        {item.name}
+                      </h3>
+                    </div>
+                    <div className="mt-2 pt-2 border-t border-stone-100 flex items-center justify-between">
+                      <span className="text-xs font-black text-indigo-700">{item.price}</span>
+                      <span className="text-[11px] font-bold text-amber-800 group-hover:translate-x-0.5 transition-transform">
+                        Buy Now →
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
 

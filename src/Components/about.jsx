@@ -69,7 +69,7 @@ const AboutGemstoneSection = () => {
 
             {/* Crisp Summary Text */}
             <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
-              <strong>Crystal Jaipuria</strong> is a leading Jaipur-based manufacturer, wholesaler, and global exporter of certified natural gemstone idols, Sphatik Shivlings, and crystal sculptures crafted with authentic Vedic Shilpa Shastra precision.
+              <strong>Crystal Jaipuria</strong> is a leading Jaipur-based manufacturer, wholesaler, and global exporter of certified natural <Link to="/god-statues" className="text-amber-800 hover:text-amber-900 font-semibold underline underline-offset-2 decoration-amber-300">gemstone idols</Link>, <Link to="/shivling" className="text-amber-800 hover:text-amber-900 font-semibold underline underline-offset-2 decoration-amber-300">Sphatik Shivlings</Link>, and <Link to="/crystal-statues" className="text-amber-800 hover:text-amber-900 font-semibold underline underline-offset-2 decoration-amber-300">crystal sculptures</Link> crafted with authentic Vedic Shilpa Shastra precision.
             </p>
 
             {/* 3 Key Feature Bullets */}
@@ -83,7 +83,7 @@ const AboutGemstoneSection = () => {
                     100% Certified Pure Natural Gemstones
                   </h3>
                   <p className="text-[11px] text-stone-500 leading-relaxed">
-                    Natural Sphatik (Quartz), Green Jade, Rose Quartz, Ruby, Amethyst, Lapis Lazuli &amp; Black Agate.
+                    Natural Sphatik (Quartz), Green Jade, Rose Quartz, Ruby, Amethyst, Lapis Lazuli &amp; Black Agate. Learn more in our <Link to="/gemstone-authenticity-guide" className="text-amber-800 hover:text-amber-900 font-semibold underline underline-offset-2 decoration-amber-300">Authenticity Guide</Link>.
                   </p>
                 </div>
               </div>
@@ -97,7 +97,7 @@ const AboutGemstoneSection = () => {
                     Sacred Deities &amp; Custom Artistic Sculptures
                   </h3>
                   <p className="text-[11px] text-stone-500 leading-relaxed">
-                    Hand-carved Shivlings, Ganesha, Shiva, Krishna, Lakshmi, Buddha &amp; bespoke custom sculptures.
+                    Hand-carved <Link to="/shivling" className="text-stone-700 hover:text-amber-800 font-semibold underline underline-offset-2 decoration-stone-300">Shivlings</Link>, <Link to="/god-statues" className="text-stone-700 hover:text-amber-800 font-semibold underline underline-offset-2 decoration-stone-300">Ganesha, Shiva, Krishna, Lakshmi</Link> &amp; bespoke <Link to="/crystal-statues" className="text-stone-700 hover:text-amber-800 font-semibold underline underline-offset-2 decoration-stone-300">custom sculptures</Link>.
                   </p>
                 </div>
               </div>
