@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { STANDARDIZED_SPECS } from "../src/utils/productStandardizer.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -165,7 +166,9 @@ export const runPrerender = async () => {
     const imageUrl = `${BASE_URL}/images/${cleanProductSlug}.webp?v=2`;
 
     let priceNum = 999;
-    if (typeof prod.price === "number" && prod.price > 0) {
+    if (STANDARDIZED_SPECS[slug]?.price) {
+      priceNum = STANDARDIZED_SPECS[slug].price;
+    } else if (typeof prod.price === "number" && prod.price > 0) {
       priceNum = prod.price;
     } else if (typeof prod.discountPrice === "number" && prod.discountPrice > 0) {
       priceNum = prod.discountPrice;
@@ -333,6 +336,63 @@ export const runPrerender = async () => {
     const catTitle = `${catName} - Handcrafted Gemstone Idols | Crystal Jaipuria`;
     const catDesc = `Explore authentic hand-carved ${catName} in natural gemstones and pure crystals. Factory direct wholesale prices from master artisans in Jaipur since 1989.`;
 
+    const catProducts = products.filter(
+      (p) =>
+        p.categoryId?.slug === cat.slug ||
+        p.categoryId?._id === cat._id ||
+        (typeof p.categoryId === "string" && p.categoryId === cat._id)
+    );
+
+    const parsePrice = (p) => {
+      const pSlug = (p.slug || p._id || "").toLowerCase().trim();
+      if (STANDARDIZED_SPECS[pSlug]?.price) {
+        return `₹${STANDARDIZED_SPECS[pSlug].price.toLocaleString("en-IN")}`;
+      }
+      if (typeof p?.price === "number" && p.price > 0) {
+        return `₹${p.price.toLocaleString("en-IN")}`;
+      }
+      if (typeof p?.discountPrice === "number" && p.discountPrice > 0) {
+        return `₹${p.discountPrice.toLocaleString("en-IN")}`;
+      }
+      const raw = String(p?.price || p?.discountPrice || "").replace(/,/g, "");
+      const match = raw.match(/\d+(\.\d+)?/);
+      if (match && Number(match[0]) > 0) {
+        return `₹${Number(match[0]).toLocaleString("en-IN")}`;
+      }
+      return "Inquire Price";
+    };
+
+    const cardsHtml = catProducts
+      .map((p) => {
+        const pSlug = p.slug || p._id;
+        const pImg = `${BASE_URL}/images/${pSlug}.webp`;
+        const pPrice = parsePrice(p);
+        return `
+          <a href="${BASE_URL}/product/${pSlug}" style="text-decoration:none;background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:12px;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+              <div style="aspect-ratio:1/1;background:#faf8f5;border-radius:12px;display:flex;align-items:center;justify-content:center;padding:8px;">
+                <img src="${pImg}" alt="${escapeHtml(p.name)}" style="max-height:100%;max-width:100%;object-fit:contain;" width="300" height="300" loading="lazy" />
+              </div>
+              <h3 style="font-size:14px;font-weight:700;color:#1e293b;margin:12px 0 6px 0;line-height:1.4;">${escapeHtml(p.name)}</h3>
+            </div>
+            <div style="font-size:16px;font-weight:800;color:#92400e;margin-top:8px;">${pPrice}</div>
+          </a>
+        `;
+      })
+      .join("\n");
+
+    const categoryBodyPreview = `
+      <div style="max-width:1200px;margin:0 auto;padding:24px 16px;font-family:system-ui,-apple-system,sans-serif;">
+        <div style="margin-bottom:24px;">
+          <h1 style="font-size:28px;font-weight:800;color:#1e293b;">All <span style="color:#92400e;">${escapeHtml(catName)}</span></h1>
+          <p style="font-size:14px;color:#64748b;margin-top:4px;">${catProducts.length} Products</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));gap:16px;">
+          ${cardsHtml}
+        </div>
+      </div>
+    `.trim();
+
     const catHtml = buildPageHtml({
       title: catTitle,
       description: catDesc,
@@ -340,6 +400,7 @@ export const runPrerender = async () => {
       ogTitle: catTitle,
       ogDescription: catDesc,
       ogImage: `${BASE_URL}/logo.png`,
+      bodyContent: categoryBodyPreview,
     });
 
     saveFile(`${cat.slug}/index.html`, catHtml);

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import API from "../api/axios";
 import SEO from "../Components/SEO";
@@ -8,6 +8,7 @@ import { getBreadcrumbSchema } from "../utils/seo";
 import { trackCategoryView } from "../utils/analytics";
 import { LEGACY_PRODUCTS } from "../utils/legacyProducts";
 import ProductCard from "../Components/ProductCard";
+import BrandLoader from "../Components/BrandLoader";
 import NotFound from "./NotFound";
 
 const CATEGORY_SEO = {
@@ -101,23 +102,80 @@ const CATEGORY_SEO = {
   },
 };
 
+export const STATIC_CATEGORIES = {
+  "god-statues": {
+    _id: "6a55bb1f2e9a358fc926cbab",
+    name: "God Statues",
+    slug: "god-statues",
+  },
+  "shivling": {
+    _id: "6a55bc292dcf49aacd71ef65",
+    name: "Shivling",
+    slug: "shivling",
+  },
+  "shree-yantra": {
+    _id: "6a55bc362dcf49aacd71ef66",
+    name: "Shree Yantra",
+    slug: "shree-yantra",
+  },
+  "angel": {
+    _id: "6a55bc3f2dcf49aacd71ef67",
+    name: "Angel",
+    slug: "angel",
+  },
+  "crystal-statues": {
+    _id: "6a55bc492dcf49aacd71ef68",
+    name: "Crystal Statues",
+    slug: "crystal-statues",
+  },
+  "diya": {
+    _id: "6a55bc522dcf49aacd71ef69",
+    name: "Diya",
+    slug: "diya",
+  },
+};
+
+export const getStaticCategoryProducts = (catSlug) => {
+  if (!catSlug) return [];
+  const clean = String(catSlug).toLowerCase().trim();
+  const staticCat = STATIC_CATEGORIES[clean];
+  const catId = staticCat?._id;
+  return LEGACY_PRODUCTS.filter(
+    (p) =>
+      p.categoryId?.slug === clean ||
+      p.categoryId?._id === catId ||
+      (p.categoryId?.name && p.categoryId.name.toLowerCase().replace(/[^a-z0-9]+/g, "-") === clean)
+  );
+};
+
 const CategoryPage = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
 
-  const [category, setCategory] = useState(null);
+  const cleanSlug = useMemo(() => String(slug || "").toLowerCase().trim(), [slug]);
+  const staticCat = useMemo(() => STATIC_CATEGORIES[cleanSlug] || null, [cleanSlug]);
+  const staticProducts = useMemo(() => getStaticCategoryProducts(cleanSlug), [cleanSlug]);
+
+  const [category, setCategory] = useState(() => staticCat);
   const [subCategories, setSubCategories] = useState([]);
-  const [products, setProducts] = useState([]);
-  const [loadingProducts, setLoadingProducts] = useState(true);
+  const [products, setProducts] = useState(() => staticProducts);
+  const [loadingProducts, setLoadingProducts] = useState(() => !staticCat);
   const [activeSubCategory, setActiveSubCategory] = useState(null);
 
   useEffect(() => {
-    setCategory(null);
+    if (staticCat) {
+      setCategory(staticCat);
+      setProducts(staticProducts);
+      setLoadingProducts(false);
+    } else {
+      setCategory(null);
+      setProducts([]);
+      setLoadingProducts(true);
+    }
     setSubCategories([]);
-    setProducts([]);
-    setLoadingProducts(true);
+    setActiveSubCategory(null);
     fetchData();
-  }, [slug]);
+  }, [cleanSlug]);
 
   const fetchProductsBySubCategory = async (subCategoryId) => {
     try {
@@ -136,21 +194,20 @@ const CategoryPage = () => {
         API.get("/products"),
       ]);
 
-      const currentCat = (catRes.data.categories || []).find(
-        (c) => c.slug === slug
-      );
+      const currentCat =
+        (catRes.data?.categories || []).find((c) => c.slug === cleanSlug) || staticCat;
 
       if (!currentCat) {
         // Check if slug matches a product
         const allProds = productRes.data?.products || productRes.data || [];
-        const matchedProd = allProds.find((p) => p.slug === slug || p._id === slug);
+        const matchedProd = allProds.find((p) => p.slug === cleanSlug || p._id === cleanSlug);
         if (matchedProd) {
           navigate(`/product/${matchedProd.slug || matchedProd._id}`, { replace: true });
           return;
         }
 
         // Check legacy products
-        const legacyMatch = LEGACY_PRODUCTS.find((p) => p.slug === slug);
+        const legacyMatch = LEGACY_PRODUCTS.find((p) => p.slug === cleanSlug);
         if (legacyMatch) {
           navigate(`/product/${legacyMatch.slug}`, { replace: true });
           return;
@@ -164,17 +221,21 @@ const CategoryPage = () => {
 
       setCategory(currentCat);
 
-      const filteredSubs = (subRes.data.subCategories || []).filter(
+      const filteredSubs = (subRes.data?.subCategories || []).filter(
         (s) => s.categoryId?._id === currentCat._id
       );
       setSubCategories(filteredSubs);
 
-      const liveProducts = (productRes.data.products || []).filter(
+      const liveProducts = (productRes.data?.products || []).filter(
         (p) => p.categoryId?._id === currentCat._id
       );
 
-      setProducts(liveProducts);
-      trackCategoryView(currentCat.name, liveProducts);
+      if (liveProducts.length > 0) {
+        setProducts(liveProducts);
+        trackCategoryView(currentCat.name, liveProducts);
+      } else if (staticProducts.length > 0) {
+        trackCategoryView(currentCat.name, staticProducts);
+      }
     } catch (err) {
       console.log("Category fetch error:", err);
     } finally {
@@ -182,7 +243,7 @@ const CategoryPage = () => {
     }
   };
 
-  const customSeo = CATEGORY_SEO[slug];
+  const customSeo = CATEGORY_SEO[cleanSlug];
   const pageTitle =
     customSeo?.title ||
     `${category?.name || "Products"} | Crystal Jaipuria`;
@@ -190,7 +251,7 @@ const CategoryPage = () => {
     customSeo?.description ||
     `Explore handcrafted ${category?.name || "crystal items"} from Crystal Jaipuria, Jaipur, India.`;
   const canonicalUrl =
-    customSeo?.canonical || `https://www.crystaljaipuria.com/${slug}`;
+    customSeo?.canonical || `https://www.crystaljaipuria.com/${cleanSlug}`;
 
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Home", url: "https://www.crystaljaipuria.com/" },
@@ -213,7 +274,7 @@ const CategoryPage = () => {
   );
 
   if (loadingProducts && !category) {
-    return null;
+    return <BrandLoader message="Loading gemstone collection..." minHeight="60vh" />;
   }
 
   if (!category) {

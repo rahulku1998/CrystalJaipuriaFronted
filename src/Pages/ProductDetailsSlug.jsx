@@ -884,9 +884,12 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                 View All →
               </Link>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
+            {/* Desktop: strictly 1 row of 5 products. Mobile: 1-line horizontal swipeable track */}
+            <div className="flex overflow-x-auto sm:grid sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-6 pb-2 sm:pb-0 scrollbar-none snap-x">
               {relatedProducts.slice(0, 5).map((item) => (
-                <ProductCard key={item._id || item.slug} product={item} />
+                <div key={item._id || item.slug} className="min-w-[165px] sm:min-w-0 snap-start flex-1">
+                  <ProductCard product={item} />
+                </div>
               ))}
             </div>
           </div>
