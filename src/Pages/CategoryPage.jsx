@@ -159,6 +159,7 @@ const CategoryPage = () => {
   const [category, setCategory] = useState(() => staticCat);
   const [subCategories, setSubCategories] = useState([]);
   const [products, setProducts] = useState(() => staticProducts);
+  const [allCategoryProducts, setAllCategoryProducts] = useState(() => staticProducts);
   const [loadingProducts, setLoadingProducts] = useState(() => !staticCat);
   const [activeSubCategory, setActiveSubCategory] = useState(null);
 
@@ -166,10 +167,12 @@ const CategoryPage = () => {
     if (staticCat) {
       setCategory(staticCat);
       setProducts(staticProducts);
+      setAllCategoryProducts(staticProducts);
       setLoadingProducts(false);
     } else {
       setCategory(null);
       setProducts([]);
+      setAllCategoryProducts([]);
       setLoadingProducts(true);
     }
     setSubCategories([]);
@@ -178,21 +181,35 @@ const CategoryPage = () => {
   }, [cleanSlug]);
 
   const fetchProductsBySubCategory = async (subCategoryId) => {
-    try {
-      const res = await API.get(`/products/subcategory/${subCategoryId}`);
-      const list = res.data.products || [];
-      if (list.length > 0) {
-        setProducts(list);
-      } else {
-        const pRes = await API.get("/products");
-        const all = pRes.data.products || [];
-        const filtered = all.filter(
-          (p) => (p.subCategoryId?._id || p.subCategoryId) === subCategoryId
-        );
-        setProducts(filtered);
+    setActiveSubCategory(subCategoryId);
+    if (!subCategoryId) {
+      setProducts(allCategoryProducts);
+      return;
+    }
+
+    const filtered = allCategoryProducts.filter(
+      (p) => (p.subCategoryId?._id || p.subCategoryId) === subCategoryId
+    );
+
+    if (filtered.length > 0) {
+      setProducts(filtered);
+    } else {
+      try {
+        const res = await API.get(`/products/subcategory/${subCategoryId}`);
+        const list = res.data.products || [];
+        if (list.length > 0) {
+          setProducts(list);
+        } else {
+          const pRes = await API.get("/products");
+          const all = pRes.data.products || [];
+          const matched = all.filter(
+            (p) => (p.subCategoryId?._id || p.subCategoryId) === subCategoryId
+          );
+          setProducts(matched);
+        }
+      } catch (err) {
+        console.log(err);
       }
-    } catch (err) {
-      console.log(err);
     }
   };
 
@@ -251,8 +268,11 @@ const CategoryPage = () => {
 
       if (liveProducts.length > 0) {
         setProducts(liveProducts);
+        setAllCategoryProducts(liveProducts);
         trackCategoryView(currentCat.name, liveProducts);
       } else if (staticProducts.length > 0) {
+        setProducts(staticProducts);
+        setAllCategoryProducts(staticProducts);
         trackCategoryView(currentCat.name, staticProducts);
       }
     } catch (err) {
@@ -319,7 +339,7 @@ const CategoryPage = () => {
             <button
               onClick={() => {
                 setActiveSubCategory(null);
-                fetchData();
+                setProducts(allCategoryProducts);
               }}
               className={`px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition cursor-pointer ${
                 activeSubCategory === null
@@ -327,24 +347,36 @@ const CategoryPage = () => {
                   : "bg-stone-100 text-stone-700 hover:bg-stone-200"
               }`}
             >
-              All
+              All ({allCategoryProducts.length})
             </button>
-            {subCategories.map((sub) => (
-              <button
-                key={sub._id}
-                onClick={() => {
-                  setActiveSubCategory(sub._id);
-                  fetchProductsBySubCategory(sub._id);
-                }}
-                className={`px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition cursor-pointer ${
-                  activeSubCategory === sub._id
-                    ? "bg-amber-800 text-white"
-                    : "bg-stone-100 text-stone-700 hover:bg-stone-200"
-                }`}
-              >
-                {sub.name}
-              </button>
-            ))}
+            {subCategories.map((sub) => {
+              const subCount = allCategoryProducts.filter((p) => {
+                const pSubId = p.subCategoryId?._id || p.subCategoryId;
+                return pSubId === sub._id;
+              }).length;
+              return (
+                <button
+                  key={sub._id}
+                  onClick={() => fetchProductsBySubCategory(sub._id)}
+                  className={`px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition cursor-pointer flex items-center gap-1.5 ${
+                    activeSubCategory === sub._id
+                      ? "bg-amber-800 text-white"
+                      : "bg-stone-100 text-stone-700 hover:bg-stone-200"
+                  }`}
+                >
+                  <span>{sub.name}</span>
+                  <span
+                    className={`text-[10px] px-1.5 py-0.2 rounded-full ${
+                      activeSubCategory === sub._id
+                        ? "bg-amber-900 text-amber-100"
+                        : "bg-stone-200 text-stone-600"
+                    }`}
+                  >
+                    {subCount}
+                  </span>
+                </button>
+              );
+            })}
           </div>
         )}
 
@@ -362,7 +394,7 @@ const CategoryPage = () => {
                 <div
                   onClick={() => {
                     setActiveSubCategory(null);
-                    fetchData();
+                    setProducts(allCategoryProducts);
                   }}
                   className={`p-2.5 rounded-xl cursor-pointer transition text-sm font-medium flex justify-between items-center ${
                     activeSubCategory === null
@@ -371,19 +403,20 @@ const CategoryPage = () => {
                   }`}
                 >
                   <span>All {category.name}</span>
+                  <span className="bg-stone-100 text-stone-600 px-2 py-0.5 rounded-full text-xs font-medium">
+                    {allCategoryProducts.length}
+                  </span>
                 </div>
                 {subCategories.map((sub) => {
-                  const productCount = products.filter(
-                    (product) => product.subCategoryId?._id === sub._id
-                  ).length;
+                  const productCount = allCategoryProducts.filter((product) => {
+                    const pSubId = product.subCategoryId?._id || product.subCategoryId;
+                    return pSubId === sub._id;
+                  }).length;
 
                   return (
                     <div
                       key={sub._id}
-                      onClick={() => {
-                        setActiveSubCategory(sub._id);
-                        fetchProductsBySubCategory(sub._id);
-                      }}
+                      onClick={() => fetchProductsBySubCategory(sub._id)}
                       className={`p-2.5 rounded-xl cursor-pointer transition text-sm flex justify-between items-center ${
                         activeSubCategory === sub._id
                           ? "bg-amber-50 text-amber-900 font-semibold"

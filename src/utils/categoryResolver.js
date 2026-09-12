@@ -35,12 +35,14 @@ export const detectCategoryAndSubCategory = (
   // 6. God Statues:
   // Ganesh / Ganpati
   const isGanesh = /\b(ganesh|ganesha|ganpati|vinayak|vinayaka)\b/i.test(name);
+  const isShiva = /\b(shiva|lord shiva|shiv|mahadev|bholenath|shankar)\b/i.test(name);
 
   // Deities: shiva, krishna, radha, hanuman, lakshmi, saraswati, mahaveer, parshvanath, buddha, etc.
   const isGodStatue =
     !isShivling &&
     (isGanesh ||
-      /\b(shiva|lord shiva|shiv|mahadev|bholenath|shankar|krishna|radha|kanha|hanuman|balaji|bajrangbali|lakshmi|laxmi|mahalakshmi|saraswati|mahaveer|mahavir|parshvanath|tirthankar|buddha|ram|sita|durga|kali|sai baba|vishnu|god|deity|idol|murti|bhagwan)\b/i.test(
+      isShiva ||
+      /\b(krishna|radha|kanha|hanuman|balaji|bajrangbali|lakshmi|laxmi|mahalakshmi|saraswati|mahaveer|mahavir|parshvanath|tirthankar|buddha|ram|sita|durga|kali|sai baba|vishnu|god|deity|idol|murti|bhagwan)\b/i.test(
         name
       ) ||
       (/\bstatue\b/i.test(name) && !isCrystalDecorative));
@@ -62,7 +64,13 @@ export const detectCategoryAndSubCategory = (
     targetSubSlug = "diya";
   } else if (isGodStatue) {
     targetCatSlug = "god-statues";
-    targetSubSlug = isGanesh ? "ganesh" : "shiva";
+    if (isGanesh) {
+      targetSubSlug = "ganesh";
+    } else if (isShiva) {
+      targetSubSlug = "shiva";
+    } else {
+      targetSubSlug = "other";
+    }
   } else if (isCrystalDecorative) {
     targetCatSlug = "crystal-statues";
     targetSubSlug = "crystal-statues";

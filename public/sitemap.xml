@@ -84,7 +84,25 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- Dynamic Product Pages (46 Live Products) -->
+  <!-- Dynamic Product Pages (48 Live Products) -->
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/green-jade-ganesha</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/green-jade-ganesha.webp</image:loc>
+      <image:title>Green Jade Ganesha | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/rose-quartz-ganesha</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/rose-quartz-ganesha.webp</image:loc>
+      <image:title>Rose Quartz Ganesha | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://www.crystaljaipuria.com/product/green-jade-shree-yantra</loc>
     <image:image>
