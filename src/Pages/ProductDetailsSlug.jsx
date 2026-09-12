@@ -55,9 +55,19 @@ const ProductDetails = () => {
   });
 
   const [activeTab, setActiveTab] = useState("description");
-  const [product, setProduct] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [selectedImage, setSelectedImage] = useState("");
+
+  const cleanSlug = React.useMemo(() => {
+    return resolveProductSlug(String(slug || "").trim().toLowerCase().replace(/^\/product\//, "").replace(/\/$/, ""));
+  }, [slug]);
+
+  const fallbackProduct = React.useMemo(() => {
+    const leg = getLegacyProductBySlug(cleanSlug);
+    return leg ? getStandardizedProduct(leg) : null;
+  }, [cleanSlug]);
+
+  const [product, setProduct] = useState(() => fallbackProduct);
+  const [loading, setLoading] = useState(() => !fallbackProduct);
+  const [selectedImage, setSelectedImage] = useState(() => fallbackProduct?.images?.[0] || "");
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [copied, setCopied] = useState(false);
   const [relatedProducts, setRelatedProducts] = useState([]);
@@ -104,10 +114,15 @@ Hello Crystal Jaipuria, I have a query regarding this product.
   };
 
   useEffect(() => {
+    if (fallbackProduct) {
+      setProduct(fallbackProduct);
+      setLoading(false);
+      setSelectedImage(fallbackProduct?.images?.[0] || "");
+    }
     if (slug) {
       fetchProduct();
     }
-  }, [slug]);
+  }, [slug, cleanSlug]);
 
   const fetchRelatedProducts = async (prod) => {
     try {
@@ -129,7 +144,9 @@ Hello Crystal Jaipuria, I have a query regarding this product.
         navigate(`/product/${cleanSlug}`, { replace: true });
         return;
       }
-      setLoading(true);
+      if (!fallbackProduct && !product) {
+        setLoading(true);
+      }
 
       let data = null;
 

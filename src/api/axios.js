@@ -46,11 +46,71 @@ const API = axios.create({
   baseURL: BASE_URL,
 });
 
+// High-speed API cache for public GET endpoints (3 minutes TTL)
+const apiCache = new Map();
+const CACHE_TTL_MS = 3 * 60 * 1000;
+
+export const clearApiCache = () => {
+  apiCache.clear();
+  try {
+    if (typeof sessionStorage !== "undefined") {
+      Object.keys(sessionStorage).forEach((key) => {
+        if (key.startsWith("cj_cache_")) {
+          sessionStorage.removeItem(key);
+        }
+      });
+    }
+  } catch {}
+};
+
+// Wrap API.get with instant caching for public read requests
+const originalGet = API.get.bind(API);
+API.get = async (url, config = {}) => {
+  const isPublic = !url.includes("/admin") && !config?.skipCache;
+  if (isPublic) {
+    const cacheKey = `cj_cache_${url}_${JSON.stringify(config?.params || {})}`;
+    const now = Date.now();
+
+    // 1. Check in-memory cache (0ms instant return)
+    const mem = apiCache.get(cacheKey);
+    if (mem && (now - mem.timestamp < CACHE_TTL_MS)) {
+      return mem.data;
+    }
+
+    // 2. Check sessionStorage
+    try {
+      if (typeof sessionStorage !== "undefined") {
+        const stored = sessionStorage.getItem(cacheKey);
+        if (stored) {
+          const parsed = JSON.parse(stored);
+          if (now - parsed.timestamp < CACHE_TTL_MS) {
+            apiCache.set(cacheKey, parsed);
+            return parsed.data;
+          }
+        }
+      }
+    } catch {}
+
+    // 3. Fetch from network
+    const res = await originalGet(url, config);
+    const item = { timestamp: now, data: res };
+    apiCache.set(cacheKey, item);
+    try {
+      if (typeof sessionStorage !== "undefined") {
+        sessionStorage.setItem(cacheKey, JSON.stringify(item));
+      }
+    } catch {}
+    return res;
+  }
+
+  return originalGet(url, config);
+};
+
 // Auto attach token to all requests
 API.interceptors.request.use(async (req) => {
-  // Ensure fresh token for mutating requests (POST/PUT/DELETE) or admin paths
+  // Ensure fresh token ONLY for mutating requests (POST/PUT/DELETE) or admin paths
   const isMutating = req.method && ["post", "put", "delete", "patch"].includes(req.method.toLowerCase());
-  const isAdminPath = req.url && (req.url.includes("/admin") || req.url.includes("/products") || req.url.includes("/categories") || req.url.includes("/subcategories"));
+  const isAdminPath = req.url && (req.url.startsWith("/admin") || req.url.includes("/admin/"));
 
   if (isMutating || isAdminPath) {
     const token = await ensureAdminToken();
@@ -58,7 +118,7 @@ API.interceptors.request.use(async (req) => {
       req.headers.Authorization = `Bearer ${token}`;
     }
   } else {
-    const token = localStorage.getItem("token");
+    const token = typeof localStorage !== "undefined" ? localStorage.getItem("token") : null;
     if (token) {
       req.headers.Authorization = `Bearer ${token}`;
     }
@@ -67,14 +127,23 @@ API.interceptors.request.use(async (req) => {
   return req;
 });
 
-// Auto retry once on 401 Unauthorized by getting a fresh token
+// Auto retry once on 401 Unauthorized by getting a fresh token & clear cache on mutations
 API.interceptors.response.use(
-  (res) => res,
+  (res) => {
+    const method = res.config?.method?.toLowerCase();
+    if (["post", "put", "delete", "patch"].includes(method)) {
+      clearApiCache();
+    }
+    return res;
+  },
   async (err) => {
     const originalRequest = err.config;
-    if (err.response?.status === 401 && originalRequest && !originalRequest._retry) {
+    const isMutating = originalRequest?.method && ["post", "put", "delete", "patch"].includes(originalRequest.method.toLowerCase());
+    const isAdminPath = originalRequest?.url && (originalRequest.url.startsWith("/admin") || originalRequest.url.includes("/admin/"));
+
+    if (err.response?.status === 401 && originalRequest && !originalRequest._retry && (isMutating || isAdminPath)) {
       originalRequest._retry = true;
-      localStorage.removeItem("token");
+      if (typeof localStorage !== "undefined") localStorage.removeItem("token");
       const freshToken = await ensureAdminToken();
       if (freshToken) {
         originalRequest.headers = originalRequest.headers || {};

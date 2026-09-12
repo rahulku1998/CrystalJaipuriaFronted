@@ -1313,6 +1313,16 @@ const content = '// Auto-generated legacy products registry for Google Search Co
   '  if (!slug) return null;\n' +
   '  const cleanSlug = String(slug).trim().toLowerCase().replace(/^\\/product\\//, "").replace(/\\/$/, "");\n' +
   '  return LEGACY_PRODUCT_MAP.get(cleanSlug) || null;\n' +
+  '}\n\n' +
+  'export const SLUG_ALIASES = {\n' +
+  '  "red-jasper-gemston-shivling": "natural-red-jasper-gemstone-shivling",\n' +
+  '  "rose-quartz-ganesh-with-gold-painting": "rose-quartz-ganesha-with-gold-painted",\n' +
+  '  "natural-green-jade-shiva-face-statue": "green-jade-carving-shiva-face-statue",\n' +
+  '};\n\n' +
+  'export function resolveProductSlug(slug) {\n' +
+  '  if (!slug) return "";\n' +
+  '  const clean = String(slug).trim().toLowerCase().replace(/^\\/product\\//, "").replace(/\\/$/, "");\n' +
+  '  return SLUG_ALIASES[clean] || clean;\n' +
   '}\n';
 
 fs.writeFileSync(path.join(__dirname, '../src/utils/legacyProducts.js'), content, 'utf8');
