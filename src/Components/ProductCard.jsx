@@ -41,8 +41,6 @@ const ProductCard = ({ product }) => {
             // immediately fallback to live Cloudinary image URL!
             if (e.target.src !== optimizedRaw && optimizedRaw) {
               e.target.src = optimizedRaw;
-            } else if (e.target.src !== rawImage && rawImage) {
-              e.target.src = rawImage;
             } else if (!e.target.src.endsWith("/Gemstone.webp")) {
               e.target.src = "/Gemstone.webp";
             }

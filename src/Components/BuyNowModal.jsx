@@ -10,6 +10,7 @@ import {
   FaMoneyBillWave,
   FaQrcode
 } from "react-icons/fa";
+import { optimizeCloudinaryUrl } from "../utils/imageOptimizer";
 
 const BuyNowModal = ({ isOpen, onClose, product }) => {
   const [quantity, setQuantity] = useState(1);
@@ -39,12 +40,12 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
   }
 
   const totalPrice = unitPrice * quantity;
-  const productImage =
-    Array.isArray(product.images) && product.images.length > 0
-      ? typeof product.images[0] === "string"
-        ? product.images[0]
-        : product.images[0]?.url || "/Gemstone.webp"
-      : "/Gemstone.webp";
+  const cleanSlug = (product.slug || product.name || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  const rawImage = Array.isArray(product.images) && product.images.length > 0
+    ? (typeof product.images[0] === "string" ? product.images[0] : product.images[0]?.url)
+    : "";
+  const optimizedRaw = optimizeCloudinaryUrl(rawImage, 160);
+  const productImage = cleanSlug ? `/images/${cleanSlug}.webp` : (optimizedRaw || "/Gemstone.webp");
 
   const handlePlaceOrder = (e) => {
     e.preventDefault();
@@ -241,6 +242,13 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
               <div className="flex items-center gap-3.5 bg-stone-50 p-3 rounded-2xl border border-stone-200">
                 <img
                   src={productImage}
+                  onError={(e) => {
+                    if (optimizedRaw && e.target.src !== optimizedRaw) {
+                      e.target.src = optimizedRaw;
+                    } else if (!e.target.src.endsWith("/Gemstone.webp")) {
+                      e.target.src = "/Gemstone.webp";
+                    }
+                  }}
                   alt={product.name}
                   className="w-16 h-16 object-cover rounded-xl border border-stone-300 shrink-0 bg-white"
                 />

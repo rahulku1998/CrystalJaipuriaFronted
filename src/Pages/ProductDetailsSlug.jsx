@@ -67,9 +67,9 @@ const ProductDetails = () => {
     return leg ? getStandardizedProduct(leg) : null;
   }, [cleanSlug]);
 
-  const [product, setProduct] = useState(() => fallbackProduct);
-  const [loading, setLoading] = useState(() => !fallbackProduct);
-  const [selectedImage, setSelectedImage] = useState(() => fallbackProduct?.images?.[0] || "");
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [selectedImage, setSelectedImage] = useState("");
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [copied, setCopied] = useState(false);
   const [relatedProducts, setRelatedProducts] = useState([]);
@@ -116,11 +116,10 @@ Hello Crystal Jaipuria, I have a query regarding this product.
   };
 
   useEffect(() => {
-    if (fallbackProduct) {
-      setProduct(fallbackProduct);
-      setLoading(false);
-      setSelectedImage(fallbackProduct?.images?.[0] || "");
-    }
+    setProduct(null);
+    setLoading(true);
+    setSelectedImageIndex(0);
+    setSelectedImage("");
     if (slug) {
       fetchProduct();
     }
@@ -244,14 +243,8 @@ Hello Crystal Jaipuria, I have a query regarding this product.
         fetchRelatedProducts(standardized);
 
         setSelectedImageIndex(0);
-        if (standardized?.images?.length > 0) {
-          const firstImg = typeof standardized.images[0] === 'string'
-            ? standardized.images[0]
-            : (standardized.images[0]?.url || "/Gemstone.webp");
-          setSelectedImage(firstImg);
-        } else {
-          setSelectedImage("/Gemstone.webp");
-        }
+        const cleanProductSlug = (standardized.slug || standardized.name || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+        setSelectedImage(`/images/${cleanProductSlug}.webp`);
       }
     } catch (err) {
       console.error("Error in fetchProduct:", err);
@@ -260,7 +253,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
       if (legacyFallback) {
         const std = getStandardizedProduct(legacyFallback);
         setProduct(std);
-        setSelectedImage(std.images?.[0] || "/Gemstone.webp");
+        setSelectedImage(`/images/${cleanSlug}.webp`);
       } else {
         setProduct(null);
       }
@@ -365,19 +358,22 @@ Hello Crystal Jaipuria, I have a query regarding this product.
               <div className="w-full aspect-square sm:aspect-[4/3] lg:aspect-square max-h-[520px] bg-[#f8fafc] rounded-3xl border border-slate-200/80 overflow-hidden flex items-center justify-center p-3 shadow-xs">
               {(() => {
                 const activeImg = (Array.isArray(product.images) && product.images[selectedImageIndex]) || product.images?.[0];
-                const activeRaw = typeof activeImg === 'string' ? activeImg : (activeImg?.url || "/Gemstone.webp");
+                const activeRaw = typeof activeImg === 'string' ? activeImg : (activeImg?.url || "");
                 const cleanSlug = (product.slug || product.name || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
                 const activeClean = selectedImageIndex === 0 
                   ? `/images/${cleanSlug}.webp` 
                   : `/images/${cleanSlug}-${selectedImageIndex + 1}.webp`;
+                const optimizedFallback = optimizeCloudinaryUrl(activeRaw, 800);
 
                 return (
                   <img
                     key={`main-img-${selectedImageIndex}`}
                     src={activeClean}
                     onError={(e) => {
-                      if (e.target.src !== activeRaw) {
-                        e.target.src = activeRaw;
+                      if (optimizedFallback && e.target.src !== optimizedFallback) {
+                        e.target.src = optimizedFallback;
+                      } else if (!e.target.src.endsWith("/Gemstone.webp")) {
+                        e.target.src = "/Gemstone.webp";
                       }
                     }}
                     alt={
@@ -405,14 +401,17 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                   const thumbClean = idx === 0 
                     ? `/images/${cleanSlug}.webp` 
                     : `/images/${cleanSlug}-${idx + 1}.webp`;
+                  const thumbOptimized = optimizeCloudinaryUrl(rawSrc, 160);
 
                   return (
                     <img
                       key={img.public_id || idx}
                       src={thumbClean}
                       onError={(e) => {
-                        if (e.target.src !== rawSrc) {
-                          e.target.src = rawSrc;
+                        if (thumbOptimized && e.target.src !== thumbOptimized) {
+                          e.target.src = thumbOptimized;
+                        } else if (!e.target.src.endsWith("/Gemstone.webp")) {
+                          e.target.src = "/Gemstone.webp";
                         }
                       }}
                       alt={`${product.name} - Handcrafted Gemstone Idol Alternate Angle View ${idx + 1} | Crystal Jaipuria`}
@@ -422,7 +421,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                       decoding="async"
                       onClick={() => {
                         setSelectedImageIndex(idx);
-                        setSelectedImage(rawSrc);
+                        setSelectedImage(thumbClean);
                       }}
                       className={`w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-xl border-2 cursor-pointer transition ${
                         selectedImageIndex === idx ? "border-amber-700 ring-2 ring-amber-200" : "border-gray-200 hover:border-gray-400"

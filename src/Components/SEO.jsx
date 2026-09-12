@@ -77,18 +77,26 @@ const SEO = ({
 
       // Dynamic High-Priority LCP Image Preload for Mobile & Desktop
       const existingPreload = document.getElementById("lcp-image-preload");
-      if (type === "product" && image && image.startsWith("http") && !image.includes("logo.png")) {
-        const optimizedImg = optimizeCloudinaryUrl(image, 800);
-        let preloadTag = existingPreload;
-        if (!preloadTag) {
-          preloadTag = document.createElement("link");
-          preloadTag.id = "lcp-image-preload";
-          preloadTag.rel = "preload";
-          preloadTag.as = "image";
-          preloadTag.setAttribute("fetchpriority", "high");
-          document.head?.appendChild(preloadTag);
+      if (type === "product") {
+        const productSlug = canonical?.includes("/product/") ? canonical.split("/product/")[1]?.replace(/\/$/, "") : "";
+        const preloadImg = productSlug 
+          ? `/images/${productSlug}.webp` 
+          : (image && image.startsWith("http") && !image.includes("logo.png") ? optimizeCloudinaryUrl(image, 800) : null);
+
+        if (preloadImg) {
+          let preloadTag = existingPreload;
+          if (!preloadTag) {
+            preloadTag = document.createElement("link");
+            preloadTag.id = "lcp-image-preload";
+            preloadTag.rel = "preload";
+            preloadTag.as = "image";
+            preloadTag.setAttribute("fetchpriority", "high");
+            document.head?.appendChild(preloadTag);
+          }
+          preloadTag.href = preloadImg;
+        } else if (existingPreload) {
+          existingPreload.remove();
         }
-        preloadTag.href = optimizedImg;
       } else if (existingPreload) {
         existingPreload.remove();
       }

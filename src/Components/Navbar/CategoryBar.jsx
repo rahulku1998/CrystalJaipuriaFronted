@@ -12,11 +12,20 @@ import {
 } from "react-icons/fa";
 import API from "../../api/axios";
 
+const DEFAULT_CATEGORIES = [
+  { name: "God Statues", path: "/god-statues", icon: <FaShoppingBag /> },
+  { name: "Shivling", path: "/shivling", icon: <FaShoppingBag /> },
+  { name: "Shree Yantra", path: "/shree-yantra", icon: <FaShoppingBag /> },
+  { name: "Angel", path: "/angel", icon: <FaShoppingBag /> },
+  { name: "Crystal Statues", path: "/crystal-statues", icon: <FaShoppingBag /> },
+  { name: "Diya", path: "/diya", icon: <FaShoppingBag /> },
+];
+
 const CategoryBar = ({ mobileMenuOpen, setMobileMenuOpen }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState(DEFAULT_CATEGORIES);
 
   const staticMenu = [
     {

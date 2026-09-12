@@ -2219,12 +2219,27 @@ export function resolveProductSlug(slug) {
 export function getLegacyProductBySlug(slug) {
   if (!slug) return null;
   const cleanSlug = String(slug).trim().toLowerCase().replace(/^\/product\//, "").replace(/\/$/, "");
-  if (LEGACY_PRODUCT_MAP.has(cleanSlug)) return LEGACY_PRODUCT_MAP.get(cleanSlug);
+  let item = LEGACY_PRODUCT_MAP.get(cleanSlug);
 
-  for (const [oldSlug, newSlug] of Object.entries(SLUG_ALIASES)) {
-    if (newSlug === cleanSlug && LEGACY_PRODUCT_MAP.has(oldSlug)) {
-      return LEGACY_PRODUCT_MAP.get(oldSlug);
+  if (!item) {
+    for (const [oldSlug, newSlug] of Object.entries(SLUG_ALIASES)) {
+      if (newSlug === cleanSlug && LEGACY_PRODUCT_MAP.has(oldSlug)) {
+        item = LEGACY_PRODUCT_MAP.get(oldSlug);
+        break;
+      }
     }
   }
-  return null;
+
+  if (item) {
+    const itemSlug = item.slug || cleanSlug;
+    const hasDefaultPlaceholder = !item.images || item.images.length === 0 || item.images[0] === "/Gemstone.webp";
+    if (hasDefaultPlaceholder) {
+      return {
+        ...item,
+        images: [`/images/${itemSlug}.webp`, `/images/${itemSlug}-2.webp`]
+      };
+    }
+  }
+
+  return item || null;
 }
