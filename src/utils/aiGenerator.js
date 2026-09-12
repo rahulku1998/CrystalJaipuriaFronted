@@ -424,17 +424,203 @@ export const estimateProductSpecs = (productName = "", categoryName = "") => {
   let craftFee = 950;
   let minGrams = 360;
   let maxGrams = 460;
+  let marketBenchmark = null;
 
-  // 2. ARCHETYPE-SPECIFIC DENSITY & VOLUMETRIC SCALING
-  if (archetype === "shivling") {
+  // 2. ARCHETYPE-SPECIFIC DENSITY & VOLUMETRIC SCALING WITH COMPETITOR BENCHMARKS
+  if (archetype === "angel") {
+    const isLarge = text.includes("large") || text.includes("big") || text.includes("3 inch") || text.includes("3.5") || text.includes("4 inch") || text.includes("80mm") || text.includes("75mm");
+    if (isLarge) {
+      defaultSize = "2.8 to 3.2 Inches (75mm)";
+      nominalGrams = Math.round(27 * density);
+      minGrams = Math.round(nominalGrams * 0.85);
+      maxGrams = Math.round(nominalGrams * 1.15);
+      dimensions = "Height: 7.5 cm, Width: 4.5 cm, Depth: 2.5 cm";
+      craftFee = 250;
+      marketBenchmark = {
+        economy: 599,
+        sweetSpot: 699,
+        premium: 899,
+        mrp: 1299,
+        label: "3-Inch Crystal Angel",
+        competitorNote: "Competitors on Google list 3\" carved angels between ₹699 – ₹899"
+      };
+    } else {
+      defaultSize = "1.8 to 2.2 Inches (50mm)";
+      nominalGrams = Math.round(14 * density);
+      minGrams = Math.round(nominalGrams * 0.85);
+      maxGrams = Math.round(nominalGrams * 1.15);
+      dimensions = "Height: 5.0 cm, Width: 3.2 cm, Depth: 1.8 cm";
+      craftFee = 150;
+      marketBenchmark = {
+        economy: 299,
+        sweetSpot: 349,
+        premium: 499,
+        mrp: 799,
+        label: "Pocket Healing Angel",
+        competitorNote: "Google Competitors (Shubhanjali ₹300, Remedywala ₹499, TalktoCrystals ₹299)"
+      };
+    }
+  } else if (archetype === "diya") {
+    const isLarge = text.includes("large") || text.includes("big") || text.includes("3 inch") || text.includes("3.5") || text.includes("4 inch");
+    if (isLarge) {
+      defaultSize = "3.0 to 3.5 Inches";
+      nominalGrams = Math.round(50 * density);
+      minGrams = Math.round(nominalGrams * 0.85);
+      maxGrams = Math.round(nominalGrams * 1.15);
+      dimensions = "Length: 8.5 cm, Width: 6.0 cm, Height: 3.0 cm";
+      craftFee = 200;
+      marketBenchmark = {
+        economy: 449,
+        sweetSpot: 549,
+        premium: 749,
+        mrp: 999,
+        label: "Gemstone Puja Diya (Large)",
+        competitorNote: "Large stone diyas retail between ₹499 – ₹749"
+      };
+    } else {
+      defaultSize = "2.0 to 2.5 Inches";
+      nominalGrams = Math.round(25 * density);
+      minGrams = Math.round(nominalGrams * 0.85);
+      maxGrams = Math.round(nominalGrams * 1.15);
+      dimensions = "Length: 6.0 cm, Width: 4.5 cm, Height: 2.2 cm";
+      craftFee = 100;
+      marketBenchmark = {
+        economy: 199,
+        sweetSpot: 249,
+        premium: 349,
+        mrp: 599,
+        label: "Gemstone Puja Diya",
+        competitorNote: "Standard gemstone diyas retail between ₹199 – ₹349"
+      };
+    }
+  } else if (text.includes("bracelet")) {
+    defaultSize = "7.5 Inches (Elastic Stretchable, 8mm Beads)";
+    nominalGrams = Math.round(7 * density);
+    minGrams = Math.round(nominalGrams * 0.85);
+    maxGrams = Math.round(nominalGrams * 1.15);
+    dimensions = "Inner Diameter: 6.0 cm, 23-24 Natural Beads";
+    craftFee = 100;
+    marketBenchmark = {
+      economy: 299,
+      sweetSpot: 399,
+      premium: 549,
+      mrp: 799,
+      label: "Healing Crystal Bracelet",
+      competitorNote: "Online marketplaces sell genuine crystal bracelets at ₹299 – ₹549"
+    };
+  } else if (text.includes("mala") || text.includes("rosary")) {
+    defaultSize = "108+1 Beads (8mm Beads)";
+    nominalGrams = Math.round(32 * density);
+    minGrams = Math.round(nominalGrams * 0.85);
+    maxGrams = Math.round(nominalGrams * 1.15);
+    dimensions = "Total Length: 32 Inches, Bead Size: 8mm";
+    craftFee = 350;
+    marketBenchmark = {
+      economy: 899,
+      sweetSpot: 1199,
+      premium: 1699,
+      mrp: 2499,
+      label: "108 Japa Mala",
+      competitorNote: "Authentic 108 gemstone malas retail between ₹899 – ₹1,699"
+    };
+  } else if (text.includes("pyramid")) {
+    const isLarge = text.includes("large") || text.includes("big") || text.includes("50mm") || text.includes("60mm") || text.includes("2 inch");
+    if (isLarge) {
+      defaultSize = "50mm Base (2.0 Inches)";
+      nominalGrams = Math.round(42 * density);
+      minGrams = Math.round(nominalGrams * 0.85);
+      maxGrams = Math.round(nominalGrams * 1.15);
+      dimensions = "Base: 5.2 x 5.2 cm, Height: 4.8 cm";
+      craftFee = 250;
+      marketBenchmark = {
+        economy: 549,
+        sweetSpot: 699,
+        premium: 899,
+        mrp: 1299,
+        label: "Vastu Energy Pyramid (50mm)",
+        competitorNote: "2-inch crystal pyramids retail at ₹599 – ₹899"
+      };
+    } else {
+      defaultSize = "25mm to 30mm Base";
+      nominalGrams = Math.round(14 * density);
+      minGrams = Math.round(nominalGrams * 0.85);
+      maxGrams = Math.round(nominalGrams * 1.15);
+      dimensions = "Base: 2.8 x 2.8 cm, Height: 2.5 cm";
+      craftFee = 120;
+      marketBenchmark = {
+        economy: 299,
+        sweetSpot: 349,
+        premium: 499,
+        mrp: 699,
+        label: "Reiki Pocket Pyramid",
+        competitorNote: "Small pyramids retail between ₹299 – ₹499"
+      };
+    }
+  } else if (text.includes("sphere") || text.includes("ball")) {
+    const isLarge = text.includes("large") || text.includes("big") || text.includes("50mm") || text.includes("60mm") || text.includes("2 inch");
+    if (isLarge) {
+      defaultSize = "50mm to 55mm Diameter";
+      nominalGrams = Math.round(65 * density);
+      minGrams = Math.round(nominalGrams * 0.85);
+      maxGrams = Math.round(nominalGrams * 1.15);
+      dimensions = "Diameter: 5.2 cm";
+      craftFee = 250;
+      marketBenchmark = {
+        economy: 799,
+        sweetSpot: 999,
+        premium: 1499,
+        mrp: 1999,
+        label: "Crystal Sphere Ball (Large)",
+        competitorNote: "50mm spheres retail at ₹799 – ₹1,499"
+      };
+    } else {
+      defaultSize = "35mm to 40mm Diameter";
+      nominalGrams = Math.round(25 * density);
+      minGrams = Math.round(nominalGrams * 0.85);
+      maxGrams = Math.round(nominalGrams * 1.15);
+      dimensions = "Diameter: 3.8 cm";
+      craftFee = 150;
+      marketBenchmark = {
+        economy: 349,
+        sweetSpot: 449,
+        premium: 599,
+        mrp: 899,
+        label: "Crystal Sphere Ball",
+        competitorNote: "Small crystal spheres retail between ₹349 – ₹599"
+      };
+    }
+  } else if (text.includes("pendant") || text.includes("locket")) {
+    defaultSize = "1.0 to 1.5 Inches";
+    nominalGrams = Math.round(6 * density);
+    minGrams = Math.round(nominalGrams * 0.85);
+    maxGrams = Math.round(nominalGrams * 1.15);
+    dimensions = "Height: 3.5 cm, Width: 2.2 cm";
+    craftFee = 80;
+    marketBenchmark = {
+      economy: 249,
+      sweetSpot: 349,
+      premium: 499,
+      mrp: 699,
+      label: "Natural Gemstone Pendant",
+      competitorNote: "Crystal pendants retail between ₹249 – ₹499"
+    };
+  } else if (archetype === "shivling") {
     craftFee = 600;
     if (text.includes("small") || text.includes("pocket") || text.includes("2 inch") || text.includes("2.5")) {
       defaultSize = "2.0 to 2.5 Inches";
-      nominalGrams = Math.round(65 * density);
+      nominalGrams = Math.round(55 * density);
       minGrams = Math.round(nominalGrams * 0.88);
       maxGrams = Math.round(nominalGrams * 1.15);
       dimensions = "Height: 5.5 cm, Jalhari Length: 6.5 cm, Base: 4.2 cm";
       craftFee = 400;
+      marketBenchmark = {
+        economy: 999,
+        sweetSpot: 1400,
+        premium: 1800,
+        mrp: 2400,
+        label: "Jalabhishek Shivling (Pocket)",
+        competitorNote: "Daily jalabhishek pocket shivlings retail at ₹999 – ₹1,800"
+      };
     } else if (text.includes("large") || text.includes("big") || text.includes("5 inch") || text.includes("6 inch")) {
       defaultSize = "5.5 to 6.0 Inches";
       nominalGrams = Math.round(480 * density);
@@ -442,6 +628,14 @@ export const estimateProductSpecs = (productName = "", categoryName = "") => {
       maxGrams = Math.round(nominalGrams * 1.15);
       dimensions = "Height: 14 cm, Jalhari Length: 15 cm, Base: 9.5 cm";
       craftFee = 1800;
+      marketBenchmark = {
+        economy: 7500,
+        sweetSpot: 9500,
+        premium: 12500,
+        mrp: 15000,
+        label: "Grand Mandir Shivling",
+        competitorNote: "Heavy temple shivlings retail at ₹8,000 – ₹14,000"
+      };
     } else {
       defaultSize = "3.5 to 4.0 Inches";
       nominalGrams = Math.round(142 * density);
@@ -449,6 +643,14 @@ export const estimateProductSpecs = (productName = "", categoryName = "") => {
       maxGrams = Math.round(nominalGrams * 1.12);
       dimensions = "Height: 8.5 cm, Jalhari Length: 9.5 cm, Base: 6.5 cm";
       craftFee = 600;
+      marketBenchmark = {
+        economy: 2500,
+        sweetSpot: 3800,
+        premium: 5200,
+        mrp: 6500,
+        label: "Consecrated Temple Shivling",
+        competitorNote: "Jaipur workshop benchmark for 3.5\" shivlings is ₹2,800 – ₹5,000"
+      };
     }
   } else if (archetype === "shree-yantra") {
     craftFee = 850;
@@ -459,6 +661,14 @@ export const estimateProductSpecs = (productName = "", categoryName = "") => {
       maxGrams = Math.round(nominalGrams * 1.15);
       dimensions = "Base: 5.0 x 5.0 cm, Height: 4.8 cm";
       craftFee = 500;
+      marketBenchmark = {
+        economy: 1499,
+        sweetSpot: 2200,
+        premium: 2800,
+        mrp: 3500,
+        label: "3D Meru Shree Yantra (2x2\")",
+        competitorNote: "Authentic 2x2\" crystal shree yantras retail at ₹1,500 – ₹2,800"
+      };
     } else if (text.includes("large") || text.includes("big") || text.includes("4 inch") || text.includes("4 x 4")) {
       defaultSize = "4 x 4 Inches";
       nominalGrams = Math.round(420 * density);
@@ -466,6 +676,14 @@ export const estimateProductSpecs = (productName = "", categoryName = "") => {
       maxGrams = Math.round(nominalGrams * 1.15);
       dimensions = "Base: 10.2 x 10.2 cm, Height: 9.5 cm";
       craftFee = 2000;
+      marketBenchmark = {
+        economy: 7500,
+        sweetSpot: 9500,
+        premium: 14000,
+        mrp: 18000,
+        label: "3D Meru Shree Yantra (4x4\")",
+        competitorNote: "Heavy 4x4\" geometric shree yantras retail at ₹8,000 – ₹15,000"
+      };
     } else {
       defaultSize = "3 x 3 Inches";
       nominalGrams = Math.round(160 * density);
@@ -473,6 +691,14 @@ export const estimateProductSpecs = (productName = "", categoryName = "") => {
       maxGrams = Math.round(nominalGrams * 1.12);
       dimensions = "Base: 7.5 x 7.5 cm, Height: 7.2 cm";
       craftFee = 850;
+      marketBenchmark = {
+        economy: 3500,
+        sweetSpot: 4800,
+        premium: 6500,
+        mrp: 7800,
+        label: "3D Meru Shree Yantra (3x3\")",
+        competitorNote: "3x3\" Meru Shree Yantra market average is ₹3,800 – ₹6,000"
+      };
     }
   } else if (archetype === "swan") {
     defaultSize = "3.5 to 4.0 Inches (Pair)";
@@ -481,50 +707,31 @@ export const estimateProductSpecs = (productName = "", categoryName = "") => {
     maxGrams = Math.round(nominalGrams * 1.12);
     dimensions = "Height: 9.5 cm, Width: 5.0 cm (Each Swan)";
     craftFee = 700;
-  } else if (archetype === "angel") {
-    defaultSize = "2.8 to 3.2 Inches";
-    nominalGrams = Math.round(55 * density);
-    minGrams = Math.round(nominalGrams * 0.88);
-    maxGrams = Math.round(nominalGrams * 1.15);
-    dimensions = "Height: 7.5 cm, Width: 4.5 cm, Depth: 2.5 cm";
-    craftFee = 450;
-  } else if (text.includes("pyramid")) {
-    defaultSize = "2.5 x 2.5 Inches Base";
-    nominalGrams = Math.round(78 * density);
-    minGrams = Math.round(nominalGrams * 0.9);
-    maxGrams = Math.round(nominalGrams * 1.12);
-    dimensions = "Base: 6.5 x 6.5 cm, Height: 5.5 cm";
-    craftFee = 350;
-  } else if (text.includes("sphere") || text.includes("ball")) {
-    defaultSize = "55 mm Diameter";
-    nominalGrams = Math.round(87 * density);
-    minGrams = Math.round(nominalGrams * 0.92);
-    maxGrams = Math.round(nominalGrams * 1.1);
-    dimensions = "Diameter: 5.5 cm";
-    craftFee = 300;
-  } else if (text.includes("mala") || text.includes("rosary")) {
-    defaultSize = "108+1 Beads (8mm Beads)";
-    nominalGrams = Math.round(36 * density);
-    minGrams = Math.round(nominalGrams * 0.9);
-    maxGrams = Math.round(nominalGrams * 1.15);
-    dimensions = "Total Length: 32 Inches, Bead Size: 8mm";
-    craftFee = 450;
-  } else if (text.includes("bracelet")) {
-    defaultSize = "7.5 Inches (Elastic Stretchable)";
-    nominalGrams = Math.round(15 * density);
-    minGrams = Math.round(nominalGrams * 0.9);
-    maxGrams = Math.round(nominalGrams * 1.12);
-    dimensions = "Inner Diameter: 6 cm, Bead Size: 8mm (23-24 Beads)";
-    craftFee = 150;
+    marketBenchmark = {
+      economy: 1499,
+      sweetSpot: 1999,
+      premium: 2600,
+      mrp: 3200,
+      label: "Rose Quartz Pair of Swans",
+      competitorNote: "Handcrafted swan pair retails at ₹1,500 – ₹2,500"
+    };
   } else if (["shiva", "ganesha", "hanuman", "krishna", "lakshmi", "saraswati", "jain", "buddha", "elephant"].includes(archetype) || archetype === "general-idol") {
     craftFee = 1000;
-    if (text.includes("small") || text.includes("pocket") || text.includes("2 inch") || text.includes("2.5")) {
-      defaultSize = "2.2 to 2.5 Inches";
-      nominalGrams = Math.round(60 * density);
+    if (text.includes("small") || text.includes("pocket") || text.includes("2 inch") || text.includes("2.5") || text.includes("mini")) {
+      defaultSize = "2.0 to 2.5 Inches";
+      nominalGrams = Math.round(35 * density);
       minGrams = Math.round(nominalGrams * 0.88);
       maxGrams = Math.round(nominalGrams * 1.15);
-      dimensions = "Height: 5.8 cm, Width: 4.0 cm, Depth: 3.2 cm";
-      craftFee = 500;
+      dimensions = "Height: 5.5 cm, Width: 3.8 cm, Depth: 2.8 cm";
+      craftFee = 450;
+      marketBenchmark = {
+        economy: 899,
+        sweetSpot: 1200,
+        premium: 1600,
+        mrp: 2200,
+        label: "Pocket Gemstone Idol",
+        competitorNote: "Pocket gemstone idols retail between ₹899 – ₹1,600"
+      };
     } else if (text.includes("large") || text.includes("big") || text.includes("5 inch") || text.includes("6 inch")) {
       defaultSize = "5.5 to 6.0 Inches";
       nominalGrams = Math.round(480 * density);
@@ -532,9 +739,16 @@ export const estimateProductSpecs = (productName = "", categoryName = "") => {
       maxGrams = Math.round(nominalGrams * 1.15);
       dimensions = "Height: 14.5 cm, Width: 9.8 cm, Depth: 7.5 cm";
       craftFee = 2500;
+      marketBenchmark = {
+        economy: 11000,
+        sweetSpot: 15000,
+        premium: 19500,
+        mrp: 24000,
+        label: "Grand Hand-Carved Murti",
+        competitorNote: "Large collector idols retail between ₹12,000 – ₹22,000"
+      };
     } else {
       defaultSize = "3.5 to 4.2 Inches";
-      // Volumetric allowance by mineral density & stone carving profile:
       const vol = stoneKey === "rose-quartz" ? 140 : (stoneKey === "sphatik" ? 155 : 154);
       nominalGrams = Math.round(vol * density);
       minGrams = Math.round(nominalGrams * 0.9);
@@ -543,6 +757,14 @@ export const estimateProductSpecs = (productName = "", categoryName = "") => {
         ? "Height: 10.5 cm, Width: 6.5 cm, Depth: 4.8 cm"
         : "Height: 9.5 cm, Width: 6.8 cm, Depth: 5.2 cm";
       craftFee = 1000;
+      marketBenchmark = {
+        economy: 2999,
+        sweetSpot: 4200,
+        premium: 5800,
+        mrp: 7500,
+        label: "Standard Temple Gemstone Murti",
+        competitorNote: "Direct Jaipur workshop average for 400g+ temple idols is ₹3,500 – ₹5,500"
+      };
     }
   }
 
@@ -552,24 +774,37 @@ export const estimateProductSpecs = (productName = "", categoryName = "") => {
     : `${effectiveGrams} Grams (Approx. ${minGrams}g – ${maxGrams}g)`);
 
   // 3. COMPETITOR MARKET PRICING FORMULA:
-  // Base Gemstone Value (Weight * Density-calibrated Base Rate) + Lapidary Crafting
-  const rawMaterialCost = effectiveGrams * baseRate;
-  let calculatedPrice = rawMaterialCost + craftFee;
+  // Calibrated against market benchmarks & mineral density
+  let suggestedPrice = 0;
+  let economyPrice = 0;
+  let premiumPrice = 0;
+  let mrp = 0;
+  let competitorMin = 0;
+  let competitorMax = 0;
 
-  if (text.includes("bracelet")) {
-    calculatedPrice = Math.max(450, Math.min(1200, calculatedPrice));
-  } else if (text.includes("mala")) {
-    calculatedPrice = Math.max(1500, Math.min(3800, calculatedPrice));
+  const isPrecious = ["ruby", "blue-sapphire", "yellow-sapphire", "emerald"].includes(stoneKey);
+  const preciousMultiplier = isPrecious ? 3.5 : 1.0;
+
+  if (marketBenchmark) {
+    suggestedPrice = Math.round((marketBenchmark.sweetSpot * preciousMultiplier) / 50) * 50;
+    economyPrice = Math.round((marketBenchmark.economy * preciousMultiplier) / 50) * 50;
+    premiumPrice = Math.round((marketBenchmark.premium * preciousMultiplier) / 50) * 50;
+    mrp = Math.round((marketBenchmark.mrp * preciousMultiplier) / 50) * 50;
+    competitorMin = economyPrice;
+    competitorMax = premiumPrice;
+  } else {
+    const rawMaterialCost = effectiveGrams * baseRate;
+    let calculatedPrice = rawMaterialCost + craftFee;
+    suggestedPrice = calculatedPrice > 1000
+      ? Math.round(calculatedPrice / 100) * 100
+      : Math.round(calculatedPrice / 50) * 50;
+    mrp = Math.round((suggestedPrice * 1.28) / 100) * 100;
+    economyPrice = Math.round((suggestedPrice * 0.82) / 50) * 50;
+    premiumPrice = Math.round((suggestedPrice * 1.22) / 50) * 50;
+    competitorMin = economyPrice;
+    competitorMax = premiumPrice;
   }
 
-  // Round to commercially attractive price (nearest 50 or 100)
-  const suggestedPrice = calculatedPrice > 1000
-    ? Math.round(calculatedPrice / 100) * 100
-    : Math.round(calculatedPrice / 50) * 50;
-
-  const mrp = Math.round((suggestedPrice * 1.28) / 100) * 100;
-  const competitorMin = Math.round((suggestedPrice * 0.86) / 100) * 100;
-  const competitorMax = Math.round((suggestedPrice * 1.25) / 100) * 100;
   const pricePerGramNum = parseFloat((suggestedPrice / effectiveGrams).toFixed(1));
 
   return {
@@ -584,8 +819,13 @@ export const estimateProductSpecs = (productName = "", categoryName = "") => {
     suggestedPrice,
     price: suggestedPrice,
     mrp,
+    economyPrice,
+    sweetSpotPrice: suggestedPrice,
+    premiumPrice,
+    archetypeLabel: marketBenchmark?.label || "Handcrafted Gemstone Item",
+    competitorNote: marketBenchmark?.competitorNote || `Market average ₹${competitorMin.toLocaleString("en-IN")} – ₹${competitorMax.toLocaleString("en-IN")}`,
     priceRange: `₹${competitorMin.toLocaleString("en-IN")} – ₹${competitorMax.toLocaleString("en-IN")}`,
-    competitorAverage: `₹${Math.round((suggestedPrice * 1.1) / 100) * 100}`,
+    competitorAverage: `₹${suggestedPrice.toLocaleString("en-IN")}`,
     pricePerGram: `₹${pricePerGramNum} / Gram`,
     pricePerCarat: `₹${(pricePerGramNum / 5).toFixed(2)} / Carat`
   };

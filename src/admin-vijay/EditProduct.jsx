@@ -55,6 +55,7 @@ const EditProduct = () => {
   const [subCategories, setSubCategories] = useState([]);
   const [allSubCategories, setAllSubCategories] = useState([]);
   const [autoDetectedBadge, setAutoDetectedBadge] = useState("");
+  const [priceGuide, setPriceGuide] = useState(null);
   const [gallery, setGallery] = useState([]);
   const [initialGalleryUrls, setInitialGalleryUrls] = useState([]);
 
@@ -301,6 +302,7 @@ const EditProduct = () => {
     }
     const catName = categories.find((c) => c._id === form.categoryId)?.name || "";
     const specs = estimateProductSpecs(prodName, catName);
+    setPriceGuide(specs);
     setForm((prev) => ({
       ...prev,
       price: String(specs.suggestedPrice),
@@ -604,6 +606,85 @@ value={form.price}
 onChange={handleChange}
 placeholder="e.g. 5200, 6500, 11/GRAM"
 />
+
+{priceGuide && (
+  <div className="col-span-full bg-gradient-to-r from-amber-50 via-orange-50 to-amber-50 border border-amber-200 rounded-xl p-3.5 shadow-sm space-y-2.5">
+    <div className="flex items-start justify-between gap-2">
+      <div className="flex items-center gap-2">
+        <span className="text-xl">📊</span>
+        <div>
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-bold text-amber-900 uppercase tracking-wider">Competitor Price Benchmark</span>
+            <span className="text-[11px] bg-amber-200 text-amber-900 px-2 py-0.5 rounded-full font-semibold">{priceGuide.archetypeLabel}</span>
+          </div>
+          <p className="text-xs text-amber-800 font-medium mt-0.5">
+            💡 Market Insight: <span className="italic">{priceGuide.competitorNote}</span>
+          </p>
+        </div>
+      </div>
+      <button
+        type="button"
+        onClick={() => setPriceGuide(null)}
+        className="text-gray-400 hover:text-gray-600 text-sm p-1 rounded hover:bg-amber-100 transition-colors cursor-pointer"
+        title="Close Guide"
+      >
+        ✕
+      </button>
+    </div>
+
+    <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-amber-200/70">
+      <span className="text-xs font-bold text-gray-700 mr-1">1-Click Apply:</span>
+      
+      <button
+        type="button"
+        onClick={() => setForm((prev) => ({ ...prev, price: String(priceGuide.economyPrice) }))}
+        className={`px-3 py-1.5 text-xs font-semibold rounded-lg border transition-all cursor-pointer flex items-center gap-1.5 ${
+          String(form.price) === String(priceGuide.economyPrice)
+            ? "bg-amber-600 text-white border-amber-600 shadow-sm"
+            : "bg-white text-gray-700 border-gray-300 hover:border-amber-400 hover:bg-amber-50"
+        }`}
+        title="Economy competitive price for rapid listing sales"
+      >
+        <span className="inline-block w-2 h-2 rounded-full bg-amber-400"></span>
+        Budget / Fast Sale: <b>₹{priceGuide.economyPrice?.toLocaleString("en-IN")}</b>
+      </button>
+
+      <button
+        type="button"
+        onClick={() => setForm((prev) => ({ ...prev, price: String(priceGuide.sweetSpotPrice) }))}
+        className={`px-3.5 py-1.5 text-xs font-bold rounded-lg border transition-all cursor-pointer flex items-center gap-1.5 ${
+          String(form.price) === String(priceGuide.sweetSpotPrice)
+            ? "bg-emerald-600 text-white border-emerald-600 shadow-md ring-2 ring-emerald-300"
+            : "bg-white text-emerald-800 border-emerald-300 hover:border-emerald-500 hover:bg-emerald-50"
+        }`}
+        title="Best balanced price based on mineral weight and competitor market average"
+      >
+        <span>⭐</span>
+        AI Recommended: <b>₹{priceGuide.sweetSpotPrice?.toLocaleString("en-IN")}</b>
+      </button>
+
+      <button
+        type="button"
+        onClick={() => setForm((prev) => ({ ...prev, price: String(priceGuide.premiumPrice) }))}
+        className={`px-3 py-1.5 text-xs font-semibold rounded-lg border transition-all cursor-pointer flex items-center gap-1.5 ${
+          String(form.price) === String(priceGuide.premiumPrice)
+            ? "bg-purple-600 text-white border-purple-600 shadow-sm"
+            : "bg-white text-gray-700 border-gray-300 hover:border-purple-400 hover:bg-purple-50"
+        }`}
+        title="Premium showroom / retail boutique pricing"
+      >
+        <span className="inline-block w-2 h-2 rounded-full bg-purple-400"></span>
+        Premium Retail: <b>₹{priceGuide.premiumPrice?.toLocaleString("en-IN")}</b>
+      </button>
+
+      {priceGuide.mrp && priceGuide.mrp > priceGuide.sweetSpotPrice && (
+        <span className="text-xs text-gray-500 ml-auto font-medium">
+          Retail MRP: <del className="text-gray-400">₹{priceGuide.mrp?.toLocaleString("en-IN")}</del>
+        </span>
+      )}
+    </div>
+  </div>
+)}
 
 <Input
 label ="Weight"
