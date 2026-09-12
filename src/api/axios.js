@@ -66,7 +66,8 @@ export const clearApiCache = () => {
 // Wrap API.get with instant caching for public read requests
 const originalGet = API.get.bind(API);
 API.get = async (url, config = {}) => {
-  const isPublic = !url.includes("/admin") && !config?.skipCache;
+  const isAdminLocation = typeof window !== "undefined" && window.location.pathname.includes("admin");
+  const isPublic = !url.includes("/admin") && !config?.skipCache && !isAdminLocation;
   if (isPublic) {
     const cacheKey = `cj_cache_${url}_${JSON.stringify(config?.params || {})}`;
     const now = Date.now();

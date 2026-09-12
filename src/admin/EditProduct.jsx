@@ -7,6 +7,7 @@ import {
   unpackProductMetadata,
 } from "../utils/productMetadata";
 import { formatAdditionalInfo } from "../utils/productStandardizer";
+import { detectCategoryAndSubCategory } from "../utils/categoryResolver";
 import {
   FaCloudUploadAlt,
   FaTimes,
@@ -45,8 +46,29 @@ const EditProduct = () => {
   const [faqs, setFaqs] = useState([{ question: "", answer: "" }]);
   const [categories, setCategories] = useState([]);
   const [subCategories, setSubCategories] = useState([]);
+  const [allSubCategories, setAllSubCategories] = useState([]);
+  const [autoDetectedBadge, setAutoDetectedBadge] = useState("");
   const [gallery, setGallery] = useState([]);
   const [initialGalleryUrls, setInitialGalleryUrls] = useState([]);
+
+  const autoDetectCategory = (nameToTest, force = true, cats = categories, allSubs = allSubCategories) => {
+    const testName = nameToTest !== undefined ? nameToTest : form.name;
+    if (!testName?.trim() || cats.length === 0) return;
+
+    const detected = detectCategoryAndSubCategory(testName, cats, allSubs);
+    if (detected.categoryId) {
+      const filteredSubs = allSubs.filter(
+        (s) => (s.categoryId?._id || s.categoryId) === detected.categoryId
+      );
+      setSubCategories(filteredSubs);
+      setForm((prev) => ({
+        ...prev,
+        categoryId: detected.categoryId,
+        subCategoryId: detected.subCategoryId || (filteredSubs[0]?._id || ""),
+      }));
+      setAutoDetectedBadge(`${detected.categoryName} > ${detected.subCategoryName || filteredSubs[0]?.name || ""}`);
+    }
+  };
 
   // input change
   const handleChange = (e) => {
@@ -183,8 +205,12 @@ const EditProduct = () => {
 
   const fetchCategories = async () => {
     try {
-      const res = await API.get("/categories");
-      setCategories(res.data.categories);
+      const [cRes, sRes] = await Promise.all([
+        API.get("/categories"),
+        API.get("/subcategories"),
+      ]);
+      setCategories(cRes.data?.categories || []);
+      setAllSubCategories(sRes.data?.subCategories || []);
     } catch (err) {
       console.log(err);
     }
@@ -192,14 +218,46 @@ const EditProduct = () => {
 
   const handleCategoryChange = async (e) => {
     const categoryId = e.target.value;
-    setForm({
-      ...form,
-      categoryId,
-      subCategoryId: ""
-    });
 
-    const res = await API.get(`/subcategories/category/${categoryId}`);
-    setSubCategories(res.data.subCategories);
+    if (!categoryId) {
+      setForm((prev) => ({
+        ...prev,
+        categoryId: "",
+        subCategoryId: "",
+      }));
+      setSubCategories([]);
+      setAutoDetectedBadge("");
+      return;
+    }
+
+    let subs = allSubCategories.filter(
+      (s) => (s.categoryId?._id || s.categoryId) === categoryId
+    );
+
+    if (subs.length === 0) {
+      try {
+        const res = await API.get(`/subcategories/category/${categoryId}`);
+        subs = res.data?.subCategories || [];
+      } catch (err) {
+        console.log(err);
+      }
+    }
+
+    setSubCategories(subs);
+
+    // Auto-select matching subcategory based on product name, or default to first
+    const matchedSub =
+      subs.find((s) => (form.name || "").toLowerCase().includes((s.name || "").toLowerCase())) ||
+      subs[0];
+
+    setForm((prev) => ({
+      ...prev,
+      categoryId,
+      subCategoryId: matchedSub?._id || "",
+    }));
+
+    const catObj = categories.find((c) => c._id === categoryId);
+    setAutoDetectedBadge(catObj ? `${catObj.name} > ${matchedSub?.name || ""}` : "");
   };
 
   // submit update
@@ -210,8 +268,23 @@ const EditProduct = () => {
       setSubmitting(true);
       const formData = new FormData();
 
+      // Ensure categoryId and subCategoryId are properly resolved
+      let finalSubCategoryId = form.subCategoryId;
+      if (!finalSubCategoryId && form.categoryId) {
+        const matching = allSubCategories.filter(
+          (s) => (s.categoryId?._id || s.categoryId) === form.categoryId
+        );
+        if (matching.length > 0) {
+          finalSubCategoryId = matching[0]._id;
+        } else if (subCategories.length > 0) {
+          finalSubCategoryId = subCategories[0]._id;
+        }
+      }
+
       Object.keys(form).forEach((key) => {
-        if (key !== "additionalInfo" && form[key] !== "" && form[key] !== null && form[key] !== undefined) {
+        if (key === "subCategoryId") {
+          if (finalSubCategoryId) formData.append("subCategoryId", finalSubCategoryId);
+        } else if (key !== "additionalInfo" && form[key] !== "" && form[key] !== null && form[key] !== undefined) {
           formData.append(key, form[key]);
         }
       });
@@ -428,49 +501,58 @@ onChange={handleChange}
 placeholder="Enter size"
 />
 
-<select
-name="categoryId"
-value={form.categoryId}
-onChange={handleCategoryChange}
-className="w-full rounded-xl border border-gray-200 bg-gray-50 px-5 py-4 outline-none focus:bg-white focus:ring-2 focus:ring-gray-300"
->
+<div className="flex flex-col gap-1.5">
+  <div className="flex items-center justify-between">
+    <label className="text-xs font-semibold text-gray-700">
+      Category <span className="text-red-500">*</span>
+    </label>
+    <button
+      type="button"
+      onClick={() => autoDetectCategory(form.name, true)}
+      className="text-xs text-amber-700 hover:text-amber-800 font-medium underline flex items-center gap-1 cursor-pointer"
+      title="Automatically detect category based on product title"
+    >
+      ⚡ Auto-detect Category
+    </button>
+  </div>
+  <select
+    name="categoryId"
+    value={form.categoryId}
+    onChange={handleCategoryChange}
+    className="w-full rounded-xl border border-gray-200 bg-gray-50 px-5 py-4 outline-none focus:bg-white focus:ring-2 focus:ring-amber-300 text-sm font-medium"
+  >
+    <option value="">Select Category</option>
+    {categories.map((cat) => (
+      <option key={cat._id} value={cat._id}>
+        {cat.name}
+      </option>
+    ))}
+  </select>
+  {autoDetectedBadge && (
+    <span className="text-[11px] text-emerald-700 font-medium">
+      ✨ {autoDetectedBadge}
+    </span>
+  )}
+</div>
 
-<option value="">
-Select Category
-</option>
-
-{
-categories.map((cat)=>(
-<option key={cat._id} value={cat._id}>
-{cat.name}
-</option>
-))
-}
-
-</select>
-
-
-
-<select
-name="subCategoryId"
-value={form.subCategoryId}
-onChange={handleChange}
-className="w-full rounded-xl border border-gray-200 bg-gray-50 px-5 py-4 outline-none focus:bg-white focus:ring-2 focus:ring-gray-300"
->
-
-<option value="">
-Select Sub Category
-</option>
-
-{
-subCategories.map((sub)=>(
-<option key={sub._id} value={sub._id}>
-{sub.name}
-</option>
-))
-}
-
-</select>
+<div className="flex flex-col gap-1.5">
+  <label className="text-xs font-semibold text-gray-700">
+    Sub Category <span className="text-red-500">*</span>
+  </label>
+  <select
+    name="subCategoryId"
+    value={form.subCategoryId}
+    onChange={handleChange}
+    className="w-full rounded-xl border border-gray-200 bg-gray-50 px-5 py-4 outline-none focus:bg-white focus:ring-2 focus:ring-amber-300 text-sm font-medium"
+  >
+    <option value="">Select Sub Category</option>
+    {subCategories.map((sub) => (
+      <option key={sub._id} value={sub._id}>
+        {sub.name}
+      </option>
+    ))}
+  </select>
+</div>
 
 
 

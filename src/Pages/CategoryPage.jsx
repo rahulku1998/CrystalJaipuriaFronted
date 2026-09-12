@@ -180,7 +180,17 @@ const CategoryPage = () => {
   const fetchProductsBySubCategory = async (subCategoryId) => {
     try {
       const res = await API.get(`/products/subcategory/${subCategoryId}`);
-      setProducts(res.data.products || []);
+      const list = res.data.products || [];
+      if (list.length > 0) {
+        setProducts(list);
+      } else {
+        const pRes = await API.get("/products");
+        const all = pRes.data.products || [];
+        const filtered = all.filter(
+          (p) => (p.subCategoryId?._id || p.subCategoryId) === subCategoryId
+        );
+        setProducts(filtered);
+      }
     } catch (err) {
       console.log(err);
     }
@@ -222,13 +232,22 @@ const CategoryPage = () => {
       setCategory(currentCat);
 
       const filteredSubs = (subRes.data?.subCategories || []).filter(
-        (s) => s.categoryId?._id === currentCat._id
+        (s) =>
+          s.categoryId?._id === currentCat._id ||
+          s.categoryId === currentCat._id ||
+          (s.categoryId?.slug && s.categoryId.slug === currentCat.slug)
       );
       setSubCategories(filteredSubs);
 
-      const liveProducts = (productRes.data?.products || []).filter(
-        (p) => p.categoryId?._id === currentCat._id
-      );
+      const liveProducts = (productRes.data?.products || []).filter((p) => {
+        const pCatId = p.categoryId?._id || p.categoryId;
+        const pCatSlug = p.categoryId?.slug;
+        return (
+          pCatId === currentCat._id ||
+          (pCatSlug && pCatSlug === currentCat.slug) ||
+          (p.categoryName && p.categoryName.toLowerCase() === currentCat.name?.toLowerCase())
+        );
+      });
 
       if (liveProducts.length > 0) {
         setProducts(liveProducts);

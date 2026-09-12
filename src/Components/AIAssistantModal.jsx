@@ -19,6 +19,7 @@ import {
   OPENAI_API_KEY_STORAGE_KEY
 } from "../utils/aiGenerator";
 import { autoInjectInternalLinks } from "../utils/internalLinking";
+import { detectCategoryAndSubCategory } from "../utils/categoryResolver";
 
 const AIAssistantModal = ({
   isOpen,
@@ -32,7 +33,8 @@ const AIAssistantModal = ({
   onApplyDetail,
   onApplyWeight,
   onApplySize,
-  onApplyAdditionalInfo
+  onApplyAdditionalInfo,
+  onApplyCategory
 }) => {
   const [activeTab, setActiveTab] = useState("generate");
   const [name, setName] = useState(productName || "");
@@ -48,7 +50,12 @@ const AIAssistantModal = ({
 
   useEffect(() => {
     if (productName) setName(productName);
-    if (categoryName) setCategory(categoryName);
+    if (categoryName) {
+      setCategory(categoryName);
+    } else if (productName) {
+      const det = detectCategoryAndSubCategory(productName);
+      if (det?.categoryName) setCategory(det.categoryName);
+    }
   }, [isOpen, productName, categoryName]);
 
   useEffect(() => {
@@ -179,6 +186,9 @@ const AIAssistantModal = ({
     }
     if (onApplyName && result?.cleanName) {
       onApplyName(result.cleanName);
+    }
+    if (onApplyCategory && (result?.cleanName || name)) {
+      onApplyCategory(result?.cleanName || name);
     }
     if (onApplyDetail && result?.citationHook) {
       onApplyDetail(result.citationHook);
@@ -395,9 +405,21 @@ const AIAssistantModal = ({
                     <input
                       type="text"
                       value={name}
-                      onChange={(e) => setName(e.target.value)}
+                      onChange={(e) => {
+                        const val = e.target.value;
+                        setName(val);
+                        if (!category || category === "Gemstone Statues") {
+                          const det = detectCategoryAndSubCategory(val);
+                          if (det?.categoryName) setCategory(det.categoryName);
+                        }
+                      }}
                       onBlur={() => {
-                        if (name) setName(toProperTitleCase(name));
+                        if (name) {
+                          const formatted = toProperTitleCase(name);
+                          setName(formatted);
+                          const det = detectCategoryAndSubCategory(formatted);
+                          if (det?.categoryName) setCategory(det.categoryName);
+                        }
                       }}
                       placeholder="e.g. Natural Sphatik Shivling"
                       className="w-full rounded-xl border border-gray-300 bg-white px-4 py-2.5 text-sm outline-none focus:ring-2 focus:ring-indigo-400"
