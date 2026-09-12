@@ -599,7 +599,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                   <span className="text-base text-emerald-600 shrink-0">📦</span>
                   <div>
                     <span className="font-bold text-slate-900">Sacred Shockproof Packaging: </span>
-                    <span className="text-slate-600">Triple-layer protective packaging for 100% breakage-free delivery across India.</span>
+                    <span className="text-slate-600">5-layer shockproof protective packaging for 100% breakage-free delivery across India.</span>
                   </div>
                 </div>
                 <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-800">

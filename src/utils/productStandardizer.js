@@ -26,10 +26,10 @@ export const STANDARDIZED_SPECS = {
     dimensions: "16.5 x 9.0 x 6.5 cm",
   },
   "natural-sphatik-shivling": {
-    price: 2000,
-    weight: "60 Gram",
-    size: "2.5 Inch",
-    dimensions: "6.3 x 4.0 x 4.0 cm",
+    price: 2500,
+    weight: "376 Grams",
+    size: "3.5 to 4.0 Inches",
+    dimensions: "9.0 x 6.5 x 6.5 cm",
   },
   "clear-crystal-quartz-shivling-with-shiva-face": {
     price: 37500,
@@ -187,9 +187,9 @@ export const formatAdditionalInfo = (inputHtmlOrText, product = {}) => {
   const slug = (product.slug || "").toLowerCase().trim();
   const spec = STANDARDIZED_SPECS[slug] || {};
 
-  const cleanWeight = spec.weight || product.weight || "";
-  const cleanSize = spec.size || product.size || "";
-  const cleanDimensions = spec.dimensions || product.dimensions || "";
+  const cleanWeight = product.weight || spec.weight || "";
+  const cleanSize = product.size || spec.size || "";
+  const cleanDimensions = product.dimensions || spec.dimensions || "";
 
   if (
     !inputHtmlOrText ||
@@ -245,6 +245,13 @@ export const formatAdditionalInfo = (inputHtmlOrText, product = {}) => {
         key.toLowerCase() === "usage / application"
       ) {
         key = "Usage & Application";
+      }
+
+      if (key.toLowerCase() === "weight" && cleanWeight) {
+        val = cleanWeight;
+      }
+      if (key.toLowerCase() === "size" && cleanSize) {
+        val = cleanSize;
       }
 
       if (val && !seenKeys.has(key.toLowerCase())) {
@@ -369,19 +376,28 @@ export const getStandardizedProduct = (product) => {
   if (spec) {
     if (
       !standardizedPrice ||
-      String(standardizedPrice).includes("-") ||
+      String(standardizedPrice).trim() === "" ||
       String(standardizedPrice).includes("/GRAM") ||
-      String(standardizedPrice).includes("to") ||
       standardizedPrice === "120"
     ) {
       standardizedPrice = spec.price;
     }
 
-    if (!standardizedWeight || standardizedWeight === "N/A" || standardizedWeight.includes("-") || standardizedWeight.includes("TO")) {
+    if (
+      !standardizedWeight ||
+      String(standardizedWeight).trim() === "" ||
+      standardizedWeight === "N/A" ||
+      (standardizedWeight.includes("-") && !standardizedWeight.includes("Approx"))
+    ) {
       standardizedWeight = spec.weight;
     }
 
-    if (!standardizedSize || standardizedSize === "N/A" || standardizedSize.includes("-") || standardizedSize.includes("to")) {
+    if (
+      !standardizedSize ||
+      String(standardizedSize).trim() === "" ||
+      standardizedSize === "N/A" ||
+      (standardizedSize.includes("-") && !standardizedSize.includes("to"))
+    ) {
       standardizedSize = spec.size;
     }
   }

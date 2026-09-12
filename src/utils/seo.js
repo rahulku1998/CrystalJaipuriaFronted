@@ -157,7 +157,7 @@ export const getDefaultProductFaqs = (productName = "Gemstone Idol") => [
   },
   {
     question: `How is the gemstone idol packaged to prevent transit breakage?`,
-    answer: `Every sculpture undergoes triple-layer protective sacred packaging: multi-layer shockproof air bubble cushioning, rigid thermocol casing, and reinforced corrugated boxing to guarantee 100% breakage-free delivery across India and worldwide.`,
+    answer: `Every sculpture undergoes 5-layer shockproof protective sacred packaging: soft velvet wrapping, high-density bubble cushioning, custom thermocol casing, heavy-duty corrugated boxing, and waterproof stretch sealing to guarantee 100% breakage-free delivery across India and worldwide.`,
   },
   {
     question: `Where is this crafted and dispatched from?`,

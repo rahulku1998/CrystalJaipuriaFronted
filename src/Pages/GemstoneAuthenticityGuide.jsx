@@ -129,7 +129,7 @@ const GemstoneAuthenticityGuide = () => {
     },
     {
       q: "What if my gemstone idol arrives damaged during transit?",
-      a: "We provide 100% transit insurance on every single package. Every parcel is packed with triple-layer shockproof bubble and rigid thermocol protection. In the rare event of transit damage, we offer an immediate 100% free replacement under our 7-day policy.",
+      a: "We provide 100% transit insurance on every single package. Every parcel is packed with 5-layer shockproof protective packaging (soft velvet wrap, bubble cushioning, custom thermocol, and heavy-duty boxing). In the rare event of transit damage, we offer an immediate 100% free replacement under our 7-day policy.",
     },
   ];
 
