@@ -9,7 +9,7 @@ import {
   generateSuperMetaTags,
 } from "../utils/productMetadata";
 import { formatAdditionalInfo } from "../utils/productStandardizer";
-import { generateShortDetail } from "../utils/aiGenerator";
+import { generateShortDetail, estimateProductSpecs } from "../utils/aiGenerator";
 import { compressImageForUpload } from "../utils/imageOptimizer";
 import { detectCategoryAndSubCategory } from "../utils/categoryResolver";
 import {
@@ -287,6 +287,25 @@ const EditProduct = () => {
     setAutoDetectedBadge(catObj ? `${catObj.name} > ${matchedSub?.name || ""}` : "");
   };
 
+  const handleQuickAiPrice = () => {
+    const prodName = form.name.trim();
+    if (!prodName) {
+      alert("Please enter a product name first to calculate AI Market Price & Weight!");
+      return;
+    }
+    const catName = categories.find((c) => c._id === form.categoryId)?.name || "";
+    const specs = estimateProductSpecs(prodName, catName);
+    setForm((prev) => ({
+      ...prev,
+      price: String(specs.suggestedPrice),
+      weight: specs.weight,
+      size: specs.size,
+      pricePerGram: specs.pricePerGram
+    }));
+    setAutoDetectedBadge(`AI Price: ₹${specs.suggestedPrice.toLocaleString("en-IN")} | Weight: ${specs.weight}`);
+    setTimeout(() => setAutoDetectedBadge(""), 5000);
+  };
+
   // submit update
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -455,6 +474,9 @@ const EditProduct = () => {
   }}
   onApplyCategory={(prodName) => autoDetectCategory(prodName, true)}
   onApplyDetail={(detailText) => setForm((prev) => ({ ...prev, detail: detailText }))}
+  onApplyPrice={(price) => setForm((prev) => ({ ...prev, price: String(price) }))}
+  onApplyDiscountPrice={(mrp) => setForm((prev) => ({ ...prev, discountPrice: String(mrp) }))}
+  onApplyPricePerGram={(rate) => setForm((prev) => ({ ...prev, pricePerGram: String(rate) }))}
   onApplyWeight={(w) => setForm((prev) => ({ ...prev, weight: w }))}
   onApplySize={(s) => setForm((prev) => ({ ...prev, size: s }))}
   onApplyAdditionalInfo={(info) => setForm((prev) => ({ ...prev, additionalInfo: info }))}
@@ -555,20 +577,26 @@ placeholder="Enter product name"
 
 
 <Input
-
-label={<>
-
-Price <span className="text-red-500">*</span>
-
-</>}
-
+label={
+  <div className="flex items-center justify-between">
+    <span>
+      Price <span className="text-red-500">*</span>
+    </span>
+    <button
+      type="button"
+      onClick={handleQuickAiPrice}
+      className="text-xs text-amber-700 hover:text-amber-800 font-semibold underline flex items-center gap-1 cursor-pointer"
+      title="Calculate competitor market price & weight based on mineral density"
+    >
+      ⚡ AI Market Price &amp; Weight
+    </button>
+  </div>
+}
 name="price"
-
 type="text"
-
 value={form.price}
 onChange={handleChange}
-placeholder="e.g. 1000, 6/GRAM, 500/carat"
+placeholder="e.g. 5200, 6500, 11/GRAM"
 />
 
 <Input

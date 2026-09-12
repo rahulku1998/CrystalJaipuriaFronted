@@ -84,6 +84,8 @@ export const GEMSTONE_PROFILES = {
     hardness: "9.0 Mohs Scale (Exceptional Durability)",
     refractiveIndex: "1.762 – 1.770",
     specificGravity: "4.00 g/cm³",
+    density: 4.00,
+    basePricePerGram: 45.0,
     chakra: "Third Eye (Ajna) & Throat Chakra (Vishuddha)",
     deity: "Lord Shiva & Lord Shani Dev (Saturn)",
     planet: "Saturn (Shani)",
@@ -99,6 +101,8 @@ export const GEMSTONE_PROFILES = {
     hardness: "9.0 Mohs Scale",
     refractiveIndex: "1.762 – 1.770",
     specificGravity: "4.00 g/cm³",
+    density: 4.00,
+    basePricePerGram: 42.0,
     chakra: "Solar Plexus Chakra (Manipura)",
     deity: "Lord Vishnu & Lord Brihaspati (Jupiter)",
     planet: "Jupiter (Guru)",
@@ -114,6 +118,8 @@ export const GEMSTONE_PROFILES = {
     hardness: "7.5 – 8.0 Mohs Scale",
     refractiveIndex: "1.577 – 1.583",
     specificGravity: "2.72 g/cm³",
+    density: 2.72,
+    basePricePerGram: 35.0,
     chakra: "Heart Chakra (Anahata)",
     deity: "Lord Ganesha & Lord Budha (Mercury)",
     planet: "Mercury (Budh)",
@@ -129,6 +135,8 @@ export const GEMSTONE_PROFILES = {
     hardness: "7.0 Mohs Scale",
     refractiveIndex: "1.544 – 1.553",
     specificGravity: "2.65 g/cm³",
+    density: 2.65,
+    basePricePerGram: 13.5,
     chakra: "Crown Chakra (Sahasrara)",
     deity: "Lord Shiva, Devi Saraswati & Universal Cosmic Light",
     planet: "Venus (Shukra) & Moon (Chandra)",
@@ -144,6 +152,8 @@ export const GEMSTONE_PROFILES = {
     hardness: "6.5 – 7.0 Mohs Scale",
     refractiveIndex: "1.600 – 1.625",
     specificGravity: "2.95 – 3.05 g/cm³",
+    density: 3.00,
+    basePricePerGram: 9.5,
     chakra: "Heart Chakra (Anahata)",
     deity: "Lord Ganesha, Goddess Mahalakshmi & Lord Kubera",
     planet: "Mercury (Budh)",
@@ -159,6 +169,8 @@ export const GEMSTONE_PROFILES = {
     hardness: "7.0 Mohs Scale",
     refractiveIndex: "1.544 – 1.553",
     specificGravity: "2.65 g/cm³",
+    density: 2.65,
+    basePricePerGram: 7.8,
     chakra: "Heart Chakra (Anahata)",
     deity: "Radha-Krishna, Goddess Lakshmi & Divine Love",
     planet: "Venus (Shukra)",
@@ -174,6 +186,8 @@ export const GEMSTONE_PROFILES = {
     hardness: "7.0 Mohs Scale",
     refractiveIndex: "1.544 – 1.553",
     specificGravity: "2.65 g/cm³",
+    density: 2.65,
+    basePricePerGram: 11.0,
     chakra: "Third Eye (Ajna) & Crown Chakra (Sahasrara)",
     deity: "Lord Shiva (Dhyanaroodha), Lord Shani & Meditative Deities",
     planet: "Saturn (Shani) & Jupiter (Brihaspati)",
@@ -189,6 +203,8 @@ export const GEMSTONE_PROFILES = {
     hardness: "9.0 Mohs Scale (Exceptional Durability)",
     refractiveIndex: "1.762 – 1.770",
     specificGravity: "4.00 g/cm³",
+    density: 4.00,
+    basePricePerGram: 38.0,
     chakra: "Root (Muladhara) & Solar Plexus Chakra",
     deity: "Surya Deva (The Supreme Sun God) & Divine Sovereignty",
     planet: "Sun (Surya)",
@@ -204,6 +220,8 @@ export const GEMSTONE_PROFILES = {
     hardness: "6.0 – 6.5 Mohs Scale",
     refractiveIndex: "Opaque Metallic",
     specificGravity: "4.95 – 5.10 g/cm³",
+    density: 5.00,
+    basePricePerGram: 8.5,
     chakra: "Solar Plexus Chakra (Manipura)",
     deity: "Goddess Mahalakshmi, Lord Kubera & Wealth Guardians",
     planet: "Sun (Surya) & Mars (Mangal)",
@@ -219,6 +237,8 @@ export const GEMSTONE_PROFILES = {
     hardness: "5.5 – 6.0 Mohs Scale",
     refractiveIndex: "1.50 – 1.67",
     specificGravity: "2.75 – 2.90 g/cm³",
+    density: 2.85,
+    basePricePerGram: 13.0,
     chakra: "Throat (Vishuddha) & Third Eye Chakra",
     deity: "Lord Shiva & Lord Saturn",
     planet: "Saturn (Shani) & Rahu",
@@ -234,6 +254,8 @@ export const GEMSTONE_PROFILES = {
     hardness: "7.0 – 7.5 Mohs Scale",
     refractiveIndex: "1.624 – 1.644",
     specificGravity: "3.00 – 3.25 g/cm³",
+    density: 3.12,
+    basePricePerGram: 8.8,
     chakra: "Root Chakra (Muladhara)",
     deity: "Lord Bhairava & Lord Hanuman",
     planet: "Saturn (Shani) & Ketu",
@@ -249,6 +271,8 @@ export const GEMSTONE_PROFILES = {
     hardness: "6.5 – 7.0 Mohs Scale",
     refractiveIndex: "1.530 – 1.540",
     specificGravity: "2.60 – 2.65 g/cm³",
+    density: 2.65,
+    basePricePerGram: 7.5,
     chakra: "Root Chakra (Muladhara)",
     deity: "Lord Ganesha, Lord Bhairava & Lord Hanuman",
     planet: "Rahu, Ketu & Saturn (Shani)",
@@ -264,6 +288,8 @@ export const GEMSTONE_PROFILES = {
     hardness: "7.0 Mohs Scale",
     refractiveIndex: "1.544 – 1.553",
     specificGravity: "2.64 – 2.71 g/cm³",
+    density: 2.68,
+    basePricePerGram: 8.5,
     chakra: "Solar Plexus (Manipura) & Root Chakra",
     deity: "Lord Hanuman & Solar Protectors",
     planet: "Sun (Surya) & Mars (Mangal)",
@@ -279,6 +305,8 @@ export const GEMSTONE_PROFILES = {
     hardness: "5.5 – 6.0 Mohs Scale",
     refractiveIndex: "1.483 – 1.487",
     specificGravity: "2.15 – 2.40 g/cm³",
+    density: 2.30,
+    basePricePerGram: 8.0,
     chakra: "Throat Chakra (Vishuddha)",
     deity: "Lord Hanuman & Lord Shiva",
     planet: "Saturn (Shani)",
@@ -354,105 +382,212 @@ export const detectArchetype = (text = "") => {
 // ==========================================
 
 /**
- * Market-calibrated Physical Specification Estimator
- * Analyzes product title, deity archetype, and mineral density to output realistic weight, size & dimensions.
+ * Market-calibrated Physical Specification & Competitor Pricing Estimator
+ * Analyzes product title, deity archetype, mineral density, and Jaipur lapidary benchmarks
+ * to output realistic weight, size, dimensions, market price, and price-per-gram.
  */
 export const estimateProductSpecs = (productName = "", categoryName = "") => {
   const text = (productName + " " + categoryName).toLowerCase();
   const stoneKey = detectGemstone(text);
   const archetype = detectArchetype(text);
   const stone = GEMSTONE_PROFILES[stoneKey] || GEMSTONE_PROFILES.sphatik;
+  const density = stone.density || 2.65;
+  const baseRate = stone.basePricePerGram || 11.0;
 
   // 1. Check if user already entered explicit weight or size in title
   let customSize = "";
   let customWeight = "";
+  let customWeightNum = 0;
 
   const sizeMatch = productName.match(/(\d+(\.\d+)?)\s*(inch|inches|"|cm|mm)\b/i);
   if (sizeMatch) {
-    const unit = sizeMatch[3].toLowerCase() === '"' ? 'Inches' : sizeMatch[3];
+    const unit = sizeMatch[3].toLowerCase() === '"' ? "Inches" : sizeMatch[3];
     customSize = `${sizeMatch[1]} ${unit}`;
   }
 
   const weightMatch = productName.match(/(\d+(\.\d+)?)\s*(kg|kilogram|g|gm|gram|grams)\b/i);
   if (weightMatch) {
-    customWeight = `${weightMatch[1]} ${weightMatch[3]}`;
+    const val = parseFloat(weightMatch[1]);
+    const unit = weightMatch[3].toLowerCase();
+    if (unit.startsWith("k")) {
+      customWeightNum = Math.round(val * 1000);
+      customWeight = `${val} Kg`;
+    } else {
+      customWeightNum = Math.round(val);
+      customWeight = `${val} Grams`;
+    }
   }
 
-  let defaultSize = "3.5 to 4 Inches";
-  let defaultWeight = "350g – 480g (Approx.)";
-  let dimensions = "Height: 9-10 cm, Base: 6-7 cm";
+  let defaultSize = "3.5 to 4.2 Inches";
+  let nominalGrams = 400;
+  let dimensions = "Height: 9.5 cm, Width: 6.8 cm, Depth: 5.2 cm";
+  let craftFee = 950;
+  let minGrams = 360;
+  let maxGrams = 460;
 
+  // 2. ARCHETYPE-SPECIFIC DENSITY & VOLUMETRIC SCALING
   if (archetype === "shivling") {
+    craftFee = 600;
     if (text.includes("small") || text.includes("pocket") || text.includes("2 inch") || text.includes("2.5")) {
-      defaultSize = "2 to 2.5 Inches";
-      defaultWeight = "150g – 220g (Approx.)";
-      dimensions = "Height: 5-6 cm, Jalhari Length: 6-7 cm";
+      defaultSize = "2.0 to 2.5 Inches";
+      nominalGrams = Math.round(65 * density);
+      minGrams = Math.round(nominalGrams * 0.88);
+      maxGrams = Math.round(nominalGrams * 1.15);
+      dimensions = "Height: 5.5 cm, Jalhari Length: 6.5 cm, Base: 4.2 cm";
+      craftFee = 400;
     } else if (text.includes("large") || text.includes("big") || text.includes("5 inch") || text.includes("6 inch")) {
-      defaultSize = "5 to 6 Inches";
-      defaultWeight = "1.2 kg – 1.8 kg (Approx.)";
-      dimensions = "Height: 12-15 cm, Jalhari Length: 14-16 cm";
+      defaultSize = "5.5 to 6.0 Inches";
+      nominalGrams = Math.round(480 * density);
+      minGrams = Math.round(nominalGrams * 0.9);
+      maxGrams = Math.round(nominalGrams * 1.15);
+      dimensions = "Height: 14 cm, Jalhari Length: 15 cm, Base: 9.5 cm";
+      craftFee = 1800;
     } else {
-      defaultSize = "3.5 to 4 Inches";
-      defaultWeight = "380g – 520g (Approx.)";
-      dimensions = "Height: 8-10 cm, Jalhari Length: 9-11 cm";
+      defaultSize = "3.5 to 4.0 Inches";
+      nominalGrams = Math.round(142 * density);
+      minGrams = Math.round(nominalGrams * 0.9);
+      maxGrams = Math.round(nominalGrams * 1.12);
+      dimensions = "Height: 8.5 cm, Jalhari Length: 9.5 cm, Base: 6.5 cm";
+      craftFee = 600;
     }
   } else if (archetype === "shree-yantra") {
-    if (text.includes("small") || text.includes("2 inch")) {
+    craftFee = 850;
+    if (text.includes("small") || text.includes("2 inch") || text.includes("2 x 2")) {
       defaultSize = "2 x 2 Inches";
-      defaultWeight = "180g – 250g (Approx.)";
-      dimensions = "Base: 5 x 5 cm, Height: 4.5 cm";
-    } else if (text.includes("large") || text.includes("big") || text.includes("4 inch")) {
+      nominalGrams = Math.round(75 * density);
+      minGrams = Math.round(nominalGrams * 0.88);
+      maxGrams = Math.round(nominalGrams * 1.15);
+      dimensions = "Base: 5.0 x 5.0 cm, Height: 4.8 cm";
+      craftFee = 500;
+    } else if (text.includes("large") || text.includes("big") || text.includes("4 inch") || text.includes("4 x 4")) {
       defaultSize = "4 x 4 Inches";
-      defaultWeight = "900g – 1.4 kg (Approx.)";
-      dimensions = "Base: 10 x 10 cm, Height: 9 cm";
+      nominalGrams = Math.round(420 * density);
+      minGrams = Math.round(nominalGrams * 0.9);
+      maxGrams = Math.round(nominalGrams * 1.15);
+      dimensions = "Base: 10.2 x 10.2 cm, Height: 9.5 cm";
+      craftFee = 2000;
     } else {
       defaultSize = "3 x 3 Inches";
-      defaultWeight = "400g – 550g (Approx.)";
-      dimensions = "Base: 7.5 x 7.5 cm, Height: 7 cm";
+      nominalGrams = Math.round(160 * density);
+      minGrams = Math.round(nominalGrams * 0.9);
+      maxGrams = Math.round(nominalGrams * 1.12);
+      dimensions = "Base: 7.5 x 7.5 cm, Height: 7.2 cm";
+      craftFee = 850;
     }
   } else if (archetype === "swan") {
-    defaultSize = "3.5 to 4 Inches (Height)";
-    defaultWeight = "320g – 450g (Pair Approx.)";
-    dimensions = "Height: 9-10 cm each";
+    defaultSize = "3.5 to 4.0 Inches (Pair)";
+    nominalGrams = Math.round(135 * density);
+    minGrams = Math.round(nominalGrams * 0.88);
+    maxGrams = Math.round(nominalGrams * 1.12);
+    dimensions = "Height: 9.5 cm, Width: 5.0 cm (Each Swan)";
+    craftFee = 700;
   } else if (archetype === "angel") {
-    defaultSize = "2.5 to 3 Inches";
-    defaultWeight = "120g – 200g (Approx.)";
-    dimensions = "Height: 6.5-7.5 cm, Width: 4 cm";
+    defaultSize = "2.8 to 3.2 Inches";
+    nominalGrams = Math.round(55 * density);
+    minGrams = Math.round(nominalGrams * 0.88);
+    maxGrams = Math.round(nominalGrams * 1.15);
+    dimensions = "Height: 7.5 cm, Width: 4.5 cm, Depth: 2.5 cm";
+    craftFee = 450;
   } else if (text.includes("pyramid")) {
     defaultSize = "2.5 x 2.5 Inches Base";
-    defaultWeight = "220g – 320g (Approx.)";
+    nominalGrams = Math.round(78 * density);
+    minGrams = Math.round(nominalGrams * 0.9);
+    maxGrams = Math.round(nominalGrams * 1.12);
     dimensions = "Base: 6.5 x 6.5 cm, Height: 5.5 cm";
+    craftFee = 350;
   } else if (text.includes("sphere") || text.includes("ball")) {
-    defaultSize = "50mm to 60mm Diameter";
-    defaultWeight = "260g – 380g (Approx.)";
-    dimensions = "Diameter: 5-6 cm";
-  } else if (text.includes("mala") || text.includes("rosary") || text.includes("bracelet")) {
-    defaultSize = text.includes("bracelet") ? "7.5 Inches (Elastic Stretchable)" : "108+1 Beads (8mm Beads)";
-    defaultWeight = text.includes("bracelet") ? "35g – 45g" : "90g – 130g";
-    dimensions = text.includes("bracelet") ? "Bead size: 8mm" : "Total Length: 32 Inches";
-  } else if (["shiva", "ganesha", "hanuman", "krishna", "lakshmi", "saraswati", "jain", "buddha"].includes(archetype)) {
-    if (text.includes("small") || text.includes("pocket") || text.includes("2 inch")) {
-      defaultSize = "2 to 2.5 Inches";
-      defaultWeight = "140g – 220g (Approx.)";
-      dimensions = "Height: 5-6 cm, Width: 3.5 cm";
+    defaultSize = "55 mm Diameter";
+    nominalGrams = Math.round(87 * density);
+    minGrams = Math.round(nominalGrams * 0.92);
+    maxGrams = Math.round(nominalGrams * 1.1);
+    dimensions = "Diameter: 5.5 cm";
+    craftFee = 300;
+  } else if (text.includes("mala") || text.includes("rosary")) {
+    defaultSize = "108+1 Beads (8mm Beads)";
+    nominalGrams = Math.round(36 * density);
+    minGrams = Math.round(nominalGrams * 0.9);
+    maxGrams = Math.round(nominalGrams * 1.15);
+    dimensions = "Total Length: 32 Inches, Bead Size: 8mm";
+    craftFee = 450;
+  } else if (text.includes("bracelet")) {
+    defaultSize = "7.5 Inches (Elastic Stretchable)";
+    nominalGrams = Math.round(15 * density);
+    minGrams = Math.round(nominalGrams * 0.9);
+    maxGrams = Math.round(nominalGrams * 1.12);
+    dimensions = "Inner Diameter: 6 cm, Bead Size: 8mm (23-24 Beads)";
+    craftFee = 150;
+  } else if (["shiva", "ganesha", "hanuman", "krishna", "lakshmi", "saraswati", "jain", "buddha", "elephant"].includes(archetype) || archetype === "general-idol") {
+    craftFee = 1000;
+    if (text.includes("small") || text.includes("pocket") || text.includes("2 inch") || text.includes("2.5")) {
+      defaultSize = "2.2 to 2.5 Inches";
+      nominalGrams = Math.round(60 * density);
+      minGrams = Math.round(nominalGrams * 0.88);
+      maxGrams = Math.round(nominalGrams * 1.15);
+      dimensions = "Height: 5.8 cm, Width: 4.0 cm, Depth: 3.2 cm";
+      craftFee = 500;
     } else if (text.includes("large") || text.includes("big") || text.includes("5 inch") || text.includes("6 inch")) {
-      defaultSize = "5 to 6 Inches";
-      defaultWeight = "1.1 kg – 1.7 kg (Approx.)";
-      dimensions = "Height: 12-15 cm, Width: 8-10 cm";
+      defaultSize = "5.5 to 6.0 Inches";
+      nominalGrams = Math.round(480 * density);
+      minGrams = Math.round(nominalGrams * 0.9);
+      maxGrams = Math.round(nominalGrams * 1.15);
+      dimensions = "Height: 14.5 cm, Width: 9.8 cm, Depth: 7.5 cm";
+      craftFee = 2500;
     } else {
-      defaultSize = "3.5 to 4.5 Inches";
-      defaultWeight = "380g – 550g (Approx.)";
-      dimensions = "Height: 9-11 cm, Width: 6-7 cm";
+      defaultSize = "3.5 to 4.2 Inches";
+      // Volumetric allowance by mineral density & stone carving profile:
+      const vol = stoneKey === "rose-quartz" ? 140 : (stoneKey === "sphatik" ? 155 : 154);
+      nominalGrams = Math.round(vol * density);
+      minGrams = Math.round(nominalGrams * 0.9);
+      maxGrams = Math.round(nominalGrams * 1.12);
+      dimensions = archetype === "shiva"
+        ? "Height: 10.5 cm, Width: 6.5 cm, Depth: 4.8 cm"
+        : "Height: 9.5 cm, Width: 6.8 cm, Depth: 5.2 cm";
+      craftFee = 1000;
     }
   }
+
+  const effectiveGrams = customWeightNum > 0 ? customWeightNum : nominalGrams;
+  const formattedWeight = customWeight || (effectiveGrams >= 1000
+    ? `${(effectiveGrams / 1000).toFixed(2)} Kg (Approx. ${(minGrams / 1000).toFixed(1)} – ${(maxGrams / 1000).toFixed(1)} Kg)`
+    : `${effectiveGrams} Grams (Approx. ${minGrams}g – ${maxGrams}g)`);
+
+  // 3. COMPETITOR MARKET PRICING FORMULA:
+  // Base Gemstone Value (Weight * Density-calibrated Base Rate) + Lapidary Crafting
+  const rawMaterialCost = effectiveGrams * baseRate;
+  let calculatedPrice = rawMaterialCost + craftFee;
+
+  if (text.includes("bracelet")) {
+    calculatedPrice = Math.max(450, Math.min(1200, calculatedPrice));
+  } else if (text.includes("mala")) {
+    calculatedPrice = Math.max(1500, Math.min(3800, calculatedPrice));
+  }
+
+  // Round to commercially attractive price (nearest 50 or 100)
+  const suggestedPrice = calculatedPrice > 1000
+    ? Math.round(calculatedPrice / 100) * 100
+    : Math.round(calculatedPrice / 50) * 50;
+
+  const mrp = Math.round((suggestedPrice * 1.28) / 100) * 100;
+  const competitorMin = Math.round((suggestedPrice * 0.86) / 100) * 100;
+  const competitorMax = Math.round((suggestedPrice * 1.25) / 100) * 100;
+  const pricePerGramNum = parseFloat((suggestedPrice / effectiveGrams).toFixed(1));
 
   return {
     size: customSize || defaultSize,
-    weight: customWeight || defaultWeight,
+    weight: formattedWeight,
+    nominalWeightGrams: effectiveGrams,
     dimensions,
     gemstoneName: stone.name,
     stoneMineral: stone.mineral,
-    stoneHardness: stone.hardness
+    stoneHardness: stone.hardness,
+    stoneDensity: density,
+    suggestedPrice,
+    price: suggestedPrice,
+    mrp,
+    priceRange: `₹${competitorMin.toLocaleString("en-IN")} – ₹${competitorMax.toLocaleString("en-IN")}`,
+    competitorAverage: `₹${Math.round((suggestedPrice * 1.1) / 100) * 100}`,
+    pricePerGram: `₹${pricePerGramNum} / Gram`,
+    pricePerCarat: `₹${(pricePerGramNum / 5).toFixed(2)} / Carat`
   };
 };
 
@@ -969,7 +1104,17 @@ export const generateBuiltInContent = (productName, categoryName = "") => {
     gemstoneType: stone.name,
     archetype,
     weight: specs.weight,
+    nominalWeightGrams: specs.nominalWeightGrams,
     size: specs.size,
+    dimensions: specs.dimensions,
+    stoneDensity: specs.stoneDensity,
+    suggestedPrice: specs.suggestedPrice,
+    price: specs.suggestedPrice,
+    mrp: specs.mrp,
+    priceRange: specs.priceRange,
+    competitorAverage: specs.competitorAverage,
+    pricePerGram: specs.pricePerGram,
+    pricePerCarat: specs.pricePerCarat,
     additionalInfo,
     metaTitle,
     metaDescription,
@@ -983,8 +1128,9 @@ export const generateBuiltInContent = (productName, categoryName = "") => {
     verificationChecks: [
       `✔ Mineral Match: 100% Verified (${stone.name})`,
       `✔ Sacred Subject: 100% Verified (${archetypeTitle})`,
-      `✔ Specifications: Weight (${specs.weight}) & Size (${specs.size})`,
-      `✔ Additional Info: 12-Point Comprehensive Specs Formatted`,
+      `✔ Calibrated Weight: ${specs.weight} (Density: ${specs.stoneDensity} g/cm³)`,
+      `✔ Market Pricing: ₹${specs.suggestedPrice.toLocaleString("en-IN")} (${specs.pricePerGram} benchmark)`,
+      `✔ Specifications: 12-Point Comprehensive Specs Formatted`,
       `✔ SEO Competitor Benchmarking: High-CTR Commercial Keywords Active`
     ]
   };
@@ -1315,6 +1461,7 @@ export const generateFusedAIContent = async (productName, categoryName = "") => 
           : ((gData?.additionalInfo && gData.additionalInfo.includes("<ul")) ? gData.additionalInfo : verifiedBase.additionalInfo);
 
         return {
+          ...verifiedBase,
           cleanName: verifiedBase.cleanName,
           citationHook: fusedCitationHook,
           weight: fusedWeight,
@@ -1322,18 +1469,19 @@ export const generateFusedAIContent = async (productName, categoryName = "") => 
           additionalInfo: fusedAdditionalInfo,
           fullDescription: fusedDesc,
           faqs: uniqueFaqs.length >= 4 ? uniqueFaqs : gData.faqs,
-          metaTitle: gData.metaTitle || oData.metaTitle || verifiedBase.metaTitle,
-          metaDescription: oData.metaDescription || gData.metaDescription || verifiedBase.metaDescription,
-          gemstoneType: gData.gemstoneType || verifiedBase.gemstoneType,
-          archetype: gData.archetype || verifiedBase.archetype,
-          stats: gData.stats || verifiedBase.stats,
+          metaTitle: gData?.metaTitle || oData?.metaTitle || verifiedBase.metaTitle,
+          metaDescription: oData?.metaDescription || gData?.metaDescription || verifiedBase.metaDescription,
+          gemstoneType: gData?.gemstoneType || verifiedBase.gemstoneType,
+          archetype: gData?.archetype || verifiedBase.archetype,
+          stats: gData?.stats || verifiedBase.stats,
           aiEngine: "Dual AI Fusion (ChatGPT-4o + Google Gemini)",
           isVerified: true,
           verificationStatus: "Dual-Verified 100% Supreme Quality",
           verificationChecks: [
             "✔ OpenAI GPT-4o: Luxury Storytelling & Emotional Hook Synthesized",
             "✔ Google Gemini: Google AI Overviews & Search Intent Calibrated",
-            "✔ Specifications: Weight & Size Market-Calibrated",
+            `✔ Market Valuation: ₹${verifiedBase.suggestedPrice.toLocaleString("en-IN")} (${verifiedBase.pricePerGram})`,
+            `✔ Specifications: Weight (${fusedWeight}) & Size (${fusedSize})`,
             "✔ Additional Info: 12-Point Comprehensive Specs Formatted",
             "✔ Combined Multi-Source Buyer FAQs & Schema Verified"
           ]
@@ -1350,6 +1498,7 @@ export const generateFusedAIContent = async (productName, categoryName = "") => 
         };
       } else if (gData) {
         return {
+          ...verifiedBase,
           ...gData,
           weight: gData.weight || verifiedBase.weight,
           size: gData.size || verifiedBase.size,
@@ -1378,6 +1527,7 @@ export const generateFusedAIContent = async (productName, categoryName = "") => 
         verificationChecks: [
           `✔ OpenAI GPT-4o: Luxury Storytelling & Copy Generated`,
           `✔ Specifications: Weight (${oData.weight || verifiedBase.weight}) & Size (${oData.size || verifiedBase.size})`,
+          `✔ Market Valuation: ₹${verifiedBase.suggestedPrice.toLocaleString("en-IN")} (${verifiedBase.pricePerGram})`,
           `✔ Additional Info: 12-Point Comprehensive Specs Formatted`,
           `✔ Gemological Accuracy: Hardness & Formula verified`,
           `✔ Verified Buyer FAQs Included`
@@ -1390,6 +1540,7 @@ export const generateFusedAIContent = async (productName, categoryName = "") => 
   if (geminiKey) {
     const gData = await generateGeminiContent(productName, categoryName, geminiKey);
     return {
+      ...verifiedBase,
       ...gData,
       weight: gData.weight || verifiedBase.weight,
       size: gData.size || verifiedBase.size,

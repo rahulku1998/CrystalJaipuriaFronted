@@ -6,9 +6,18 @@
     <description>Local in-store product inventory for Crystal Jaipuria store in Jaipur.</description>
     <item>
       <g:store_code>1</g:store_code>
+      <g:id>6aa58ecaa69037c73ebed354</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>5800.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
       <g:id>6aa58ce5a69037c73ebed099</g:id>
       <g:availability>in_stock</g:availability>
-      <g:price>1000.00 INR</g:price>
+      <g:price>5200.00 INR</g:price>
       <g:quantity>10</g:quantity>
       <g:pickup_method>buy</g:pickup_method>
       <g:pickup_sla>same_day</g:pickup_sla>
@@ -17,7 +26,7 @@
       <g:store_code>1</g:store_code>
       <g:id>6aa58b0fa69037c73ebecef5</g:id>
       <g:availability>in_stock</g:availability>
-      <g:price>1000.00 INR</g:price>
+      <g:price>3800.00 INR</g:price>
       <g:quantity>10</g:quantity>
       <g:pickup_method>buy</g:pickup_method>
       <g:pickup_sla>same_day</g:pickup_sla>
@@ -26,7 +35,7 @@
       <g:store_code>1</g:store_code>
       <g:id>6aa58606a69037c73ebecb33</g:id>
       <g:availability>in_stock</g:availability>
-      <g:price>1000.00 INR</g:price>
+      <g:price>4900.00 INR</g:price>
       <g:quantity>10</g:quantity>
       <g:pickup_method>buy</g:pickup_method>
       <g:pickup_sla>same_day</g:pickup_sla>
@@ -35,7 +44,7 @@
       <g:store_code>1</g:store_code>
       <g:id>6aa58550a69037c73ebecacf</g:id>
       <g:availability>in_stock</g:availability>
-      <g:price>1000.00 INR</g:price>
+      <g:price>4200.00 INR</g:price>
       <g:quantity>10</g:quantity>
       <g:pickup_method>buy</g:pickup_method>
       <g:pickup_sla>same_day</g:pickup_sla>
@@ -44,7 +53,7 @@
       <g:store_code>1</g:store_code>
       <g:id>6aa5839ba69037c73ebec9f3</g:id>
       <g:availability>in_stock</g:availability>
-      <g:price>1000.00 INR</g:price>
+      <g:price>6500.00 INR</g:price>
       <g:quantity>10</g:quantity>
       <g:pickup_method>buy</g:pickup_method>
       <g:pickup_sla>same_day</g:pickup_sla>
@@ -53,7 +62,7 @@
       <g:store_code>1</g:store_code>
       <g:id>6aa57ca2a69037c73ebec317</g:id>
       <g:availability>in_stock</g:availability>
-      <g:price>1000.00 INR</g:price>
+      <g:price>4500.00 INR</g:price>
       <g:quantity>10</g:quantity>
       <g:pickup_method>buy</g:pickup_method>
       <g:pickup_sla>same_day</g:pickup_sla>

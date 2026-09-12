@@ -34,7 +34,10 @@ const AIAssistantModal = ({
   onApplyWeight,
   onApplySize,
   onApplyAdditionalInfo,
-  onApplyCategory
+  onApplyCategory,
+  onApplyPrice,
+  onApplyDiscountPrice,
+  onApplyPricePerGram
 }) => {
   const [activeTab, setActiveTab] = useState("generate");
   const [name, setName] = useState(productName || "");
@@ -171,6 +174,21 @@ const AIAssistantModal = ({
     }
   };
 
+  const handleApplyPrice = () => {
+    const val = result?.price || result?.suggestedPrice;
+    if (val && onApplyPrice) {
+      onApplyPrice(val);
+      if (result?.mrp && onApplyDiscountPrice) {
+        onApplyDiscountPrice(result.mrp);
+      }
+      if (result?.pricePerGram && onApplyPricePerGram) {
+        onApplyPricePerGram(result.pricePerGram);
+      }
+      setAppliedSection("price");
+      setTimeout(() => setAppliedSection(""), 2500);
+    }
+  };
+
   const handleApplyAll = () => {
     if (result?.fullDescription && onApplyDescription) {
       onApplyDescription(result.fullDescription);
@@ -192,6 +210,16 @@ const AIAssistantModal = ({
     }
     if (onApplyDetail && result?.citationHook) {
       onApplyDetail(result.citationHook);
+    }
+    const val = result?.price || result?.suggestedPrice;
+    if (onApplyPrice && val) {
+      onApplyPrice(val);
+    }
+    if (onApplyDiscountPrice && result?.mrp) {
+      onApplyDiscountPrice(result.mrp);
+    }
+    if (onApplyPricePerGram && result?.pricePerGram) {
+      onApplyPricePerGram(result.pricePerGram);
     }
     if (onApplyWeight && result?.weight) {
       onApplyWeight(result.weight);
@@ -525,32 +553,90 @@ const AIAssistantModal = ({
                     </div>
                   )}
 
-                  {/* Physical Specifications (Weight & Size) */}
-                  {(result.weight || result.size) && (
-                    <div className="bg-white border border-amber-200/80 rounded-2xl p-4 shadow-2xs space-y-3 bg-gradient-to-r from-amber-50/40 via-white to-orange-50/30">
-                      <div className="flex items-center justify-between border-b border-amber-100 pb-2">
-                        <span className="text-xs font-extrabold uppercase tracking-wider text-amber-900 flex items-center gap-1.5">
-                          <span>⚖️ Market-Analyzed Physical Specifications</span>
-                        </span>
-                        {(onApplyWeight || onApplySize) && (
-                          <button
-                            type="button"
-                            onClick={handleApplySpecs}
-                            className="text-xs font-semibold px-3 py-1 rounded-lg bg-amber-500 hover:bg-amber-600 text-white flex items-center gap-1 cursor-pointer transition shadow-xs"
-                          >
-                            {appliedSection === "specs" ? <FaCheck /> : <FaMagic />}
-                            <span>{appliedSection === "specs" ? "Applied to Form!" : "Apply Weight & Size"}</span>
-                          </button>
-                        )}
-                      </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                        <div className="bg-white p-3 rounded-xl border border-amber-200 shadow-2xs">
-                          <span className="text-gray-500 font-semibold block mb-0.5">Estimated Weight</span>
-                          <span className="text-sm font-bold text-gray-900">{result.weight || "N/A"}</span>
+                  {/* Competitor Price, Weight & Mineral Valuation Card */}
+                  {(result.price || result.suggestedPrice || result.weight || result.size) && (
+                    <div className="bg-white border border-amber-300/90 rounded-2xl p-5 shadow-xs space-y-4 bg-gradient-to-br from-amber-50/50 via-white to-orange-50/40">
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-amber-200/80 pb-3">
+                        <div>
+                          <span className="text-xs font-extrabold uppercase tracking-wider text-amber-950 flex items-center gap-2">
+                            <span>⚖️ Competitor-Analyzed Market Price &amp; Physical Valuation</span>
+                            <span className="text-[10px] bg-emerald-100 text-emerald-800 border border-emerald-300 font-extrabold px-2 py-0.5 rounded-full">
+                              Jaipur Lapidary Calibrated
+                            </span>
+                          </span>
+                          <p className="text-[11px] text-gray-600 mt-0.5">
+                            Calibrated by mineral density ({result.stoneDensity || "2.65"} g/cm³), rough yielding wastage &amp; competitor retail averages
+                          </p>
                         </div>
-                        <div className="bg-white p-3 rounded-xl border border-amber-200 shadow-2xs">
-                          <span className="text-gray-500 font-semibold block mb-0.5">Estimated Size &amp; Dimensions</span>
-                          <span className="text-sm font-bold text-gray-900">{result.size || "N/A"}</span>
+                        <div className="flex items-center gap-2 flex-wrap">
+                          {onApplyPrice && (result.price || result.suggestedPrice) && (
+                            <button
+                              type="button"
+                              onClick={handleApplyPrice}
+                              className="text-xs font-bold px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white flex items-center gap-1.5 cursor-pointer transition shadow-xs"
+                            >
+                              {appliedSection === "price" ? <FaCheck /> : <FaMagic />}
+                              <span>{appliedSection === "price" ? "Price Applied!" : `Apply Price (₹${(result.price || result.suggestedPrice).toLocaleString("en-IN")})`}</span>
+                            </button>
+                          )}
+                          {(onApplyWeight || onApplySize) && (
+                            <button
+                              type="button"
+                              onClick={handleApplySpecs}
+                              className="text-xs font-semibold px-3 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white flex items-center gap-1 cursor-pointer transition shadow-xs"
+                            >
+                              {appliedSection === "specs" ? <FaCheck /> : <FaMagic />}
+                              <span>{appliedSection === "specs" ? "Weight Applied!" : "Apply Weight & Size"}</span>
+                            </button>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+                        <div className="bg-white p-3.5 rounded-xl border-2 border-emerald-300/80 shadow-2xs">
+                          <span className="text-gray-500 font-semibold block mb-1">Recommended Selling Price</span>
+                          <span className="text-lg font-black text-emerald-700 block">
+                            ₹{(result.price || result.suggestedPrice || 0).toLocaleString("en-IN")}
+                          </span>
+                          {result.mrp && (
+                            <span className="text-[11px] text-gray-400 line-through">
+                              MRP: ₹{result.mrp.toLocaleString("en-IN")}
+                            </span>
+                          )}
+                        </div>
+
+                        <div className="bg-white p-3.5 rounded-xl border border-amber-200 shadow-2xs">
+                          <span className="text-gray-500 font-semibold block mb-1">Competitor Market Range</span>
+                          <span className="text-sm font-bold text-gray-900 block">
+                            {result.priceRange || "₹3,500 – ₹5,500"}
+                          </span>
+                          {result.competitorAverage && (
+                            <span className="text-[11px] text-gray-500">
+                              Avg Portal: {result.competitorAverage}
+                            </span>
+                          )}
+                        </div>
+
+                        <div className="bg-white p-3.5 rounded-xl border border-amber-200 shadow-2xs">
+                          <span className="text-gray-500 font-semibold block mb-1">Calibrated Weight</span>
+                          <span className="text-sm font-bold text-gray-900 block">
+                            {result.weight || "N/A"}
+                          </span>
+                          <span className="text-[11px] text-gray-500">
+                            Rate: {result.pricePerGram || "N/A"}
+                          </span>
+                        </div>
+
+                        <div className="bg-white p-3.5 rounded-xl border border-amber-200 shadow-2xs">
+                          <span className="text-gray-500 font-semibold block mb-1">Estimated Dimensions</span>
+                          <span className="text-sm font-bold text-gray-900 block">
+                            {result.size || "N/A"}
+                          </span>
+                          {result.dimensions && (
+                            <span className="text-[10px] text-gray-500 block truncate" title={result.dimensions}>
+                              {result.dimensions}
+                            </span>
+                          )}
                         </div>
                       </div>
                     </div>

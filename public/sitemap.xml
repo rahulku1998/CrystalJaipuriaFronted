@@ -84,7 +84,16 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- Dynamic Product Pages (48 Live Products) -->
+  <!-- Dynamic Product Pages (49 Live Products) -->
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/crystal-shree-yantra</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/crystal-shree-yantra.webp</image:loc>
+      <image:title>Crystal Shree Yantra | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://www.crystaljaipuria.com/product/green-jade-ganesha</loc>
     <image:image>

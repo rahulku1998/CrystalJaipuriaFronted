@@ -7,7 +7,7 @@ import {
   packProductMetadata,
   generateSuperMetaTags,
 } from "../utils/productMetadata";
-import { generateShortDetail } from "../utils/aiGenerator";
+import { generateShortDetail, estimateProductSpecs } from "../utils/aiGenerator";
 import { compressImageForUpload } from "../utils/imageOptimizer";
 import { detectCategoryAndSubCategory } from "../utils/categoryResolver";
 import {
@@ -299,6 +299,25 @@ const handleGenerateShortDetail = async () => {
     setMetaDescription(generated.metaDescription);
   };
 
+  const handleQuickAiPrice = () => {
+    const prodName = form.name.trim() || prefill?.name?.trim() || "";
+    if (!prodName) {
+      alert("Please enter a product name first to calculate AI Market Price & Weight!");
+      return;
+    }
+    const catName = categories.find((c) => c._id === form.categoryId)?.name || prefill?.categoryName || "";
+    const specs = estimateProductSpecs(prodName, catName);
+    setForm((prev) => ({
+      ...prev,
+      price: String(specs.suggestedPrice),
+      weight: specs.weight,
+      size: specs.size,
+      pricePerGram: specs.pricePerGram
+    }));
+    setAutoDetectedBadge(`AI Price: ₹${specs.suggestedPrice.toLocaleString("en-IN")} | Weight: ${specs.weight}`);
+    setTimeout(() => setAutoDetectedBadge(""), 5000);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -320,22 +339,39 @@ const handleGenerateShortDetail = async () => {
       let finalSubCatId = form.subCategoryId;
 
       if (!finalCatId) {
-        const detected = detectCategoryAndSubCategory(form.name, categories, allSubCategories);
-        if (detected.categoryId) {
-          finalCatId = detected.categoryId;
-          finalSubCatId = detected.subCategoryId;
-        } else if (categories.length > 0) {
-          finalCatId = categories[0]._id;
+        const detected = detectCategoryAndSubCategory(form.name);
+        if (detected?.categoryName) {
+          const matchedCat = categories.find(
+            (c) =>
+              c.name.toLowerCase() === detected.categoryName.toLowerCase() ||
+              c.slug === detected.categorySlug
+          );
+          if (matchedCat) {
+            finalCatId = matchedCat._id;
+          }
         }
       }
 
-      // 2. Auto-resolve SubCategory ID (Prevents "Required fields missing" error)
-      if (!finalSubCatId && finalCatId) {
-        const matching = allSubCategories.filter(
-          (s) => (s.categoryId?._id || s.categoryId) === finalCatId
-        );
-        if (matching.length > 0) {
-          finalSubCatId = matching[0]._id;
+      // 2. Auto-resolve SubCategory ID if missing
+      if (finalCatId && !finalSubCatId) {
+        const detected = detectCategoryAndSubCategory(form.name);
+        if (detected?.subCategoryName) {
+          try {
+            const subRes = await API.get(`/subcategories/category/${finalCatId}`);
+            const subs = subRes.data.subCategories || [];
+            const matchedSub = subs.find(
+              (s) =>
+                s.name.toLowerCase() === detected.subCategoryName.toLowerCase() ||
+                s.slug === detected.subCategorySlug
+            );
+            if (matchedSub) {
+              finalSubCatId = matchedSub._id;
+            } else if (subs.length > 0) {
+              finalSubCatId = subs[0]._id;
+            }
+          } catch (subErr) {
+            console.log("Auto-resolving subcategory error:", subErr);
+          }
         } else {
           try {
             const subRes = await API.get(`/subcategories/category/${finalCatId}`);
@@ -350,7 +386,16 @@ const handleGenerateShortDetail = async () => {
       }
 
       // 3. Fallback defaults for remaining required fields
-      const finalPrice = String(form.price || "1000").trim() || "1000";
+      let fallbackPrice = "1000";
+      if (!form.price) {
+        try {
+          const quickSpecs = estimateProductSpecs(form.name, categories.find((c) => c._id === finalCatId)?.name || "");
+          if (quickSpecs?.suggestedPrice) {
+            fallbackPrice = String(quickSpecs.suggestedPrice);
+          }
+        } catch (e) {}
+      }
+      const finalPrice = String(form.price || fallbackPrice).trim() || fallbackPrice;
       const finalStock = String(form.stock || "10").trim() || "10";
       const finalDetail = form.detail?.trim() || form.name.trim();
       const finalDescription = form.description?.trim() || `<p>${finalDetail}</p>`;
@@ -485,6 +530,9 @@ const handleGenerateShortDetail = async () => {
           }}
           onApplyCategory={(prodName) => autoDetectCategory(prodName, true)}
           onApplyDetail={(detailText) => setForm((prev) => ({ ...prev, detail: detailText }))}
+          onApplyPrice={(price) => setForm((prev) => ({ ...prev, price: String(price) }))}
+          onApplyDiscountPrice={(mrp) => setForm((prev) => ({ ...prev, discountPrice: String(mrp) }))}
+          onApplyPricePerGram={(rate) => setForm((prev) => ({ ...prev, pricePerGram: String(rate) }))}
           onApplyWeight={(w) => setForm((prev) => ({ ...prev, weight: w }))}
           onApplySize={(s) => setForm((prev) => ({ ...prev, size: s }))}
           onApplyAdditionalInfo={(info) => setForm((prev) => ({ ...prev, additionalInfo: info }))}
@@ -581,15 +629,25 @@ const handleGenerateShortDetail = async () => {
             <div className="grid md:grid-cols-2 gap-6">
               <Input
                 label={
-                  <>
-                    Price <span className="text-red-500">*</span>
-                  </>
+                  <div className="flex items-center justify-between">
+                    <span>
+                      Price <span className="text-red-500">*</span>
+                    </span>
+                    <button
+                      type="button"
+                      onClick={handleQuickAiPrice}
+                      className="text-xs text-amber-700 hover:text-amber-800 font-semibold underline flex items-center gap-1 cursor-pointer"
+                      title="Calculate competitor market price & weight based on mineral density"
+                    >
+                      ⚡ AI Market Price &amp; Weight
+                    </button>
+                  </div>
                 }
                 name="price"
                 type="text"
                 value={form.price}
                 onChange={handleChange}
-                placeholder="e.g. 1000, 6/GRAM, 500/carat"
+                placeholder="e.g. 5200, 6500, 11/GRAM"
               />
 
 
