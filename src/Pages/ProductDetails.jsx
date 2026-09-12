@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import API from "../api/axios";
 import { formatPrice } from "../utils/price";
-import { optimizeCloudinaryUrl, getProductImageUrl } from "../utils/imageOptimizer";
+import { getProductImageUrl } from "../utils/imageOptimizer";
 import { getStandardizedProduct } from "../utils/productStandardizer";
 import { unpackProductMetadata } from "../utils/productMetadata";
 import {
@@ -148,8 +148,8 @@ Hello Crystal Jaipuria, I have a query regarding this product.
       if (data?.categoryId?._id) {
         fetchRelatedProducts(data);
       }
-      if (data?.images?.length > 0) {
-        setSelectedImage(data.images[0].url);
+      if (standardized?.images?.length > 0) {
+        setSelectedImage(standardized.images[0].url);
       }
     } catch (err) {
       console.log(err);
@@ -227,13 +227,18 @@ Hello Crystal Jaipuria, I have a query regarding this product.
           <div>
             <div className="w-full aspect-square sm:aspect-[4/3] lg:aspect-square max-h-[500px] bg-gray-50 rounded-2xl shadow-xs border border-gray-200 overflow-hidden flex items-center justify-center p-2">
               <img
-                src={selectedImage ? optimizeCloudinaryUrl(selectedImage, 800) : getProductImageUrl(product, 0, 800)}
+                src={selectedImage || getProductImageUrl(product, 0)}
                 alt={`${product.name} - 100% Certified Natural Gemstone Idol by Crystal Jaipuria, Jaipur`}
                 width="600"
                 height="600"
                 fetchPriority="high"
                 loading="eager"
                 decoding="async"
+                onError={(e) => {
+                  if (!e.target.src.endsWith("/Gemstone.webp")) {
+                    e.target.src = "/Gemstone.webp";
+                  }
+                }}
                 className="max-h-full max-w-full object-contain rounded-xl"
               />
             </div>
@@ -242,23 +247,27 @@ Hello Crystal Jaipuria, I have a query regarding this product.
             {product.images?.length > 1 && (
               <div className="flex gap-3 mt-4 overflow-x-auto pb-2">
                 {product.images.map((img, idx) => {
-                  const imgUrl = typeof img === 'string' ? img : (img?.url || '');
-                  const thumbSrc = getProductImageUrl(product, idx, 160);
+                  const thumbSrc = getProductImageUrl(product, idx);
                   return (
                     <img
                       key={img.public_id || `thumb-${idx}`}
                       src={thumbSrc}
+                      onError={(e) => {
+                        if (!e.target.src.endsWith("/Gemstone.webp")) {
+                          e.target.src = "/Gemstone.webp";
+                        }
+                      }}
                       alt={`${product.name} - Handcrafted Gemstone Idol View ${idx + 1}`}
                       width="80"
                       height="80"
                       loading="lazy"
                       decoding="async"
                       onClick={() => {
-                        setSelectedImage(imgUrl);
+                        setSelectedImage(thumbSrc);
                         trackGalleryClick(idx, product);
                       }}
                       className={`w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-xl cursor-pointer border-2 transition-all duration-200 shrink-0 ${
-                        selectedImage === imgUrl
+                        selectedImage === thumbSrc
                           ? "border-amber-500 shadow-md scale-105"
                           : "border-gray-200 hover:border-gray-400"
                       }`}

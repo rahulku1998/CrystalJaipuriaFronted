@@ -2,7 +2,7 @@ import React, { useEffect, useState, useMemo } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import API from "../api/axios";
 import { formatPrice } from "../utils/price";
-import { optimizeCloudinaryUrl, getProductImageUrl } from "../utils/imageOptimizer";
+import { getProductImageUrl } from "../utils/imageOptimizer";
 import { unpackProductMetadata } from "../utils/productMetadata";
 import { getStandardizedProduct, getSacredShloka } from "../utils/productStandardizer";
 import { getLegacyProductBySlug, resolveProductSlug } from "../utils/legacyProducts";
@@ -420,19 +420,14 @@ Hello Crystal Jaipuria, I have a query regarding this product.
             <div>
               <div className="w-full aspect-square sm:aspect-[4/3] lg:aspect-square max-h-[520px] bg-[#f8fafc] rounded-3xl border border-slate-200/80 overflow-hidden flex items-center justify-center p-3 shadow-xs">
               {(() => {
-                const activeImg = (Array.isArray(product.images) && product.images[selectedImageIndex]) || product.images?.[0];
-                const activeRaw = typeof activeImg === 'string' ? activeImg : (activeImg?.url || "");
-                const mainSrc = getProductImageUrl(product, selectedImageIndex, 800);
-                const optimizedFallback = optimizeCloudinaryUrl(activeRaw, 800);
+                const mainSrc = getProductImageUrl(product, selectedImageIndex);
 
                 return (
                   <img
                     key={`main-img-${selectedImageIndex}`}
                     src={mainSrc}
                     onError={(e) => {
-                      if (optimizedFallback && e.target.src !== optimizedFallback) {
-                        e.target.src = optimizedFallback;
-                      } else if (!e.target.src.endsWith("/Gemstone.webp")) {
+                      if (!e.target.src.endsWith("/Gemstone.webp")) {
                         e.target.src = "/Gemstone.webp";
                       }
                     }}
@@ -456,18 +451,14 @@ Hello Crystal Jaipuria, I have a query regarding this product.
             {Array.isArray(product.images) && product.images.length > 1 && (
               <div className="flex gap-3 mt-4 overflow-x-auto pb-2">
                 {product.images.map((img, idx) => {
-                  const rawSrc = typeof img === 'string' ? img : (img?.url || '');
-                  const thumbSrc = getProductImageUrl(product, idx, 160);
-                  const thumbFallback = optimizeCloudinaryUrl(rawSrc, 160);
+                  const thumbSrc = getProductImageUrl(product, idx);
 
                   return (
                     <img
                       key={img.public_id || `thumb-${idx}`}
                       src={thumbSrc}
                       onError={(e) => {
-                        if (thumbFallback && e.target.src !== thumbFallback) {
-                          e.target.src = thumbFallback;
-                        } else if (!e.target.src.endsWith("/Gemstone.webp")) {
+                        if (!e.target.src.endsWith("/Gemstone.webp")) {
                           e.target.src = "/Gemstone.webp";
                         }
                       }}

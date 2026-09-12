@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { optimizeCloudinaryUrl } from "../utils/imageOptimizer";
 
 const SEO = ({
   title,
@@ -79,9 +78,7 @@ const SEO = ({
       const existingPreload = document.getElementById("lcp-image-preload");
       if (type === "product") {
         const productSlug = canonical?.includes("/product/") ? canonical.split("/product/")[1]?.replace(/\/$/, "") : "";
-        const preloadImg = productSlug 
-          ? `/images/${productSlug}.webp` 
-          : (image && image.startsWith("http") && !image.includes("logo.png") ? optimizeCloudinaryUrl(image, 800) : null);
+        const preloadImg = productSlug ? `/images/${productSlug}.webp` : "/Gemstone.webp";
 
         if (preloadImg) {
           let preloadTag = existingPreload;

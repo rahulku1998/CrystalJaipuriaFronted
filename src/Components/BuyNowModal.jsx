@@ -10,7 +10,7 @@ import {
   FaMoneyBillWave,
   FaQrcode
 } from "react-icons/fa";
-import { optimizeCloudinaryUrl, getProductImageUrl } from "../utils/imageOptimizer";
+import { getProductImageUrl } from "../utils/imageOptimizer";
 
 const BuyNowModal = ({ isOpen, onClose, product }) => {
   const [quantity, setQuantity] = useState(1);

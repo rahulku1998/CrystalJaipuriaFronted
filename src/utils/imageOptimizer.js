@@ -20,75 +20,45 @@ export const PROTECTED_STUDIO_SLUGS = new Set([
 ]);
 
 /**
- * Universal bulletproof Product Image resolver
- * Prioritizes live, fresh Cloudinary URLs so newly uploaded/reordered images
- * in admin panel display instantly without duplicate or stale local static files.
+ * Universal bulletproof Product Image resolver - Pure Local Static WebP
+ * 100% eliminated Cloudinary from the client-side system.
+ * All product photos are served from clean local static paths:
+ * Primary: /images/<clean-slug>.webp
+ * Alternate Angle: /images/<clean-slug>-2.webp, etc.
  */
-export const getProductImageUrl = (product, index = 0, width = 800) => {
+export const getProductImageUrl = (product, index = 0) => {
   if (!product) return "/Gemstone.webp";
-
-  const images = Array.isArray(product.images)
-    ? product.images
-    : (product.image ? [product.image] : []);
-
-  const imgItem = images[index] || (index === 0 ? images[0] : null);
-  const rawUrl = typeof imgItem === "string" ? imgItem : (imgItem?.url || "");
 
   const cleanSlug = (product.slug || product.name || "")
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 
-  // Protected legacy studio photos (only for primary #1 view)
-  if (index === 0 && cleanSlug && PROTECTED_STUDIO_SLUGS.has(cleanSlug)) {
+  if (!cleanSlug) return "/Gemstone.webp";
+
+  if (index === 0) {
     return `/images/${cleanSlug}.webp`;
   }
 
-  // Live Cloudinary or remote HTTP image URL
-  if (rawUrl && (rawUrl.startsWith("http://") || rawUrl.startsWith("https://"))) {
-    return optimizeCloudinaryUrl(rawUrl, width);
-  }
-
-  // Already a local static path
-  if (rawUrl && (rawUrl.startsWith("/images/") || rawUrl.startsWith("/assets/"))) {
-    return rawUrl;
-  }
-
-  // Fallback to static clean slug or Gemstone placeholder
-  if (cleanSlug) {
-    return index === 0 ? `/images/${cleanSlug}.webp` : `/images/${cleanSlug}-${index + 1}.webp`;
-  }
-
-  return "/Gemstone.webp";
+  return `/images/${cleanSlug}-${index + 1}.webp`;
 };
 
 /**
- * Clean Static WebP Image Delivery Utility
- * Delivers clean static image paths: /images/<clean-slug>.webp
- * (Exactly like homeslider: /images/slider-shivling-desk.webp)
+ * Clean Static WebP Image Delivery Utility (0% Cloudinary)
  */
-export const optimizeCloudinaryUrl = (url, width = 800, seoSlug = "") => {
+export const optimizeCloudinaryUrl = (url, _width = 800, seoSlug = "") => {
   if (!url || typeof url !== "string") return "/Gemstone.webp";
 
-  // If already a local static path
   if (url.startsWith("/images/") || url.startsWith("/assets/")) {
     return url;
   }
 
-  // If it's a Cloudinary URL, deliver fast auto-format, auto-quality, scaled responsive image
-  if (url.includes("res.cloudinary.com") && url.includes("/image/upload/")) {
-    return url.includes("/f_auto")
-      ? url
-      : url.replace("/image/upload/", `/image/upload/f_auto,q_auto:good,w_${width},c_limit/`);
-  }
-
-  // If clean product slug is explicitly requested
   if (seoSlug) {
     const cleanSlug = seoSlug.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
     if (cleanSlug) return `/images/${cleanSlug}.webp`;
   }
 
-  return url;
+  return "/Gemstone.webp";
 };
 
 /**

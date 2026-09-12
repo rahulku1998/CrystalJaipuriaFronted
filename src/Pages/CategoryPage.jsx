@@ -3,7 +3,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import API from "../api/axios";
 import SEO from "../Components/SEO";
 import { formatPrice } from "../utils/price";
-import { optimizeCloudinaryUrl } from "../utils/imageOptimizer";
 import { getBreadcrumbSchema } from "../utils/seo";
 import { trackCategoryView } from "../utils/analytics";
 import { LEGACY_PRODUCTS } from "../utils/legacyProducts";

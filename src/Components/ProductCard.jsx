@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { formatPrice } from "../utils/price";
-import { optimizeCloudinaryUrl, getProductImageUrl } from "../utils/imageOptimizer";
+import { getProductImageUrl } from "../utils/imageOptimizer";
 import { getStandardizedProduct } from "../utils/productStandardizer";
 
 const ProductCard = ({ product, headingTag = "p" }) => {
@@ -9,12 +9,7 @@ const ProductCard = ({ product, headingTag = "p" }) => {
 
   const HeadingTag = headingTag || "p";
 
-  const rawImage = typeof item.images?.[0] === 'string'
-    ? item.images[0]
-    : (item.images?.[0]?.url || "/Gemstone.webp");
-
-  const initialSrc = getProductImageUrl(item, 0, 500);
-  const fallbackSrc = optimizeCloudinaryUrl(rawImage, 500);
+  const initialSrc = getProductImageUrl(item, 0);
 
   return (
     <Link
@@ -30,9 +25,7 @@ const ProductCard = ({ product, headingTag = "p" }) => {
           height="400"
           src={initialSrc}
           onError={(e) => {
-            if (fallbackSrc && e.target.src !== fallbackSrc) {
-              e.target.src = fallbackSrc;
-            } else if (!e.target.src.endsWith("/Gemstone.webp")) {
+            if (!e.target.src.endsWith("/Gemstone.webp")) {
               e.target.src = "/Gemstone.webp";
             }
           }}

@@ -32,7 +32,7 @@ try {
     'unpackProductMetadata',
     'getLegacyProductBySlug',
     'resolveProductSlug',
-    'optimizeCloudinaryUrl',
+    'getProductImageUrl',
     'formatPrice',
     'trackProductView'
   ];

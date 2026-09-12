@@ -320,26 +320,34 @@ export const STANDARDIZED_NAMES = {
 
 export const MULTI_IMAGE_SLUGS = new Set([
   "amethyst-gemston-angel",
+  "blue-sapphire-carving-shiva-statue",
+  "clear-crystal-quartz-shivling-with-shiva-face",
+  "crystal-clear-mahvaveer-ji-statue",
   "crystal-sphtik-shree-yantra-on-kamal-flower",
-  "natural-amethyst-gemstone-shiva-face-idol",
+  "gemston-amethyst-diya",
   "gemston-ruby-shree-yantra",
   "green-aventurine-parshvanath-ji-statue",
+  "green-jade-carved-shree-krishana-statue",
   "green-jade-goddess-maa-saraswati-carving",
   "green-jade-mahalakshmi-ji-idol",
   "green-jade-radha-krishna-statue-carving",
+  "green-jade-shiva-statue-with-gold-panting",
+  "mahalakshmi-idol-in-natural-columbian-green-jade",
+  "natural-amethyst-gemstone-shiva-face-idol",
   "natural-howlite-gemstone-shivling",
   "natural-labradorite-gemstone-shivling",
   "natural-lapis-lazuli-lord-krishna-statue",
   "natural-lapis-lazuli-shiva-face-carving-idol",
-  "natural-sphatik-shivling",
   "natural-opal-stone-shivling",
-  "rose-quartz-carved-shree-krishna-ji-idol",
-  "rose-quartz-carved-shree-krishan-ji-idol",
   "natural-rose-quartz-pair-of-swan",
-  "rose-quartz-shiva-statue-with-gold-painting",
-  "smokey-quartz-crystal-shiva-face-idol",
+  "natural-ruby-shivling",
+  "natural-sphatik-shivling",
   "natural-tiger-eye-gemstone-shivling",
-  "mahalakshmi-idol-in-natural-columbian-green-jade",
+  "pyrite-gemston-shivling",
+  "rose-quartz-carved-shree-krishan-ji-idol",
+  "rose-quartz-carved-shree-krishna-ji-idol",
+  "rose-quartz-shiva-statue-with-gold-painting",
+  "smokey-quartz-crystal-shiva-face-idol"
 ]);
 
 /**
@@ -447,18 +455,25 @@ export const getStandardizedProduct = (product) => {
       .replace(/Mahvaveer/gi, "Mahaveer");
   }
 
-  // Populate multiple images if available
-  let standardizedImages = Array.isArray(product.images) && product.images.length > 0 
-    ? [...product.images] 
-    : [{ url: `/images/${slug}.webp`, public_id: `products/${slug}` }];
-
-  if (MULTI_IMAGE_SLUGS.has(slug)) {
-    // If product only has 1 image from DB, attach the distinct secondary studio view (-2.webp)
-    if (standardizedImages.length <= 1) {
-      const featuredStudioImg = { url: `/images/${slug}.webp`, public_id: `products/${slug}` };
-      const secondImg = { url: `/images/${slug}-2.webp`, public_id: `products/${slug}-2` };
-      standardizedImages = [featuredStudioImg, secondImg];
-    }
+  // Bulletproof Pure Local Static WebP Delivery (100% Zero Cloudinary)
+  let standardizedImages = [];
+  if (slug === "natural-sphatik-shivling") {
+    standardizedImages = [
+      { url: `/images/${slug}.webp`, public_id: `products/${slug}` },
+      { url: `/images/${slug}-2.webp`, public_id: `products/${slug}-2` },
+      { url: `/images/${slug}-3.webp`, public_id: `products/${slug}-3` },
+    ];
+  } else if (MULTI_IMAGE_SLUGS.has(slug)) {
+    standardizedImages = [
+      { url: `/images/${slug}.webp`, public_id: `products/${slug}` },
+      { url: `/images/${slug}-2.webp`, public_id: `products/${slug}-2` },
+    ];
+  } else if (slug) {
+    standardizedImages = [
+      { url: `/images/${slug}.webp`, public_id: `products/${slug}` },
+    ];
+  } else {
+    standardizedImages = [{ url: "/Gemstone.webp", public_id: "placeholder" }];
   }
 
   return {
