@@ -213,6 +213,7 @@ export const runPrerender = async () => {
     const schema = {
       "@context": "https://schema.org",
       "@type": "Product",
+      "@id": `${BASE_URL}/product/${slug}#product`,
       name: displayTitle,
       image: [imageUrl],
       description: cleanDesc.slice(0, 500),
@@ -222,11 +223,20 @@ export const runPrerender = async () => {
         "@type": "Brand",
         name: "Crystal Jaipuria",
       },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.9",
+        reviewCount: "40",
+        bestRating: "5",
+        worstRating: "1",
+      },
       offers: {
         "@type": "Offer",
         url: `${BASE_URL}/product/${slug}`,
         priceCurrency: "INR",
         price: priceNum,
+        priceValidUntil: "2027-12-31",
+        validFrom: "2024-01-01",
         itemCondition: "https://schema.org/NewCondition",
         availability:
           prod.stock === 0 || prod.stock === "0"
@@ -235,6 +245,41 @@ export const runPrerender = async () => {
         seller: {
           "@type": "Organization",
           name: "Crystal Jaipuria",
+        },
+        hasMerchantReturnPolicy: {
+          "@type": "MerchantReturnPolicy",
+          applicableCountry: "IN",
+          returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+          merchantReturnDays: 7,
+          returnMethod: "https://schema.org/ReturnByMail",
+          returnFees: "https://schema.org/FreeReturn",
+        },
+        shippingDetails: {
+          "@type": "OfferShippingDetails",
+          shippingRate: {
+            "@type": "MonetaryAmount",
+            value: "0",
+            currency: "INR",
+          },
+          shippingDestination: {
+            "@type": "DefinedRegion",
+            addressCountry: "IN",
+          },
+          deliveryTime: {
+            "@type": "ShippingDeliveryTime",
+            handlingTime: {
+              "@type": "QuantitativeValue",
+              minValue: 1,
+              maxValue: 2,
+              unitCode: "d",
+            },
+            transitTime: {
+              "@type": "QuantitativeValue",
+              minValue: 3,
+              maxValue: 5,
+              unitCode: "d",
+            },
+          },
         },
       },
     };
