@@ -24,7 +24,16 @@ import {
   scanForInternalLinks,
 } from "../utils/internalLinking";
 
-const RichTextEditor = ({ label, name, value = "", onChange, rows = 6, placeholder = "", currentSlug = "" }) => {
+const RichTextEditor = ({
+  label,
+  name,
+  value = "",
+  onChange,
+  rows = 6,
+  placeholder = "",
+  currentSlug = "",
+  currentName = "",
+}) => {
   const [activeTab, setActiveTab] = useState("visual"); // 'visual' | 'html'
   const [interlinkNotice, setInterlinkNotice] = useState("");
   const editorRef = useRef(null);
@@ -109,7 +118,7 @@ const RichTextEditor = ({ label, name, value = "", onChange, rows = 6, placehold
       alert("Please enter some text in the editor first to scan for links!");
       return;
     }
-    const updatedHtml = autoInjectInternalLinks(currentHtml, currentSlug, 4);
+    const updatedHtml = autoInjectInternalLinks(currentHtml, currentSlug, 3, currentName);
     if (updatedHtml !== currentHtml) {
       if (editorRef.current) {
         editorRef.current.innerHTML = updatedHtml;
@@ -123,7 +132,11 @@ const RichTextEditor = ({ label, name, value = "", onChange, rows = 6, placehold
     }
   };
 
-  const detectedLinks = scanForInternalLinks(value || (editorRef.current ? editorRef.current.innerHTML : ""), currentSlug);
+  const detectedLinks = scanForInternalLinks(
+    value || (editorRef.current ? editorRef.current.innerHTML : ""),
+    currentSlug,
+    currentName
+  );
 
   return (
     <div className="w-full">

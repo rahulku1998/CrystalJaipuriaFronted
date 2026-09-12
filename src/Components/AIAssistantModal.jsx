@@ -69,7 +69,11 @@ const AIAssistantModal = ({
     try {
       const data = await generateFusedAIContent(name, category);
       if (data?.fullDescription) {
-        data.fullDescription = autoInjectInternalLinks(data.fullDescription, "", 3);
+        const derivedSlug = (name || "")
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-+|-+$/g, "");
+        data.fullDescription = autoInjectInternalLinks(data.fullDescription, derivedSlug, 3, name);
       }
       setResult(data);
     } catch (err) {

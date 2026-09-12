@@ -384,6 +384,8 @@ const handleCategoryChange = async (e) => {
                 onChange={handleChange}
                 rows={6}
                 placeholder="Enter description..."
+                currentSlug={form.slug || ""}
+                currentName={form.name || ""}
               />
             </div>
 
@@ -476,6 +478,8 @@ subCategories.map((sub)=>(
                 onChange={handleChange}
                 rows={4}
                 placeholder="Enter additional specifications or details..."
+                currentSlug={form.slug || ""}
+                currentName={form.name || ""}
               />
             </div>
 

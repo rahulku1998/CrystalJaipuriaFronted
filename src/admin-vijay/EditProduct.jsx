@@ -462,6 +462,7 @@ placeholder="Enter product name"
     rows={6}
     placeholder="Enter product description..."
     currentSlug={form.slug || ""}
+    currentName={form.name || ""}
   />
 </div>
 
@@ -587,6 +588,7 @@ placeholder="Available stock"
     rows={4}
     placeholder="Material, size, color, specifications etc."
     currentSlug={form.slug || ""}
+    currentName={form.name || ""}
   />
 </div>
 
