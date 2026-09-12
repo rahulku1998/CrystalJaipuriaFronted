@@ -44,9 +44,9 @@ const AIAssistantModal = ({
   const [appliedSection, setAppliedSection] = useState("");
 
   useEffect(() => {
-    setName(productName || "");
-    setCategory(categoryName || "");
-  }, [productName, categoryName]);
+    if (productName) setName(productName);
+    if (categoryName) setCategory(categoryName);
+  }, [isOpen, productName, categoryName]);
 
   useEffect(() => {
     const gKey = localStorage.getItem(GEMINI_API_KEY_STORAGE_KEY) || "";

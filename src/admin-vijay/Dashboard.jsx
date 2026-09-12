@@ -389,7 +389,10 @@ const AdminDashboard = () => {
                       type="button"
                       onClick={() =>
                         navigate("/admin-vijay/add-product", {
-                          state: { prefill: opp.prefillData }
+                          state: {
+                            prefill: opp.prefillData,
+                            prefillProduct: opp.prefillData,
+                          }
                         })
                       }
                       className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-1.5 px-3 rounded-xl shadow-xs flex items-center gap-1.5 transition active:scale-95 cursor-pointer"

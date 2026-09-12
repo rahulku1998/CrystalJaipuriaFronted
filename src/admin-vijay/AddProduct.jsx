@@ -24,103 +24,120 @@ import {
 const AddProduct = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const prefill = location.state?.prefillProduct;
+  const prefill = location.state?.prefill || location.state?.prefillProduct;
 
-  const [form,setForm] = useState({
-    name:"",
-    description:"",
-    price:"",
-    discountPrice:"",
-    categoryId:"",
-    subCategoryId:"",
-    stock:"",
-    additionalInfo:"",
-    detail:"",
-    weight:"",
-    pricePerGram:"",
-    pricePerCarat:"",
-    size:""
-  });
+  const [form, setForm] = useState(() => ({
+    name: prefill?.name || "",
+    description: prefill?.description || "",
+    price: prefill?.price ? String(prefill.price) : "",
+    discountPrice: prefill?.discountPrice ? String(prefill.discountPrice) : "",
+    categoryId: prefill?.categoryId || "",
+    subCategoryId: prefill?.subCategoryId || "",
+    stock: prefill?.stock ? String(prefill.stock) : "10",
+    additionalInfo: prefill?.additionalInfo || "",
+    detail: prefill?.detail || "",
+    weight: prefill?.weight || "",
+    pricePerGram: "",
+    pricePerCarat: "",
+    size: prefill?.size || "",
+  }));
 
-  const [metaTitle, setMetaTitle] = useState("");
-  const [metaDescription, setMetaDescription] = useState("");
-  const [faqs, setFaqs] = useState([{ question: "", answer: "" }]);
-  const [showAiModal, setShowAiModal] = useState(false);
+  const [metaTitle, setMetaTitle] = useState(() => prefill?.metaTitle || "");
+  const [metaDescription, setMetaDescription] = useState(() => prefill?.metaDescription || "");
+  const [faqs, setFaqs] = useState(() =>
+    Array.isArray(prefill?.faqs) && prefill.faqs.length > 0
+      ? prefill.faqs
+      : [{ question: "", answer: "" }]
+  );
+  const [showAiModal, setShowAiModal] = useState(Boolean(location.state?.openAi));
   const [generatingDetail, setGeneratingDetail] = useState(false);
-  const [categories,setCategories] = useState([]);
-  const [subCategories,setSubCategories] = useState([]);
-  const [gallery,setGallery] = useState([]);
-  const [loading,setLoading] = useState(false);
+  const [categories, setCategories] = useState([]);
+  const [subCategories, setSubCategories] = useState([]);
+  const [gallery, setGallery] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-useEffect(()=>{
-  fetchCategories();
-},[]);
+  useEffect(() => {
+    fetchCategories();
+  }, []);
 
-useEffect(() => {
-  if (prefill && categories.length > 0) {
-    const matchedCat = categories.find(
-      (c) =>
-        c.name.toLowerCase() === prefill.categoryName?.toLowerCase() ||
-        c.slug === prefill.categoryName?.toLowerCase().replace(/\s+/g, "-")
-    );
+  useEffect(() => {
+    if (prefill) {
+      setForm((prev) => ({
+        ...prev,
+        name: prev.name || prefill.name || "",
+        price: prev.price || String(prefill.price || "1000"),
+        discountPrice: prev.discountPrice || (prefill.discountPrice ? String(prefill.discountPrice) : ""),
+        weight: prev.weight || prefill.weight || "",
+        size: prev.size || prefill.size || "",
+        detail: prev.detail || prefill.detail || "",
+        description: prev.description || prefill.description || "",
+        additionalInfo: prev.additionalInfo || prefill.additionalInfo || "",
+        stock: prev.stock || String(prefill.stock || "10"),
+      }));
 
-    const targetCatId = matchedCat?._id || categories[0]?._id || "";
+      if (prefill.metaTitle) setMetaTitle((prev) => prev || prefill.metaTitle);
+      if (prefill.metaDescription) setMetaDescription((prev) => prev || prefill.metaDescription);
+      if (prefill.faqs && Array.isArray(prefill.faqs) && prefill.faqs.length > 0) {
+        setFaqs(prefill.faqs);
+      }
 
-    setForm((prev) => ({
-      ...prev,
-      name: prefill.name || prev.name,
-      price: String(prefill.price || prev.price || "1000"),
-      discountPrice: prefill.discountPrice ? String(prefill.discountPrice) : prev.discountPrice,
-      categoryId: targetCatId,
-      weight: prefill.weight || prev.weight,
-      size: prefill.size || prev.size,
-      detail: prefill.detail || prev.detail,
-      description: prefill.description || prev.description,
-      additionalInfo: prefill.additionalInfo || prev.additionalInfo,
-      stock: String(prev.stock || prefill.stock || "10"),
-    }));
+      if (categories.length > 0) {
+        const matchedCat = categories.find(
+          (c) =>
+            c.name?.toLowerCase() === prefill.categoryName?.toLowerCase() ||
+            c.slug?.toLowerCase() === prefill.categoryName?.toLowerCase().replace(/\s+/g, "-") ||
+            (prefill.categoryId && (c._id === prefill.categoryId || c.slug === prefill.categoryId))
+        );
 
-    if (targetCatId) {
-      API.get(`/subcategories/category/${targetCatId}`)
-        .then((res) => {
-          const subs = res.data.subCategories || [];
-          setSubCategories(subs);
-          if (subs.length > 0) {
-            setForm((prev) => ({
-              ...prev,
-              subCategoryId: prev.subCategoryId || subs[0]._id,
-            }));
-          }
-        })
-        .catch((err) => console.log("Error loading subcategories:", err));
+        const targetCatId = matchedCat?._id || prefill.categoryId || categories[0]?._id || "";
+
+        setForm((prev) => ({
+          ...prev,
+          categoryId: targetCatId,
+        }));
+
+        if (targetCatId) {
+          API.get(`/subcategories/category/${targetCatId}`)
+            .then((res) => {
+              const subs = res.data.subCategories || [];
+              setSubCategories(subs);
+              if (subs.length > 0) {
+                setForm((prev) => ({
+                  ...prev,
+                  subCategoryId: prev.subCategoryId || subs[0]._id,
+                }));
+              }
+            })
+            .catch((err) => console.log("Error loading subcategories:", err));
+        }
+      }
+
+      // Auto-load prefill image if available
+      if (prefill.slug) {
+        const cleanSlug = prefill.slug.toLowerCase().trim();
+        const imgPath = `/images/${cleanSlug}.webp`;
+        fetch(imgPath)
+          .then((r) => (r.ok ? r.blob() : null))
+          .then((blob) => {
+            if (blob) {
+              const file = new File([blob], `${cleanSlug}.webp`, { type: blob.type || "image/webp" });
+              setGallery((prev) =>
+                prev.length === 0
+                  ? [
+                      {
+                        id: `prefill-${Date.now()}`,
+                        file,
+                        url: imgPath,
+                      },
+                    ]
+                  : prev
+              );
+            }
+          })
+          .catch(() => {});
+      }
     }
-
-    if (prefill.metaTitle) setMetaTitle(prefill.metaTitle);
-    if (prefill.metaDescription) setMetaDescription(prefill.metaDescription);
-    if (prefill.faqs && Array.isArray(prefill.faqs)) setFaqs(prefill.faqs);
-
-    // Auto-load prefill image so user is not blocked from publishing
-    if (prefill.slug) {
-      const cleanSlug = prefill.slug.toLowerCase().trim();
-      const imgPath = `/images/${cleanSlug}.webp`;
-      fetch(imgPath)
-        .then((r) => (r.ok ? r.blob() : null))
-        .then((blob) => {
-          if (blob) {
-            const file = new File([blob], `${cleanSlug}.webp`, { type: blob.type || "image/webp" });
-            setGallery([
-              {
-                id: `prefill-${Date.now()}`,
-                file,
-                url: imgPath,
-              },
-            ]);
-          }
-        })
-        .catch(() => {});
-    }
-  }
-}, [categories, prefill]);
+  }, [categories, prefill]);
 
 const handleGenerateShortDetail = async () => {
   if (!form.name.trim()) {
@@ -417,8 +434,8 @@ const fetchCategories = async()=>{
         <AIAssistantModal
           isOpen={showAiModal}
           onClose={() => setShowAiModal(false)}
-          productName={form.name}
-          categoryName={categories.find((c) => c._id === form.categoryId)?.name || ""}
+          productName={form.name || prefill?.name || ""}
+          categoryName={categories.find((c) => c._id === form.categoryId)?.name || prefill?.categoryName || ""}
           onApplyDescription={(html) => setForm((prev) => ({ ...prev, description: html }))}
           onApplyFaqs={(generatedFaqs) => setFaqs(generatedFaqs)}
           onApplyMeta={(meta) => {

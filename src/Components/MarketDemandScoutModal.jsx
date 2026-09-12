@@ -33,7 +33,10 @@ const MarketDemandScoutModal = ({
   const handleLaunchProduct = () => {
     onClose();
     navigate("/admin-vijay/add-product", {
-      state: { prefill: opportunity.prefillData }
+      state: {
+        prefill: opportunity.prefillData,
+        prefillProduct: opportunity.prefillData,
+      }
     });
   };
 
