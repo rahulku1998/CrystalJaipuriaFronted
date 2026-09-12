@@ -28,7 +28,19 @@ const AdminDashboard = () => {
   const [subCategories, setSubCategories] = useState([]);
   const [search, setSearch] = useState("");
   const [blogs, setBlogs] = useState([]);
-  const [opportunities, setOpportunities] = useState(MARKET_OPPORTUNITIES);
+  const [opportunities, setOpportunities] = useState(() => {
+    try {
+      const saved = localStorage.getItem("crystal_market_radar_opportunities");
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      }
+    } catch {
+      // ignore
+    }
+    return MARKET_OPPORTUNITIES;
+  });
+  const [scanNotice, setScanNotice] = useState("");
   const [selectedTag, setSelectedTag] = useState("ALL");
   const [selectedOpportunity, setSelectedOpportunity] = useState(null);
   const [scanningAi, setScanningAi] = useState(false);
@@ -284,21 +296,42 @@ const AdminDashboard = () => {
                 onClick={async () => {
                   setScanningAi(true);
                   try {
-                    const fresh = await scanLiveMarketOpportunities();
-                    setOpportunities(fresh);
+                    const fresh = await scanLiveMarketOpportunities("", opportunities);
+                    const freshList = Array.isArray(fresh) ? fresh : (fresh.opportunities || MARKET_OPPORTUNITIES);
+                    setOpportunities(freshList);
+                    localStorage.setItem("crystal_market_radar_opportunities", JSON.stringify(freshList));
+                    setScanNotice(fresh.message || "✨ Live market demand opportunities refreshed!");
+                    setTimeout(() => setScanNotice(""), 7000);
                   } catch (e) {
                     console.error(e);
                   } finally {
                     setScanningAi(false);
                   }
                 }}
-                className="inline-flex items-center gap-2 bg-stone-900 hover:bg-stone-800 text-white px-4 py-2 rounded-xl text-xs font-bold transition shadow-xs disabled:opacity-50 cursor-pointer"
+                className="inline-flex items-center gap-2 bg-stone-900 hover:bg-stone-800 text-white px-4 py-2 rounded-xl text-xs font-bold transition shadow-xs disabled:opacity-50 cursor-pointer active:scale-95"
               >
                 <FaSyncAlt className={scanningAi ? "animate-spin text-amber-400" : "text-amber-400"} />
                 <span>{scanningAi ? "Scanning Global Markets..." : "Scan Fresh with AI"}</span>
               </button>
             </div>
           </div>
+
+          {/* Scan Notice Banner */}
+          {scanNotice && (
+            <div className="bg-emerald-50 border border-emerald-200 text-emerald-800 px-4 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between animate-fadeIn shadow-xs">
+              <div className="flex items-center gap-2">
+                <FaCheckCircle className="text-emerald-600 shrink-0 text-sm" />
+                <span>{scanNotice}</span>
+              </div>
+              <button
+                type="button"
+                onClick={() => setScanNotice("")}
+                className="text-emerald-700 hover:text-emerald-900 font-bold ml-2 text-sm cursor-pointer"
+              >
+                ✕
+              </button>
+            </div>
+          )}
 
           {/* Filter Pills */}
           <div className="flex items-center gap-2 overflow-x-auto pb-1 text-xs font-bold scrollbar-none">

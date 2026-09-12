@@ -1,4 +1,5 @@
 store_code	id	availability	price	quantity	pickup_method	pickup_sla
+1	6aa57ca2a69037c73ebec317	in_stock	1000.00 INR	10	buy	same_day
 1	6aa2f217a69037c73ebe8dd2	in_stock	9500.00 INR	10	buy	same_day
 1	6aa2f0cda69037c73ebe8da5	in_stock	16500.00 INR	10	buy	same_day
 1	6aa2f02ea69037c73ebe8d79	in_stock	14000.00 INR	10	buy	same_day
