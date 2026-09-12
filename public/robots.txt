@@ -1,8 +1,49 @@
 User-agent: *
 Allow: /
+
+# Admin Controls
 Disallow: /admin
 Disallow: /admin/*
 Disallow: /admin-vijay
 Disallow: /admin-vijay/*
+
+# Disallow Legacy Malware / Spam Injection Paths
+Disallow: /products/detail/
+Disallow: /products/detail/*
+Disallow: /product/detail/
+Disallow: /product/detail/*
+Disallow: /contents/
+Disallow: /contents/*
+Disallow: /hg/
+Disallow: /hg/*
+Disallow: /CSFTop*
+Disallow: /renga*
+Disallow: /information/
+Disallow: /information/*
+
+# Disallow Legacy WordPress Artifacts & Obsolete Categories
+Disallow: /wp-content/
+Disallow: /wp-content/*
+Disallow: /wp-includes/
+Disallow: /wp-includes/*
+Disallow: /wp-admin/
+Disallow: /wp-admin/*
+Disallow: /wp-*.php
+Disallow: /xmlrpc.php
+Disallow: /product-category/
+Disallow: /product-category/*
+Disallow: /product-tag/
+Disallow: /product-tag/*
+Disallow: /home-*
+Disallow: /shop-*
+Disallow: /shop/userreview/
+Disallow: /shop/storeSearch/
+
+# Disallow Query Strings with Malware & Injection Parameters
+Disallow: /*?p=*
+Disallow: /*?page_id=*
+Disallow: /*?a=*
+Disallow: /*?n=*
+Disallow: /*?t=*
 
 Sitemap: https://www.crystaljaipuria.com/sitemap.xml

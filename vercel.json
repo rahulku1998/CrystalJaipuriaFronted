@@ -234,6 +234,78 @@
       ]
     }
   ],
+  "redirects": [
+    {
+      "source": "/product-category/:path*",
+      "destination": "/shop",
+      "permanent": true
+    },
+    {
+      "source": "/product-tag/:path*",
+      "destination": "/shop",
+      "permanent": true
+    },
+    {
+      "source": "/product/labradorite-power-mini-shiv-face/:path*",
+      "destination": "/product/labradorite-power-mini-shiva-face",
+      "permanent": true
+    },
+    {
+      "source": "/product/labradorite-power-mini-shiv-face",
+      "destination": "/product/labradorite-power-mini-shiva-face",
+      "permanent": true
+    },
+    {
+      "source": "/product/natural-lapis-lazuli-lord-krishan-statue/:path*",
+      "destination": "/product/natural-lapis-lazuli-lord-krishna-statue",
+      "permanent": true
+    },
+    {
+      "source": "/product/natural-lapis-lazuli-lord-krishan-statue",
+      "destination": "/product/natural-lapis-lazuli-lord-krishna-statue",
+      "permanent": true
+    },
+    {
+      "source": "/product/rose-quartz-handmade-carving-of-ganesh/:path*",
+      "destination": "/product/rose-quartz-ganesha",
+      "permanent": true
+    },
+    {
+      "source": "/product/rose-quartz-handmade-carving-of-ganesh",
+      "destination": "/product/rose-quartz-ganesha",
+      "permanent": true
+    },
+    {
+      "source": "/product/rose-quartz-mahaveer/:path*",
+      "destination": "/product/rose-quartz-bhagwan-mahaveer-statue",
+      "permanent": true
+    },
+    {
+      "source": "/product/rose-quartz-mahaveer",
+      "destination": "/product/rose-quartz-bhagwan-mahaveer-statue",
+      "permanent": true
+    },
+    {
+      "source": "/product/lapis-lazuli-shivlnga/:path*",
+      "destination": "/product/lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva",
+      "permanent": true
+    },
+    {
+      "source": "/product/lapis-lazuli-shivlnga",
+      "destination": "/product/lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva",
+      "permanent": true
+    },
+    {
+      "source": "/product/natural-rose-quartz-shree-yantra/:path*",
+      "destination": "/product/crystal-shree-yantra",
+      "permanent": true
+    },
+    {
+      "source": "/product/natural-rose-quartz-shree-yantra",
+      "destination": "/product/crystal-shree-yantra",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/assets/index-:hash.css",
@@ -244,11 +316,7 @@
       "destination": "/assets/vendor-swiper.css"
     },
     {
-      "source": "/product-images/:path*",
-      "destination": "https://res.cloudinary.com/dd6akzezt/images/:path*"
-    },
-    {
-      "source": "/((?!images/|assets/|favicon|.*\\.(?:webp|jpg|jpeg|png|svg|ico|txt|xml|json|tsv)).*)",
+      "source": "/((?!images/|assets/|favicon|products/detail|product/detail|contents|wp-content|wp-includes|wp-admin|information|CSFTop|renga|product-category|product-tag|hg|shop/userreview|shop/storeSearch|.*\\.(?:webp|jpg|jpeg|png|svg|ico|txt|xml|json|tsv|html)).*)",
       "destination": "/index.html"
     }
   ]
