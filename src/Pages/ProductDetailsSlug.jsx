@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import API from "../api/axios";
 import { formatPrice } from "../utils/price";
@@ -56,11 +56,11 @@ const ProductDetails = () => {
 
   const [activeTab, setActiveTab] = useState("description");
 
-  const cleanSlug = React.useMemo(() => {
+  const cleanSlug = useMemo(() => {
     return resolveProductSlug(String(slug || "").trim().toLowerCase().replace(/^\/product\//, "").replace(/\/$/, ""));
   }, [slug]);
 
-  const fallbackProduct = React.useMemo(() => {
+  const fallbackProduct = useMemo(() => {
     const leg = getLegacyProductBySlug(cleanSlug);
     return leg ? getStandardizedProduct(leg) : null;
   }, [cleanSlug]);

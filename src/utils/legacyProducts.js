@@ -2204,12 +2204,6 @@ export const LEGACY_PRODUCT_MAP = new Map(
   LEGACY_PRODUCTS.map(p => [p.slug, p])
 );
 
-export function getLegacyProductBySlug(slug) {
-  if (!slug) return null;
-  const cleanSlug = String(slug).trim().toLowerCase().replace(/^\/product\//, "").replace(/\/$/, "");
-  return LEGACY_PRODUCT_MAP.get(cleanSlug) || null;
-}
-
 export const SLUG_ALIASES = {
   "red-jasper-gemston-shivling": "natural-red-jasper-gemstone-shivling",
   "rose-quartz-ganesh-with-gold-painting": "rose-quartz-ganesha-with-gold-painted",
@@ -2220,4 +2214,17 @@ export function resolveProductSlug(slug) {
   if (!slug) return "";
   const clean = String(slug).trim().toLowerCase().replace(/^\/product\//, "").replace(/\/$/, "");
   return SLUG_ALIASES[clean] || clean;
+}
+
+export function getLegacyProductBySlug(slug) {
+  if (!slug) return null;
+  const cleanSlug = String(slug).trim().toLowerCase().replace(/^\/product\//, "").replace(/\/$/, "");
+  if (LEGACY_PRODUCT_MAP.has(cleanSlug)) return LEGACY_PRODUCT_MAP.get(cleanSlug);
+
+  for (const [oldSlug, newSlug] of Object.entries(SLUG_ALIASES)) {
+    if (newSlug === cleanSlug && LEGACY_PRODUCT_MAP.has(oldSlug)) {
+      return LEGACY_PRODUCT_MAP.get(oldSlug);
+    }
+  }
+  return null;
 }
