@@ -2000,3 +2000,236 @@ export const generateFusedAIContent = async (productName, categoryName = "") => 
   // Default: Built-in GEO engine
   return { ...verifiedBase, aiEngine: "Verified Built-In Lapidary Engine" };
 };
+
+/**
+ * Generates 4-5 high-converting, diverse H1 options tailored for each product
+ */
+export const generateBestH1Options = ({
+  name = "",
+  categoryName = "",
+  weight = "",
+  size = "",
+  price = 0,
+  originalTitle = "",
+}) => {
+  const cleanName = toProperTitleCase((name || originalTitle || "Gemstone Idol").trim());
+  const text = (cleanName + " " + (originalTitle || "") + " " + (categoryName || "")).toLowerCase();
+  const stoneKey = detectGemstone(cleanName + " " + categoryName);
+  const stone = GEMSTONE_PROFILES[stoneKey] || GEMSTONE_PROFILES.sphatik;
+  const archetype = detectArchetype(cleanName + " " + categoryName);
+  const stoneDisplay = getCleanStoneDisplay(stone?.name || "");
+
+  // Format specs for bracket
+  let specsTag = "";
+  if (weight && weight !== "N/A") {
+    specsTag = weight;
+  } else if (size && size !== "N/A") {
+    specsTag = size;
+  }
+
+  // Detect special attributes
+  const isGold = text.includes("gold painted") || text.includes("gold painting") || text.includes("gold work") || text.includes("24k");
+  const isPanchmukhi = text.includes("panchmukhi") || text.includes("panchamukhi") || text.includes("5 face") || text.includes("five face");
+  const isMukhalingam = text.includes("mukhalingam") || text.includes("shiva face") || text.includes("mukha") || text.includes("ek mukhi");
+  const isLeftTrunk = text.includes("left trunk") || text.includes("left-trunk") || text.includes("vamamukhi");
+  const isMeru = text.includes("meru") || text.includes("3d") || text.includes("pyramid") || archetype === "shree-yantra";
+  const isKamal = text.includes("kamal") || text.includes("lotus");
+
+  // Determine Swaroop / Divine Title & Benefit
+  let deityName = "Sacred Idol";
+  let swaroopName = "Vedic Devotional Idol";
+  let benefitIntent = "Peace & Prosperity";
+
+  if (archetype === "ganesha") {
+    deityName = "Ganesha";
+    swaroopName = isGold ? "24K Gold Work Vighnaharta" : (isLeftTrunk ? "Vamamukhi Siddhi Vinayak" : "Vighnaharta Ganesha Idol");
+    benefitIntent = "Obstacle Removal & Prosperity";
+  } else if (archetype === "shivling") {
+    deityName = "Shivling";
+    swaroopName = isPanchmukhi ? "Pashupatinath Panchmukhi Swaroop" : (isMukhalingam ? "Sacred Shiva Mukhalingam" : "Vedic Jalabhishek Lingam");
+    benefitIntent = "Daily Jalabhishek & Vastu Harmony";
+  } else if (archetype === "shiva") {
+    deityName = "Lord Shiva";
+    swaroopName = "Dhyanaroodha Mahadeva Statue";
+    benefitIntent = "Inner Peace & Spiritual Harmony";
+  } else if (archetype === "shree-yantra") {
+    deityName = "Shree Yantra";
+    swaroopName = isMeru ? "3D Meru Sacred Geometry Yantra" : "Vedic Mahalakshmi Shree Yantra";
+    benefitIntent = "Wealth Magnetism & Cosmic Energy";
+  } else if (archetype === "krishna" || archetype === "radha-krishna") {
+    deityName = "Radha Krishna";
+    swaroopName = "Divine Love & Bhakti Swaroop";
+    benefitIntent = "Marital Harmony & Pure Love";
+  } else if (archetype === "hanuman") {
+    deityName = "Hanuman Ji";
+    swaroopName = "Veer Sankat Mochan Murti";
+    benefitIntent = "Fearless Protection & Strength";
+  } else if (archetype === "lakshmi") {
+    deityName = "Devi Lakshmi";
+    swaroopName = "Ashta Lakshmi Dhan Swaroop";
+    benefitIntent = "Financial Abundance & Good Luck";
+  } else if (archetype === "saraswati") {
+    deityName = "Devi Saraswati";
+    swaroopName = "Veena Vadini Gyan Swaroop";
+    benefitIntent = "Academic Brilliance & Wisdom";
+  } else if (archetype === "jain") {
+    deityName = "Jain Tirthankara";
+    swaroopName = "Padmasana Dhyana Swaroop";
+    benefitIntent = "Serene Meditation & Ahimsa Mandir";
+  } else if (archetype === "angel") {
+    deityName = "Guardian Angel";
+    swaroopName = "Reiki Energized Crystal Guardian";
+    benefitIntent = "Auric Shielding & Inner Calm";
+  } else if (archetype === "swan") {
+    deityName = "Swan Pair";
+    swaroopName = "Vastu Love & Harmony Swans";
+    benefitIntent = "Bedroom Vastu & Marital Trust";
+  }
+
+  // 1. High-Converting E-Commerce Title
+  let opt1 = cleanName;
+  if (!opt1.toLowerCase().includes("natural") && !opt1.toLowerCase().includes("certified")) {
+    opt1 = `Natural ${opt1}`;
+  }
+  if (isGold && !opt1.toLowerCase().includes("24k") && !opt1.toLowerCase().includes("gold")) {
+    opt1 += " with 24K Gold Painting";
+  }
+
+  // 2. Sacred Swaroop & Vastu SEO Title
+  let opt2 = `Handcrafted ${stoneDisplay} ${swaroopName}`;
+  if (isGold && !opt2.toLowerCase().includes("gold")) {
+    opt2 += " with 24K Gold Work";
+  }
+  if (isKamal && !opt2.toLowerCase().includes("lotus") && !opt2.toLowerCase().includes("kamal")) {
+    opt2 += " on Lotus Base";
+  }
+
+  // 3. Jaipur Artisan Heritage & Specification Title
+  let specSuffix = specsTag ? ` (${specsTag})` : "";
+  let opt3 = `Authentic Hand-Carved ${stoneDisplay} ${deityName} Statue in Jaipur${specSuffix}`;
+
+  // 4. Divine Blessings & Home Altar Title
+  let opt4 = `Natural ${stoneDisplay} ${deityName} Murti for Home Temple & ${benefitIntent}`;
+
+  // 5. Direct Product Name
+  let opt5 = toProperTitleCase(cleanName);
+
+  return [
+    {
+      id: "commercial-high-ctr",
+      badge: "🏆 High-Converting E-Commerce",
+      badgeColor: "bg-amber-100 text-amber-800 border-amber-300",
+      title: toProperTitleCase(opt1),
+      rationale: "Clean commercial clarity highlighting natural gemstone authenticity and primary finish.",
+    },
+    {
+      id: "sacred-swaroop-seo",
+      badge: "⚡ Sacred Swaroop & Vastu SEO",
+      badgeColor: "bg-purple-100 text-purple-800 border-purple-300",
+      title: toProperTitleCase(opt2),
+      rationale: "Incorporates authentic Sanskrit iconography & Vedic Swaroop for maximum devotional buyer intent.",
+    },
+    {
+      id: "jaipur-heritage",
+      badge: "💎 Jaipur Heritage & Artisanship",
+      badgeColor: "bg-emerald-100 text-emerald-800 border-emerald-300",
+      title: toProperTitleCase(opt3),
+      rationale: "Builds high trust with authentic Jaipur lapidary provenance and verified physical specifications.",
+    },
+    {
+      id: "divine-blessings",
+      badge: "🌟 Home Mandir & Vastu Intent",
+      badgeColor: "bg-indigo-100 text-indigo-800 border-indigo-300",
+      title: toProperTitleCase(opt4),
+      rationale: "Connects emotionally with buyers searching for temple altar consecration and planetary harmony.",
+    },
+    {
+      id: "clean-standard",
+      badge: "🎯 Minimalist Direct Name",
+      badgeColor: "bg-slate-100 text-slate-700 border-slate-300",
+      title: opt5,
+      rationale: "Direct, clean, and unembellished product heading matching catalog naming standard.",
+    },
+  ];
+};
+
+/**
+ * Async H1 Generator with Gemini Live Synthesis & Built-in Fallback
+ */
+export const fetchAIBestH1Options = async ({
+  name = "",
+  categoryName = "",
+  weight = "",
+  size = "",
+  price = 0,
+}) => {
+  const baseOptions = generateBestH1Options({ name, categoryName, weight, size, price });
+  const geminiKey = localStorage.getItem(GEMINI_API_KEY_STORAGE_KEY) || "";
+  if (!geminiKey || !name.trim()) {
+    return baseOptions;
+  }
+
+  try {
+    const prompt = `You are an SEO & E-Commerce heading specialist for "Crystal Jaipuria" (luxury gemstone idols manufacturer in Jaipur).
+Product Name: "${name}"
+Category: "${categoryName}"
+Weight: "${weight}"
+Size: "${size}"
+
+Generate exactly 4 high-converting, distinct H1 Heading options for this product page.
+Option 1: Clean, high-converting E-Commerce H1 (highlighting natural gemstone material and finish)
+Option 2: Sacred Sanskrit Swaroop & Vastu intent H1 (iconography, Vighnaharta/Pashupatinath/etc.)
+Option 3: Jaipur lapidary heritage and craftsmanship H1 (mentioning Jaipur hand-carved & specs)
+Option 4: Home Mandir & spiritual blessing H1 (peace, prosperity, Vastu)
+
+Return ONLY a valid JSON array of 4 objects matching:
+[
+  { "id": "ai-1", "badge": "🏆 AI High-Converting", "title": "...", "rationale": "..." },
+  { "id": "ai-2", "badge": "⚡ AI Sacred Swaroop", "title": "...", "rationale": "..." },
+  { "id": "ai-3", "badge": "💎 AI Jaipur Heritage", "title": "...", "rationale": "..." },
+  { "id": "ai-4", "badge": "🌟 AI Temple Blessings", "title": "...", "rationale": "..." }
+]`;
+
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${geminiKey}`;
+    const res = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: prompt }] }],
+      }),
+    });
+
+    if (res.ok) {
+      const data = await res.json();
+      const raw = data?.candidates?.[0]?.content?.parts?.[0]?.text || "";
+      const match = raw.match(/\[[\s\S]*\]/);
+      if (match) {
+        const parsed = JSON.parse(match[0]);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          return [
+            ...parsed.map((p, idx) => ({
+              id: p.id || `ai-${idx}`,
+              badge: p.badge || "✨ AI Recommendation",
+              badgeColor:
+                idx === 0
+                  ? "bg-amber-100 text-amber-800 border-amber-300"
+                  : idx === 1
+                  ? "bg-purple-100 text-purple-800 border-purple-300"
+                  : idx === 2
+                  ? "bg-emerald-100 text-emerald-800 border-emerald-300"
+                  : "bg-indigo-100 text-indigo-800 border-indigo-300",
+              title: toProperTitleCase(p.title),
+              rationale: p.rationale || "AI-optimized heading for high click-through rate.",
+            })),
+            baseOptions[baseOptions.length - 1],
+          ];
+        }
+      }
+    }
+  } catch (e) {
+    console.warn("Gemini H1 fetch error, using built-in generator:", e);
+  }
+
+  return baseOptions;
+};
+

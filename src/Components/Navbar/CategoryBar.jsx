@@ -125,18 +125,12 @@ const CategoryBar = ({ mobileMenuOpen, setMobileMenuOpen }) => {
           <div className="relative w-80 max-w-[85vw] h-full bg-white shadow-2xl flex flex-col z-10">
             {/* Header */}
             <div className="p-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center">
                 <img
                   src="/logo.jpeg"
                   alt="Crystal Jaipuria - Handcrafted Gemstone Statues & Crystal Manufacturer Jaipur"
                   className="h-9 w-auto object-contain"
                 />
-                <div>
-                  <h3 className="font-bold text-slate-800 text-sm">Crystal Jaipuria</h3>
-                  <p className="text-[10px] text-indigo-600 font-semibold uppercase tracking-wider">
-                    Luxury Handicrafts
-                  </p>
-                </div>
               </div>
               <button
                 onClick={() => setMobileMenuOpen(false)}

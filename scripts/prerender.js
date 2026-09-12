@@ -207,15 +207,15 @@ export const runPrerender = async () => {
 
     let metaTitle = prod.metaTitle || "";
     let metaDesc = prod.metaDescription || "";
-    if (!metaTitle || !metaDesc) {
-      const metaMatch = String(prod.additionalInfo || "").match(/<!-- SEO_META:([\s\S]*?)-->/);
-      if (metaMatch && metaMatch[1]) {
-        try {
-          const parsed = JSON.parse(metaMatch[1]);
-          if (!metaTitle && parsed.metaTitle) metaTitle = parsed.metaTitle;
-          if (!metaDesc && parsed.metaDescription) metaDesc = parsed.metaDescription;
-        } catch (e) {}
-      }
+    let customHeading = prod.heading || prod.h1 || "";
+    const metaMatch = String(prod.additionalInfo || "").match(/<!-- SEO_META:([\s\S]*?)-->/);
+    if (metaMatch && metaMatch[1]) {
+      try {
+        const parsed = JSON.parse(metaMatch[1]);
+        if (!metaTitle && parsed.metaTitle) metaTitle = parsed.metaTitle;
+        if (!metaDesc && parsed.metaDescription) metaDesc = parsed.metaDescription;
+        if (!customHeading && (parsed.heading || parsed.h1)) customHeading = parsed.heading || parsed.h1;
+      } catch (e) {}
     }
 
     const cleanDesc = (prod.detail || prod.description || cleanName)
@@ -358,7 +358,7 @@ export const runPrerender = async () => {
             </div>
             <div style="flex:1.2;min-width:280px;">
               <span style="display:inline-block;background:#fef3c7;color:#92400e;font-size:12px;font-weight:700;padding:4px 12px;border-radius:9999px;margin-bottom:12px;letter-spacing:0.5px;">100% NATURAL CERTIFIED GEMSTONE</span>
-              <h1 style="font-size:26px;font-weight:800;color:#0f172a;line-height:1.3;margin-bottom:12px;">${escapeHtml(displayTitle)}</h1>
+              <h1 style="font-size:26px;font-weight:800;color:#0f172a;line-height:1.3;margin-bottom:12px;">${escapeHtml(customHeading || displayTitle)}</h1>
               <div style="font-size:28px;font-weight:800;color:#047857;margin-bottom:16px;">₹${priceNum.toLocaleString("en-IN")}</div>
               <p style="font-size:15px;color:#475569;line-height:1.6;margin-bottom:24px;">${escapeHtml(cleanDesc.slice(0, 350))}...</p>
               <div style="display:flex;gap:12px;flex-wrap:wrap;">

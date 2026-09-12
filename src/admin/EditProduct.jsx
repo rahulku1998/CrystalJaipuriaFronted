@@ -28,6 +28,7 @@ const EditProduct = () => {
 
   const [form, setForm] = useState({
     name: "",
+    heading: "",
     description: "",
     price: "",
     discountPrice: "",
@@ -130,6 +131,7 @@ const EditProduct = () => {
 
       setForm({
         name: p.name || "",
+        heading: unpacked.heading || p.heading || p.h1 || "",
         description: p.description || "",
         price: p.price || "",
         discountPrice: p.discountPrice || "",
@@ -300,6 +302,9 @@ const EditProduct = () => {
       formData.append("faqs", JSON.stringify(validFaqs));
       formData.append("metaTitle", metaTitle);
       formData.append("metaDescription", metaDescription);
+      if (form.heading?.trim()) {
+        formData.append("h1", form.heading.trim());
+      }
 
       // Pack metadata into additionalInfo so backend MongoDB persistence is 100% guaranteed!
       const packedAdditionalInfo = packProductMetadata({
@@ -307,6 +312,7 @@ const EditProduct = () => {
         faqs: validFaqs,
         metaTitle,
         metaDescription,
+        heading: form.heading?.trim() || "",
         galleryOrder: gallery.filter((item) => item.type === "existing").map((item) => item.url)
       });
       formData.append("additionalInfo", packedAdditionalInfo);

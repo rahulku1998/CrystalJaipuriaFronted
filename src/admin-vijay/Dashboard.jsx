@@ -18,7 +18,6 @@ import {
   FaChartLine,
   FaShieldAlt
 } from "react-icons/fa";
-import { LEGACY_PRODUCTS } from "../utils/legacyProducts";
 import { MARKET_OPPORTUNITIES, scanLiveMarketOpportunities } from "../utils/marketDemandScout.js";
 import MarketDemandScoutModal from "../Components/MarketDemandScoutModal.jsx";
 
@@ -46,16 +45,7 @@ const AdminDashboard = () => {
   const [scanningAi, setScanningAi] = useState(false);
   const navigate = useNavigate();
 
-  const normalize = (str) => (str || "").toLowerCase().replace(/[^a-z0-9]/g, "");
-  const liveSlugs = new Set(products.map((p) => (p.slug || "").toLowerCase().trim()));
-  const liveNormalizedNames = new Set(products.map((p) => normalize(p.name)));
-  const pendingCount = LEGACY_PRODUCTS.filter((p) => {
-    if (liveSlugs.has((p.slug || "").toLowerCase().trim())) return false;
-    if (liveNormalizedNames.has(normalize(p.name))) return false;
-    const nameSlug = (p.name || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-    if (liveSlugs.has(nameSlug)) return false;
-    return true;
-  }).length;
+
 
   const fetchData = async () => {
     try {
@@ -161,15 +151,7 @@ const AdminDashboard = () => {
           >
             📊 Dashboard
           </button>
-          <button
-            className="adminBtn block w-full text-left cursor-pointer bg-amber-500/20 text-amber-300 font-bold border border-amber-400/40 rounded-xl px-3 py-2.5 flex items-center justify-between"
-            onClick={() => navigate("/admin-vijay/pending-products")}
-          >
-            <span>⏳ Pending Listing</span>
-            <span className="bg-amber-400 text-slate-950 text-xs px-2 py-0.5 rounded-full font-extrabold">
-              {pendingCount}
-            </span>
-          </button>
+
           <button
             className="adminBtn cursor-pointer text-indigo-600 hover:text-indigo-800"
             onClick={() => navigate("/admin-vijay/add-product")}

@@ -1,15 +1,18 @@
-import { getProductMetaTitle } from "./seo.js";
 import {
   generateCompetitorMeta,
   detectGemstone,
   detectArchetype,
   GEMSTONE_PROFILES,
   toProperTitleCase,
+  generateBestH1Options,
+  fetchAIBestH1Options,
 } from "./aiGenerator.js";
 
+export { generateBestH1Options, fetchAIBestH1Options };
+
 /**
- * Packs FAQs, custom Meta Title, and custom Meta Description into product data
- * for guaranteed persistence even without backend schema changes.
+ * Packs FAQs, custom Meta Title, custom Meta Description, and custom H1 Heading
+ * into product data for guaranteed persistence even without backend schema changes.
  */
 export const packProductMetadata = ({
   additionalInfo = "",
@@ -17,6 +20,8 @@ export const packProductMetadata = ({
   metaTitle = "",
   metaDescription = "",
   galleryOrder = [],
+  heading = "",
+  h1 = "",
 }) => {
   // Strip any old embedded metadata first
   let cleanInfo = (additionalInfo || "")
@@ -36,11 +41,13 @@ export const packProductMetadata = ({
     packed += `\n<!-- FAQS_JSON:${JSON.stringify(validFaqs)} -->`;
   }
 
-  if (metaTitle.trim() || metaDescription.trim()) {
-    const metaObj = {
-      metaTitle: metaTitle.trim(),
-      metaDescription: metaDescription.trim(),
-    };
+  const cleanHeading = (heading || h1 || "").trim();
+  if (metaTitle.trim() || metaDescription.trim() || cleanHeading) {
+    const metaObj = {};
+    if (metaTitle.trim()) metaObj.metaTitle = metaTitle.trim();
+    if (metaDescription.trim()) metaObj.metaDescription = metaDescription.trim();
+    if (cleanHeading) metaObj.heading = cleanHeading;
+
     packed += `\n<!-- SEO_META:${JSON.stringify(metaObj)} -->`;
   }
 
@@ -52,7 +59,7 @@ export const packProductMetadata = ({
 };
 
 /**
- * Unpacks FAQs, custom Meta Title, and custom Meta Description from product data
+ * Unpacks FAQs, custom Meta Title, custom Meta Description, and custom H1 Heading from product data
  */
 export const unpackProductMetadata = (product) => {
   if (!product) {
@@ -60,6 +67,7 @@ export const unpackProductMetadata = (product) => {
       faqs: [],
       metaTitle: "",
       metaDescription: "",
+      heading: "",
       galleryOrder: [],
       cleanAdditionalInfo: "",
     };
@@ -69,6 +77,7 @@ export const unpackProductMetadata = (product) => {
   let faqs = [];
   let metaTitle = product.metaTitle || "";
   let metaDescription = product.metaDescription || "";
+  let heading = product.heading || product.h1 || "";
   let galleryOrder = [];
 
   // 1. Direct field check
@@ -96,6 +105,7 @@ export const unpackProductMetadata = (product) => {
       const parsedMeta = JSON.parse(metaMatch[1]);
       if (!metaTitle && parsedMeta.metaTitle) metaTitle = parsedMeta.metaTitle;
       if (!metaDescription && parsedMeta.metaDescription) metaDescription = parsedMeta.metaDescription;
+      if (!heading && (parsedMeta.heading || parsedMeta.h1)) heading = parsedMeta.heading || parsedMeta.h1;
     } catch (e) {
       console.warn("Failed to parse embedded SEO meta:", e);
     }
@@ -120,6 +130,7 @@ export const unpackProductMetadata = (product) => {
     faqs: Array.isArray(faqs) ? faqs : [],
     metaTitle: metaTitle || "",
     metaDescription: metaDescription || "",
+    heading: heading || "",
     galleryOrder: Array.isArray(galleryOrder) ? galleryOrder : [],
     cleanAdditionalInfo,
   };
@@ -142,4 +153,5 @@ export const generateSuperMetaTags = (
 
   return generateCompetitorMeta(cleanName, stone, archetype, weight, size, price, productName);
 };
+
 

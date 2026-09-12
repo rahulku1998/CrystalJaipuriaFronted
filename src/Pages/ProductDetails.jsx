@@ -135,6 +135,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
           faqs: unpacked.faqs,
           metaTitle: unpacked.metaTitle,
           metaDescription: unpacked.metaDescription,
+          heading: unpacked.heading || data.heading || data.h1 || "",
           additionalInfo: unpacked.cleanAdditionalInfo || data.additionalInfo
         };
         standardized = getStandardizedProduct(mergedData);
@@ -184,8 +185,9 @@ Hello Crystal Jaipuria, I have a query regarding this product.
     return <NotFound />;
   }
 
+  const displayH1 = product.heading || product.h1 || product.name;
   const canonicalUrl = `https://www.crystaljaipuria.com/product/${product.slug || id}`;
-  const metaTitle = product.metaTitle || getProductMetaTitle(product.name, product.slug || id);
+  const metaTitle = product.metaTitle || getProductMetaTitle(displayH1 || product.name, product.slug || id);
   const metaDescription = product.metaDescription || getProductMetaDescription(product);
   const schema = getProductSchema(product, canonicalUrl);
   const whatsappMessage = `Hi Crystal Jaipuria, I am interested in buying "${product.name}". Please share more details on this Number .`;
@@ -271,7 +273,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
           <div className="flex flex-col justify-between">
             <div>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
-                {product.name}
+                {displayH1}
               </h1>
 
               {product.price && (
@@ -850,6 +852,9 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                   </form>
                 </>
               )}
+            </div>
+          </div>
+        )}
 
         {/* INSTANT BUY NOW / CHECKOUT MODAL (Google Merchant Center Requirement) */}
         <BuyNowModal

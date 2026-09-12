@@ -49,7 +49,6 @@ const VijayDeleteProduct = lazy(() => import('./admin-vijay/DeleteProduct'));
 const VijayCategories = lazy(() => import('./admin-vijay/Categories'));
 const VijayBlogs = lazy(() => import('./admin-vijay/Blog'));
 const VijaySubCategories = lazy(() => import('./admin-vijay/SubCategories'));
-const VijayPendingProducts = lazy(() => import('./admin-vijay/PendingProducts'));
 
 // Cleanup helper for legacy WordPress query params like ?page_id=10981 or ?p=123
 const LegacyQueryCleaner = () => {
@@ -206,11 +205,7 @@ function App() {
             <VijayDashboard />
           </VijayProtectedRoute>
         } />
-        <Route path="/admin-vijay/pending-products" element={
-          <VijayProtectedRoute>
-            <VijayPendingProducts />
-          </VijayProtectedRoute>
-        } />
+        <Route path="/admin-vijay/pending-products" element={<Navigate to="/admin-vijay/dashboard" replace />} />
         <Route path="/admin-vijay/add-product" element={
           <VijayProtectedRoute>
             <VijayAddProduct />

@@ -18,6 +18,7 @@ const AddProduct = () => {
 
   const [form,setForm] = useState({
     name:"",
+    heading:"",
     description:"",
     price:"",
     discountPrice:"",
@@ -233,6 +234,10 @@ const handleCategoryChange = async (e) => {
       formData.append("faqs", JSON.stringify(validFaqs));
       formData.append("metaTitle", metaTitle || `${form.name.trim()} | Crystal Jaipuria`);
       formData.append("metaDescription", metaDescription || finalDetail.slice(0, 160));
+      if (form.heading?.trim()) {
+        formData.append("heading", form.heading.trim());
+        formData.append("h1", form.heading.trim());
+      }
 
       // Pack metadata into additionalInfo for guaranteed MongoDB persistence
       const packedAdditionalInfo = packProductMetadata({
@@ -240,6 +245,7 @@ const handleCategoryChange = async (e) => {
         faqs: validFaqs,
         metaTitle: metaTitle || `${form.name.trim()} | Crystal Jaipuria`,
         metaDescription: metaDescription || finalDetail.slice(0, 160),
+        heading: form.heading?.trim() || "",
       });
       formData.append("additionalInfo", packedAdditionalInfo);
 

@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import API from "../api/axios";
 import RichTextEditor from "../Components/RichTextEditor";
 import AIAssistantModal from "../Components/AIAssistantModal";
+import H1SuggestionsModal from "../Components/H1SuggestionsModal";
 import {
   packProductMetadata,
   generateSuperMetaTags,
@@ -20,6 +21,7 @@ import {
   FaMagic,
   FaSearch,
   FaSpinner,
+  FaHeading,
 } from "react-icons/fa";
 
 const AddProduct = () => {
@@ -29,6 +31,7 @@ const AddProduct = () => {
 
   const [form, setForm] = useState(() => ({
     name: prefill?.name || "",
+    heading: prefill?.heading || prefill?.h1 || "",
     description: prefill?.description || "",
     price: prefill?.price ? String(prefill.price) : "",
     discountPrice: prefill?.discountPrice ? String(prefill.discountPrice) : "",
@@ -51,6 +54,7 @@ const AddProduct = () => {
       : [{ question: "", answer: "" }]
   );
   const [showAiModal, setShowAiModal] = useState(Boolean(location.state?.openAi));
+  const [showH1Modal, setShowH1Modal] = useState(false);
   const [generatingDetail, setGeneratingDetail] = useState(false);
   const [categories, setCategories] = useState([]);
   const [subCategories, setSubCategories] = useState([]);
@@ -431,6 +435,10 @@ const handleGenerateShortDetail = async () => {
       formData.append("faqs", JSON.stringify(validFaqs));
       formData.append("metaTitle", metaTitle || `${form.name.trim()} | Crystal Jaipuria`);
       formData.append("metaDescription", metaDescription || finalDetail.slice(0, 160));
+      if (form.heading?.trim()) {
+        formData.append("heading", form.heading.trim());
+        formData.append("h1", form.heading.trim());
+      }
 
       // Pack metadata into additionalInfo for guaranteed MongoDB persistence
       const packedAdditionalInfo = packProductMetadata({
@@ -438,6 +446,7 @@ const handleGenerateShortDetail = async () => {
         faqs: validFaqs,
         metaTitle: metaTitle || `${form.name.trim()} | Crystal Jaipuria`,
         metaDescription: metaDescription || finalDetail.slice(0, 160),
+        heading: form.heading?.trim() || "",
       });
       formData.append("additionalInfo", packedAdditionalInfo);
 
@@ -474,7 +483,7 @@ const handleGenerateShortDetail = async () => {
       setMetaDescription("");
       setFaqs([{ question: "", answer: "" }]);
       setGallery([]);
-      navigate(prefill ? "/admin-vijay/pending-products" : "/admin-vijay/dashboard");
+      navigate("/admin-vijay/dashboard");
 
     } catch (err) {
       console.error("Add product error:", err);
@@ -536,6 +545,7 @@ const handleGenerateShortDetail = async () => {
             setForm((prev) => ({ ...prev, name: formattedName }));
             autoDetectCategory(formattedName, true);
           }}
+          onApplyH1={(h1Text) => setForm((prev) => ({ ...prev, heading: h1Text }))}
           onApplyCategory={(prodName) => autoDetectCategory(prodName, true)}
           onApplyDetail={(detailText) => setForm((prev) => ({ ...prev, detail: detailText }))}
           onApplyPrice={(price) => setForm((prev) => ({ ...prev, price: String(price) }))}
@@ -544,6 +554,18 @@ const handleGenerateShortDetail = async () => {
           onApplyWeight={(w) => setForm((prev) => ({ ...prev, weight: w }))}
           onApplySize={(s) => setForm((prev) => ({ ...prev, size: s }))}
           onApplyAdditionalInfo={(info) => setForm((prev) => ({ ...prev, additionalInfo: info }))}
+        />
+
+        <H1SuggestionsModal
+          isOpen={showH1Modal}
+          onClose={() => setShowH1Modal(false)}
+          productName={form.name || prefill?.name || ""}
+          categoryName={categories.find((c) => c._id === form.categoryId)?.name || prefill?.categoryName || ""}
+          weight={form.weight || ""}
+          size={form.size || ""}
+          price={form.price || form.discountPrice || 0}
+          currentHeading={form.heading || ""}
+          onSelectH1={(chosenH1) => setForm((prev) => ({ ...prev, heading: chosenH1 }))}
         />
 
         <div className="bg-white rounded-3xl shadow-xl p-8">
@@ -567,6 +589,80 @@ const handleGenerateShortDetail = async () => {
               onChange={handleChange}
               placeholder="Enter product name"
             />
+
+            {/* Product Page H1 Heading with AI Best Options */}
+            <div className="bg-gradient-to-r from-purple-50/80 via-indigo-50/50 to-slate-50 border border-purple-200/80 rounded-2xl p-4 sm:p-5 shadow-2xs space-y-2.5">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div>
+                  <label className="font-bold text-gray-800 text-sm sm:text-base flex items-center gap-2">
+                    <FaHeading className="text-purple-600 text-sm" />
+                    <span>Product Page H1 Heading (Custom H1)</span>
+                    <span className="text-[10px] uppercase font-bold tracking-wider text-purple-700 bg-purple-100 px-2 py-0.5 rounded-full">
+                      Optional
+                    </span>
+                  </label>
+                  <p className="text-xs text-gray-500 mt-0.5">
+                    Product detail page par main &lt;h1&gt; heading kya dikhana hai. Blank chhodne par default Product Name show hoga.
+                  </p>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (!form.name.trim()) {
+                      alert("Please enter Product Name first to generate AI H1 options!");
+                      return;
+                    }
+                    setShowH1Modal(true);
+                  }}
+                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-gradient-to-r from-purple-600 via-indigo-600 to-indigo-700 hover:from-purple-700 hover:to-indigo-800 text-white text-xs font-bold shadow-xs transition active:scale-95 cursor-pointer"
+                >
+                  <FaMagic className="text-amber-300 text-xs" />
+                  <span>✨ AI Best H1 Options</span>
+                </button>
+              </div>
+
+              <div className="relative">
+                <input
+                  type="text"
+                  name="heading"
+                  value={form.heading || ""}
+                  onChange={handleChange}
+                  placeholder={
+                    form.name
+                      ? `Default: "${form.name}" (or click '✨ AI Best H1 Options' above)`
+                      : "e.g. Handcrafted Rose Quartz Ganesha Idol with 24K Gold Work"
+                  }
+                  className="w-full rounded-xl border border-gray-300 bg-white px-4 py-2.5 text-sm outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 pr-16"
+                />
+                {form.heading && (
+                  <button
+                    type="button"
+                    onClick={() => setForm((prev) => ({ ...prev, heading: "" }))}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-red-500 text-xs font-semibold cursor-pointer"
+                    title="Reset to default Product Name"
+                  >
+                    Reset
+                  </button>
+                )}
+              </div>
+
+              <div className="flex flex-wrap items-center justify-between gap-1 text-[11px] text-gray-500 px-1">
+                <span>
+                  Active &lt;h1&gt; on Page:{" "}
+                  <strong className="text-gray-800 font-semibold">
+                    {form.heading?.trim() || form.name?.trim() || "Product Name"}
+                  </strong>
+                </span>
+                {form.heading?.trim() ? (
+                  <span className="text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                    ✓ Custom H1 Active ({form.heading.length} chars)
+                  </span>
+                ) : (
+                  <span className="text-gray-400">Using standard Product Name</span>
+                )}
+              </div>
+            </div>
 
             <div>
               <div className="flex flex-wrap items-center justify-between gap-2 mb-2">

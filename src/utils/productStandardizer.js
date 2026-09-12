@@ -453,21 +453,10 @@ export const getStandardizedProduct = (product) => {
     : [{ url: `/images/${slug}.webp`, public_id: `products/${slug}` }];
 
   if (MULTI_IMAGE_SLUGS.has(slug)) {
-    // Only synthesize secondary studio view if the product doesn't already have multiple images from DB
+    // If product only has 1 image from DB, attach the distinct secondary studio view (-2.webp)
     if (standardizedImages.length <= 1) {
-      // 1st / Featured image is ALWAYS the pristine new studio photo
       const featuredStudioImg = { url: `/images/${slug}.webp`, public_id: `products/${slug}` };
-
-      // 2nd / Alternate image is the secondary studio view or original image
-      let secondImgUrl = `/images/${slug}-2.webp`;
-      if (standardizedImages.length > 0) {
-        const rawFirst = typeof standardizedImages[0] === "string" ? standardizedImages[0] : standardizedImages[0]?.url;
-        if (rawFirst && !rawFirst.includes(`/images/${slug}.webp`)) {
-          secondImgUrl = rawFirst;
-        }
-      }
-      const secondImg = { url: secondImgUrl, public_id: `products/${slug}-2` };
-
+      const secondImg = { url: `/images/${slug}-2.webp`, public_id: `products/${slug}-2` };
       standardizedImages = [featuredStudioImg, secondImg];
     }
   }

@@ -15,6 +15,7 @@ import {
   generateGeminiContent,
   generateFusedAIContent,
   toProperTitleCase,
+  generateBestH1Options,
   GEMINI_API_KEY_STORAGE_KEY,
   OPENAI_API_KEY_STORAGE_KEY
 } from "../utils/aiGenerator";
@@ -30,6 +31,7 @@ const AIAssistantModal = ({
   onApplyFaqs,
   onApplyMeta,
   onApplyName,
+  onApplyH1,
   onApplyDetail,
   onApplyWeight,
   onApplySize,
@@ -81,12 +83,23 @@ const AIAssistantModal = ({
     setResult(null);
     try {
       const data = await generateFusedAIContent(name, category);
-      if (data?.fullDescription) {
-        const derivedSlug = (name || "")
-          .toLowerCase()
-          .replace(/[^a-z0-9]+/g, "-")
-          .replace(/^-+|-+$/g, "");
-        data.fullDescription = autoInjectInternalLinks(data.fullDescription, derivedSlug, 3, name);
+      if (data) {
+        if (data.fullDescription) {
+          const derivedSlug = (name || "")
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/^-+|-+$/g, "");
+          data.fullDescription = autoInjectInternalLinks(data.fullDescription, derivedSlug, 3, name);
+        }
+        const h1Options = generateBestH1Options({
+          name: data.cleanName || name,
+          categoryName: category,
+          weight: data.weight,
+          size: data.size,
+          price: data.price || data.suggestedPrice,
+        });
+        data.heading = h1Options[0]?.title || data.cleanName || name;
+        data.h1Options = h1Options;
       }
       setResult(data);
     } catch (err) {
@@ -94,6 +107,14 @@ const AIAssistantModal = ({
       alert("Generation failed. Please try again.");
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleApplyH1 = () => {
+    if (result?.heading && onApplyH1) {
+      onApplyH1(result.heading);
+      setAppliedSection("h1");
+      setTimeout(() => setAppliedSection(""), 2500);
     }
   };
 
@@ -204,6 +225,9 @@ const AIAssistantModal = ({
     }
     if (onApplyName && result?.cleanName) {
       onApplyName(result.cleanName);
+    }
+    if (onApplyH1 && result?.heading) {
+      onApplyH1(result.heading);
     }
     if (onApplyCategory && (result?.cleanName || name)) {
       onApplyCategory(result?.cleanName || name);
@@ -684,6 +708,47 @@ const AIAssistantModal = ({
                         className="max-h-48 overflow-y-auto p-3 text-xs text-gray-700 bg-stone-50 rounded-xl border border-stone-200 leading-relaxed prose prose-sm max-w-none"
                         dangerouslySetInnerHTML={{ __html: result.additionalInfo }}
                       />
+                    </div>
+                  )}
+
+                  {/* Recommended H1 Heading Card */}
+                  {result.heading && (
+                    <div className="bg-purple-50/70 border border-purple-200 rounded-2xl p-4 shadow-2xs space-y-2">
+                      <div className="flex items-center justify-between border-b border-purple-100 pb-2">
+                        <span className="text-xs font-extrabold uppercase tracking-wider text-purple-900 flex items-center gap-1.5">
+                          <span>✨ Recommended Product Page H1 Heading</span>
+                        </span>
+                        <div className="flex items-center gap-2">
+                          {onApplyH1 && (
+                            <button
+                              type="button"
+                              onClick={handleApplyH1}
+                              className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-purple-600 text-white hover:bg-purple-700 flex items-center gap-1 cursor-pointer transition shadow-2xs"
+                            >
+                              {appliedSection === "h1" ? "✔ Applied H1" : "Apply H1"}
+                            </button>
+                          )}
+                          <button
+                            type="button"
+                            onClick={() => handleCopy(result.heading, "h1_copy")}
+                            className="text-xs font-semibold text-gray-600 hover:text-purple-700 flex items-center gap-1 cursor-pointer"
+                          >
+                            {copiedSection === "h1_copy" ? (
+                              <span className="text-green-600 font-bold flex items-center gap-1">✔ Copied</span>
+                            ) : (
+                              <>
+                                <FaCopy /> Copy H1
+                              </>
+                            )}
+                          </button>
+                        </div>
+                      </div>
+                      <div className="text-base font-bold text-gray-900">
+                        {result.heading}
+                      </div>
+                      <p className="text-xs text-gray-500">
+                        Top conversion &amp; Google SEO H1 heading for the main product page.
+                      </p>
                     </div>
                   )}
 

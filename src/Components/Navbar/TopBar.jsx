@@ -135,7 +135,7 @@ const TopBar = ({ onOpenMenu }) => {
 
           <p
             className="
-            block
+            hidden sm:block
             text-[7px]
             sm:text-[9px]
             md:text-xs

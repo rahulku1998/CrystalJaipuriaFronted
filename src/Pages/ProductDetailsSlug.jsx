@@ -349,9 +349,11 @@ Hello Crystal Jaipuria, I have a query regarding this product.
     return <NotFound />;
   }
 
+  const unpackedMetadata = unpackProductMetadata(product);
+  const displayH1 = product.heading || product.h1 || unpackedMetadata.heading || product.name;
   const canonicalUrl = `https://www.crystaljaipuria.com/product/${product.slug || slug}`;
-  const metaTitle = product.metaTitle || getProductMetaTitle(product.name, product.slug || slug);
-  const metaDescription = product.metaDescription || getProductMetaDescription(product);
+  const metaTitle = product.metaTitle || unpackedMetadata.metaTitle || getProductMetaTitle(displayH1 || product.name, product.slug || slug);
+  const metaDescription = product.metaDescription || unpackedMetadata.metaDescription || getProductMetaDescription(product);
   const schema = getProductSchema(product, canonicalUrl);
   const whatsappMessage = `Hi Crystal Jaipuria, I am interested in buying "${product.name}". Please share more details on this Number .`;
   const whatsappLink = `https://wa.me/918306317032?text=${encodeURIComponent(whatsappMessage)}`;
@@ -492,7 +494,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
           <div className="flex flex-col justify-between">
             <div>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
-                {product.name}
+                {displayH1}
               </h1>
 
               {product.price && (

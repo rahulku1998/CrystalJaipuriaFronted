@@ -90,53 +90,8 @@ const GoogleReviewsSection = () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
-  // Google Review Schema JSON-LD for rich snippet stars
-  const reviewSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://www.crystaljaipuria.com/#localbusiness",
-    "name": "Crystal Jaipuria",
-    "image": "https://www.crystaljaipuria.com/logo.png",
-    "url": "https://www.crystaljaipuria.com/",
-    "telephone": GOOGLE_BUSINESS_STATS.phone,
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": GOOGLE_BUSINESS_STATS.address.streetAddress,
-      "addressLocality": GOOGLE_BUSINESS_STATS.address.addressLocality,
-      "addressRegion": GOOGLE_BUSINESS_STATS.address.addressRegion,
-      "postalCode": GOOGLE_BUSINESS_STATS.address.postalCode,
-      "addressCountry": GOOGLE_BUSINESS_STATS.address.addressCountry,
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": String(GOOGLE_BUSINESS_STATS.rating),
-      "reviewCount": String(GOOGLE_BUSINESS_STATS.reviewCount),
-      "bestRating": "5",
-      "worstRating": "1",
-    },
-    "review": reviews.map((r) => ({
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": r.name,
-      },
-      "datePublished": "2026-04-01",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": String(r.rating),
-        "bestRating": "5",
-      },
-      "reviewBody": r.review,
-    })),
-  };
-
   return (
     <section className="relative overflow-hidden bg-[#faf9f6] py-10 sm:py-16 lg:py-20 border-t border-stone-200">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
-      />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Unified Header & Rating Bar */}
