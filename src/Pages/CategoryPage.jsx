@@ -135,18 +135,35 @@ export const STATIC_CATEGORIES = {
   },
 };
 
-export const getStaticCategoryProducts = (catSlug) => {
-  if (!catSlug) return [];
-  const clean = String(catSlug).toLowerCase().trim();
-  const staticCat = STATIC_CATEGORIES[clean];
-  const catId = staticCat?._id;
-  return LEGACY_PRODUCTS.filter(
-    (p) =>
-      p.categoryId?.slug === clean ||
-      p.categoryId?._id === catId ||
-      (p.categoryId?.name && p.categoryId.name.toLowerCase().replace(/[^a-z0-9]+/g, "-") === clean)
-  );
+// In-memory cache for instant tab transitions
+let categoryMemoryCache = {
+  categories: null,
+  subCategories: null,
+  products: null,
+  timestamp: 0,
 };
+
+const ProductCardSkeleton = () => (
+  <div className="bg-white rounded-xl sm:rounded-2xl border border-stone-100 shadow-xs overflow-hidden flex flex-col h-full animate-pulse">
+    <div className="w-full aspect-square bg-stone-100/80 relative"></div>
+    <div className="p-3 sm:p-4 flex flex-col flex-grow justify-between gap-2.5">
+      <div className="h-4 bg-stone-200/80 rounded-md w-4/5"></div>
+      <div className="h-3 bg-stone-100 rounded-md w-3/5"></div>
+      <div className="mt-2 pt-2 border-t border-stone-100 flex items-center justify-between">
+        <div className="h-5 bg-stone-200/80 rounded-md w-16"></div>
+        <div className="h-4 bg-stone-100 rounded-md w-14"></div>
+      </div>
+    </div>
+  </div>
+);
+
+const SubCategorySkeleton = () => (
+  <div className="space-y-2 animate-pulse">
+    <div className="h-9 bg-stone-100/90 rounded-xl w-full"></div>
+    <div className="h-9 bg-stone-100/90 rounded-xl w-full"></div>
+    <div className="h-9 bg-stone-100/90 rounded-xl w-full"></div>
+  </div>
+);
 
 const CategoryPage = () => {
   const { slug } = useParams();
@@ -154,28 +171,56 @@ const CategoryPage = () => {
 
   const cleanSlug = useMemo(() => String(slug || "").toLowerCase().trim(), [slug]);
   const staticCat = useMemo(() => STATIC_CATEGORIES[cleanSlug] || null, [cleanSlug]);
-  const staticProducts = useMemo(() => getStaticCategoryProducts(cleanSlug), [cleanSlug]);
 
-  const [category, setCategory] = useState(() => staticCat);
-  const [subCategories, setSubCategories] = useState([]);
-  const [products, setProducts] = useState(() => staticProducts);
-  const [allCategoryProducts, setAllCategoryProducts] = useState(() => staticProducts);
-  const [loadingProducts, setLoadingProducts] = useState(() => !staticCat);
+  const getCachedCategoryData = () => {
+    if (!categoryMemoryCache.products || !categoryMemoryCache.categories) return null;
+    const cat = categoryMemoryCache.categories.find((c) => c.slug === cleanSlug) || staticCat;
+    if (!cat) return null;
+
+    const subs = (categoryMemoryCache.subCategories || []).filter(
+      (s) =>
+        s.categoryId?._id === cat._id ||
+        s.categoryId === cat._id ||
+        (s.categoryId?.slug && s.categoryId.slug === cat.slug)
+    );
+
+    const prods = categoryMemoryCache.products.filter((p) => {
+      const pCatId = p.categoryId?._id || p.categoryId;
+      const pCatSlug = p.categoryId?.slug;
+      return (
+        pCatId === cat._id ||
+        (pCatSlug && pCatSlug === cat.slug) ||
+        (p.categoryName && p.categoryName.toLowerCase() === cat.name?.toLowerCase())
+      );
+    });
+
+    return { cat, subs, prods };
+  };
+
+  const initialCached = getCachedCategoryData();
+
+  const [category, setCategory] = useState(() => initialCached?.cat || staticCat);
+  const [subCategories, setSubCategories] = useState(() => initialCached?.subs || []);
+  const [products, setProducts] = useState(() => initialCached?.prods || []);
+  const [allCategoryProducts, setAllCategoryProducts] = useState(() => initialCached?.prods || []);
+  const [loadingProducts, setLoadingProducts] = useState(() => !initialCached);
   const [activeSubCategory, setActiveSubCategory] = useState(null);
 
   useEffect(() => {
-    if (staticCat) {
-      setCategory(staticCat);
-      setProducts(staticProducts);
-      setAllCategoryProducts(staticProducts);
+    const cached = getCachedCategoryData();
+    if (cached) {
+      setCategory(cached.cat);
+      setSubCategories(cached.subs);
+      setProducts(cached.prods);
+      setAllCategoryProducts(cached.prods);
       setLoadingProducts(false);
     } else {
-      setCategory(null);
+      setCategory(staticCat);
+      setSubCategories([]);
       setProducts([]);
       setAllCategoryProducts([]);
       setLoadingProducts(true);
     }
-    setSubCategories([]);
     setActiveSubCategory(null);
     fetchData();
   }, [cleanSlug]);
@@ -215,19 +260,35 @@ const CategoryPage = () => {
 
   const fetchData = async () => {
     try {
-      const [catRes, subRes, productRes] = await Promise.all([
-        API.get("/categories"),
-        API.get("/subcategories"),
-        API.get("/products"),
-      ]);
+      const now = Date.now();
+      let catData = categoryMemoryCache.categories;
+      let subData = categoryMemoryCache.subCategories;
+      let prodData = categoryMemoryCache.products;
+
+      if (!catData || !subData || !prodData || now - categoryMemoryCache.timestamp > 60000) {
+        const [catRes, subRes, productRes] = await Promise.all([
+          API.get("/categories"),
+          API.get("/subcategories"),
+          API.get("/products"),
+        ]);
+        catData = catRes.data?.categories || [];
+        subData = subRes.data?.subCategories || [];
+        prodData = productRes.data?.products || productRes.data || [];
+
+        categoryMemoryCache = {
+          categories: catData,
+          subCategories: subData,
+          products: prodData,
+          timestamp: now,
+        };
+      }
 
       const currentCat =
-        (catRes.data?.categories || []).find((c) => c.slug === cleanSlug) || staticCat;
+        catData.find((c) => c.slug === cleanSlug) || staticCat;
 
       if (!currentCat) {
         // Check if slug matches a product
-        const allProds = productRes.data?.products || productRes.data || [];
-        const matchedProd = allProds.find((p) => p.slug === cleanSlug || p._id === cleanSlug);
+        const matchedProd = prodData.find((p) => p.slug === cleanSlug || p._id === cleanSlug);
         if (matchedProd) {
           navigate(`/product/${matchedProd.slug || matchedProd._id}`, { replace: true });
           return;
@@ -248,7 +309,7 @@ const CategoryPage = () => {
 
       setCategory(currentCat);
 
-      const filteredSubs = (subRes.data?.subCategories || []).filter(
+      const filteredSubs = subData.filter(
         (s) =>
           s.categoryId?._id === currentCat._id ||
           s.categoryId === currentCat._id ||
@@ -256,7 +317,7 @@ const CategoryPage = () => {
       );
       setSubCategories(filteredSubs);
 
-      const liveProducts = (productRes.data?.products || []).filter((p) => {
+      const liveProducts = prodData.filter((p) => {
         const pCatId = p.categoryId?._id || p.categoryId;
         const pCatSlug = p.categoryId?.slug;
         return (
@@ -266,15 +327,9 @@ const CategoryPage = () => {
         );
       });
 
-      if (liveProducts.length > 0) {
-        setProducts(liveProducts);
-        setAllCategoryProducts(liveProducts);
-        trackCategoryView(currentCat.name, liveProducts);
-      } else if (staticProducts.length > 0) {
-        setProducts(staticProducts);
-        setAllCategoryProducts(staticProducts);
-        trackCategoryView(currentCat.name, staticProducts);
-      }
+      setProducts(liveProducts);
+      setAllCategoryProducts(liveProducts);
+      trackCategoryView(currentCat.name, liveProducts);
     } catch (err) {
       console.log("Category fetch error:", err);
     } finally {
@@ -329,12 +384,18 @@ const CategoryPage = () => {
             All <span className="text-amber-800">{category.name}</span>
           </h1>
           <span className="text-xs sm:text-sm text-gray-500 font-medium">
-            {products.length} Products
+            {loadingProducts ? "Loading..." : `${products.length} Products`}
           </span>
         </div>
 
         {/* Mobile Horizontal Subcategory Filter Bar */}
-        {subCategories.length > 0 && (
+        {loadingProducts ? (
+          <div className="flex md:hidden overflow-x-auto gap-2 pb-2 mb-4 scrollbar-none animate-pulse">
+            <div className="h-7 bg-stone-200/80 rounded-full w-20"></div>
+            <div className="h-7 bg-stone-200/80 rounded-full w-24"></div>
+            <div className="h-7 bg-stone-200/80 rounded-full w-20"></div>
+          </div>
+        ) : subCategories.length > 0 ? (
           <div className="flex md:hidden overflow-x-auto gap-2 pb-2 mb-4 scrollbar-none">
             <button
               onClick={() => {
@@ -378,7 +439,7 @@ const CategoryPage = () => {
               );
             })}
           </div>
-        )}
+        ) : null}
 
         <div className="flex flex-col md:flex-row gap-6">
           {/* Desktop Left Sidebar */}
@@ -387,7 +448,9 @@ const CategoryPage = () => {
               Sub Categories
             </h2>
 
-            {subCategories.length === 0 ? (
+            {loadingProducts ? (
+              <SubCategorySkeleton />
+            ) : subCategories.length === 0 ? (
               <p className="text-sm text-gray-400">No Subcategories Found</p>
             ) : (
               <div className="space-y-1.5">
@@ -436,7 +499,13 @@ const CategoryPage = () => {
 
           {/* Right Products Content - 2-2 grid on mobile */}
           <div className="md:w-3/4 w-full">
-            {products.length === 0 ? (
+            {loadingProducts ? (
+              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
+                {[1, 2, 3, 4, 5, 6].map((n) => (
+                  <ProductCardSkeleton key={`skeleton-${n}`} />
+                ))}
+              </div>
+            ) : products.length === 0 ? (
               <div className="text-center py-16 bg-white rounded-2xl border border-stone-200 text-stone-500 text-sm">
                 No Products Found in this category
               </div>

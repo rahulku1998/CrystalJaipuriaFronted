@@ -230,78 +230,122 @@ export const runPrerender = async () => {
       metaDesc = cleanDesc.slice(0, 160);
     }
 
-    const schema = {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "@id": `${BASE_URL}/product/${slug}#product`,
-      name: displayTitle,
-      image: [imageUrl],
-      description: cleanDesc.slice(0, 500),
-      sku: prod._id,
-      mpn: slug,
-      brand: {
-        "@type": "Brand",
-        name: "Crystal Jaipuria",
-      },
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: "4.9",
-        reviewCount: "40",
-        bestRating: "5",
-        worstRating: "1",
-      },
-      offers: {
-        "@type": "Offer",
-        url: `${BASE_URL}/product/${slug}`,
-        priceCurrency: "INR",
-        price: priceNum,
-        priceValidUntil: "2027-12-31",
-        validFrom: "2024-01-01",
-        itemCondition: "https://schema.org/NewCondition",
-        availability:
-          prod.stock === 0 || prod.stock === "0"
-            ? "https://schema.org/OutOfStock"
-            : "https://schema.org/InStock",
-        seller: {
-          "@type": "Organization",
+    let productFaqs = [];
+    const faqMatch = String(prod.additionalInfo || "").match(/<!-- FAQS_JSON:([\s\S]*?)-->/);
+    if (faqMatch && faqMatch[1]) {
+      try {
+        productFaqs = JSON.parse(faqMatch[1]);
+      } catch (e) {}
+    }
+
+    const graphItems = [
+      {
+        "@type": "Product",
+        "@id": `${BASE_URL}/product/${slug}#product`,
+        name: displayTitle,
+        image: [imageUrl],
+        description: cleanDesc.slice(0, 500),
+        sku: prod._id,
+        mpn: slug,
+        brand: {
+          "@type": "Brand",
           name: "Crystal Jaipuria",
         },
-        hasMerchantReturnPolicy: {
-          "@type": "MerchantReturnPolicy",
-          applicableCountry: "IN",
-          returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-          merchantReturnDays: 7,
-          returnMethod: "https://schema.org/ReturnByMail",
-          returnFees: "https://schema.org/FreeReturn",
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "4.9",
+          reviewCount: "40",
+          bestRating: "5",
+          worstRating: "1",
         },
-        shippingDetails: {
-          "@type": "OfferShippingDetails",
-          shippingRate: {
-            "@type": "MonetaryAmount",
-            value: "0",
-            currency: "INR",
+        offers: {
+          "@type": "Offer",
+          url: `${BASE_URL}/product/${slug}`,
+          priceCurrency: "INR",
+          price: priceNum,
+          priceValidUntil: "2027-12-31",
+          validFrom: "2024-01-01",
+          itemCondition: "https://schema.org/NewCondition",
+          availability:
+            prod.stock === 0 || prod.stock === "0"
+              ? "https://schema.org/OutOfStock"
+              : "https://schema.org/InStock",
+          seller: {
+            "@type": "Organization",
+            name: "Crystal Jaipuria",
           },
-          shippingDestination: {
-            "@type": "DefinedRegion",
-            addressCountry: "IN",
+          hasMerchantReturnPolicy: {
+            "@type": "MerchantReturnPolicy",
+            applicableCountry: "IN",
+            returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+            merchantReturnDays: 7,
+            returnMethod: "https://schema.org/ReturnByMail",
+            returnFees: "https://schema.org/FreeReturn",
           },
-          deliveryTime: {
-            "@type": "ShippingDeliveryTime",
-            handlingTime: {
-              "@type": "QuantitativeValue",
-              minValue: 1,
-              maxValue: 2,
-              unitCode: "d",
+          shippingDetails: {
+            "@type": "OfferShippingDetails",
+            shippingRate: {
+              "@type": "MonetaryAmount",
+              value: "0",
+              currency: "INR",
             },
-            transitTime: {
-              "@type": "QuantitativeValue",
-              minValue: 3,
-              maxValue: 5,
-              unitCode: "d",
+            shippingDestination: {
+              "@type": "DefinedRegion",
+              addressCountry: "IN",
+            },
+            deliveryTime: {
+              "@type": "ShippingDeliveryTime",
+              handlingTime: {
+                "@type": "QuantitativeValue",
+                minValue: 1,
+                maxValue: 2,
+                unitCode: "d",
+              },
+              transitTime: {
+                "@type": "QuantitativeValue",
+                minValue: 3,
+                maxValue: 5,
+                unitCode: "d",
+              },
             },
           },
         },
       },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${BASE_URL}/product/${slug}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: `${BASE_URL}/` },
+          { "@type": "ListItem", position: 2, name: "Shop", item: `${BASE_URL}/shop` },
+          ...(prod.categoryId?.name && prod.categoryId?.slug ? [{
+            "@type": "ListItem",
+            position: 3,
+            name: prod.categoryId.name,
+            item: `${BASE_URL}/${prod.categoryId.slug}`
+          }] : []),
+          { "@type": "ListItem", position: (prod.categoryId?.slug ? 4 : 3), name: cleanName, item: `${BASE_URL}/product/${slug}` }
+        ]
+      }
+    ];
+
+    if (Array.isArray(productFaqs) && productFaqs.length > 0) {
+      graphItems.push({
+        "@type": "FAQPage",
+        "@id": `${BASE_URL}/product/${slug}#faq`,
+        mainEntity: productFaqs.map(f => ({
+          "@type": "Question",
+          name: f.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: f.answer
+          }
+        }))
+      });
+    }
+
+    const schema = {
+      "@context": "https://schema.org",
+      "@graph": graphItems,
     };
 
     const bodyPreview = `
@@ -410,6 +454,32 @@ export const runPrerender = async () => {
       </div>
     `.trim();
 
+    const catSchema = {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "@id": `${BASE_URL}/${cat.slug}#collection`,
+      name: catTitle,
+      description: catDesc,
+      url: `${BASE_URL}/${cat.slug}`,
+      breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: `${BASE_URL}/` },
+          { "@type": "ListItem", position: 2, name: "Shop", item: `${BASE_URL}/shop` },
+          { "@type": "ListItem", position: 3, name: catName, item: `${BASE_URL}/${cat.slug}` }
+        ]
+      },
+      mainEntity: {
+        "@type": "ItemList",
+        itemListElement: catProducts.map((p, idx) => ({
+          "@type": "ListItem",
+          position: idx + 1,
+          url: `${BASE_URL}/product/${p.slug || p._id}`,
+          name: p.name
+        }))
+      }
+    };
+
     const catHtml = buildPageHtml({
       title: catTitle,
       description: catDesc,
@@ -417,6 +487,7 @@ export const runPrerender = async () => {
       ogTitle: catTitle,
       ogDescription: catDesc,
       ogImage: `${BASE_URL}/logo.png`,
+      schema: catSchema,
       bodyContent: categoryBodyPreview,
     });
 
