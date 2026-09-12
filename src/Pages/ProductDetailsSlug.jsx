@@ -35,6 +35,7 @@ import {
 import SEO from "../Components/SEO";
 import BuyNowModal from "../Components/BuyNowModal";
 import BrandLoader from "../Components/BrandLoader";
+import ProductCard from "../Components/ProductCard";
 
 const ProductDetails = () => {
   const { slug } = useParams();
@@ -130,7 +131,9 @@ Hello Crystal Jaipuria, I have a query regarding this product.
       const catId = prod?.categoryId?._id || (typeof prod?.categoryId === 'string' ? prod.categoryId : null);
       if (!catId) return;
       const res = await API.get(`/products/category/${catId}`);
-      const related = (res.data?.products || []).filter((p) => (p.slug || p._id) !== (prod.slug || prod._id));
+      const related = (res.data?.products || [])
+        .filter((p) => (p.slug || p._id) !== (prod.slug || prod._id))
+        .slice(0, 5);
       setRelatedProducts(related);
     } catch (err) {
       console.log("Error fetching related products:", err);
@@ -882,38 +885,9 @@ Hello Crystal Jaipuria, I have a query regarding this product.
               </Link>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
-              {relatedProducts.map((item) => {
-                const itemImg = Array.isArray(item.images)
-                  ? (typeof item.images[0] === 'string' ? item.images[0] : (item.images[0]?.url || "/Gemstone.webp"))
-                  : (typeof item.images === 'string' ? item.images : "/Gemstone.webp");
-                return (
-                  <div
-                    key={item._id}
-                    onClick={() => navigate(`/product/${item.slug || item._id}`)}
-                    className="bg-white rounded-2xl border border-slate-200 hover:border-indigo-300 hover:shadow-lg cursor-pointer overflow-hidden transition-all duration-300 group"
-                  >
-                    <div className="aspect-square bg-slate-50/60 flex items-center justify-center p-3 overflow-hidden border-b border-slate-100">
-                      <img
-                        src={itemImg}
-                        alt={`${item.name} - Handcrafted Gemstone Idol by Crystal Jaipuria`}
-                        className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                    <div className="p-3.5 sm:p-4">
-                      <h3 className="font-semibold text-xs sm:text-sm text-slate-800 line-clamp-2 group-hover:text-indigo-600 transition-colors">
-                        {item.name}
-                      </h3>
-                      <div className="mt-2.5">
-                        {item.price && (
-                          <span className="font-bold text-slate-900 text-sm sm:text-base">
-                            {formatPrice(item.price)}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
+              {relatedProducts.slice(0, 5).map((item) => (
+                <ProductCard key={item._id || item.slug} product={item} />
+              ))}
             </div>
           </div>
         </div>
