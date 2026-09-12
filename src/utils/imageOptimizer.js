@@ -1,3 +1,67 @@
+export const PROTECTED_STUDIO_SLUGS = new Set([
+  "natural-amethyst-gemstone-shiva-face-idol",
+  "gemston-ruby-shree-yantra",
+  "green-aventurine-parshvanath-ji-statue",
+  "green-jade-goddess-maa-saraswati-carving",
+  "green-jade-mahalakshmi-ji-idol",
+  "green-jade-radha-krishna-statue-carving",
+  "natural-howlite-gemstone-shivling",
+  "natural-labradorite-gemstone-shivling",
+  "natural-lapis-lazuli-lord-krishna-statue",
+  "natural-lapis-lazuli-shiva-face-carving-idol",
+  "natural-opal-stone-shivling",
+  "rose-quartz-carved-shree-krishna-ji-idol",
+  "rose-quartz-carved-shree-krishan-ji-idol",
+  "natural-rose-quartz-pair-of-swan",
+  "rose-quartz-shiva-statue-with-gold-painting",
+  "smokey-quartz-crystal-shiva-face-idol",
+  "natural-tiger-eye-gemstone-shivling",
+  "mahalakshmi-idol-in-natural-columbian-green-jade"
+]);
+
+/**
+ * Universal bulletproof Product Image resolver
+ * Prioritizes live, fresh Cloudinary URLs so newly uploaded/reordered images
+ * in admin panel display instantly without duplicate or stale local static files.
+ */
+export const getProductImageUrl = (product, index = 0, width = 800) => {
+  if (!product) return "/Gemstone.webp";
+
+  const images = Array.isArray(product.images)
+    ? product.images
+    : (product.image ? [product.image] : []);
+
+  const imgItem = images[index] || (index === 0 ? images[0] : null);
+  const rawUrl = typeof imgItem === "string" ? imgItem : (imgItem?.url || "");
+
+  const cleanSlug = (product.slug || product.name || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+
+  // Protected legacy studio photos (only for primary #1 view)
+  if (index === 0 && cleanSlug && PROTECTED_STUDIO_SLUGS.has(cleanSlug)) {
+    return `/images/${cleanSlug}.webp`;
+  }
+
+  // Live Cloudinary or remote HTTP image URL
+  if (rawUrl && (rawUrl.startsWith("http://") || rawUrl.startsWith("https://"))) {
+    return optimizeCloudinaryUrl(rawUrl, width);
+  }
+
+  // Already a local static path
+  if (rawUrl && (rawUrl.startsWith("/images/") || rawUrl.startsWith("/assets/"))) {
+    return rawUrl;
+  }
+
+  // Fallback to static clean slug or Gemstone placeholder
+  if (cleanSlug) {
+    return index === 0 ? `/images/${cleanSlug}.webp` : `/images/${cleanSlug}-${index + 1}.webp`;
+  }
+
+  return "/Gemstone.webp";
+};
+
 /**
  * Clean Static WebP Image Delivery Utility
  * Delivers clean static image paths: /images/<clean-slug>.webp

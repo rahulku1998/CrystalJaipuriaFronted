@@ -10,7 +10,7 @@ import {
   FaMoneyBillWave,
   FaQrcode
 } from "react-icons/fa";
-import { optimizeCloudinaryUrl } from "../utils/imageOptimizer";
+import { optimizeCloudinaryUrl, getProductImageUrl } from "../utils/imageOptimizer";
 
 const BuyNowModal = ({ isOpen, onClose, product }) => {
   const [quantity, setQuantity] = useState(1);
@@ -40,12 +40,7 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
   }
 
   const totalPrice = unitPrice * quantity;
-  const cleanSlug = (product.slug || product.name || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-  const rawImage = Array.isArray(product.images) && product.images.length > 0
-    ? (typeof product.images[0] === "string" ? product.images[0] : product.images[0]?.url)
-    : "";
-  const optimizedRaw = optimizeCloudinaryUrl(rawImage, 160);
-  const productImage = cleanSlug ? `/images/${cleanSlug}.webp` : (optimizedRaw || "/Gemstone.webp");
+  const productImage = getProductImageUrl(product, 0, 160);
 
   const handlePlaceOrder = (e) => {
     e.preventDefault();

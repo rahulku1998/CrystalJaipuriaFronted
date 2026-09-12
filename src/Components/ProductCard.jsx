@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { formatPrice } from "../utils/price";
-import { optimizeCloudinaryUrl } from "../utils/imageOptimizer";
+import { optimizeCloudinaryUrl, getProductImageUrl } from "../utils/imageOptimizer";
 import { getStandardizedProduct } from "../utils/productStandardizer";
 
 const ProductCard = ({ product }) => {
@@ -11,17 +11,8 @@ const ProductCard = ({ product }) => {
     ? item.images[0]
     : (item.images?.[0]?.url || "/Gemstone.webp");
 
-  // Fast on-the-fly Cloudinary optimization for instant crisp delivery
-  const optimizedRaw = (rawImage && rawImage.includes("res.cloudinary.com") && rawImage.includes("/image/upload/"))
-    ? (rawImage.includes("/f_auto") ? rawImage : rawImage.replace("/image/upload/", "/image/upload/f_auto,q_auto:good,w_500,c_limit/"))
-    : rawImage;
-
-  const cleanSlug = (item.slug || item.name || "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "");
-
-  const initialSrc = cleanSlug ? `/images/${cleanSlug}.webp` : optimizedRaw;
+  const initialSrc = getProductImageUrl(item, 0, 500);
+  const fallbackSrc = optimizeCloudinaryUrl(rawImage, 500);
 
   return (
     <Link
@@ -37,10 +28,8 @@ const ProductCard = ({ product }) => {
           height="400"
           src={initialSrc}
           onError={(e) => {
-            // If static /images/<slug>.webp doesn't exist on server yet (newly added product),
-            // immediately fallback to live Cloudinary image URL!
-            if (e.target.src !== optimizedRaw && optimizedRaw) {
-              e.target.src = optimizedRaw;
+            if (fallbackSrc && e.target.src !== fallbackSrc) {
+              e.target.src = fallbackSrc;
             } else if (!e.target.src.endsWith("/Gemstone.webp")) {
               e.target.src = "/Gemstone.webp";
             }

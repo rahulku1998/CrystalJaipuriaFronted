@@ -2,7 +2,7 @@ import React, { useEffect, useState, useMemo } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import API from "../api/axios";
 import { formatPrice } from "../utils/price";
-import { optimizeCloudinaryUrl } from "../utils/imageOptimizer";
+import { optimizeCloudinaryUrl, getProductImageUrl } from "../utils/imageOptimizer";
 import { unpackProductMetadata } from "../utils/productMetadata";
 import { getStandardizedProduct, getSacredShloka } from "../utils/productStandardizer";
 import { getLegacyProductBySlug, resolveProductSlug } from "../utils/legacyProducts";
@@ -304,8 +304,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
         fetchRelatedProducts(standardized);
 
         setSelectedImageIndex(0);
-        const cleanProductSlug = (standardized.slug || standardized.name || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-        setSelectedImage(`/images/${cleanProductSlug}.webp`);
+        setSelectedImage(getProductImageUrl(standardized, 0, 800));
       }
     } catch (err) {
       console.error("Error in fetchProduct:", err);
@@ -314,7 +313,8 @@ Hello Crystal Jaipuria, I have a query regarding this product.
       if (legacyFallback) {
         const std = getStandardizedProduct(legacyFallback);
         setProduct(std);
-        setSelectedImage(`/images/${cleanSlug}.webp`);
+        setSelectedImageIndex(0);
+        setSelectedImage(getProductImageUrl(std, 0, 800));
       } else {
         setProduct(null);
       }
@@ -420,16 +420,13 @@ Hello Crystal Jaipuria, I have a query regarding this product.
               {(() => {
                 const activeImg = (Array.isArray(product.images) && product.images[selectedImageIndex]) || product.images?.[0];
                 const activeRaw = typeof activeImg === 'string' ? activeImg : (activeImg?.url || "");
-                const cleanSlug = (product.slug || product.name || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-                const activeClean = selectedImageIndex === 0 
-                  ? `/images/${cleanSlug}.webp` 
-                  : `/images/${cleanSlug}-${selectedImageIndex + 1}.webp`;
+                const mainSrc = getProductImageUrl(product, selectedImageIndex, 800);
                 const optimizedFallback = optimizeCloudinaryUrl(activeRaw, 800);
 
                 return (
                   <img
                     key={`main-img-${selectedImageIndex}`}
-                    src={activeClean}
+                    src={mainSrc}
                     onError={(e) => {
                       if (optimizedFallback && e.target.src !== optimizedFallback) {
                         e.target.src = optimizedFallback;
@@ -458,19 +455,16 @@ Hello Crystal Jaipuria, I have a query regarding this product.
               <div className="flex gap-3 mt-4 overflow-x-auto pb-2">
                 {product.images.map((img, idx) => {
                   const rawSrc = typeof img === 'string' ? img : (img?.url || '');
-                  const cleanSlug = (product.slug || product.name || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-                  const thumbClean = idx === 0 
-                    ? `/images/${cleanSlug}.webp` 
-                    : `/images/${cleanSlug}-${idx + 1}.webp`;
-                  const thumbOptimized = optimizeCloudinaryUrl(rawSrc, 160);
+                  const thumbSrc = getProductImageUrl(product, idx, 160);
+                  const thumbFallback = optimizeCloudinaryUrl(rawSrc, 160);
 
                   return (
                     <img
-                      key={img.public_id || idx}
-                      src={thumbClean}
+                      key={img.public_id || `thumb-${idx}`}
+                      src={thumbSrc}
                       onError={(e) => {
-                        if (thumbOptimized && e.target.src !== thumbOptimized) {
-                          e.target.src = thumbOptimized;
+                        if (thumbFallback && e.target.src !== thumbFallback) {
+                          e.target.src = thumbFallback;
                         } else if (!e.target.src.endsWith("/Gemstone.webp")) {
                           e.target.src = "/Gemstone.webp";
                         }
@@ -482,10 +476,10 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                       decoding="async"
                       onClick={() => {
                         setSelectedImageIndex(idx);
-                        setSelectedImage(thumbClean);
+                        setSelectedImage(thumbSrc);
                       }}
                       className={`w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-xl border-2 cursor-pointer transition ${
-                        selectedImageIndex === idx ? "border-amber-700 ring-2 ring-amber-200" : "border-gray-200 hover:border-gray-400"
+                        selectedImageIndex === idx ? "border-amber-700 ring-2 ring-amber-200 shadow-sm" : "border-gray-200 hover:border-gray-400"
                       }`}
                     />
                   );
