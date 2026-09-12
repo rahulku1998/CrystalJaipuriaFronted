@@ -29,7 +29,10 @@ const AIAssistantModal = ({
   onApplyFaqs,
   onApplyMeta,
   onApplyName,
-  onApplyDetail
+  onApplyDetail,
+  onApplyWeight,
+  onApplySize,
+  onApplyAdditionalInfo
 }) => {
   const [activeTab, setActiveTab] = useState("generate");
   const [name, setName] = useState(productName || "");
@@ -137,6 +140,30 @@ const AIAssistantModal = ({
     }
   };
 
+  const handleApplySpecs = () => {
+    let applied = false;
+    if (result?.weight && onApplyWeight) {
+      onApplyWeight(result.weight);
+      applied = true;
+    }
+    if (result?.size && onApplySize) {
+      onApplySize(result.size);
+      applied = true;
+    }
+    if (applied) {
+      setAppliedSection("specs");
+      setTimeout(() => setAppliedSection(""), 2500);
+    }
+  };
+
+  const handleApplyAdditionalInfo = () => {
+    if (result?.additionalInfo && onApplyAdditionalInfo) {
+      onApplyAdditionalInfo(result.additionalInfo);
+      setAppliedSection("addinfo");
+      setTimeout(() => setAppliedSection(""), 2500);
+    }
+  };
+
   const handleApplyAll = () => {
     if (result?.fullDescription && onApplyDescription) {
       onApplyDescription(result.fullDescription);
@@ -155,6 +182,15 @@ const AIAssistantModal = ({
     }
     if (onApplyDetail && result?.citationHook) {
       onApplyDetail(result.citationHook);
+    }
+    if (onApplyWeight && result?.weight) {
+      onApplyWeight(result.weight);
+    }
+    if (onApplySize && result?.size) {
+      onApplySize(result.size);
+    }
+    if (onApplyAdditionalInfo && result?.additionalInfo) {
+      onApplyAdditionalInfo(result.additionalInfo);
     }
     setAppliedSection("all");
     setTimeout(() => {
@@ -467,12 +503,91 @@ const AIAssistantModal = ({
                     </div>
                   )}
 
+                  {/* Physical Specifications (Weight & Size) */}
+                  {(result.weight || result.size) && (
+                    <div className="bg-white border border-amber-200/80 rounded-2xl p-4 shadow-2xs space-y-3 bg-gradient-to-r from-amber-50/40 via-white to-orange-50/30">
+                      <div className="flex items-center justify-between border-b border-amber-100 pb-2">
+                        <span className="text-xs font-extrabold uppercase tracking-wider text-amber-900 flex items-center gap-1.5">
+                          <span>⚖️ Market-Analyzed Physical Specifications</span>
+                        </span>
+                        {(onApplyWeight || onApplySize) && (
+                          <button
+                            type="button"
+                            onClick={handleApplySpecs}
+                            className="text-xs font-semibold px-3 py-1 rounded-lg bg-amber-500 hover:bg-amber-600 text-white flex items-center gap-1 cursor-pointer transition shadow-xs"
+                          >
+                            {appliedSection === "specs" ? <FaCheck /> : <FaMagic />}
+                            <span>{appliedSection === "specs" ? "Applied to Form!" : "Apply Weight & Size"}</span>
+                          </button>
+                        )}
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                        <div className="bg-white p-3 rounded-xl border border-amber-200 shadow-2xs">
+                          <span className="text-gray-500 font-semibold block mb-0.5">Estimated Weight</span>
+                          <span className="text-sm font-bold text-gray-900">{result.weight || "N/A"}</span>
+                        </div>
+                        <div className="bg-white p-3 rounded-xl border border-amber-200 shadow-2xs">
+                          <span className="text-gray-500 font-semibold block mb-0.5">Estimated Size &amp; Dimensions</span>
+                          <span className="text-sm font-bold text-gray-900">{result.size || "N/A"}</span>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Competitor-Analyzed Additional Information (12 Specifications) */}
+                  {result.additionalInfo && (
+                    <div className="bg-white border border-gray-200 rounded-2xl p-4 shadow-2xs space-y-3">
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b pb-2">
+                        <div>
+                          <span className="text-xs font-extrabold uppercase tracking-wider text-indigo-700 flex items-center gap-1.5">
+                            <span>📋 Additional Information (Competitor-Researched Specs)</span>
+                          </span>
+                          <p className="text-[11px] text-gray-500 mt-0.5">
+                            12-point breakdown: mineral hardness, Shilpa Shastra carving, Vastu direction, care vidhi &amp; origin
+                          </p>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          {onApplyAdditionalInfo && (
+                            <button
+                              type="button"
+                              onClick={handleApplyAdditionalInfo}
+                              className="text-xs font-semibold px-3 py-1 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white flex items-center gap-1 cursor-pointer transition shadow-xs"
+                            >
+                              {appliedSection === "addinfo" ? <FaCheck /> : <FaMagic />}
+                              <span>{appliedSection === "addinfo" ? "Applied to Specs!" : "Apply to Additional Info"}</span>
+                            </button>
+                          )}
+                          <button
+                            type="button"
+                            onClick={() => handleCopy(result.additionalInfo, "addinfo_copy")}
+                            className="text-xs font-semibold text-gray-600 hover:text-indigo-600 flex items-center gap-1 cursor-pointer"
+                          >
+                            {copiedSection === "addinfo_copy" ? (
+                              <span className="text-green-600 font-bold flex items-center gap-1">✔ Copied</span>
+                            ) : (
+                              <>
+                                <FaCopy /> Copy Specs HTML
+                              </>
+                            )}
+                          </button>
+                        </div>
+                      </div>
+                      <div
+                        className="max-h-48 overflow-y-auto p-3 text-xs text-gray-700 bg-stone-50 rounded-xl border border-stone-200 leading-relaxed prose prose-sm max-w-none"
+                        dangerouslySetInnerHTML={{ __html: result.additionalInfo }}
+                      />
+                    </div>
+                  )}
+
                   {/* Google SERP Snippet Preview */}
                   {(result.metaTitle || result.metaDescription) && (
                     <div className="bg-white border border-gray-200 rounded-2xl p-4 shadow-2xs space-y-2">
                       <div className="flex items-center justify-between border-b pb-2">
-                        <span className="text-xs font-extrabold uppercase tracking-wider text-gray-600 flex items-center gap-1.5">
+                        <span className="text-xs font-extrabold uppercase tracking-wider text-gray-600 flex items-center gap-2">
                           <span>🔍 Google Search Result Snippet Preview</span>
+                          <span className="text-[10px] bg-amber-100 text-amber-900 border border-amber-300 font-extrabold px-2 py-0.5 rounded-full">
+                            High-CTR Competitor Formula
+                          </span>
                         </span>
                         <div className="flex items-center gap-2">
                           {onApplyMeta && (
@@ -647,7 +762,7 @@ const AIAssistantModal = ({
               className="inline-flex items-center gap-2 bg-gradient-to-r from-green-600 to-emerald-700 hover:from-green-700 hover:to-emerald-800 text-white font-bold text-sm px-6 py-2.5 rounded-xl shadow-lg transition-transform active:scale-95 cursor-pointer"
             >
               <FaCheck />
-              <span>{appliedSection === "all" ? "Applied Successfully!" : "Apply All (Description + FAQs)"}</span>
+              <span>{appliedSection === "all" ? "Applied Successfully!" : "Apply All (Specs, SEO, Desc & FAQs)"}</span>
             </button>
           )}
         </div>

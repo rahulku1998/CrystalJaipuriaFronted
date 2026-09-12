@@ -378,6 +378,9 @@ const EditProduct = () => {
   }}
   onApplyName={(formattedName) => setForm((prev) => ({ ...prev, name: formattedName }))}
   onApplyDetail={(detailText) => setForm((prev) => ({ ...prev, detail: detailText }))}
+  onApplyWeight={(w) => setForm((prev) => ({ ...prev, weight: w }))}
+  onApplySize={(s) => setForm((prev) => ({ ...prev, size: s }))}
+  onApplyAdditionalInfo={(info) => setForm((prev) => ({ ...prev, additionalInfo: info }))}
 />
 
 <div className="bg-white rounded-3xl shadow-xl p-8">

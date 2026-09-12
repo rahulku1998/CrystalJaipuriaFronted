@@ -1,4 +1,11 @@
 import { getProductMetaTitle } from "./seo.js";
+import {
+  generateCompetitorMeta,
+  detectGemstone,
+  detectArchetype,
+  GEMSTONE_PROFILES,
+  toProperTitleCase,
+} from "./aiGenerator.js";
 
 /**
  * Packs FAQs, custom Meta Title, and custom Meta Description into product data
@@ -121,17 +128,11 @@ export const unpackProductMetadata = (product) => {
 /**
  * Generate 1-Click Super SEO Meta Title and Description for Admin Panel
  */
-export const generateSuperMetaTags = (productName = "") => {
-  const cleanName = productName.trim() || "Gemstone God Statue";
+export const generateSuperMetaTags = (productName = "", categoryName = "") => {
+  const cleanName = toProperTitleCase(productName.trim() || "Gemstone Sacred Idol");
+  const stoneKey = detectGemstone(cleanName + " " + categoryName);
+  const archetype = detectArchetype(cleanName + " " + categoryName);
+  const stone = GEMSTONE_PROFILES[stoneKey] || GEMSTONE_PROFILES.sphatik;
 
-  // Generate Super Title
-  const superTitle = getProductMetaTitle(cleanName);
-
-  // Generate High-Converting Super Meta Description (~150-158 characters)
-  const superDescription = `Buy authentic handcrafted ${cleanName} from Crystal Jaipuria, Jaipur (est. 1989). 100% natural certified gemstone for temple, Vastu & gifting. Worldwide shipping.`;
-
-  return {
-    metaTitle: superTitle,
-    metaDescription: superDescription,
-  };
+  return generateCompetitorMeta(cleanName, stone, archetype, "", "");
 };
