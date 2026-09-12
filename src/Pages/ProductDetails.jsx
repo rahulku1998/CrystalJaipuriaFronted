@@ -696,9 +696,9 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                     className="w-full h-36 sm:h-44 lg:h-48 object-contain bg-gray-50 p-2"
                   />
                   <div className="p-3 sm:p-4">
-                    <h3 className="font-semibold text-sm sm:text-base line-clamp-2 text-gray-800">
+                    <p className="font-semibold text-sm sm:text-base line-clamp-2 text-gray-800">
                       {item.name}
-                    </h3>
+                    </p>
                     <div className="mt-2">
                       {item.price && (
                         <span className="font-bold text-indigo-600 text-sm sm:text-base">

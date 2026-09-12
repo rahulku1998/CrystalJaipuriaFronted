@@ -3,9 +3,11 @@ import { formatPrice } from "../utils/price";
 import { optimizeCloudinaryUrl, getProductImageUrl } from "../utils/imageOptimizer";
 import { getStandardizedProduct } from "../utils/productStandardizer";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, headingTag = "p" }) => {
   const item = getStandardizedProduct(product);
   if (!item) return null;
+
+  const HeadingTag = headingTag || "p";
 
   const rawImage = typeof item.images?.[0] === 'string'
     ? item.images[0]
@@ -46,9 +48,9 @@ const ProductCard = ({ product }) => {
 
       {/* Content */}
       <div className="p-2.5 sm:p-3.5 flex flex-col flex-grow justify-between">
-        <h2 className="text-xs sm:text-sm md:text-base font-bold text-gray-800 group-hover:text-amber-800 transition-colors line-clamp-2 leading-snug min-h-[2rem] sm:min-h-[2.5rem]">
+        <HeadingTag className="text-xs sm:text-sm md:text-base font-bold text-gray-800 group-hover:text-amber-800 transition-colors line-clamp-2 leading-snug min-h-[2rem] sm:min-h-[2.5rem]">
           {item.name}
-        </h2>
+        </HeadingTag>
 
         {/* Price & Weight Footer */}
         <div className="mt-2 sm:mt-3 pt-2 border-t border-gray-100 flex items-center justify-between gap-1 flex-wrap">

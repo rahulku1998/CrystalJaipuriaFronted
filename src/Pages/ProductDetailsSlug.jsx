@@ -942,7 +942,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
             <div className="flex overflow-x-auto sm:grid sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-6 pb-2 sm:pb-0 scrollbar-none snap-x">
               {relatedProducts.slice(0, 5).map((item) => (
                 <div key={item._id || item.slug} className="min-w-[165px] sm:min-w-0 snap-start flex-1">
-                  <ProductCard product={item} />
+                  <ProductCard product={item} headingTag="p" />
                 </div>
               ))}
             </div>
