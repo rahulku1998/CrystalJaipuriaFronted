@@ -616,92 +616,292 @@ export const generateAdditionalInfoHtml = (cleanName, stone, archetype, weight, 
 };
 
 /**
- * Generates High-CTR, Competitor-Researched Meta Titles & Commercial Meta Descriptions
- * Beats generic templates by incorporating transactional and trust triggers:
- * ("Original", "Lab Certified", "Jaipur Manufacturer", "Vedic Certified").
+ * Helper to extract clean, standardized specs bracket (e.g. "(500g, 4.5\")")
  */
-export const generateCompetitorMeta = (cleanName, stone, archetype, weight, size) => {
-  let title = "";
-  let description = "";
+export const formatCompactSpecsBracket = (weight = "", size = "", density = 2.65) => {
+  let cleanWeight = "";
+  if (weight) {
+    // Match the first numeric token and unit from left (handles ranges like "500 Gram - 1.5 Kg")
+    const matchFirst = String(weight).match(/(\d+(\.\d+)?)\s*(kg|kilogram|g|gram)/i);
+    if (matchFirst) {
+      const val = parseFloat(matchFirst[1]);
+      const unit = matchFirst[3].toLowerCase();
+      if (unit.startsWith("kg")) {
+        cleanWeight = `${val}kg`;
+      } else {
+        cleanWeight = val >= 1000 ? `${(val / 1000).toFixed(1)}kg` : `${Math.round(val)}g`;
+      }
+    } else {
+      const numMatch = String(weight).match(/(\d+(\.\d+)?)/);
+      if (numMatch) {
+        const num = parseFloat(numMatch[1]);
+        if (!isNaN(num) && num > 0) {
+          cleanWeight = num >= 1000 ? `${(num / 1000).toFixed(1)}kg` : `${Math.round(num)}g`;
+        }
+      }
+    }
+  }
+  if (!cleanWeight) {
+    const defaultGrams = Math.round(150 * (density || 2.65));
+    cleanWeight = defaultGrams >= 1000 ? `${(defaultGrams / 1000).toFixed(1)}kg` : `${defaultGrams}g`;
+  }
 
-  const shortStone = stone.name.split("(")[0].replace(/100%|Certified|Natural/gi, "").trim();
+  let cleanSize = "";
+  if (size) {
+    // Match the first numeric token and unit from left (handles ranges like "4 Inch - 8 Inch")
+    const matchInch = String(size).match(/(\d+(\.\d+)?)\s*(inch|"|'')/i);
+    if (matchInch) {
+      cleanSize = `${matchInch[1]}"`;
+    } else {
+      const numMatch = String(size).match(/(\d+(\.\d+)?)/);
+      if (numMatch) {
+        const num = parseFloat(numMatch[1]);
+        if (!isNaN(num) && num > 0) {
+          cleanSize = `${num}"`;
+        }
+      }
+    }
+  }
+  if (!cleanSize) {
+    cleanSize = '3.8"';
+  }
 
-  switch (archetype) {
-    case "shivling":
-      title = `Original ${shortStone} Shivling (Lab Certified) | Crystal Jaipuria`;
-      if (title.length > 60) {
-        title = `Natural ${shortStone} Shivling | Lab Certified Jaipuria`;
-      }
-      if (title.length > 60) {
-        title = `Natural ${shortStone} Shivling | Crystal Jaipuria`;
-      }
-      description = `Buy authentic 100% natural ${shortStone} Shivling directly from Jaipur lapidary manufacturer. Hand-carved as per Vedic Agama Shastras. Lab certified with secure shipping.`;
-      break;
+  return `(${cleanWeight}, ${cleanSize})`;
+};
 
-    case "shree-yantra":
-      title = `3D Meru ${shortStone} Shree Yantra (Vedic Certified) | Jaipuria`;
-      if (title.length > 60) {
-        title = `Original ${shortStone} 3D Shree Yantra | Crystal Jaipuria`;
-      }
-      description = `Buy original 3D Meru ${shortStone} Shree Yantra hand-carved with 43 interlocking triangles. Authentic gemstone for wealth, Vastu & abundance. Jaipur workshop price.`;
-      break;
+/**
+ * Clean Gemstone Display Formatter for Meta Tags
+ */
+export const getCleanStoneDisplay = (stoneName = "") => {
+  const s = (stoneName || "").toLowerCase();
+  if (s.includes("green jade")) return "Green Jade Stone";
+  if (s.includes("sphatik") || s.includes("clear quartz")) return "Sphatik Quartz";
+  if (s.includes("ruby") || s.includes("manik")) return "Ruby Manik";
+  if (s.includes("rose quartz")) return "Rose Quartz";
+  if (s.includes("blue sapphire") || s.includes("neelam")) return "Blue Sapphire Neelam";
+  if (s.includes("yellow sapphire") || s.includes("pukhraj")) return "Yellow Sapphire Pukhraj";
+  if (s.includes("emerald") || s.includes("panna")) return "Emerald Panna";
+  if (s.includes("amethyst")) return "Natural Amethyst";
+  if (s.includes("black tourmaline")) return "Black Tourmaline";
+  if (s.includes("tiger eye")) return "Tiger Eye Stone";
+  if (s.includes("carnelian")) return "Carnelian Agate";
+  if (s.includes("pyrite")) return "Golden Pyrite";
+  if (s.includes("lapis")) return "Lapis Lazuli";
+  if (s.includes("moonstone")) return "Rainbow Moonstone";
+  if (s.includes("sodalite")) return "Natural Sodalite";
+  if (s.includes("malachite")) return "Natural Malachite";
+  return stoneName.split("(")[0].replace(/100%|Certified|Natural/gi, "").trim();
+};
 
-    case "ganesha":
-      title = `Handcrafted ${shortStone} Ganesha Idol (Certified Natural) | Jaipuria`;
-      if (title.length > 60) {
-        title = `Natural ${shortStone} Ganesh Idol | Lab Certified Jaipuria`;
-      }
-      if (title.length > 60) {
-        title = `Natural ${shortStone} Ganesh Idol | Crystal Jaipuria`;
-      }
-      description = `Buy authentic 100% natural ${shortStone} Ganesh Ji murti with left-turned trunk. Hand-carved in Jaipur for home temple, Vastu & prosperity. Worldwide shipping.`;
-      break;
+/**
+ * Generates High-CTR, Competitor-Researched Meta Titles & Commercial Meta Descriptions
+ * Modeled after Crystal Jaipuria's proven #1 Google Ranking & AI Overview Citation benchmark:
+ * Title Formula: [Natural/Certified] [Gemstone Material] [Feature] [Archetype] ([Weight], [Size]) | [Divine Swaroop] | Crystal Jaipuria
+ * Description Formula: Buy 100% Certified Natural [Stone] [Product] ([Weight], [Size]). [Divine Mudra/Feature]. Handcrafted in Jaipur at ₹[Price] direct. (Strictly 150-160 Chars)
+ */
+export const generateCompetitorMeta = (
+  cleanName,
+  stone,
+  archetype,
+  weight = "",
+  size = "",
+  price = 0,
+  originalTitle = ""
+) => {
+  const text = (cleanName + " " + (originalTitle || "")).toLowerCase();
+  const stoneDisplay = getCleanStoneDisplay(stone?.name || "");
+  const specsBracket = formatCompactSpecsBracket(weight, size, stone?.density || 2.65);
 
-    case "shiva":
-      title = `Original ${shortStone} Lord Shiva Murti (Lab Certified) | Jaipuria`;
-      if (title.length > 60) {
-        title = `Natural ${shortStone} Shiva Idol | Jaipur Manufacturer`;
-      }
-      if (title.length > 60) {
-        title = `Natural ${shortStone} Shiva Idol | Crystal Jaipuria`;
-      }
-      description = `Authentic handcrafted ${shortStone} Shiva statue depicting Trishul & Dhyana Mudra. Hand-sculpted by master Jaipur artisans from single rough block. Lab certified.`;
-      break;
+  let priceNum = 0;
+  if (price) {
+    const matchPrice = String(price).match(/(\d+(\.\d+)?)/);
+    if (matchPrice) {
+      priceNum = parseFloat(matchPrice[1]);
+    }
+  }
+  if (!priceNum || isNaN(priceNum) || priceNum > 1000000) {
+    const specs = estimateProductSpecs(cleanName, "");
+    priceNum = specs.suggestedPrice || 5000;
+  }
+  const priceStr = `₹${Math.round(priceNum).toLocaleString("en-IN")}`;
 
-    case "jain":
-      title = `Natural ${shortStone} Jain Tirthankara Idol | Crystal Jaipuria`;
-      description = `Handcrafted natural ${shortStone} Bhagwan Tirthankara idol in Padmasana posture. Carved by master Jaipur artisans for peaceful home temple & Samayika puja.`;
-      break;
+  let featureTag = "";
+  let swaroopTitle = "";
+  let uspDesc = "";
 
-    case "swan":
-      title = `Handcrafted ${shortStone} Swan Pair (Vastu Love Pair) | Jaipuria`;
-      description = `Carved natural ${shortStone} swan pair for bedroom Vastu harmony, love & anniversary gifting. 100% earth-mined certified gemstone from Jaipur artisans.`;
-      break;
+  // 1. Detect Special Features & Sacred Mudras
+  if (text.includes("panchmukhi") || text.includes("panchamukhi") || text.includes("5 face") || text.includes("five face")) {
+    featureTag = "Panchmukhi Shivling";
+    swaroopTitle = "Pashupatinath Swaroop";
+    uspDesc = "5 divine faces of Pashupatinath Mahadev.";
+  } else if (text.includes("mukhalingam") || text.includes("shiva face") || text.includes("mukha") || text.includes("ek mukhi")) {
+    featureTag = "Mukhalingam Shivling";
+    swaroopTitle = "Sacred Shiva Mukhalingam";
+    uspDesc = "Exquisite carved face of Mahadev for Ishanya altar.";
+  } else if (text.includes("gold painted") || text.includes("gold painting") || text.includes("gold work") || text.includes("24k")) {
+    featureTag = "Gold Painted Ganesha";
+    swaroopTitle = "24K Gold Work Vighnaharta";
+    uspDesc = "24K gold work for obstacle removal & wealth.";
+  } else if (text.includes("kamal") || text.includes("lotus")) {
+    featureTag = "Lotus Base Kamal";
+    swaroopTitle = "Kamal Padmasana Swaroop";
+    uspDesc = "Resting upon consecrated lotus petals for purity.";
+  } else if (text.includes("meru") || text.includes("3d") || text.includes("pyramid") || archetype === "shree-yantra" || text.includes("yantra")) {
+    featureTag = "3D Meru Shree Yantra";
+    swaroopTitle = "3D Meru Sacred Geometry";
+    uspDesc = "43 interlocking triangles for wealth & Vastu magnetism.";
+  } else if (text.includes("left trunk") || text.includes("left-trunk") || text.includes("vamamukhi")) {
+    featureTag = "Left-Trunk Ganesha";
+    swaroopTitle = "Vamamukhi Siddhi Vinayak";
+    uspDesc = "Auspicious left-curved trunk for obstacle removal & wealth.";
+  } else if (text.includes("nandi")) {
+    featureTag = "With Sacred Nandi";
+    swaroopTitle = "Kailash Darbar Swaroop";
+    uspDesc = "Carved with sacred Nandi bull for wish fulfillment & peace.";
+  } else if (archetype === "shivling") {
+    featureTag = "Shivling";
+    swaroopTitle = "Vedic Jalabhishek Lingam";
+    uspDesc = "Sacred lingam for daily Jalabhishek & Mahadev blessings.";
+  } else if (archetype === "ganesha") {
+    featureTag = "Ganesha Idol";
+    swaroopTitle = "Vighnaharta Siddhi Vinayak";
+    uspDesc = "Auspicious idol for obstacle removal & prosperity.";
+  } else if (archetype === "shiva") {
+    featureTag = "Lord Shiva Murti";
+    swaroopTitle = "Dhyanaroodha Mahadeva";
+    uspDesc = "Sculpted in meditative Samadhi for inner peace.";
+  } else if (archetype === "hanuman") {
+    featureTag = "Hanuman Ji Murti";
+    swaroopTitle = "Veer Sankat Mochan Swaroop";
+    uspDesc = "Bajrangbali idol for fearless protection & positive energy.";
+  } else if (archetype === "jain") {
+    featureTag = "Jain Tirthankara Idol";
+    swaroopTitle = "Padmasana Dhyana Swaroop";
+    uspDesc = "Consecrated idol in Padmasana for peaceful home mandir.";
+  } else if (archetype === "radha-krishna" || archetype === "krishna") {
+    featureTag = "Radha Krishna Idol";
+    swaroopTitle = "Divine Love & Bhakti Swaroop";
+    uspDesc = "Sacred couple idol radiating divine love & marital bliss.";
+  } else if (archetype === "saraswati") {
+    featureTag = "Devi Saraswati Idol";
+    swaroopTitle = "Veena Vadini Gyan Swaroop";
+    uspDesc = "Bestows academic eloquence, artistic mastery & wisdom.";
+  } else if (archetype === "lakshmi") {
+    featureTag = "Devi Lakshmi Murti";
+    swaroopTitle = "Ashta Lakshmi Dhan Swaroop";
+    uspDesc = "Bestows continuous financial abundance & prosperity.";
+  } else if (archetype === "swan") {
+    featureTag = "Swan Pair";
+    swaroopTitle = "Bedroom Vastu Love Pair";
+    uspDesc = "Harmonizes bedroom Vastu for lifelong love & trust.";
+  } else if (archetype === "angel") {
+    featureTag = "Guardian Angel";
+    swaroopTitle = "Reiki Auric Shield";
+    uspDesc = "Reiki energized pocket guardian to shield aura & restore calm.";
+  } else if (archetype === "buddha") {
+    featureTag = "Buddha Statue";
+    swaroopTitle = "Bhumisparsha Dhyana Swaroop";
+    uspDesc = "Earth-witness mudra for serene mindfulness & peace.";
+  } else if (archetype === "tortoise") {
+    featureTag = "Vastu Tortoise";
+    swaroopTitle = "Kurma Avatara Wealth Vastu";
+    uspDesc = "Stabilizes financial flow, longevity & career stability.";
+  } else if (archetype === "elephant") {
+    featureTag = "Vastu Elephant";
+    swaroopTitle = "Gajraj Royal Vastu Swaroop";
+    uspDesc = "Radiates royal strength, wisdom & good fortune.";
+  } else if (archetype === "mala") {
+    featureTag = "108+1 Japa Mala";
+    swaroopTitle = "Mantra Siddhi Japa Rosary";
+    uspDesc = "108+1 hand-knotted prayer beads for amplified mantra japa.";
+  } else if (archetype === "bracelet") {
+    featureTag = "Healing Energy Bracelet";
+    swaroopTitle = "Daily Auric Chakra Shield";
+    uspDesc = "Natural stretchable beads for all-day chakra alignment.";
+  } else {
+    featureTag = cleanName;
+    swaroopTitle = "Vedic Shilpa Shastra Craft";
+    uspDesc = "Hand-carved as per Vedic Shilpa Shastras for positive aura.";
+  }
 
-    case "angel":
-      title = `Natural ${shortStone} Guardian Angel (Reiki Healing) | Jaipuria`;
-      description = `Authentic Reiki energized ${shortStone} carved pocket angel. Shields aura, attracts serenity & mental peace. 100% natural certified gemstone from Jaipur.`;
-      break;
+  // Format Product Phrase cleanly
+  let productPhrase = cleanName;
+  // Remove duplicate "Natural", "Certified", "Original", "100%" from start
+  productPhrase = productPhrase.replace(/^(natural|certified|original|100%)\s+/gi, "").trim();
 
-    default:
-      const nameWithoutStone = cleanName.replace(new RegExp(shortStone, "gi"), "").trim();
-      title = `Natural ${shortStone} ${nameWithoutStone} | Jaipur Manufacturer`;
-      if (title.length > 60) {
-        title = `Original ${shortStone} ${nameWithoutStone} | Crystal Jaipuria`;
-      }
-      if (title.length > 60) {
-        title = `${cleanName} (100% Natural Certified) | Jaipuria`;
-      }
-      if (title.length > 60) {
-        title = `${cleanName} | Crystal Jaipuria`.slice(0, 60);
-      }
-      description = `Buy authentic handcrafted ${cleanName} in certified ${shortStone} directly from Crystal Jaipuria, Jaipur (est. 1989). 100% natural, Vastu certified with express delivery.`;
-      break;
+  // If cleanName is generic like "Crystal Shivling", map to "Sphatik Shivling"
+  if (productPhrase.toLowerCase().startsWith("crystal ")) {
+    productPhrase = productPhrase.replace(/^crystal\s+/i, "Sphatik Quartz ");
+  }
+
+  // Check if productPhrase contains stone
+  const stoneWords = stoneDisplay.toLowerCase().split(/\s+/);
+  const hasStone = stoneWords.some((w) => w.length > 2 && productPhrase.toLowerCase().includes(w));
+
+  if (!hasStone) {
+    productPhrase = `${stoneDisplay} ${productPhrase}`;
+  } else {
+    // If it mentions "Green Jade" but not "Green Jade Stone", expand it
+    if (productPhrase.toLowerCase().includes("green jade") && !productPhrase.toLowerCase().includes("stone")) {
+      productPhrase = productPhrase.replace(/green\s+jade/i, "Green Jade Stone");
+    }
+  }
+
+  // Assemble Title: Natural [Product Phrase] ([Weight], [Size]) | [Divine Swaroop] | Crystal Jaipuria
+  let title = `Natural ${productPhrase} ${specsBracket} | ${swaroopTitle} | Crystal Jaipuria`;
+  title = title.replace(/\s+/g, " ").trim();
+
+  // Optimize title length if over 105 chars
+  if (title.length > 105) {
+    title = `${productPhrase} ${specsBracket} | ${swaroopTitle} | Crystal Jaipuria`;
+  }
+  if (title.length > 105) {
+    title = `${productPhrase} ${specsBracket} | ${swaroopTitle} | Jaipuria`;
+  }
+
+  // Build Description (Strictly Calibrated to 150-160 Characters)
+  let p1 = `Buy 100% Certified Natural ${productPhrase} ${specsBracket}.`;
+  let p2 = uspDesc;
+  let p3 = `Handcrafted in Jaipur at ${priceStr} direct.`;
+
+  let desc = `${p1} ${p2} ${p3}`;
+
+  // Calibrate down to <= 160
+  if (desc.length > 160) {
+    p1 = `Buy 100% Certified ${productPhrase} ${specsBracket}.`;
+    desc = `${p1} ${p2} ${p3}`;
+  }
+  if (desc.length > 160) {
+    p3 = `Jaipur workshop price at ${priceStr}.`;
+    desc = `${p1} ${p2} ${p3}`;
+  }
+  if (desc.length > 160) {
+    p3 = `Jaipur crafted at ${priceStr}.`;
+    desc = `${p1} ${p2} ${p3}`;
+  }
+
+  // Calibrate up if < 150
+  if (desc.length < 150) {
+    p3 = `Handcrafted in Jaipur workshop at ${priceStr} direct.`;
+    desc = `${p1} ${p2} ${p3}`;
+  }
+  if (desc.length < 150) {
+    p3 = `Direct Jaipur lapidary manufacturer at ${priceStr}.`;
+    desc = `${p1} ${p2} ${p3}`;
+  }
+
+  // Final length sanity safety
+  if (desc.length > 160) {
+    desc = desc.slice(0, 160);
+    const lastSpace = desc.lastIndexOf(" ");
+    if (lastSpace > 140) {
+      desc = desc.slice(0, lastSpace) + ".";
+    }
   }
 
   return {
-    metaTitle: title.slice(0, 60),
-    metaDescription: description.slice(0, 160)
+    metaTitle: title,
+    metaDescription: desc
   };
 };
 
@@ -1048,7 +1248,15 @@ export const generateBuiltInContent = (productName, categoryName = "") => {
 
   const specs = estimateProductSpecs(cleanName, categoryName);
   const additionalInfo = generateAdditionalInfoHtml(cleanName, stone, archetype, specs.weight, specs.size, specs.dimensions);
-  const competitorMeta = generateCompetitorMeta(cleanName, stone, archetype, specs.weight, specs.size);
+  const competitorMeta = generateCompetitorMeta(
+    cleanName,
+    stone,
+    archetype,
+    specs.weight,
+    specs.size,
+    specs.suggestedPrice,
+    cleanName
+  );
 
   const sectionOneHeading = archetypeTitle;
   const sectionOneBody = archetypedetails;
@@ -1170,8 +1378,8 @@ export const generateGeminiContent = async (productName, categoryName = "", user
     `- size: Realistic estimated size & dimensions (e.g. "${verifiedBase.size}").\n` +
     `- additionalInfo: Complete HTML <ul> list with 10-12 comprehensive specifications including Product Name, Brand & Manufacturer (Crystal Jaipuria, Jaipur Est. 1989), Material Composition, Mineral Hardness, Estimated Weight, Size & Dimensions, Lapidary Craftsmanship, Surface Finish, Vedic Consecration & Care, Auspicious Vastu Direction, Authenticity Guarantee, and Packaging.\n` +
     `- fullDescription: High-authority, concise HTML (clean and crisp, under 250 words total). Naturally incorporate commercial keywords (e.g. "buy authentic ${verifiedBase.cleanName.toLowerCase()} online", "jaipur manufacturer", "lab certified", "vedic agama shastras"). Must include: 1 concise Sanskrit Shloka quote with meaning, Gangajal Pran Pratishtha consecration note, natural mineral veining disclosure, and an HTML <table> of certified gemological specifications including weight and size.\n` +
-    `- metaTitle: High-CTR, competitor-beating Google SEO title under 60 characters with commercial triggers (e.g. "${verifiedBase.metaTitle}"). Do NOT use boring repetitive templates!\n` +
-    `- metaDescription: Compelling commercial meta description under 160 characters (e.g. "${verifiedBase.metaDescription}").\n` +
+    `- metaTitle: High-CTR Google SEO & AI Overview title (80-100 characters) incorporating exact attributes: [Natural/Certified] [Gemstone Material] [Specific Title Feature like Panchmukhi/Gold Painted/Meru/Left-Trunk] [Archetype] ([Weight], [Size]) | [Divine Swaroop / Vedic Mudra] | Crystal Jaipuria (e.g. "${verifiedBase.metaTitle}"). Do NOT use boring repetitive templates!\n` +
+    `- metaDescription: Compelling commercial meta description strictly between 150 to 160 characters following this exact 3-part winning formula: "Buy 100% Certified Natural [Stone] [Product] ([Weight], [Size]). [Specific iconographic/sacred detail]. Handcrafted in Jaipur at ₹[Price] direct." (e.g. "${verifiedBase.metaDescription}").\n` +
     `- faqs: Exactly 5 or 6 high-intent, buyer-centric FAQs addressing specific Vastu directions, daily abhishek, authenticity tests, and ritual maintenance.\n\n` +
     `OUTPUT: Valid JSON only matching this schema:\n` +
     `{\n` +
@@ -1363,8 +1571,8 @@ Write an exquisite, captivating, conversion-focused product listing:
 3. size: Realistic estimated size & dimensions (e.g. "${verifiedBase.size}").
 4. additionalInfo: Complete HTML <ul> list with 10-12 comprehensive specifications including Product Name, Brand & Manufacturer (Crystal Jaipuria, Jaipur Est. 1989), Material Composition, Mineral Hardness, Estimated Weight, Size & Dimensions, Lapidary Craftsmanship, Surface Finish, Vedic Consecration & Care, Auspicious Vastu Direction, Authenticity Guarantee, and Packaging.
 5. fullDescription: Concise, high-converting HTML (crisp & elegant, under 250 words total) with commercial keywords ("buy authentic online", "jaipur manufacturer", "lab certified"). Must include: 1 concise Sanskrit Shloka quote with meaning, Gangajal Pran Pratishtha consecration note, natural mineral veining disclosure (certifying zero glass/resin), and an HTML <table> of certified gemological specifications including weight and size.
-6. metaTitle: High-CTR Google SEO title under 60 characters with commercial triggers (e.g. "${verifiedBase.metaTitle}").
-7. metaDescription: Compelling meta description under 160 characters (e.g. "${verifiedBase.metaDescription}").
+6. metaTitle: High-CTR Google SEO & AI Overview title (80-100 characters) incorporating exact attributes: [Natural/Certified] [Gemstone Material] [Specific Title Feature like Panchmukhi/Gold Painted/Meru/Left-Trunk] [Archetype] ([Weight], [Size]) | [Divine Swaroop / Vedic Mudra] | Crystal Jaipuria (e.g. "${verifiedBase.metaTitle}"). Do NOT use boring repetitive templates!
+7. metaDescription: Compelling commercial meta description strictly between 150 to 160 characters following this exact 3-part winning formula: "Buy 100% Certified Natural [Stone] [Product] ([Weight], [Size]). [Specific iconographic/sacred detail]. Handcrafted in Jaipur at ₹[Price] direct." (e.g. "${verifiedBase.metaDescription}").
 8. faqs: Exactly 5 or 6 buyer-focused questions answering care, rituals, authenticity, and placement.
 
 Return ONLY valid JSON matching this schema:

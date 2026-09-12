@@ -157,7 +157,13 @@ const handleCategoryChange = async (e) => {
 
   const handleGenerateSuperMeta = () => {
     const categoryName = categories.find((c) => c._id === form.categoryId)?.name || "";
-    const generated = generateSuperMetaTags(form.name, categoryName);
+    const generated = generateSuperMetaTags(
+      form.name,
+      categoryName,
+      form.weight,
+      form.size,
+      form.price || form.discountPrice
+    );
     setMetaTitle(generated.metaTitle);
     setMetaDescription(generated.metaDescription);
   };

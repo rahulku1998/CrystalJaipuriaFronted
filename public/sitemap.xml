@@ -483,6 +483,10 @@
       <image:loc>https://www.crystaljaipuria.com/images/blue-sapphire-carving-shiva-statue.webp</image:loc>
       <image:title>Blue Sapphire Carving Shiva Statue | Crystal Jaipuria</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/blue-sapphire-carving-shiva-statue-2.webp</image:loc>
+      <image:title>Blue Sapphire Carving Shiva Statue - Alternate View | Crystal Jaipuria</image:title>
+    </image:image>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -491,6 +495,10 @@
     <image:image>
       <image:loc>https://www.crystaljaipuria.com/images/green-jade-carved-shree-krishana-statue.webp</image:loc>
       <image:title>Green Jade Carved Shree Krishana Statue | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/green-jade-carved-shree-krishana-statue-2.webp</image:loc>
+      <image:title>Green Jade Carved Shree Krishana Statue - Alternate View | Crystal Jaipuria</image:title>
     </image:image>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

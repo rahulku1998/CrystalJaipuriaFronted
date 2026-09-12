@@ -204,14 +204,31 @@ export const runPrerender = async () => {
       displayTitle = `${cleanName} (${specLabel})`;
     }
 
-    const metaTitle = prod.metaTitle || `${displayTitle} | Crystal Jaipuria`;
+    let metaTitle = prod.metaTitle || "";
+    let metaDesc = prod.metaDescription || "";
+    if (!metaTitle || !metaDesc) {
+      const metaMatch = String(prod.additionalInfo || "").match(/<!-- SEO_META:([\s\S]*?)-->/);
+      if (metaMatch && metaMatch[1]) {
+        try {
+          const parsed = JSON.parse(metaMatch[1]);
+          if (!metaTitle && parsed.metaTitle) metaTitle = parsed.metaTitle;
+          if (!metaDesc && parsed.metaDescription) metaDesc = parsed.metaDescription;
+        } catch (e) {}
+      }
+    }
+
     const cleanDesc = (prod.detail || prod.description || cleanName)
       .replace(/<[^>]*>?/gm, "")
       .replace(/100%\s*certified\s*/gi, "")
       .replace(/\r?\n|\r/g, " ")
       .trim();
 
-    const metaDesc = prod.metaDescription || cleanDesc.slice(0, 160);
+    if (!metaTitle) {
+      metaTitle = `${displayTitle} | Crystal Jaipuria`;
+    }
+    if (!metaDesc) {
+      metaDesc = cleanDesc.slice(0, 160);
+    }
 
     const schema = {
       "@context": "https://schema.org",

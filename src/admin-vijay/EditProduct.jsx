@@ -220,7 +220,13 @@ const EditProduct = () => {
 
   const handleGenerateSuperMeta = () => {
     const categoryName = categories.find((c) => c._id === form.categoryId)?.name || "";
-    const generated = generateSuperMetaTags(form.name, categoryName);
+    const generated = generateSuperMetaTags(
+      form.name,
+      categoryName,
+      form.weight,
+      form.size,
+      form.price || form.discountPrice
+    );
     setMetaTitle(generated.metaTitle);
     setMetaDescription(generated.metaDescription);
   };
@@ -826,17 +832,21 @@ placeholder="Available stock"
         </label>
         <span
           className={`text-[11px] font-bold ${
-            metaTitle.length > 60 ? "text-amber-600" : "text-gray-400"
+            metaTitle.length > 105
+              ? "text-red-600"
+              : metaTitle.length >= 70
+              ? "text-emerald-600 font-extrabold"
+              : "text-gray-400"
           }`}
         >
-          {metaTitle.length}/60 chars
+          {metaTitle.length}/100 chars {metaTitle.length >= 70 && metaTitle.length <= 105 ? "✔ (Winning AI Formula)" : ""}
         </span>
       </div>
       <input
         type="text"
         value={metaTitle}
         onChange={(e) => setMetaTitle(e.target.value)}
-        placeholder="e.g. Natural Sphatik Shivling (100% Certified Clear Quartz) | Jaipur Manufacturer"
+        placeholder="e.g. Natural Green Jade Stone Panchmukhi Shivling (500g, 4.5&quot;) | Pashupatinath Swaroop | Crystal Jaipuria"
         className="w-full rounded-xl border border-gray-300 bg-white px-4 py-2.5 text-sm outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400"
       />
     </div>
@@ -848,17 +858,21 @@ placeholder="Available stock"
         </label>
         <span
           className={`text-[11px] font-bold ${
-            metaDescription.length > 160 ? "text-amber-600" : "text-gray-400"
+            metaDescription.length > 165
+              ? "text-red-600"
+              : metaDescription.length >= 148 && metaDescription.length <= 162
+              ? "text-emerald-600 font-extrabold"
+              : "text-gray-400"
           }`}
         >
-          {metaDescription.length}/160 chars
+          {metaDescription.length}/160 chars {metaDescription.length >= 148 && metaDescription.length <= 162 ? "✔ (Optimal SERP)" : ""}
         </span>
       </div>
       <textarea
         rows={3}
         value={metaDescription}
         onChange={(e) => setMetaDescription(e.target.value)}
-        placeholder="e.g. Buy handcrafted Natural Sphatik Shivling from Crystal Jaipuria, Jaipur (est. 1989). 100% certified pure natural crystal quartz for home temple & Vastu. Worldwide shipping."
+        placeholder="e.g. Buy 100% Certified Natural Green Jade Stone Panchmukhi Shivling (500g, 4.5&quot;). 5 divine faces of Pashupatinath Mahadev. Handcrafted in Jaipur at ₹5,000 direct."
         className="w-full rounded-xl border border-gray-300 bg-white px-4 py-2.5 text-sm outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 leading-relaxed"
       />
     </div>

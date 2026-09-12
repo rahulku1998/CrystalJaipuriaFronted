@@ -691,12 +691,17 @@ const AIAssistantModal = ({
                   {(result.metaTitle || result.metaDescription) && (
                     <div className="bg-white border border-gray-200 rounded-2xl p-4 shadow-2xs space-y-2">
                       <div className="flex items-center justify-between border-b pb-2">
-                        <span className="text-xs font-extrabold uppercase tracking-wider text-gray-600 flex items-center gap-2">
-                          <span>🔍 Google Search Result Snippet Preview</span>
-                          <span className="text-[10px] bg-amber-100 text-amber-900 border border-amber-300 font-extrabold px-2 py-0.5 rounded-full">
-                            High-CTR Competitor Formula
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <span className="text-xs font-extrabold uppercase tracking-wider text-gray-700 flex items-center gap-1.5">
+                            <span>🔍 Google Search Result Snippet Preview</span>
                           </span>
-                        </span>
+                          <span className="text-[10px] bg-emerald-100 text-emerald-800 border border-emerald-300 font-extrabold px-2 py-0.5 rounded-full">
+                            Title: {result.metaTitle?.length || 0}/100 chars
+                          </span>
+                          <span className="text-[10px] bg-indigo-100 text-indigo-800 border border-indigo-300 font-extrabold px-2 py-0.5 rounded-full">
+                            Desc: {result.metaDescription?.length || 0}/160 chars
+                          </span>
+                        </div>
                         <div className="flex items-center gap-2">
                           {onApplyMeta && (
                             <button

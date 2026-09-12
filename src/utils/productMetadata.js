@@ -128,11 +128,18 @@ export const unpackProductMetadata = (product) => {
 /**
  * Generate 1-Click Super SEO Meta Title and Description for Admin Panel
  */
-export const generateSuperMetaTags = (productName = "", categoryName = "") => {
+export const generateSuperMetaTags = (
+  productName = "",
+  categoryName = "",
+  weight = "",
+  size = "",
+  price = 0
+) => {
   const cleanName = toProperTitleCase(productName.trim() || "Gemstone Sacred Idol");
   const stoneKey = detectGemstone(cleanName + " " + categoryName);
   const archetype = detectArchetype(cleanName + " " + categoryName);
   const stone = GEMSTONE_PROFILES[stoneKey] || GEMSTONE_PROFILES.sphatik;
 
-  return generateCompetitorMeta(cleanName, stone, archetype, "", "");
+  return generateCompetitorMeta(cleanName, stone, archetype, weight, size, price, productName);
 };
+
