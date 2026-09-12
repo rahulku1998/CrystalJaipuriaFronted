@@ -104,11 +104,13 @@ const runAudit = async () => {
       console.log(`   ❌ Unexpected image link format in GMC: ${img}`);
       errorCount++;
     }
-    const cleanImgPath = img.replace(BASE_URL, '');
-    const localImgPath = path.join(__dirname, '../public', cleanImgPath);
-    if (!fs.existsSync(localImgPath)) {
-      console.log(`   ⚠️ Image file referenced in GMC does not exist locally: ${cleanImgPath}`);
-      warningCount++;
+    if (img.startsWith(BASE_URL)) {
+      const cleanImgPath = img.replace(BASE_URL, '').split('?')[0];
+      const localImgPath = path.join(__dirname, '../public', cleanImgPath);
+      if (!fs.existsSync(localImgPath)) {
+        console.log(`   ⚠️ Image file referenced in GMC does not exist locally: ${cleanImgPath}`);
+        warningCount++;
+      }
     }
   });
 
@@ -119,6 +121,28 @@ const runAudit = async () => {
     }
   });
   console.log('   ✅ google-products.xml URLs & image paths verified!\n');
+
+  // ----------------------------------------------------
+  // 2B. AUDIT LOCAL-INVENTORY.XML (LOCAL FEED)
+  // ----------------------------------------------------
+  console.log('2️⃣B Checking public/local-inventory.xml (Local Inventory Feed)...');
+  const localInvPath = path.join(__dirname, '../public/local-inventory.xml');
+  if (fs.existsSync(localInvPath)) {
+    const localContent = fs.readFileSync(localInvPath, 'utf-8');
+    const localIds = [...localContent.matchAll(/<g:id>([^<]+)<\/g:id>/g)].map(m => m[1]);
+    const localStores = [...localContent.matchAll(/<g:store_code>([^<]+)<\/g:store_code>/g)].map(m => m[1]);
+    console.log(`   Found ${localIds.length} items in local-inventory.xml.`);
+    if (localIds.length !== productLinks.length) {
+      console.log(`   ⚠️ Count mismatch: Primary feed has ${productLinks.length}, Local has ${localIds.length}`);
+      warningCount++;
+    }
+    if (localStores.some(s => !s || s.trim() === '')) {
+      console.log(`   ❌ Empty store code found in local inventory!`);
+      errorCount++;
+    }
+    console.log('   ✅ local-inventory.xml verified!\n');
+  }
+
 
   // ----------------------------------------------------
   // 3. AUDIT LLMS.TXT

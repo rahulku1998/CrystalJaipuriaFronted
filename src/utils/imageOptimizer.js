@@ -4,24 +4,26 @@
  * (Exactly like homeslider: /images/slider-shivling-desk.webp)
  */
 export const optimizeCloudinaryUrl = (url, width = 800, seoSlug = "") => {
-  if (!url || typeof url !== "string") return "/images/slider-shivling-desk.webp";
+  if (!url || typeof url !== "string") return "/Gemstone.webp";
 
-  const cleanSlug = (seoSlug || "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "");
-
-  // If clean product slug is available, deliver clean static WebP image directly from /images/
-  if (cleanSlug) {
-    return `/images/${cleanSlug}.webp`;
-  }
-
-  // If URL is already a clean static image path
+  // If already a local static path
   if (url.startsWith("/images/") || url.startsWith("/assets/")) {
     return url;
   }
 
-  // Fallback if no slug: try to extract image filename or return default
+  // If it's a Cloudinary URL, deliver fast auto-format, auto-quality, scaled responsive image
+  if (url.includes("res.cloudinary.com") && url.includes("/image/upload/")) {
+    return url.includes("/f_auto")
+      ? url
+      : url.replace("/image/upload/", `/image/upload/f_auto,q_auto:good,w_${width},c_limit/`);
+  }
+
+  // If clean product slug is explicitly requested
+  if (seoSlug) {
+    const cleanSlug = seoSlug.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    if (cleanSlug) return `/images/${cleanSlug}.webp`;
+  }
+
   return url;
 };
 

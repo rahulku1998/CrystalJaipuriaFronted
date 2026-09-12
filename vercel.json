@@ -194,6 +194,44 @@
           "value": "*"
         }
       ]
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-store, no-cache, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "query",
+          "key": "p"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-store, no-cache, must-revalidate"
+        }
+      ]
     }
   ],
   "rewrites": [
@@ -210,7 +248,7 @@
       "destination": "https://res.cloudinary.com/dd6akzezt/images/:path*"
     },
     {
-      "source": "/(.*)",
+      "source": "/((?!images/|assets/|favicon|.*\\.(?:webp|jpg|jpeg|png|svg|ico|txt|xml|json|tsv)).*)",
       "destination": "/index.html"
     }
   ]

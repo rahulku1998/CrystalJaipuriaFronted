@@ -5,7 +5,7 @@ import Footer from './Components/Footer'
 import Home from './Pages/Home'
 import HeroSlider from './Components/Hero/HeroSlider'
 import FeaturesBar from './Components/FeaturesBar'
-import { Routes, Route, Navigate, useParams } from "react-router-dom";
+import { Routes, Route, Navigate, useParams, useLocation } from "react-router-dom";
 import ErrorBoundary from './Components/ErrorBoundary';
 import ProtectedRoute from "./Components/ProtectedRoute";
 import VijayProtectedRoute from './Components/VijayProtectedRoute';
@@ -50,6 +50,23 @@ const VijayBlogs = lazy(() => import('./admin-vijay/Blog'));
 const VijaySubCategories = lazy(() => import('./admin-vijay/SubCategories'));
 const VijayPendingProducts = lazy(() => import('./admin-vijay/PendingProducts'));
 
+// Cleanup helper for legacy WordPress query params like ?page_id=10981 or ?p=123
+const LegacyQueryCleaner = () => {
+  const location = useLocation();
+  React.useEffect(() => {
+    if (typeof window !== "undefined" && location.search) {
+      const params = new URLSearchParams(location.search);
+      if (params.has("page_id") || params.has("p")) {
+        params.delete("page_id");
+        params.delete("p");
+        const cleanSearch = params.toString() ? `?${params.toString()}` : "";
+        window.history.replaceState(null, "", `${location.pathname}${cleanSearch}`);
+      }
+    }
+  }, [location]);
+  return null;
+};
+
 // Redirect helper for old /products/:slug URLs -> /product/:slug
 const ProductsRedirect = () => {
   const { slug } = useParams();
@@ -66,8 +83,9 @@ function App() {
 
   return (
     <>
-     <ScrollTop />
-       <Navbar />
+      <LegacyQueryCleaner />
+      <ScrollTop />
+      <Navbar />
        
       <FloatingWhatsApp />
       <main id="main-content" className="flex-grow">

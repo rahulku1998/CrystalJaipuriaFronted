@@ -9,8 +9,8 @@
     "sync:images": "node scripts/sync-images.js",
     "sitemap": "node scripts/generate-sitemap.js",
     "index": "node scripts/instant-indexing.js",
-    "build": "vite build && node scripts/postbuild-clarity-assets.js",
-    "postbuild": "node scripts/postbuild-clarity-assets.js",
+    "build": "vite build",
+    "postbuild": "node scripts/postbuild-clarity-assets.js && node scripts/prerender.js",
     "verify": "node scripts/verify-health.cjs",
     "lint": "oxlint",
     "preview": "vite preview"

@@ -226,7 +226,11 @@ const generateSitemap = async () => {
       }
     }
     const cleanProductSlug = (prod.slug || slug || "product").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-    const imageMain = `${BASE_URL}/images/${cleanProductSlug}.webp`;
+    
+    // 100% Official Crystal Jaipuria Brand Domain URLs (No third-party CDN URLs)
+    // ?v=2 forces Google Merchant Center to re-crawl and approve previously cached failed images
+    const imageMain = `${BASE_URL}/images/${cleanProductSlug}.webp?v=2`;
+
     const categoryName = prod.categoryId?.name ? prod.categoryId.name.replace(/&/g, "&amp;") : "Gemstones";
 
     const titleSlug = `${cleanName} ${slug}`.toLowerCase();
@@ -330,11 +334,13 @@ const generateSitemap = async () => {
     gmcXml += `      <g:title>${feedTitle}</g:title>\n`;
     gmcXml += `      <g:description>${feedDesc}</g:description>\n`;
     gmcXml += `      <g:link>${prodUrl}</g:link>\n`;
-    gmcXml += `      <g:image_link>${imageMain}</g:image_link>\n`;
-    const secImgPath = path.join(__dirname, `../public/images/${cleanProductSlug}-2.webp`);
-    if (fs.existsSync(secImgPath) || (prod.images && prod.images.length > 1)) {
-      const extraImg = `${BASE_URL}/images/${cleanProductSlug}-2.webp`;
-      gmcXml += `      <g:additional_image_link>${extraImg}</g:additional_image_link>\n`;
+    gmcXml += `      <g:image_link>${imageMain.replace(/&/g, "&amp;")}</g:image_link>\n`;
+    // Secondary images on crystaljaipuria.com domain
+    for (let i = 2; i <= 5; i++) {
+      const secImgPath = path.join(__dirname, `../public/images/${cleanProductSlug}-${i}.webp`);
+      if (fs.existsSync(secImgPath)) {
+        gmcXml += `      <g:additional_image_link>${BASE_URL}/images/${cleanProductSlug}-${i}.webp?v=2</g:additional_image_link>\n`;
+      }
     }
     gmcXml += `      <g:availability>${(prod.stock === 0 || prod.stock === "0") ? "out_of_stock" : "in_stock"}</g:availability>\n`;
     gmcXml += `      <g:price>${priceNum.toFixed(2)} INR</g:price>\n`;
@@ -367,6 +373,56 @@ const generateSitemap = async () => {
   const gmcPath = path.join(publicDir, "google-products.xml");
   fs.writeFileSync(gmcPath, gmcXml, "utf-8");
   console.log(`Successfully generated ${gmcPath}!`);
+
+  // ----------------------------------------------------
+  // Generate Local Inventory Feed for Google Merchant Free Local Listings
+  // ----------------------------------------------------
+  let storeCode = "1";
+  const storeCodeFile = path.join(__dirname, "../store_code.txt");
+  if (fs.existsSync(storeCodeFile)) {
+    storeCode = fs.readFileSync(storeCodeFile, "utf-8").trim();
+  } else if (process.env.GOOGLE_STORE_CODE) {
+    storeCode = process.env.GOOGLE_STORE_CODE.trim();
+  }
+
+  let localXml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
+  localXml += `<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">\n`;
+  localXml += `  <channel>\n`;
+  localXml += `    <title>Crystal Jaipuria - Local Product Inventory</title>\n`;
+  localXml += `    <link>${BASE_URL}</link>\n`;
+  localXml += `    <description>Local in-store product inventory for Crystal Jaipuria store in Jaipur.</description>\n`;
+
+  let localTsv = `store_code\tid\tavailability\tprice\tquantity\tpickup_method\tpickup_sla\n`;
+
+  products.forEach((prod) => {
+    const priceNum = Number(prod.price) || 0;
+    const isOutOfStock = prod.stock === 0 || prod.stock === "0";
+    const availability = isOutOfStock ? "out_of_stock" : "in_stock";
+    const priceStr = `${priceNum.toFixed(2)} INR`;
+
+    localXml += `    <item>\n`;
+    localXml += `      <g:store_code>${storeCode}</g:store_code>\n`;
+    localXml += `      <g:id>${prod._id}</g:id>\n`;
+    localXml += `      <g:availability>${availability}</g:availability>\n`;
+    localXml += `      <g:price>${priceStr}</g:price>\n`;
+    localXml += `      <g:quantity>10</g:quantity>\n`;
+    localXml += `      <g:pickup_method>buy</g:pickup_method>\n`;
+    localXml += `      <g:pickup_sla>same_day</g:pickup_sla>\n`;
+    localXml += `    </item>\n`;
+
+    localTsv += `${storeCode}\t${prod._id}\t${availability}\t${priceStr}\t10\tbuy\tsame_day\n`;
+  });
+
+  localXml += `  </channel>\n`;
+  localXml += `</rss>\n`;
+
+  const localXmlPath = path.join(publicDir, "local-inventory.xml");
+  fs.writeFileSync(localXmlPath, localXml, "utf-8");
+  console.log(`Successfully generated ${localXmlPath}!`);
+
+  const localTsvPath = path.join(publicDir, "local-inventory.tsv");
+  fs.writeFileSync(localTsvPath, localTsv, "utf-8");
+  console.log(`Successfully generated ${localTsvPath}!`);
 };
 
 generateSitemap();

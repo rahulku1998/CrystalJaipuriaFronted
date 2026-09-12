@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+  <channel>
+    <title>Crystal Jaipuria - Local Product Inventory</title>
+    <link>https://www.crystaljaipuria.com</link>
+    <description>Local in-store product inventory for Crystal Jaipuria store in Jaipur.</description>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6aa2f217a69037c73ebe8dd2</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>9500.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6aa2f0cda69037c73ebe8da5</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>16500.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6aa2f02ea69037c73ebe8d79</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>14000.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6aa2ef74a69037c73ebe8d4e</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>13500.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6aa2ee69a69037c73ebe8d24</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>1200.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6aa2eddda69037c73ebe8cfb</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>11000.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6aa2ed41a69037c73ebe8cd3</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>2200.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6aa2ec48a69037c73ebe8c85</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>12500.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6aa2ebbda69037c73ebe8c5f</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>14000.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6aa2e8c5a69037c73ebe8c11</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>16500.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a9bda4aa69037c73ebe572c</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>21000.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a9bda27a69037c73ebe5709</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>14500.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a9bda04a69037c73ebe56e7</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>19500.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a9bd9dca69037c73ebe56c6</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>9500.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a9bd9baa69037c73ebe56a6</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>24000.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a9bd990a69037c73ebe5687</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>16500.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a9bd955a69037c73ebe5669</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>38000.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a9bd930a69037c73ebe564c</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>2400.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a9bd90ca69037c73ebe5630</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>28000.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a9bd8e6a69037c73ebe5615</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>1400.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a9bd8b9a69037c73ebe55fb</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>1800.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a9a8d12a69037c73ebe400b</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>22000.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a9a8c5ea69037c73ebe3ff3</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>18500.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a9a8898a69037c73ebe3ebb</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>3500.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a94071c31429323dcbafd9f</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>2000.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a94011831429323dcbafcce</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>0.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a93ffb431429323dcbafcb6</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>0.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a93fbac31429323dcbafbe8</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>0.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a93f8e131429323dcbafb11</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>0.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a93f72d31429323dcbafa84</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>0.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a93f43331429323dcbafa32</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>0.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a93f23c31429323dcbaf931</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>0.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a93efff31429323dcbaf8cc</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>0.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a93e63631429323dcbaf7b7</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>0.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a91697b31429323dcbaf2cd</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>0.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a55c1012dcf49aacd71efd9</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>0.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a55c07e2dcf49aacd71efc3</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>37500.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a55bf8b2dcf49aacd71efae</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>2000.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a55bf102dcf49aacd71efac</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>0.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a55beb62dcf49aacd71ef9e</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>200.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a55be4f2dcf49aacd71ef80</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>25000.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>1</g:store_code>
+      <g:id>6a55bdcd2dcf49aacd71ef71</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>120.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+  </channel>
+</rss>
