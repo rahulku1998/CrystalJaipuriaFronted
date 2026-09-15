@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   FaTimes,
   FaCheckCircle,
@@ -16,6 +16,7 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
   const [quantity, setQuantity] = useState(1);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
@@ -42,10 +43,52 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
   const totalPrice = unitPrice * quantity;
   const productImage = getProductImageUrl(product, 0, 160);
 
+  // Trigger Google Customer Reviews Opt-In Modal upon Order Placement
+  useEffect(() => {
+    if (orderPlaced && orderId && email.trim()) {
+      const timer = setTimeout(() => {
+        const deliveryDateObj = new Date();
+        deliveryDateObj.setDate(deliveryDateObj.getDate() + 7);
+        const estimatedDeliveryDate = deliveryDateObj.toISOString().split("T")[0];
+
+        const renderGoogleSurvey = () => {
+          if (window.gapi && window.gapi.surveyoptin) {
+            try {
+              window.gapi.surveyoptin.render({
+                merchant_id: 5540789348,
+                order_id: orderId,
+                email: email.trim(),
+                delivery_country: "IN",
+                estimated_delivery_date: estimatedDeliveryDate,
+                products: product?.gtin || product?.sku ? [{ gtin: String(product.gtin || product.sku) }] : []
+              });
+            } catch (err) {
+              console.warn("Google Customer Reviews survey render error:", err);
+            }
+          }
+        };
+
+        if (window.gapi && window.gapi.load) {
+          window.gapi.load("surveyoptin", renderGoogleSurvey);
+        } else if (typeof window.renderOptIn === "function") {
+          window.renderOptIn();
+        }
+      }, 700);
+
+      return () => clearTimeout(timer);
+    }
+  }, [orderPlaced, orderId, email, product]);
+
   const handlePlaceOrder = (e) => {
     e.preventDefault();
-    if (!name.trim() || !phone.trim() || !address.trim() || !pincode.trim()) {
-      alert("Please fill in your Name, Phone Number, Delivery Address, and Pincode.");
+    if (!name.trim() || !phone.trim() || !email.trim() || !address.trim() || !pincode.trim()) {
+      alert("Please fill in your Name, Phone Number, Email Address, Delivery Address, and Pincode.");
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.trim())) {
+      alert("Please enter a valid email address (e.g. name@gmail.com).");
       return;
     }
 
@@ -63,6 +106,7 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
       paymentStatus: "Pending",
       customerName: name,
       customerPhone: phone,
+      customerEmail: email.trim(),
       deliveryAddress: `${address}, ${city}, ${state} - ${pincode}`,
       placedAt: new Date().toISOString()
     };
@@ -84,6 +128,7 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
       `*Customer Delivery Details:*\n` +
       `• Full Name: ${name}\n` +
       `• Phone Number: ${phone}\n` +
+      `• Email Address: ${email.trim()}\n` +
       `• Delivery Address: ${address}, ${city}, ${state} - ${pincode}\n` +
       `• Product Link: ${typeof window !== "undefined" ? window.location.href : ""}\n\n` +
       `Please contact the customer and confirm dispatch from Jaipur!`;
@@ -102,7 +147,7 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
     const message = `*Order Inquiry: ${orderId}* 🛍️\n\n` +
       `*Product:* ${product.name} (Qty: ${quantity})\n` +
       `*Amount:* ₹${totalPrice.toLocaleString("en-IN")}\n` +
-      `*Customer:* ${name} (${phone})\n` +
+      `*Customer:* ${name} (${phone}, ${email})\n` +
       `*Address:* ${address}, ${city} - ${pincode}\n\n` +
       `Hello Crystal Jaipuria, I have placed this order on your website. Please confirm when it will be dispatched.`;
 
@@ -115,6 +160,7 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
     setQuantity(1);
     setName("");
     setPhone("");
+    setEmail("");
     setAddress("");
     setCity("");
     setState("");
@@ -198,6 +244,10 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
                 <div className="flex justify-between border-b pb-1.5">
                   <span className="text-gray-500">Total Payable:</span>
                   <span className="font-extrabold text-indigo-700 text-sm">₹{totalPrice.toLocaleString("en-IN")}</span>
+                </div>
+                <div className="flex justify-between border-b pb-1.5">
+                  <span className="text-gray-500">Customer Email:</span>
+                  <span className="font-medium text-gray-800">{email}</span>
                 </div>
                 <div className="flex justify-between border-b pb-1.5">
                   <span className="text-gray-500">Payment Mode:</span>
@@ -306,6 +356,15 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
                     className="w-full rounded-xl border border-gray-300 bg-white px-3.5 py-2 text-xs sm:text-sm outline-none focus:ring-2 focus:ring-indigo-400"
                   />
                 </div>
+
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Email Address (ईमेल पता - For Tracking & Updates) *"
+                  className="w-full rounded-xl border border-gray-300 bg-white px-3.5 py-2 text-xs sm:text-sm outline-none focus:ring-2 focus:ring-indigo-400"
+                />
 
                 <textarea
                   required

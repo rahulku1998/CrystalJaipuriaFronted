@@ -68,6 +68,30 @@
     </script>
     <!-- End Google Tag Manager & GA4 -->
 
+    <!-- Google Customer Reviews Platform & Badge Integration (Merchant ID: 5540789348) -->
+    <script src="https://apis.google.com/js/platform.js?onload=renderOptIn" async defer></script>
+    <script id="merchantWidgetScript" src="https://www.gstatic.com/shopping/merchant/merchantwidget.js" defer></script>
+    <script>
+      window.renderOptIn = function() {};
+      window.addEventListener('load', function () {
+        var script = document.getElementById('merchantWidgetScript');
+        function initBadge() {
+          if (window.merchantwidget) {
+            window.merchantwidget.start({
+              merchant_id: 5540789348,
+              position: "BOTTOM_LEFT"
+            });
+          }
+        }
+        if (window.merchantwidget) {
+          initBadge();
+        } else if (script) {
+          script.addEventListener('load', initBadge);
+        }
+      });
+    </script>
+    <!-- End Google Customer Reviews -->
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
