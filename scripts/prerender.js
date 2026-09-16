@@ -1,8 +1,10 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { STANDARDIZED_SPECS } from "../src/utils/productStandardizer.js";
+import { STANDARDIZED_SPECS, getStandardizedProduct } from "../src/utils/productStandardizer.js";
 import { CATEGORY_CONTENT } from "../src/utils/categoryContent.js";
+import { sanitizeNaturalStutter } from "../src/utils/aiGenerator.js";
+import { getVedicVastuForProduct } from "../src/utils/productMetadata.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -150,14 +152,18 @@ export const runPrerender = async () => {
   // 1. Pre-render All Products
   // ==========================================
   let prodCount = 0;
-  products.forEach((prod) => {
+  products.forEach((rawProd) => {
+    const prod = getStandardizedProduct(rawProd);
+    const vedicVastu = getVedicVastuForProduct(prod);
     const slug = prod.slug || prod._id;
     if (!slug) return;
 
-    const cleanName = (prod.name || "Gemstone Idol")
-      .replace(/\s*-\s*100%\s*certified/gi, "")
-      .replace(/\s*100%\s*certified/gi, "")
-      .trim();
+    const cleanName = sanitizeNaturalStutter(
+      (prod.name || "Gemstone Idol")
+        .replace(/\s*-\s*100%\s*certified/gi, "")
+        .replace(/\s*100%\s*certified/gi, "")
+        .trim()
+    );
 
     const cleanProductSlug = (prod.slug || slug || "product")
       .toLowerCase()
@@ -218,11 +224,13 @@ export const runPrerender = async () => {
       } catch (e) {}
     }
 
-    const cleanDesc = (prod.detail || prod.description || cleanName)
-      .replace(/<[^>]*>?/gm, "")
-      .replace(/100%\s*certified\s*/gi, "")
-      .replace(/\r?\n|\r/g, " ")
-      .trim();
+    const cleanDesc = sanitizeNaturalStutter(
+      (prod.detail || prod.description || cleanName)
+        .replace(/<[^>]*>?/gm, "")
+        .replace(/100%\s*certified\s*/gi, "")
+        .replace(/\r?\n|\r/g, " ")
+        .trim()
+    );
 
     if (!metaTitle) {
       metaTitle = `${displayTitle} | Crystal Jaipuria`;
@@ -237,6 +245,12 @@ export const runPrerender = async () => {
       try {
         productFaqs = JSON.parse(faqMatch[1]);
       } catch (e) {}
+    }
+    if (Array.isArray(productFaqs)) {
+      productFaqs = productFaqs.map((f) => ({
+        question: sanitizeNaturalStutter(f.question || ""),
+        answer: sanitizeNaturalStutter(f.answer || "")
+      }));
     }
 
     const graphItems = [
@@ -327,6 +341,28 @@ export const runPrerender = async () => {
             },
           },
         },
+        additionalProperty: [
+          vedicVastu?.placementDirection ? {
+            "@type": "PropertyValue",
+            name: "Vastu Placement Direction",
+            value: vedicVastu.placementDirection,
+          } : null,
+          vedicVastu?.chakraPlanet ? {
+            "@type": "PropertyValue",
+            name: "Chakra & Ruling Planet",
+            value: vedicVastu.chakraPlanet,
+          } : null,
+          prod.weight ? {
+            "@type": "PropertyValue",
+            name: "Weight",
+            value: String(prod.weight),
+          } : null,
+          prod.size ? {
+            "@type": "PropertyValue",
+            name: "Dimensions",
+            value: String(prod.size),
+          } : null,
+        ].filter(Boolean),
       },
       {
         "@type": "BreadcrumbList",
@@ -375,7 +411,12 @@ export const runPrerender = async () => {
             <div style="flex:1.2;min-width:280px;">
               <span style="display:inline-block;background:#fef3c7;color:#92400e;font-size:12px;font-weight:700;padding:4px 12px;border-radius:9999px;margin-bottom:12px;letter-spacing:0.5px;">100% NATURAL CERTIFIED GEMSTONE</span>
               <h1 style="font-size:26px;font-weight:800;color:#0f172a;line-height:1.3;margin-bottom:12px;">${escapeHtml(customHeading || displayTitle)}</h1>
-              <div style="font-size:28px;font-weight:800;color:#047857;margin-bottom:16px;">₹${priceNum.toLocaleString("en-IN")}</div>
+              <div style="font-size:28px;font-weight:800;color:#047857;margin-bottom:12px;">₹${priceNum.toLocaleString("en-IN")}</div>
+              ${vedicVastu?.placementDirection ? `
+              <div style="background:#ecfdf5;border:1px solid #a7f3d0;border-radius:12px;padding:8px 12px;font-size:13px;color:#065f46;margin-bottom:16px;display:flex;align-items:center;gap:8px;">
+                <span>🧭</span>
+                <span><strong>Vastu Placement:</strong> ${escapeHtml(vedicVastu.placementDirection)}</span>
+              </div>` : ""}
               <p style="font-size:15px;color:#475569;line-height:1.6;margin-bottom:24px;">${escapeHtml(cleanDesc.slice(0, 350))}...</p>
               <div style="display:flex;gap:12px;flex-wrap:wrap;">
                 <a href="https://wa.me/918306317032?text=Hello%20Crystal%20Jaipuria,%20I%20am%20interested%20in%20${encodeURIComponent(displayTitle)}" style="background:#25D366;color:#ffffff;font-weight:700;padding:12px 24px;border-radius:12px;text-decoration:none;font-size:15px;display:inline-flex;align-items:center;gap:8px;">WhatsApp Inquiry</a>
