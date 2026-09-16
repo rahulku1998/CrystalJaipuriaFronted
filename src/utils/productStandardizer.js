@@ -135,6 +135,25 @@ export const STANDARDIZED_SPECS = {
   },
 };
 
+/**
+ * Products that are already ranking well on Google Search & Merchant Center.
+ * These are strictly preserved and never auto-modified so their live SEO rankings remain untouched.
+ */
+export const PROTECTED_RANKING_SLUGS = new Set([
+  "natural-sphatik-shivling",
+  "gemston-ruby-shree-yantra",
+  "pyrite-gemston-shivling",
+  "natural-rose-quartz-pair-of-swan",
+  "gemston-amethyst-diya",
+  "clear-crystal-quartz-shivling-with-shiva-face",
+  "green-jade-shiva-statue-with-gold-panting",
+  "green-jade-panchmukhi-shivling",
+  "crystal-sphtik-shree-yantra-on-kamal-flower",
+  "black-agate-gemstone-carving-of-ganesh",
+  "crystal-clear-mahvaveer-ji-statue",
+  "amethyst-gemston-angel",
+]);
+
 export const SACRED_SHLOKAS = {
   shivling: {
     shloka: "स्फटिकस्य प्रपूजनात् सर्वकामसमृद्धिः स्यात्।",
@@ -507,6 +526,75 @@ export const getStandardizedProduct = (product) => {
       .replace(/\bnatural\s+natural\b/gi, "Natural")
       .replace(/\bauthentic\s+natural\s+natural\b/gi, "authentic Natural")
       .replace(/\bcertified\s+natural\s+natural\b/gi, "certified Natural");
+  }
+
+  // 10. For all non-ranking products, eliminate duplicate embedded boxes and boilerplate repetition
+  if (!PROTECTED_RANKING_SLUGS.has(slug) && cleanDescription) {
+    // A. Remove embedded duplicate green Vastu box (now prominently featured in dedicated Vedic Guide card)
+    cleanDescription = cleanDescription.replace(
+      /<div[^>]*style="[^"]*background:\s*#f0fdf4[^"]*"[^>]*>[\s\S]*?<\/div>/gi,
+      ""
+    );
+
+    // B. Remove embedded duplicate gray guarantee box (already covered in Hero Trust badges)
+    cleanDescription = cleanDescription.replace(
+      /<div[^>]*style="[^"]*background:\s*#f8fafc[^"]*"[^>]*>[\s\S]*?<\/div>/gi,
+      ""
+    );
+
+    // C. Remove redundant competitor keyword boilerplate
+    cleanDescription = cleanDescription.replace(
+      /<p>\s*Looking to\s*<strong>\s*buy authentic[\s\S]*?<\/p>/gi,
+      ""
+    );
+
+    // D. Replace verbatim copy of product.detail with unique sacred iconography opening
+    if (slug.includes("radha-krishna") || slug.includes("krishna")) {
+      cleanDescription = cleanDescription.replace(
+        /<p><strong>\s*Handcrafted from certified[\s\S]*?<\/strong><\/p>|<p>\s*Handcrafted from certified[\s\S]*?<\/p>/i,
+        `<p>The sacred worship of <strong>Lord Krishna and Radha Rani</strong> represents the highest pinnacle of Bhakti Yoga—the supreme union of unconditional love, divine devotion, and auspicious domestic harmony. Hand-carved with generational mastery from certified natural gemstone, this sacred idol captures the serene Tribhanga posture and celestial beauty to anchor peaceful vibrations in your home temple, living sanctum, or sacred space.</p>`
+      );
+    } else if (slug.includes("saraswati")) {
+      cleanDescription = cleanDescription.replace(
+        /<p><strong>\s*Handcrafted from certified[\s\S]*?<\/strong><\/p>|<p>\s*Handcrafted from certified[\s\S]*?<\/p>/i,
+        `<p>Embodying the pure divine current of wisdom, creative speech, and fine arts, this sacred <strong>Maa Saraswati</strong> idol with the sacred Veena and Vedic scripture inspires deep intellectual clarity, creative eloquence, and academic focus in your study or sacred altar.</p>`
+      );
+    } else if (slug.includes("hanuman")) {
+      cleanDescription = cleanDescription.replace(
+        /<p><strong>\s*Handcrafted from certified[\s\S]*?<\/strong><\/p>|<p>\s*Handcrafted from certified[\s\S]*?<\/p>/i,
+        `<p>Embodying supreme devotion, moral fearlessness, and unshakeable strength, this sacred <strong>Lord Hanuman</strong> idol acts as an energetic shield against negative environmental influences, dispelling fear and anchoring vital spiritual fortitude in your space.</p>`
+      );
+    } else if (slug.includes("lakshmi")) {
+      cleanDescription = cleanDescription.replace(
+        /<p><strong>\s*Handcrafted from certified[\s\S]*?<\/strong><\/p>|<p>\s*Handcrafted from certified[\s\S]*?<\/p>/i,
+        `<p>Channelling the auspicious benevolence of <strong>Goddess Mahalakshmi</strong> seated upon the sacred lotus, this divine murti radiates continuous wealth, commercial expansion, and peaceful domestic prosperity.</p>`
+      );
+    } else if (slug.includes("elephant")) {
+      cleanDescription = cleanDescription.replace(
+        /<p><strong>\s*Handcrafted from certified[\s\S]*?<\/strong><\/p>|<p>\s*Handcrafted from certified[\s\S]*?<\/p>/i,
+        `<p>Revered in Vedic Vastu traditions as Airavata—the divine white elephant symbolizing royal majesty, unshakeable stability, and lasting abundance—this handcrafted gemstone sculpture invites steady financial strength and dignified presence.</p>`
+      );
+    } else if (slug.includes("labradorite")) {
+      cleanDescription = cleanDescription.replace(
+        /<p><strong>\s*Handcrafted from certified[\s\S]*?<\/strong><\/p>|<p>\s*Handcrafted from certified[\s\S]*?<\/p>/i,
+        `<p>Handcrafted from certified natural <strong>Labradorite Gemstone</strong> exhibiting genuine optical labradorescence, this sacred Shivling is carved according to Vedic Shilpa Shastras for daily Jalabhishekam, spiritual awakening, and deep meditative tranquility.</p>`
+      );
+    } else if (slug.includes("howlite")) {
+      cleanDescription = cleanDescription.replace(
+        /<p><strong>\s*Handcrafted from certified[\s\S]*?<\/strong><\/p>|<p>\s*Handcrafted from certified[\s\S]*?<\/p>/i,
+        `<p>Sculpted from genuine natural <strong>White Howlite Stone</strong> with organic grey-black veining, this sacred Shivling calms turbulent thoughts, relieves stress, and establishes pure contemplative silence during meditation and temple worship.</p>`
+      );
+    } else if (slug.includes("red-jasper")) {
+      cleanDescription = cleanDescription.replace(
+        /<p><strong>\s*Handcrafted from certified[\s\S]*?<\/strong><\/p>|<p>\s*Handcrafted from certified[\s\S]*?<\/p>/i,
+        `<p>Sculpted from authentic <strong>Red Jasper Stone</strong> renowned for grounding vitality and Root Chakra alignment, this sacred Shivling provides deep energetic stamina, courage, and protection against negative environmental stress.</p>`
+      );
+    } else if (slug.includes("smokey-quartz")) {
+      cleanDescription = cleanDescription.replace(
+        /<p><strong>\s*Handcrafted from certified[\s\S]*?<\/strong><\/p>|<p>\s*Handcrafted from certified[\s\S]*?<\/p>/i,
+        `<p>Hand-carved from genuine natural <strong>Smokey Quartz Crystal</strong>, this sacred idol acts as a premier grounding and psychic shielding stone, transmuting heavy electromagnetic frequencies into clear spiritual light.</p>`
+      );
+    }
   }
 
   if (slug === "green-jade-panchmukhi-shivling") {

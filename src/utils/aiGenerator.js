@@ -2037,18 +2037,9 @@ export const generateBuiltInContent = (productName, categoryName = "") => {
   const dynamicVastuText = getDynamicVastuVidhiHtml(archetype, cleanName, stone);
 
   let fullDescription =
-    `<p><strong>${citationHook}</strong></p>\n\n` +
-    `<div style="background:#f0fdf4; border-left:4px solid #16a34a; padding:14px 18px; margin:20px 0; border-radius:10px;">\n` +
-    `  <strong style="color:#15803d; font-size:14.5px;">🌿 Sacred Vastu &amp; Consecration Vidhi:</strong>\n` +
-    `  <p style="color:#166534; font-size:13.5px; margin:6px 0 0 0; line-height:1.6;">${dynamicVastuText}</p>\n` +
-    `</div>\n\n` +
-    `${competitorKeywordsIntro}\n\n` +
+    `<p>${citationHook}</p>\n\n` +
     `<h2>${sectionOneHeading}</h2>\n${sectionOneBody}\n\n` +
     `<h2>${sectionTwoHeading}</h2>\n${sectionTwoBody}\n\n` +
-    `<div style="background:#f8fafc; border:1px solid #e2e8f0; padding:14px 18px; margin:20px 0; border-radius:10px;">\n` +
-    `  <strong style="color:#1e293b; font-size:14.5px;">💎 100% Genuine Earth-Mined Guarantee:</strong>\n` +
-    `  <p style="color:#475569; font-size:13.5px; margin:6px 0 0 0; line-height:1.6;">Hand-sculpted from certified natural gemstone at Crystal Jaipuria lapidary workshops in Jaipur (est. 1989). Guaranteed zero synthetic resin casting or artificial pressed glass.</p>\n` +
-    `</div>\n\n` +
     `<h2>Technical &amp; Gemological Specifications</h2>\n` +
     `<table style="width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;">\n` +
     `  <thead>\n` +
