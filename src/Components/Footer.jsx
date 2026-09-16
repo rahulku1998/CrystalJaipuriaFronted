@@ -13,7 +13,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-[#eef3fb] text-slate-700 mt-20 border-t border-slate-200">
+    <footer data-nosnippet className="bg-[#eef3fb] text-slate-700 mt-20 border-t border-slate-200">
       {/* Top Features Strip (Clean Light Accent) */}
       <div className="border-b border-slate-200 bg-[#e4ebf7]/80">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 py-6">

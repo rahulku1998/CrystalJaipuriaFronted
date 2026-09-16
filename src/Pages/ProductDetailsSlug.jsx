@@ -922,9 +922,9 @@ Hello Crystal Jaipuria, I have a query regarding this product.
         </div>
       </div>
 
-      {/* SECTION 3: RELATED PRODUCTS (CRISP WHITE SHOWCASE) */}
+      {/* SECTION 3: RELATED PRODUCTS (CRISP WHITE SHOWCASE - data-nosnippet prevents Google from mixing this with product snippet) */}
       {Array.isArray(relatedProducts) && relatedProducts.length > 0 && (
-        <div className="bg-white py-12 sm:py-16">
+        <div data-nosnippet className="bg-white py-12 sm:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <div className="flex items-center justify-between mb-8">
               <div>
