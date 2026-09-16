@@ -26,24 +26,7 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
   const [orderPlaced, setOrderPlaced] = useState(false);
   const [orderId, setOrderId] = useState("");
 
-  if (!isOpen || !product) return null;
-
-  // Calculate Unit Price
-  let unitPrice = 0;
-  if (typeof product.discountPrice === "number" && product.discountPrice > 0) {
-    unitPrice = product.discountPrice;
-  } else if (typeof product.price === "number" && product.price > 0) {
-    unitPrice = product.price;
-  } else {
-    const raw = String(product.discountPrice || product.price || "0").replace(/,/g, "");
-    const match = raw.match(/\d+(\.\d+)?/);
-    if (match) unitPrice = Number(match[0]);
-  }
-
-  const totalPrice = unitPrice * quantity;
-  const productImage = getProductImageUrl(product, 0, 160);
-
-  // Trigger Google Customer Reviews Opt-In Modal upon Order Placement
+  // Trigger Google Customer Reviews Opt-In Modal upon Order Placement (Declared before any early returns)
   useEffect(() => {
     if (orderPlaced && orderId && email.trim()) {
       const timer = setTimeout(() => {
@@ -78,6 +61,23 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
       return () => clearTimeout(timer);
     }
   }, [orderPlaced, orderId, email, product]);
+
+  // Calculate Unit Price safely
+  let unitPrice = 0;
+  if (product) {
+    if (typeof product.discountPrice === "number" && product.discountPrice > 0) {
+      unitPrice = product.discountPrice;
+    } else if (typeof product.price === "number" && product.price > 0) {
+      unitPrice = product.price;
+    } else {
+      const raw = String(product.discountPrice || product.price || "0").replace(/,/g, "");
+      const match = raw.match(/\d+(\.\d+)?/);
+      if (match) unitPrice = Number(match[0]);
+    }
+  }
+
+  const totalPrice = unitPrice * quantity;
+  const productImage = product ? getProductImageUrl(product, 0, 160) : "";
 
   const handlePlaceOrder = (e) => {
     e.preventDefault();
@@ -167,6 +167,8 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
     setPincode("");
     onClose();
   };
+
+  if (!isOpen || !product) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/65 backdrop-blur-sm">

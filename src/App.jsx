@@ -145,6 +145,10 @@ function App() {
         <Route path="/renga" element={<SpamRemoved />} />
         <Route path="/home-*" element={<SpamRemoved />} />
         <Route path="/shop-*" element={<SpamRemoved />} />
+        <Route path="/wp-json/*" element={<SpamRemoved />} />
+        <Route path="/wp-json" element={<SpamRemoved />} />
+        <Route path="/wp-*" element={<SpamRemoved />} />
+        <Route path="/xmlrpc.php" element={<SpamRemoved />} />
 
         {/* REDIRECT OLD WOOCOMMERCE /product-category/:slug -> /:slug */}
         <Route path="/product-category/:slug" element={<ProductCategoryRedirect />} />
