@@ -553,11 +553,22 @@ export const getStandardizedProduct = (product) => {
   if (slug === "green-jade-panchmukhi-shivling") {
     cleanDetail = "Buy 100% Certified Natural Green Jade Stone Panchmukhi Shivling (500g, 4.5 Inches) handcrafted in Jaipur, India. Sacred Pashupatinath Mahadev Swaroop with 5 divine faces for home temple pooja, Jalabhishek, and Vastu prosperity at factory direct price.";
   } else if (cleanDetail) {
+    if (slug.includes("labradorite")) {
+      cleanDetail = cleanDetail.replace(/Natural\s+Sphatik\s*\([^)]*\)/gi, "Natural Labradorite Gemstone").replace(/Sphatik/gi, "Labradorite");
+    } else if (slug.includes("howlite")) {
+      cleanDetail = cleanDetail.replace(/Natural\s+Sphatik\s*\([^)]*\)/gi, "Natural Howlite Stone").replace(/Sphatik/gi, "Howlite");
+    } else if (slug.includes("red-jasper")) {
+      cleanDetail = cleanDetail.replace(/Natural\s+Sphatik\s*\([^)]*\)/gi, "Natural Red Jasper Stone").replace(/Sphatik/gi, "Red Jasper");
+    } else if (slug.includes("smokey-quartz")) {
+      cleanDetail = cleanDetail.replace(/Natural\s+Sphatik\s*\([^)]*\)/gi, "Natural Smokey Quartz Gemstone");
+    }
     cleanDetail = cleanDetail
       .replace(/Gold Panting/gi, "Gold Painting")
       .replace(/Elephant Staute/gi, "Elephant Statue")
       .replace(/Gemston /gi, "Gemstone ")
-      .replace(/Mahvaveer/gi, "Mahaveer");
+      .replace(/Mahvaveer/gi, "Mahaveer")
+      .replace(/(\b100%\s*)?natural\s+natural\b/gi, "100% Natural")
+      .replace(/\bnatural\s+natural\b/gi, "Natural");
   }
 
   // Bulletproof Pure Local Static WebP Delivery for Catalog & Live Support for Dynamic Products
