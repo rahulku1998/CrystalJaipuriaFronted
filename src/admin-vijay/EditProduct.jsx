@@ -8,6 +8,7 @@ import {
   packProductMetadata,
   unpackProductMetadata,
   generateSuperMetaTags,
+  getVedicVastuForProduct,
 } from "../utils/productMetadata";
 import { formatAdditionalInfo } from "../utils/productStandardizer";
 import { generateShortDetail, estimateProductSpecs } from "../utils/aiGenerator";
@@ -55,6 +56,22 @@ const EditProduct = () => {
   const [metaTitle, setMetaTitle] = useState("");
   const [metaDescription, setMetaDescription] = useState("");
   const [faqs, setFaqs] = useState([{ question: "", answer: "" }]);
+  const [vedicVastu, setVedicVastu] = useState({
+    placementDirection: "",
+    chakraPlanet: "",
+    poojaVidhi: "",
+    vedicBenefits: "",
+  });
+
+  const handleAutoGenerateVedic = () => {
+    if (!form.name?.trim()) {
+      alert("Please enter a product name first!");
+      return;
+    }
+    const generated = getVedicVastuForProduct(form.name);
+    setVedicVastu(generated);
+  };
+
   const [categories, setCategories] = useState([]);
   const [subCategories, setSubCategories] = useState([]);
   const [allSubCategories, setAllSubCategories] = useState([]);
@@ -174,6 +191,12 @@ const EditProduct = () => {
         setFaqs(unpacked.faqs);
       } else {
         setFaqs([{ question: "", answer: "" }]);
+      }
+
+      if (unpacked.vedicVastu && (unpacked.vedicVastu.placementDirection || unpacked.vedicVastu.chakraPlanet || unpacked.vedicVastu.poojaVidhi || unpacked.vedicVastu.vedicBenefits)) {
+        setVedicVastu(unpacked.vedicVastu);
+      } else {
+        setVedicVastu(getVedicVastuForProduct(p));
       }
 
       if (p.categoryId?._id) {
@@ -364,7 +387,8 @@ const EditProduct = () => {
         metaTitle,
         metaDescription,
         heading: form.heading?.trim() || "",
-        galleryOrder: gallery.filter((item) => item.type === "existing").map((item) => item.url)
+        galleryOrder: gallery.filter((item) => item.type === "existing").map((item) => item.url),
+        vedicVastu,
       });
       formData.append("additionalInfo", packedAdditionalInfo);
 
@@ -1071,6 +1095,88 @@ placeholder="Available stock"
     </div>
   </div>
 </div>
+
+            {/* Vedic & Vastu Wisdom Section */}
+            <div className="bg-gradient-to-br from-emerald-50/60 via-white to-teal-50/40 border border-emerald-200/80 rounded-2xl p-5 sm:p-6 shadow-xs space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-emerald-100 pb-3">
+                <div>
+                  <label className="font-bold text-gray-800 text-base sm:text-lg flex items-center gap-2">
+                    <span className="text-xl">🌿</span>
+                    <span>वैदिक एवं वास्तु विवरण (Vedic &amp; Vastu Wisdom)</span>
+                  </label>
+                  <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
+                    स्थापना दिशा, चक्र/ग्रह, अभिषेक पूजा विधि एवं वास्तु लाभ (लाइव पेज व Google Rich Schema हेतु)
+                  </p>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={handleAutoGenerateVedic}
+                  className="inline-flex items-center gap-1.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white text-xs font-bold px-4 py-2 rounded-xl shadow-xs transition-transform active:scale-95 cursor-pointer self-start sm:self-auto"
+                >
+                  <FaMagic className="text-amber-300" />
+                  <span>⚡ 1-Click Auto-Fill Vedic Details</span>
+                </button>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-bold text-gray-700 mb-1 flex items-center gap-1.5">
+                    <span>🧭</span>
+                    <span>स्थापना दिशा (Vastu Placement Direction)</span>
+                  </label>
+                  <input
+                    type="text"
+                    value={vedicVastu.placementDirection}
+                    onChange={(e) => setVedicVastu({ ...vedicVastu, placementDirection: e.target.value })}
+                    placeholder="उदा. North-East (Ishanya Kon) / East Altar"
+                    className="w-full rounded-lg border border-gray-300 bg-white px-3.5 py-2.5 text-sm outline-none focus:ring-2 focus:ring-emerald-300 focus:border-emerald-400 font-medium"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-gray-700 mb-1 flex items-center gap-1.5">
+                    <span>🌀</span>
+                    <span>संबद्ध चक्र एवं ग्रह (Chakra &amp; Ruling Planet)</span>
+                  </label>
+                  <input
+                    type="text"
+                    value={vedicVastu.chakraPlanet}
+                    onChange={(e) => setVedicVastu({ ...vedicVastu, chakraPlanet: e.target.value })}
+                    placeholder="उदा. Heart Chakra (Anahata) · Mercury (Budh)"
+                    className="w-full rounded-lg border border-gray-300 bg-white px-3.5 py-2.5 text-sm outline-none focus:ring-2 focus:ring-emerald-300 focus:border-emerald-400 font-medium"
+                  />
+                </div>
+
+                <div className="md:col-span-2">
+                  <label className="block text-xs font-bold text-gray-700 mb-1 flex items-center gap-1.5">
+                    <span>🪔</span>
+                    <span>अभिषेक एवं पूजा विधि (Pooja &amp; Abhishekam Rituals)</span>
+                  </label>
+                  <textarea
+                    rows={2}
+                    value={vedicVastu.poojaVidhi}
+                    onChange={(e) => setVedicVastu({ ...vedicVastu, poojaVidhi: e.target.value })}
+                    placeholder="उदा. गंगाजल व कच्चे गाय के दूध से अभिषेक, शुद्ध देशी घी का दीपक एवं तुलसी पत्र अर्पण..."
+                    className="w-full rounded-lg border border-gray-300 bg-white px-3.5 py-2.5 text-sm outline-none focus:ring-2 focus:ring-emerald-300 focus:border-emerald-400 leading-relaxed"
+                  />
+                </div>
+
+                <div className="md:col-span-2">
+                  <label className="block text-xs font-bold text-gray-700 mb-1 flex items-center gap-1.5">
+                    <span>✨</span>
+                    <span>आध्यात्मिक एवं वास्तु लाभ (Spiritual &amp; Vastu Benefits)</span>
+                  </label>
+                  <textarea
+                    rows={2}
+                    value={vedicVastu.vedicBenefits}
+                    onChange={(e) => setVedicVastu({ ...vedicVastu, vedicBenefits: e.target.value })}
+                    placeholder="उदा. पारिवारिक प्रेम, मानसिक शांति, दांपत्य सामंजस्य और नकारात्मक ऊर्जा का निवारण..."
+                    className="w-full rounded-lg border border-gray-300 bg-white px-3.5 py-2.5 text-sm outline-none focus:ring-2 focus:ring-emerald-300 focus:border-emerald-400 leading-relaxed"
+                  />
+                </div>
+              </div>
+            </div>
 
             {/* Product Image Manager with Live Reorder / Shuffle */}
             <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">

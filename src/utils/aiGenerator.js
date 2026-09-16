@@ -314,6 +314,142 @@ export const GEMSTONE_PROFILES = {
     authenticityTest: "Deep denim blue stone interwoven with natural white calcite marbling without artificial surface dye.",
     careVidhi: "Gently wipe with soft cloth. Cleanse with sacred dhoop smoke.",
     vibeKeywords: ["rational thinking", "courage in adversity", "throat chakra expression", "emotional balance"]
+  },
+  labradorite: {
+    name: "Natural Labradorite Gemstone",
+    mineral: "Plagioclase Feldspar (Na,Ca)(Al,Si)4O8",
+    crystalSystem: "Triclinic",
+    hardness: "6.0 – 6.5 Mohs Scale",
+    refractiveIndex: "1.560 – 1.568",
+    specificGravity: "2.68 – 2.72 g/cm³",
+    density: 2.70,
+    basePricePerGram: 10.5,
+    chakra: "Third Eye (Ajna) & Throat Chakra (Vishuddha)",
+    deity: "Lord Shiva & Lord Shani Dev",
+    planet: "Saturn (Shani) & Rahu",
+    element: "Ether & Air",
+    authenticityTest: "Displays distinctive iridescent optical schiller effect (Labradorescence) with vivid electric blue, peacock green, and golden flashes when light strikes internal twinning lamellae.",
+    careVidhi: "Gently wipe with a soft microfiber cloth dipped in Gangajal or pure water. Cleanse with sacred Guggal or Sandalwood dhoop. Avoid harsh chemical cleaners.",
+    vibeKeywords: ["auric shield", "psychic awakening", "deflecting negative evil eye", "Shani-Rahu alignment", "deep meditative insight"]
+  },
+  howlite: {
+    name: "Natural Howlite Gemstone",
+    mineral: "Calcium Borosilicate Hydroxide (Ca2B5SiO9(OH)5)",
+    crystalSystem: "Monoclinic (Sub-microscopic nodules)",
+    hardness: "3.5 Mohs Scale",
+    refractiveIndex: "1.583 – 1.608",
+    specificGravity: "2.53 – 2.59 g/cm³",
+    density: 2.55,
+    basePricePerGram: 7.5,
+    chakra: "Crown Chakra (Sahasrara)",
+    deity: "Lord Shiva & Chandra Deva (Moon)",
+    planet: "Moon (Chandra)",
+    element: "Water & Earth",
+    authenticityTest: "Natural porcelain-white opaque body with delicate grey, charcoal, or dark brown web-like natural matrix veins. Feels naturally cool to touch without synthetic resin scent.",
+    careVidhi: "Gently wipe with a barely damp soft cotton cloth. Do not soak in water for long hours due to moderate porosity. Cleanse with gentle incense smoke.",
+    vibeKeywords: ["mental tranquility", "insomnia alleviation", "soothing anger & stress", "Sahasrara spiritual opening"]
+  },
+  opal: {
+    name: "Natural Opal Stone (Upal Gemstone)",
+    mineral: "Hydrated Amorphous Silica (SiO2·nH2O)",
+    crystalSystem: "Amorphous (Non-crystalline Mineraloid)",
+    hardness: "5.5 – 6.5 Mohs Scale",
+    refractiveIndex: "1.440 – 1.460",
+    specificGravity: "1.98 – 2.25 g/cm³",
+    density: 2.15,
+    basePricePerGram: 18.0,
+    chakra: "Crown (Sahasrara) & Sacral Chakra (Swadhisthana)",
+    deity: "Goddess Mahalakshmi & Lord Shukra",
+    planet: "Venus (Shukra)",
+    element: "Water & Light",
+    authenticityTest: "Authentic natural earth-mined opal exhibits distinctive opalescence (milky iridescent play of soft iridescent highlights) with natural microscopic density variations.",
+    careVidhi: "Keep protected from sudden extreme temperature fluctuations. Cleanse with rose water or Gangajal, charging under soft Friday moonlight.",
+    vibeKeywords: ["creative genius", "marital romance & bonding", "financial luxury", "Venus Shukra blessings", "refined artistic aura"]
+  },
+  "red-jasper": {
+    name: "Natural Red Jasper Gemstone",
+    mineral: "Microcrystalline Silicon Dioxide with Iron Oxide (SiO2:Fe2O3)",
+    crystalSystem: "Trigonal (Cryptocrystalline)",
+    hardness: "6.5 – 7.0 Mohs Scale",
+    refractiveIndex: "1.530 – 1.540",
+    specificGravity: "2.58 – 2.91 g/cm³",
+    density: 2.65,
+    basePricePerGram: 8.5,
+    chakra: "Root Chakra (Muladhara)",
+    deity: "Lord Hanuman & Lord Ganesha",
+    planet: "Mars (Mangal)",
+    element: "Fire & Earth",
+    authenticityTest: "Rich opaque terracotta-red to brick-crimson color with natural dark hematite inclusions and mineral banding. Substantial heft and smooth vitreous polish.",
+    careVidhi: "Wash with pure water or Gangajal. Consecrate on Tuesday mornings facing East with fragrant chandan and mustard/ghee lamp.",
+    vibeKeywords: ["grounding stamina", "courage & willpower", "Mangal dosha mitigation", "physical endurance", "fearlessness"]
+  },
+  "smokey-quartz": {
+    name: "Natural Smokey Quartz Crystal",
+    mineral: "Silicon Dioxide with Natural Free Silicon (SiO2)",
+    crystalSystem: "Trigonal (Hexagonal Prisms)",
+    hardness: "7.0 Mohs Scale",
+    refractiveIndex: "1.544 – 1.553",
+    specificGravity: "2.65 g/cm³",
+    density: 2.65,
+    basePricePerGram: 9.0,
+    chakra: "Root Chakra (Muladhara) & Solar Plexus",
+    deity: "Lord Shiva & Lord Shani Dev",
+    planet: "Saturn (Shani) & Ketu",
+    element: "Earth",
+    authenticityTest: "Smoky translucent brown to deep charcoal-taupe body with exceptional natural vitreous clarity. Never contains round trapped glass gas bubbles.",
+    careVidhi: "Cleanse with fresh water or sea salt smoke. Re-energize in morning sunlight or under natural soil grounding.",
+    vibeKeywords: ["neutralizing negative EMF", "karmic grounding", "clearing depressive thoughts", "Sadashiva protective silence"]
+  },
+  "green-aventurine": {
+    name: "Natural Green Aventurine Gemstone",
+    mineral: "Quartzite with Fuchsite Mica inclusions (SiO2:Cr)",
+    crystalSystem: "Trigonal (Granular Aggregate)",
+    hardness: "7.0 Mohs Scale",
+    refractiveIndex: "1.544 – 1.553",
+    specificGravity: "2.64 – 2.69 g/cm³",
+    density: 2.65,
+    basePricePerGram: 8.0,
+    chakra: "Heart Chakra (Anahata)",
+    deity: "Lord Ganesha & Lord Budha (Mercury)",
+    planet: "Mercury (Budh)",
+    element: "Earth & Air",
+    authenticityTest: "Translucent shimmering forest green matrix displaying delicate internal silvery-green sparkles (Aventurescence) caused by microscopic fuchsite mica platelets.",
+    careVidhi: "Wipe with a soft damp cloth. Cleanse with holy Gangajal or sandalwood incense on Wednesday mornings.",
+    vibeKeywords: ["merchant wealth & opportunity", "new business ventures", "heart chakra opening", "optimism & good fortune"]
+  },
+  "yellow-jade": {
+    name: "Natural Yellow Jade Gemstone",
+    mineral: "Calcium Magnesium Silicate (Nephrite Variety)",
+    crystalSystem: "Monoclinic (Interlocking Fibrous)",
+    hardness: "6.0 – 6.5 Mohs Scale",
+    refractiveIndex: "1.600 – 1.620",
+    specificGravity: "2.90 – 3.02 g/cm³",
+    density: 2.96,
+    basePricePerGram: 9.5,
+    chakra: "Solar Plexus (Manipura) & Heart Chakra",
+    deity: "Lord Ganesha & Lord Brihaspati (Jupiter)",
+    planet: "Jupiter (Guru)",
+    element: "Fire & Earth",
+    authenticityTest: "Soft buttery to warm golden honey-yellow hue with smooth waxy-greasy luster and dense fibrous internal structure that resists chipping.",
+    careVidhi: "Wipe with clean soft cotton. Cleanse with fragrant dhoop incense on Thursday mornings facing North-East.",
+    vibeKeywords: ["wisdom & prosperity", "cheerful optimism", "family harmony", "Guru Brihaspati auspiciousness"]
+  },
+  "australian-jade": {
+    name: "Natural Australian Jade (Chrysoprase)",
+    mineral: "Nickel-bearing Cryptocrystalline Quartz (Chalcedony)",
+    crystalSystem: "Trigonal (Cryptocrystalline)",
+    hardness: "6.5 – 7.0 Mohs Scale",
+    refractiveIndex: "1.530 – 1.540",
+    specificGravity: "2.58 – 2.64 g/cm³",
+    density: 2.60,
+    basePricePerGram: 11.0,
+    chakra: "Heart Chakra (Anahata)",
+    deity: "Lord Ganesha & Lord Budha",
+    planet: "Mercury (Budh) & Venus (Shukra)",
+    element: "Earth",
+    authenticityTest: "Appealing apple-green to vivid mint jade-like translucency caused by natural nickel silicates; does not bleach or fade in sunlight.",
+    careVidhi: "Wash with mild water or rose water. Recharge facing morning sunrise.",
+    vibeKeywords: ["compassionate heart healing", "business growth", "joyful emotional equilibrium", "abundance attractor"]
   }
 };
 
@@ -329,10 +465,17 @@ export const detectGemstone = (text = "") => {
   if (lower.includes("ruby") || lower.includes("manik") || lower.includes("rube")) return "ruby";
   if (lower.includes("emerald") || lower.includes("panna")) return "emerald";
 
-  // 2. Multi-word & Specific Quartzes
+  // 2. Specific Quartz Varieties & Unique Gemstones (Check BEFORE generic jade or quartz)
+  if (lower.includes("labradorite")) return "labradorite";
+  if (lower.includes("howlite")) return "howlite";
+  if (lower.includes("opal") || lower.includes("upal")) return "opal";
+  if (lower.includes("red jasper") || lower.includes("jasper")) return "red-jasper";
+  if (lower.includes("smokey quartz") || lower.includes("smoky quartz") || lower.includes("smokey") || lower.includes("smoky")) return "smokey-quartz";
+  if (lower.includes("aventurine") || lower.includes("avernturine")) return "green-aventurine";
+  if (lower.includes("yellow jade")) return "yellow-jade";
+  if (lower.includes("australian jade") || lower.includes("chrysoprase")) return "australian-jade";
   if (lower.includes("rose quartz") || lower.includes("pink quartz") || lower.includes("gulabi")) return "rose-quartz";
   if (lower.includes("green jade") || lower.includes("columbian green") || lower.includes("jade")) return "green-jade";
-  if (lower.includes("aventurine") || lower.includes("avernturine")) return "green-jade";
   if (lower.includes("amethyst") || lower.includes("jamunia") || lower.includes("purple")) return "amethyst";
   if (lower.includes("pyrite") || lower.includes("golden") || lower.includes("fool's gold")) return "pyrite";
   if (lower.includes("tiger eye") || lower.includes("tigereye")) return "tiger-eye";
@@ -1145,6 +1288,64 @@ export const generateCompetitorMeta = (
   };
 };
 
+export const sanitizeNaturalStutter = (text = "") => {
+  if (!text) return "";
+  return String(text)
+    .replace(/\b100%\s*natural\s+natural\b/gi, "100% Natural")
+    .replace(/\bnatural\s+natural\b/gi, "Natural")
+    .replace(/\bauthentic\s+natural\s+natural\b/gi, "authentic Natural")
+    .replace(/\bcertified\s+natural\s+natural\b/gi, "certified Natural");
+};
+
+export const resolveIdolDeity = (name = "", stone = {}) => {
+  const n = (name || "").toLowerCase();
+  if (n.includes("krishna") || n.includes("radha")) return "Lord Krishna & Radha Rani";
+  if (n.includes("hanuman") || n.includes("bajrang") || n.includes("anjaneya")) return "Lord Hanuman (Sankat Mochan)";
+  if (n.includes("saraswati") || n.includes("veena")) return "Maa Saraswati (Goddess of Learning & Arts)";
+  if (n.includes("lakshmi") || n.includes("laxmi")) return "Goddess Mahalakshmi (Goddess of Abundance)";
+  if (n.includes("ganesh") || n.includes("ganpati") || n.includes("vinayaka")) return "Lord Ganesha (Vighnaharta)";
+  if (n.includes("shiva") || n.includes("mahadev") || n.includes("bholenath") || n.includes("shivling")) return "Lord Shiva (Sadashiva)";
+  if (n.includes("mahaveer") || n.includes("mahavir") || n.includes("parshvanath") || n.includes("tirthankar") || n.includes("jain")) return "Bhagwan Mahaveer & Jain Tirthankaras";
+  if (n.includes("buddha")) return "Shakyamuni Buddha";
+  if (n.includes("elephant") || n.includes("hathi")) return "Sacred Gaja (Airavata - Symbol of Royal Prosperity)";
+  return stone.deity || "Supreme Divinity";
+};
+
+export const getDynamicVastuVidhiHtml = (archetype, cleanName, stone) => {
+  switch (archetype) {
+    case "krishna":
+      return `Establish upon a clean wooden or silver chowki in the North-East (Ishanya Kon) or East quadrant. Pair with a pure cow ghee diya, holy Tulsi leaves, and fragrant sandalwood dhoop to invite eternal love, joy, and spiritual harmony.`;
+    case "hanuman":
+      return `Establish facing South (Dakshin Mukhi) or East on an elevated altar. Consecrate on Tuesday or Saturday morning with fragrant jasmine oil (Chameli tel), pure sindoor, and a red flower while reciting the Hanuman Chalisa.`;
+    case "saraswati":
+      return `Establish in the North-East (Ishanya Kon), East, or upon a student's study desk or artist's workspace. Light a pure cow ghee deepak and offer white chandan and fragrant white flowers to channel intellect, memory, and creative eloquence.`;
+    case "lakshmi":
+      return `Establish in the North quadrant (abode of Kubera) or North-East altar facing East. Consecrate on Friday mornings during Shukla Paksha with pure lotus or rose petals, lighting a ghee diya while chanting Sri Suktam.`;
+    case "buddha":
+      return `Place at eye level in the East or North-East quadrant of your living space or meditation room facing inwards. Light pure natural dhoop incense to anchor mindful stillness, emotional calm, and zen tranquility.`;
+    case "shiva-face":
+      return `Establish in the North-East (Ishanya Kon) or North quadrant of your prayer room. Offer pure bilva leaves, fragrant chandan tilak, and light a ghee deepak during morning or evening Sandhya prayers.`;
+    case "elephant":
+      return `Place in the North or East sector of your living room or office entrance facing inwards (never facing directly out of the door) to lock in stability, strength, and continuous financial expansion.`;
+    case "diya":
+      return `Place in the South-East (Agni Kon) or North-East (Ishanya Kon) of your temple altar. Fill with pure cow ghee or cold-pressed sesame oil and a pure cotton wick to dispel negative energies and awaken sattvic light.`;
+    case "shivling":
+      return `Establish upon a clean marble or brass Jalhari pedestal with the snan-jal spout facing strictly towards the North (Uttarabhimukhi) or East. Perform daily Jalabhishek with pure Gangajal, raw cow milk, and offer fresh Bilva leaves while chanting Om Namah Shivaya.`;
+    case "ganesha":
+      return `Establish facing North or East on an elevated wooden chowki or temple shelf. Light a cow ghee diya and offer fresh Durva grass, yellow flowers, and fragrant modaks to remove all obstacles.`;
+    case "shree-yantra":
+      return `Establish on a clean red or yellow silk cloth in the North-East or North quadrant facing East. Consecrate during sunrise with fragrant chandan, raw milk or rose water snan, chanting the sacred Lakshmi Gayatri Mantra.`;
+    case "jain":
+      return `Establish in an elevated, tranquil home derasar or meditation corner facing East or North. Maintain reverent silence, offer pure water or kesar chandan, and contemplate upon the Ṇamōkāra Mahamantra for Ahimsa and inner peace.`;
+    case "swan":
+      return `Place in the South-West (Nairutya Kon) corner of the master bedroom or living room to anchor unwavering matrimonial devotion, emotional harmony, and mutual respect between partners.`;
+    case "angel":
+      return `Place on your bedside table, work desk, or personal altar facing East. Cleanse periodically with sacred incense smoke to maintain an auric shield of peaceful, stress-relieving serenity.`;
+    default:
+      return `Establish upon a clean wooden chowki in the North-East (Ishanya Kon) or East quadrant. Pair with a pure cow ghee diya or fragrant sandalwood dhoop incense to anchor continuous positive vibrations in your space.`;
+  }
+};
+
 // ==========================================
 // 3. ZERO-BOILERPLATE KNOWLEDGE ENGINE
 // ==========================================
@@ -1428,12 +1629,319 @@ export const generateBuiltInContent = (productName, categoryName = "") => {
       ];
       break;
 
-    default:
+    case "krishna":
+      archetypeTitle = "Sacred Radha Krishna Iconography & Divine Prem Swaroop";
+      archetypedetails =
+        `<p>Carved with devotional precision by master lapidaries in Jaipur, this ${cleanName} portrays the divine spiritual essence of Lord Krishna and Radha Rani:</p>` +
+        `<ul>` +
+        `  <li><strong>Tribhanga Posture &amp; Murli (Flute):</strong> Sculpted in the graceful threefold bending stance (Tribhanga), holding the divine flute that plays the celestial melody of cosmic consciousness, drawing the seeker inward into pure devotion (Bhakti).</li>` +
+        `  <li><strong>Peacock Feather (Mayur Pankh) &amp; Pitambara:</strong> Signifies supreme spiritual purity, divine majesty, and transcendence above worldly illusion (Maya).</li>` +
+        `  <li><strong>Radha-Krishna Divine Union:</strong> Portrays the supreme soul (Paramatma) and individual soul (Jivatma) in eternal divine love, filling the household with sweet domestic affection, understanding, and joy.</li>` +
+        `</ul>` +
+        `<p>Handcrafted from certified ${stone.name}, this idol activates the Heart Chakra (Anahata), dispelling emotional conflict and blessing the home with unconditional peace.</p>`;
+
+      specificFaqs = [
+        {
+          question: `Where is the most auspicious Vastu placement for this ${cleanName}?`,
+          answer: `Place the idol in the North-East (Ishanya Kon) or East quadrant of your home mandir or living space on a clean elevated wooden chowki. A Radha Krishna statue is also traditionally placed in the master bedroom facing East to deepen marital harmony and loving trust.`
+        },
+        {
+          question: `What are the traditional pooja and consecration rituals for this statue?`,
+          answer: `Cleanse gently with holy Gangajal or pure water. Light a pure cow ghee diya, offer fresh Tulsi leaves, and fragrant sandalwood paste (Chandan) while chanting "Om Namo Bhagavate Vasudevaya" or the sacred Hare Krishna Mahamantra.`
+        },
+        {
+          question: `What spiritual and energetic benefits does this gemstone idol bring to family life?`,
+          answer: `Worshipping Lord Krishna in ${stone.name} aligns with the Heart Chakra (Anahata), dissolves bitter communication, heals emotional heartache, and fosters blissful domestic unity.`
+        },
+        {
+          question: `How do I care for and maintain the natural luster of this gemstone carving?`,
+          answer: `${stone.careVidhi}`
+        },
+        {
+          question: `Is this idol carved from authentic 100% earth-mined ${stone.name}?`,
+          answer: `${stone.authenticityTest}`
+        },
+        {
+          question: `How does Crystal Jaipuria guarantee safe transit for delicate flute and carving details?`,
+          answer: `Every delicate curve, flute, and posture is secured inside custom shockproof multi-layer high-density casing with 100% door-to-door transit insurance worldwide.`
+        }
+      ];
+      break;
+
+    case "hanuman":
+      archetypeTitle = "Sacred Veer Hanuman Iconography & Sankat Mochan Power";
+      archetypedetails =
+        `<p>Carved with supreme devotion by master Jaipur artisans, this ${cleanName} radiates the boundless courage, loyalty, and protective presence of Lord Hanuman:</p>` +
+        `<ul>` +
+        `  <li><strong>Sacred Gada (Divine Mace):</strong> Symbolizes self-sovereignty, moral strength, and the unyielding power to smash negative planetary influences and demonic hindrances.</li>` +
+        `  <li><strong>Dronagiri Parvat &amp; Abhaya Mudra:</strong> Portrayed carrying the life-saving Sanjeevani herb and extending fearless protection (Abhaya) to the devotee's household.</li>` +
+        `  <li><strong>Panchamukhi / Veer Swaroop:</strong> Neutralizes evil eye (Buri Nazar), psychic fear, and acute planetary distress governed by Mars and Saturn.</li>` +
+        `</ul>` +
+        `<p>Sculpted from genuine ${stone.name}, this murti serves as an impregnable spiritual fortress against adverse energies.</p>`;
+
+      specificFaqs = [
+        {
+          question: `What is the ideal Vastu direction to install this ${cleanName}?`,
+          answer: `According to Vastu Shastra, Lord Hanuman idols are best placed facing South (Dakshin Mukhi) or East on an elevated altar to guard against negative energies and dispel Vastu doshas.`
+        },
+        {
+          question: `Which day and rituals are most auspicious for worshipping Lord Hanuman?`,
+          answer: `Tuesday and Saturday mornings or evenings are deeply auspicious. Offer pure jasmine oil (Chameli tel), sindoor, red flowers, and chant the Hanuman Chalisa or Sundarkand.`
+        },
+        {
+          question: `How does the vibration of ${stone.name} complement Lord Hanuman's energy?`,
+          answer: `Natural ${stone.name} anchors the Root and Solar Plexus chakras, instilling unshakeable self-confidence, mental resilience, and physical vitality.`
+        },
+        {
+          question: `How should this gemstone carving be cleaned and preserved?`,
+          answer: `${stone.careVidhi}`
+        },
+        {
+          question: `How can I verify that this murti is carved from genuine gemstone?`,
+          answer: `${stone.authenticityTest}`
+        },
+        {
+          question: `Does Crystal Jaipuria provide custom carving sizes for temple installation?`,
+          answer: `Yes, we accept bespoke commission sizes from small altar statues to large temple-grade monolithic gemstone idols with complete gemological lab certifications.`
+        }
+      ];
+      break;
+
+    case "saraswati":
+      archetypeTitle = "Devi Saraswati Iconography & Sacred Vidya Vibration";
+      archetypedetails =
+        `<p>Hand-carved in classical Shilpa Shastra tradition, this ${cleanName} embodies Goddess Saraswati, the divine embodiment of supreme wisdom, learning, and artistic eloquence:</p>` +
+        `<ul>` +
+        `  <li><strong>Sacred Veena:</strong> Symbolizes the harmonious expression of cosmic sound (Nada Brahman) and mastery over thought, speech, and intellect.</li>` +
+        `  <li><strong>Vedas (Pustaka) &amp; Akshamala:</strong> The sacred book represents pure eternal Vedic knowledge, while the crystal rosary signifies focused spiritual meditation and inner discernment.</li>` +
+        `  <li><strong>Shwetapadma (White Lotus Altar):</strong> Signifies unblemished sattvic purity, awakening the Higher Crown and Throat chakras.</li>` +
+        `</ul>`;
+
+      specificFaqs = [
+        {
+          question: `Where should this ${cleanName} be established for students and professionals?`,
+          answer: `Place in the North-East (Ishanya Kon), East quadrant, or directly upon a study desk, library shelf, or music/art studio facing East to amplify concentration, intellectual retention, and creative flow.`
+        },
+        {
+          question: `What are the recommended offerings for Goddess Saraswati puja?`,
+          answer: `Perform puja on Wednesday or Thursday mornings or during Vasant Panchami. Offer fragrant white sandalwood, pure cow ghee diya, and white flowers while reciting the Saraswati Vandana.`
+        },
+        {
+          question: `How does genuine ${stone.name} enhance academic and artistic focus?`,
+          answer: `The cool, crystalline structure of ${stone.name} naturally quiets cognitive restlessness, harmonizing the Throat (Vishuddha) and Crown chakras for articulate eloquence.`
+        },
+        {
+          question: `How should this gemstone carving be cleansed?`,
+          answer: `${stone.careVidhi}`
+        },
+        {
+          question: `Is this statue 100% natural and certified?`,
+          answer: `${stone.authenticityTest}`
+        },
+        {
+          question: `How does Crystal Jaipuria package intricate veena details for delivery?`,
+          answer: `The delicate Veena strings and posture are individually buffered in form-fitting shockproof casing, backed by 100% insured delivery worldwide.`
+        }
+      ];
+      break;
+
+    case "lakshmi":
+      archetypeTitle = "Goddess Mahalakshmi Iconography & Dhan-Vaibhav Vibration";
+      archetypedetails =
+        `<p>Sculpted with sublime auspicious grace by master lapidaries in Jaipur, this ${cleanName} channels the divine blessings of Goddess Mahalakshmi:</p>` +
+        `<ul>` +
+        `  <li><strong>Kamalasana (Lotus Throne):</strong> Seated upon the blooming lotus, signifying continuous spiritual and material expansion uncorrupted by worldly greed.</li>` +
+        `  <li><strong>Varada &amp; Abhaya Mudra:</strong> The sacred hand gestures shower boons of financial security, good fortune, and fearless domestic wellbeing.</li>` +
+        `  <li><strong>Ashta Lakshmi Grace:</strong> Transmutes stagnant business inertia into energetic commercial prosperity and joyful family abundance.</li>` +
+        `</ul>`;
+
+      specificFaqs = [
+        {
+          question: `What is the ideal Vastu placement for Goddess Mahalakshmi at home or office?`,
+          answer: `Place the idol facing East in the North quadrant (abode of Lord Kubera) or the North-East (Ishanya) pooja altar. In commercial establishments, place near the cash vault or reception facing inwards.`
+        },
+        {
+          question: `Which day and tithi are most auspicious for consecration?`,
+          answer: `Friday mornings, Diwali, Dhanteras, or Shukla Paksha Fridays. Light a pure cow ghee lamp and chant Sri Suktam or the Mahalakshmi Ashtakam.`
+        },
+        {
+          question: `How does ${stone.name} amplify Mahalakshmi's abundance frequency?`,
+          answer: `Natural ${stone.name} vibrates in resonance with the Heart and Solar Plexus chakras, clearing financial anxiety and attracting steady prosperity.`
+        },
+        {
+          question: `How do I clean and maintain this gemstone murti?`,
+          answer: `${stone.careVidhi}`
+        },
+        {
+          question: `How to confirm that this idol is carved from genuine gemstone?`,
+          answer: `${stone.authenticityTest}`
+        },
+        {
+          question: `Does Crystal Jaipuria provide custom dimensions for mandir installations?`,
+          answer: `Yes, we craft custom sizes from 2.5 inches up to grand temple installations with certified gemological lab reports.`
+        }
+      ];
+      break;
+
+    case "buddha":
+      archetypeTitle = "Shakyamuni Buddha Dhyana Mudra & Zen Serenity";
+      archetypedetails =
+        `<p>Carved with serene flowing contours by master craftsmen in Jaipur, this ${cleanName} portrays Lord Buddha in profound meditative absorption:</p>` +
+        `<ul>` +
+        `  <li><strong>Dhyana &amp; Bhumisparsha Mudra:</strong> Depicts the unshakeable moment of Enlightenment, touching the earth as witness to supreme inner peace and liberation from suffering.</li>` +
+        `  <li><strong>Ushnisha &amp; Gentle Half-Closed Gaze:</strong> Represents supreme transcendent wisdom and deep inner introspection, calming restless thoughts in any room.</li>` +
+        `  <li><strong>Zen Space Harmonization:</strong> Neutralizes environmental stress and chaotic mental chatter, creating a tranquil oasis for mindfulness and rejuvenation.</li>` +
+        `</ul>`;
+
+      specificFaqs = [
+        {
+          question: `Where should this ${cleanName} be placed for optimal Vastu and Feng Shui?`,
+          answer: `Place at eye level facing East or facing the living room entrance in the North-East or East sector on an elevated shelf. Avoid placing on the floor or near bedroom beds.`
+        },
+        {
+          question: `How does ${stone.name} support mindfulness and meditation?`,
+          answer: `The grounding and purifying mineral matrix of ${stone.name} aids in clearing cognitive clutter, balancing the Third Eye and Crown chakras for effortless meditation.`
+        },
+        {
+          question: `How should this gemstone carving be cleaned?`,
+          answer: `${stone.careVidhi}`
+        },
+        {
+          question: `Is this piece carved from 100% natural earth-mined gemstone?`,
+          answer: `${stone.authenticityTest}`
+        },
+        {
+          question: `Does this statue make an auspicious housewarming gift?`,
+          answer: `Yes, a gemstone Buddha idol is one of the most cherished gifts symbolizing peace, harmony, and enlightened blessing for any home or office.`
+        },
+        {
+          question: `How is this delicate carving protected during courier shipping?`,
+          answer: `Buffered in custom-molded high-density shockproof foam and reinforced export boxes with 100% insured delivery worldwide.`
+        }
+      ];
+      break;
+
+    case "shiva-face":
+      archetypeTitle = "Sacred Sadashiva Mukhalingam & Trinetra Dhyana Swaroop";
+      archetypedetails =
+        `<p>Carved with exquisite devotion by master lapidaries in Jaipur, this ${cleanName} portrays the divine face (Mukha) of Lord Sadashiva in transcendental yogic tranquility:</p>` +
+        `<ul>` +
+        `  <li><strong>Trinetra (The Third Eye of Wisdom):</strong> Awakens inner vision, intuition, and destroys past karmic blockages and illusions.</li>` +
+        `  <li><strong>Crescent Moon &amp; Matted Locks:</strong> Signifies mastery over the mind (Chandra) and the sacred descent of the Ganges of cosmic consciousness.</li>` +
+        `  <li><strong>Benevolent Meditative Countenance:</strong> Infuses sacred shrines with peaceful Kailash vibration, dispelling fear, negativity, and anxiety.</li>` +
+        `</ul>`;
+
+      specificFaqs = [
+        {
+          question: `Where is the best Vastu placement for this ${cleanName}?`,
+          answer: `Establish in the North-East (Ishanya Kon) or North quadrant of your home mandir or personal meditation space on a clean wooden altar.`
+        },
+        {
+          question: `Can sacred Jalabhishek be performed on this gemstone Shiva Face?`,
+          answer: `Yes, genuine natural ${stone.name} possesses non-porous mineral hardness (${stone.hardness} Mohs), making it completely safe for Gangajal and raw milk snan followed by soft cotton drying.`
+        },
+        {
+          question: `What spiritual energies does this idol balance?`,
+          answer: `It activates the Third Eye (Ajna) and Crown chakras, promoting ${stone.vibeKeywords.join(", ")}.`
+        },
+        {
+          question: `How should this gemstone carving be cared for?`,
+          answer: `${stone.careVidhi}`
+        },
+        {
+          question: `How do I verify the authenticity of this gemstone murti?`,
+          answer: `${stone.authenticityTest}`
+        },
+        {
+          question: `How is this carving packaged for safe transit?`,
+          answer: `Nestled in custom multi-layer high-density shockproof casing with 100% door-to-door transit insurance worldwide.`
+        }
+      ];
+      break;
+
+    case "elephant":
+      archetypeTitle = "Sacred Gaja Vastu Iconography & Rajayoga Prosperity";
+      archetypedetails =
+        `<p>Carved by master artisans in Jaipur with royal dignity and classical proportions, this ${cleanName} captures the divine energy of Gaja (Airavata - the Sacred Elephant):</p>` +
+        `<ul>` +
+        `  <li><strong>Uplifted Trunk (Trumpeting Grace):</strong> Welcomes positive prana, royal victory, continuous good fortune, and unshakable stability into the household.</li>` +
+        `  <li><strong>Vastu Power Anchor:</strong> Revered in Vastu Shastra and Vedic lore as the vehicle of Indra and Lakshmi, symbolizing noble endurance and royal abundance.</li>` +
+        `  <li><strong>Root &amp; Heart Chakra Grounding:</strong> Anchors volatile household finances, transforming financial insecurity into lasting commercial strength.</li>` +
+        `</ul>`;
+
+      specificFaqs = [
+        {
+          question: `Where should this ${cleanName} be placed according to Vastu Shastra?`,
+          answer: `Place in the North or East quadrant of your living room or office executive desk facing inwards towards the room (never facing outward through the front door) to lock in wealth and stability.`
+        },
+        {
+          question: `What is the significance of an elephant statue in Indian traditions?`,
+          answer: `The elephant is an eternal emblem of wisdom, royal majesty, memory, and prosperity, closely associated with Goddess Lakshmi (Gajalakshmi) and Lord Ganesha.`
+        },
+        {
+          question: `Is this piece hand-carved from 100% natural ${stone.name}?`,
+          answer: `Yes, 100%. Handcrafted from a single solid rough block of certified natural ${stone.name} with zero synthetic dyes or composite powders.`
+        },
+        {
+          question: `How should this gemstone elephant carving be cleansed?`,
+          answer: `${stone.careVidhi}`
+        },
+        {
+          question: `How to confirm that this idol is carved from genuine gemstone?`,
+          answer: `${stone.authenticityTest}`
+        },
+        {
+          question: `How do you ensure safe damage-free shipping for solid stone carvings?`,
+          answer: `Enclosed in bespoke high-density shockproof foam and heavy-duty export containers with full door-to-door transit insurance.`
+        }
+      ];
+      break;
+
+    case "diya":
+      archetypeTitle = "Sacred Gemstone Akhand Diya & Agni Tattva Purification";
+      archetypedetails =
+        `<p>Hand-carved from a single rough specimen of natural ${stone.name} by Jaipur master lapidaries, this ${cleanName} embodies the purifying sacred fire (Agni Tattva):</p>` +
+        `<ul>` +
+        `  <li><strong>Pure Sattvic Illumination:</strong> Burning pure cow ghee or sesame oil in a genuine gemstone diya magnifies the luminous spiritual vibration, burning away negative astral debris.</li>` +
+        `  <li><strong>Pooja Altar Consecration:</strong> Ideal for daily Aarti, festive Deepawali pooja, and meditation concentration (Trataka practice).</li>` +
+        `  <li><strong>Harmonic Crystalline Resonance:</strong> Unlike porous clay, non-porous gemstone stays pristine, lustrous, and cool to the base even during extended lighting.</li>` +
+        `</ul>`;
+
+      specificFaqs = [
+        {
+          question: `What is the best direction to place this ${cleanName} during pooja?`,
+          answer: `Place in the South-East (Agni Kon) or North-East (Ishanya Kon) of your temple altar. The wick of the diya should ideally face East or North.`
+        },
+        {
+          question: `Which oil or ghee is best to use in this gemstone diya?`,
+          answer: `Pure cow ghee is most auspicious for divine sattvic grace. Pure sesame (Til) or mustard oil can be used for specific planetary and protective rites.`
+        },
+        {
+          question: `Does the heat from the flame damage the natural gemstone?`,
+          answer: `Natural ${stone.name} has superior mineral density and thermal resilience. The thick hand-carved walls remain safe and cool during normal devotional pooja lighting.`
+        },
+        {
+          question: `How should this gemstone diya be washed after pooja?`,
+          answer: `Gently wash with warm water and mild organic soap using a soft sponge, then wipe completely dry with clean cotton.`
+        },
+        {
+          question: `How do I verify the stone's authenticity?`,
+          answer: `${stone.authenticityTest}`
+        },
+        {
+          question: `How does Crystal Jaipuria package fragile gemstone lamps?`,
+          answer: `Cushioned in custom shockproof foam within export-grade boxes with 100% door-to-door transit insurance.`
+        }
+      ];
+      break;
+
+    default: {
+      const resolvedDeity = resolveIdolDeity(cleanName, stone);
       archetypeTitle = "Artisanal Iconography & Sacred Energetic Essence";
       archetypedetails = 
-        `<p>This authentic handcrafted ${cleanName} is meticulously carved from certified natural ${stone.name}, reflecting over three decades of Jaipur lapidary mastery:</p>` +
+        `<p>This authentic handcrafted ${cleanName} is meticulously carved from certified ${stone.name}, reflecting over three decades of Jaipur lapidary mastery:</p>` +
         `<ul>` +
-        `  <li><strong>Vedic Archetype Alignment:</strong> Resonates with the divine grace of <strong>${stone.deity}</strong> and harmonizes planetary vibrations governed by <strong>${stone.planet}</strong>.</li>` +
+        `  <li><strong>Vedic Archetype Alignment:</strong> Resonates with the divine grace of <strong>${resolvedDeity}</strong> and harmonizes planetary vibrations governed by <strong>${stone.planet}</strong>.</li>` +
         `  <li><strong>Chakra Resonance:</strong> Stimulates and balances the <strong>${stone.chakra}</strong>, transmuting dense environmental negativity into calm, focused spiritual vitality.</li>` +
         `  <li><strong>Architectural Vastu Harmony:</strong> Infuses sacred shrines, living areas, and corporate workspaces with peaceful equilibrium and aesthetic grandeur.</li>` +
         `</ul>`;
@@ -1464,12 +1972,29 @@ export const generateBuiltInContent = (productName, categoryName = "") => {
           answer: `Yes! Operating direct Jaipur artisan workshops since 1989, we cater to individual collectors, temple trusts, and luxury retail boutiques worldwide.`
         }
       ];
+    }
   }
 
   // Generate a clean, natural, and engaging opening paragraph
   let citationHook = "";
   if (archetype === "shiva") {
     citationHook = `Handcrafted from certified ${stone.name}, this sacred ${cleanName} is sculpted by master generational artisans at Crystal Jaipuria, Jaipur (est. 1989). Depicting Lord Shiva in serene meditation with the sacred Trishul and Damru, this divine murti radiates pure spiritual courage, dispels negative energies, and anchors profound peace in home altars and sacred spaces.`;
+  } else if (archetype === "krishna") {
+    citationHook = `Handcrafted from certified ${stone.name}, this divine ${cleanName} is sculpted by master generational artisans at Crystal Jaipuria, Jaipur (est. 1989). Combining classical Bhakti iconography with authentic earth-mined gemstone, it radiates pure love, joy, and spiritual harmony in home mandirs, living spaces, and sacred altars.`;
+  } else if (archetype === "hanuman") {
+    citationHook = `Handcrafted from certified ${stone.name}, this powerful ${cleanName} is sculpted by master generational artisans at Crystal Jaipuria, Jaipur (est. 1989). Depicting Lord Hanuman as the ultimate protector and Sankat Mochan, this sacred murti dispels negative planetary afflictions, fear, and obstacles, instilling courage and vitality.`;
+  } else if (archetype === "saraswati") {
+    citationHook = `Handcrafted from certified ${stone.name}, this exquisite ${cleanName} is sculpted by master artisans at Crystal Jaipuria, Jaipur (est. 1989). Embodying Goddess Saraswati with her sacred Veena and Vedic scripture, it radiates pure intellectual clarity, artistic inspiration, and spiritual wisdom.`;
+  } else if (archetype === "lakshmi") {
+    citationHook = `Handcrafted from certified ${stone.name}, this auspicious ${cleanName} is sculpted by generational master carvers at Crystal Jaipuria, Jaipur (est. 1989). Seated upon the sacred lotus, Goddess Mahalakshmi showers continuous blessings of financial stability, commercial growth, and auspicious domestic harmony.`;
+  } else if (archetype === "buddha") {
+    citationHook = `Handcrafted from certified ${stone.name}, this serene ${cleanName} is sculpted by master generational artisans at Crystal Jaipuria, Jaipur (est. 1989). Depicting Lord Buddha in tranquil Dhyana meditation, it anchors mindful serenity, emotional equilibrium, and zen peacefulness in living and meditation spaces.`;
+  } else if (archetype === "shiva-face") {
+    citationHook = `Handcrafted from certified ${stone.name}, this divine ${cleanName} is sculpted by master generational lapidaries at Crystal Jaipuria, Jaipur (est. 1989). Portraying the benevolent meditative face of Lord Sadashiva with the Third Eye and Crescent Moon, it anchors pure contemplative stillness and protective vibrations.`;
+  } else if (archetype === "elephant") {
+    citationHook = `Handcrafted from certified ${stone.name}, this noble ${cleanName} is sculpted by master artisans at Crystal Jaipuria, Jaipur (est. 1989). Revered as a sacred Vastu symbol of royal strength, wisdom, and lasting wealth, it is designed for living room decor, executive offices, and auspicious gifting.`;
+  } else if (archetype === "diya") {
+    citationHook = `Handcrafted from certified ${stone.name}, this sacred ${cleanName} is hand-carved by master lapidaries at Crystal Jaipuria, Jaipur (est. 1989). Channeling the purifying Agni Tattva, lighting this genuine gemstone lamp dispels negative energies and elevates the spiritual ambiance of daily poojas.`;
   } else if (archetype === "swan") {
     citationHook = `Handcrafted from certified ${stone.name}, this exquisite ${cleanName} is hand-carved by master generational artisans at Crystal Jaipuria, Jaipur (est. 1989). Revered in Vedic Vastu traditions as an auspicious symbol of pure love, marital fidelity, and emotional harmony, this graceful pair of swans is designed for bedroom decor, living room Vastu placement, and meaningful anniversary gifting.`;
   } else if (archetype === "shivling") {
@@ -1486,8 +2011,12 @@ export const generateBuiltInContent = (productName, categoryName = "") => {
     citationHook = `Handcrafted from certified ${stone.name}, this elegant ${cleanName} is sculpted by master generational artisans at Crystal Jaipuria, Jaipur (est. 1989). Combining classical craftsmanship with authentic earth-mined gemstone, it radiates positive vibrations and brings timeless spiritual elegance to home sanctums, office spaces, and sacred altars.`;
   }
 
+  citationHook = sanitizeNaturalStutter(citationHook);
+
   const specs = estimateProductSpecs(cleanName, categoryName);
-  const additionalInfo = generateAdditionalInfoHtml(cleanName, stone, archetype, specs.weight, specs.size, specs.dimensions);
+  const additionalInfo = sanitizeNaturalStutter(
+    generateAdditionalInfoHtml(cleanName, stone, archetype, specs.weight, specs.size, specs.dimensions)
+  );
   const competitorMeta = generateCompetitorMeta(
     cleanName,
     stone,
@@ -1499,17 +2028,19 @@ export const generateBuiltInContent = (productName, categoryName = "") => {
   );
 
   const sectionOneHeading = archetypeTitle;
-  const sectionOneBody = archetypedetails;
+  const sectionOneBody = sanitizeNaturalStutter(archetypedetails);
   const sectionTwoHeading = "Gemological Provenance & Jaipur Lapidary Heritage";
   const sectionTwoBody = `<p>Every specimen is carved from a single, hand-selected rough crystal at Crystal Jaipuria's generational artisan workshops in Jaipur (Est. 1989). We preserve the natural crystalline lattice of genuine ${stone.name}, guaranteeing authentic earth-mined quality without synthetic polymer coatings or resin casting.</p><p><strong>Authenticity Identification:</strong> ${stone.authenticityTest}</p>`;
 
   const competitorKeywordsIntro = `<p>Looking to <strong>buy authentic ${cleanName} online</strong>? Hand-carved with precision by generational master lapidaries at Crystal Jaipuria, Jaipur (est. 1989), this genuine earth-mined gemstone masterpiece offers direct Jaipur manufacturer pricing, Vedic Agama Shastra adherence, and complete lab certification.</p>`;
 
-  const fullDescription =
+  const dynamicVastuText = getDynamicVastuVidhiHtml(archetype, cleanName, stone);
+
+  let fullDescription =
     `<p><strong>${citationHook}</strong></p>\n\n` +
     `<div style="background:#f0fdf4; border-left:4px solid #16a34a; padding:14px 18px; margin:20px 0; border-radius:10px;">\n` +
     `  <strong style="color:#15803d; font-size:14.5px;">🌿 Sacred Vastu &amp; Consecration Vidhi:</strong>\n` +
-    `  <p style="color:#166534; font-size:13.5px; margin:6px 0 0 0; line-height:1.6;">Establish upon a clean wooden chowki in the North-East (Ishanya Kon) or East quadrant. Pair with a pure cow ghee diya or fragrant sandalwood dhoop incense to anchor continuous positive vibrations in your space.</p>\n` +
+    `  <p style="color:#166534; font-size:13.5px; margin:6px 0 0 0; line-height:1.6;">${dynamicVastuText}</p>\n` +
     `</div>\n\n` +
     `${competitorKeywordsIntro}\n\n` +
     `<h2>${sectionOneHeading}</h2>\n${sectionOneBody}\n\n` +
@@ -1528,7 +2059,7 @@ export const generateBuiltInContent = (productName, categoryName = "") => {
     `  </thead>\n` +
     `  <tbody>\n` +
     `    <tr>\n      <td style="border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;">Product Name</td>\n      <td style="border:1px solid #e2e8f0; padding:9px 14px; color:#475569;">${cleanName}</td>\n    </tr>\n` +
-    `    <tr style="background:#f8fafc;">\n      <td style="border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;">Mineral Composition</td>\n      <td style="border:1px solid #e2e8f0; padding:9px 14px; color:#475569;">100% Natural ${stone.name} (${stone.mineral})</td>\n    </tr>\n` +
+    `    <tr style="background:#f8fafc;">\n      <td style="border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;">Mineral Composition</td>\n      <td style="border:1px solid #e2e8f0; padding:9px 14px; color:#475569;">${stone.name} (${stone.mineral})</td>\n    </tr>\n` +
     `    <tr>\n      <td style="border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;">Estimated Weight</td>\n      <td style="border:1px solid #e2e8f0; padding:9px 14px; color:#475569;">${specs.weight}</td>\n    </tr>\n` +
     `    <tr style="background:#f8fafc;">\n      <td style="border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;">Size &amp; Dimensions</td>\n      <td style="border:1px solid #e2e8f0; padding:9px 14px; color:#475569;">${specs.size} (${specs.dimensions})</td>\n    </tr>\n` +
     `    <tr>\n      <td style="border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;">Crystal Structure &amp; Hardness</td>\n      <td style="border:1px solid #e2e8f0; padding:9px 14px; color:#475569;">${stone.crystalSystem} • ${stone.hardness}</td>\n    </tr>\n` +
@@ -1538,6 +2069,8 @@ export const generateBuiltInContent = (productName, categoryName = "") => {
     `    <tr>\n      <td style="border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;">Authenticity Guarantee</td>\n      <td style="border:1px solid #e2e8f0; padding:9px 14px; color:#475569;">100% Earth-Mined Natural Gemstone (Zero Synthetic Resin / Glass)</td>\n    </tr>\n` +
     `  </tbody>\n` +
     `</table>`;
+
+  fullDescription = sanitizeNaturalStutter(fullDescription);
 
   const metaTitle = competitorMeta.metaTitle;
   const metaDescription = competitorMeta.metaDescription;
@@ -1914,8 +2447,8 @@ export const generateFusedAIContent = async (productName, categoryName = "") => 
           citationHook: fusedCitationHook,
           weight: fusedWeight,
           size: fusedSize,
-          additionalInfo: fusedAdditionalInfo,
-          fullDescription: fusedDesc,
+          additionalInfo: sanitizeNaturalStutter(fusedAdditionalInfo),
+          fullDescription: sanitizeNaturalStutter(fusedDesc),
           faqs: uniqueFaqs.length >= 4 ? uniqueFaqs : gData.faqs,
           metaTitle: gData?.metaTitle || oData?.metaTitle || verifiedBase.metaTitle,
           metaDescription: oData?.metaDescription || gData?.metaDescription || verifiedBase.metaDescription,
@@ -1940,7 +2473,8 @@ export const generateFusedAIContent = async (productName, categoryName = "") => 
           ...oData,
           weight: oData.weight || verifiedBase.weight,
           size: oData.size || verifiedBase.size,
-          additionalInfo: (oData.additionalInfo && oData.additionalInfo.includes("<ul")) ? oData.additionalInfo : verifiedBase.additionalInfo,
+          additionalInfo: sanitizeNaturalStutter((oData.additionalInfo && oData.additionalInfo.includes("<ul")) ? oData.additionalInfo : verifiedBase.additionalInfo),
+          fullDescription: sanitizeNaturalStutter(oData.fullDescription || verifiedBase.fullDescription),
           cleanName: verifiedBase.cleanName,
           aiEngine: "OpenAI GPT-4o"
         };
@@ -1950,7 +2484,8 @@ export const generateFusedAIContent = async (productName, categoryName = "") => 
           ...gData,
           weight: gData.weight || verifiedBase.weight,
           size: gData.size || verifiedBase.size,
-          additionalInfo: (gData.additionalInfo && gData.additionalInfo.includes("<ul")) ? gData.additionalInfo : verifiedBase.additionalInfo,
+          additionalInfo: sanitizeNaturalStutter((gData.additionalInfo && gData.additionalInfo.includes("<ul")) ? gData.additionalInfo : verifiedBase.additionalInfo),
+          fullDescription: sanitizeNaturalStutter(gData.fullDescription || verifiedBase.fullDescription),
           aiEngine: "Google Gemini"
         };
       }
@@ -1968,7 +2503,8 @@ export const generateFusedAIContent = async (productName, categoryName = "") => 
         ...oData,
         weight: oData.weight || verifiedBase.weight,
         size: oData.size || verifiedBase.size,
-        additionalInfo: (oData.additionalInfo && oData.additionalInfo.includes("<ul")) ? oData.additionalInfo : verifiedBase.additionalInfo,
+        additionalInfo: sanitizeNaturalStutter((oData.additionalInfo && oData.additionalInfo.includes("<ul")) ? oData.additionalInfo : verifiedBase.additionalInfo),
+        fullDescription: sanitizeNaturalStutter(oData.fullDescription || verifiedBase.fullDescription),
         cleanName: verifiedBase.cleanName,
         aiEngine: "OpenAI GPT-4o",
         verificationStatus: "Verified 100% by GPT-4o",
@@ -1992,7 +2528,8 @@ export const generateFusedAIContent = async (productName, categoryName = "") => 
       ...gData,
       weight: gData.weight || verifiedBase.weight,
       size: gData.size || verifiedBase.size,
-      additionalInfo: (gData.additionalInfo && gData.additionalInfo.includes("<ul")) ? gData.additionalInfo : verifiedBase.additionalInfo,
+      additionalInfo: sanitizeNaturalStutter((gData.additionalInfo && gData.additionalInfo.includes("<ul")) ? gData.additionalInfo : verifiedBase.additionalInfo),
+      fullDescription: sanitizeNaturalStutter(gData.fullDescription || verifiedBase.fullDescription),
       aiEngine: "Google Gemini"
     };
   }

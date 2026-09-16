@@ -3,6 +3,7 @@
  * Super SEO Titles designed for Google Search, AI Overviews & High Click-Through Rate (CTR)
  */
 import { GOOGLE_BUSINESS_STATS } from "../config/businessStats.js";
+import { getVedicVastuForProduct } from "./productMetadata.js";
 
 
 const SUPER_TITLE_MAPPINGS = {
@@ -183,6 +184,7 @@ export const toAbsoluteUrl = (url) => {
 export const getProductSchema = (product, canonicalUrl) => {
   if (!product) return null;
 
+  const vedicVastu = getVedicVastuForProduct(product);
   const parsedPrice = parseSchemaPrice(product.price || product.discountPrice);
   const rawImageUrl =
     (Array.isArray(product.images) && product.images[0]?.url) ||
@@ -317,6 +319,28 @@ export const getProductSchema = (product, canonicalUrl) => {
         },
       ],
       offers: offersObj,
+      additionalProperty: [
+        vedicVastu?.placementDirection ? {
+          "@type": "PropertyValue",
+          name: "Vastu Placement Direction",
+          value: vedicVastu.placementDirection,
+        } : null,
+        vedicVastu?.chakraPlanet ? {
+          "@type": "PropertyValue",
+          name: "Chakra & Ruling Planet",
+          value: vedicVastu.chakraPlanet,
+        } : null,
+        product.weight ? {
+          "@type": "PropertyValue",
+          name: "Weight",
+          value: String(product.weight),
+        } : null,
+        product.size ? {
+          "@type": "PropertyValue",
+          name: "Dimensions",
+          value: String(product.size),
+        } : null,
+      ].filter(Boolean),
     },
     {
       "@type": "BreadcrumbList",

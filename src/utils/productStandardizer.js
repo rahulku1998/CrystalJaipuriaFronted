@@ -422,6 +422,93 @@ export const getStandardizedProduct = (product) => {
       .replace(/Sphatik/gi, "Opal Stone");
   }
 
+  if (cleanDescription) {
+    // 1. Fix Labradorite products showing Sphatik
+    if (slug.includes("labradorite")) {
+      cleanDescription = cleanDescription
+        .replace(/Natural Sphatik \(100% Certified Clear Quartz\)/gi, "Natural Labradorite Gemstone")
+        .replace(/Natural Sphatik/gi, "Natural Labradorite")
+        .replace(/100% Certified Clear Quartz/gi, "100% Certified Natural Labradorite")
+        .replace(/Clear Quartz/gi, "Labradorite Gemstone")
+        .replace(/Sphatik/gi, "Labradorite")
+        .replace(/Silicon Dioxide \(SiO2\)/gi, "Plagioclase Feldspar ((Na,Ca)(Al,Si)4O8)")
+        .replace(/Trigonal \(Trapezohedral\)\s*•?\s*7\.0 Mohs/gi, "Triclinic • 6.0 – 6.5 Mohs")
+        .replace(/RI:\s*1\.544\s*–?\s*1\.553\s*•?\s*SG:\s*2\.65/gi, "RI: 1.560 – 1.568 • SG: 2.70");
+    }
+
+    // 2. Fix Howlite Shivling showing Sphatik
+    if (slug.includes("howlite")) {
+      cleanDescription = cleanDescription
+        .replace(/Natural Sphatik \(100% Certified Clear Quartz\)/gi, "Natural Howlite Gemstone")
+        .replace(/Natural Sphatik/gi, "Natural Howlite")
+        .replace(/100% Certified Clear Quartz/gi, "100% Certified Natural Howlite")
+        .replace(/Clear Quartz/gi, "Howlite Gemstone")
+        .replace(/Sphatik/gi, "Howlite")
+        .replace(/Silicon Dioxide \(SiO2\)/gi, "Calcium Borosilicate Hydroxide")
+        .replace(/Trigonal \(Trapezohedral\)\s*•?\s*7\.0 Mohs/gi, "Monoclinic • 3.5 Mohs")
+        .replace(/RI:\s*1\.544\s*–?\s*1\.553\s*•?\s*SG:\s*2\.65/gi, "RI: 1.583 – 1.608 • SG: 2.55");
+    }
+
+    // 3. Fix Red Jasper Shivling showing Sphatik
+    if (slug.includes("red-jasper")) {
+      cleanDescription = cleanDescription
+        .replace(/Natural Sphatik \(100% Certified Clear Quartz\)/gi, "Natural Red Jasper Gemstone")
+        .replace(/Natural Sphatik/gi, "Natural Red Jasper")
+        .replace(/100% Certified Clear Quartz/gi, "100% Certified Natural Red Jasper")
+        .replace(/Clear Quartz/gi, "Red Jasper Gemstone")
+        .replace(/Sphatik/gi, "Red Jasper")
+        .replace(/Silicon Dioxide \(SiO2\)/gi, "Silicon Dioxide with Iron Oxide (SiO2:Fe2O3)")
+        .replace(/Trigonal \(Trapezohedral\)\s*•?\s*7\.0 Mohs/gi, "Trigonal (Cryptocrystalline) • 6.5 – 7.0 Mohs")
+        .replace(/RI:\s*1\.544\s*–?\s*1\.553\s*•?\s*SG:\s*2\.65/gi, "RI: 1.530 – 1.540 • SG: 2.65");
+    }
+
+    // 4. Fix Smokey Quartz showing Clear Quartz
+    if (slug.includes("smokey-quartz")) {
+      cleanDescription = cleanDescription
+        .replace(/Clear Quartz/gi, "Natural Smokey Quartz")
+        .replace(/Sphatik/gi, "Smokey Quartz");
+    }
+
+    // 5. Fix Green Aventurine showing Green Jade / Nephrite
+    if (slug.includes("aventurine")) {
+      cleanDescription = cleanDescription
+        .replace(/Green Jade \(Nephrite \/ Columbian Jadeite\)/gi, "Green Aventurine Gemstone")
+        .replace(/Natural Green Jade/gi, "Natural Green Aventurine")
+        .replace(/Green Jade/gi, "Green Aventurine")
+        .replace(/Calcium Magnesium Silicate \/ Sodium Aluminium Silicate/gi, "Quartzite with Fuchsite Mica (SiO2:Cr)")
+        .replace(/Monoclinic \(Interlocking Fibrous Aggregate\)\s*•?\s*6\.5\s*–\s*7\.0 Mohs/gi, "Trigonal • 7.0 Mohs")
+        .replace(/RI:\s*1\.600\s*–\s*1\.625\s*•?\s*SG:\s*2\.95\s*–\s*3\.05/gi, "RI: 1.544 – 1.553 • SG: 2.65");
+    }
+
+    // 6. Fix Deity Mismatch in Radha Krishna
+    if (slug.includes("radha-krishna") || slug.includes("krishna")) {
+      cleanDescription = cleanDescription
+        .replace(/Lord Ganesha, Goddess Mahalakshmi &amp; Lord Kubera/gi, "Lord Krishna &amp; Radha Rani (Bhakti &amp; Divine Love)")
+        .replace(/Lord Ganesha, Goddess Mahalakshmi & Lord Kubera/gi, "Lord Krishna & Radha Rani (Bhakti & Divine Love)");
+    }
+
+    // 7. Fix Deity Mismatch in Saraswati
+    if (slug.includes("saraswati")) {
+      cleanDescription = cleanDescription
+        .replace(/Lord Ganesha, Goddess Mahalakshmi &amp; Lord Kubera/gi, "Maa Saraswati (Wisdom, Intellect &amp; Arts)")
+        .replace(/Lord Ganesha, Goddess Mahalakshmi & Lord Kubera/gi, "Maa Saraswati (Wisdom, Intellect & Arts)");
+    }
+
+    // 8. Fix Deity Mismatch in Elephant
+    if (slug.includes("elephant")) {
+      cleanDescription = cleanDescription
+        .replace(/Lord Ganesha, Goddess Mahalakshmi &amp; Lord Kubera/gi, "Sacred Gaja (Airavata - Royal Prosperity &amp; Stability)")
+        .replace(/Lord Ganesha, Goddess Mahalakshmi & Lord Kubera/gi, "Sacred Gaja (Airavata - Royal Prosperity & Stability)");
+    }
+
+    // 9. Worldwide natural Natural stutter cleanup
+    cleanDescription = cleanDescription
+      .replace(/(\b100%\s*)?natural\s+natural\b/gi, "100% Natural")
+      .replace(/\bnatural\s+natural\b/gi, "Natural")
+      .replace(/\bauthentic\s+natural\s+natural\b/gi, "authentic Natural")
+      .replace(/\bcertified\s+natural\s+natural\b/gi, "certified Natural");
+  }
+
   if (slug === "green-jade-panchmukhi-shivling") {
     cleanDescription = `
 <p class="mb-4">Experience the divine presence of Lord Shiva with the <strong>Natural Green Jade Stone Panchmukhi Shivling</strong> (500g, 4.5 Inches) hand-carved by master artisans at Crystal Jaipuria, Jaipur. This sacred idol represents the revered <strong>Pashupatinath Mahadev Swaroop</strong> featuring five distinct faces (Panchmukh) symbolizing the five cosmic elements (Panchamahabhuta) and eternal aspects of Lord Shiva.</p>

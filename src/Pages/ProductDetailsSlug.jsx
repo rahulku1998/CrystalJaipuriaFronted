@@ -3,7 +3,7 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import API from "../api/axios";
 import { formatPrice } from "../utils/price";
 import { getProductImageUrl } from "../utils/imageOptimizer";
-import { unpackProductMetadata } from "../utils/productMetadata";
+import { unpackProductMetadata, getVedicVastuForProduct } from "../utils/productMetadata";
 import { getStandardizedProduct, getSacredShloka } from "../utils/productStandardizer";
 import { getLegacyProductBySlug, resolveProductSlug } from "../utils/legacyProducts";
 import {
@@ -375,6 +375,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
   const hasFaqs = productFaqs.length > 0;
   const isPendingProduct = Boolean(product._id?.startsWith?.('legacy_') || product.isPending);
   const sacredShloka = getSacredShloka(product?.slug || product?.name);
+  const vedicVastu = useMemo(() => getVedicVastuForProduct(product), [product]);
 
   return (
     <>
@@ -529,6 +530,23 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                   )}
                 </p>
               </div>
+
+              {/* Quick Vastu Placement & Chakra Badge */}
+              {vedicVastu?.placementDirection && (
+                <div className="mt-4 p-2.5 sm:p-3 bg-gradient-to-r from-emerald-50/90 via-teal-50/40 to-white border border-emerald-200/90 rounded-xl flex items-center gap-2.5 text-xs sm:text-sm text-slate-800 shadow-2xs">
+                  <span className="text-base shrink-0">🧭</span>
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+                    <span className="font-bold text-emerald-950">Vastu Placement:</span>
+                    <span className="text-slate-700 font-medium">{vedicVastu.placementDirection}</span>
+                    {vedicVastu.chakraPlanet && (
+                      <>
+                        <span className="text-slate-300 hidden sm:inline">|</span>
+                        <span className="text-indigo-800 font-medium text-[11px] sm:text-xs">🌀 {vedicVastu.chakraPlanet}</span>
+                      </>
+                    )}
+                  </div>
+                </div>
+              )}
 
               {/* ACTION BUTTONS (Clean Neutral 2x2 Layout with Colorful Icons & Hover States) */}
               <div className="space-y-2.5 sm:space-y-3 mt-6">
@@ -691,6 +709,92 @@ Hello Crystal Jaipuria, I have a query regarding this product.
             <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">
               Specifications & Vedic Details
             </h2>
+          </div>
+
+          {/* VEDIC & VASTU WISDOM SHOWCASE */}
+          <div className="mb-10 bg-gradient-to-br from-white via-emerald-50/20 to-teal-50/30 rounded-2xl border border-emerald-200/90 p-5 sm:p-7 shadow-xs">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-5 pb-3 border-b border-emerald-100">
+              <div className="flex items-center gap-2.5">
+                <span className="text-2xl">🌿</span>
+                <div>
+                  <h3 className="text-lg sm:text-xl font-bold text-slate-900">
+                    Vedic Vastu &amp; Sacred Energization Guide
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-500">
+                    Authentic astrological &amp; vastu placement principles for divine harmony
+                  </p>
+                </div>
+              </div>
+              <span className="text-xs font-semibold px-3 py-1 bg-emerald-100/70 text-emerald-800 rounded-full border border-emerald-200 self-start sm:self-auto">
+                Certified Vedic Wisdom
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {/* 1. Placement Direction */}
+              <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-2xs flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2 text-emerald-700 mb-2">
+                    <span className="text-lg">🧭</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-slate-600">Vastu Placement</span>
+                  </div>
+                  <p className="text-sm font-bold text-slate-900 leading-snug">
+                    {vedicVastu.placementDirection}
+                  </p>
+                </div>
+                <p className="text-[11px] text-slate-500 mt-2 pt-2 border-t border-slate-100">
+                  Ideal quadrant for home mandir or living space.
+                </p>
+              </div>
+
+              {/* 2. Chakra & Ruling Planet */}
+              <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-2xs flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2 text-indigo-700 mb-2">
+                    <span className="text-lg">🌀</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-slate-600">Chakra &amp; Planet</span>
+                  </div>
+                  <p className="text-sm font-bold text-slate-900 leading-snug">
+                    {vedicVastu.chakraPlanet}
+                  </p>
+                </div>
+                <p className="text-[11px] text-slate-500 mt-2 pt-2 border-t border-slate-100">
+                  Subtle bio-magnetic &amp; planetary balance.
+                </p>
+              </div>
+
+              {/* 3. Pooja & Abhishekam */}
+              <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-2xs flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2 text-amber-700 mb-2">
+                    <span className="text-lg">🪔</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-slate-600">Abhishekam &amp; Pooja</span>
+                  </div>
+                  <p className="text-xs text-slate-700 leading-relaxed">
+                    {vedicVastu.poojaVidhi}
+                  </p>
+                </div>
+                <p className="text-[11px] text-slate-500 mt-2 pt-2 border-t border-slate-100">
+                  Vedic purification &amp; consecration vidhi.
+                </p>
+              </div>
+
+              {/* 4. Spiritual Benefits */}
+              <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-2xs flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2 text-teal-700 mb-2">
+                    <span className="text-lg">✨</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-slate-600">Spiritual Vibrations</span>
+                  </div>
+                  <p className="text-xs text-slate-700 leading-relaxed">
+                    {vedicVastu.vedicBenefits}
+                  </p>
+                </div>
+                <p className="text-[11px] text-slate-500 mt-2 pt-2 border-t border-slate-100">
+                  Positive energy radiation &amp; harmony.
+                </p>
+              </div>
+            </div>
           </div>
 
           {hasFaqs ? (
