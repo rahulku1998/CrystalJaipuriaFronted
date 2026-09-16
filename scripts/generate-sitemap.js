@@ -32,6 +32,15 @@ const fetchData = (endpoint) => {
   });
 };
 
+const escapeXml = (unsafe) => {
+  return String(unsafe || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+};
+
 const generateSitemap = async () => {
   console.log("Generating dynamic sitemap.xml and llms.txt...");
 
@@ -310,20 +319,67 @@ const generateSitemap = async () => {
       }
     }
 
-    // Feed Title with Weight & Size for clean Google Shopping policy compliance
-    let feedTitle = cleanName;
-    if (slug === "green-jade-panchmukhi-shivling") {
-      feedTitle = "Natural Green Jade Stone Panchmukhi Shivling (500g, 4.5&quot;)";
-    } else if (!feedTitle.includes("(") && (shippingWeight || size)) {
-      const specLabel = [shippingWeight, size].filter(Boolean).join(", ");
-      feedTitle = `${cleanName} (${specLabel})`;
-    }
-
-    feedTitle = feedTitle
+    // Clean base name: strip -Testing, testing, duplicate spaces, and old raw spec tags
+    let baseName = cleanName
+      .replace(/\s*-\s*testing\b/gi, "")
+      .replace(/\btesting\b/gi, "")
       .replace(/\s*-\s*100%\s*certified/gi, "")
       .replace(/\s*100%\s*certified/gi, "")
+      .replace(/\s*\([^\)]*?(?:g|kg|inch|cm|mm|[0-9])[^\)]*?\)/gi, "")
       .replace(/\s{2,}/g, " ")
       .trim();
+
+    // Archetype / Intent analysis for maximum Google Shopping matching
+    const lowerName = baseName.toLowerCase();
+    const isGanesh = lowerName.includes("ganesh") || lowerName.includes("ganpati") || lowerName.includes("vinayaka");
+    const isShivling = lowerName.includes("shivling") || lowerName.includes("shivaling") || lowerName.includes("shiva linga");
+    const isShiva = !isShivling && (lowerName.includes("shiva") || lowerName.includes("mahadev") || lowerName.includes("bholenath"));
+    const isKrishna = lowerName.includes("krishna") || lowerName.includes("krishan") || lowerName.includes("radha");
+    const isHanuman = lowerName.includes("hanuman") || lowerName.includes("bajrangbali");
+    const isLaxmi = lowerName.includes("laxmi") || lowerName.includes("lakshmi");
+    const isMahaveer = lowerName.includes("mahaveer") || lowerName.includes("mahavir");
+    const isShreeYantra = lowerName.includes("shree yantra") || lowerName.includes("shri yantra") || lowerName.includes("yantra");
+    const isDiya = lowerName.includes("diya") || lowerName.includes("deepak");
+    const isAngel = lowerName.includes("angel");
+
+    let intentSuffix = "";
+    if (isShivling) {
+      if (!lowerName.includes("pooja") && !lowerName.includes("jalabhishek") && !lowerName.includes("temple")) {
+        intentSuffix = "for Home Temple & Jalabhishek";
+      }
+    } else if (isShreeYantra) {
+      if (!lowerName.includes("wealth") && !lowerName.includes("vastu") && !lowerName.includes("meru")) {
+        intentSuffix = "3D Meru for Wealth & Vastu";
+      }
+    } else if (isDiya) {
+      if (!lowerName.includes("mandir") && !lowerName.includes("pooja")) {
+        intentSuffix = "for Mandir Pooja";
+      }
+    } else if (isAngel) {
+      if (!lowerName.includes("reiki") && !lowerName.includes("healing")) {
+        intentSuffix = "for Reiki Healing & Positive Energy";
+      }
+    } else if (isGanesh || isShiva || isKrishna || isHanuman || isLaxmi || isMahaveer) {
+      const hasMurtiWord = lowerName.includes("idol") || lowerName.includes("statue") || lowerName.includes("murti");
+      if (!hasMurtiWord) {
+        baseName += " Idol Statue";
+      }
+      if (!lowerName.includes("temple") && !lowerName.includes("vastu") && !lowerName.includes("pooja")) {
+        intentSuffix = "for Home Temple & Vastu";
+      }
+    }
+
+    const specParts = [size, shippingWeight].filter(Boolean);
+    const specString = specParts.length > 0 ? `(${specParts.join(", ")})` : "";
+
+    let feedTitle = `${baseName} ${intentSuffix} ${specString}`.replace(/\s{2,}/g, " ").trim();
+    if (feedTitle.length > 145) {
+      feedTitle = `${baseName} ${specString}`.replace(/\s{2,}/g, " ").trim();
+    }
+
+    if (slug === "green-jade-panchmukhi-shivling") {
+      feedTitle = "Natural Green Jade Stone Panchmukhi Shivling for Home Temple (4.5 Inch, 500 g)";
+    }
 
     const feedDesc = (slug === "green-jade-panchmukhi-shivling")
       ? "Authentic Natural Green Jade Stone Panchmukhi Shivling (500g, 4.5 Inches) handcrafted by Jaipur master artisans. Sacred Pashupatinath Mahadev Swaroop with 5 divine faces (Sadyojata, Vamadeva, Aghora, Tatpurusha, Ishana) for home pooja and Jalabhishek at factory direct price."
@@ -331,8 +387,8 @@ const generateSitemap = async () => {
 
     gmcXml += `    <item>\n`;
     gmcXml += `      <g:id>${prod._id}</g:id>\n`;
-    gmcXml += `      <g:title>${feedTitle}</g:title>\n`;
-    gmcXml += `      <g:description>${feedDesc}</g:description>\n`;
+    gmcXml += `      <g:title>${escapeXml(feedTitle)}</g:title>\n`;
+    gmcXml += `      <g:description>${escapeXml(feedDesc)}</g:description>\n`;
     gmcXml += `      <g:link>${prodUrl}</g:link>\n`;
     gmcXml += `      <g:image_link>${imageMain.replace(/&/g, "&amp;")}</g:image_link>\n`;
     // Secondary images on crystaljaipuria.com domain
