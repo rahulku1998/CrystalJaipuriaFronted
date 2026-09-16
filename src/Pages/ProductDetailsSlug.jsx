@@ -375,7 +375,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
   const hasFaqs = productFaqs.length > 0;
   const isPendingProduct = Boolean(product._id?.startsWith?.('legacy_') || product.isPending);
   const sacredShloka = getSacredShloka(product?.slug || product?.name);
-  const vedicVastu = useMemo(() => getVedicVastuForProduct(product), [product]);
+  const vedicVastu = getVedicVastuForProduct(product);
 
   return (
     <>
