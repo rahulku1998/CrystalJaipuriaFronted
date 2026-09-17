@@ -531,23 +531,6 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                 </p>
               </div>
 
-              {/* Quick Vastu Placement & Chakra Badge */}
-              {vedicVastu?.placementDirection && (
-                <div className="mt-4 p-2.5 sm:p-3 bg-gradient-to-r from-emerald-50/90 via-teal-50/40 to-white border border-emerald-200/90 rounded-xl flex items-center gap-2.5 text-xs sm:text-sm text-slate-800 shadow-2xs">
-                  <span className="text-base shrink-0">🧭</span>
-                  <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
-                    <span className="font-bold text-emerald-950">Vastu Placement:</span>
-                    <span className="text-slate-700 font-medium">{vedicVastu.placementDirection}</span>
-                    {vedicVastu.chakraPlanet && (
-                      <>
-                        <span className="text-slate-300 hidden sm:inline">|</span>
-                        <span className="text-indigo-800 font-medium text-[11px] sm:text-xs">🌀 {vedicVastu.chakraPlanet}</span>
-                      </>
-                    )}
-                  </div>
-                </div>
-              )}
-
               {/* ACTION BUTTONS (Clean Neutral 2x2 Layout with Colorful Icons & Hover States) */}
               <div className="space-y-2.5 sm:space-y-3 mt-6">
                 {/* ROW 1: PRIMARY ORDERING ACTIONS (2x2 Grid on Mobile & Desktop) */}
@@ -603,6 +586,23 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                   </button>
                 </div>
               </div>
+
+              {/* Quick Vastu Placement & Chakra Badge */}
+              {vedicVastu?.placementDirection && (
+                <div className="mt-4 p-2.5 sm:p-3 bg-gradient-to-r from-emerald-50/90 via-teal-50/40 to-white border border-emerald-200/90 rounded-xl flex items-center gap-2.5 text-xs sm:text-sm text-slate-800 shadow-2xs">
+                  <span className="text-base shrink-0">🧭</span>
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+                    <span className="font-bold text-emerald-950">Vastu Placement:</span>
+                    <span className="text-slate-700 font-medium">{vedicVastu.placementDirection}</span>
+                    {vedicVastu.chakraPlanet && (
+                      <>
+                        <span className="text-slate-300 hidden sm:inline">|</span>
+                        <span className="text-indigo-800 font-medium text-[11px] sm:text-xs">🌀 {vedicVastu.chakraPlanet}</span>
+                      </>
+                    )}
+                  </div>
+                </div>
+              )}
 
               {/* TRUST & AUTHENTICITY ASSURANCE (GEO & CONVERSION BOOSTER) */}
               <div className="mt-5 p-4 rounded-2xl bg-amber-50/70 border border-amber-200/80 space-y-2.5 shadow-2xs">
