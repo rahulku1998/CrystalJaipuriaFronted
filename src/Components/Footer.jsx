@@ -5,6 +5,7 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
   FaInstagram,
+  FaPinterest,
   FaFacebookF,
   FaWhatsapp,
   FaClock,
@@ -89,6 +90,17 @@ const Footer = () => {
                   title="Instagram"
                 >
                   <FaInstagram className="text-lg" />
+                </a>
+
+                <a
+                  href="https://in.pinterest.com/jaipuriacrystal/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Pinterest"
+                  className="w-10 h-10 rounded-xl bg-white border border-slate-300 text-slate-700 hover:text-white hover:bg-[#E60023] hover:border-[#E60023] flex items-center justify-center transition-all shadow-2xs hover:scale-105"
+                  title="Pinterest"
+                >
+                  <FaPinterest className="text-lg" />
                 </a>
 
                 <a

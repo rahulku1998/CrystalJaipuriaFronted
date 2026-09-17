@@ -7,6 +7,7 @@ import {
   FaPhone,
   FaRegNewspaper,
   FaInstagram,
+  FaPinterest,
   FaFacebookF,
   FaWhatsapp,
 } from "react-icons/fa";
@@ -208,21 +209,30 @@ const CategoryBar = ({ mobileMenuOpen, setMobileMenuOpen }) => {
                 <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2.5">
                   Follow &amp; Contact
                 </p>
-                <div className="grid grid-cols-2 gap-2 mb-3">
+                <div className="grid grid-cols-3 gap-2 mb-3">
                   <a
                     href="https://www.instagram.com/crystal_jaipuria/"
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-pink-50 border border-pink-200 text-pink-700 text-xs font-semibold hover:bg-pink-100 transition"
+                    className="flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-pink-50 border border-pink-200 text-pink-700 text-xs font-semibold hover:bg-pink-100 transition"
                   >
                     <FaInstagram className="text-sm text-pink-600" />
-                    <span>Instagram</span>
+                    <span>Insta</span>
+                  </a>
+                  <a
+                    href="https://in.pinterest.com/jaipuriacrystal/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs font-semibold hover:bg-red-100 transition"
+                  >
+                    <FaPinterest className="text-sm text-[#E60023]" />
+                    <span>Pinterest</span>
                   </a>
                   <a
                     href="https://www.facebook.com/profile.php?id=61565599797453"
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold hover:bg-blue-100 transition"
+                    className="flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold hover:bg-blue-100 transition"
                   >
                     <FaFacebookF className="text-sm text-blue-600" />
                     <span>Facebook</span>

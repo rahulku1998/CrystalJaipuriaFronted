@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import {
   FaFacebookF,
   FaInstagram,
+  FaPinterest,
   FaSearch,
   FaBars,
 } from "react-icons/fa";
@@ -109,6 +110,28 @@ const TopBar = ({ onOpenMenu }) => {
               "
             >
               <FaInstagram className="text-xs sm:text-sm"/>
+            </a>
+
+            <a
+              href="https://in.pinterest.com/jaipuriacrystal/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Visit our Pinterest profile"
+              onClick={() => trackSocialClick("pinterest")}
+              className="
+              w-8 h-8
+              sm:w-9 sm:h-9
+              rounded-full
+              bg-[#E60023]
+              text-white
+              flex
+              items-center
+              justify-center
+              hover:bg-[#c9001f]
+              transition shadow-2xs
+              "
+            >
+              <FaPinterest className="text-xs sm:text-sm"/>
             </a>
           </div>
         </div>
