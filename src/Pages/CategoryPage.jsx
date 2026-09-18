@@ -10,6 +10,11 @@ import ProductCard from "../Components/ProductCard";
 import BrandLoader from "../Components/BrandLoader";
 import NotFound from "./NotFound";
 import { CATEGORY_CONTENT } from "../utils/categoryContent";
+import {
+  FALLBACK_PRODUCTS,
+  FALLBACK_CATEGORIES,
+  FALLBACK_SUBCATEGORIES,
+} from "../data/fallbackData";
 
 const CATEGORY_SEO = {
   "god-statues": {
@@ -173,8 +178,13 @@ const CategoryPage = () => {
   const staticCat = useMemo(() => STATIC_CATEGORIES[cleanSlug] || null, [cleanSlug]);
 
   const getCachedCategoryData = () => {
-    if (!categoryMemoryCache.products || !categoryMemoryCache.categories) return null;
-    const cat = categoryMemoryCache.categories.find((c) => c.slug === cleanSlug) || staticCat;
+    const allProds = (categoryMemoryCache.products && categoryMemoryCache.products.length > 0)
+      ? categoryMemoryCache.products
+      : FALLBACK_PRODUCTS;
+    const allCats = (categoryMemoryCache.categories && categoryMemoryCache.categories.length > 0)
+      ? categoryMemoryCache.categories
+      : FALLBACK_CATEGORIES;
+    const cat = allCats.find((c) => c.slug === cleanSlug) || staticCat;
     if (!cat) return null;
 
     const subs = (categoryMemoryCache.subCategories || []).filter(
@@ -184,13 +194,21 @@ const CategoryPage = () => {
         (s.categoryId?.slug && s.categoryId.slug === cat.slug)
     );
 
-    const prods = categoryMemoryCache.products.filter((p) => {
+    const curName = (cat.name || "").toLowerCase();
+    const prods = allProds.filter((p) => {
       const pCatId = p.categoryId?._id || p.categoryId;
       const pCatSlug = p.categoryId?.slug;
+      const pCatName = (p.categoryName || p.categoryId?.name || "").toLowerCase();
       return (
         pCatId === cat._id ||
         (pCatSlug && pCatSlug === cat.slug) ||
-        (p.categoryName && p.categoryName.toLowerCase() === cat.name?.toLowerCase())
+        (pCatName && pCatName === curName) ||
+        (cleanSlug === "shree-yantra" && (p.name?.toLowerCase().includes("shree yantra") || p.slug?.includes("shree-yantra"))) ||
+        (cleanSlug === "shivling" && (p.name?.toLowerCase().includes("shivling") || p.slug?.includes("shivling"))) ||
+        (cleanSlug === "god-statues" && pCatSlug === "god-statues") ||
+        (cleanSlug === "diya" && (p.name?.toLowerCase().includes("diya") || p.slug?.includes("diya"))) ||
+        (cleanSlug === "angel" && (p.name?.toLowerCase().includes("angel") || p.slug?.includes("angel"))) ||
+        (cleanSlug === "crystal-statues" && pCatSlug === "crystal-statues")
       );
     });
 
@@ -271,14 +289,28 @@ const CategoryPage = () => {
       let prodData = categoryMemoryCache.products;
 
       if (!catData || !subData || !prodData || now - categoryMemoryCache.timestamp > 60000) {
-        const [catRes, subRes, productRes] = await Promise.all([
-          API.get("/categories"),
-          API.get("/subcategories"),
-          API.get("/products"),
-        ]);
-        catData = catRes.data?.categories || [];
-        subData = subRes.data?.subCategories || [];
-        prodData = productRes.data?.products || productRes.data || [];
+        try {
+          const [catRes, subRes, productRes] = await Promise.all([
+            API.get("/categories"),
+            API.get("/subcategories"),
+            API.get("/products"),
+          ]);
+          catData = catRes.data?.categories || [];
+          subData = subRes.data?.subCategories || [];
+          prodData = productRes.data?.products || productRes.data || [];
+        } catch (fetchErr) {
+          console.warn("CategoryPage API fetch failed, fallback engaged:", fetchErr?.message);
+        }
+
+        if (!prodData || prodData.length === 0) {
+          prodData = FALLBACK_PRODUCTS;
+        }
+        if (!catData || catData.length === 0) {
+          catData = FALLBACK_CATEGORIES;
+        }
+        if (!subData) {
+          subData = FALLBACK_SUBCATEGORIES;
+        }
 
         categoryMemoryCache = {
           categories: catData,
@@ -322,13 +354,21 @@ const CategoryPage = () => {
       );
       setSubCategories(filteredSubs);
 
+      const curName = (currentCat.name || "").toLowerCase();
       const liveProducts = prodData.filter((p) => {
         const pCatId = p.categoryId?._id || p.categoryId;
         const pCatSlug = p.categoryId?.slug;
+        const pCatName = (p.categoryName || p.categoryId?.name || "").toLowerCase();
         return (
           pCatId === currentCat._id ||
           (pCatSlug && pCatSlug === currentCat.slug) ||
-          (p.categoryName && p.categoryName.toLowerCase() === currentCat.name?.toLowerCase())
+          (pCatName && pCatName === curName) ||
+          (cleanSlug === "shree-yantra" && (p.name?.toLowerCase().includes("shree yantra") || p.slug?.includes("shree-yantra"))) ||
+          (cleanSlug === "shivling" && (p.name?.toLowerCase().includes("shivling") || p.slug?.includes("shivling"))) ||
+          (cleanSlug === "god-statues" && pCatSlug === "god-statues") ||
+          (cleanSlug === "diya" && (p.name?.toLowerCase().includes("diya") || p.slug?.includes("diya"))) ||
+          (cleanSlug === "angel" && (p.name?.toLowerCase().includes("angel") || p.slug?.includes("angel"))) ||
+          (cleanSlug === "crystal-statues" && pCatSlug === "crystal-statues")
         );
       });
 

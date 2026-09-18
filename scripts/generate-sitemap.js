@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import https from "https";
 import { fileURLToPath } from "url";
+import { FALLBACK_PRODUCTS, FALLBACK_CATEGORIES } from "../src/data/fallbackData.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -50,9 +51,18 @@ const generateSitemap = async () => {
     fetchData("/blogs"),
   ]);
 
-  const products = productsRes.products || [];
-  const categories = categoriesRes.categories || [];
+  let products = productsRes.products || [];
+  let categories = categoriesRes.categories || [];
   const blogs = blogsRes.blogs || [];
+
+  if (products.length === 0) {
+    console.log("⚡ [Sitemap] Using fallback products catalog (53 items)...");
+    products = FALLBACK_PRODUCTS;
+  }
+  if (categories.length === 0) {
+    console.log("⚡ [Sitemap] Using fallback categories catalog (6 categories)...");
+    categories = FALLBACK_CATEGORIES;
+  }
 
   console.log(
     `Fetched ${products.length} products, ${categories.length} categories, ${blogs.length} blogs from database.`

@@ -14,9 +14,21 @@ export const syncImages = async () => {
   if (!fs.existsSync(productsDir)) fs.mkdirSync(productsDir, { recursive: true });
 
   try {
-    const res = await fetch("https://shop.codewithrahulkumawat.com/api/products");
-    const data = await res.json();
-    const products = data.products || data || [];
+    let products = [];
+    try {
+      const res = await fetch("https://shop.codewithrahulkumawat.com/api/products");
+      if (res.ok) {
+        const data = await res.json();
+        products = Array.isArray(data?.products) ? data.products : (Array.isArray(data) ? data : []);
+      }
+    } catch (e) {
+      products = [];
+    }
+
+    if (!Array.isArray(products) || products.length === 0) {
+      console.log("Backend API offline or no new remote products. Keeping existing static images intact.");
+      return;
+    }
 
     console.log(`Syncing ${products.length} product images to clean static .webp...`);
 

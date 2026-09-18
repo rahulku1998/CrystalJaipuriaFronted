@@ -6,6 +6,7 @@ import { getProductImageUrl } from "../utils/imageOptimizer";
 import { unpackProductMetadata, getVedicVastuForProduct } from "../utils/productMetadata";
 import { getStandardizedProduct, getSacredShloka } from "../utils/productStandardizer";
 import { getLegacyProductBySlug, resolveProductSlug } from "../utils/legacyProducts";
+import { FALLBACK_PRODUCTS } from "../data/fallbackData";
 import {
   getProductMetaTitle,
   getProductMetaDescription,
@@ -64,7 +65,11 @@ const ProductDetails = () => {
 
   const fallbackProduct = useMemo(() => {
     const leg = getLegacyProductBySlug(cleanSlug);
-    return leg ? getStandardizedProduct(leg) : null;
+    if (leg) return getStandardizedProduct(leg);
+    const fb = FALLBACK_PRODUCTS.find(
+      (p) => p.slug === cleanSlug || p._id === cleanSlug
+    );
+    return fb ? getStandardizedProduct(fb) : null;
   }, [cleanSlug]);
 
   const [product, setProduct] = useState(null);
@@ -270,6 +275,22 @@ Hello Crystal Jaipuria, I have a query regarding this product.
           } catch {
             data = leg;
           }
+        }
+      }
+
+      // 5. Fallback to offline catalog (FALLBACK_PRODUCTS)
+      if (!data) {
+        const norm = (s) => (s || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+        const cleanNorm = norm(cleanSlug);
+        const fbMatch = FALLBACK_PRODUCTS.find(
+          (p) =>
+            p.slug === cleanSlug ||
+            p._id === cleanSlug ||
+            norm(p.slug) === cleanNorm ||
+            norm(p.name) === cleanNorm
+        );
+        if (fbMatch) {
+          data = fbMatch;
         }
       }
 

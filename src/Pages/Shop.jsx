@@ -6,24 +6,26 @@ import { FaSearch } from "react-icons/fa";
 import { useSearchParams } from "react-router-dom";
 import { trackSearchNoResults } from "../utils/analytics";
 
+import { FALLBACK_PRODUCTS } from "../data/fallbackData";
+
 const ITEMS_PER_PAGE = 15;
 
 const Shop = () => {
-  const [allProducts, setAllProducts] = useState([]);
+  const [allProducts, setAllProducts] = useState(() => FALLBACK_PRODUCTS);
   const [searchParams] = useSearchParams();
   const [search, setSearch] = useState(searchParams.get("search") || "");
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
 
   const fetchProducts = async () => {
     try {
       setLoading(true);
       const res = await API.get("/products");
-      const dbList = res.data.products || res.data || [];
-      setAllProducts(dbList);
+      const dbList = res.data?.products || res.data || [];
+      setAllProducts(dbList.length > 0 ? dbList : FALLBACK_PRODUCTS);
     } catch (error) {
-      console.log(error);
-      setAllProducts([]);
+      console.warn("Shop API fetch error, fallback active:", error);
+      setAllProducts(FALLBACK_PRODUCTS);
     } finally {
       setLoading(false);
     }

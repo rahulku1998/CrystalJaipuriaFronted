@@ -5,6 +5,7 @@ import { STANDARDIZED_SPECS, getStandardizedProduct } from "../src/utils/product
 import { CATEGORY_CONTENT } from "../src/utils/categoryContent.js";
 import { sanitizeNaturalStutter } from "../src/utils/aiGenerator.js";
 import { getVedicVastuForProduct } from "../src/utils/productMetadata.js";
+import { FALLBACK_PRODUCTS, FALLBACK_CATEGORIES } from "../src/data/fallbackData.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -143,8 +144,21 @@ export const runPrerender = async () => {
     fetchData("/categories"),
   ]);
 
-  const products = productsData.products || productsData || [];
-  const categories = categoriesData.categories || categoriesData || [];
+  let products = Array.isArray(productsData?.products)
+    ? productsData.products
+    : (Array.isArray(productsData) ? productsData : []);
+  let categories = Array.isArray(categoriesData?.categories)
+    ? categoriesData.categories
+    : (Array.isArray(categoriesData) ? categoriesData : []);
+
+  if (products.length === 0) {
+    console.log("⚡ [Prerender] Using fallback products catalog (53 items)...");
+    products = FALLBACK_PRODUCTS;
+  }
+  if (categories.length === 0) {
+    console.log("⚡ [Prerender] Using fallback categories catalog (6 categories)...");
+    categories = FALLBACK_CATEGORIES;
+  }
 
   console.log(`📦 Pre-rendering ${products.length} Products & ${categories.length} Categories...`);
 
