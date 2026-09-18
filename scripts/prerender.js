@@ -187,12 +187,12 @@ export const runPrerender = async () => {
     const imageUrl = `${BASE_URL}/images/${cleanProductSlug}.webp?v=2`;
 
     let priceNum = 999;
-    if (STANDARDIZED_SPECS[slug]?.price) {
-      priceNum = STANDARDIZED_SPECS[slug].price;
-    } else if (typeof prod.price === "number" && prod.price > 0) {
+    if (typeof prod.price === "number" && prod.price > 0) {
       priceNum = prod.price;
     } else if (typeof prod.discountPrice === "number" && prod.discountPrice > 0) {
       priceNum = prod.discountPrice;
+    } else if (STANDARDIZED_SPECS[slug]?.price) {
+      priceNum = STANDARDIZED_SPECS[slug].price;
     } else {
       const raw = String(prod.price || prod.discountPrice || "999").replace(/,/g, "");
       const match = raw.match(/\d+(\.\d+)?/);
@@ -425,6 +425,7 @@ export const runPrerender = async () => {
             <div style="flex:1.2;min-width:280px;">
               <span style="display:inline-block;background:#fef3c7;color:#92400e;font-size:12px;font-weight:700;padding:4px 12px;border-radius:9999px;margin-bottom:12px;letter-spacing:0.5px;">100% NATURAL CERTIFIED GEMSTONE</span>
               <h1 style="font-size:26px;font-weight:800;color:#0f172a;line-height:1.3;margin-bottom:12px;">${escapeHtml(customHeading || displayTitle)}</h1>
+              <div style="font-size:24px;font-weight:800;color:#4f46e5;margin-bottom:12px;">₹${priceNum.toLocaleString("en-IN")}</div>
               <p style="font-size:15px;color:#475569;line-height:1.6;margin-bottom:20px;">${escapeHtml(cleanDesc.slice(0, 350))}...</p>
               <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px;">
                 <a href="https://wa.me/918306317032?text=Hello%20Crystal%20Jaipuria,%20I%20am%20interested%20in%20${encodeURIComponent(displayTitle)}" style="background:#25D366;color:#ffffff;font-weight:700;padding:12px 24px;border-radius:12px;text-decoration:none;font-size:15px;display:inline-flex;align-items:center;gap:8px;">WhatsApp Inquiry</a>
@@ -481,14 +482,14 @@ export const runPrerender = async () => {
 
     const parsePrice = (p) => {
       const pSlug = (p.slug || p._id || "").toLowerCase().trim();
-      if (STANDARDIZED_SPECS[pSlug]?.price) {
-        return `₹${STANDARDIZED_SPECS[pSlug].price.toLocaleString("en-IN")}`;
-      }
       if (typeof p?.price === "number" && p.price > 0) {
         return `₹${p.price.toLocaleString("en-IN")}`;
       }
       if (typeof p?.discountPrice === "number" && p.discountPrice > 0) {
         return `₹${p.discountPrice.toLocaleString("en-IN")}`;
+      }
+      if (STANDARDIZED_SPECS[pSlug]?.price) {
+        return `₹${STANDARDIZED_SPECS[pSlug].price.toLocaleString("en-IN")}`;
       }
       const raw = String(p?.price || p?.discountPrice || "").replace(/,/g, "");
       const match = raw.match(/\d+(\.\d+)?/);
