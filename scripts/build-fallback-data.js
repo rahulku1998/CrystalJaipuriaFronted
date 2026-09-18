@@ -1,6 +1,8 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { generateBuiltInContent } from "../src/utils/aiGenerator.js";
+import { packProductMetadata, getVedicVastuForProduct } from "../src/utils/productMetadata.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,13 +15,18 @@ const items = xml.split("<item>").slice(1);
 
 const unescapeXml = (str) => {
   if (!str) return "";
-  return str
-    .replace(/&amp;/g, "&")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&apos;/g, "'");
+  let res = str;
+  for (let i = 0; i < 5; i++) {
+    if (!res.includes("&")) break;
+    res = res
+      .replace(/&amp;/g, "&")
+      .replace(/&lt;/g, "<")
+      .replace(/&gt;/g, ">")
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      .replace(/&apos;/g, "'");
+  }
+  return res;
 };
 
 const CATEGORIES = [
@@ -204,12 +211,36 @@ const products = items.map((item) => {
 
   const sub = subMap[subId] || null;
 
+  const aiData = generateBuiltInContent(title, cat.name);
+  const vedicVastu = getVedicVastuForProduct(title);
+
+  // Blend original XML desc with the comprehensive AI description
+  let combinedDescription = aiData.fullDescription;
+  if (desc && !combinedDescription.toLowerCase().includes(desc.slice(0, 40).toLowerCase())) {
+    combinedDescription = `<p>${desc}</p>\n\n` + combinedDescription;
+  }
+  combinedDescription = combinedDescription.replace(/&amp;amp;/g, '&').replace(/&amp;/g, '&');
+
+  const packedInfo = packProductMetadata({
+    additionalInfo: aiData.additionalInfo,
+    faqs: aiData.faqs,
+    metaTitle: aiData.metaTitle,
+    metaDescription: aiData.metaDescription,
+    vedicVastu: vedicVastu,
+  });
+
   return {
     _id: id,
     name: title,
     slug: slug,
-    price: price,
-    detail: desc,
+    price: price || aiData.price || 999,
+    detail: desc || aiData.citationHook,
+    description: combinedDescription,
+    additionalInfo: packedInfo,
+    faqs: aiData.faqs,
+    metaTitle: aiData.metaTitle,
+    metaDescription: aiData.metaDescription,
+    vedicVastu: vedicVastu,
     images: [img, img.replace(".webp", "-2.webp")],
     categoryId: {
       _id: cat._id,
@@ -223,8 +254,8 @@ const products = items.map((item) => {
       slug: sub.slug,
     } : null,
     subCategoryName: sub ? sub.name : "",
-    size: size || "Standard",
-    weight: weight || "Standard",
+    size: size || aiData.size || "Standard",
+    weight: weight || aiData.weight || "Standard",
     stock: 10,
     featured: true,
   };

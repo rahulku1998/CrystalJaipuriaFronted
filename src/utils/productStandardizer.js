@@ -431,7 +431,7 @@ export const getStandardizedProduct = (product) => {
     dimensions,
   });
 
-  let cleanDescription = product.description;
+  let cleanDescription = product.description || (product.detail ? `<p>${product.detail}</p>` : "");
   if (slug === "natural-opal-stone-shivling" && cleanDescription) {
     cleanDescription = cleanDescription
       .replace(/Natural Sphatik \(100% Certified Clear Quartz\)/gi, "Certified Natural Opal Stone (Upal Gemstone)")
