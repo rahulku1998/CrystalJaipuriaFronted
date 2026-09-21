@@ -32,6 +32,10 @@ import {
   FaChevronDown,
   FaPhoneAlt,
   FaBolt,
+  FaSlidersH,
+  FaShieldAlt,
+  FaBoxOpen,
+  FaUndo,
 } from "react-icons/fa";
 import SEO from "../Components/SEO";
 import BuyNowModal from "../Components/BuyNowModal";
@@ -49,6 +53,7 @@ const ProductDetails = () => {
   const [openSections, setOpenSections] = useState({
     description: false,
     additional: false,
+    vedic: false,
     faqs: false,
   });
 
@@ -435,9 +440,9 @@ Hello Crystal Jaipuria, I have a query regarding this product.
           {/* Top Breadcrumb & Back Bar */}
           <div className="mb-6 flex items-center justify-between flex-wrap gap-2 text-xs sm:text-sm text-slate-500 pb-3 border-b border-slate-100">
             <div className="flex items-center gap-1.5 flex-wrap">
-              <Link to="/" className="hover:text-indigo-600 transition">Home</Link>
+              <Link to="/" className="hover:text-amber-600 transition">Home</Link>
               <span className="text-slate-300">/</span>
-              <Link to="/shop" className="hover:text-indigo-600 transition">Shop</Link>
+              <Link to="/shop" className="hover:text-amber-600 transition">Shop</Link>
               {product?.categoryId?.name && (
                 <>
                   <span className="text-slate-300">/</span>
@@ -449,7 +454,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
             </div>
             <button
               onClick={() => navigate(-1)}
-              className="inline-flex items-center gap-1 text-indigo-600 font-semibold hover:underline cursor-pointer text-xs sm:text-sm"
+              className="inline-flex items-center gap-1 text-stone-600 font-semibold hover:text-amber-700 hover:underline cursor-pointer text-xs sm:text-sm"
             >
               ← Back
             </button>
@@ -536,7 +541,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
 
               {product.price && (
                 <div className="mt-3">
-                  <span className="text-2xl sm:text-3xl font-extrabold text-indigo-600">
+                  <span className="text-2xl sm:text-3xl font-extrabold text-amber-600">
                     {formatPrice(product.price)}
                   </span>
                 </div>
@@ -552,12 +557,12 @@ Hello Crystal Jaipuria, I have a query regarding this product.
               <div className="flex flex-wrap items-center gap-4 sm:gap-6 mt-5 text-sm sm:text-base text-gray-700">
                 {product.weight && (
                   <p>
-                    <span className="font-semibold text-indigo-600">Weight :</span> {product.weight}
+                    <span className="font-semibold text-amber-700">Weight :</span> {product.weight}
                   </p>
                 )}
                 {product.size && (
                   <p>
-                    <span className="font-semibold text-indigo-600">Size :</span> {product.size}
+                    <span className="font-semibold text-amber-700">Size :</span> {product.size}
                   </p>
                 )}
                 <p>
@@ -570,17 +575,17 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                 </p>
               </div>
 
-              {/* ACTION BUTTONS (Clean Neutral 2x2 Layout with Colorful Icons & Hover States) */}
-              <div className="space-y-2.5 sm:space-y-3 mt-6">
-                {/* ROW 1: PRIMARY ORDERING ACTIONS (2x2 Grid on Mobile & Desktop) */}
-                <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
-                  {/* BUTTON 1: BUY NOW (Google Merchant Center Requirement) */}
+              {/* ACTION BUTTONS (Clean Unified 2x2 Grid with Equal Sizes & Sharp Rectangular Shapes) */}
+              <div className="space-y-3 mt-6">
+                {/* ROW 1: PRIMARY ORDERING ACTIONS */}
+                <div className="grid grid-cols-2 gap-3">
+                  {/* BUTTON 1: BUY NOW */}
                   <button
                     type="button"
                     onClick={() => setShowBuyModal(true)}
-                    className="group w-full flex items-center justify-center gap-1.5 sm:gap-2 bg-white hover:bg-emerald-600 text-gray-800 hover:text-white border-2 border-gray-300 hover:border-emerald-600 py-3 sm:py-3.5 px-2 sm:px-4 rounded-xl sm:rounded-2xl text-xs sm:text-base font-bold shadow-2xs hover:shadow-md transition-all duration-200 active:scale-95 cursor-pointer"
+                    className="group w-full h-12 sm:h-13.5 flex items-center justify-center gap-2 bg-white hover:bg-slate-900 text-slate-900 hover:text-white border border-slate-300 hover:border-slate-900 px-3 sm:px-4 rounded-sm text-xs sm:text-sm md:text-base font-bold shadow-2xs hover:shadow-md transition-all duration-200 active:scale-98 cursor-pointer"
                   >
-                    <FaBolt className="text-amber-500 group-hover:text-amber-200 text-base sm:text-lg transition-colors shrink-0" />
+                    <FaBolt className="text-amber-500 group-hover:text-amber-400 text-sm sm:text-base shrink-0" />
                     <span>Buy Now</span>
                   </button>
 
@@ -590,24 +595,23 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => trackWhatsAppClick("product_details_enquire_button", product)}
-                    className="group w-full flex items-center justify-center gap-1.5 sm:gap-2 bg-white hover:bg-emerald-600 text-gray-800 hover:text-white border border-gray-300 hover:border-emerald-600 py-3 sm:py-3.5 px-2 sm:px-4 rounded-xl sm:rounded-2xl text-xs sm:text-base font-bold shadow-2xs hover:shadow-md transition-all duration-200 active:scale-95"
+                    className="group w-full h-12 sm:h-13.5 flex items-center justify-center gap-2 bg-white hover:bg-emerald-600 text-slate-900 hover:text-white border border-slate-300 hover:border-emerald-600 px-3 sm:px-4 rounded-sm text-xs sm:text-sm md:text-base font-bold shadow-2xs hover:shadow-md transition-all duration-200 active:scale-98"
                   >
-                    <FaWhatsapp className="text-emerald-600 group-hover:text-white text-base sm:text-xl transition-colors shrink-0" />
+                    <FaWhatsapp className="text-[#25D366] group-hover:text-white text-base sm:text-lg shrink-0" />
                     <span>WhatsApp Enquiry</span>
                   </a>
                 </div>
 
-                {/* ROW 2: DIRECT CONSULTATION & CUSTOMIZATION (2x2 Grid on Mobile & Desktop) */}
-                <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
-                  {/* BUTTON 3: CALL DIRECTLY */}
+                {/* ROW 2: DIRECT CONSULTATION & CUSTOMIZATION */}
+                <div className="grid grid-cols-2 gap-3">
+                  {/* BUTTON 3: CALL US */}
                   <a
                     href="tel:+918955613237"
                     onClick={() => trackContactClick("phone", "+918955613237")}
-                    className="group w-full flex items-center justify-center gap-1.5 sm:gap-2 bg-white hover:bg-blue-600 text-gray-800 hover:text-white border border-gray-300 hover:border-blue-600 py-2.5 sm:py-3 px-2 sm:px-4 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-semibold shadow-2xs hover:shadow-md transition-all duration-200 active:scale-95"
+                    className="group w-full h-12 sm:h-13.5 flex items-center justify-center gap-2 bg-white hover:bg-slate-900 text-slate-900 hover:text-white border border-slate-300 hover:border-slate-900 px-3 sm:px-4 rounded-sm text-xs sm:text-sm md:text-base font-bold shadow-2xs hover:shadow-md transition-all duration-200 active:scale-98"
                   >
-                    <FaPhoneAlt className="text-blue-600 group-hover:text-white text-xs sm:text-sm transition-colors shrink-0" />
-                    <span className="hidden sm:inline">Call Us (+91 89556 13237)</span>
-                    <span className="sm:hidden">Call Us</span>
+                    <FaPhoneAlt className="text-amber-500 group-hover:text-amber-400 text-xs sm:text-sm shrink-0" />
+                    <span>Call Us</span>
                   </a>
 
                   {/* BUTTON 4: CUSTOM SPECIFICATION & BULK */}
@@ -617,50 +621,33 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                       setShowQueryForm(true);
                       trackQueryModalOpen(product);
                     }}
-                    className="group w-full flex items-center justify-center gap-1.5 sm:gap-2 bg-white hover:bg-amber-500 text-gray-800 hover:text-white border border-gray-300 hover:border-amber-500 py-2.5 sm:py-3 px-2 sm:px-4 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-semibold shadow-2xs hover:shadow-md transition-all duration-200 active:scale-95 cursor-pointer"
+                    className="group w-full h-12 sm:h-13.5 flex items-center justify-center gap-2 bg-white hover:bg-slate-900 text-slate-900 hover:text-white border border-slate-300 hover:border-slate-900 px-3 sm:px-4 rounded-sm text-xs sm:text-sm md:text-base font-bold shadow-2xs hover:shadow-md transition-all duration-200 active:scale-98 cursor-pointer"
                   >
-                    <span className="text-amber-500 group-hover:scale-125 transition-transform text-sm sm:text-base shrink-0">✨</span>
+                    <FaSlidersH className="text-amber-500 group-hover:text-amber-400 text-xs sm:text-sm shrink-0" />
                     <span className="hidden sm:inline">Custom Size &amp; Bulk Specs</span>
                     <span className="sm:hidden">Custom / Bulk</span>
                   </button>
                 </div>
               </div>
 
-              {/* Quick Vastu Placement & Chakra Badge */}
-              {vedicVastu?.placementDirection && (
-                <div className="mt-4 p-2.5 sm:p-3 bg-gradient-to-r from-emerald-50/90 via-teal-50/40 to-white border border-emerald-200/90 rounded-xl flex items-center gap-2.5 text-xs sm:text-sm text-slate-800 shadow-2xs">
-                  <span className="text-base shrink-0">🧭</span>
-                  <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
-                    <span className="font-bold text-emerald-950">Vastu Placement:</span>
-                    <span className="text-slate-700 font-medium">{vedicVastu.placementDirection}</span>
-                    {vedicVastu.chakraPlanet && (
-                      <>
-                        <span className="text-slate-300 hidden sm:inline">|</span>
-                        <span className="text-indigo-800 font-medium text-[11px] sm:text-xs">🌀 {vedicVastu.chakraPlanet}</span>
-                      </>
-                    )}
-                  </div>
-                </div>
-              )}
-
               {/* TRUST & AUTHENTICITY ASSURANCE (GEO & CONVERSION BOOSTER) */}
-              <div className="mt-5 p-4 rounded-2xl bg-amber-50/70 border border-amber-200/80 space-y-2.5 shadow-2xs">
+              <div className="mt-5 p-4 rounded-xl bg-amber-50/70 border border-amber-200/80 space-y-2.5 shadow-2xs">
                 <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-800">
-                  <span className="text-base text-amber-600 shrink-0">🛡️</span>
+                  <FaShieldAlt className="text-amber-500 text-base shrink-0 mt-0.5" />
                   <div>
                     <span className="font-bold text-slate-900">100% Natural Earth-Mined Gemstone: </span>
                     <span className="text-slate-600">Handcrafted by hereditary master carvers in Jaipur, Rajasthan. Zero synthetic resin or plastic melts.</span>
                   </div>
                 </div>
                 <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-800">
-                  <span className="text-base text-emerald-600 shrink-0">📦</span>
+                  <FaBoxOpen className="text-amber-500 text-base shrink-0 mt-0.5" />
                   <div>
                     <span className="font-bold text-slate-900">Sacred Shockproof Packaging: </span>
                     <span className="text-slate-600">5-layer shockproof protective packaging for 100% breakage-free delivery across India.</span>
                   </div>
                 </div>
                 <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-800">
-                  <span className="text-base text-indigo-600 shrink-0">🔄</span>
+                  <FaUndo className="text-amber-500 text-base shrink-0 mt-0.5" />
                   <div>
                     <span className="font-bold text-slate-900">7-Day Easy Returns &amp; Replacements: </span>
                     <span className="text-slate-600">Complete peace of mind with dedicated Jaipur artisan support (+91 83063 17032).</span>
@@ -670,7 +657,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                   <span className="text-amber-950 font-semibold">How to identify genuine gemstones?</span>
                   <Link
                     to="/gemstone-authenticity-guide"
-                    className="text-indigo-700 font-bold hover:underline flex items-center gap-1"
+                    className="text-amber-700 font-bold hover:underline flex items-center gap-1"
                   >
                     Read Authenticity Guide &rarr;
                   </Link>
@@ -738,173 +725,175 @@ Hello Crystal Jaipuria, I have a query regarding this product.
       </div>
     </div>
 
-      {/* SECTION 2: SPECIFICATIONS & FAQs (APPLE-STYLE SOFT PLATINUM ARCHITECTURAL BAND) */}
+      {/* SECTION 2: PRODUCT SPECIFICATIONS & ACCORDION */}
       <div className="bg-[#f8fafc] border-y border-slate-200/80 py-12 sm:py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="mb-6 sm:mb-8 text-center sm:text-left">
-            <span className="text-xs font-bold uppercase tracking-widest text-indigo-600 bg-indigo-50 border border-indigo-100 px-3 py-1 rounded-full">
-              Product Intelligence & Authenticity
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">
-              Specifications & Vedic Details
-            </h2>
-          </div>
-
-          {/* VEDIC & VASTU WISDOM SHOWCASE */}
-          <div className="mb-10 bg-gradient-to-br from-white via-emerald-50/20 to-teal-50/30 rounded-2xl border border-emerald-200/90 p-5 sm:p-7 shadow-xs">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-5 pb-3 border-b border-emerald-100">
-              <div className="flex items-center gap-2.5">
-                <span className="text-2xl">🌿</span>
-                <div>
-                  <h3 className="text-lg sm:text-xl font-bold text-slate-900">
-                    Vedic Vastu &amp; Sacred Energization Guide
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-500">
-                    Authentic astrological &amp; vastu placement principles for divine harmony
-                  </p>
-                </div>
-              </div>
-              <span className="text-xs font-semibold px-3 py-1 bg-emerald-100/70 text-emerald-800 rounded-full border border-emerald-200 self-start sm:self-auto">
-                Certified Vedic Wisdom
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 space-y-4">
+          {/* 1. DESCRIPTION ACCORDION */}
+          <div className="border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden bg-white shadow-xs transition-all duration-200">
+            <button
+              type="button"
+              onClick={() => toggleSection("description")}
+              className="w-full flex items-center justify-between py-4 px-5 sm:px-6 text-left cursor-pointer transition-colors bg-white hover:bg-slate-50/70"
+              aria-expanded={openSections.description}
+            >
+              <span className="uppercase font-bold tracking-wider text-xs sm:text-sm md:text-base text-[#c05646]">
+                Description
               </span>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {/* 1. Placement Direction */}
-              <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-2xs flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center gap-2 text-emerald-700 mb-2">
-                    <span className="text-lg">🧭</span>
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-600">Vastu Placement</span>
+              <FaChevronDown
+                className={`text-[#c05646] text-xs sm:text-sm transition-transform duration-300 ${
+                  openSections.description ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+            {openSections.description && (
+              <div className="p-5 sm:p-7 border-t border-slate-100 bg-white">
+                {/* Sacred Sanskrit Shloka Box */}
+                {sacredShloka && (
+                  <div className="mb-5 p-3.5 sm:p-4 rounded-xl bg-amber-50/80 border border-amber-200/80 text-amber-950">
+                    <p className="text-xs sm:text-sm font-serif font-bold italic tracking-wide text-amber-900 text-center leading-relaxed">
+                      {sacredShloka.shloka}
+                    </p>
+                    <p className="text-[11px] sm:text-xs text-amber-800/90 text-center mt-1.5 font-medium">
+                      {sacredShloka.meaning}
+                    </p>
                   </div>
-                  <p className="text-sm font-bold text-slate-900 leading-snug">
-                    {vedicVastu.placementDirection}
-                  </p>
-                </div>
-                <p className="text-[11px] text-slate-500 mt-2 pt-2 border-t border-slate-100">
-                  Ideal quadrant for home mandir or living space.
-                </p>
+                )}
+                <div
+                  className="text-slate-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-slate-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-slate-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-slate-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-slate-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-1.5 [&_p]:my-3 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-stone-800 [&_a]:font-medium [&_a:hover]:text-amber-700 [&_a:hover]:underline"
+                  dangerouslySetInnerHTML={{
+                    __html: product.description || (product.detail ? `<p>${product.detail}</p>` : "") || "No description available.",
+                  }}
+                />
               </div>
-
-              {/* 2. Chakra & Ruling Planet */}
-              <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-2xs flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center gap-2 text-indigo-700 mb-2">
-                    <span className="text-lg">🌀</span>
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-600">Chakra &amp; Planet</span>
-                  </div>
-                  <p className="text-sm font-bold text-slate-900 leading-snug">
-                    {vedicVastu.chakraPlanet}
-                  </p>
-                </div>
-                <p className="text-[11px] text-slate-500 mt-2 pt-2 border-t border-slate-100">
-                  Subtle bio-magnetic &amp; planetary balance.
-                </p>
-              </div>
-
-              {/* 3. Pooja & Abhishekam */}
-              <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-2xs flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center gap-2 text-amber-700 mb-2">
-                    <span className="text-lg">🪔</span>
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-600">Abhishekam &amp; Pooja</span>
-                  </div>
-                  <p className="text-xs text-slate-700 leading-relaxed">
-                    {vedicVastu.poojaVidhi}
-                  </p>
-                </div>
-                <p className="text-[11px] text-slate-500 mt-2 pt-2 border-t border-slate-100">
-                  Vedic purification &amp; consecration vidhi.
-                </p>
-              </div>
-
-              {/* 4. Spiritual Benefits */}
-              <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-2xs flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center gap-2 text-teal-700 mb-2">
-                    <span className="text-lg">✨</span>
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-600">Spiritual Vibrations</span>
-                  </div>
-                  <p className="text-xs text-slate-700 leading-relaxed">
-                    {vedicVastu.vedicBenefits}
-                  </p>
-                </div>
-                <p className="text-[11px] text-slate-500 mt-2 pt-2 border-t border-slate-100">
-                  Positive energy radiation &amp; harmony.
-                </p>
-              </div>
-            </div>
+            )}
           </div>
 
-          <div className="max-w-5xl mx-auto space-y-4">
-            {/* 1. DESCRIPTION ACCORDION */}
-            <div className="border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden bg-white shadow-xs transition-all duration-200">
-              <button
-                type="button"
-                onClick={() => toggleSection("description")}
-                className="w-full flex items-center justify-between py-4 px-5 sm:px-6 text-left cursor-pointer transition-colors bg-white hover:bg-slate-50/70"
-                aria-expanded={openSections.description}
-              >
-                <span className="uppercase font-bold tracking-wider text-xs sm:text-sm md:text-base text-[#c05646]">
-                  Description
-                </span>
-                <FaChevronDown
-                  className={`text-[#c05646] text-xs sm:text-sm transition-transform duration-300 ${
-                    openSections.description ? "rotate-180" : ""
-                  }`}
+          {/* 2. ADDITIONAL INFORMATION ACCORDION */}
+          <div className="border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden bg-white shadow-xs transition-all duration-200">
+            <button
+              type="button"
+              onClick={() => toggleSection("additional")}
+              className="w-full flex items-center justify-between py-4 px-5 sm:px-6 text-left cursor-pointer transition-colors bg-white hover:bg-slate-50/70"
+              aria-expanded={openSections.additional}
+            >
+              <span className="uppercase font-bold tracking-wider text-xs sm:text-sm md:text-base text-[#c05646]">
+                Additional Information
+              </span>
+              <FaChevronDown
+                className={`text-[#c05646] text-xs sm:text-sm transition-transform duration-300 ${
+                  openSections.additional ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+            {openSections.additional && (
+              <div className="p-5 sm:p-7 border-t border-slate-100 bg-white">
+                <div
+                  className="text-slate-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-slate-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-slate-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-slate-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-slate-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-2 [&_p]:my-3 [&_strong]:font-bold [&_strong]:text-slate-900 [&_b]:font-bold [&_b]:text-slate-900 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-stone-800 [&_a]:font-medium [&_a:hover]:text-amber-700 [&_a:hover]:underline"
+                  dangerouslySetInnerHTML={{
+                    __html: product.additionalInfo || "No additional information available.",
+                  }}
                 />
-              </button>
-              {openSections.description && (
-                <div className="p-5 sm:p-7 border-t border-slate-100 bg-white">
-                  {/* Sacred Sanskrit Shloka Box */}
-                  {sacredShloka && (
-                    <div className="mb-5 p-3.5 sm:p-4 rounded-xl bg-amber-50/80 border border-amber-200/80 text-amber-950">
-                      <p className="text-xs sm:text-sm font-serif font-bold italic tracking-wide text-amber-900 text-center leading-relaxed">
-                        {sacredShloka.shloka}
-                      </p>
-                      <p className="text-[11px] sm:text-xs text-amber-800/90 text-center mt-1.5 font-medium">
-                        {sacredShloka.meaning}
+              </div>
+            )}
+          </div>
+
+          {/* 3. SPECIFICATIONS & VEDIC DETAILS ACCORDION */}
+          <div className="border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden bg-white shadow-xs transition-all duration-200">
+            <button
+              type="button"
+              onClick={() => toggleSection("vedic")}
+              className="w-full flex items-center justify-between py-4 px-5 sm:px-6 text-left cursor-pointer transition-colors bg-white hover:bg-slate-50/70"
+              aria-expanded={openSections.vedic}
+            >
+              <span className="uppercase font-bold tracking-wider text-xs sm:text-sm md:text-base text-[#c05646]">
+                Specifications &amp; Vedic Details
+              </span>
+              <FaChevronDown
+                className={`text-[#c05646] text-xs sm:text-sm transition-transform duration-300 ${
+                  openSections.vedic ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+            {openSections.vedic && (
+              <div className="p-5 sm:p-7 border-t border-slate-100 bg-white">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-5 pb-3 border-b border-slate-100">
+                  <div>
+                    <h3 className="text-base sm:text-lg font-bold text-slate-900">
+                      Vedic Vastu &amp; Sacred Energization Guide
+                    </h3>
+                    <p className="text-xs sm:text-sm text-slate-500">
+                      Authentic astrological &amp; vastu placement principles for divine harmony
+                    </p>
+                  </div>
+                  <span className="text-xs font-semibold px-3 py-1 bg-amber-50 text-amber-800 rounded-full border border-amber-200 self-start sm:self-auto">
+                    Certified Vedic Wisdom
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {/* 1. Placement Direction */}
+                  <div className="p-4 rounded-xl bg-slate-50/60 border border-slate-200/80 shadow-2xs flex flex-col justify-between">
+                    <div>
+                      <div className="mb-2">
+                        <span className="text-xs font-bold uppercase tracking-wider text-slate-700">Vastu Placement</span>
+                      </div>
+                      <p className="text-sm font-bold text-slate-900 leading-snug">
+                        {vedicVastu.placementDirection}
                       </p>
                     </div>
-                  )}
-                  <div
-                    className="text-slate-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-slate-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-slate-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-slate-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-slate-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-1.5 [&_p]:my-3 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-indigo-600 [&_a]:underline"
-                    dangerouslySetInnerHTML={{
-                      __html: product.description || (product.detail ? `<p>${product.detail}</p>` : "") || "No description available.",
-                    }}
-                  />
-                </div>
-              )}
-            </div>
+                    <p className="text-[11px] text-slate-500 mt-2 pt-2 border-t border-slate-200/60">
+                      Ideal quadrant for home mandir or living space.
+                    </p>
+                  </div>
 
-            {/* 2. ADDITIONAL INFORMATION ACCORDION */}
-            <div className="border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden bg-white shadow-xs transition-all duration-200">
-              <button
-                type="button"
-                onClick={() => toggleSection("additional")}
-                className="w-full flex items-center justify-between py-4 px-5 sm:px-6 text-left cursor-pointer transition-colors bg-white hover:bg-slate-50/70"
-                aria-expanded={openSections.additional}
-              >
-                <span className="uppercase font-bold tracking-wider text-xs sm:text-sm md:text-base text-[#c05646]">
-                  Additional Information
-                </span>
-                <FaChevronDown
-                  className={`text-[#c05646] text-xs sm:text-sm transition-transform duration-300 ${
-                    openSections.additional ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-              {openSections.additional && (
-                <div className="p-5 sm:p-7 border-t border-slate-100 bg-white">
-                  <div
-                    className="text-slate-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-slate-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-slate-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-slate-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-slate-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-2 [&_p]:my-3 [&_strong]:font-bold [&_strong]:text-slate-900 [&_b]:font-bold [&_b]:text-slate-900 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-indigo-600 [&_a]:underline"
-                    dangerouslySetInnerHTML={{
-                      __html: product.additionalInfo || "No additional information available.",
-                    }}
-                  />
+                  {/* 2. Chakra & Ruling Planet */}
+                  <div className="p-4 rounded-xl bg-slate-50/60 border border-slate-200/80 shadow-2xs flex flex-col justify-between">
+                    <div>
+                      <div className="mb-2">
+                        <span className="text-xs font-bold uppercase tracking-wider text-slate-700">Chakra &amp; Planet</span>
+                      </div>
+                      <p className="text-sm font-bold text-slate-900 leading-snug">
+                        {vedicVastu.chakraPlanet}
+                      </p>
+                    </div>
+                    <p className="text-[11px] text-slate-500 mt-2 pt-2 border-t border-slate-200/60">
+                      Subtle bio-magnetic &amp; planetary balance.
+                    </p>
+                  </div>
+
+                  {/* 3. Pooja & Abhishekam */}
+                  <div className="p-4 rounded-xl bg-slate-50/60 border border-slate-200/80 shadow-2xs flex flex-col justify-between">
+                    <div>
+                      <div className="mb-2">
+                        <span className="text-xs font-bold uppercase tracking-wider text-slate-700">Abhishekam &amp; Pooja</span>
+                      </div>
+                      <p className="text-xs text-slate-700 leading-relaxed">
+                        {vedicVastu.poojaVidhi}
+                      </p>
+                    </div>
+                    <p className="text-[11px] text-slate-500 mt-2 pt-2 border-t border-slate-200/60">
+                      Vedic purification &amp; consecration vidhi.
+                    </p>
+                  </div>
+
+                  {/* 4. Spiritual Benefits */}
+                  <div className="p-4 rounded-xl bg-slate-50/60 border border-slate-200/80 shadow-2xs flex flex-col justify-between">
+                    <div>
+                      <div className="mb-2">
+                        <span className="text-xs font-bold uppercase tracking-wider text-slate-700">Spiritual Vibrations</span>
+                      </div>
+                      <p className="text-xs text-slate-700 leading-relaxed">
+                        {vedicVastu.vedicBenefits}
+                      </p>
+                    </div>
+                    <p className="text-[11px] text-slate-500 mt-2 pt-2 border-t border-slate-200/60">
+                      Positive energy radiation &amp; harmony.
+                    </p>
+                  </div>
                 </div>
-              )}
-            </div>
+              </div>
+            )}
+          </div>
 
             {/* 3. FREQUENTLY ASKED QUESTIONS ACCORDION */}
             {hasFaqs && (
@@ -963,7 +952,6 @@ Hello Crystal Jaipuria, I have a query regarding this product.
             )}
           </div>
         </div>
-      </div>
 
       {/* SECTION 3: RELATED PRODUCTS (CRISP WHITE SHOWCASE - data-nosnippet prevents Google from mixing this with product snippet) */}
       {Array.isArray(relatedProducts) && relatedProducts.length > 0 && (
@@ -971,12 +959,12 @@ Hello Crystal Jaipuria, I have a query regarding this product.
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <div className="flex items-center justify-between mb-8">
               <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-indigo-600">Curated For You</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-amber-600">Curated For You</span>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
                   You May Also Like
                 </h2>
               </div>
-              <Link to="/shop" className="text-xs sm:text-sm font-semibold text-indigo-600 hover:text-indigo-800 transition">
+              <Link to="/shop" className="text-xs sm:text-sm font-semibold text-amber-600 hover:text-amber-700 transition">
                 View All →
               </Link>
             </div>

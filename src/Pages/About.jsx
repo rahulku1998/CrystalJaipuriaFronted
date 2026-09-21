@@ -3,6 +3,13 @@ import aboutBanner from "../assets/about/About-Us.webp";
 import workshop from "../assets/about/workshop.webp";
 import StatsSection from "../Components/StatsSection";
 import SEO from "../Components/SEO";
+import {
+  FaGem,
+  FaLandmark,
+  FaAward,
+  FaHandshake,
+  FaShippingFast,
+} from "react-icons/fa";
 
 const About = () => {
   return (
@@ -148,17 +155,17 @@ const About = () => {
               mb-4
             ">
               Founded by{" "}
-              <span className="text-indigo-600 font-medium">
+              <span className="text-amber-700 font-semibold">
                 Kailash Kumawat
               </span>{" "}
               and headquartered at Bajni Talai, Plot No. 03 West Part, Prabha, Mangal Vihar, Sanganer, Jaipur (PIN:
               302029), Crystal Jaipuria has built a strong legacy of over
               <strong> 35 years</strong> in manufacturing and wholesale
               trading. Under the leadership of{" "}
-              <span className="text-indigo-600 font-medium">
+              <span className="text-amber-700 font-semibold">
                 CEO Krishan Kumawat
               </span>
-              , we specialize in semi-precious <Link to="/crystal-statues" className="text-amber-800 hover:text-amber-900 font-semibold underline underline-offset-2 decoration-amber-300">crystal statues</Link>, sacred <Link to="/shivling" className="text-amber-800 hover:text-amber-900 font-semibold underline underline-offset-2 decoration-amber-300">gemstone Shivlings</Link>, and handcrafted <Link to="/god-statues" className="text-amber-800 hover:text-amber-900 font-semibold underline underline-offset-2 decoration-amber-300">deity figures</Link>.
+              , we specialize in semi-precious <Link to="/crystal-statues" className="text-stone-700 font-medium hover:text-amber-700 hover:underline underline-offset-2 transition-colors">crystal statues</Link>, sacred <Link to="/shivling" className="text-stone-700 font-medium hover:text-amber-700 hover:underline underline-offset-2 transition-colors">gemstone Shivlings</Link>, and handcrafted <Link to="/god-statues" className="text-stone-700 font-medium hover:text-amber-700 hover:underline underline-offset-2 transition-colors">deity figures</Link>.
             </p>
 
             <p className="
@@ -168,7 +175,7 @@ const About = () => {
               leading-7
               sm:leading-8
             ">
-              Every creation at Crystal Jaipuria is crafted with precision, authenticity, and care. From sacred <Link to="/shree-yantra" className="text-amber-800 hover:text-amber-900 font-semibold underline underline-offset-2 decoration-amber-300">Shree Yantras</Link> and healing <Link to="/angel" className="text-amber-800 hover:text-amber-900 font-semibold underline underline-offset-2 decoration-amber-300">crystal angels</Link> to authentic puja essentials and <Link to="/diya" className="text-amber-800 hover:text-amber-900 font-semibold underline underline-offset-2 decoration-amber-300">gemstone Diyas</Link>, every piece is 100% natural and certified. Learn how we test genuine crystals in our <Link to="/gemstone-authenticity-guide" className="text-indigo-600 hover:text-indigo-800 font-bold underline underline-offset-2">Gemstone Authenticity Guide</Link>.
+              Every creation at Crystal Jaipuria is crafted with precision, authenticity, and care. From sacred <Link to="/shree-yantra" className="text-stone-700 font-medium hover:text-amber-700 hover:underline underline-offset-2 transition-colors">Shree Yantras</Link> and healing <Link to="/angel" className="text-stone-700 font-medium hover:text-amber-700 hover:underline underline-offset-2 transition-colors">crystal angels</Link> to authentic puja essentials and <Link to="/diya" className="text-stone-700 font-medium hover:text-amber-700 hover:underline underline-offset-2 transition-colors">gemstone Diyas</Link>, every piece is 100% natural and certified. Learn how we test genuine crystals in our <Link to="/gemstone-authenticity-guide" className="text-stone-700 font-semibold hover:text-amber-700 hover:underline underline-offset-2 transition-colors">Gemstone Authenticity Guide</Link>.
             </p>
 
 
@@ -370,9 +377,12 @@ const About = () => {
               shadow-sm
             ">
 
-              <h3 className="text-lg sm:text-xl font-semibold mb-3">
-                💎 Semi-Precious Stone Statues
-              </h3>
+              <div className="flex items-center gap-2.5 mb-3">
+                <FaGem className="text-amber-500 text-lg shrink-0" />
+                <h3 className="text-lg sm:text-xl font-semibold text-stone-900">
+                  Semi-Precious Stone Statues
+                </h3>
+              </div>
 
               <p className="text-gray-600 text-sm sm:text-base">
                 Beautiful hand-carved statues crafted from carefully selected
@@ -394,9 +404,12 @@ const About = () => {
               shadow-sm
             ">
 
-              <h3 className="text-lg sm:text-xl font-semibold mb-3">
-                🛕 God Statues
-              </h3>
+              <div className="flex items-center gap-2.5 mb-3">
+                <FaLandmark className="text-amber-500 text-lg shrink-0" />
+                <h3 className="text-lg sm:text-xl font-semibold text-stone-900">
+                  God Statues
+                </h3>
+              </div>
 
               <p className="text-gray-600 text-sm sm:text-base">
                 Finely crafted spiritual idols and divine figures made from
@@ -418,9 +431,12 @@ const About = () => {
               shadow-sm
             ">
 
-              <h3 className="text-lg sm:text-xl font-semibold mb-3">
-                ✨ Gemstone Carvings & Figures
-              </h3>
+              <div className="flex items-center gap-2.5 mb-3">
+                <FaAward className="text-amber-500 text-lg shrink-0" />
+                <h3 className="text-lg sm:text-xl font-semibold text-stone-900">
+                  Gemstone Carvings &amp; Figures
+                </h3>
+              </div>
 
               <p className="text-gray-600 text-sm sm:text-base">
                 Artistic gemstone carvings and decorative figures that
@@ -442,9 +458,12 @@ const About = () => {
               shadow-sm
             ">
 
-              <h3 className="text-lg sm:text-xl font-semibold mb-3">
-                🎨 Craft & Handicraft Items
-              </h3>
+              <div className="flex items-center gap-2.5 mb-3">
+                <FaHandshake className="text-amber-500 text-lg shrink-0" />
+                <h3 className="text-lg sm:text-xl font-semibold text-stone-900">
+                  Craft &amp; Handicraft Items
+                </h3>
+              </div>
 
               <p className="text-gray-600 text-sm sm:text-base">
                 A unique collection of handcrafted gemstone décor and
@@ -547,12 +566,15 @@ const About = () => {
 
 
           <div className="
-            bg-indigo-600
+            bg-slate-900
+            border
+            border-amber-500/30
             rounded-2xl
             text-white
             p-6
             sm:p-10
             text-center
+            shadow-xl
           ">
 
 
@@ -562,6 +584,7 @@ const About = () => {
               md:text-4xl
               font-bold
               mb-4
+              text-amber-400
             ">
               35+ Years of Excellence
             </h2>
@@ -574,9 +597,10 @@ const About = () => {
               sm:leading-8
               max-w-4xl
               mx-auto
+              text-stone-200
             ">
 
-              With over <strong>35 years of experience</strong>, Crystal
+              With over <strong className="text-white">35 years of experience</strong>, Crystal
               Jaipuria has established itself as a trusted name in gemstone
               artistry and handicrafts. Our expertise lies in creating
               exquisite gemstone figures, spiritual god statues, semi-precious
@@ -642,12 +666,14 @@ const About = () => {
               bg-white
               p-6
               rounded-xl
-              shadow
+              shadow-sm
+              border
+              border-stone-200/70
               text-center
             ">
 
-              <div className="text-4xl mb-4">
-                💎
+              <div className="flex justify-center mb-3">
+                <FaGem className="text-3xl text-amber-500" />
               </div>
 
               <h3 className="font-semibold text-lg">
@@ -669,12 +695,14 @@ const About = () => {
               bg-white
               p-6
               rounded-xl
-              shadow
+              shadow-sm
+              border
+              border-stone-200/70
               text-center
             ">
 
-              <div className="text-4xl mb-4">
-                🛕
+              <div className="flex justify-center mb-3">
+                <FaLandmark className="text-3xl text-amber-500" />
               </div>
 
               <h3 className="font-semibold text-lg">
@@ -695,12 +723,14 @@ const About = () => {
               bg-white
               p-6
               rounded-xl
-              shadow
+              shadow-sm
+              border
+              border-stone-200/70
               text-center
             ">
 
-              <div className="text-4xl mb-4">
-                🚚
+              <div className="flex justify-center mb-3">
+                <FaShippingFast className="text-3xl text-amber-500" />
               </div>
 
               <h3 className="font-semibold text-lg">
@@ -721,12 +751,14 @@ const About = () => {
               bg-white
               p-6
               rounded-xl
-              shadow
+              shadow-sm
+              border
+              border-stone-200/70
               text-center
             ">
 
-              <div className="text-4xl mb-4">
-                🤝
+              <div className="flex justify-center mb-3">
+                <FaHandshake className="text-3xl text-amber-500" />
               </div>
 
               <h3 className="font-semibold text-lg">

@@ -98,8 +98,8 @@ const GoogleReviewsSection = () => {
         <div className="mb-6 sm:mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 border-b border-stone-200/80">
           <div>
             <div className="mb-2 inline-flex items-center gap-2">
-              <span className="h-px w-5 bg-indigo-600" />
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-700">
+              <span className="h-px w-5 bg-amber-600" />
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-700">
                 Customer Trust & Google Ratings
               </span>
             </div>
@@ -136,9 +136,9 @@ const GoogleReviewsSection = () => {
               href={GOOGLE_BUSINESS_STATS.writeReviewUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl border border-stone-300 bg-white px-4 py-2 text-xs sm:text-sm font-semibold text-stone-800 shadow-sm transition-all hover:bg-stone-50 hover:border-indigo-500 hover:text-indigo-600 active:scale-[0.98]"
+              className="inline-flex items-center gap-2 rounded-xl border border-stone-300 bg-white px-4 py-2 text-xs sm:text-sm font-semibold text-stone-800 shadow-sm transition-all hover:bg-stone-50 hover:border-amber-500 hover:text-amber-700 active:scale-[0.98]"
             >
-              <FaPen className="text-xs text-indigo-600" />
+              <FaPen className="text-xs text-amber-600" />
               <span>Write a review</span>
             </a>
 
@@ -146,14 +146,14 @@ const GoogleReviewsSection = () => {
             <div className="flex items-center gap-2">
               <button
                 ref={prevRef}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-stone-300 bg-white text-stone-700 shadow-sm transition-all hover:bg-indigo-50 hover:border-indigo-400 hover:text-indigo-600 cursor-pointer active:scale-95 disabled:opacity-40"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-stone-300 bg-white text-stone-700 shadow-sm transition-all hover:bg-amber-50 hover:border-amber-400 hover:text-amber-700 cursor-pointer active:scale-95 disabled:opacity-40"
                 aria-label="Previous reviews"
               >
                 <FaChevronLeft className="text-xs" />
               </button>
               <button
                 ref={nextRef}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-stone-300 bg-white text-stone-700 shadow-sm transition-all hover:bg-indigo-50 hover:border-indigo-400 hover:text-indigo-600 cursor-pointer active:scale-95 disabled:opacity-40"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-stone-300 bg-white text-stone-700 shadow-sm transition-all hover:bg-amber-50 hover:border-amber-400 hover:text-amber-700 cursor-pointer active:scale-95 disabled:opacity-40"
                 aria-label="Next reviews"
               >
                 <FaChevronRight className="text-xs" />
@@ -196,7 +196,7 @@ const GoogleReviewsSection = () => {
           >
             {reviews.map((item) => (
               <SwiperSlide key={item.id} className="!h-auto">
-                <div className="flex h-full flex-col justify-between rounded-2xl border border-stone-200/90 bg-white p-4 sm:p-5 shadow-[0_2px_12px_rgba(0,0,0,0.03)] transition-all duration-300 hover:border-indigo-200 hover:shadow-md">
+                <div className="flex h-full flex-col justify-between rounded-2xl border border-stone-200/90 bg-white p-4 sm:p-5 shadow-[0_2px_12px_rgba(0,0,0,0.03)] transition-all duration-300 hover:border-amber-200 hover:shadow-md">
                   <div>
                     {/* Header: Avatar, Name, Badge, Google G Icon */}
                     <div className="flex items-start justify-between gap-2">
@@ -234,7 +234,7 @@ const GoogleReviewsSection = () => {
                         ))}
                       </div>
                       <MdVerified
-                        className="text-indigo-600 text-xs"
+                        className="text-amber-600 text-xs"
                         title="Verified Reviewer"
                       />
                     </div>
@@ -252,7 +252,7 @@ const GoogleReviewsSection = () => {
                       href={item.googleUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-indigo-600 font-semibold hover:underline"
+                      className="inline-flex items-center gap-1 text-stone-700 hover:text-amber-700 font-semibold hover:underline"
                     >
                       <span>Read on Google</span>
                       <FaExternalLinkAlt className="text-[8px]" />

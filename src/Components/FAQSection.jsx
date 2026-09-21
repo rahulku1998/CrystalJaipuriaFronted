@@ -210,7 +210,7 @@ const FAQSection = () => {
     return (
       <div
         key={item.id}
-        className="overflow-hidden rounded-2xl border border-stone-200/80 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.04)] transition-all duration-300 hover:border-indigo-200 hover:shadow-md"
+        className="overflow-hidden rounded-2xl border border-stone-200/80 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.04)] transition-all duration-300 hover:border-amber-300 hover:shadow-md"
       >
         <button
           type="button"
@@ -218,13 +218,13 @@ const FAQSection = () => {
           className="flex w-full items-center justify-between gap-4 p-4 text-left sm:p-5 cursor-pointer select-none"
           aria-expanded={isOpen}
         >
-          <h3 className="text-sm font-semibold text-stone-800 transition-colors sm:text-base hover:text-indigo-600">
+          <h3 className="text-sm font-semibold text-stone-800 transition-colors sm:text-base hover:text-amber-700">
             {item.question}
           </h3>
 
           <div
             className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-stone-200 bg-stone-50 text-stone-600 shadow-sm transition-transform duration-300 ${
-              isOpen ? "rotate-180 bg-indigo-50 text-indigo-600 border-indigo-200" : ""
+              isOpen ? "rotate-180 bg-amber-50 text-amber-700 border-amber-200" : ""
             }`}
           >
             <FaChevronDown className="text-xs" />
@@ -251,13 +251,12 @@ const FAQSection = () => {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-14">
+        <div className="mb-8 max-w-3xl text-left sm:mb-10">
           <div className="mb-3 inline-flex items-center gap-2">
-            <span className="h-px w-6 bg-indigo-600" />
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-700">
+            <span className="h-px w-6 bg-amber-500" />
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-700">
               Got Questions?
             </span>
-            <span className="h-px w-6 bg-indigo-600" />
           </div>
 
           <h2 className="text-2xl font-bold tracking-tight text-stone-900 sm:text-3xl lg:text-4xl">

@@ -36,15 +36,15 @@ const SpamRemoved = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5">
             <Link
               to="/"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm transition shadow-md shadow-indigo-600/20 active:scale-95"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-sm bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm transition shadow-sm active:scale-95"
             >
-              <FaHome className="text-base" />
+              <FaHome className="text-base text-amber-400" />
               <span>Back to Homepage</span>
             </Link>
 
             <Link
               to="/shop"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-semibold text-sm transition shadow-md shadow-amber-500/20 active:scale-95"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-sm bg-amber-600 hover:bg-amber-700 text-white font-semibold text-sm transition shadow-sm active:scale-95"
             >
               <FaShoppingBag className="text-base" />
               <span>Explore Official Shop</span>

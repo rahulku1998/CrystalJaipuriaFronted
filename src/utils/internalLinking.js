@@ -489,7 +489,7 @@ export const autoInjectInternalLinks = (
           nextSegments.push({ content: beforeText, isLocked: false });
         }
 
-        const linkTag = `<a href="${entry.targetUrl}" class="text-indigo-600 font-semibold hover:underline" title="${entry.targetTitle}">${matchedText}</a>`;
+        const linkTag = `<a href="${entry.targetUrl}" class="font-medium text-stone-800 hover:text-amber-700 hover:underline transition-colors" title="${entry.targetTitle}">${matchedText}</a>`;
         nextSegments.push({ content: linkTag, isLocked: true });
 
         if (afterText) {

@@ -10,6 +10,10 @@ import {
   FaWhatsapp,
   FaClock,
   FaChevronRight,
+  FaGem,
+  FaLandmark,
+  FaGlobeAmericas,
+  FaHandshake,
 } from "react-icons/fa";
 
 const Footer = () => {
@@ -20,7 +24,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-5 sm:px-8 py-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 p-3.5 rounded-2xl bg-white/90 border border-slate-200 shadow-2xs">
-              <span className="text-2xl text-amber-500">✨</span>
+              <FaGem className="text-2xl text-amber-500 shrink-0" />
               <div className="text-center sm:text-left">
                 <h4 className="text-slate-900 font-bold text-sm sm:text-base">100% Authentic</h4>
                 <p className="text-slate-600 text-xs sm:text-[13px] mt-0.5">Certified Pure Gemstones</p>
@@ -28,7 +32,7 @@ const Footer = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 p-3.5 rounded-2xl bg-white/90 border border-slate-200 shadow-2xs">
-              <span className="text-2xl text-indigo-600">🏛️</span>
+              <FaLandmark className="text-2xl text-amber-500 shrink-0" />
               <div className="text-center sm:text-left">
                 <h4 className="text-slate-900 font-bold text-sm sm:text-base">Jaipur Heritage</h4>
                 <p className="text-slate-600 text-xs sm:text-[13px] mt-0.5">Master Craftsmanship Since 1989</p>
@@ -36,7 +40,7 @@ const Footer = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 p-3.5 rounded-2xl bg-white/90 border border-slate-200 shadow-2xs">
-              <span className="text-2xl text-emerald-600">✈️</span>
+              <FaGlobeAmericas className="text-2xl text-amber-500 shrink-0" />
               <div className="text-center sm:text-left">
                 <h4 className="text-slate-900 font-bold text-sm sm:text-base">Global Shipping</h4>
                 <p className="text-slate-600 text-xs sm:text-[13px] mt-0.5">Safe Shockproof Delivery</p>
@@ -44,7 +48,7 @@ const Footer = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 p-3.5 rounded-2xl bg-white/90 border border-slate-200 shadow-2xs">
-              <span className="text-2xl text-amber-600">🤝</span>
+              <FaHandshake className="text-2xl text-amber-500 shrink-0" />
               <div className="text-center sm:text-left">
                 <h4 className="text-slate-900 font-bold text-sm sm:text-base">Factory Direct</h4>
                 <p className="text-slate-600 text-xs sm:text-[13px] mt-0.5">Wholesale &amp; Custom Orders</p>
@@ -65,9 +69,9 @@ const Footer = () => {
               className="inline-block hover:opacity-90 transition"
             >
               <img
-                src="/logo.png"
+                src="/logo-transparent.png"
                 alt="Crystal Jaipuria - Gemstone Statues & Crystal Manufacturer"
-                className="h-10 sm:h-12 w-auto object-contain"
+                className="h-10 sm:h-12 w-auto object-contain mix-blend-multiply"
               />
             </Link>
 
@@ -119,7 +123,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="WhatsApp"
-                  className="w-10 h-10 rounded-xl bg-white border border-slate-300 text-green-600 hover:text-white hover:bg-green-600 hover:border-green-600 flex items-center justify-center transition-all shadow-2xs hover:scale-105"
+                  className="w-10 h-10 rounded-xl bg-white border border-slate-300 text-slate-700 hover:text-white hover:bg-slate-800 hover:border-slate-800 flex items-center justify-center transition-all shadow-2xs hover:scale-105"
                   title="WhatsApp"
                 >
                   <FaWhatsapp className="text-lg" />
@@ -130,7 +134,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Google Maps Location"
-                  className="w-10 h-10 rounded-xl bg-white border border-slate-300 text-slate-700 hover:text-white hover:bg-indigo-600 hover:border-indigo-600 flex items-center justify-center transition-all shadow-2xs hover:scale-105"
+                  className="w-10 h-10 rounded-xl bg-white border border-slate-300 text-slate-700 hover:text-white hover:bg-slate-800 hover:border-slate-800 flex items-center justify-center transition-all shadow-2xs hover:scale-105"
                   title="View on Google Maps"
                 >
                   <FaMapMarkerAlt className="text-base" />
@@ -148,54 +152,54 @@ const Footer = () => {
               <li>
                 <Link
                   to="/"
-                  className="text-slate-700 hover:text-indigo-600 transition-colors flex items-center gap-2 group font-medium"
+                  className="text-slate-700 hover:text-amber-700 transition-colors flex items-center gap-2 group font-medium"
                 >
-                  <FaChevronRight className="text-[11px] text-slate-400 group-hover:text-indigo-600 group-hover:translate-x-1 transition-all" />
+                  <FaChevronRight className="text-[11px] text-slate-400 group-hover:text-amber-700 group-hover:translate-x-1 transition-all" />
                   <span>Home</span>
                 </Link>
               </li>
               <li>
                 <Link
                   to="/shop"
-                  className="text-slate-700 hover:text-indigo-600 transition-colors flex items-center gap-2 group font-medium"
+                  className="text-slate-700 hover:text-amber-700 transition-colors flex items-center gap-2 group font-medium"
                 >
-                  <FaChevronRight className="text-[11px] text-slate-400 group-hover:text-indigo-600 group-hover:translate-x-1 transition-all" />
+                  <FaChevronRight className="text-[11px] text-slate-400 group-hover:text-amber-700 group-hover:translate-x-1 transition-all" />
                   <span>All Products</span>
                 </Link>
               </li>
               <li>
                 <Link
                   to="/about"
-                  className="text-slate-700 hover:text-indigo-600 transition-colors flex items-center gap-2 group font-medium"
+                  className="text-slate-700 hover:text-amber-700 transition-colors flex items-center gap-2 group font-medium"
                 >
-                  <FaChevronRight className="text-[11px] text-slate-400 group-hover:text-indigo-600 group-hover:translate-x-1 transition-all" />
+                  <FaChevronRight className="text-[11px] text-slate-400 group-hover:text-amber-700 group-hover:translate-x-1 transition-all" />
                   <span>About Us</span>
                 </Link>
               </li>
               <li>
                 <Link
                   to="/blog"
-                  className="text-slate-700 hover:text-indigo-600 transition-colors flex items-center gap-2 group font-medium"
+                  className="text-slate-700 hover:text-amber-700 transition-colors flex items-center gap-2 group font-medium"
                 >
-                  <FaChevronRight className="text-[11px] text-slate-400 group-hover:text-indigo-600 group-hover:translate-x-1 transition-all" />
+                  <FaChevronRight className="text-[11px] text-slate-400 group-hover:text-amber-700 group-hover:translate-x-1 transition-all" />
                   <span>Spiritual Blogs</span>
                 </Link>
               </li>
               <li>
                 <Link
                   to="/gemstone-authenticity-guide"
-                  className="text-slate-700 hover:text-indigo-600 transition-colors flex items-center gap-2 group font-medium"
+                  className="text-slate-700 hover:text-amber-700 transition-colors flex items-center gap-2 group font-medium"
                 >
-                  <FaChevronRight className="text-[11px] text-slate-400 group-hover:text-indigo-600 group-hover:translate-x-1 transition-all" />
+                  <FaChevronRight className="text-[11px] text-slate-400 group-hover:text-amber-700 group-hover:translate-x-1 transition-all" />
                   <span>Authenticity Guide</span>
                 </Link>
               </li>
               <li>
                 <Link
                   to="/contact"
-                  className="text-slate-700 hover:text-indigo-600 transition-colors flex items-center gap-2 group font-medium"
+                  className="text-slate-700 hover:text-amber-700 transition-colors flex items-center gap-2 group font-medium"
                 >
-                  <FaChevronRight className="text-[11px] text-slate-400 group-hover:text-indigo-600 group-hover:translate-x-1 transition-all" />
+                  <FaChevronRight className="text-[11px] text-slate-400 group-hover:text-amber-700 group-hover:translate-x-1 transition-all" />
                   <span>Contact Us</span>
                 </Link>
               </li>
@@ -211,45 +215,45 @@ const Footer = () => {
               <li>
                 <Link
                   to="/shop"
-                  className="hover:text-indigo-600 transition-colors flex items-center gap-2 font-medium"
+                  className="hover:text-amber-700 transition-colors flex items-center gap-2 group font-medium"
                 >
-                  <span className="text-amber-500 text-xs">◆</span>
+                  <FaChevronRight className="text-[11px] text-slate-400 group-hover:text-amber-700 group-hover:translate-x-1 transition-all shrink-0" />
                   <span>Natural Sphatik Shivling</span>
                 </Link>
               </li>
               <li>
                 <Link
                   to="/shop"
-                  className="hover:text-indigo-600 transition-colors flex items-center gap-2 font-medium"
+                  className="hover:text-amber-700 transition-colors flex items-center gap-2 group font-medium"
                 >
-                  <span className="text-emerald-600 text-xs">◆</span>
+                  <FaChevronRight className="text-[11px] text-slate-400 group-hover:text-amber-700 group-hover:translate-x-1 transition-all shrink-0" />
                   <span>Green Jade Shiva &amp; Ganesha</span>
                 </Link>
               </li>
               <li>
                 <Link
                   to="/shop"
-                  className="hover:text-indigo-600 transition-colors flex items-center gap-2 font-medium"
+                  className="hover:text-amber-700 transition-colors flex items-center gap-2 group font-medium"
                 >
-                  <span className="text-pink-600 text-xs">◆</span>
+                  <FaChevronRight className="text-[11px] text-slate-400 group-hover:text-amber-700 group-hover:translate-x-1 transition-all shrink-0" />
                   <span>Rose Quartz Divine Statues</span>
                 </Link>
               </li>
               <li>
                 <Link
                   to="/shop"
-                  className="hover:text-indigo-600 transition-colors flex items-center gap-2 font-medium"
+                  className="hover:text-amber-700 transition-colors flex items-center gap-2 group font-medium"
                 >
-                  <span className="text-red-500 text-xs">◆</span>
+                  <FaChevronRight className="text-[11px] text-slate-400 group-hover:text-amber-700 group-hover:translate-x-1 transition-all shrink-0" />
                   <span>Ruby &amp; Amethyst Shree Yantras</span>
                 </Link>
               </li>
               <li>
                 <Link
                   to="/shop"
-                  className="hover:text-indigo-600 transition-colors flex items-center gap-2 font-medium"
+                  className="hover:text-amber-700 transition-colors flex items-center gap-2 group font-medium"
                 >
-                  <span className="text-blue-600 text-xs">◆</span>
+                  <FaChevronRight className="text-[11px] text-slate-400 group-hover:text-amber-700 group-hover:translate-x-1 transition-all shrink-0" />
                   <span>Lapis Lazuli &amp; Sapphire Idols</span>
                 </Link>
               </li>
@@ -268,22 +272,23 @@ const Footer = () => {
                 href="https://www.google.com/maps/place/Crystal+Jaipuria+%E2%80%93+Gemstone+God+Statues+%26+Crystal+Carvings+Manufacturer/@26.7981343,75.7772003,17z/data=!3m1!4b1!4m6!3m5!1s0x396dcb5b941638d5:0xdc6c82ae60c2c87d!8m2!3d26.7981295!4d75.7797752!16s%2Fg%2F11v_90xdgf?entry=ttu"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-3 hover:text-indigo-600 transition group"
+                className="flex items-start gap-3 hover:text-amber-700 transition group"
               >
-                <FaMapMarkerAlt className="text-indigo-600 mt-1 text-base shrink-0 group-hover:scale-110 transition-transform" />
+                <FaMapMarkerAlt className="text-slate-700 mt-1 text-base shrink-0 group-hover:scale-110 transition-transform" />
                 <span className="leading-relaxed text-slate-700">
                   Bajni Talai, Plot No. 03 West Part, Prabha, Mangal Vihar, Sanganer, Jaipur, Rajasthan - 302029
                 </span>
               </a>
 
               {/* Phone Numbers */}
-              <div className="flex items-start gap-3">
-                <FaPhoneAlt className="text-indigo-600 mt-1 text-sm shrink-0" />
-                <div className="flex flex-col gap-1">
-                  <a href="tel:+919828723652" className="hover:text-indigo-600 transition font-semibold text-slate-800">
+              <div className="flex items-center gap-3">
+                <FaPhoneAlt className="text-slate-700 text-sm shrink-0" />
+                <div className="flex items-center gap-2 flex-wrap">
+                  <a href="tel:+919828723652" className="hover:text-amber-700 transition font-semibold text-slate-800">
                     +91 98287 23652
                   </a>
-                  <a href="tel:+918955613237" className="hover:text-indigo-600 transition font-semibold text-slate-800">
+                  <span className="text-slate-400">/</span>
+                  <a href="tel:+918955613237" className="hover:text-amber-700 transition font-semibold text-slate-800">
                     +91 89556 13237
                   </a>
                 </div>
@@ -291,27 +296,27 @@ const Footer = () => {
 
               {/* WhatsApp */}
               <a
-                href="https://wa.me/918306317032?text=Hello%20Crystal%20Jaipuria,%20I%20have%20an%20enquiry%20regarding%20your%20gemstones."
+                href="https://wa.me/918955613237?text=Hello%20Crystal%20Jaipuria,%20I%20have%20an%20enquiry%20regarding%20your%20gemstones."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 hover:text-green-600 transition"
+                className="flex items-center gap-3 hover:text-amber-700 transition"
               >
-                <FaWhatsapp className="text-green-600 text-base shrink-0" />
-                <span className="font-bold text-green-700">+91 83063 17032 (WhatsApp)</span>
+                <FaWhatsapp className="text-slate-700 text-base shrink-0" />
+                <span className="font-semibold text-slate-800 hover:text-amber-700 transition">+91 89556 13237 (WhatsApp)</span>
               </a>
 
               {/* Email */}
               <a
                 href="mailto:crystaljaipurya@gmail.com"
-                className="flex items-center gap-3 hover:text-indigo-600 transition"
+                className="flex items-center gap-3 hover:text-amber-700 transition"
               >
-                <FaEnvelope className="text-indigo-600 text-sm shrink-0" />
+                <FaEnvelope className="text-slate-700 text-sm shrink-0" />
                 <span className="truncate text-slate-700 font-medium">crystaljaipurya@gmail.com</span>
               </a>
 
               {/* Timings */}
               <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-500 pt-1.5 border-t border-slate-300">
-                <FaClock className="text-amber-600 shrink-0" />
+                <FaClock className="text-slate-700 shrink-0" />
                 <span>Mon - Sat: 8:00 AM - 7:30 PM (Sun Open)</span>
               </div>
             </div>
@@ -329,31 +334,31 @@ const Footer = () => {
           <div className="flex flex-wrap items-center justify-start gap-2 sm:gap-3 text-xs font-semibold text-slate-700">
             <Link
               to="/shipping-policy"
-              className="px-3.5 py-1.5 rounded-lg bg-white/90 border border-slate-200/90 hover:border-indigo-400 hover:text-indigo-600 transition shadow-2xs text-left"
+              className="px-3.5 py-1.5 rounded-lg bg-white/90 border border-slate-200/90 hover:border-amber-400 hover:text-amber-700 transition shadow-2xs text-left"
             >
               Shipping &amp; Delivery Policy
             </Link>
             <Link
               to="/refund-policy"
-              className="px-3.5 py-1.5 rounded-lg bg-white/90 border border-slate-200/90 hover:border-indigo-400 hover:text-indigo-600 transition shadow-2xs text-left"
+              className="px-3.5 py-1.5 rounded-lg bg-white/90 border border-slate-200/90 hover:border-amber-400 hover:text-amber-700 transition shadow-2xs text-left"
             >
               Refund &amp; Return Policy (7 Days)
             </Link>
             <Link
               to="/privacy-policy"
-              className="px-3.5 py-1.5 rounded-lg bg-white/90 border border-slate-200/90 hover:border-indigo-400 hover:text-indigo-600 transition shadow-2xs text-left"
+              className="px-3.5 py-1.5 rounded-lg bg-white/90 border border-slate-200/90 hover:border-amber-400 hover:text-amber-700 transition shadow-2xs text-left"
             >
               Privacy Policy
             </Link>
             <Link
               to="/terms-and-conditions"
-              className="px-3.5 py-1.5 rounded-lg bg-white/90 border border-slate-200/90 hover:border-indigo-400 hover:text-indigo-600 transition shadow-2xs text-left"
+              className="px-3.5 py-1.5 rounded-lg bg-white/90 border border-slate-200/90 hover:border-amber-400 hover:text-amber-700 transition shadow-2xs text-left"
             >
               Terms &amp; Conditions
             </Link>
             <Link
               to="/gemstone-authenticity-guide"
-              className="px-3.5 py-1.5 rounded-lg bg-white/90 border border-slate-200/90 hover:border-indigo-400 hover:text-indigo-600 transition shadow-2xs text-left"
+              className="px-3.5 py-1.5 rounded-lg bg-white/90 border border-slate-200/90 hover:border-amber-400 hover:text-amber-700 transition shadow-2xs text-left"
             >
               Gemstone Authenticity Guide
             </Link>
@@ -372,7 +377,7 @@ const Footer = () => {
               href="https://www.codewithrahulkumawat.com/contact"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-indigo-600 hover:text-indigo-800 font-bold hover:underline transition"
+              className="text-amber-700 hover:text-amber-800 font-bold hover:underline transition"
             >
               Rahul Kumawat
             </a>

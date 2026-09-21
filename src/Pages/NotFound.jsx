@@ -1,16 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaHome, FaShoppingBag, FaWhatsapp, FaGem } from "react-icons/fa";
+import { FaHome, FaShoppingBag, FaWhatsapp, FaGem, FaOm, FaLandmark, FaAward } from "react-icons/fa";
 import SEO from "../Components/SEO";
 
 const NotFound = () => {
   const quickLinks = [
-    { name: "Gemstone Shivling", path: "/shivling", icon: "🕉️" },
-    { name: "God Statues", path: "/god-statues", icon: "🪔" },
-    { name: "Crystal Shree Yantra", path: "/shree-yantra", icon: "🔺" },
-    { name: "Amethyst Angels", path: "/angel", icon: "👼" },
-    { name: "Handcrafted Diyas", path: "/diya", icon: "✨" },
-    { name: "All Products", path: "/shop", icon: "💎" },
+    { name: "Gemstone Shivling", path: "/shivling", icon: <FaOm className="text-amber-600" /> },
+    { name: "God Statues", path: "/god-statues", icon: <FaLandmark className="text-amber-600" /> },
+    { name: "Crystal Shree Yantra", path: "/shree-yantra", icon: <FaGem className="text-amber-600" /> },
+    { name: "Handcrafted Diyas", path: "/diya", icon: <FaAward className="text-amber-600" /> },
+    { name: "All Products", path: "/shop", icon: <FaShoppingBag className="text-amber-600" /> },
   ];
 
   return (
@@ -27,17 +26,17 @@ const NotFound = () => {
         <div className="max-w-2xl w-full text-center bg-white/80 backdrop-blur-sm rounded-3xl p-8 sm:p-12 shadow-xl border border-amber-100/60">
           
           {/* Gemstone Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs sm:text-sm font-semibold mb-6 shadow-xs">
-            <FaGem className="text-indigo-600 animate-pulse text-xs" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs sm:text-sm font-semibold mb-6 shadow-xs">
+            <FaGem className="text-amber-600 animate-pulse text-xs" />
             <span>Crystal Jaipuria • Jaipur Art & Craft</span>
           </div>
 
           {/* 404 Large Gradient Text */}
           <div className="relative my-2">
-            <h1 className="text-7xl sm:text-9xl font-extrabold bg-gradient-to-r from-indigo-700 via-purple-700 to-amber-600 bg-clip-text text-transparent tracking-tight select-none">
+            <h1 className="text-7xl sm:text-9xl font-extrabold bg-gradient-to-r from-amber-700 via-amber-600 to-stone-800 bg-clip-text text-transparent tracking-tight select-none">
               404
             </h1>
-            <div className="absolute inset-0 blur-2xl opacity-20 bg-gradient-to-r from-indigo-500 to-amber-500 pointer-events-none" />
+            <div className="absolute inset-0 blur-2xl opacity-20 bg-amber-400 pointer-events-none" />
           </div>
 
           {/* Heading & Subtext */}
@@ -53,25 +52,25 @@ const NotFound = () => {
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-10">
             <Link
               to="/"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold shadow-md hover:shadow-lg transition-all duration-200 text-sm sm:text-base active:scale-95"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-sm bg-slate-900 hover:bg-slate-800 text-white font-semibold shadow-sm hover:shadow transition-all duration-200 text-sm sm:text-base active:scale-95"
             >
-              <FaHome className="text-base" />
+              <FaHome className="text-base text-amber-400" />
               <span>Back to Homepage</span>
             </Link>
 
             <Link
               to="/shop"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-semibold shadow-md hover:shadow-lg transition-all duration-200 text-sm sm:text-base active:scale-95"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-sm bg-amber-600 hover:bg-amber-700 text-white font-semibold shadow-sm hover:shadow transition-all duration-200 text-sm sm:text-base active:scale-95"
             >
               <FaShoppingBag className="text-base" />
               <span>Explore All Shop</span>
             </Link>
 
             <a
-              href="https://wa.me/918306317032?text=Hello%20Crystal%20Jaipuria,%20I%20was%20looking%20for%20a%20product%20on%20your%20website"
+              href="https://wa.me/918955613237?text=Hello%20Crystal%20Jaipuria,%20I%20was%20looking%20for%20a%20product%20on%20your%20website"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold shadow-md hover:shadow-lg transition-all duration-200 text-sm sm:text-base active:scale-95"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-sm bg-green-600 hover:bg-green-700 text-white font-semibold shadow-sm hover:shadow transition-all duration-200 text-sm sm:text-base active:scale-95"
             >
               <FaWhatsapp className="text-lg" />
               <span>WhatsApp Us</span>
@@ -89,7 +88,7 @@ const NotFound = () => {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-gray-50 hover:bg-indigo-50 border border-gray-200 hover:border-indigo-200 text-gray-700 hover:text-indigo-700 text-xs sm:text-sm font-medium transition-colors duration-150"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-sm bg-stone-50 hover:bg-amber-50 border border-stone-200 hover:border-amber-300 text-stone-700 hover:text-amber-800 text-xs sm:text-sm font-medium transition-colors duration-150"
                 >
                   <span>{item.icon}</span>
                   <span>{item.name}</span>

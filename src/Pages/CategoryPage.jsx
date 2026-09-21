@@ -15,6 +15,7 @@ import {
   FALLBACK_CATEGORIES,
   FALLBACK_SUBCATEGORIES,
 } from "../data/fallbackData";
+import { FaAward, FaQuestionCircle, FaChevronDown } from "react-icons/fa";
 
 const CATEGORY_SEO = {
   "god-statues": {
@@ -618,7 +619,7 @@ const CategoryPage = () => {
             {/* Buying Guide & Overview */}
             <div className="bg-gradient-to-br from-stone-50 via-amber-50/25 to-stone-50 rounded-2xl p-6 sm:p-8 border border-stone-200/80 mb-8 shadow-xs">
               <div className="flex items-center gap-2.5 mb-3">
-                <span className="text-xl">✨</span>
+                <FaAward className="text-amber-500 text-lg flex-shrink-0" />
                 <h2 className="text-lg sm:text-xl font-bold text-gray-900 tracking-tight">
                   {categoryContent.headline}
                 </h2>
@@ -634,11 +635,11 @@ const CategoryPage = () => {
                   <span>100% Certified Natural Crystals</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-stone-700">
-                  <span className="text-amber-800 font-bold text-base">✓</span>
+                  <span className="text-amber-700 font-bold text-base">✓</span>
                   <span>Jaipur Heritage Hand-Carving</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-stone-700">
-                  <span className="text-blue-700 font-bold text-base">✓</span>
+                  <span className="text-emerald-700 font-bold text-base">✓</span>
                   <span>Safe Insured Worldwide Shipping</span>
                 </div>
               </div>
@@ -648,7 +649,7 @@ const CategoryPage = () => {
             {categoryContent.faqs?.length > 0 && (
               <div className="bg-white rounded-2xl p-6 sm:p-8 border border-stone-200/80 shadow-xs">
                 <div className="flex items-center gap-2.5 mb-6">
-                  <span className="text-amber-800 text-xl font-bold">❓</span>
+                  <FaQuestionCircle className="text-amber-600 text-lg flex-shrink-0" />
                   <h3 className="text-lg sm:text-xl font-bold text-gray-900">
                     Frequently Asked Questions about {category.name}
                   </h3>
@@ -669,11 +670,11 @@ const CategoryPage = () => {
                         >
                           <span>{faq.question}</span>
                           <span
-                            className={`text-stone-400 font-bold text-lg flex-shrink-0 transition-transform duration-200 ${
-                              isOpen ? "rotate-180 text-amber-800" : ""
+                            className={`text-stone-400 font-bold text-sm flex-shrink-0 transition-transform duration-200 ${
+                              isOpen ? "rotate-180 text-amber-700" : ""
                             }`}
                           >
-                            ▾
+                            <FaChevronDown />
                           </span>
                         </button>
                         {isOpen && (

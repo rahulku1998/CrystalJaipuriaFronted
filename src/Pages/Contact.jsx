@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SEO from "../Components/SEO";
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 
 const Contact = () => {
 
@@ -80,7 +81,7 @@ Message: ${message}
           text-3xl
           sm:text-4xl
           font-bold
-          text-indigo-600
+          text-slate-900
         ">
           Contact Us
         </h1>
@@ -126,11 +127,12 @@ Message: ${message}
 
         <div className="
           bg-white
-          shadow-lg
+          shadow-md
           p-5
           sm:p-6
           rounded-xl
           border
+          border-stone-200/80
         ">
 
 
@@ -139,6 +141,7 @@ Message: ${message}
             sm:text-2xl
             font-semibold
             mb-5
+            text-slate-900
           ">
             Send Message
           </h2>
@@ -160,10 +163,15 @@ Message: ${message}
               className="
                 w-full
                 border
+                border-stone-300
                 p-3
-                rounded-lg
+                rounded-sm
                 text-sm
                 sm:text-base
+                focus:outline-none
+                focus:border-amber-500
+                focus:ring-1
+                focus:ring-amber-500
               "
               required
             />
@@ -179,10 +187,15 @@ Message: ${message}
               className="
                 w-full
                 border
+                border-stone-300
                 p-3
-                rounded-lg
+                rounded-sm
                 text-sm
                 sm:text-base
+                focus:outline-none
+                focus:border-amber-500
+                focus:ring-1
+                focus:ring-amber-500
               "
               required
             />
@@ -198,10 +211,15 @@ Message: ${message}
               className="
                 w-full
                 border
+                border-stone-300
                 p-3
-                rounded-lg
+                rounded-sm
                 text-sm
                 sm:text-base
+                focus:outline-none
+                focus:border-amber-500
+                focus:ring-1
+                focus:ring-amber-500
               "
               required
             />
@@ -217,10 +235,15 @@ Message: ${message}
               className="
                 w-full
                 border
+                border-stone-300
                 p-3
-                rounded-lg
+                rounded-sm
                 text-sm
                 sm:text-base
+                focus:outline-none
+                focus:border-amber-500
+                focus:ring-1
+                focus:ring-amber-500
               "
               required
             />
@@ -232,11 +255,13 @@ Message: ${message}
               className="
                 w-full
                 cursor-pointer
-                bg-indigo-600
+                bg-amber-600
                 text-white
                 py-3
-                rounded-lg
-                hover:bg-indigo-700
+                rounded-sm
+                font-semibold
+                hover:bg-amber-700
+                transition-colors
               "
             >
               Send Message
@@ -267,7 +292,9 @@ Message: ${message}
             p-5
             sm:p-6
             rounded-xl
-            shadow
+            border
+            border-stone-200/80
+            shadow-sm
           ">
 
             <h3 className="
@@ -275,8 +302,13 @@ Message: ${message}
               sm:text-xl
               font-semibold
               mb-2
+              flex
+              items-center
+              gap-2
+              text-slate-900
             ">
-              📍 Address
+              <FaMapMarkerAlt className="text-amber-500 text-lg flex-shrink-0" />
+              <span>Address</span>
             </h3>
 
             <p className="
@@ -300,20 +332,41 @@ Message: ${message}
             p-5
             sm:p-6
             rounded-xl
-            shadow
+            border
+            border-stone-200/80
+            shadow-sm
           ">
 
-            <h3 className="text-lg sm:text-xl font-semibold mb-2">
-              📞 Call Us
+            <h3 className="
+              text-lg
+              sm:text-xl
+              font-semibold
+              mb-2
+              flex
+              items-center
+              gap-2
+              text-slate-900
+            ">
+              <FaPhoneAlt className="text-amber-500 text-lg flex-shrink-0" />
+              <span>Call Us</span>
             </h3>
 
 
-            <a
-              href="tel:+918955613237"
-              className="text-indigo-600 font-medium hover:underline"
-            >
-              Call Us
-            </a>
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-slate-800 text-sm sm:text-base font-medium">
+              <a
+                href="tel:+919828723652"
+                className="hover:text-amber-700 hover:underline"
+              >
+                +91 98287 23652
+              </a>
+              <span className="text-stone-300">/</span>
+              <a
+                href="tel:+918955613237"
+                className="hover:text-amber-700 hover:underline"
+              >
+                +91 89556 13237
+              </a>
+            </div>
 
 
           </div>
@@ -327,20 +380,36 @@ Message: ${message}
             p-5
             sm:p-6
             rounded-xl
-            shadow
+            border
+            border-stone-200/80
+            shadow-sm
           ">
 
-            <h3 className="text-lg sm:text-xl font-semibold mb-2">
-              📧 Email
+            <h3 className="
+              text-lg
+              sm:text-xl
+              font-semibold
+              mb-2
+              flex
+              items-center
+              gap-2
+              text-slate-900
+            ">
+              <FaEnvelope className="text-amber-500 text-lg flex-shrink-0" />
+              <span>Email</span>
             </h3>
 
 
             <a
               href="mailto:crystaljaipurya@gmail.com"
               className="
-                text-indigo-600
+                text-slate-800
                 font-medium
+                hover:text-amber-700
+                hover:underline
                 break-all
+                text-sm
+                sm:text-base
               "
             >
               crystaljaipurya@gmail.com
@@ -365,16 +434,24 @@ Message: ${message}
 
 
             <a
-              href="tel:+918955613237"
+              href="tel:+919828723652"
               className="
-                bg-green-500
+                bg-slate-900
+                hover:bg-slate-800
                 text-white
                 text-center
                 py-3
-                rounded-lg
+                rounded-sm
+                font-semibold
+                flex
+                items-center
+                justify-center
+                gap-2
+                transition-colors
               "
             >
-              Call
+              <FaPhoneAlt className="text-sm text-amber-400" />
+              <span>Call</span>
             </a>
 
 
@@ -382,15 +459,24 @@ Message: ${message}
             <a
               href="https://wa.me/918955613237"
               target="_blank"
+              rel="noopener noreferrer"
               className="
                 bg-green-600
+                hover:bg-green-700
                 text-white
                 text-center
                 py-3
-                rounded-lg
+                rounded-sm
+                font-semibold
+                flex
+                items-center
+                justify-center
+                gap-2
+                transition-colors
               "
             >
-              WhatsApp
+              <FaWhatsapp className="text-lg" />
+              <span>WhatsApp</span>
             </a>
 
 
@@ -399,14 +485,22 @@ Message: ${message}
             <a
               href="mailto:crystaljaipurya@gmail.com"
               className="
-                bg-indigo-600
+                bg-amber-600
+                hover:bg-amber-700
                 text-white
                 text-center
                 py-3
-                rounded-lg
+                rounded-sm
+                font-semibold
+                flex
+                items-center
+                justify-center
+                gap-2
+                transition-colors
               "
             >
-              Email
+              <FaEnvelope className="text-sm" />
+              <span>Email</span>
             </a>
 
 

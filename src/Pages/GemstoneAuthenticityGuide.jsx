@@ -41,7 +41,7 @@ const GemstoneAuthenticityGuide = () => {
       fake: "Glass and resin quickly absorb body heat and warm up almost instantly.",
     },
     {
-      icon: <FaSearch className="text-2xl text-indigo-600" />,
+      icon: <FaSearch className="text-2xl text-amber-600" />,
       title: "2. Inclusions & Natural Flaws Check",
       method: "Examine the stone under direct sunlight or a 10x jeweler's loupe.",
       genuine:
@@ -202,7 +202,7 @@ const GemstoneAuthenticityGuide = () => {
           {/* 4 SCIENTIFIC IDENTIFICATION TESTS */}
           <div className="mt-10 space-y-6">
             <h2 className="text-xl sm:text-2xl font-bold text-gray-900 flex items-center gap-2.5">
-              <span className="w-2.5 h-6 bg-indigo-600 rounded-full"></span>
+              <span className="w-2.5 h-6 bg-amber-600 rounded-full"></span>
               <span>4 Simple Tests to Identify Real Gemstones at Home</span>
             </h2>
 
@@ -325,7 +325,7 @@ const GemstoneAuthenticityGuide = () => {
               </div>
               <Link
                 to="/shop"
-                className="text-xs sm:text-sm font-bold text-indigo-600 hover:text-indigo-800 flex items-center gap-1 shrink-0"
+                className="text-xs sm:text-sm font-bold text-amber-600 hover:text-amber-700 flex items-center gap-1 shrink-0"
               >
                 <span>View Full Catalog</span>
                 <span>→</span>
@@ -388,7 +388,7 @@ const GemstoneAuthenticityGuide = () => {
                       </h3>
                     </div>
                     <div className="mt-2 pt-2 border-t border-stone-100 flex items-center justify-between">
-                      <span className="text-xs font-black text-indigo-700">{item.price}</span>
+                      <span className="text-xs font-black text-amber-700">{item.price}</span>
                       <span className="text-[11px] font-bold text-amber-800 group-hover:translate-x-0.5 transition-transform">
                         Buy Now →
                       </span>
@@ -419,12 +419,12 @@ const GemstoneAuthenticityGuide = () => {
                   <button
                     type="button"
                     onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                    className="w-full flex items-center justify-between p-4 sm:p-5 text-left font-bold text-sm sm:text-base text-gray-800 hover:text-indigo-600 transition-colors cursor-pointer"
+                    className="w-full flex items-center justify-between p-4 sm:p-5 text-left font-bold text-sm sm:text-base text-gray-800 hover:text-amber-700 transition-colors cursor-pointer"
                   >
                     <span>{faq.q}</span>
                     <FaChevronDown
                       className={`text-gray-400 text-xs shrink-0 transition-transform duration-200 ml-3 ${
-                        openFaq === index ? "rotate-180 text-indigo-600" : ""
+                        openFaq === index ? "rotate-180 text-amber-700" : ""
                       }`}
                     />
                   </button>
@@ -439,25 +439,25 @@ const GemstoneAuthenticityGuide = () => {
           </div>
 
           {/* CALL TO ACTION BANNER */}
-          <div className="mt-12 p-8 sm:p-10 rounded-3xl bg-indigo-900 text-white text-center space-y-4 shadow-md">
-            <h2 className="text-2xl sm:text-3xl font-extrabold">
+          <div className="mt-12 p-8 sm:p-10 rounded-2xl bg-slate-900 border border-amber-500/30 text-white text-center space-y-4 shadow-xl">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-amber-400">
               Explore 100% Authentic Hand-Carved Gemstones
             </h2>
-            <p className="text-xs sm:text-sm text-indigo-200 max-w-xl mx-auto leading-relaxed">
+            <p className="text-xs sm:text-sm text-stone-300 max-w-xl mx-auto leading-relaxed">
               Every idol is direct from our Jaipur factory, hand-carved from natural rough stone, and shipped with 100% transit insurance.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3.5 pt-2">
               <Link
                 to="/shop"
-                className="px-6 py-3 rounded-xl bg-white text-indigo-900 font-bold text-sm hover:bg-indigo-50 transition shadow-sm"
+                className="px-6 py-3 rounded-sm bg-amber-600 hover:bg-amber-700 text-white font-semibold text-sm transition shadow-sm"
               >
                 Browse All Products
               </Link>
               <a
-                href="https://wa.me/918306317032?text=Hello%20Crystal%20Jaipuria,%20I%20have%20a%20question%20about%20gemstone%20authenticity."
+                href="https://wa.me/918955613237?text=Hello%20Crystal%20Jaipuria,%20I%20have%20a%20question%20about%20gemstone%20authenticity."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm flex items-center gap-2 transition shadow-sm"
+                className="px-6 py-3 rounded-sm bg-green-600 hover:bg-green-700 text-white font-semibold text-sm flex items-center gap-2 transition shadow-sm"
               >
                 <FaWhatsapp className="text-base" />
                 <span>Talk to Artisan on WhatsApp</span>

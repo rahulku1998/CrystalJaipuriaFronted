@@ -1,6 +1,6 @@
 import React from "react";
 import SEO from "../../Components/SEO";
-import { FaUndoAlt, FaShieldAlt, FaCheckCircle, FaMoneyCheckAlt, FaWhatsapp } from "react-icons/fa";
+import { FaUndoAlt, FaShieldAlt, FaCheckCircle, FaMoneyCheckAlt, FaWhatsapp, FaBoxOpen, FaBolt } from "react-icons/fa";
 
 const RefundPolicy = () => {
   return (
@@ -15,7 +15,7 @@ const RefundPolicy = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           {/* Header */}
           <div className="bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-stone-200 mb-8 text-center space-y-3">
-            <div className="w-14 h-14 bg-emerald-50 text-emerald-700 rounded-2xl flex items-center justify-center mx-auto text-2xl">
+            <div className="w-14 h-14 bg-amber-50 text-amber-700 rounded-2xl flex items-center justify-center mx-auto text-2xl">
               <FaUndoAlt />
             </div>
             <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
@@ -28,18 +28,18 @@ const RefundPolicy = () => {
 
           {/* Key Facts Strip */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-            <div className="bg-white p-5 rounded-2xl border border-stone-200 text-center space-y-1">
-              <span className="text-xl text-emerald-600 block">🔄</span>
+            <div className="bg-white p-5 rounded-2xl border border-stone-200 text-center space-y-2">
+              <FaUndoAlt className="text-2xl text-amber-600 mx-auto block" />
               <h3 className="font-bold text-sm text-gray-800">7 Days Return Window</h3>
               <p className="text-xs text-gray-500">Request replacement within 7 days of package delivery.</p>
             </div>
-            <div className="bg-white p-5 rounded-2xl border border-stone-200 text-center space-y-1">
-              <span className="text-xl text-indigo-600 block">📦</span>
+            <div className="bg-white p-5 rounded-2xl border border-stone-200 text-center space-y-2">
+              <FaBoxOpen className="text-2xl text-amber-600 mx-auto block" />
               <h3 className="font-bold text-sm text-gray-800">Zero Cost Replacement</h3>
               <p className="text-xs text-gray-500">Free return pickup and re-shipment if damaged in transit.</p>
             </div>
-            <div className="bg-white p-5 rounded-2xl border border-stone-200 text-center space-y-1">
-              <span className="text-xl text-amber-600 block">⚡</span>
+            <div className="bg-white p-5 rounded-2xl border border-stone-200 text-center space-y-2">
+              <FaBolt className="text-2xl text-amber-600 mx-auto block" />
               <h3 className="font-bold text-sm text-gray-800">5-7 Days Fast Refund</h3>
               <p className="text-xs text-gray-500">Refund credited directly to original payment or UPI.</p>
             </div>

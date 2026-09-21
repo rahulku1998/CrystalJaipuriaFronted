@@ -15,7 +15,7 @@ const ShippingPolicy = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           {/* Header */}
           <div className="bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-stone-200 mb-8 text-center space-y-3">
-            <div className="w-14 h-14 bg-indigo-50 text-indigo-700 rounded-2xl flex items-center justify-center mx-auto text-2xl">
+            <div className="w-14 h-14 bg-amber-50 text-amber-700 rounded-2xl flex items-center justify-center mx-auto text-2xl">
               <FaTruck />
             </div>
             <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
@@ -28,18 +28,18 @@ const ShippingPolicy = () => {
 
           {/* Key Facts Strip */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-            <div className="bg-white p-5 rounded-2xl border border-stone-200 text-center space-y-1">
-              <span className="text-xl text-emerald-600 block">🚚</span>
+            <div className="bg-white p-5 rounded-2xl border border-stone-200 text-center space-y-2">
+              <FaTruck className="text-2xl text-amber-600 mx-auto block" />
               <h3 className="font-bold text-sm text-gray-800">Free Domestic Shipping</h3>
               <p className="text-xs text-gray-500">₹0 Delivery charge across all India pincodes.</p>
             </div>
-            <div className="bg-white p-5 rounded-2xl border border-stone-200 text-center space-y-1">
-              <span className="text-xl text-indigo-600 block">⏱️</span>
+            <div className="bg-white p-5 rounded-2xl border border-stone-200 text-center space-y-2">
+              <FaClock className="text-2xl text-amber-600 mx-auto block" />
               <h3 className="font-bold text-sm text-gray-800">3 to 7 Days Delivery</h3>
               <p className="text-xs text-gray-500">Dispatched within 24-48 hours via premium couriers.</p>
             </div>
-            <div className="bg-white p-5 rounded-2xl border border-stone-200 text-center space-y-1">
-              <span className="text-xl text-amber-600 block">🛡️</span>
+            <div className="bg-white p-5 rounded-2xl border border-stone-200 text-center space-y-2">
+              <FaShieldAlt className="text-2xl text-amber-600 mx-auto block" />
               <h3 className="font-bold text-sm text-gray-800">100% Transit Insurance</h3>
               <p className="text-xs text-gray-500">Full replacement guarantee if damaged during transit.</p>
             </div>

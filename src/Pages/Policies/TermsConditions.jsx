@@ -84,7 +84,7 @@ const TermsConditions = () => {
             <div className="bg-stone-50 p-5 rounded-2xl border border-stone-200 text-xs space-y-2">
               <strong className="text-gray-900 block text-sm">Have Questions Regarding Our Terms?</strong>
               <p className="text-gray-600">
-                Feel free to email us at <a href="mailto:crystaljaipurya@gmail.com" className="text-indigo-600 font-bold">crystaljaipurya@gmail.com</a> or call +91 83063 17032.
+                Feel free to email us at <a href="mailto:crystaljaipurya@gmail.com" className="font-semibold text-stone-900 hover:text-amber-700 hover:underline">crystaljaipurya@gmail.com</a> or call +91 83063 17032.
               </p>
             </div>
           </div>

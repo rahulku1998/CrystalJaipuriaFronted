@@ -1,25 +1,28 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import {
-  FaHome,
-  FaShoppingBag,
-  FaInfoCircle,
-  FaPhone,
-  FaRegNewspaper,
+  HiOutlineHome,
+  HiOutlineShoppingBag,
+  HiOutlineNewspaper,
+  HiOutlineInformationCircle,
+  HiOutlinePhone,
+} from "react-icons/hi2";
+import {
   FaInstagram,
   FaPinterest,
   FaFacebookF,
   FaWhatsapp,
+  FaChevronRight,
 } from "react-icons/fa";
 import API from "../../api/axios";
 
 const DEFAULT_CATEGORIES = [
-  { name: "God Statues", path: "/god-statues", icon: <FaShoppingBag /> },
-  { name: "Shivling", path: "/shivling", icon: <FaShoppingBag /> },
-  { name: "Shree Yantra", path: "/shree-yantra", icon: <FaShoppingBag /> },
-  { name: "Angel", path: "/angel", icon: <FaShoppingBag /> },
-  { name: "Crystal Statues", path: "/crystal-statues", icon: <FaShoppingBag /> },
-  { name: "Diya", path: "/diya", icon: <FaShoppingBag /> },
+  { name: "God Statues", path: "/god-statues", icon: <HiOutlineShoppingBag /> },
+  { name: "Shivling", path: "/shivling", icon: <HiOutlineShoppingBag /> },
+  { name: "Shree Yantra", path: "/shree-yantra", icon: <HiOutlineShoppingBag /> },
+  { name: "Angel", path: "/angel", icon: <HiOutlineShoppingBag /> },
+  { name: "Crystal Statues", path: "/crystal-statues", icon: <HiOutlineShoppingBag /> },
+  { name: "Diya", path: "/diya", icon: <HiOutlineShoppingBag /> },
 ];
 
 const CategoryBar = ({ mobileMenuOpen, setMobileMenuOpen }) => {
@@ -32,27 +35,27 @@ const CategoryBar = ({ mobileMenuOpen, setMobileMenuOpen }) => {
     {
       name: "Home",
       path: "/",
-      icon: <FaHome />,
+      icon: <HiOutlineHome />,
     },
     {
       name: "Shop",
       path: "/shop",
-      icon: <FaShoppingBag />,
+      icon: <HiOutlineShoppingBag />,
     },
     {
       name: "Blog",
       path: "/blog",
-      icon: <FaRegNewspaper />,
+      icon: <HiOutlineNewspaper />,
     },
     {
       name: "About",
       path: "/about",
-      icon: <FaInfoCircle />,
+      icon: <HiOutlineInformationCircle />,
     },
     {
       name: "Contact",
       path: "/contact",
-      icon: <FaPhone />,
+      icon: <HiOutlinePhone />,
     },
   ];
 
@@ -73,7 +76,7 @@ const CategoryBar = ({ mobileMenuOpen, setMobileMenuOpen }) => {
       const data = (res.data.categories || []).map((cat) => ({
         name: cat.name,
         path: `/${cat.slug}`,
-        icon: <FaShoppingBag />,
+        icon: <HiOutlineShoppingBag />,
       }));
       setCategories(data);
     } catch (err) {
@@ -166,7 +169,7 @@ const CategoryBar = ({ mobileMenuOpen, setMobileMenuOpen }) => {
                         }
                       `}
                     >
-                      <span className="text-base text-indigo-600">{item.icon}</span>
+                      <span className="text-base text-amber-500">{item.icon}</span>
                       <span>{item.name}</span>
                     </button>
                   ))}
@@ -196,7 +199,7 @@ const CategoryBar = ({ mobileMenuOpen, setMobileMenuOpen }) => {
                           }
                         `}
                       >
-                        <span className="text-xs text-amber-500">◆</span>
+                        <FaChevronRight className="text-[11px] text-slate-400" />
                         <span>{cat.name}</span>
                       </button>
                     ))}
@@ -255,22 +258,22 @@ const CategoryBar = ({ mobileMenuOpen, setMobileMenuOpen }) => {
       )}
 
       {/* ================= MOBILE STATIC BOTTOM NAVBAR ================= */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 shadow-lg z-40 md:hidden">
-        <div className="flex justify-around items-center py-2">
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 shadow-md z-40 md:hidden">
+        <div className="flex justify-around items-center py-2 px-1">
           {staticMenu.map((item) => (
             <button
               key={item.path}
               onClick={() => navigate(item.path)}
               className={`
-                flex flex-col items-center justify-center text-xs gap-1 cursor-pointer transition
+                flex-1 flex flex-col items-center justify-center text-[11px] gap-1 cursor-pointer transition py-0.5
                 ${
                   location.pathname === item.path
                     ? "text-indigo-600 font-bold"
-                    : "text-gray-600 hover:text-indigo-600"
+                    : "text-slate-700 hover:text-indigo-600 font-medium"
                 }
               `}
             >
-              <span className="text-lg">{item.icon}</span>
+              <span className="text-[22px] stroke-[1.75]">{item.icon}</span>
               <span>{item.name}</span>
             </button>
           ))}

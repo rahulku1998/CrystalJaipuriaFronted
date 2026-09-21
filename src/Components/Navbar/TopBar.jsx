@@ -166,7 +166,7 @@ const TopBar = ({ onOpenMenu }) => {
             tracking-[1px]
             sm:tracking-[2px]
             md:tracking-[3px]
-            text-indigo-600
+            text-amber-700
             uppercase
             mt-0.5
             whitespace-nowrap
@@ -236,7 +236,7 @@ const TopBar = ({ onOpenMenu }) => {
               text-sm
               outline-none
               focus:ring-2
-              focus:ring-indigo-500
+              focus:ring-amber-500
               "
             />
 
@@ -248,7 +248,7 @@ const TopBar = ({ onOpenMenu }) => {
               right-4
               text-gray-500
               cursor-pointer
-              hover:text-indigo-600
+              hover:text-amber-600
               "
             >
               <FaSearch />

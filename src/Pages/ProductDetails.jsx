@@ -293,7 +293,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
 
               {product.price && (
                 <div className="mt-3">
-                  <span className="text-2xl sm:text-3xl font-extrabold text-indigo-600">
+                  <span className="text-2xl sm:text-3xl font-extrabold text-amber-600">
                     {formatPrice(product.price)}
                   </span>
                 </div>
@@ -309,12 +309,12 @@ Hello Crystal Jaipuria, I have a query regarding this product.
               <div className="flex flex-wrap items-center gap-4 sm:gap-6 mt-5 text-sm sm:text-base text-gray-700">
                 {product.weight && (
                   <p>
-                    <span className="font-semibold text-indigo-600">Weight :</span> {product.weight}
+                    <span className="font-semibold text-amber-700">Weight :</span> {product.weight}
                   </p>
                 )}
                 {product.size && (
                   <p>
-                    <span className="font-semibold text-indigo-600">Size :</span> {product.size}
+                    <span className="font-semibold text-amber-700">Size :</span> {product.size}
                   </p>
                 )}
                 <p>
@@ -488,7 +488,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                 {/* FAQ Header */}
                 <div className="h-14 sm:h-16 px-4 sm:px-5 border-b border-gray-100 bg-stone-50/70 flex items-center justify-between shrink-0">
                   <div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-700 bg-indigo-50 border border-indigo-100 px-2.5 py-0.5 rounded-full">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-amber-800 bg-amber-50 border border-amber-200 px-2.5 py-0.5 rounded-full">
                       Product FAQs
                     </span>
                     <h2 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900 mt-1">
@@ -505,19 +505,19 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                   {productFaqs.map((faq, index) => (
                     <div
                       key={index}
-                      className="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-2xs transition-all duration-200 hover:border-indigo-300"
+                      className="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-2xs transition-all duration-200 hover:border-amber-300"
                     >
                       <button
                         type="button"
                         onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
-                        className="w-full flex items-center justify-between p-3.5 sm:p-4 text-left font-semibold text-gray-800 hover:text-indigo-600 transition-colors cursor-pointer text-xs sm:text-sm"
+                        className="w-full flex items-center justify-between p-3.5 sm:p-4 text-left font-semibold text-gray-800 hover:text-amber-700 transition-colors cursor-pointer text-xs sm:text-sm"
                       >
                         <span className="pr-3">
                           {index + 1}. {faq.question}
                         </span>
                         <FaChevronDown
                           className={`text-gray-400 text-xs shrink-0 transition-transform duration-200 ${
-                            openFaqIndex === index ? "rotate-180 text-indigo-600" : ""
+                            openFaqIndex === index ? "rotate-180 text-amber-700" : ""
                           }`}
                         />
                       </button>
@@ -547,7 +547,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                       }}
                       className={`h-full px-4 sm:px-7 font-semibold text-xs sm:text-sm lg:text-base cursor-pointer text-left transition-colors flex items-center ${
                         activeTab === "description"
-                          ? "border-b-2 border-indigo-600 text-indigo-600 bg-white"
+                          ? "border-b-2 border-amber-600 text-amber-700 bg-white"
                           : "text-gray-500 hover:text-gray-700"
                       }`}
                     >
@@ -561,7 +561,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                       }}
                       className={`h-full px-4 sm:px-7 font-semibold text-xs sm:text-sm lg:text-base cursor-pointer text-left transition-colors flex items-center ${
                         activeTab === "additional"
-                          ? "border-b-2 border-indigo-600 text-indigo-600 bg-white"
+                          ? "border-b-2 border-amber-600 text-amber-700 bg-white"
                           : "text-gray-500 hover:text-gray-700"
                       }`}
                     >
@@ -569,7 +569,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                     </button>
                   </div>
 
-                  <span className="text-[11px] font-semibold text-indigo-600 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 mr-3 hidden sm:inline-block">
+                  <span className="text-[11px] font-semibold text-amber-700 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 mr-3 hidden sm:inline-block">
                     Verified
                   </span>
                 </div>
@@ -579,7 +579,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                   {activeTab === "description" && (
                     <div className="relative">
                       <div
-                        className="text-gray-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-gray-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-gray-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-gray-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-gray-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-1.5 [&_p]:my-3 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-indigo-600 [&_a]:underline"
+                        className="text-gray-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-gray-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-gray-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-gray-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-gray-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-1.5 [&_p]:my-3 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-stone-800 [&_a]:font-medium [&_a:hover]:text-amber-700 [&_a:hover]:underline"
                         dangerouslySetInnerHTML={{
                           __html: product.description || (product.detail ? `<p>${product.detail}</p>` : "") || "No description available.",
                         }}
@@ -589,7 +589,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
 
                   {activeTab === "additional" && (
                     <div
-                      className="text-gray-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-gray-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-gray-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-gray-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-gray-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-2 [&_p]:my-3 [&_strong]:font-bold [&_strong]:text-gray-900 [&_b]:font-bold [&_b]:text-gray-900 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-indigo-600 [&_a]:underline"
+                      className="text-gray-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-gray-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-gray-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-gray-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-gray-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-2 [&_p]:my-3 [&_strong]:font-bold [&_strong]:text-gray-900 [&_b]:font-bold [&_b]:text-gray-900 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-stone-800 [&_a]:font-medium [&_a:hover]:text-amber-700 [&_a:hover]:underline"
                       dangerouslySetInnerHTML={{
                         __html: product.additionalInfo || "No additional information available.",
                       }}
@@ -606,7 +606,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                   <button
                     type="button"
                     onClick={() => setDescExpanded(!descExpanded)}
-                    className="px-2.5 py-1 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-600 font-semibold transition cursor-pointer flex items-center gap-1 text-xs"
+                    className="px-2.5 py-1 rounded-lg bg-amber-50 hover:bg-amber-100 text-amber-700 font-semibold transition cursor-pointer flex items-center gap-1 text-xs"
                     title={descExpanded ? "Collapse View" : "Expand Full View"}
                   >
                     <span>{descExpanded ? "Collapse" : "Expand"}</span>
@@ -631,7 +631,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                     }}
                     className={`h-full px-5 sm:px-8 font-semibold text-xs sm:text-sm lg:text-base cursor-pointer text-left transition-colors flex items-center ${
                       activeTab === "description"
-                        ? "border-b-2 border-indigo-600 text-indigo-600 bg-white"
+                        ? "border-b-2 border-amber-600 text-amber-700 bg-white"
                         : "text-gray-500 hover:text-gray-700"
                     }`}
                   >
@@ -645,7 +645,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                     }}
                     className={`h-full px-5 sm:px-8 font-semibold text-xs sm:text-sm lg:text-base cursor-pointer text-left transition-colors flex items-center ${
                       activeTab === "additional"
-                        ? "border-b-2 border-indigo-600 text-indigo-600 bg-white"
+                        ? "border-b-2 border-amber-600 text-amber-700 bg-white"
                         : "text-gray-500 hover:text-gray-700"
                     }`}
                   >
@@ -657,7 +657,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
               <div className="flex-1 overflow-y-auto p-5 sm:p-7 text-gray-700 text-sm sm:text-base leading-relaxed overscroll-contain custom-single-slider">
                 {activeTab === "description" && (
                   <div
-                    className="text-gray-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-gray-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-gray-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-gray-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-gray-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-1.5 [&_p]:my-3 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-indigo-600 [&_a]:underline"
+                    className="text-gray-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-gray-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-gray-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-gray-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-gray-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-1.5 [&_p]:my-3 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-stone-800 [&_a]:font-medium [&_a:hover]:text-amber-700 [&_a:hover]:underline"
                     dangerouslySetInnerHTML={{
                       __html: product.description || (product.detail ? `<p>${product.detail}</p>` : "") || "No description available.",
                     }}
@@ -666,7 +666,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
 
                 {activeTab === "additional" && (
                   <div
-                    className="text-gray-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-gray-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-gray-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-gray-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-gray-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-2 [&_p]:my-3 [&_strong]:font-bold [&_strong]:text-gray-900 [&_b]:font-bold [&_b]:text-gray-900 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-indigo-600 [&_a]:underline"
+                    className="text-gray-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-gray-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-gray-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-gray-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-gray-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-2 [&_p]:my-3 [&_strong]:font-bold [&_strong]:text-gray-900 [&_b]:font-bold [&_b]:text-gray-900 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-stone-800 [&_a]:font-medium [&_a:hover]:text-amber-700 [&_a:hover]:underline"
                     dangerouslySetInnerHTML={{
                       __html: product.additionalInfo || "No additional information available.",
                     }}
@@ -682,7 +682,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                 <button
                   type="button"
                   onClick={() => setDescExpanded(!descExpanded)}
-                  className="px-2.5 py-1 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-600 font-semibold transition cursor-pointer flex items-center gap-1 text-xs"
+                  className="px-2.5 py-1 rounded-lg bg-amber-50 hover:bg-amber-100 text-amber-700 font-semibold transition cursor-pointer flex items-center gap-1 text-xs"
                   title={descExpanded ? "Collapse View" : "Expand Full View"}
                 >
                   <span>{descExpanded ? "Collapse" : "Expand"}</span>
@@ -718,7 +718,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                     </p>
                     <div className="mt-2">
                       {item.price && (
-                        <span className="font-bold text-indigo-600 text-sm sm:text-base">
+                        <span className="font-bold text-amber-600 text-sm sm:text-base">
                           {formatPrice(item.price)}
                         </span>
                       )}

@@ -148,151 +148,26 @@ title:"Natural Crystals & Gemstones"
 
 
 return (
-
-
-
-<section className="
-bg-indigo-50
-py-10
-sm:py-14
-lg:py-20
-overflow-hidden
-">
-
-
-
-
-
-<div className="
-max-w-7xl
-mx-auto
-px-4
-sm:px-6
-lg:px-8
-">
-
-
-
-
-
-<div className="
-grid
-
-grid-cols-2
-
-md:grid-cols-2
-
-lg:grid-cols-4
-
-gap-4
-
-sm:gap-6
-
-lg:gap-8
-
-">
-
-
-
-
-
-{
-
-stats.map((item,index)=>(
-
-
-
-<div
-
-key={index}
-
-className="
-bg-white
-rounded-2xl
-sm:rounded-3xl
-p-4
-sm:p-6
-lg:p-8
-shadow-md
-hover:shadow-xl
-transition
-text-center
-"
-
->
-
-
-
-<h2 className="
-text-3xl
-sm:text-4xl
-lg:text-5xl
-font-bold
-text-indigo-600
-">
-
-<Counter
-
-number={item.number}
-
-suffix={item.suffix}
-
-/>
-
-
-</h2>
-
-
-
-
-
-<p className="
-mt-2
-sm:mt-4
-text-gray-700
-font-medium
-text-sm
-sm:text-base
-lg:text-lg
-leading-tight
-">
-
-{item.title}
-
-</p>
-
-
-
-
-</div>
-
-
-
-))
-
-}
-
-
-
-
-
-</div>
-
-
-
-
-
-</div>
-
-
-
-
-
-</section>
-
-
-
-)
+  <section className="bg-[#fbfaf8] py-6 sm:py-8 lg:py-10 border-y border-stone-200/80 overflow-hidden">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 lg:gap-6">
+        {stats.map((item, index) => (
+          <div
+            key={index}
+            className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-5 lg:p-6 border border-stone-200/80 shadow-2xs hover:shadow-xs transition text-center"
+          >
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-amber-600">
+              <Counter number={item.number} suffix={item.suffix} />
+            </h2>
+            <p className="mt-1.5 text-stone-700 font-medium text-xs sm:text-sm lg:text-[15px] leading-tight">
+              {item.title}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
 
 
 }
