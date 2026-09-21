@@ -36,6 +36,7 @@ import {
   FaShieldAlt,
   FaBoxOpen,
   FaUndo,
+  FaCertificate,
 } from "react-icons/fa";
 import SEO from "../Components/SEO";
 import BuyNowModal from "../Components/BuyNowModal";
@@ -630,40 +631,6 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                 </div>
               </div>
 
-              {/* TRUST & AUTHENTICITY ASSURANCE (GEO & CONVERSION BOOSTER) */}
-              <div className="mt-5 p-4 rounded-xl bg-amber-50/70 border border-amber-200/80 space-y-2.5 shadow-2xs">
-                <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-800">
-                  <FaShieldAlt className="text-amber-500 text-base shrink-0 mt-0.5" />
-                  <div>
-                    <span className="font-bold text-slate-900">100% Natural Earth-Mined Gemstone: </span>
-                    <span className="text-slate-600">Handcrafted by hereditary master carvers in Jaipur, Rajasthan. Zero synthetic resin or plastic melts.</span>
-                  </div>
-                </div>
-                <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-800">
-                  <FaBoxOpen className="text-amber-500 text-base shrink-0 mt-0.5" />
-                  <div>
-                    <span className="font-bold text-slate-900">Sacred Shockproof Packaging: </span>
-                    <span className="text-slate-600">5-layer shockproof protective packaging for 100% breakage-free delivery across India.</span>
-                  </div>
-                </div>
-                <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-800">
-                  <FaUndo className="text-amber-500 text-base shrink-0 mt-0.5" />
-                  <div>
-                    <span className="font-bold text-slate-900">7-Day Easy Returns &amp; Replacements: </span>
-                    <span className="text-slate-600">Complete peace of mind with dedicated Jaipur artisan support (+91 83063 17032).</span>
-                  </div>
-                </div>
-                <div className="pt-2 border-t border-amber-200/60 flex items-center justify-between text-[11px] sm:text-xs">
-                  <span className="text-amber-950 font-semibold">How to identify genuine gemstones?</span>
-                  <Link
-                    to="/gemstone-authenticity-guide"
-                    className="text-amber-700 font-bold hover:underline flex items-center gap-1"
-                  >
-                    Read Authenticity Guide &rarr;
-                  </Link>
-                </div>
-              </div>
-
               {/* SHARE PRODUCT ROW */}
               <div className="mt-5 pt-4 border-t border-gray-100 flex items-center justify-between flex-wrap gap-3">
                 <span className="text-xs sm:text-sm font-bold text-gray-700">Share Product:</span>
@@ -722,12 +689,67 @@ Hello Crystal Jaipuria, I have a query regarding this product.
             </div>
           </div>
         </div>
+
+        {/* TRUST & AUTHENTICITY ASSURANCE (3-BOX FORMAT) */}
+        <div className="mt-10 sm:mt-14 w-full p-4 sm:p-5 rounded-2xl bg-slate-50/90 border border-slate-200/80 shadow-2xs">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-4">
+            {/* Box 1 */}
+            <div className="flex items-start gap-3 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white border border-slate-200 shadow-2xs">
+              <FaShieldAlt className="text-xl sm:text-2xl text-amber-500 shrink-0 mt-0.5" />
+              <div>
+                <h4 className="text-slate-900 font-bold text-xs sm:text-sm leading-snug">
+                  100% Natural Earth-Mined Gemstone
+                </h4>
+                <p className="text-slate-600 text-[11px] sm:text-xs leading-relaxed mt-1">
+                  Handcrafted by hereditary master carvers in Jaipur, Rajasthan. Zero synthetic resin or plastic melts.
+                </p>
+              </div>
+            </div>
+
+            {/* Box 2 */}
+            <div className="flex items-start gap-3 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white border border-slate-200 shadow-2xs">
+              <FaBoxOpen className="text-xl sm:text-2xl text-amber-500 shrink-0 mt-0.5" />
+              <div>
+                <h4 className="text-slate-900 font-bold text-xs sm:text-sm leading-snug">
+                  Sacred Shockproof Packaging
+                </h4>
+                <p className="text-slate-600 text-[11px] sm:text-xs leading-relaxed mt-1">
+                  5-layer shockproof protective packaging for 100% breakage-free delivery across India.
+                </p>
+              </div>
+            </div>
+
+            {/* Box 3 */}
+            <div className="flex items-start gap-3 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white border border-slate-200 shadow-2xs">
+              <FaUndo className="text-xl sm:text-2xl text-amber-500 shrink-0 mt-0.5" />
+              <div>
+                <h4 className="text-slate-900 font-bold text-xs sm:text-sm leading-snug">
+                  7-Day Easy Returns &amp; Replacements
+                </h4>
+                <p className="text-slate-600 text-[11px] sm:text-xs leading-relaxed mt-1">
+                  Complete peace of mind with dedicated Jaipur artisan support (+91 83063 17032).
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Strip: Authenticity Guide Link */}
+          <div className="mt-4 pt-3.5 border-t border-slate-200/80 flex items-center justify-between flex-wrap gap-2 text-xs sm:text-sm">
+            <span className="text-slate-700 font-medium">How to identify genuine gemstones?</span>
+            <Link
+              to="/gemstone-authenticity-guide"
+              className="text-amber-700 font-bold hover:underline flex items-center gap-1"
+            >
+              Read Authenticity Guide &rarr;
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
 
       {/* SECTION 2: PRODUCT SPECIFICATIONS & ACCORDION */}
       <div className="bg-[#f8fafc] border-y border-slate-200/80 py-12 sm:py-16">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 space-y-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-4">
           {/* 1. DESCRIPTION ACCORDION */}
           <div className="border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden bg-white shadow-xs transition-all duration-200">
             <button

@@ -8,9 +8,44 @@ import {
   FaLock,
   FaClock,
   FaMoneyBillWave,
-  FaQrcode
+  FaQrcode,
+  FaMapMarkerAlt,
 } from "react-icons/fa";
 import { getProductImageUrl } from "../utils/imageOptimizer";
+
+const calculateDeliveryDate = (code) => {
+  if (!code || !/^\d{6}$/.test(code)) return null;
+  const prefix = parseInt(code.slice(0, 2), 10);
+  let maxDays = 5;
+  let region = "India";
+  if (prefix >= 30 && prefix <= 34) {
+    maxDays = 2;
+    region = "Rajasthan (Local Express)";
+  } else if ((prefix >= 11 && prefix <= 13) || (prefix >= 20 && prefix <= 28)) {
+    maxDays = 3;
+    region = "North India / NCR";
+  } else if (prefix >= 36 && prefix <= 44) {
+    maxDays = 4;
+    region = "Western India";
+  } else if ((prefix >= 45 && prefix <= 49) || (prefix >= 80 && prefix <= 85)) {
+    maxDays = 4;
+    region = "Central / Eastern India";
+  } else if (prefix >= 50 && prefix <= 69) {
+    maxDays = 5;
+    region = "South India";
+  } else if (prefix >= 70 && prefix <= 79) {
+    maxDays = 6;
+    region = "East & North-East India";
+  }
+  const today = new Date();
+  const deliveryDate = new Date(today);
+  deliveryDate.setDate(today.getDate() + maxDays);
+  const options = { weekday: "short", day: "numeric", month: "short" };
+  return {
+    formattedDate: deliveryDate.toLocaleDateString("en-IN", options),
+    region,
+  };
+};
 
 const BuyNowModal = ({ isOpen, onClose, product }) => {
   const [quantity, setQuantity] = useState(1);
@@ -21,10 +56,44 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
   const [pincode, setPincode] = useState("");
+  const [deliveryInfo, setDeliveryInfo] = useState(null);
+  const [pincodeInput, setPincodeInput] = useState("");
+  const [pincodeError, setPincodeError] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("cod"); // 'cod' | 'upi'
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [orderPlaced, setOrderPlaced] = useState(false);
   const [orderId, setOrderId] = useState("");
+
+  useEffect(() => {
+    if (isOpen) {
+      try {
+        const saved = localStorage.getItem("cj_delivery_pincode");
+        if (saved && /^\d{6}$/.test(saved)) {
+          setPincode(saved);
+          setPincodeInput(saved);
+          setDeliveryInfo(calculateDeliveryDate(saved));
+        }
+      } catch {
+        // ignore
+      }
+    }
+  }, [isOpen]);
+
+  const handleCheckPincode = (e) => {
+    if (e) e.preventDefault();
+    const clean = pincodeInput.trim();
+    if (!/^\d{6}$/.test(clean)) {
+      setPincodeError("Please enter a valid 6-digit PIN code.");
+      setDeliveryInfo(null);
+      return;
+    }
+    setPincodeError("");
+    setPincode(clean);
+    setDeliveryInfo(calculateDeliveryDate(clean));
+    try {
+      localStorage.setItem("cj_delivery_pincode", clean);
+    } catch {}
+  };
 
   // Trigger Google Customer Reviews Opt-In Modal upon Order Placement (Declared before any early returns)
   useEffect(() => {
@@ -81,8 +150,8 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
 
   const handlePlaceOrder = (e) => {
     e.preventDefault();
-    if (!name.trim() || !phone.trim() || !email.trim() || !address.trim() || !pincode.trim()) {
-      alert("Please fill in your Name, Phone Number, Email Address, Delivery Address, and Pincode.");
+    if (!name.trim() || !phone.trim() || !email.trim() || !address.trim()) {
+      alert("Please fill in your Name, Phone Number, Email Address, and Delivery Address.");
       return;
     }
 
@@ -107,7 +176,7 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
       customerName: name,
       customerPhone: phone,
       customerEmail: email.trim(),
-      deliveryAddress: `${address}, ${city}, ${state} - ${pincode}`,
+      deliveryAddress: `${address}, ${city}, ${state}${pincode ? ` - ${pincode}` : ""}`,
       placedAt: new Date().toISOString()
     };
     try {
@@ -129,7 +198,7 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
       `• Full Name: ${name}\n` +
       `• Phone Number: ${phone}\n` +
       `• Email Address: ${email.trim()}\n` +
-      `• Delivery Address: ${address}, ${city}, ${state} - ${pincode}\n` +
+      `• Delivery Address: ${address}, ${city}, ${state}${pincode ? ` - ${pincode}` : ""}\n` +
       `• Product Link: ${typeof window !== "undefined" ? window.location.href : ""}\n\n` +
       `Please contact the customer and confirm dispatch from Jaipur!`;
 
@@ -148,7 +217,7 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
       `*Product:* ${product.name} (Qty: ${quantity})\n` +
       `*Amount:* ₹${totalPrice.toLocaleString("en-IN")}\n` +
       `*Customer:* ${name} (${phone}, ${email})\n` +
-      `*Address:* ${address}, ${city} - ${pincode}\n\n` +
+      `*Address:* ${address}, ${city}${pincode ? ` - ${pincode}` : ""}\n\n` +
       `Hello Crystal Jaipuria, I have placed this order on your website. Please confirm when it will be dispatched.`;
 
     const url = `https://wa.me/918306317032?text=${encodeURIComponent(message)}`;
@@ -165,6 +234,9 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
     setCity("");
     setState("");
     setPincode("");
+    setPincodeInput("");
+    setPincodeError("");
+    setDeliveryInfo(null);
     onClose();
   };
 
@@ -259,7 +331,7 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
                 </div>
                 <div className="flex justify-between pt-1">
                   <span className="text-gray-500">Delivery Address:</span>
-                  <span className="text-right text-gray-700 max-w-[200px] truncate">{address}, {pincode}</span>
+                  <span className="text-right text-gray-700 max-w-[200px] truncate">{address}{pincode ? `, ${pincode}` : ""}</span>
                 </div>
               </div>
 
@@ -334,6 +406,98 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
                 </div>
               </div>
 
+              {/* Delivery & Service Options (Optional Pincode Estimator) */}
+              <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
+                <div className="flex items-center justify-between gap-2 mb-2">
+                  <span className="text-xs font-bold text-slate-800 flex items-center gap-1.5">
+                    <FaTruck className="text-amber-500 text-xs" />
+                    <span>Delivery &amp; Service Options</span>
+                  </span>
+                  {deliveryInfo && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setDeliveryInfo(null);
+                        setPincodeInput("");
+                        setPincode("");
+                        try {
+                          localStorage.removeItem("cj_delivery_pincode");
+                        } catch {}
+                      }}
+                      className="text-[11px] font-semibold text-slate-500 hover:text-amber-700 transition cursor-pointer"
+                    >
+                      Change
+                    </button>
+                  )}
+                </div>
+
+                {!deliveryInfo ? (
+                  <div className="space-y-1.5">
+                    <div className="flex items-center gap-2">
+                      <div className="relative flex-1">
+                        <FaMapMarkerAlt className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs" />
+                        <input
+                          type="text"
+                          maxLength={6}
+                          value={pincodeInput}
+                          onChange={(e) => {
+                            const val = e.target.value.replace(/\D/g, "");
+                            setPincodeInput(val);
+                            setPincode(val);
+                            if (pincodeError) setPincodeError("");
+                          }}
+                          placeholder="Enter 6-digit Pincode (Optional)"
+                          className="w-full pl-8 pr-3 py-1.5 text-xs bg-white border border-slate-300 rounded-lg focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 text-slate-900 placeholder:text-slate-400"
+                        />
+                      </div>
+                      <button
+                        type="button"
+                        onClick={handleCheckPincode}
+                        className="px-3 py-1.5 bg-slate-900 hover:bg-slate-800 text-white rounded-lg text-xs font-bold transition-colors cursor-pointer shrink-0"
+                      >
+                        Check
+                      </button>
+                    </div>
+                    {pincodeError && <p className="text-[11px] text-red-600 font-medium">{pincodeError}</p>}
+                    <p className="text-[10px] text-slate-500">
+                      Check expected delivery date &amp; safe dispatch from Jaipur workshop.
+                    </p>
+                  </div>
+                ) : (
+                  <div className="space-y-1.5 text-xs">
+                    <div className="flex items-start gap-1.5 text-emerald-700">
+                      <FaCheckCircle className="text-emerald-600 text-xs mt-0.5 shrink-0" />
+                      <div>
+                        <p className="font-bold text-slate-900">
+                          Expected Delivery by <span className="text-emerald-700 font-extrabold">{deliveryInfo.formattedDate}</span>
+                        </p>
+                        <p className="text-[11px] text-slate-600">
+                          Delivering to <strong className="text-slate-800">{pincode}</strong> ({deliveryInfo.region})
+                        </p>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-1 pt-1.5 border-t border-slate-200/60 text-[10px] text-slate-600 font-medium">
+                      <div className="flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                        <span>Free Delivery on all orders</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                        <span>Dispatch within 24 Hours</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                        <span>Cash on Delivery Available</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                        <span>7-Day Replacement Guarantee</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+
               {/* Delivery Address Fields */}
               <div className="space-y-3">
                 <span className="text-xs font-bold text-gray-500 uppercase tracking-wider block">
@@ -396,10 +560,17 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
                   />
                   <input
                     type="text"
-                    required
+                    maxLength={6}
                     value={pincode}
-                    onChange={(e) => setPincode(e.target.value)}
-                    placeholder="Pincode *"
+                    onChange={(e) => {
+                      const val = e.target.value.replace(/\D/g, "");
+                      setPincode(val);
+                      setPincodeInput(val);
+                      if (val.length === 6) {
+                        setDeliveryInfo(calculateDeliveryDate(val));
+                      }
+                    }}
+                    placeholder="Pincode (Optional)"
                     className="w-full rounded-xl border border-gray-300 bg-white px-3 py-2 text-xs outline-none focus:ring-2 focus:ring-indigo-400"
                   />
                 </div>

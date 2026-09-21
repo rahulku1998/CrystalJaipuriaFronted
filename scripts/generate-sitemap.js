@@ -424,6 +424,10 @@ const generateSitemap = async () => {
     gmcXml += `      <g:identifier_exists>no</g:identifier_exists>\n`;
     gmcXml += `      <g:color>${color}</g:color>\n`;
     gmcXml += `      <g:material>${material}</g:material>\n`;
+    gmcXml += `      <g:product_highlight>100% Earth-Mined ${escapeXml(material)} (Zero Synthetic or Resin)</g:product_highlight>\n`;
+    gmcXml += `      <g:product_highlight>Handcrafted by Hereditary Master Artisans in Jaipur, Rajasthan</g:product_highlight>\n`;
+    gmcXml += `      <g:product_highlight>5-Layer Sacred Shockproof Packaging (100% Breakage-Free Guarantee)</g:product_highlight>\n`;
+    gmcXml += `      <g:product_highlight>7-Day Replacement Guarantee with Free Express Delivery Across India</g:product_highlight>\n`;
     if (size) {
       gmcXml += `      <g:size>${size}</g:size>\n`;
     }
