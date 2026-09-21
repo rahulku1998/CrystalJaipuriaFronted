@@ -46,7 +46,25 @@ const ProductDetails = () => {
   const [querySubmitted, setQuerySubmitted] = useState(false);
   const [showQueryForm, setShowQueryForm] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
-  const [descExpanded, setDescExpanded] = useState(false);
+  const [openSections, setOpenSections] = useState({
+    description: true,
+    additional: false,
+    faqs: false,
+  });
+
+  const toggleSection = (section) => {
+    setOpenSections((prev) => {
+      const nextState = !prev[section];
+      if (nextState) {
+        trackTabSwitch(section, product);
+      }
+      return {
+        ...prev,
+        [section]: nextState,
+      };
+    });
+  };
+
   const [queryForm, setQueryForm] = useState({
     fullName: "",
     whatsappNumber: "",
@@ -56,8 +74,6 @@ const ProductDetails = () => {
     weight: "",
     message: "",
   });
-
-  const [activeTab, setActiveTab] = useState("description");
 
   const cleanSlug = useMemo(() => {
     return resolveProductSlug(String(slug || "").trim().toLowerCase().replace(/^\/product\//, "").replace(/\/$/, ""));
@@ -818,232 +834,132 @@ Hello Crystal Jaipuria, I have a query regarding this product.
             </div>
           </div>
 
-          {hasFaqs ? (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-start">
-              {/* LEFT: FAQs SECTION (Natural Accordion Flow - No Slider) */}
-              <div className="border border-slate-200/90 rounded-2xl overflow-hidden bg-white shadow-xs order-2 lg:order-1 flex flex-col">
-                {/* FAQ Header */}
-                <div className="h-14 sm:h-16 px-4 sm:px-5 border-b border-slate-100 bg-white flex items-center justify-between shrink-0">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-indigo-600"></span>
-                    <h3 className="text-sm sm:text-base lg:text-lg font-bold text-slate-900">
-                      Frequently Asked Questions
-                    </h3>
-                  </div>
-                  <span className="text-xs text-slate-500 font-semibold px-2.5 py-0.5 rounded-full bg-slate-100 border border-slate-200">
-                    {productFaqs.length} Q&As
-                  </span>
-                </div>
-
-                {/* FAQ List - Clean Natural Accordion (Zero Slider / Zero Inner Scrollbars) */}
-                <div className="p-4 sm:p-5 space-y-3">
-                  {productFaqs.map((faq, index) => (
-                    <div
-                      key={index}
-                      className="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-2xs transition-all duration-200 hover:border-indigo-300"
-                    >
-                      <button
-                        type="button"
-                        onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
-                        className="w-full flex items-center justify-between p-3.5 sm:p-4 text-left font-semibold text-slate-800 hover:text-indigo-600 transition-colors cursor-pointer text-xs sm:text-sm"
-                      >
-                        <span className="pr-3">
-                          {index + 1}. {faq.question}
-                        </span>
-                        <FaChevronDown
-                          className={`text-slate-400 text-xs shrink-0 transition-transform duration-200 ${
-                            openFaqIndex === index ? "rotate-180 text-indigo-600" : ""
-                          }`}
-                        />
-                      </button>
-                      {openFaqIndex === index && (
-                        <div className="px-3.5 pb-4 sm:px-4 sm:pb-4 text-xs sm:text-sm text-slate-600 border-t border-slate-100 pt-2.5 leading-relaxed bg-slate-50/50">
-                          {faq.answer}
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* RIGHT: DESCRIPTION & ADDITIONAL INFORMATION TABS */}
-              <div
-                className={`border border-slate-200/90 rounded-2xl overflow-hidden bg-white shadow-xs order-1 lg:order-2 flex flex-col transition-all duration-300 ${
-                  descExpanded ? "h-auto" : "h-[480px] sm:h-[540px] lg:h-[620px]"
-                }`}
+          <div className="max-w-5xl mx-auto space-y-4">
+            {/* 1. DESCRIPTION ACCORDION */}
+            <div className="border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden bg-white shadow-xs transition-all duration-200">
+              <button
+                type="button"
+                onClick={() => toggleSection("description")}
+                className="w-full flex items-center justify-between py-4 px-5 sm:px-6 text-left cursor-pointer transition-colors bg-white hover:bg-slate-50/70"
+                aria-expanded={openSections.description}
               >
-                {/* Tabs Header */}
-                <div className="h-14 sm:h-16 flex border-b border-slate-200 bg-slate-50/70 shrink-0 items-center justify-between">
-                  <div className="flex h-full">
-                    <button
-                      onClick={() => {
-                        setActiveTab("description");
-                        trackTabSwitch("description", product);
-                      }}
-                      className={`h-full px-4 sm:px-7 font-semibold text-xs sm:text-sm lg:text-base cursor-pointer text-left transition-colors flex items-center ${
-                        activeTab === "description"
-                          ? "border-b-2 border-indigo-600 text-indigo-600 bg-white"
-                          : "text-slate-500 hover:text-slate-800"
-                      }`}
-                    >
-                      Description
-                    </button>
-
-                    <button
-                      onClick={() => {
-                        setActiveTab("additional");
-                        trackTabSwitch("additional", product);
-                      }}
-                      className={`h-full px-4 sm:px-7 font-semibold text-xs sm:text-sm lg:text-base cursor-pointer text-left transition-colors flex items-center ${
-                        activeTab === "additional"
-                          ? "border-b-2 border-indigo-600 text-indigo-600 bg-white"
-                          : "text-slate-500 hover:text-slate-800"
-                      }`}
-                    >
-                      Additional Information
-                    </button>
-                  </div>
-
-                  <span className="text-[11px] font-semibold text-indigo-600 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 mr-3 hidden sm:inline-block">
-                    Verified
-                  </span>
-                </div>
-
-                {/* Tab Content - ONLY SINGLE SLIDER (Zero nested scrollbars) */}
-                <div className="flex-1 overflow-y-auto p-4 sm:p-6 text-slate-700 text-sm sm:text-base leading-relaxed overscroll-contain custom-single-slider">
-                  {activeTab === "description" ? (
-                    <div>
-                      {/* Sacred Sanskrit Shloka Box */}
-                      {sacredShloka && (
-                        <div className="mb-4 p-3.5 sm:p-4 rounded-xl bg-amber-50/80 border border-amber-200/80 text-amber-950">
-                          <p className="text-xs sm:text-sm font-serif font-bold italic tracking-wide text-amber-900 text-center leading-relaxed">
-                            {sacredShloka.shloka}
-                          </p>
-                          <p className="text-[11px] sm:text-xs text-amber-800/90 text-center mt-1.5 font-medium">
-                            {sacredShloka.meaning}
-                          </p>
-                        </div>
-                      )}
-                      <div
-                        className="text-slate-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-slate-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-slate-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-slate-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-slate-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-1.5 [&_p]:my-3 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-indigo-600 [&_a]:underline"
-                        dangerouslySetInnerHTML={{
-                          __html: product.description || (product.detail ? `<p>${product.detail}</p>` : "") || "No description available.",
-                        }}
-                      />
+                <span className="uppercase font-bold tracking-wider text-xs sm:text-sm md:text-base text-[#c05646]">
+                  Description
+                </span>
+                <FaChevronDown
+                  className={`text-[#c05646] text-xs sm:text-sm transition-transform duration-300 ${
+                    openSections.description ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              {openSections.description && (
+                <div className="p-5 sm:p-7 border-t border-slate-100 bg-white">
+                  {/* Sacred Sanskrit Shloka Box */}
+                  {sacredShloka && (
+                    <div className="mb-5 p-3.5 sm:p-4 rounded-xl bg-amber-50/80 border border-amber-200/80 text-amber-950">
+                      <p className="text-xs sm:text-sm font-serif font-bold italic tracking-wide text-amber-900 text-center leading-relaxed">
+                        {sacredShloka.shloka}
+                      </p>
+                      <p className="text-[11px] sm:text-xs text-amber-800/90 text-center mt-1.5 font-medium">
+                        {sacredShloka.meaning}
+                      </p>
                     </div>
-                  ) : (
-                    <div
-                      className="text-slate-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-slate-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-slate-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-slate-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-slate-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-2 [&_p]:my-3 [&_strong]:font-bold [&_strong]:text-slate-900 [&_b]:font-bold [&_b]:text-slate-900 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-indigo-600 [&_a]:underline"
-                      dangerouslySetInnerHTML={{
-                        __html: product.additionalInfo || "No additional information available.",
-                      }}
-                    />
                   )}
+                  <div
+                    className="text-slate-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-slate-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-slate-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-slate-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-slate-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-1.5 [&_p]:my-3 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-indigo-600 [&_a]:underline"
+                    dangerouslySetInnerHTML={{
+                      __html: product.description || (product.detail ? `<p>${product.detail}</p>` : "") || "No description available.",
+                    }}
+                  />
                 </div>
-
-                {/* Description Footer Bar - Leveled Slider Control & Mobile Expand */}
-                <div className="p-3 bg-slate-50/90 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 shrink-0">
-                  <span className="flex items-center gap-1.5 font-medium text-slate-600">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span className="hidden sm:inline">Single Slider · </span>Scroll to explore
-                  </span>
-                  <button
-                    type="button"
-                    onClick={() => setDescExpanded(!descExpanded)}
-                    className="px-2.5 py-1 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-600 font-semibold transition cursor-pointer flex items-center gap-1 text-xs"
-                    title={descExpanded ? "Collapse View" : "Expand Full View"}
-                  >
-                    <span>{descExpanded ? "Collapse" : "Expand"}</span>
-                    <FaChevronDown className={`text-[10px] transition-transform duration-200 ${descExpanded ? "rotate-180" : ""}`} />
-                  </button>
-                </div>
-              </div>
+              )}
             </div>
-          ) : (
-            <div
-              className={`max-w-4xl mx-auto border border-slate-200/90 rounded-2xl overflow-hidden bg-white shadow-xs flex flex-col transition-all duration-300 ${
-                descExpanded ? "h-auto" : "h-[480px] sm:h-[540px] lg:h-[620px]"
-              }`}
-            >
-              <div className="h-14 sm:h-16 flex border-b border-slate-200 bg-slate-50/70 shrink-0 items-center justify-between">
-                <div className="flex h-full">
-                  <button
-                    onClick={() => {
-                      setActiveTab("description");
-                      trackTabSwitch("description", product);
-                    }}
-                    className={`h-full px-5 sm:px-8 font-semibold text-xs sm:text-sm lg:text-base cursor-pointer text-left transition-colors flex items-center ${
-                      activeTab === "description"
-                        ? "border-b-2 border-indigo-600 text-indigo-600 bg-white"
-                        : "text-slate-500 hover:text-slate-800"
-                    }`}
-                  >
-                    Description
-                  </button>
 
-                  <button
-                    onClick={() => {
-                      setActiveTab("additional");
-                      trackTabSwitch("additional", product);
-                    }}
-                    className={`h-full px-5 sm:px-8 font-semibold text-xs sm:text-sm lg:text-base cursor-pointer text-left transition-colors flex items-center ${
-                      activeTab === "additional"
-                        ? "border-b-2 border-indigo-600 text-indigo-600 bg-white"
-                        : "text-slate-500 hover:text-slate-800"
-                    }`}
-                  >
-                    Additional Information
-                  </button>
-                </div>
-              </div>
-
-              <div className="flex-1 overflow-y-auto p-5 sm:p-8 text-slate-700 text-sm sm:text-base leading-relaxed overscroll-contain custom-single-slider">
-                {activeTab === "description" ? (
-                  <div>
-                    {sacredShloka && (
-                      <div className="mb-4 p-3.5 sm:p-4 rounded-xl bg-amber-50/80 border border-amber-200/80 text-amber-950">
-                        <p className="text-xs sm:text-sm font-serif font-bold italic tracking-wide text-amber-900 text-center leading-relaxed">
-                          {sacredShloka.shloka}
-                        </p>
-                        <p className="text-[11px] sm:text-xs text-amber-800/90 text-center mt-1.5 font-medium">
-                          {sacredShloka.meaning}
-                        </p>
-                      </div>
-                    )}
-                    <div
-                      className="text-slate-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-slate-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-slate-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-slate-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-slate-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-1.5 [&_p]:my-3 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-indigo-600 [&_a]:underline"
-                      dangerouslySetInnerHTML={{
-                        __html: product.description || (product.detail ? `<p>${product.detail}</p>` : "") || "No description available.",
-                      }}
-                    />
-                  </div>
-                ) : (
+            {/* 2. ADDITIONAL INFORMATION ACCORDION */}
+            <div className="border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden bg-white shadow-xs transition-all duration-200">
+              <button
+                type="button"
+                onClick={() => toggleSection("additional")}
+                className="w-full flex items-center justify-between py-4 px-5 sm:px-6 text-left cursor-pointer transition-colors bg-white hover:bg-slate-50/70"
+                aria-expanded={openSections.additional}
+              >
+                <span className="uppercase font-bold tracking-wider text-xs sm:text-sm md:text-base text-[#c05646]">
+                  Additional Information
+                </span>
+                <FaChevronDown
+                  className={`text-[#c05646] text-xs sm:text-sm transition-transform duration-300 ${
+                    openSections.additional ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              {openSections.additional && (
+                <div className="p-5 sm:p-7 border-t border-slate-100 bg-white">
                   <div
                     className="text-slate-700 text-sm sm:text-base leading-7 sm:leading-8 prose max-w-none focus:outline-none [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-slate-900 [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-slate-900 [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-slate-800 [&_h3]:mt-5 [&_h3]:mb-2 [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-slate-800 [&_h4]:mt-4 [&_h4]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-3 [&_li]:my-2 [&_p]:my-3 [&_strong]:font-bold [&_strong]:text-slate-900 [&_b]:font-bold [&_b]:text-slate-900 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:p-2 [&_td]:border [&_td]:p-2 [&_a]:text-indigo-600 [&_a]:underline"
                     dangerouslySetInnerHTML={{
                       __html: product.additionalInfo || "No additional information available.",
                     }}
                   />
-                )}
-              </div>
+                </div>
+              )}
+            </div>
 
-              <div className="p-3 bg-slate-50/90 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 shrink-0">
-                <span className="flex items-center gap-1.5 font-medium text-slate-600">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                  <span className="hidden sm:inline">Single Slider · </span>Scroll to explore
-                </span>
+            {/* 3. FREQUENTLY ASKED QUESTIONS ACCORDION */}
+            {hasFaqs && (
+              <div className="border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden bg-white shadow-xs transition-all duration-200">
                 <button
                   type="button"
-                  onClick={() => setDescExpanded(!descExpanded)}
-                  className="px-2.5 py-1 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-600 font-semibold transition cursor-pointer flex items-center gap-1 text-xs"
-                  title={descExpanded ? "Collapse View" : "Expand Full View"}
+                  onClick={() => toggleSection("faqs")}
+                  className="w-full flex items-center justify-between py-4 px-5 sm:px-6 text-left cursor-pointer transition-colors bg-white hover:bg-slate-50/70"
+                  aria-expanded={openSections.faqs}
                 >
-                  <span>{descExpanded ? "Collapse" : "Expand"}</span>
-                  <FaChevronDown className={`text-[10px] transition-transform duration-200 ${descExpanded ? "rotate-180" : ""}`} />
+                  <div className="flex items-center gap-2.5">
+                    <span className="uppercase font-bold tracking-wider text-xs sm:text-sm md:text-base text-[#c05646]">
+                      Frequently Asked Questions
+                    </span>
+                    <span className="text-[11px] text-slate-500 font-semibold px-2.5 py-0.5 rounded-full bg-slate-100 border border-slate-200">
+                      {productFaqs.length} Q&As
+                    </span>
+                  </div>
+                  <FaChevronDown
+                    className={`text-[#c05646] text-xs sm:text-sm transition-transform duration-300 ${
+                      openSections.faqs ? "rotate-180" : ""
+                    }`}
+                  />
                 </button>
+                {openSections.faqs && (
+                  <div className="p-4 sm:p-6 border-t border-slate-100 bg-slate-50/40 space-y-3">
+                    {productFaqs.map((faq, index) => (
+                      <div
+                        key={index}
+                        className="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-2xs transition-all duration-200 hover:border-amber-300"
+                      >
+                        <button
+                          type="button"
+                          onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
+                          className="w-full flex items-center justify-between p-3.5 sm:p-4 text-left font-semibold text-slate-800 hover:text-[#c05646] transition-colors cursor-pointer text-xs sm:text-sm"
+                        >
+                          <span className="pr-3">
+                            {index + 1}. {faq.question}
+                          </span>
+                          <FaChevronDown
+                            className={`text-slate-400 text-xs shrink-0 transition-transform duration-200 ${
+                              openFaqIndex === index ? "rotate-180 text-[#c05646]" : ""
+                            }`}
+                          />
+                        </button>
+                        {openFaqIndex === index && (
+                          <div className="px-3.5 pb-4 sm:px-4 sm:pb-4 text-xs sm:text-sm text-slate-600 border-t border-slate-100 pt-2.5 leading-relaxed bg-slate-50/50">
+                            {faq.answer}
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
 
