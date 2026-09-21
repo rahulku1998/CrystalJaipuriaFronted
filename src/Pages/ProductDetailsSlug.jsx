@@ -47,7 +47,7 @@ const ProductDetails = () => {
   const [showQueryForm, setShowQueryForm] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
   const [openSections, setOpenSections] = useState({
-    description: true,
+    description: false,
     additional: false,
     faqs: false,
   });
