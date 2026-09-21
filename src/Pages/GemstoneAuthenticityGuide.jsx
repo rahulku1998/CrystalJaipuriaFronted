@@ -454,7 +454,7 @@ const GemstoneAuthenticityGuide = () => {
                 Browse All Products
               </Link>
               <a
-                href="https://wa.me/918955613237?text=Hello%20Crystal%20Jaipuria,%20I%20have%20a%20question%20about%20gemstone%20authenticity."
+                href="https://wa.me/918306317032?text=Hello%20Crystal%20Jaipuria,%20I%20have%20a%20question%20about%20gemstone%20authenticity."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 rounded-sm bg-green-600 hover:bg-green-700 text-white font-semibold text-sm flex items-center gap-2 transition shadow-sm"

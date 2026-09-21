@@ -194,7 +194,7 @@ const generateSitemap = async () => {
 
   llms += `\n## Business & Contact Information\n`;
   llms += `- **Brand**: Crystal Jaipuria\n`;
-  llms += `- **Address**: Bajni talai, Crystal Jaipuria, Plot No.03 West Part, Prabha, Mangal Vihar, Sanganer, Jaipur, Rajasthan - 302029, India\n`;
+  llms += `- **Address**: West Part, Prabha Mangal Vihar, Plot No.03, Mod, Sanganer, Muhana, Jaipur, Rajasthan 302029, India\n`;
   llms += `- **WhatsApp / Phone**: +91 8306317032 / +91 8955613237 / +91 9828723652\n`;
   llms += `- **Email**: crystaljaipurya@gmail.com\n`;
   llms += `- **Official Website**: ${BASE_URL}/\n`;
@@ -449,7 +449,7 @@ const generateSitemap = async () => {
   // ----------------------------------------------------
   // Generate Local Inventory Feed for Google Merchant Free Local Listings
   // ----------------------------------------------------
-  let storeCode = "1";
+  let storeCode = "11769123335765617743";
   const storeCodeFile = path.join(__dirname, "../store_code.txt");
   if (fs.existsSync(storeCodeFile)) {
     storeCode = fs.readFileSync(storeCodeFile, "utf-8").trim();

@@ -19,91 +19,91 @@ import { FaAward, FaQuestionCircle, FaChevronDown } from "react-icons/fa";
 
 const CATEGORY_SEO = {
   "god-statues": {
-    title: "Gemstone God Statues Manufacturer & Wholesaler | Crystal Jaipuria",
+    title: "Gemstone God Statues & Deity Murtis Manufacturer in Jaipur, India | Crystal Jaipuria",
     description:
-      "Buy handcrafted gemstone God statues from a trusted Jaipur manufacturer and wholesaler. Explore Ganesha, Shiva and other crystal and gemstone idols.",
+      "Buy 100% natural gemstone Hindu God statues directly from Jaipur manufacturer. Handcrafted Ganesha, Shiva, Krishna & deity murtis at factory wholesale prices.",
     canonical: "https://www.crystaljaipuria.com/god-statues",
-    ogTitle: "Gemstone God Statues Manufacturer & Wholesaler | Crystal Jaipuria",
+    ogTitle: "Gemstone God Statues & Deity Murtis Manufacturer in Jaipur, India | Crystal Jaipuria",
     ogDescription:
-      "Explore handcrafted gemstone God statues from Crystal Jaipuria, a Jaipur-based manufacturer and wholesaler of Ganesha, Shiva and other spiritual gemstone idols.",
+      "Buy 100% natural gemstone Hindu God statues directly from Jaipur manufacturer. Handcrafted Ganesha, Shiva, Krishna & deity murtis at factory wholesale prices.",
     twitterTitle:
-      "Gemstone God Statues Manufacturer & Wholesaler | Crystal Jaipuria",
+      "Gemstone God Statues & Deity Murtis Manufacturer in Jaipur, India | Crystal Jaipuria",
     twitterDescription:
-      "Explore handcrafted gemstone God statues from Crystal Jaipuria, a Jaipur-based manufacturer and wholesaler of Ganesha, Shiva and other spiritual gemstone idols.",
+      "Buy 100% natural gemstone Hindu God statues directly from Jaipur manufacturer. Handcrafted Ganesha, Shiva, Krishna & deity murtis at factory wholesale prices.",
     image: "https://www.crystaljaipuria.com/logo.png",
   },
   shivling: {
     title:
-      "Gemstone Shivling Manufacturer & Wholesaler in India | Crystal Jaipuria",
+      "Gemstone Shivling & Natural Stone Shiva Lingam Manufacturer in Jaipur, India | Crystal Jaipuria",
     description:
-      "Discover handcrafted gemstone Shivlings from Crystal Jaipuria, a Jaipur manufacturer and wholesaler. Explore Lapis Lazuli and other natural stone Shiva Lingas.",
+      "Buy authentic gemstone Shivlings & natural stone Shiva Lingams from Jaipur manufacturer. Handcrafted Jade, Lapis, Quartz, Ruby, Pyrite & Black Agate Shivlings at wholesale rates.",
     canonical: "https://www.crystaljaipuria.com/shivling",
     ogTitle:
-      "Gemstone Shivling Manufacturer & Wholesaler in India | Crystal Jaipuria",
+      "Gemstone Shivling & Natural Stone Shiva Lingam Manufacturer in Jaipur, India | Crystal Jaipuria",
     ogDescription:
-      "Explore handcrafted gemstone Shivlings and Shiva Lingas made from natural stones. Crystal Jaipuria supplies gemstone Shivlings from Jaipur, India.",
+      "Buy authentic gemstone Shivlings & natural stone Shiva Lingams from Jaipur manufacturer. Handcrafted Jade, Lapis, Quartz, Ruby, Pyrite & Black Agate Shivlings at wholesale rates.",
     twitterTitle:
-      "Gemstone Shivling Manufacturer & Wholesaler in India | Crystal Jaipuria",
+      "Gemstone Shivling & Natural Stone Shiva Lingam Manufacturer in Jaipur, India | Crystal Jaipuria",
     twitterDescription:
-      "Explore handcrafted gemstone Shivlings and Shiva Lingas made from natural stones. Crystal Jaipuria supplies gemstone Shivlings from Jaipur, India.",
+      "Buy authentic gemstone Shivlings & natural stone Shiva Lingams from Jaipur manufacturer. Handcrafted Jade, Lapis, Quartz, Ruby, Pyrite & Black Agate Shivlings at wholesale rates.",
     image: "https://www.crystaljaipuria.com/logo.png",
   },
   "shree-yantra": {
     title:
-      "Crystal Shree Yantra Manufacturer & Wholesaler in India | Crystal Jaipuria",
+      "3D Meru Crystal Shree Yantra Manufacturer in Jaipur, India | Crystal Jaipuria",
     description:
-      "Buy handcrafted crystal and gemstone Shree Yantra products from Crystal Jaipuria, Jaipur. Explore spiritual and Vastu decor crafted from natural stones.",
+      "Authentic 3D Meru crystal Shree Yantra manufacturer in Jaipur, Rajasthan (India). Mathematically precise natural quartz Sri Yantras for wealth, abundance & Vastu harmony.",
     canonical: "https://www.crystaljaipuria.com/shree-yantra",
     ogTitle:
-      "Crystal Shree Yantra Manufacturer & Wholesaler in India | Crystal Jaipuria",
+      "3D Meru Crystal Shree Yantra Manufacturer in Jaipur, India | Crystal Jaipuria",
     ogDescription:
-      "Explore handcrafted crystal and gemstone Shree Yantra products from Crystal Jaipuria, Jaipur. Discover premium spiritual and Vastu decor crafted from natural stones.",
+      "Authentic 3D Meru crystal Shree Yantra manufacturer in Jaipur, Rajasthan (India). Mathematically precise natural quartz Sri Yantras for wealth, abundance & Vastu harmony.",
     twitterTitle:
-      "Crystal Shree Yantra Manufacturer & Wholesaler in India | Crystal Jaipuria",
+      "3D Meru Crystal Shree Yantra Manufacturer in Jaipur, India | Crystal Jaipuria",
     twitterDescription:
-      "Explore handcrafted crystal and gemstone Shree Yantra products from Crystal Jaipuria, Jaipur. Discover premium spiritual and Vastu decor crafted from natural stones.",
+      "Authentic 3D Meru crystal Shree Yantra manufacturer in Jaipur, Rajasthan (India). Mathematically precise natural quartz Sri Yantras for wealth, abundance & Vastu harmony.",
     image: "https://www.crystaljaipuria.com/logo.png",
   },
   angel: {
-    title: "Amethyst Angel Statues & Gemstone Angels | Crystal Jaipuria",
+    title: "Hand-Carved Gemstone Healing Angels & Crystals in Jaipur, India | Crystal Jaipuria",
     description:
-      "Explore handcrafted amethyst angel statues and gemstone angels from Crystal Jaipuria, Jaipur. Natural crystal carvings for spiritual decor and gifting.",
+      "Explore artisan-carved gemstone healing angels & pocket guardian angels handcrafted in Jaipur, Rajasthan. Natural Amethyst, Rose Quartz & crystal angels for Reiki & peace.",
     canonical: "https://www.crystaljaipuria.com/angel",
-    ogTitle: "Amethyst Angel Statues & Gemstone Angels | Crystal Jaipuria",
+    ogTitle: "Hand-Carved Gemstone Healing Angels & Crystals in Jaipur, India | Crystal Jaipuria",
     ogDescription:
-      "Discover handcrafted amethyst angel statues and natural gemstone angel carvings from Crystal Jaipuria, Jaipur, India. Ideal for spiritual decor and gifting.",
-    twitterTitle: "Amethyst Angel Statues & Gemstone Angels | Crystal Jaipuria",
+      "Explore artisan-carved gemstone healing angels & pocket guardian angels handcrafted in Jaipur, Rajasthan. Natural Amethyst, Rose Quartz & crystal angels for Reiki & peace.",
+    twitterTitle: "Hand-Carved Gemstone Healing Angels & Crystals in Jaipur, India | Crystal Jaipuria",
     twitterDescription:
-      "Discover handcrafted amethyst angel statues and natural gemstone angel carvings from Crystal Jaipuria, Jaipur, India. Ideal for spiritual decor and gifting.",
+      "Explore artisan-carved gemstone healing angels & pocket guardian angels handcrafted in Jaipur, Rajasthan. Natural Amethyst, Rose Quartz & crystal angels for Reiki & peace.",
     image: "https://www.crystaljaipuria.com/logo.png",
   },
   "crystal-statues": {
     title:
-      "Crystal Statues Manufacturer & Wholesaler in India | Crystal Jaipuria",
+      "Natural Crystal Animal Statues & Vastu Figurines in Jaipur, India | Crystal Jaipuria",
     description:
-      "Explore handcrafted crystal statues and natural stone carvings from Crystal Jaipuria, a Jaipur manufacturer and wholesaler serving buyers across India and worldwide.",
+      "Handcrafted natural crystal animal statues, swan pairs & elephant carvings in Jaipur, Rajasthan (India). Authentic Vastu decor and gemstone figurines at wholesale rates.",
     canonical: "https://www.crystaljaipuria.com/crystal-statues",
     ogTitle:
-      "Crystal Statues Manufacturer & Wholesaler in India | Crystal Jaipuria",
+      "Natural Crystal Animal Statues & Vastu Figurines in Jaipur, India | Crystal Jaipuria",
     ogDescription:
-      "Discover premium handcrafted crystal statues and natural stone carvings from Crystal Jaipuria, Jaipur. Manufacturer and wholesaler serving domestic and international buyers.",
+      "Handcrafted natural crystal animal statues, swan pairs & elephant carvings in Jaipur, Rajasthan (India). Authentic Vastu decor and gemstone figurines at wholesale rates.",
     twitterTitle:
-      "Crystal Statues Manufacturer & Wholesaler in India | Crystal Jaipuria",
+      "Natural Crystal Animal Statues & Vastu Figurines in Jaipur, India | Crystal Jaipuria",
     twitterDescription:
-      "Discover premium handcrafted crystal statues and natural stone carvings from Crystal Jaipuria, Jaipur. Manufacturer and wholesaler serving domestic and international buyers.",
+      "Handcrafted natural crystal animal statues, swan pairs & elephant carvings in Jaipur, Rajasthan (India). Authentic Vastu decor and gemstone figurines at wholesale rates.",
     image: "https://www.crystaljaipuria.com/logo.png",
   },
   diya: {
-    title: "Gemstone Diya & Crystal Diya Manufacturer | Crystal Jaipuria",
+    title: "Handcrafted Gemstone & Crystal Diyas Manufacturer in Jaipur, India | Crystal Jaipuria",
     description:
-      "Shop handcrafted gemstone and crystal Diyas from Crystal Jaipuria, Jaipur. Explore natural stone Diyas for spiritual decor, gifting and traditional spaces.",
+      "Buy handcrafted gemstone and crystal diyas from Jaipur manufacturer. Hand-carved Amethyst & quartz deepaks for daily puja, Diwali, and spiritual gifting at factory direct rates.",
     canonical: "https://www.crystaljaipuria.com/diya",
-    ogTitle: "Gemstone Diya & Crystal Diya Manufacturer | Crystal Jaipuria",
+    ogTitle: "Handcrafted Gemstone & Crystal Diyas Manufacturer in Jaipur, India | Crystal Jaipuria",
     ogDescription:
-      "Explore handcrafted gemstone and crystal Diyas from Crystal Jaipuria, Jaipur. Natural stone decor pieces designed for spiritual spaces, gifting and traditional interiors.",
-    twitterTitle: "Gemstone Diya & Crystal Diya Manufacturer | Crystal Jaipuria",
+      "Buy handcrafted gemstone and crystal diyas from Jaipur manufacturer. Hand-carved Amethyst & quartz deepaks for daily puja, Diwali, and spiritual gifting at factory direct rates.",
+    twitterTitle: "Handcrafted Gemstone & Crystal Diyas Manufacturer in Jaipur, India | Crystal Jaipuria",
     twitterDescription:
-      "Explore handcrafted gemstone and crystal Diyas from Crystal Jaipuria, Jaipur. Natural stone decor pieces designed for spiritual spaces, gifting and traditional interiors.",
+      "Buy handcrafted gemstone and crystal diyas from Jaipur manufacturer. Hand-carved Amethyst & quartz deepaks for daily puja, Diwali, and spiritual gifting at factory direct rates.",
     image: "https://www.crystaljaipuria.com/logo.png",
   },
 };

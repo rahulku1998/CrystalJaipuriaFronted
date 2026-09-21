@@ -187,15 +187,6 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/gemstone-authenticity-guide"
-                  className="text-slate-700 hover:text-amber-700 transition-colors flex items-center gap-2 group font-medium"
-                >
-                  <FaChevronRight className="text-[11px] text-slate-400 group-hover:text-amber-700 group-hover:translate-x-1 transition-all" />
-                  <span>Authenticity Guide</span>
-                </Link>
-              </li>
-              <li>
-                <Link
                   to="/contact"
                   className="text-slate-700 hover:text-amber-700 transition-colors flex items-center gap-2 group font-medium"
                 >
@@ -214,7 +205,25 @@ const Footer = () => {
             <ul className="space-y-3 text-[14px] sm:text-[15px] text-slate-700">
               <li>
                 <Link
-                  to="/shop"
+                  to="/product/natural-lapis-lazuli-lord-krishna-statue"
+                  className="hover:text-amber-700 transition-colors flex items-center gap-2 group font-medium"
+                >
+                  <FaChevronRight className="text-[11px] text-slate-400 group-hover:text-amber-700 group-hover:translate-x-1 transition-all shrink-0" />
+                  <span>Lapis Lazuli Krishna Statue</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/product/hand-carved-rose-quartz-ganesha-with-sterling-silver-testing"
+                  className="hover:text-amber-700 transition-colors flex items-center gap-2 group font-medium"
+                >
+                  <FaChevronRight className="text-[11px] text-slate-400 group-hover:text-amber-700 group-hover:translate-x-1 transition-all shrink-0" />
+                  <span>Rose Quartz Ganesha Idol</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/product/natural-sphatik-shivling"
                   className="hover:text-amber-700 transition-colors flex items-center gap-2 group font-medium"
                 >
                   <FaChevronRight className="text-[11px] text-slate-400 group-hover:text-amber-700 group-hover:translate-x-1 transition-all shrink-0" />
@@ -223,38 +232,20 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/shop"
+                  to="/product/green-jade-panchmukhi-shivling"
                   className="hover:text-amber-700 transition-colors flex items-center gap-2 group font-medium"
                 >
                   <FaChevronRight className="text-[11px] text-slate-400 group-hover:text-amber-700 group-hover:translate-x-1 transition-all shrink-0" />
-                  <span>Green Jade Shiva &amp; Ganesha</span>
+                  <span>Green Jade Panchmukhi Shivling</span>
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/shop"
+                  to="/product/natural-ruby-shivling"
                   className="hover:text-amber-700 transition-colors flex items-center gap-2 group font-medium"
                 >
                   <FaChevronRight className="text-[11px] text-slate-400 group-hover:text-amber-700 group-hover:translate-x-1 transition-all shrink-0" />
-                  <span>Rose Quartz Divine Statues</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/shop"
-                  className="hover:text-amber-700 transition-colors flex items-center gap-2 group font-medium"
-                >
-                  <FaChevronRight className="text-[11px] text-slate-400 group-hover:text-amber-700 group-hover:translate-x-1 transition-all shrink-0" />
-                  <span>Ruby &amp; Amethyst Shree Yantras</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/shop"
-                  className="hover:text-amber-700 transition-colors flex items-center gap-2 group font-medium"
-                >
-                  <FaChevronRight className="text-[11px] text-slate-400 group-hover:text-amber-700 group-hover:translate-x-1 transition-all shrink-0" />
-                  <span>Lapis Lazuli &amp; Sapphire Idols</span>
+                  <span>Natural Ruby Shivling</span>
                 </Link>
               </li>
             </ul>
@@ -276,7 +267,7 @@ const Footer = () => {
               >
                 <FaMapMarkerAlt className="text-slate-700 mt-1 text-base shrink-0 group-hover:scale-110 transition-transform" />
                 <span className="leading-relaxed text-slate-700">
-                  Bajni Talai, Plot No. 03 West Part, Prabha, Mangal Vihar, Sanganer, Jaipur, Rajasthan - 302029
+                  West Part, Prabha Mangal Vihar, Plot No.03, Mod, Sanganer, Muhana, Jaipur, Rajasthan 302029
                 </span>
               </a>
 
@@ -296,13 +287,13 @@ const Footer = () => {
 
               {/* WhatsApp */}
               <a
-                href="https://wa.me/918955613237?text=Hello%20Crystal%20Jaipuria,%20I%20have%20an%20enquiry%20regarding%20your%20gemstones."
+                href="https://wa.me/918306317032?text=Hello%20Crystal%20Jaipuria,%20I%20have%20an%20enquiry%20regarding%20your%20gemstones."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 hover:text-amber-700 transition"
               >
                 <FaWhatsapp className="text-slate-700 text-base shrink-0" />
-                <span className="font-semibold text-slate-800 hover:text-amber-700 transition">+91 89556 13237 (WhatsApp)</span>
+                <span className="font-semibold text-slate-800 hover:text-amber-700 transition">+91 83063 17032 (WhatsApp)</span>
               </a>
 
               {/* Email */}

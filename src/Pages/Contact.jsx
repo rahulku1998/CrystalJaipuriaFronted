@@ -317,8 +317,8 @@ Message: ${message}
               sm:text-base
               leading-7
             ">
-              Bajni talai, Crystal Jaipuria, Plot No.03 West Part, Prabha,
-              Mangal Vihar, Sanganer, Jaipur, Rajasthan 302029
+              West Part, Prabha Mangal Vihar, Plot No.03, Mod,
+              Sanganer, Muhana, Jaipur, Rajasthan 302029
             </p>
 
           </div>
@@ -457,7 +457,7 @@ Message: ${message}
 
 
             <a
-              href="https://wa.me/918955613237"
+              href="https://wa.me/918306317032"
               target="_blank"
               rel="noopener noreferrer"
               className="

@@ -10,7 +10,71 @@ import { formatPrice } from "../utils/price";
 import AboutGemstoneSection from "../Components/about";
 import FAQSection from "../Components/FAQSection";
 import GoogleReviewsSection from "../Components/GoogleReviewsSection";
-import { FaWhatsapp, FaEnvelope } from "react-icons/fa";
+import { FaWhatsapp, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaGem, FaAward, FaTruck, FaIndustry, FaCogs, FaCheckCircle, FaGlobeAmericas } from "react-icons/fa";
+
+const B2BWholesaleSection = () => (
+  <section className="py-12 sm:py-16 bg-white border-t border-stone-200">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <div className="max-w-3xl mb-10">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-200/80 mb-3">
+          <span className="w-2 h-2 rounded-full bg-amber-500" />
+          <span className="text-[11px] font-bold uppercase tracking-wider text-amber-800">
+            Direct From Jaipur Workshop
+          </span>
+        </div>
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-stone-900 tracking-tight leading-tight">
+          Gemstone Statues Wholesale Supplier &amp; Custom Carving in Jaipur
+        </h2>
+        <p className="mt-3 text-sm sm:text-base text-stone-600 leading-relaxed">
+          Crystal Jaipuria is an authentic <strong>gemstone god statues manufacturer and wholesale supplier in Jaipur, Rajasthan (India)</strong>. We carve certified natural crystals into divine idols, Sphatik Shivlings, and sacred Vedic yantras for temples, retail jewelers, spiritual practitioners, and international buyers.
+        </p>
+      </div>
+
+      {/* 4 Feature Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="p-5 rounded-lg border border-stone-200 bg-stone-50/50 hover:border-amber-400 hover:shadow-sm transition">
+          <div className="w-10 h-10 rounded-md bg-amber-100/70 border border-amber-200 flex items-center justify-center text-amber-700 mb-3.5">
+            <FaIndustry className="text-lg" />
+          </div>
+          <h3 className="text-base font-bold text-stone-900 mb-1.5">Direct Factory Wholesale</h3>
+          <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
+            Procure directly from our Jaipur manufacturing unit. Tiered wholesale pricing with zero middlemen markup for resellers and institutions.
+          </p>
+        </div>
+
+        <div className="p-5 rounded-lg border border-stone-200 bg-stone-50/50 hover:border-amber-400 hover:shadow-sm transition">
+          <div className="w-10 h-10 rounded-md bg-amber-100/70 border border-amber-200 flex items-center justify-center text-amber-700 mb-3.5">
+            <FaCogs className="text-lg" />
+          </div>
+          <h3 className="text-base font-bold text-stone-900 mb-1.5">Bespoke Deity Carving</h3>
+          <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
+            Custom deity carving from 2 inches to 5+ feet in Clear Quartz, Rose Quartz, Green Jade, Amethyst, and Black Obsidian as per Vedic Shilpa Shastra.
+          </p>
+        </div>
+
+        <div className="p-5 rounded-lg border border-stone-200 bg-stone-50/50 hover:border-amber-400 hover:shadow-sm transition">
+          <div className="w-10 h-10 rounded-md bg-amber-100/70 border border-amber-200 flex items-center justify-center text-amber-700 mb-3.5">
+            <FaCheckCircle className="text-lg" />
+          </div>
+          <h3 className="text-base font-bold text-stone-900 mb-1.5">100% Natural Earth Crystals</h3>
+          <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
+            Every statue is carved from authentic natural earth-mined rough gemstones with verifiable inclusions. Laboratory authenticity certificate provided.
+          </p>
+        </div>
+
+        <div className="p-5 rounded-lg border border-stone-200 bg-stone-50/50 hover:border-amber-400 hover:shadow-sm transition">
+          <div className="w-10 h-10 rounded-md bg-amber-100/70 border border-amber-200 flex items-center justify-center text-amber-700 mb-3.5">
+            <FaGlobeAmericas className="text-lg" />
+          </div>
+          <h3 className="text-base font-bold text-stone-900 mb-1.5">All-India &amp; Global Shipping</h3>
+          <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
+            Insured express delivery across India and worldwide exports to USA, UK, Canada, Australia, and UAE with custom wooden crate packaging.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+);
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -35,13 +99,13 @@ const Home = () => {
   return (
     <>
       <SEO
-        title="Gemstone God Statues Manufacturer in India | Crystal Jaipuria"
-        description="Leading gemstone god statues manufacturer & wholesaler in Jaipur, India. Hand-carved crystal idols, Vastu decor & healing stones. Global shipping since 1989."
+        title="Gemstone God Statues Manufacturer & Wholesale Supplier in Jaipur, India | Crystal Jaipuria"
+        description="Leading gemstone god statues manufacturer & wholesale supplier in Jaipur, Rajasthan (India). Handcrafted natural crystal idols, Sphatik Shivlings & Vedic spiritual decor since 1989."
         canonical="https://www.crystaljaipuria.com/"
-        ogTitle="Gemstone God Statues Manufacturer in India | Crystal Jaipuria"
-        ogDescription="Leading manufacturer & wholesaler of authentic gemstone god statues & crystal carvings in Jaipur since 1989. Shop hand-carved Ganesha idols, Vastu products & healing crystals. Worldwide shipping available."
-        twitterTitle="Gemstone God Statues Manufacturer in India | Crystal Jaipuria"
-        twitterDescription="Leading manufacturer & wholesaler of authentic gemstone god statues & crystal carvings in Jaipur since 1989. Shop hand-carved Ganesha idols, Vastu products & healing crystals. Worldwide shipping available."
+        ogTitle="Gemstone God Statues Manufacturer & Wholesale Supplier in Jaipur, India | Crystal Jaipuria"
+        ogDescription="Leading gemstone god statues manufacturer & wholesale supplier in Jaipur, Rajasthan (India). Handcrafted natural crystal idols, Sphatik Shivlings & Vedic spiritual decor since 1989."
+        twitterTitle="Gemstone God Statues Manufacturer & Wholesale Supplier in Jaipur, India | Crystal Jaipuria"
+        twitterDescription="Leading gemstone god statues manufacturer & wholesale supplier in Jaipur, Rajasthan (India). Handcrafted natural crystal idols, Sphatik Shivlings & Vedic spiritual decor since 1989."
         image="https://www.crystaljaipuria.com/logo.png"
         type="website"
       />
@@ -117,57 +181,33 @@ const Home = () => {
 
 
 <div className="mt-8 sm:mt-12">
+        {categories.map((category) => {
+          const isDiya =
+            category.slug === "diya" ||
+            category.name?.toLowerCase().includes("diya");
 
-
-{
-
-categories.map((category)=>(
-
-
-<CategorySection
-
-
-key={category._id}
-
-title={category.name}
-
-slug={category.slug}
-
-products={categoryProducts[category._id] || []}
-
-
-/>
-
-
-))
-
-
-}
-
-
-
-</div>
-
-
-
-
-
-
-
+          return (
+            <React.Fragment key={category._id}>
+              <CategorySection
+                title={category.name}
+                slug={category.slug}
+                products={categoryProducts[category._id] || []}
+              />
+              {isDiya && <B2BWholesaleSection />}
+            </React.Fragment>
+          );
+        })}
+        {categories.length > 0 &&
+          !categories.some(
+            (c) => c.slug === "diya" || c.name?.toLowerCase().includes("diya")
+          ) && <B2BWholesaleSection />}
+      </div>
 
 <StatsSection />
 
 <GoogleReviewsSection />
 
 <FAQSection />
-
-
-
-
-
-
-
-
 
 {/* CONTACT */}
 

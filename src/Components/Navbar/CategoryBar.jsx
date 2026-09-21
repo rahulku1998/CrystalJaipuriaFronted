@@ -104,8 +104,8 @@ const CategoryBar = ({ mobileMenuOpen, setMobileMenuOpen }) => {
                   flex-1 text-center cursor-pointer py-3 text-sm font-medium whitespace-nowrap transition
                   ${
                     location.pathname === item.path
-                      ? "text-indigo-600 font-semibold"
-                      : "text-gray-700 hover:text-indigo-600"
+                      ? "text-black font-semibold"
+                      : "text-gray-700 hover:text-black"
                   }
                 `}
               >
@@ -164,8 +164,8 @@ const CategoryBar = ({ mobileMenuOpen, setMobileMenuOpen }) => {
                         flex items-center gap-3 w-full px-3 py-2.5 rounded-xl text-left text-sm font-medium transition cursor-pointer
                         ${
                           location.pathname === item.path
-                            ? "bg-indigo-50 text-indigo-600 font-bold"
-                            : "text-slate-700 hover:bg-slate-50"
+                            ? "bg-stone-100 text-black font-bold"
+                            : "text-slate-700 hover:bg-slate-50 hover:text-black"
                         }
                       `}
                     >
@@ -194,8 +194,8 @@ const CategoryBar = ({ mobileMenuOpen, setMobileMenuOpen }) => {
                           flex items-center gap-3 w-full px-3 py-2 rounded-xl text-left text-sm transition cursor-pointer
                           ${
                             location.pathname === cat.path
-                              ? "bg-indigo-50 text-indigo-600 font-bold"
-                              : "text-slate-700 hover:bg-slate-50"
+                              ? "bg-stone-100 text-black font-bold"
+                              : "text-slate-700 hover:bg-slate-50 hover:text-black"
                           }
                         `}
                       >
@@ -268,8 +268,8 @@ const CategoryBar = ({ mobileMenuOpen, setMobileMenuOpen }) => {
                 flex-1 flex flex-col items-center justify-center text-[11px] gap-1 cursor-pointer transition py-0.5
                 ${
                   location.pathname === item.path
-                    ? "text-indigo-600 font-bold"
-                    : "text-slate-700 hover:text-indigo-600 font-medium"
+                    ? "text-black font-bold"
+                    : "text-slate-700 hover:text-black font-medium"
                 }
               `}
             >

@@ -38,7 +38,7 @@ const features = [
     id: 6,
     title: "WhatsApp Customer Support",
     icon: <FaWhatsapp className="text-base sm:text-xl text-amber-500 group-hover:scale-110 transition-transform" aria-hidden="true" />,
-    link: "https://api.whatsapp.com/send?phone=918955613237&text=Hello%20Crystal%20Jaipuria,%20I%20have%20an%20inquiry.",
+    link: "https://api.whatsapp.com/send?phone=918306317032&text=Hello%20Crystal%20Jaipuria,%20I%20have%20an%20inquiry.",
   },
 ];
 

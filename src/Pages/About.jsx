@@ -158,8 +158,7 @@ const About = () => {
               <span className="text-amber-700 font-semibold">
                 Kailash Kumawat
               </span>{" "}
-              and headquartered at Bajni Talai, Plot No. 03 West Part, Prabha, Mangal Vihar, Sanganer, Jaipur (PIN:
-              302029), Crystal Jaipuria has built a strong legacy of over
+              and headquartered at West Part, Prabha Mangal Vihar, Plot No.03, Mod, Sanganer, Muhana, Jaipur, Rajasthan 302029, Crystal Jaipuria has built a strong legacy of over
               <strong> 35 years</strong> in manufacturing and wholesale
               trading. Under the leadership of{" "}
               <span className="text-amber-700 font-semibold">

@@ -86,7 +86,7 @@ const PrivacyPolicy = () => {
               </p>
               <div className="bg-stone-50 p-4 rounded-xl border border-stone-200 text-xs space-y-1">
                 <p><strong>Crystal Jaipuria</strong></p>
-                <p>Bajni Talai, Plot No. 03 West Part, Prabha, Mangal Vihar, Sanganer, Jaipur, Rajasthan - 302029</p>
+                <p>West Part, Prabha Mangal Vihar, Plot No.03, Mod, Sanganer, Muhana, Jaipur, Rajasthan 302029</p>
                 <p>Email: <a href="mailto:crystaljaipurya@gmail.com" className="text-indigo-600 font-semibold">crystaljaipurya@gmail.com</a></p>
                 <p>Phone: +91 83063 17032</p>
               </div>

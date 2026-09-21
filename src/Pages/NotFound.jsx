@@ -67,7 +67,7 @@ const NotFound = () => {
             </Link>
 
             <a
-              href="https://wa.me/918955613237?text=Hello%20Crystal%20Jaipuria,%20I%20was%20looking%20for%20a%20product%20on%20your%20website"
+              href="https://wa.me/918306317032?text=Hello%20Crystal%20Jaipuria,%20I%20was%20looking%20for%20a%20product%20on%20your%20website"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-sm bg-green-600 hover:bg-green-700 text-white font-semibold shadow-sm hover:shadow transition-all duration-200 text-sm sm:text-base active:scale-95"

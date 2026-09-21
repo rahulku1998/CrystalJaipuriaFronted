@@ -138,6 +138,25 @@ export const runPrerender = async () => {
     fs.writeFileSync(fullPath, content, "utf-8");
   };
 
+  const parsePrice = (p) => {
+    const pSlug = (p.slug || p._id || "").toLowerCase().trim();
+    if (typeof p?.price === "number" && p.price > 0) {
+      return `₹${p.price.toLocaleString("en-IN")}`;
+    }
+    if (typeof p?.discountPrice === "number" && p.discountPrice > 0) {
+      return `₹${p.discountPrice.toLocaleString("en-IN")}`;
+    }
+    if (STANDARDIZED_SPECS[pSlug]?.price) {
+      return `₹${STANDARDIZED_SPECS[pSlug].price.toLocaleString("en-IN")}`;
+    }
+    const raw = String(p?.price || p?.discountPrice || "").replace(/,/g, "");
+    const match = raw.match(/\d+(\.\d+)?/);
+    if (match && Number(match[0]) > 0) {
+      return `₹${Number(match[0]).toLocaleString("en-IN")}`;
+    }
+    return "Inquire Price";
+  };
+
   // Fetch live products, categories, blogs
   const [productsData, categoriesData] = await Promise.all([
     fetchData("/products"),
@@ -480,25 +499,6 @@ export const runPrerender = async () => {
         (typeof p.categoryId === "string" && p.categoryId === cat._id)
     );
 
-    const parsePrice = (p) => {
-      const pSlug = (p.slug || p._id || "").toLowerCase().trim();
-      if (typeof p?.price === "number" && p.price > 0) {
-        return `₹${p.price.toLocaleString("en-IN")}`;
-      }
-      if (typeof p?.discountPrice === "number" && p.discountPrice > 0) {
-        return `₹${p.discountPrice.toLocaleString("en-IN")}`;
-      }
-      if (STANDARDIZED_SPECS[pSlug]?.price) {
-        return `₹${STANDARDIZED_SPECS[pSlug].price.toLocaleString("en-IN")}`;
-      }
-      const raw = String(p?.price || p?.discountPrice || "").replace(/,/g, "");
-      const match = raw.match(/\d+(\.\d+)?/);
-      if (match && Number(match[0]) > 0) {
-        return `₹${Number(match[0]).toLocaleString("en-IN")}`;
-      }
-      return "Inquire Price";
-    };
-
     const cardsHtml = catProducts
       .map((p) => {
         const pSlug = p.slug || p._id;
@@ -674,6 +674,136 @@ export const runPrerender = async () => {
   });
 
   console.log(`✓ Pre-rendered ${corePages.length} core pages to /dist/*/index.html`);
+
+  // ==========================================
+  // 4. Pre-render Homepage (dist/index.html)
+  // ==========================================
+  const homeFeaturedProducts = products.slice(0, 12);
+  const homeCardsHtml = homeFeaturedProducts
+    .map((p) => {
+      const pSlug = p.slug || p._id;
+      const pImg = `${BASE_URL}/images/${pSlug}.webp`;
+      const pPrice = parsePrice(p);
+      return `
+        <a href="${BASE_URL}/product/${pSlug}" style="text-decoration:none;background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:12px;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="aspect-ratio:1/1;background:#faf8f5;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:8px;">
+              <img src="${pImg}" alt="${escapeHtml(p.name)}" style="max-height:100%;max-width:100%;object-fit:contain;" width="300" height="300" loading="lazy" />
+            </div>
+            <h3 style="font-size:14px;font-weight:700;color:#1e293b;margin:12px 0 6px 0;line-height:1.4;">${escapeHtml(p.name)}</h3>
+          </div>
+          <div style="font-size:16px;font-weight:800;color:#92400e;margin-top:8px;">${pPrice}</div>
+        </a>
+      `;
+    })
+    .join("\n");
+
+  const homeCategoriesHtml = categories
+    .map((c) => `
+      <a href="${BASE_URL}/${c.slug}" style="text-decoration:none;display:inline-block;padding:8px 16px;background:#ffffff;border:1px solid #e2e8f0;border-radius:4px;font-size:13px;font-weight:600;color:#1e293b;margin:4px;">
+        ${escapeHtml(c.name)}
+      </a>
+    `)
+    .join("");
+
+  const homeFaqsHtml = `
+    <div style="margin-top:40px;background:#ffffff;border-radius:16px;padding:24px;border:1px solid #e2e8f0;">
+      <h3 style="font-size:20px;font-weight:800;color:#0f172a;margin-bottom:16px;">Frequently Asked Questions</h3>
+      <div style="margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #f1f5f9;">
+        <h4 style="font-size:15px;font-weight:700;color:#1e293b;margin-bottom:6px;">Are you a direct gemstone statues manufacturer in Jaipur?</h4>
+        <p style="font-size:13px;color:#475569;line-height:1.6;margin:0;">Yes. Crystal Jaipuria has been manufacturing and hand-carving natural gemstone God statues, Sphatik Shivlings, and crystal idols in Jaipur, Rajasthan since 1989. We operate our own carving unit in Sanganer, Jaipur.</p>
+      </div>
+      <div style="margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #f1f5f9;">
+        <h4 style="font-size:15px;font-weight:700;color:#1e293b;margin-bottom:6px;">Do you supply wholesale across India and internationally?</h4>
+        <p style="font-size:13px;color:#475569;line-height:1.6;margin:0;">Yes. We are a trusted wholesale supplier and exporter delivering to temples, retailers, and devotees across India (Delhi, Mumbai, Bengaluru, Chennai, Kolkata, Ahmedabad) and globally to the USA, UK, Canada, Australia, and UAE.</p>
+      </div>
+      <div style="margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #f1f5f9;">
+        <h4 style="font-size:15px;font-weight:700;color:#1e293b;margin-bottom:6px;">Are your gemstones and Sphatik idols 100% natural and certified?</h4>
+        <p style="font-size:13px;color:#475569;line-height:1.6;margin:0;">Every statue, Shivling, and Shree Yantra is carved from 100% authentic earth-mined gemstones (Sphatik Quartz, Rose Quartz, Green Jade, Amethyst, Lapis Lazuli). Each piece comes with a laboratory test certificate verifying authenticity.</p>
+      </div>
+      <div>
+        <h4 style="font-size:15px;font-weight:700;color:#1e293b;margin-bottom:6px;">Can I order custom sized deity idols or visit your Jaipur workshop?</h4>
+        <p style="font-size:13px;color:#475569;line-height:1.6;margin:0;">Yes, we welcome custom deity carving orders from 2 inches up to 5+ feet as per Vedic Shilpa Shastra. You can also visit our workshop in Sanganer, Jaipur, Rajasthan by appointment.</p>
+      </div>
+    </div>
+  `;
+
+  const homepageBodyPreview = `
+    <div style="max-width:1200px;margin:0 auto;padding:24px 16px;font-family:system-ui,-apple-system,sans-serif;">
+      <!-- Hero / Brand Introduction -->
+      <div style="margin-bottom:32px;background:#FAF8F5;border-radius:16px;padding:32px 24px;border:1px solid #f1f5f9;">
+        <span style="font-size:11px;font-weight:700;color:#b45309;text-transform:uppercase;letter-spacing:1px;background:#fef3c7;padding:4px 10px;border-radius:9999px;">Est. 1989 • Jaipur Heritage</span>
+        <h1 style="font-size:32px;font-weight:800;color:#0f172a;margin:16px 0 12px 0;line-height:1.2;">
+          Handcrafted Gemstone Statues &amp; Crystal Carvings <span style="color:#d97706;">Manufacturer in Jaipur, India</span>
+        </h1>
+        <p style="font-size:15px;color:#475569;line-height:1.7;max-width:850px;margin-bottom:20px;">
+          Crystal Jaipuria is Rajasthan&#039;s premier manufacturer, wholesale supplier, and global exporter of certified natural gemstone god statues, Sphatik Shivlings, and sacred Vedic yantras. Handcrafted with traditional Jaipur craftsmanship and Shilpa Shastra proportions.
+        </p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          ${homeCategoriesHtml}
+        </div>
+      </div>
+
+      <!-- Featured Products Grid -->
+      <div style="margin-bottom:40px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+          <h2 style="font-size:24px;font-weight:800;color:#0f172a;margin:0;">Featured Handcrafted Gemstone Statues</h2>
+          <a href="${BASE_URL}/shop" style="font-size:14px;font-weight:700;color:#d97706;text-decoration:none;">View All Products &rarr;</a>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));gap:16px;">
+          ${homeCardsHtml}
+        </div>
+      </div>
+
+      <!-- B2B Wholesale & Custom Manufacturing Section -->
+      <div style="margin-bottom:40px;background:#ffffff;border-radius:16px;padding:32px 24px;border:1px solid #e2e8f0;">
+        <h2 style="font-size:24px;font-weight:800;color:#0f172a;margin-bottom:12px;">Gemstone Statues Wholesale Supplier &amp; Custom Carving in Jaipur</h2>
+        <p style="font-size:14px;color:#475569;line-height:1.7;margin-bottom:24px;">
+          We supply temples, retailers, and export houses worldwide with authentic natural gemstone sculptures, custom deity carvings, and pure Sphatik idols at direct factory wholesale rates from our workshop in Sanganer, Jaipur, Rajasthan (India).
+        </p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:16px;margin-bottom:24px;">
+          <div style="padding:16px;background:#faf8f5;border-radius:8px;border:1px solid #f1f5f9;">
+            <h3 style="font-size:15px;font-weight:700;color:#0f172a;margin-bottom:6px;">Direct Factory Wholesale</h3>
+            <p style="font-size:13px;color:#64748b;line-height:1.5;margin:0;">Zero middlemen markup with transparent bulk pricing for dealers, retailers, and institutions.</p>
+          </div>
+          <div style="padding:16px;background:#faf8f5;border-radius:8px;border:1px solid #f1f5f9;">
+            <h3 style="font-size:15px;font-weight:700;color:#0f172a;margin-bottom:6px;">Bespoke Deity Carving</h3>
+            <p style="font-size:13px;color:#64748b;line-height:1.5;margin:0;">Custom statues from 2 inches to 5+ feet in White Quartz, Rose Quartz, Green Jade, Amethyst, and Black Obsidian.</p>
+          </div>
+          <div style="padding:16px;background:#faf8f5;border-radius:8px;border:1px solid #f1f5f9;">
+            <h3 style="font-size:15px;font-weight:700;color:#0f172a;margin-bottom:6px;">100% Natural Earth Crystals</h3>
+            <p style="font-size:13px;color:#64748b;line-height:1.5;margin:0;">Every idol is carved from certified earth-mined rough gemstones with verifiable inclusions and test certificates.</p>
+          </div>
+          <div style="padding:16px;background:#faf8f5;border-radius:8px;border:1px solid #f1f5f9;">
+            <h3 style="font-size:15px;font-weight:700;color:#0f172a;margin-bottom:6px;">All-India &amp; Global Shipping</h3>
+            <p style="font-size:13px;color:#64748b;line-height:1.5;margin:0;">Multi-layer wooden crate packaging with express insured transit across India and to USA, UK, Canada, Australia, UAE.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      ${homeFaqsHtml}
+
+      <!-- Local Business NAP Footer Preview -->
+      <div style="margin-top:32px;padding:20px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;font-size:13px;color:#64748b;text-align:center;">
+        <p style="font-weight:700;color:#1e293b;margin:0 0 6px 0;">Crystal Jaipuria — Gemstone God Statues Manufacturer &amp; Wholesale Supplier</p>
+        <p style="margin:0 0 4px 0;">Workshop Address: West Part, Prabha Mangal Vihar, Plot No.03, Mod, Sanganer, Muhana, Jaipur, Rajasthan 302029, India</p>
+        <p style="margin:0;">Phone / WhatsApp: +91 8306317032 | Email: crystaljaipurya@gmail.com | Worldwide Delivery</p>
+      </div>
+    </div>
+  `.trim();
+
+  const homeHtml = buildPageHtml({
+    title: "Gemstone God Statues Manufacturer & Wholesale Supplier in Jaipur, India | Crystal Jaipuria",
+    description: "Leading gemstone god statues manufacturer & wholesale supplier in Jaipur, Rajasthan (India). Handcrafted natural crystal idols, Sphatik Shivlings & Vedic spiritual decor since 1989.",
+    canonical: `${BASE_URL}/`,
+    ogTitle: "Gemstone God Statues Manufacturer & Wholesale Supplier in Jaipur, India | Crystal Jaipuria",
+    ogDescription: "Leading gemstone god statues manufacturer & wholesale supplier in Jaipur, Rajasthan (India). Handcrafted natural crystal idols, Sphatik Shivlings & Vedic spiritual decor since 1989.",
+    bodyContent: homepageBodyPreview,
+  });
+  saveFile("index.html", homeHtml);
+  console.log("✓ Pre-rendered homepage with rich SEO content to /dist/index.html");
+
   console.log("🎉 Static Pre-rendering Completed Successfully!");
 };
 

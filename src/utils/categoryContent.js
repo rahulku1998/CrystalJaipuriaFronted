@@ -8,13 +8,13 @@ export const CATEGORY_CONTENT = {
   "god-statues": {
     slug: "god-statues",
     name: "God Statues",
-    title: "Natural Gemstone God Statues & Deity Idols | Crystal Jaipuria",
+    title: "Gemstone God Statues & Deity Murtis Manufacturer in Jaipur, India | Crystal Jaipuria",
     description:
-      "Buy 100% natural gemstone Hindu God statues directly from Jaipur manufacturer. Handcrafted Ganesha, Shiva, Buddha & deity murtis in certified crystals & quartz.",
+      "Buy 100% natural gemstone Hindu God statues directly from Jaipur manufacturer. Handcrafted Ganesha, Shiva, Krishna & deity murtis at factory wholesale prices.",
     canonical: "https://www.crystaljaipuria.com/god-statues",
-    ogTitle: "Natural Gemstone God Statues & Deity Idols | Crystal Jaipuria",
+    ogTitle: "Gemstone God Statues & Deity Murtis Manufacturer in Jaipur, India | Crystal Jaipuria",
     ogDescription:
-      "Explore handcrafted gemstone God statues from Crystal Jaipuria, Jaipur. Authentic Ganesha, Shiva and spiritual deity idols in pure certified gemstones.",
+      "Buy 100% natural gemstone Hindu God statues directly from Jaipur manufacturer. Handcrafted Ganesha, Shiva, Krishna & deity murtis at factory wholesale prices.",
     headline: "Authentic Hand-Carved Gemstone God Statues",
     intro:
       "Explore our exquisite collection of hand-carved gemstone God statues, sculpted by master artisans in Jaipur, India. Each deity idol is individually hand-crafted from 100% natural, untreated gemstones including Clear Quartz (Sphatik), Green Jade, Rose Quartz, Amethyst, and Red Jasper. Designed for home altars, temple rooms, and sacred gifting, our murtis adhere to authentic Vedic iconography while radiating pure gemstone energy.",
@@ -44,13 +44,13 @@ export const CATEGORY_CONTENT = {
   "crystal-statues": {
     slug: "crystal-statues",
     name: "Crystal Statues",
-    title: "Natural Crystal Animal Carvings & Vastu Figurines | Crystal Jaipuria",
+    title: "Natural Crystal Animal Statues & Vastu Figurines in Jaipur, India | Crystal Jaipuria",
     description:
-      "Explore natural crystal animal statues, bird carvings & Vastu figurines handcrafted in Jaipur. Rose Quartz swans, Green Jade elephants & healing stone decor.",
+      "Handcrafted natural crystal animal statues, swan pairs & elephant carvings in Jaipur, Rajasthan (India). Authentic Vastu decor and gemstone figurines at wholesale rates.",
     canonical: "https://www.crystaljaipuria.com/crystal-statues",
-    ogTitle: "Natural Crystal Animal Carvings & Vastu Figurines | Crystal Jaipuria",
+    ogTitle: "Natural Crystal Animal Statues & Vastu Figurines in Jaipur, India | Crystal Jaipuria",
     ogDescription:
-      "Handcrafted crystal animal statues, swan pairs & elephant carvings in natural Rose Quartz & Jade. Premium Vastu decor from Jaipur artisans.",
+      "Handcrafted natural crystal animal statues, swan pairs & elephant carvings in Jaipur, Rajasthan (India). Authentic Vastu decor and gemstone figurines at wholesale rates.",
     headline: "Handcrafted Crystal Animal Carvings & Vastu Figurines",
     intro:
       "Discover our artisan-crafted collection of natural gemstone animal carvings, birds, and Vastu decor figurines. Sculpted from pure crystals like Rose Quartz, Aventurine, and Green Jade, each figurine embodies symbolic harmony—such as Pair of Swans for marital bliss and love, and Elephants for strength, wisdom, and protection. Perfectly sized for tabletop displays, living rooms, and thoughtful gifting.",
@@ -75,26 +75,26 @@ export const CATEGORY_CONTENT = {
   shivling: {
     slug: "shivling",
     name: "Shivling",
-    title: "Original Sphatik & Gemstone Shivling | Sacred Shiva Lingam | Crystal Jaipuria",
+    title: "Gemstone Shivling & Natural Stone Shiva Lingam Manufacturer in Jaipur, India | Crystal Jaipuria",
     description:
-      "Buy certified natural Sphatik Shivling & gemstone Shiva Lingams from Jaipur manufacturer. Hand-carved Lapis Lazuli, Quartz & natural stone Shivlings for home puja.",
+      "Buy authentic gemstone Shivlings & natural stone Shiva Lingams from Jaipur manufacturer. Handcrafted Jade, Lapis, Quartz, Ruby, Pyrite & Black Agate Shivlings at wholesale rates.",
     canonical: "https://www.crystaljaipuria.com/shivling",
-    ogTitle: "Original Sphatik & Gemstone Shivling | Sacred Shiva Lingam | Crystal Jaipuria",
+    ogTitle: "Gemstone Shivling & Natural Stone Shiva Lingam Manufacturer in Jaipur, India | Crystal Jaipuria",
     ogDescription:
-      "Explore authentic hand-carved gemstone Shivlings and Sphatik Shiva Lingas in natural stones. Factory direct wholesale from Jaipur, India.",
-    headline: "Sacred Gemstone & Sphatik Shivlings",
+      "Buy authentic gemstone Shivlings & natural stone Shiva Lingams from Jaipur manufacturer. Handcrafted Jade, Lapis, Quartz, Ruby, Pyrite & Black Agate Shivlings at wholesale rates.",
+    headline: "Authentic Gemstone & Natural Stone Shivlings",
     intro:
-      "Worship Lord Shiva with authentic, hand-carved gemstone Shivlings crafted from pure Sphatik (Clear Quartz), Lapis Lazuli, Black Agate, and natural minerals. According to Shiva Purana, performing Jalabhishek on a naturally energized Sphatik Shivling bestows spiritual peace, removes vastu doshas, and brings divine blessings to the household. Handcrafted with traditional Jalhari (Yoni base) by heritage artisans in Jaipur.",
+      "Worship Lord Shiva with authentic, hand-carved gemstone Shivlings crafted from natural stones including Jade, Lapis Lazuli, Ruby, Pyrite, Black Agate, and Quartz minerals. According to Shiva Purana, performing Jalabhishek on a naturally energized gemstone Shivling bestows spiritual peace, removes vastu doshas, and brings divine blessings to the household. Handcrafted with traditional Jalhari (Yoni base) by master artisans in Jaipur, Rajasthan.",
     faqs: [
       {
-        question: "Can a Sphatik Shivling be kept and worshipped at home?",
+        question: "Can a gemstone Shivling be kept and worshipped at home?",
         answer:
-          "Yes, keeping a Sphatik Shivling at home is considered extremely meritorious in Hindu tradition. Sphatik is inherently pure and self-cooling, creating a serene and sattvic atmosphere in the home temple.",
+          "Yes, keeping a natural gemstone Shivling at home is considered extremely meritorious in Hindu tradition. Natural stones are inherently pure and self-energized, creating a serene and sattvic atmosphere in the home temple.",
       },
       {
         question: "How should Jalabhishek be performed on a gemstone Shivling?",
         answer:
-          "Offer fresh water or Ganga jal with Bilva (Bel) leaves. Sphatik can also be offered raw milk and honey, followed by washing with clean water and drying with a clean soft cloth.",
+          "Offer fresh water or Ganga jal with Bilva (Bel) leaves. Most gemstone Shivlings can also be offered raw milk and honey, followed by washing with clean water and drying with a clean soft cloth.",
       },
       {
         question: "What size of Shivling is recommended for home worship?",
@@ -106,14 +106,14 @@ export const CATEGORY_CONTENT = {
   "shree-yantra": {
     slug: "shree-yantra",
     name: "Shree Yantra",
-    title: "Certified Sphatik Shree Yantra 3D Meru | Authentic Crystal Yantra | Crystal Jaipuria",
+    title: "3D Meru Crystal Shree Yantra Manufacturer in Jaipur, India | Crystal Jaipuria",
     description:
-      "Buy authentic hand-carved Sphatik Shree Yantra (Meru Prushtha) from Jaipur manufacturer. 100% natural quartz 3D Sri Yantra for wealth, abundance & Vastu harmony.",
+      "Authentic 3D Meru crystal Shree Yantra manufacturer in Jaipur, Rajasthan (India). Mathematically precise natural quartz Sri Yantras for wealth, abundance & Vastu harmony.",
     canonical: "https://www.crystaljaipuria.com/shree-yantra",
-    ogTitle: "Certified Sphatik Shree Yantra 3D Meru | Authentic Crystal Yantra | Crystal Jaipuria",
+    ogTitle: "3D Meru Crystal Shree Yantra Manufacturer in Jaipur, India | Crystal Jaipuria",
     ogDescription:
-      "Discover authentic 3D Meru Sphatik Shree Yantras carved in natural crystal quartz. Factory direct wholesale from Jaipur, India.",
-    headline: "Authentic 3D Sphatik Shree Yantras",
+      "Authentic 3D Meru crystal Shree Yantra manufacturer in Jaipur, Rajasthan (India). Mathematically precise natural quartz Sri Yantras for wealth, abundance & Vastu harmony.",
+    headline: "Authentic 3D Sphatik & Crystal Shree Yantras",
     intro:
       "The Shree Yantra (Sri Chakra) is regarded as the supreme geometric symbol of Goddess Maha Lakshmi, radiating immense cosmic energy and prosperity. Our 3D Meru Shree Yantras are carved with mathematical precision from 100% natural Clear Quartz (Sphatik) crystals in Jaipur. Installing an authentic Sphatik Shree Yantra harmonizes Vastu directional defects, attracts financial abundance, and enhances meditation focus.",
     faqs: [
@@ -137,13 +137,13 @@ export const CATEGORY_CONTENT = {
   angel: {
     slug: "angel",
     name: "Angel",
-    title: "Hand-Carved Gemstone Healing Angels | Amethyst & Crystal Angels | Crystal Jaipuria",
+    title: "Hand-Carved Gemstone Healing Angels & Crystals in Jaipur, India | Crystal Jaipuria",
     description:
-      "Explore artisan-carved gemstone healing angels & pocket guardian angels from Crystal Jaipuria. Natural Amethyst, Quartz & Selenite angels for Reiki, peace & gifting.",
+      "Explore artisan-carved gemstone healing angels & pocket guardian angels handcrafted in Jaipur, Rajasthan. Natural Amethyst, Rose Quartz & crystal angels for Reiki & peace.",
     canonical: "https://www.crystaljaipuria.com/angel",
-    ogTitle: "Hand-Carved Gemstone Healing Angels | Amethyst & Crystal Angels | Crystal Jaipuria",
+    ogTitle: "Hand-Carved Gemstone Healing Angels & Crystals in Jaipur, India | Crystal Jaipuria",
     ogDescription:
-      "Natural Amethyst and gemstone angel carvings handcrafted in Jaipur. Perfect for spiritual decor, healing crystals, and thoughtful gifting.",
+      "Explore artisan-carved gemstone healing angels & pocket guardian angels handcrafted in Jaipur, Rajasthan. Natural Amethyst, Rose Quartz & crystal angels for Reiki & peace.",
     headline: "Natural Gemstone Carved Healing Angels",
     intro:
       "Welcome peace, protection, and angelic guidance into your space with our hand-carved gemstone angels. Meticulously shaped from natural Amethyst and crystal minerals, each guardian angel figure serves as a personal talisman for meditation, stress relief, and Reiki healing. Pocket-friendly sizes make them ideal companions for work desks, bedside tables, and thoughtful spiritual gifts.",
@@ -168,13 +168,13 @@ export const CATEGORY_CONTENT = {
   diya: {
     slug: "diya",
     name: "Diya",
-    title: "Handcrafted Gemstone & Crystal Diyas | Natural Stone Deepaks | Crystal Jaipuria",
+    title: "Handcrafted Gemstone & Crystal Diyas Manufacturer in Jaipur, India | Crystal Jaipuria",
     description:
-      "Shop handcrafted gemstone and crystal diyas from Jaipur manufacturer. Carved Amethyst & quartz deepaks for daily puja, Diwali, meditation & luxury spiritual gifting.",
+      "Buy handcrafted gemstone and crystal diyas from Jaipur manufacturer. Hand-carved Amethyst & quartz deepaks for daily puja, Diwali, and spiritual gifting at factory direct rates.",
     canonical: "https://www.crystaljaipuria.com/diya",
-    ogTitle: "Handcrafted Gemstone & Crystal Diyas | Natural Stone Deepaks | Crystal Jaipuria",
+    ogTitle: "Handcrafted Gemstone & Crystal Diyas Manufacturer in Jaipur, India | Crystal Jaipuria",
     ogDescription:
-      "Hand-carved natural Amethyst and crystal diyas for sacred puja spaces and Diwali gifting. Crafted by master artisans in Jaipur, India.",
+      "Buy handcrafted gemstone and crystal diyas from Jaipur manufacturer. Hand-carved Amethyst & quartz deepaks for daily puja, Diwali, and spiritual gifting at factory direct rates.",
     headline: "Hand-Carved Gemstone & Crystal Diyas",
     intro:
       "Elevate your daily aarti and festive celebrations with our hand-carved gemstone diyas (deepaks). Meticulously sculpted from raw natural gemstones like Amethyst and Clear Quartz, these artisanal oil lamps retain the natural crystalline luster while providing a safe, enduring vessel for cotton wicks and pure ghee. A blend of timeless Indian tradition and natural crystal aesthetics.",
