@@ -98,9 +98,9 @@ const AboutGemstoneSection = () => {
                   <FaGem className="text-amber-500 text-sm" />
                 </div>
                 <div>
-                  <h3 className="text-xs font-bold text-stone-900">
+                  <p className="text-xs font-bold text-stone-900">
                     100% Certified Pure Natural Gemstones
-                  </h3>
+                  </p>
                   <p className="text-[11px] text-stone-500 leading-relaxed">
                     Natural Sphatik (Quartz), Green Jade, Rose Quartz, Ruby, Amethyst, Lapis Lazuli &amp; Black Agate. Learn more in our{" "}
                     <Link to="/gemstone-authenticity-guide" className="text-stone-700 font-medium hover:text-amber-700 hover:underline underline-offset-2 transition-colors">
@@ -116,9 +116,9 @@ const AboutGemstoneSection = () => {
                   <FaLandmark className="text-amber-500 text-sm" />
                 </div>
                 <div>
-                  <h3 className="text-xs font-bold text-stone-900">
+                  <p className="text-xs font-bold text-stone-900">
                     Sacred Deities &amp; Custom Artistic Sculptures
-                  </h3>
+                  </p>
                   <p className="text-[11px] text-stone-500 leading-relaxed">
                     Hand-carved{" "}
                     <Link to="/shivling" className="text-stone-700 font-medium hover:text-amber-700 hover:underline underline-offset-2 transition-colors">
@@ -142,9 +142,9 @@ const AboutGemstoneSection = () => {
                   <FaGlobeAmericas className="text-amber-500 text-sm" />
                 </div>
                 <div>
-                  <h3 className="text-xs font-bold text-stone-900">
+                  <p className="text-xs font-bold text-stone-900">
                     Wholesale Factory Direct &amp; Global Doorstep Export
-                  </h3>
+                  </p>
                   <p className="text-[11px] text-stone-500 leading-relaxed">
                     Serving stores, interior designers, temples &amp; collectors across India, USA, UK, Europe &amp; UAE.
                   </p>

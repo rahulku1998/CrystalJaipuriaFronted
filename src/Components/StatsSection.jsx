@@ -156,9 +156,9 @@ return (
             key={index}
             className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-5 lg:p-6 border border-stone-200/80 shadow-2xs hover:shadow-xs transition text-center"
           >
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-amber-600">
+            <p className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-amber-600">
               <Counter number={item.number} suffix={item.suffix} />
-            </h2>
+            </p>
             <p className="mt-1.5 text-stone-700 font-medium text-xs sm:text-sm lg:text-[15px] leading-tight">
               {item.title}
             </p>
