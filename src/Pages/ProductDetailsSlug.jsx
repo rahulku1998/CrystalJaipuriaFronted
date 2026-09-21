@@ -52,6 +52,8 @@ const ProductDetails = () => {
     faqs: false,
   });
 
+
+
   const toggleSection = (section) => {
     setOpenSections((prev) => {
       const nextState = !prev[section];

@@ -4,6 +4,7 @@ export const LEGACY_PRODUCTS = [];
 export const LEGACY_PRODUCT_MAP = new Map();
 
 export const SLUG_ALIASES = {
+  "natural-green-jade-shivling": "green-jade-shivling",
   "red-jasper-gemston-shivling": "natural-red-jasper-gemstone-shivling",
   "rose-quartz-ganesh-with-gold-painting": "rose-quartz-ganesha-with-gold-painted",
   "natural-green-jade-shiva-face-statue": "green-jade-carving-shiva-face-statue",
