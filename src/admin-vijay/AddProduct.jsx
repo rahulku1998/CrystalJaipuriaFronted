@@ -44,6 +44,7 @@ const AddProduct = () => {
     weight: prefill?.weight || "",
     pricePerGram: "",
     pricePerCarat: "",
+    pricePerUnit: prefill?.pricePerUnit || "",
     size: prefill?.size || "",
   }));
 
@@ -865,6 +866,14 @@ const handleGenerateShortDetail = async () => {
                 type="text"
                 value={form.size}
                 onChange={handleChange}
+              />
+                  <Input
+                label="Price Per Unit (e.g. ₹10 / gram or ₹30 / carat)"
+                name="pricePerUnit"
+                type="text"
+                value={form.pricePerUnit}
+                onChange={handleChange}
+                placeholder="e.g. ₹10 / gram, ₹30 / carat"
               />
 
 

@@ -279,6 +279,15 @@ export const getProductSchema = (product, canonicalUrl) => {
     };
   }
 
+  if (product.pricePerUnit) {
+    offersObj.priceSpecification = {
+      "@type": "UnitPriceSpecification",
+      price: Number(parsedPrice.price) || 0,
+      priceCurrency: "INR",
+      unitText: product.pricePerUnit,
+    };
+  }
+
   const graph = [
     {
       "@type": "Product",
@@ -339,6 +348,11 @@ export const getProductSchema = (product, canonicalUrl) => {
           "@type": "PropertyValue",
           name: "Dimensions",
           value: String(product.size),
+        } : null,
+        product.pricePerUnit ? {
+          "@type": "PropertyValue",
+          name: "Price per Unit",
+          value: String(product.pricePerUnit),
         } : null,
       ].filter(Boolean),
     },

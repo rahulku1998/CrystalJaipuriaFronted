@@ -188,7 +188,12 @@ const generateSitemap = async () => {
         .replace(/\s*-\s*100%\s*certified/gi, "")
         .replace(/\s*100%\s*certified/gi, "")
         .trim();
-      llms += `- [${cleanProdName}](${BASE_URL}/product/${slug}): ${desc || "Handcrafted natural gemstone product by Crystal Jaipuria."}\n`;
+      const priceText = prod.price ? `₹${prod.price}` : "";
+      const unitText = prod.pricePerUnit ? ` (${prod.pricePerUnit})` : "";
+      const weightText = prod.weight ? ` | Weight: ${prod.weight}` : "";
+      const sizeText = prod.size ? ` | Size: ${prod.size}` : "";
+      const pricingStats = priceText ? ` [Price: ${priceText}${unitText}${weightText}${sizeText}]` : "";
+      llms += `- [${cleanProdName}](${BASE_URL}/product/${slug})${pricingStats}: ${desc || "Handcrafted natural gemstone product by Crystal Jaipuria."}\n`;
     });
   }
 

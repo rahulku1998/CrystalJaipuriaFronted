@@ -236,16 +236,19 @@ export const FALLBACK_PRODUCTS = [
       "slug": "ganesha-statues"
     },
     "subCategoryName": "Ganesha Statues",
-    "size": "4.2 Inch",
-    "weight": "371 g",
+    "size": "2 in to 5 inch",
+    "weight": "371 g to 2 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹10 / gram",
+    "pricePerGram": 10,
+    "pricePerCarat": ""
   },
   {
     "_id": "6aa66b34a69037c73ebf090c",
     "name": "Australian Jade Ganesha Carving Idol Statue for Home Temple & Vastu (4.2 Inch, 462 g)",
     "slug": "australian-jade-ganesha-carving",
-    "price": 4200,
+    "price": 500,
     "detail": "Handcrafted from certified Natural Green Jade (Nephrite / Columbian Jadeite), this auspicious Australian Jade Ganesha Carving is sculpted by master artisans at Crystal Jaipuria, Jaipur (est. 1989). Revered as Vighnaharta (the remover of obstacles) and the harbinger of prosperity, this divine idol brings peaceful energy, good fortune, and aesthetic grace to home temples, office desks, and sacred spaces.",
     "description": "<p>Handcrafted from certified Natural Green Jade (Nephrite / Columbian Jadeite), this auspicious Australian Jade Ganesha Carving is sculpted by master artisans at Crystal Jaipuria, Jaipur (est. 1989). Revered as Vighnaharta (the remover of obstacles) and the harbinger of prosperity, this divine idol brings peaceful energy, good fortune, and aesthetic grace to home temples, office desks, and sacred spaces.</p>\n\n<p>Handcrafted from certified Natural Australian Jade (Chrysoprase), this auspicious Australian Jade Ganesha Carving Idol Statue for Home Temple & Vastu (4.2 Inch, 462 G) is sculpted by master artisans at Crystal Jaipuria, Jaipur (est. 1989). Revered as Vighnaharta (the remover of obstacles) and the harbinger of prosperity, this divine idol brings peaceful energy, good fortune, and aesthetic grace to home temples, office desks, and sacred spaces.</p>\n\n<h2>Vighnaharta Iconography & Sacred Symbolism</h2>\n<p>This Australian Jade Ganesha Carving Idol Statue for Home Temple & Vastu (4.2 Inch, 462 G) is hand-sculpted capturing the divine grace of Lord Ganesha in classical Sanskrit iconography:</p><ul>  <li><strong>Vamamukhi (Left-Turned Trunk):</strong> Represents the tranquil, nurturing Lunar channel (Ida Nadi), bringing peaceful domestic bliss, harmony among family members, and uninterrupted professional progress.</li>  <li><strong>Modaka-Patra & Ankusha:</strong> Symbolizes the sweet rewards of spiritual sadhana held in one hand, while the divine axe in the other cuts through worldly attachments and karmic hindrances.</li>  <li><strong>Abhaya Mudra:</strong> The raised right palm grants fearless reassurance (Abhaya), assuring the devotee of constant divine guardianship against negative planetary energies.</li></ul><p>Carved from dense, Natural Australian Jade (Chrysoprase), this idol functions as an energetic sanctuary, transmuting household anxiety into creative confidence and financial clarity.</p>\n\n<h2>Gemological Provenance & Jaipur Lapidary Heritage</h2>\n<p>Every specimen is carved from a single, hand-selected rough crystal at Crystal Jaipuria's generational artisan workshops in Jaipur (Est. 1989). We preserve the natural crystalline lattice of genuine Natural Australian Jade (Chrysoprase), guaranteeing authentic earth-mined quality without synthetic polymer coatings or resin casting.</p><p><strong>Authenticity Identification:</strong> Appealing apple-green to vivid mint jade-like translucency caused by natural nickel silicates; does not bleach or fade in sunlight.</p>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Australian Jade Ganesha Carving Idol Statue for Home Temple & Vastu (4.2 Inch, 462 G)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Mineral Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Natural Australian Jade (Chrysoprase) (Nickel-bearing Cryptocrystalline Quartz (Chalcedony))</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Estimated Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">462 Grams</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size & Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">4.2 Inch (Height: 5.5 cm, Width: 3.8 cm, Depth: 2.8 cm)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Crystal Structure & Hardness</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Trigonal (Cryptocrystalline) • 6.5 – 7.0 Mohs Scale</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Optical / Density Metrics</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">RI: 1.530 – 1.540 • SG: 2.58 – 2.64 g/cm³</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Hand-carved in Jaipur, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North-East (Ishanya), North, or East Altar</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Zero Synthetic Resin / Glass)</td>\n    </tr>\n  </tbody>\n</table>",
     "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Australian Jade Ganesha Carving Idol Statue for Home Temple & Vastu (4.2 Inch, 462 G)</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Earth-Mined Natural Australian Jade (Chrysoprase) (Nickel-bearing Cryptocrystalline Quartz (Chalcedony))</li>\n  <li><strong class=\"font-bold text-gray-900\">Mineral Hardness :</strong> 6.5 – 7.0 Mohs Scale on Mohs Scale (Exceptional durability &amp; scratch resistance)</li>\n  <li><strong class=\"font-bold text-gray-900\">Estimated Weight :</strong> 462 Grams</li>\n  <li><strong class=\"font-bold text-gray-900\">Size &amp; Dimensions :</strong> 4.2 Inch (Height: 5.5 cm, Width: 3.8 cm, Depth: 2.8 cm)</li>\n  <li><strong class=\"font-bold text-gray-900\">Lapidary Craftsmanship :</strong> Hand-carved from a single rough crystal block as per Vedic Shilpa Shastras</li>\n  <li><strong class=\"font-bold text-gray-900\">Surface Finish :</strong> Highly polished, mirror-smooth with authentic natural mineral inclusions</li>\n  <li><strong class=\"font-bold text-gray-900\">Vedic Consecration &amp; Care :</strong> Safe for daily Abhishek with Gangajal &amp; raw cow milk; wipe with soft microfiber cloth</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North-East (Ishanya Kon), North, or East facing home/office altar</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone (Zero synthetic resin/pressed glass, Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Country of Origin :</strong> Jaipur, Rajasthan, India</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Multi-layer shockproof high-density foam casing with 100% door-to-door transit insurance</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"Is the left-turned trunk (Vamamukhi) of this Australian Jade Ganesha Carving Idol Statue for Home Temple & Vastu (4.2 Inch, 462 G) suitable for household puja rooms?\",\"answer\":\"Yes, the left-turned trunk represents the gentle, auspicious Ida Nadi (Chandra channel), which is universally recommended for home temples, office desks, and residential entrances because it requires simple loving devotion rather than rigorous temple austerity.\"},{\"question\":\"Where is the ideal Vastu placement for this Australian Jade Ganesha Carving Idol Statue for Home Temple & Vastu (4.2 Inch, 462 G) at home or workplace?\",\"answer\":\"Place the idol facing North (the abode of Lord Shiva and Kubera) or East on an elevated wooden chowki or temple shelf. Avoid placing it directly opposite bathroom walls or under staircases.\"},{\"question\":\"What is the Vedic cleansing (Shuddhi) ritual before establishing this Ganesha idol?\",\"answer\":\"Wash with mild water or rose water. Recharge facing morning sunrise.\"},{\"question\":\"How does the vibration of natural Natural Australian Jade (Chrysoprase) enhance Ganesha's blessings?\",\"answer\":\"Natural Natural Australian Jade (Chrysoprase) vibrates in resonance with the Heart Chakra (Anahata). It amplifies positive intentions, fostering compassionate heart healing, business growth, joyful emotional equilibrium, abundance attractor, while dispelling toxic environmental negativity.\"},{\"question\":\"Can we offer red vermillion (Sindoor) or sandalwood paste directly onto this stone idol?\",\"answer\":\"Yes, pure red sandalwood (Raktachandan) or natural turmeric paste can be respectfully applied. We recommend gentle wiping with soft wet cotton after puja to maintain the stone's mirror luster.\"},{\"question\":\"Does Crystal Jaipuria provide custom dimensions or wholesale temple orders for this idol?\",\"answer\":\"Yes. Having operated Jaipur manufacturing workshops since 1989, we accept custom size commissions ranging from 2 inches up to life-size single-block gemstone idols with full lab certifications.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Australian Jade Ganesha Carving Idol Statue for Home Temple & Vastu (4.2 Inch, 462 G) (462g, 4.2\\\") | Vighnaharta Siddhi Vinayak | Jaipuria\",\"metaDescription\":\"Buy 100% Certified Australian Jade Ganesha Carving Idol Statue for Home Temple & Vastu (4.2 Inch, 462 G) (462g, 4.2\\\"). Auspicious idol for obstacle removal &.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North (Kubera direction) or East quadrant on an elevated wooden chowki\",\"chakraPlanet\":\"Root Chakra (Muladhara) & Heart Chakra · Mercury (Budh)\",\"poojaVidhi\":\"Cleanse with Gangajal on Wednesday morning. Offer fresh Durva grass, yellow modak, and red chandan tilak.\",\"vedicBenefits\":\"Vighnaharta grace removing professional blockages, awakening creative clarity, and protecting new business ventures.\"} -->",
@@ -299,16 +302,19 @@ export const FALLBACK_PRODUCTS = [
       "slug": "ganesha-statues"
     },
     "subCategoryName": "Ganesha Statues",
-    "size": "4.2 Inch",
-    "weight": "462 g",
+    "size": "2 inch to 7 inch",
+    "weight": "50 gram to 500gram",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹4.5 / gram",
+    "pricePerGram": 4.5,
+    "pricePerCarat": ""
   },
   {
     "_id": "6aa669efa69037c73ebf0869",
     "name": "Hand Carved Ruby Ganesha Idol Statue for Home Temple & Vastu (4.2 Inch, 616 g)",
     "slug": "hand-carved-ruby-ganesha",
-    "price": 14700,
+    "price": 30,
     "detail": "Handcrafted from certified Natural Ruby (Certified Manikya), this auspicious Hand Carved Ruby Ganesha is sculpted by master artisans at Crystal Jaipuria, Jaipur (est. 1989). Revered as Vighnaharta (the remover of obstacles) and the harbinger of prosperity, this divine idol brings peaceful energy, good fortune, and aesthetic grace to home temples, office desks, and sacred spaces.",
     "description": "<p>Handcrafted from certified Natural Ruby (Certified Manikya), this auspicious Hand Carved Ruby Ganesha Idol Statue for Home Temple & Vastu (4.2 Inch, 616 G) is sculpted by master artisans at Crystal Jaipuria, Jaipur (est. 1989). Revered as Vighnaharta (the remover of obstacles) and the harbinger of prosperity, this divine idol brings peaceful energy, good fortune, and aesthetic grace to home temples, office desks, and sacred spaces.</p>\n\n<h2>Vighnaharta Iconography & Sacred Symbolism</h2>\n<p>This Hand Carved Ruby Ganesha Idol Statue for Home Temple & Vastu (4.2 Inch, 616 G) is hand-sculpted capturing the divine grace of Lord Ganesha in classical Sanskrit iconography:</p><ul>  <li><strong>Vamamukhi (Left-Turned Trunk):</strong> Represents the tranquil, nurturing Lunar channel (Ida Nadi), bringing peaceful domestic bliss, harmony among family members, and uninterrupted professional progress.</li>  <li><strong>Modaka-Patra & Ankusha:</strong> Symbolizes the sweet rewards of spiritual sadhana held in one hand, while the divine axe in the other cuts through worldly attachments and karmic hindrances.</li>  <li><strong>Abhaya Mudra:</strong> The raised right palm grants fearless reassurance (Abhaya), assuring the devotee of constant divine guardianship against negative planetary energies.</li></ul><p>Carved from dense, Natural Ruby (Certified Manikya), this idol functions as an energetic sanctuary, transmuting household anxiety into creative confidence and financial clarity.</p>\n\n<h2>Gemological Provenance & Jaipur Lapidary Heritage</h2>\n<p>Every specimen is carved from a single, hand-selected rough crystal at Crystal Jaipuria's generational artisan workshops in Jaipur (Est. 1989). We preserve the natural crystalline lattice of genuine Natural Ruby (Certified Manikya), guaranteeing authentic earth-mined quality without synthetic polymer coatings or resin casting.</p><p><strong>Authenticity Identification:</strong> Possesses a heavy, substantial density with rich purplish-red to pigeon-blood red crystallization. Natural silk rutile needles and fingerprint liquid inclusions confirm 100% natural, unheated earth origin.</p>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Hand Carved Ruby Ganesha Idol Statue for Home Temple & Vastu (4.2 Inch, 616 G)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Mineral Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Natural Ruby (Certified Manikya) (Aluminium Oxide with Chromium trace (Al2O3:Cr))</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Estimated Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">616 Grams</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size & Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">4.2 Inch (Height: 5.5 cm, Width: 3.8 cm, Depth: 2.8 cm)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Crystal Structure & Hardness</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Trigonal (Hexagonal Scalenohedral) • 9.0 Mohs Scale (Exceptional Durability)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Optical / Density Metrics</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">RI: 1.762 – 1.770 • SG: 4.00 g/cm³</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Hand-carved in Jaipur, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North-East (Ishanya), North, or East Altar</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Zero Synthetic Resin / Glass)</td>\n    </tr>\n  </tbody>\n</table>",
     "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Hand Carved Ruby Ganesha Idol Statue for Home Temple & Vastu (4.2 Inch, 616 G)</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Earth-Mined Natural Ruby (Certified Manikya) (Aluminium Oxide with Chromium trace (Al2O3:Cr))</li>\n  <li><strong class=\"font-bold text-gray-900\">Mineral Hardness :</strong> 9.0 Mohs Scale (Exceptional Durability) on Mohs Scale (Exceptional durability &amp; scratch resistance)</li>\n  <li><strong class=\"font-bold text-gray-900\">Estimated Weight :</strong> 616 Grams</li>\n  <li><strong class=\"font-bold text-gray-900\">Size &amp; Dimensions :</strong> 4.2 Inch (Height: 5.5 cm, Width: 3.8 cm, Depth: 2.8 cm)</li>\n  <li><strong class=\"font-bold text-gray-900\">Lapidary Craftsmanship :</strong> Hand-carved from a single rough crystal block as per Vedic Shilpa Shastras</li>\n  <li><strong class=\"font-bold text-gray-900\">Surface Finish :</strong> Highly polished, mirror-smooth with authentic natural mineral inclusions</li>\n  <li><strong class=\"font-bold text-gray-900\">Vedic Consecration &amp; Care :</strong> Safe for daily Abhishek with Gangajal &amp; raw cow milk; wipe with soft microfiber cloth</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North-East (Ishanya Kon), North, or East facing home/office altar</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone (Zero synthetic resin/pressed glass, Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Country of Origin :</strong> Jaipur, Rajasthan, India</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Multi-layer shockproof high-density foam casing with 100% door-to-door transit insurance</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"Is the left-turned trunk (Vamamukhi) of this Hand Carved Ruby Ganesha Idol Statue for Home Temple & Vastu (4.2 Inch, 616 G) suitable for household puja rooms?\",\"answer\":\"Yes, the left-turned trunk represents the gentle, auspicious Ida Nadi (Chandra channel), which is universally recommended for home temples, office desks, and residential entrances because it requires simple loving devotion rather than rigorous temple austerity.\"},{\"question\":\"Where is the ideal Vastu placement for this Hand Carved Ruby Ganesha Idol Statue for Home Temple & Vastu (4.2 Inch, 616 G) at home or workplace?\",\"answer\":\"Place the idol facing North (the abode of Lord Shiva and Kubera) or East on an elevated wooden chowki or temple shelf. Avoid placing it directly opposite bathroom walls or under staircases.\"},{\"question\":\"What is the Vedic cleansing (Shuddhi) ritual before establishing this Ganesha idol?\",\"answer\":\"Wash with warm water, Gangajal, or raw cow milk. Consecrate and recharge on Sunday mornings facing the East during sunrise.\"},{\"question\":\"How does the vibration of natural Natural Ruby (Certified Manikya) enhance Ganesha's blessings?\",\"answer\":\"Natural Natural Ruby (Certified Manikya) vibrates in resonance with the Root (Muladhara) & Solar Plexus Chakra. It amplifies positive intentions, fostering leadership aura, executive charisma, Surya Mahadasha neutralization, vital life force, while dispelling toxic environmental negativity.\"},{\"question\":\"Can we offer red vermillion (Sindoor) or sandalwood paste directly onto this stone idol?\",\"answer\":\"Yes, pure red sandalwood (Raktachandan) or natural turmeric paste can be respectfully applied. We recommend gentle wiping with soft wet cotton after puja to maintain the stone's mirror luster.\"},{\"question\":\"Does Crystal Jaipuria provide custom dimensions or wholesale temple orders for this idol?\",\"answer\":\"Yes. Having operated Jaipur manufacturing workshops since 1989, we accept custom size commissions ranging from 2 inches up to life-size single-block gemstone idols with full lab certifications.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Hand Carved Ruby Ganesha Idol Statue for Home Temple & Vastu (4.2 Inch, 616 G) (616g, 4.2\\\") | Vighnaharta Siddhi Vinayak | Jaipuria\",\"metaDescription\":\"Buy 100% Certified Hand Carved Ruby Ganesha Idol Statue for Home Temple & Vastu (4.2 Inch, 616 G) (616g, 4.2\\\"). Auspicious idol for obstacle removal &.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North (Kubera direction) or East quadrant on an elevated wooden chowki\",\"chakraPlanet\":\"Root Chakra (Muladhara) & Heart Chakra · Mercury (Budh)\",\"poojaVidhi\":\"Cleanse with Gangajal on Wednesday morning. Offer fresh Durva grass, yellow modak, and red chandan tilak.\",\"vedicBenefits\":\"Vighnaharta grace removing professional blockages, awakening creative clarity, and protecting new business ventures.\"} -->",
@@ -362,10 +368,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "ganesha-statues"
     },
     "subCategoryName": "Ganesha Statues",
-    "size": "4.2 Inch",
-    "weight": "616 g",
+    "size": "2 inch to 5 inch",
+    "weight": "200 carat to 5000carat",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹30 / carat",
+    "pricePerGram": "",
+    "pricePerCarat": 30
   },
   {
     "_id": "6aa66899a69037c73ebf0806",
@@ -425,10 +434,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "krishna-statues"
     },
     "subCategoryName": "Krishna Statues",
-    "size": "4.2 Inch",
-    "weight": "616 g",
+    "size": "4 inch to 8 inch",
+    "weight": "200 carat to 4500carat",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹60 / carat",
+    "pricePerGram": "",
+    "pricePerCarat": 60
   },
   {
     "_id": "6aa58ecaa69037c73ebed354",
@@ -488,10 +500,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "gemstone-shree-yantra"
     },
     "subCategoryName": "Sacred Gemstone Yantra",
-    "size": "3.0 Inch",
-    "weight": "420 g",
+    "size": "1 inch to 6 inch",
+    "weight": "50 gram to 2 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹15 / gram",
+    "pricePerGram": 15,
+    "pricePerCarat": ""
   },
   {
     "_id": "6aa58ce5a69037c73ebed099",
@@ -551,16 +566,19 @@ export const FALLBACK_PRODUCTS = [
       "slug": "ganesha-statues"
     },
     "subCategoryName": "Ganesha Statues",
-    "size": "2.2 Inch",
-    "weight": "460 g",
+    "size": "2 inch to 7 inch",
+    "weight": "50 gram to 1 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹4.5 / gram",
+    "pricePerGram": 4.5,
+    "pricePerCarat": ""
   },
   {
     "_id": "6aa58b0fa69037c73ebecef5",
     "name": "Rose Quartz Ganesha Idol Statue for Home Temple & Vastu (2.0 Inch, 370 g)",
     "slug": "rose-quartz-ganesha",
-    "price": 3800,
+    "price": 500,
     "detail": "Handcrafted from certified Natural Rose Quartz (Pink Quartz), this auspicious Rose Quartz Ganesha is sculpted by master artisans at Crystal Jaipuria, Jaipur (est. 1989). Revered as Vighnaharta (the remover of obstacles) and the harbinger of prosperity, this divine idol brings peaceful energy, good fortune, and aesthetic grace to home temples, office desks, and sacred spaces.",
     "description": "<p>Handcrafted from certified Natural Rose Quartz (Pink Quartz), this auspicious Rose Quartz Ganesha Idol Statue for Home Temple & Vastu (2.0 Inch, 370 G) is sculpted by master artisans at Crystal Jaipuria, Jaipur (est. 1989). Revered as Vighnaharta (the remover of obstacles) and the harbinger of prosperity, this divine idol brings peaceful energy, good fortune, and aesthetic grace to home temples, office desks, and sacred spaces.</p>\n\n<h2>Vighnaharta Iconography & Sacred Symbolism</h2>\n<p>This Rose Quartz Ganesha Idol Statue for Home Temple & Vastu (2.0 Inch, 370 G) is hand-sculpted capturing the divine grace of Lord Ganesha in classical Sanskrit iconography:</p><ul>  <li><strong>Vamamukhi (Left-Turned Trunk):</strong> Represents the tranquil, nurturing Lunar channel (Ida Nadi), bringing peaceful domestic bliss, harmony among family members, and uninterrupted professional progress.</li>  <li><strong>Modaka-Patra & Ankusha:</strong> Symbolizes the sweet rewards of spiritual sadhana held in one hand, while the divine axe in the other cuts through worldly attachments and karmic hindrances.</li>  <li><strong>Abhaya Mudra:</strong> The raised right palm grants fearless reassurance (Abhaya), assuring the devotee of constant divine guardianship against negative planetary energies.</li></ul><p>Carved from dense, Natural Rose Quartz (Pink Quartz), this idol functions as an energetic sanctuary, transmuting household anxiety into creative confidence and financial clarity.</p>\n\n<h2>Gemological Provenance & Jaipur Lapidary Heritage</h2>\n<p>Every specimen is carved from a single, hand-selected rough crystal at Crystal Jaipuria's generational artisan workshops in Jaipur (Est. 1989). We preserve the natural crystalline lattice of genuine Natural Rose Quartz (Pink Quartz), guaranteeing authentic earth-mined quality without synthetic polymer coatings or resin casting.</p><p><strong>Authenticity Identification:</strong> Displays a distinctive translucent rosy-pink hue created by microscopic inclusions of dumortierite-like minerals throughout the crystal lattice.</p>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Rose Quartz Ganesha Idol Statue for Home Temple & Vastu (2.0 Inch, 370 G)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Mineral Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Natural Rose Quartz (Pink Quartz) (Silicon Dioxide with trace Titanium/Manganese (SiO2))</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Estimated Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">370 Grams</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size & Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">2.0 Inch (Height: 9.5 cm, Width: 6.8 cm, Depth: 5.2 cm)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Crystal Structure & Hardness</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Trigonal • 7.0 Mohs Scale</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Optical / Density Metrics</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">RI: 1.544 – 1.553 • SG: 2.65 g/cm³</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Hand-carved in Jaipur, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North-East (Ishanya), North, or East Altar</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Zero Synthetic Resin / Glass)</td>\n    </tr>\n  </tbody>\n</table>",
     "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Rose Quartz Ganesha Idol Statue for Home Temple & Vastu (2.0 Inch, 370 G)</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Earth-Mined Natural Rose Quartz (Pink Quartz) (Silicon Dioxide with trace Titanium/Manganese (SiO2))</li>\n  <li><strong class=\"font-bold text-gray-900\">Mineral Hardness :</strong> 7.0 Mohs Scale on Mohs Scale (Exceptional durability &amp; scratch resistance)</li>\n  <li><strong class=\"font-bold text-gray-900\">Estimated Weight :</strong> 370 Grams</li>\n  <li><strong class=\"font-bold text-gray-900\">Size &amp; Dimensions :</strong> 2.0 Inch (Height: 9.5 cm, Width: 6.8 cm, Depth: 5.2 cm)</li>\n  <li><strong class=\"font-bold text-gray-900\">Lapidary Craftsmanship :</strong> Hand-carved from a single rough crystal block as per Vedic Shilpa Shastras</li>\n  <li><strong class=\"font-bold text-gray-900\">Surface Finish :</strong> Highly polished, mirror-smooth with authentic natural mineral inclusions</li>\n  <li><strong class=\"font-bold text-gray-900\">Vedic Consecration &amp; Care :</strong> Safe for daily Abhishek with Gangajal &amp; raw cow milk; wipe with soft microfiber cloth</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North-East (Ishanya Kon), North, or East facing home/office altar</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone (Zero synthetic resin/pressed glass, Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Country of Origin :</strong> Jaipur, Rajasthan, India</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Multi-layer shockproof high-density foam casing with 100% door-to-door transit insurance</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"Is the left-turned trunk (Vamamukhi) of this Rose Quartz Ganesha Idol Statue for Home Temple & Vastu (2.0 Inch, 370 G) suitable for household puja rooms?\",\"answer\":\"Yes, the left-turned trunk represents the gentle, auspicious Ida Nadi (Chandra channel), which is universally recommended for home temples, office desks, and residential entrances because it requires simple loving devotion rather than rigorous temple austerity.\"},{\"question\":\"Where is the ideal Vastu placement for this Rose Quartz Ganesha Idol Statue for Home Temple & Vastu (2.0 Inch, 370 G) at home or workplace?\",\"answer\":\"Place the idol facing North (the abode of Lord Shiva and Kubera) or East on an elevated wooden chowki or temple shelf. Avoid placing it directly opposite bathroom walls or under staircases.\"},{\"question\":\"What is the Vedic cleansing (Shuddhi) ritual before establishing this Ganesha idol?\",\"answer\":\"Rinse gently with Gangajal or rose water. Expose to early morning sunrise or moonlight to revitalize its soothing vibrations.\"},{\"question\":\"How does the vibration of natural Natural Rose Quartz (Pink Quartz) enhance Ganesha's blessings?\",\"answer\":\"Natural Natural Rose Quartz (Pink Quartz) vibrates in resonance with the Heart Chakra (Anahata). It amplifies positive intentions, fostering unconditional love, familial harmony, release of emotional grief, compassionate space alignment, while dispelling toxic environmental negativity.\"},{\"question\":\"Can we offer red vermillion (Sindoor) or sandalwood paste directly onto this stone idol?\",\"answer\":\"Yes, pure red sandalwood (Raktachandan) or natural turmeric paste can be respectfully applied. We recommend gentle wiping with soft wet cotton after puja to maintain the stone's mirror luster.\"},{\"question\":\"Does Crystal Jaipuria provide custom dimensions or wholesale temple orders for this idol?\",\"answer\":\"Yes. Having operated Jaipur manufacturing workshops since 1989, we accept custom size commissions ranging from 2 inches up to life-size single-block gemstone idols with full lab certifications.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Rose Quartz Ganesha Idol Statue for Home Temple & Vastu (2.0 Inch, 370 G) (370g, 2.0\\\") | Vighnaharta Siddhi Vinayak | Jaipuria\",\"metaDescription\":\"Buy 100% Certified Rose Quartz Ganesha Idol Statue for Home Temple & Vastu (2.0 Inch, 370 G) (370g, 2.0\\\"). Auspicious idol for obstacle removal & prosperity..\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North (Kubera direction) or East quadrant on an elevated wooden chowki\",\"chakraPlanet\":\"Root Chakra (Muladhara) & Heart Chakra · Mercury (Budh)\",\"poojaVidhi\":\"Cleanse with Gangajal on Wednesday morning. Offer fresh Durva grass, yellow modak, and red chandan tilak.\",\"vedicBenefits\":\"Vighnaharta grace removing professional blockages, awakening creative clarity, and protecting new business ventures.\"} -->",
@@ -614,10 +632,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "ganesha-statues"
     },
     "subCategoryName": "Ganesha Statues",
-    "size": "2.0 Inch",
-    "weight": "370 g",
+    "size": "2 inch to 5 in",
+    "weight": "50gram to 1 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹4.5 / gram",
+    "pricePerGram": 4.5,
+    "pricePerCarat": ""
   },
   {
     "_id": "6aa58606a69037c73ebecb33",
@@ -677,10 +698,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "gemstone-shree-yantra"
     },
     "subCategoryName": "Sacred Gemstone Yantra",
-    "size": "3.0 Inch",
-    "weight": "480 g",
+    "size": "1 inch to 6 inch",
+    "weight": "50 gram to 5 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹8 / gram",
+    "pricePerGram": 8,
+    "pricePerCarat": ""
   },
   {
     "_id": "6aa58550a69037c73ebecacf",
@@ -740,16 +764,19 @@ export const FALLBACK_PRODUCTS = [
       "slug": "gemstone-shivling"
     },
     "subCategoryName": "Natural Gemstone Shivling",
-    "size": "2.8 Inch",
-    "weight": "420 g",
+    "size": "1 inch to 6 inch",
+    "weight": "20 gram to 500 gram",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹4 / gram",
+    "pricePerGram": 4,
+    "pricePerCarat": ""
   },
   {
     "_id": "6aa5839ba69037c73ebec9f3",
     "name": "Crystal Ganesha Idol Statue for Home Temple & Vastu (2.1 Inch, 410 g)",
     "slug": "crystal-ganesha",
-    "price": 6500,
+    "price": 25,
     "detail": "Handcrafted from certified Natural Sphatik (Clear Quartz), this auspicious Crystal Ganesha is sculpted by master artisans at Crystal Jaipuria, Jaipur (est. 1989). Revered as Vighnaharta (the remover of obstacles) and the harbinger of prosperity, this divine idol brings peaceful energy, good fortune, and aesthetic grace to home temples, office desks, and sacred spaces.",
     "description": "<p>Handcrafted from certified Natural Sphatik (100% Certified Clear Quartz), this auspicious Crystal Ganesha Idol Statue for Home Temple & Vastu (2.1 Inch, 410 G) is sculpted by master artisans at Crystal Jaipuria, Jaipur (est. 1989). Revered as Vighnaharta (the remover of obstacles) and the harbinger of prosperity, this divine idol brings peaceful energy, good fortune, and aesthetic grace to home temples, office desks, and sacred spaces.</p>\n\n<h2>Vighnaharta Iconography & Sacred Symbolism</h2>\n<p>This Crystal Ganesha Idol Statue for Home Temple & Vastu (2.1 Inch, 410 G) is hand-sculpted capturing the divine grace of Lord Ganesha in classical Sanskrit iconography:</p><ul>  <li><strong>Vamamukhi (Left-Turned Trunk):</strong> Represents the tranquil, nurturing Lunar channel (Ida Nadi), bringing peaceful domestic bliss, harmony among family members, and uninterrupted professional progress.</li>  <li><strong>Modaka-Patra & Ankusha:</strong> Symbolizes the sweet rewards of spiritual sadhana held in one hand, while the divine axe in the other cuts through worldly attachments and karmic hindrances.</li>  <li><strong>Abhaya Mudra:</strong> The raised right palm grants fearless reassurance (Abhaya), assuring the devotee of constant divine guardianship against negative planetary energies.</li></ul><p>Carved from dense, Natural Sphatik (100% Certified Clear Quartz), this idol functions as an energetic sanctuary, transmuting household anxiety into creative confidence and financial clarity.</p>\n\n<h2>Gemological Provenance & Jaipur Lapidary Heritage</h2>\n<p>Every specimen is carved from a single, hand-selected rough crystal at Crystal Jaipuria's generational artisan workshops in Jaipur (Est. 1989). We preserve the natural crystalline lattice of genuine Natural Sphatik (100% Certified Clear Quartz), guaranteeing authentic earth-mined quality without synthetic polymer coatings or resin casting.</p><p><strong>Authenticity Identification:</strong> Natural Sphatik stays permanently cool to the touch even in high summer temperatures. Displays subtle internal veil growth lines or natural icy fissures, unlike glass which exhibits round bubbles and uniform seams.</p>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Crystal Ganesha Idol Statue for Home Temple & Vastu (2.1 Inch, 410 G)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Mineral Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Natural Sphatik (100% Certified Clear Quartz) (Silicon Dioxide (SiO2))</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Estimated Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">410 Grams</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size & Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">2.1 Inch (Height: 9.5 cm, Width: 6.8 cm, Depth: 5.2 cm)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Crystal Structure & Hardness</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Trigonal (Trapezohedral) • 7.0 Mohs Scale</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Optical / Density Metrics</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">RI: 1.544 – 1.553 • SG: 2.65 g/cm³</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Hand-carved in Jaipur, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North-East (Ishanya), North, or East Altar</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Zero Synthetic Resin / Glass)</td>\n    </tr>\n  </tbody>\n</table>",
     "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Crystal Ganesha Idol Statue for Home Temple & Vastu (2.1 Inch, 410 G)</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Earth-Mined Natural Sphatik (100% Certified Clear Quartz) (Silicon Dioxide (SiO2))</li>\n  <li><strong class=\"font-bold text-gray-900\">Mineral Hardness :</strong> 7.0 Mohs Scale on Mohs Scale (Exceptional durability &amp; scratch resistance)</li>\n  <li><strong class=\"font-bold text-gray-900\">Estimated Weight :</strong> 410 Grams</li>\n  <li><strong class=\"font-bold text-gray-900\">Size &amp; Dimensions :</strong> 2.1 Inch (Height: 9.5 cm, Width: 6.8 cm, Depth: 5.2 cm)</li>\n  <li><strong class=\"font-bold text-gray-900\">Lapidary Craftsmanship :</strong> Hand-carved from a single rough crystal block as per Vedic Shilpa Shastras</li>\n  <li><strong class=\"font-bold text-gray-900\">Surface Finish :</strong> Highly polished, mirror-smooth with authentic natural mineral inclusions</li>\n  <li><strong class=\"font-bold text-gray-900\">Vedic Consecration &amp; Care :</strong> Safe for daily Abhishek with Gangajal &amp; raw cow milk; wipe with soft microfiber cloth</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North-East (Ishanya Kon), North, or East facing home/office altar</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone (Zero synthetic resin/pressed glass, Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Country of Origin :</strong> Jaipur, Rajasthan, India</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Multi-layer shockproof high-density foam casing with 100% door-to-door transit insurance</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"Is the left-turned trunk (Vamamukhi) of this Crystal Ganesha Idol Statue for Home Temple & Vastu (2.1 Inch, 410 G) suitable for household puja rooms?\",\"answer\":\"Yes, the left-turned trunk represents the gentle, auspicious Ida Nadi (Chandra channel), which is universally recommended for home temples, office desks, and residential entrances because it requires simple loving devotion rather than rigorous temple austerity.\"},{\"question\":\"Where is the ideal Vastu placement for this Crystal Ganesha Idol Statue for Home Temple & Vastu (2.1 Inch, 410 G) at home or workplace?\",\"answer\":\"Place the idol facing North (the abode of Lord Shiva and Kubera) or East on an elevated wooden chowki or temple shelf. Avoid placing it directly opposite bathroom walls or under staircases.\"},{\"question\":\"What is the Vedic cleansing (Shuddhi) ritual before establishing this Ganesha idol?\",\"answer\":\"Perform periodic Abhishekam with Gangajal, raw cow milk, and rose water. Can be charged under soft Full Moon (Purnima) moonlight.\"},{\"question\":\"How does the vibration of natural Natural Sphatik (100% Certified Clear Quartz) enhance Ganesha's blessings?\",\"answer\":\"Natural Natural Sphatik (100% Certified Clear Quartz) vibrates in resonance with the Crown Chakra (Sahasrara). It amplifies positive intentions, fostering mental clarity, pristine aura purification, cooling energetic balance, amplified mantra vibrations, while dispelling toxic environmental negativity.\"},{\"question\":\"Can we offer red vermillion (Sindoor) or sandalwood paste directly onto this stone idol?\",\"answer\":\"Yes, pure red sandalwood (Raktachandan) or natural turmeric paste can be respectfully applied. We recommend gentle wiping with soft wet cotton after puja to maintain the stone's mirror luster.\"},{\"question\":\"Does Crystal Jaipuria provide custom dimensions or wholesale temple orders for this idol?\",\"answer\":\"Yes. Having operated Jaipur manufacturing workshops since 1989, we accept custom size commissions ranging from 2 inches up to life-size single-block gemstone idols with full lab certifications.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Sphatik Quartz Ganesha Idol Statue for Home Temple & Vastu (2.1 Inch, 410 G) (410g, 2.1\\\") | Vighnaharta Siddhi Vinayak | Jaipuria\",\"metaDescription\":\"Buy 100% Certified Sphatik Quartz Ganesha Idol Statue for Home Temple & Vastu (2.1 Inch, 410 G) (410g, 2.1\\\"). Auspicious idol for obstacle removal &.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North (Kubera direction) or East quadrant on an elevated wooden chowki\",\"chakraPlanet\":\"Root Chakra (Muladhara) & Heart Chakra · Mercury (Budh)\",\"poojaVidhi\":\"Cleanse with Gangajal on Wednesday morning. Offer fresh Durva grass, yellow modak, and red chandan tilak.\",\"vedicBenefits\":\"Vighnaharta grace removing professional blockages, awakening creative clarity, and protecting new business ventures.\"} -->",
@@ -803,10 +830,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "ganesha-statues"
     },
     "subCategoryName": "Ganesha Statues",
-    "size": "2.1 Inch",
-    "weight": "410 g",
+    "size": "2 inch to 5 inch",
+    "weight": "50 gram to 2 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹50 / gram",
+    "pricePerGram": 50,
+    "pricePerCarat": ""
   },
   {
     "_id": "6aa57ca2a69037c73ebec317",
@@ -866,10 +896,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "gemstone-shivling"
     },
     "subCategoryName": "Natural Gemstone Shivling",
-    "size": "2.8 Inch",
-    "weight": "380 g",
+    "size": "1 inch to 6 inch",
+    "weight": "20 gram to 500 gram",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹15 / gram",
+    "pricePerGram": 15,
+    "pricePerCarat": ""
   },
   {
     "_id": "6aa2f217a69037c73ebe8dd2",
@@ -929,10 +962,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "ganesha-statues"
     },
     "subCategoryName": "Ganesha Statues",
-    "size": "2.5 Inch",
-    "weight": "750 g",
+    "size": "4 inch to 12 inch",
+    "weight": "500 gram to 10 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹6 / gram",
+    "pricePerGram": 6,
+    "pricePerCarat": ""
   },
   {
     "_id": "6aa2f0cda69037c73ebe8da5",
@@ -992,10 +1028,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "ganesha-statues"
     },
     "subCategoryName": "Ganesha Statues",
-    "size": "3.0 Inch",
-    "weight": "1.1 kg",
+    "size": "8 inch to 40 inch",
+    "weight": "1 kg to 50 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹3 / gram",
+    "pricePerGram": 3,
+    "pricePerCarat": ""
   },
   {
     "_id": "6aa2f02ea69037c73ebe8d79",
@@ -1055,10 +1094,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "shiva-statues"
     },
     "subCategoryName": "Shiva Statues",
-    "size": "2.8 Inch",
-    "weight": "1.2 kg",
+    "size": "5 inch to 20 inch",
+    "weight": "1 kg to 25 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹10 / gram",
+    "pricePerGram": 10,
+    "pricePerCarat": ""
   },
   {
     "_id": "6aa2ef74a69037c73ebe8d4e",
@@ -1118,10 +1160,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "hanuman-statues"
     },
     "subCategoryName": "Hanuman Statues",
-    "size": "2.5 Inch",
-    "weight": "1.1 kg",
+    "size": "5 inch to 25inch",
+    "weight": "1 kg to 30 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹15 / gram",
+    "pricePerGram": 15,
+    "pricePerCarat": ""
   },
   {
     "_id": "6aa2ee69a69037c73ebe8d24",
@@ -1181,10 +1226,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "gemstone-shivling"
     },
     "subCategoryName": "Natural Gemstone Shivling",
-    "size": "2.5 Inch",
-    "weight": "280 g",
+    "size": "1 inch to 6 inch",
+    "weight": "20 gram to 500 gram",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹7 / gram",
+    "pricePerGram": 7,
+    "pricePerCarat": ""
   },
   {
     "_id": "6aa2eddda69037c73ebe8cfb",
@@ -1244,10 +1292,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "shiva-statues"
     },
     "subCategoryName": "Shiva Statues",
-    "size": "2.8 Inch",
-    "weight": "900 g",
+    "size": "5 inch to 15 inch",
+    "weight": "500 gram to 15 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹15 / gram",
+    "pricePerGram": 15,
+    "pricePerCarat": ""
   },
   {
     "_id": "6aa2ed41a69037c73ebe8cd3",
@@ -1307,10 +1358,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "shiva-statues"
     },
     "subCategoryName": "Shiva Statues",
-    "size": "1.2 Inch",
-    "weight": "180 g",
+    "size": "4 inch to 45 inch",
+    "weight": "200 gram to 50 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹8 / gram",
+    "pricePerGram": 8,
+    "pricePerCarat": ""
   },
   {
     "_id": "6aa2ec48a69037c73ebe8c85",
@@ -1370,10 +1424,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "ganesha-statues"
     },
     "subCategoryName": "Ganesha Statues",
-    "size": "2.5 Inch",
-    "weight": "850 g",
+    "size": "5 inch to 15 inch",
+    "weight": "500 gram to 20 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹5 / gram",
+    "pricePerGram": 5,
+    "pricePerCarat": ""
   },
   {
     "_id": "6aa2ebbda69037c73ebe8c5f",
@@ -1433,10 +1490,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "other-deities"
     },
     "subCategoryName": "Other Divine Deities",
-    "size": "2.2 Inch",
-    "weight": "900 g",
+    "size": "5 inch to 50 inch",
+    "weight": "1 kg to 50 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹15 / gram",
+    "pricePerGram": 15,
+    "pricePerCarat": ""
   },
   {
     "_id": "6aa2e8c5a69037c73ebe8c11",
@@ -1496,10 +1556,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "shiva-statues"
     },
     "subCategoryName": "Shiva Statues",
-    "size": "2.8 Inch",
-    "weight": "1.2 kg",
+    "size": "4 inch to 40 inch",
+    "weight": "500 gram to 25 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹15 / gram",
+    "pricePerGram": 15,
+    "pricePerCarat": ""
   },
   {
     "_id": "6a9bda4aa69037c73ebe572c",
@@ -1559,10 +1622,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "krishna-statues"
     },
     "subCategoryName": "Krishna Statues",
-    "size": "2.5 Inch",
-    "weight": "1.4 kg",
+    "size": "4 inch to 80 inch",
+    "weight": "5 kg to 100 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹10 / gram",
+    "pricePerGram": 10,
+    "pricePerCarat": ""
   },
   {
     "_id": "6a9bda27a69037c73ebe5709",
@@ -1622,10 +1688,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "shiva-statues"
     },
     "subCategoryName": "Shiva Statues",
-    "size": "2.8 Inch",
-    "weight": "950 g",
+    "size": "3 inch to 10 inch",
+    "weight": "200 gram to 10 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹15 / gram",
+    "pricePerGram": 15,
+    "pricePerCarat": ""
   },
   {
     "_id": "6a9bda04a69037c73ebe56e7",
@@ -1685,10 +1754,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "other-deities"
     },
     "subCategoryName": "Other Divine Deities",
-    "size": "2.8 Inch",
-    "weight": "1.4 kg",
+    "size": "5 inch to 12 inch",
+    "weight": "1kg to 10 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹20 / gram",
+    "pricePerGram": 20,
+    "pricePerCarat": ""
   },
   {
     "_id": "6a9bd9dca69037c73ebe56c6",
@@ -1748,10 +1820,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "other-deities"
     },
     "subCategoryName": "Other Divine Deities",
-    "size": "2.2 Inch",
-    "weight": "750 g",
+    "size": "5 inch to 50 inch",
+    "weight": "1 kg to 50 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹10 / gram",
+    "pricePerGram": 10,
+    "pricePerCarat": ""
   },
   {
     "_id": "6a9bd9baa69037c73ebe56a6",
@@ -1811,10 +1886,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "other-deities"
     },
     "subCategoryName": "Other Divine Deities",
-    "size": "3.0 Inch",
-    "weight": "1.6 kg",
+    "size": "5 inch to 20 inch",
+    "weight": "1 kg to 20 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹15 / gram",
+    "pricePerGram": 15,
+    "pricePerCarat": ""
   },
   {
     "_id": "6a9bd990a69037c73ebe5687",
@@ -1874,10 +1952,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "shiva-statues"
     },
     "subCategoryName": "Shiva Statues",
-    "size": "3.0 Inch",
-    "weight": "1.1 kg",
+    "size": "5 inch to 15 inch",
+    "weight": "200 gram to 2 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹17 / gram",
+    "pricePerGram": 17,
+    "pricePerCarat": ""
   },
   {
     "_id": "6a9bd955a69037c73ebe5669",
@@ -1937,10 +2018,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "krishna-statues"
     },
     "subCategoryName": "Krishna Statues",
-    "size": "3.5 Inch",
-    "weight": "2.8 kg",
+    "size": "15 inch to 40 inch",
+    "weight": "5 kg to 50 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹20 / gram",
+    "pricePerGram": 20,
+    "pricePerCarat": ""
   },
   {
     "_id": "6a9bd930a69037c73ebe564c",
@@ -2000,10 +2084,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "gemstone-shivling"
     },
     "subCategoryName": "Natural Gemstone Shivling",
-    "size": "3.0 Inch",
-    "weight": "400 g",
+    "size": "1 inch to 6 inch",
+    "weight": "20 gram to 500 gram",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹8 / gram",
+    "pricePerGram": 8,
+    "pricePerCarat": ""
   },
   {
     "_id": "6a9bd90ca69037c73ebe5630",
@@ -2063,10 +2150,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "shiva-statues"
     },
     "subCategoryName": "Shiva Statues",
-    "size": "3.5 Inch",
-    "weight": "2.0 kg",
+    "size": "10 inch to 40 inch",
+    "weight": "1 kg to 70 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹5 / gram",
+    "pricePerGram": 5,
+    "pricePerCarat": ""
   },
   {
     "_id": "6a9bd8e6a69037c73ebe5615",
@@ -2126,10 +2216,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "gemstone-shivling"
     },
     "subCategoryName": "Natural Gemstone Shivling",
-    "size": "2.5 Inch",
-    "weight": "280 g",
+    "size": "1 inch to 6 inch",
+    "weight": "20 gram to 500 gram",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹8 / gram",
+    "pricePerGram": 8,
+    "pricePerCarat": ""
   },
   {
     "_id": "6a9bd8b9a69037c73ebe55fb",
@@ -2189,10 +2282,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "gemstone-shivling"
     },
     "subCategoryName": "Natural Gemstone Shivling",
-    "size": "2.8 Inch",
-    "weight": "320 g",
+    "size": "1 inch to 6 inch",
+    "weight": "20 gram to 200 gram",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹9 / gram",
+    "pricePerGram": 9,
+    "pricePerCarat": ""
   },
   {
     "_id": "6a9a8d12a69037c73ebe400b",
@@ -2252,10 +2348,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "krishna-statues"
     },
     "subCategoryName": "Krishna Statues",
-    "size": "2.8 Inch",
-    "weight": "1.5 kg",
+    "size": "8 inch to 20 inch",
+    "weight": "1 kg to 50 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹21 / gram",
+    "pricePerGram": 21,
+    "pricePerCarat": ""
   },
   {
     "_id": "6a9a8c5ea69037c73ebe3ff3",
@@ -2315,10 +2414,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "shiva-statues"
     },
     "subCategoryName": "Shiva Statues",
-    "size": "3.5 Inch",
-    "weight": "1.2 kg",
+    "size": "5 inch to 20 inch",
+    "weight": "500 gram to 50 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹19 / gram",
+    "pricePerGram": 19,
+    "pricePerCarat": ""
   },
   {
     "_id": "6a9a8898a69037c73ebe3ebb",
@@ -2378,10 +2480,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "gemstone-shivling"
     },
     "subCategoryName": "Natural Gemstone Shivling",
-    "size": "2.5 Inch",
-    "weight": "350 g",
+    "size": "1 inch to 6 inch",
+    "weight": "20 gram to 300 gram",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹7 / gram",
+    "pricePerGram": 7,
+    "pricePerCarat": ""
   },
   {
     "_id": "6a94071c31429323dcbafd9f",
@@ -2441,10 +2546,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "sphatik-shivling"
     },
     "subCategoryName": "Sphatik Shivling",
-    "size": "4.0 Inch",
-    "weight": "376 g",
+    "size": "1 inch to 6 inch",
+    "weight": "20 gram to 200 gram",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹20 / gram",
+    "pricePerGram": 20,
+    "pricePerCarat": ""
   },
   {
     "_id": "6a94011831429323dcbafcce",
@@ -2504,10 +2612,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "sphatik-shivling"
     },
     "subCategoryName": "Sphatik Shivling",
-    "size": "4 Inch",
-    "weight": "500 g",
+    "size": "1 inch to 6 inch",
+    "weight": "500 gram to 10 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹25 / gram",
+    "pricePerGram": 25,
+    "pricePerCarat": ""
   },
   {
     "_id": "6a93ffb431429323dcbafcb6",
@@ -2567,10 +2678,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "shiva-statues"
     },
     "subCategoryName": "Shiva Statues",
-    "size": "4.2 Inch",
-    "weight": "462 g",
+    "size": "5 inch to 40 inch",
+    "weight": "5 kg to 100 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹5 / gram",
+    "pricePerGram": 5,
+    "pricePerCarat": ""
   },
   {
     "_id": "6a93fbac31429323dcbafbe8",
@@ -2630,10 +2744,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "handcrafted-crystal-statues"
     },
     "subCategoryName": "Handcrafted Crystal Statues",
-    "size": "5 Inch",
-    "weight": "100 g",
+    "size": "1 inch to 6 inch",
+    "weight": "50 gram to 500 gram",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹4.5 / gram",
+    "pricePerGram": 4.5,
+    "pricePerCarat": ""
   },
   {
     "_id": "6a93f8e131429323dcbafb11",
@@ -2693,10 +2810,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "ruby-shree-yantra"
     },
     "subCategoryName": "Ruby Shree Yantra",
-    "size": "1 Inch",
-    "weight": "40 g",
+    "size": "1 inch to 6 inch",
+    "weight": "100 carat to 1000 carat",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹40 / carat",
+    "pricePerGram": "",
+    "pricePerCarat": 40
   },
   {
     "_id": "6a93f72d31429323dcbafa84",
@@ -2756,10 +2876,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "shiva-statues"
     },
     "subCategoryName": "Shiva Statues",
-    "size": "3 Inch",
-    "weight": "400 g",
+    "size": "2 inch to 6 inch",
+    "weight": "50 carat to 2000 carat",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹50 / carat",
+    "pricePerGram": "",
+    "pricePerCarat": 50
   },
   {
     "_id": "6a93f43331429323dcbafa32",
@@ -2819,10 +2942,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "other-deities"
     },
     "subCategoryName": "Other Divine Deities",
-    "size": "4.2 Inch",
-    "weight": "462 g",
+    "size": "15 inch to 50 inch",
+    "weight": "10 kg to 80 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹10 / gram",
+    "pricePerGram": 10,
+    "pricePerCarat": ""
   },
   {
     "_id": "6a93f23c31429323dcbaf931",
@@ -2882,10 +3008,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "gemstone-shivling"
     },
     "subCategoryName": "Natural Gemstone Shivling",
-    "size": "4.0 Inch",
-    "weight": "710 g",
+    "size": "1 inch to 6 inch",
+    "weight": "20 gram to 500 gram",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹10 / gram",
+    "pricePerGram": 10,
+    "pricePerCarat": ""
   },
   {
     "_id": "6a93efff31429323dcbaf8cc",
@@ -2945,10 +3074,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "gemstone-shivling"
     },
     "subCategoryName": "Natural Gemstone Shivling",
-    "size": "4 Inch",
-    "weight": "500 g",
+    "size": "1 inch to 6 inch",
+    "weight": "1 kg to 10 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹10 / gram",
+    "pricePerGram": 10,
+    "pricePerCarat": ""
   },
   {
     "_id": "6a93e63631429323dcbaf7b7",
@@ -3008,16 +3140,19 @@ export const FALLBACK_PRODUCTS = [
       "slug": "ruby-shivling"
     },
     "subCategoryName": "Ruby Shivling",
-    "size": "4.0 Inch",
-    "weight": "568 g",
+    "size": "1 inch to 6 inch",
+    "weight": "20 carat to 1000 carat",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹50 / carat",
+    "pricePerGram": "",
+    "pricePerCarat": 50
   },
   {
     "_id": "6a91697b31429323dcbaf2cd",
     "name": "Green Jade Elephant Staute (4.2 Inch, 462 g)",
     "slug": "green-jade-elephant-staute",
-    "price": 3000,
+    "price": 800,
     "detail": "Handcrafted from certified Natural Green Jade (Nephrite / Columbian Jadeite), this elegant Green Jade Elephant Staute is sculpted by master generational artisans at Crystal Jaipuria, Jaipur (est. 1989). Combining classical craftsmanship with authentic earth-mined gemstone, it radiates positive vibrations and brings timeless spiritual elegance to home sanctums, office spaces, and sacred altars.",
     "description": "<p>Handcrafted from certified Natural Green Jade (Nephrite / Columbian Jadeite), this noble Green Jade Elephant Staute (4.2 Inch, 462 G) is sculpted by master artisans at Crystal Jaipuria, Jaipur (est. 1989). Revered as a sacred Vastu symbol of royal strength, wisdom, and lasting wealth, it is designed for living room decor, executive offices, and auspicious gifting.</p>\n\n<h2>Sacred Gaja Vastu Iconography & Rajayoga Prosperity</h2>\n<p>Carved by master artisans in Jaipur with royal dignity and classical proportions, this Green Jade Elephant Staute (4.2 Inch, 462 G) captures the divine energy of Gaja (Airavata - the Sacred Elephant):</p><ul>  <li><strong>Uplifted Trunk (Trumpeting Grace):</strong> Welcomes positive prana, royal victory, continuous good fortune, and unshakable stability into the household.</li>  <li><strong>Vastu Power Anchor:</strong> Revered in Vastu Shastra and Vedic lore as the vehicle of Indra and Lakshmi, symbolizing noble endurance and royal abundance.</li>  <li><strong>Root & Heart Chakra Grounding:</strong> Anchors volatile household finances, transforming financial insecurity into lasting commercial strength.</li></ul>\n\n<h2>Gemological Provenance & Jaipur Lapidary Heritage</h2>\n<p>Every specimen is carved from a single, hand-selected rough crystal at Crystal Jaipuria's generational artisan workshops in Jaipur (Est. 1989). We preserve the natural crystalline lattice of genuine Natural Green Jade (Nephrite / Columbian Jadeite), guaranteeing authentic earth-mined quality without synthetic polymer coatings or resin casting.</p><p><strong>Authenticity Identification:</strong> Genuine Green Jade possesses a soft, greasy-waxy luster with an interlocking felt-like fibrous matrix. Highly shock-resistant and non-porous.</p>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Green Jade Elephant Staute (4.2 Inch, 462 G)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Mineral Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Natural Green Jade (Nephrite / Columbian Jadeite) (Calcium Magnesium Silicate / Sodium Aluminium Silicate)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Estimated Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">462 Grams</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size & Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">4.2 Inch (Height: 5.5 cm, Width: 3.8 cm, Depth: 2.8 cm)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Crystal Structure & Hardness</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Monoclinic (Interlocking Fibrous Aggregate) • 6.5 – 7.0 Mohs Scale</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Optical / Density Metrics</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">RI: 1.600 – 1.625 • SG: 2.95 – 3.05 g/cm³</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Hand-carved in Jaipur, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North-East (Ishanya), North, or East Altar</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Zero Synthetic Resin / Glass)</td>\n    </tr>\n  </tbody>\n</table>",
     "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Green Jade Elephant Staute (4.2 Inch, 462 G)</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Earth-Mined Natural Green Jade (Nephrite / Columbian Jadeite) (Calcium Magnesium Silicate / Sodium Aluminium Silicate)</li>\n  <li><strong class=\"font-bold text-gray-900\">Mineral Hardness :</strong> 6.5 – 7.0 Mohs Scale on Mohs Scale (Exceptional durability &amp; scratch resistance)</li>\n  <li><strong class=\"font-bold text-gray-900\">Estimated Weight :</strong> 462 Grams</li>\n  <li><strong class=\"font-bold text-gray-900\">Size &amp; Dimensions :</strong> 4.2 Inch (Height: 5.5 cm, Width: 3.8 cm, Depth: 2.8 cm)</li>\n  <li><strong class=\"font-bold text-gray-900\">Lapidary Craftsmanship :</strong> Hand-carved from a single rough crystal block as per Vedic Shilpa Shastras</li>\n  <li><strong class=\"font-bold text-gray-900\">Surface Finish :</strong> Highly polished, mirror-smooth with authentic natural mineral inclusions</li>\n  <li><strong class=\"font-bold text-gray-900\">Vedic Consecration &amp; Care :</strong> Safe for daily Abhishek with Gangajal &amp; raw cow milk; wipe with soft microfiber cloth</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North-East (Ishanya Kon), North, or East facing home/office altar</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone (Zero synthetic resin/pressed glass, Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Country of Origin :</strong> Jaipur, Rajasthan, India</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Multi-layer shockproof high-density foam casing with 100% door-to-door transit insurance</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"Where should this Green Jade Elephant Staute (4.2 Inch, 462 G) be placed according to Vastu Shastra?\",\"answer\":\"Place in the North or East quadrant of your living room or office executive desk facing inwards towards the room (never facing outward through the front door) to lock in wealth and stability.\"},{\"question\":\"What is the significance of an elephant statue in Indian traditions?\",\"answer\":\"The elephant is an eternal emblem of wisdom, royal majesty, memory, and prosperity, closely associated with Goddess Lakshmi (Gajalakshmi) and Lord Ganesha.\"},{\"question\":\"Is this piece hand-carved from 100% natural Natural Green Jade (Nephrite / Columbian Jadeite)?\",\"answer\":\"Yes, 100%. Handcrafted from a single solid rough block of certified natural Natural Green Jade (Nephrite / Columbian Jadeite) with zero synthetic dyes or composite powders.\"},{\"question\":\"How should this gemstone elephant carving be cleansed?\",\"answer\":\"Wipe with a damp lint-free microfiber cloth. Cleanse with fragrant sandalwood dhoop incense.\"},{\"question\":\"How to confirm that this idol is carved from genuine gemstone?\",\"answer\":\"Genuine Green Jade possesses a soft, greasy-waxy luster with an interlocking felt-like fibrous matrix. Highly shock-resistant and non-porous.\"},{\"question\":\"How do you ensure safe damage-free shipping for solid stone carvings?\",\"answer\":\"Enclosed in bespoke high-density shockproof foam and heavy-duty export containers with full door-to-door transit insurance.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Green Jade Stone Elephant Staute (4.2 Inch, 462 G) (462g, 4.2\\\") | Gajraj Royal Vastu Swaroop | Jaipuria\",\"metaDescription\":\"Buy 100% Certified Green Jade Stone Elephant Staute (4.2 Inch, 462 G) (462g, 4.2\\\"). Radiates royal strength, wisdom & good fortune. Jaipur crafted at ₹1,200.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North or East quadrant of living room or office entrance facing inwards\",\"chakraPlanet\":\"Root Chakra (Muladhara) · Mercury & Jupiter\",\"poojaVidhi\":\"Wipe with damp clean cotton. Offer fragrant incense on auspicious festival mornings.\",\"vedicBenefits\":\"Airavata royal power anchor, locking in business stability, family prestige, and enduring financial strength.\"} -->",
@@ -3071,10 +3206,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "handcrafted-crystal-statues"
     },
     "subCategoryName": "Handcrafted Crystal Statues",
-    "size": "4.2 Inch",
-    "weight": "462 g",
+    "size": "1 inch to 6 inch",
+    "weight": "100 gram to 500gram",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹6 / gram",
+    "pricePerGram": 6,
+    "pricePerCarat": ""
   },
   {
     "_id": "6a55c1012dcf49aacd71efd9",
@@ -3134,10 +3272,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "lapis-lazuli-shivling"
     },
     "subCategoryName": "Lapis Lazuli Shivling",
-    "size": "4.0 Inch",
-    "weight": "405 g",
+    "size": "1 inch to 6 inch",
+    "weight": "500 gram to 10 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹15 / gram",
+    "pricePerGram": 15,
+    "pricePerCarat": ""
   },
   {
     "_id": "6a55c07e2dcf49aacd71efc3",
@@ -3197,10 +3338,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "shiva-statues"
     },
     "subCategoryName": "Shiva Statues",
-    "size": "8 Inch",
-    "weight": "462 g",
+    "size": "10 in to 50 inch",
+    "weight": "1 kg to 50 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹5 / gram",
+    "pricePerGram": 5,
+    "pricePerCarat": ""
   },
   {
     "_id": "6a55bf8b2dcf49aacd71efae",
@@ -3260,10 +3404,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "gemstone-shree-yantra"
     },
     "subCategoryName": "Sacred Gemstone Yantra",
-    "size": "3 Inch",
-    "weight": "100 g",
+    "size": "1 inch to 6 inch",
+    "weight": "50 gram to 1 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹10 / gram",
+    "pricePerGram": 10,
+    "pricePerCarat": ""
   },
   {
     "_id": "6a55bf102dcf49aacd71efac",
@@ -3323,10 +3470,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "ganesha-statues"
     },
     "subCategoryName": "Ganesha Statues",
-    "size": "8 Inch",
-    "weight": "2 kg",
+    "size": "5 inch to 15 inch",
+    "weight": "2 kg to 10 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹5 / gram",
+    "pricePerGram": 5,
+    "pricePerCarat": ""
   },
   {
     "_id": "6a55beb62dcf49aacd71ef9e",
@@ -3389,7 +3539,10 @@ export const FALLBACK_PRODUCTS = [
     "size": "2.5 Inch",
     "weight": "66 g",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "",
+    "pricePerGram": "",
+    "pricePerCarat": ""
   },
   {
     "_id": "6a55be4f2dcf49aacd71ef80",
@@ -3449,10 +3602,13 @@ export const FALLBACK_PRODUCTS = [
       "slug": "other-deities"
     },
     "subCategoryName": "Other Divine Deities",
-    "size": "4.2 Inch",
-    "weight": "411 g",
+    "size": "7 inch to 29 inch",
+    "weight": "500 gram to 10 kg",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "₹100 / gram",
+    "pricePerGram": 100,
+    "pricePerCarat": ""
   },
   {
     "_id": "6a55bdcd2dcf49aacd71ef71",
@@ -3512,9 +3668,12 @@ export const FALLBACK_PRODUCTS = [
       "slug": "gemstone-angels"
     },
     "subCategoryName": "Gemstone Angels",
-    "size": "2.2 Inch",
+    "size": "1 inch to 6 inch",
     "weight": "37 g",
     "stock": 10,
-    "featured": true
+    "featured": true,
+    "pricePerUnit": "",
+    "pricePerGram": "",
+    "pricePerCarat": ""
   }
 ];

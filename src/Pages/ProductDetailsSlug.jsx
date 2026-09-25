@@ -318,6 +318,21 @@ Hello Crystal Jaipuria, I have a query regarding this product.
         }
       }
 
+      if (data && !data.pricePerUnit) {
+        const norm = (s) => (s || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+        const cleanNorm = norm(cleanSlug);
+        const fbMatch = FALLBACK_PRODUCTS.find(
+          (p) =>
+            p.slug === cleanSlug ||
+            p._id === cleanSlug ||
+            norm(p.slug) === cleanNorm ||
+            norm(p.name) === cleanNorm
+        );
+        if (fbMatch?.pricePerUnit) {
+          data.pricePerUnit = fbMatch.pricePerUnit;
+        }
+      }
+
       // Automatically strip junk query parameters from browser URL
       if (typeof window !== "undefined" && window.location.search) {
         const searchParams = new URLSearchParams(window.location.search);
@@ -545,6 +560,11 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                   <span className="text-2xl sm:text-3xl font-extrabold text-amber-600">
                     {formatPrice(product.price)}
                   </span>
+                  {product.pricePerUnit && (
+                    <p className="text-xs sm:text-sm font-semibold text-stone-500 mt-1">
+                      ({product.pricePerUnit})
+                    </p>
+                  )}
                 </div>
               )}
 

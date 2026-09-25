@@ -296,6 +296,11 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                   <span className="text-2xl sm:text-3xl font-extrabold text-amber-600">
                     {formatPrice(product.price)}
                   </span>
+                  {product.pricePerUnit && (
+                    <p className="text-xs sm:text-sm font-semibold text-stone-500 mt-1">
+                      ({product.pricePerUnit})
+                    </p>
+                  )}
                 </div>
               )}
 
@@ -721,6 +726,11 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                         <span className="font-bold text-amber-600 text-sm sm:text-base">
                           {formatPrice(item.price)}
                         </span>
+                      )}
+                      {item.pricePerUnit && (
+                        <p className="text-[10px] sm:text-xs text-stone-500 font-semibold mt-0.5">
+                          {item.pricePerUnit}
+                        </p>
                       )}
                     </div>
                   </div>

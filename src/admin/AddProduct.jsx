@@ -30,6 +30,7 @@ const AddProduct = () => {
     weight:"",
     pricePerGram:"",
     pricePerCarat:"",
+    pricePerUnit:"",
     size:""
   });
 
@@ -228,6 +229,7 @@ const handleCategoryChange = async (e) => {
       if (form.size) formData.append("size", form.size);
       if (form.pricePerGram) formData.append("pricePerGram", String(form.pricePerGram));
       if (form.pricePerCarat) formData.append("pricePerCarat", String(form.pricePerCarat));
+      if (form.pricePerUnit) formData.append("pricePerUnit", String(form.pricePerUnit));
 
       // Filter and append valid FAQs
       const validFaqs = faqs.filter((f) => f.question.trim() || f.answer.trim());
@@ -281,6 +283,7 @@ const handleCategoryChange = async (e) => {
         weight: "",
         pricePerGram: "",
         pricePerCarat: "",
+        pricePerUnit: "",
         size: ""
       });
 
@@ -431,6 +434,14 @@ const handleCategoryChange = async (e) => {
                 type="text"
                 value={form.size}
                 onChange={handleChange}
+              />
+                  <Input
+                label="Price Per Unit (e.g. ₹10 / gram or ₹30 / carat)"
+                name="pricePerUnit"
+                type="text"
+                value={form.pricePerUnit}
+                onChange={handleChange}
+                placeholder="e.g. ₹10 / gram, ₹30 / carat"
               />
 
 

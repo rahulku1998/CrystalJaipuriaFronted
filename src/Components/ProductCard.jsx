@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { formatPrice } from "../utils/price";
 import { getProductImageUrl } from "../utils/imageOptimizer";
 import { getStandardizedProduct } from "../utils/productStandardizer";
+import { FALLBACK_PRODUCTS } from "../data/fallbackData";
 
 const ProductCard = ({ product, headingTag = "p" }) => {
   const item = getStandardizedProduct(product);
@@ -10,6 +11,12 @@ const ProductCard = ({ product, headingTag = "p" }) => {
   const HeadingTag = headingTag || "p";
 
   const initialSrc = getProductImageUrl(item, 0);
+
+  const unitPriceLabel = item.pricePerUnit || (() => {
+    if (!item.slug && !item._id) return "";
+    const fb = FALLBACK_PRODUCTS.find(p => p.slug === item.slug || p._id === item._id);
+    return fb?.pricePerUnit || "";
+  })();
 
   return (
     <Link
@@ -49,17 +56,24 @@ const ProductCard = ({ product, headingTag = "p" }) => {
         </HeadingTag>
 
         {/* Price & Weight Footer */}
-        <div className="mt-2 sm:mt-3 pt-2 border-t border-gray-100 flex items-center justify-between gap-1 flex-wrap">
-          {item.price ? (
-            <p className="text-amber-800 font-extrabold text-sm sm:text-base md:text-lg">
-              {formatPrice(item.price)}
-            </p>
-          ) : (
-            <span className="text-xs text-amber-700 font-semibold">Inquire Price</span>
-          )}
+        <div className="mt-2 sm:mt-3 pt-2 border-t border-gray-100 flex items-end justify-between gap-1">
+          <div>
+            {item.price ? (
+              <p className="text-amber-800 font-extrabold text-sm sm:text-base md:text-lg leading-tight">
+                {formatPrice(item.price)}
+              </p>
+            ) : (
+              <span className="text-xs text-amber-700 font-semibold">Inquire Price</span>
+            )}
+            {unitPriceLabel && (
+              <p className="text-[10px] sm:text-xs text-stone-500 font-medium leading-tight mt-0.5">
+                {unitPriceLabel}
+              </p>
+            )}
+          </div>
 
           {item.weight && (
-            <span className="text-[10px] sm:text-xs bg-stone-100 text-stone-600 px-1.5 py-0.5 rounded font-medium truncate max-w-[80px] sm:max-w-none">
+            <span className="text-[10px] sm:text-xs bg-stone-100 text-stone-600 px-1.5 py-0.5 rounded font-medium truncate max-w-[80px] sm:max-w-none mb-0.5">
               {item.weight}
             </span>
           )}

@@ -375,10 +375,15 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
                   <h4 className="font-bold text-xs sm:text-sm text-gray-900 truncate">
                     {product.name}
                   </h4>
-                  <div className="flex items-center gap-2 mt-1">
+                  <div className="flex items-center gap-2 mt-1 flex-wrap">
                     <span className="font-black text-sm text-indigo-700">
                       ₹{unitPrice.toLocaleString("en-IN")}
                     </span>
+                    {product.pricePerUnit && (
+                      <span className="text-[11px] text-stone-500 font-semibold">
+                        ({product.pricePerUnit})
+                      </span>
+                    )}
                     <span className="text-[11px] text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">
                       Free Shipping
                     </span>

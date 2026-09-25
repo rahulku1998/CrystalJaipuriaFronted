@@ -51,6 +51,7 @@ const EditProduct = () => {
     weight: "",
     pricePerGram: "",
     pricePerCarat: "",
+    pricePerUnit: "",
     size: ""
   });
   const [metaTitle, setMetaTitle] = useState("");
@@ -171,6 +172,7 @@ const EditProduct = () => {
         weight: p.weight || "",
         pricePerGram: p.pricePerGram || "",
         pricePerCarat: p.pricePerCarat || "",
+        pricePerUnit: p.pricePerUnit || (p.pricePerGram ? `₹${p.pricePerGram} / gram` : p.pricePerCarat ? `₹${p.pricePerCarat} / carat` : ""),
         size: p.size || "",
         slug: p.slug || ""
       });
@@ -822,6 +824,15 @@ type="text"
 value={form.size}
 onChange={handleChange}
 placeholder="Enter size"
+/>
+
+<Input
+label="Price Per Unit (e.g. ₹10 / gram or ₹30 / carat)"
+name="pricePerUnit"
+type="text"
+value={form.pricePerUnit}
+onChange={handleChange}
+placeholder="e.g. ₹10 / gram, ₹30 / carat"
 />
 
 <div className="flex flex-col gap-1.5">
