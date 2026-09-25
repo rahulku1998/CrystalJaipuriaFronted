@@ -26,7 +26,7 @@
       <g:store_code>11769123335765617743</g:store_code>
       <g:id>6aa669efa69037c73ebf0869</g:id>
       <g:availability>in_stock</g:availability>
-      <g:price>0.00 INR</g:price>
+      <g:price>30.00 INR</g:price>
       <g:quantity>10</g:quantity>
       <g:pickup_method>buy</g:pickup_method>
       <g:pickup_sla>same_day</g:pickup_sla>
@@ -89,7 +89,7 @@
       <g:store_code>11769123335765617743</g:store_code>
       <g:id>6aa5839ba69037c73ebec9f3</g:id>
       <g:availability>in_stock</g:availability>
-      <g:price>0.00 INR</g:price>
+      <g:price>25.00 INR</g:price>
       <g:quantity>10</g:quantity>
       <g:pickup_method>buy</g:pickup_method>
       <g:pickup_sla>same_day</g:pickup_sla>
@@ -413,7 +413,7 @@
       <g:store_code>11769123335765617743</g:store_code>
       <g:id>6a91697b31429323dcbaf2cd</g:id>
       <g:availability>in_stock</g:availability>
-      <g:price>3000.00 INR</g:price>
+      <g:price>800.00 INR</g:price>
       <g:quantity>10</g:quantity>
       <g:pickup_method>buy</g:pickup_method>
       <g:pickup_sla>same_day</g:pickup_sla>
@@ -449,7 +449,7 @@
       <g:store_code>11769123335765617743</g:store_code>
       <g:id>6a55bf102dcf49aacd71efac</g:id>
       <g:availability>in_stock</g:availability>
-      <g:price>0.00 INR</g:price>
+      <g:price>12000.00 INR</g:price>
       <g:quantity>10</g:quantity>
       <g:pickup_method>buy</g:pickup_method>
       <g:pickup_sla>same_day</g:pickup_sla>

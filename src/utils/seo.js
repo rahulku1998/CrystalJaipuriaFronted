@@ -253,7 +253,7 @@ export const getProductSchema = (product, canonicalUrl) => {
         transitTime: {
           "@type": "QuantitativeValue",
           minValue: 3,
-          maxValue: 5,
+          maxValue: 7,
           unitCode: "d",
         },
       },

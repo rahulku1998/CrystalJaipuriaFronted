@@ -54,6 +54,7 @@ export const runPrerender = async () => {
     ogImage,
     schema,
     bodyContent = "",
+    productMeta = null,
   }) => {
     let html = baseHtml;
 
@@ -126,6 +127,12 @@ export const runPrerender = async () => {
     // 6. Pre-rendered Body Content (instant visual paint before React hydrates)
     if (bodyContent) {
       html = html.replace('<div id="root"></div>', `<div id="root">${bodyContent}</div>`);
+    }
+
+    // 7. Inject OpenGraph & Google Merchant Microdata for Instant Price Verification
+    if (productMeta) {
+      const productMetaTags = `  <meta property="og:type" content="product" />\n  <meta property="product:price:amount" content="${productMeta.price.toFixed(2)}" />\n  <meta property="product:price:currency" content="INR" />\n  <meta property="product:availability" content="${productMeta.inStock ? "in stock" : "out of stock"}" />\n  <meta property="product:condition" content="new" />\n  <meta property="product:brand" content="Crystal Jaipuria" />\n  <meta property="product:retailer_item_id" content="${escapeHtml(String(productMeta.id || productMeta.slug))}" />\n`;
+      html = html.replace("</head>", `${productMetaTags}</head>`);
     }
 
     return html;
@@ -368,7 +375,7 @@ export const runPrerender = async () => {
               transitTime: {
                 "@type": "QuantitativeValue",
                 minValue: 3,
-                maxValue: 5,
+                maxValue: 7,
                 unitCode: "d",
               },
             },
@@ -470,6 +477,12 @@ export const runPrerender = async () => {
       ogImage: imageUrl,
       schema,
       bodyContent: bodyPreview,
+      productMeta: {
+        price: priceNum,
+        inStock: prod.stock !== 0 && prod.stock !== "0",
+        id: prod._id,
+        slug,
+      },
     });
 
     saveFile(`product/${slug}/index.html`, pageHtml);

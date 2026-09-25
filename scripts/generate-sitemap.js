@@ -3,6 +3,7 @@ import path from "path";
 import https from "https";
 import { fileURLToPath } from "url";
 import { FALLBACK_PRODUCTS, FALLBACK_CATEGORIES } from "../src/data/fallbackData.js";
+import { getStandardizedProduct, STANDARDIZED_SPECS } from "../src/utils/productStandardizer.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -63,6 +64,9 @@ const generateSitemap = async () => {
     console.log("⚡ [Sitemap] Using fallback categories catalog (6 categories)...");
     categories = FALLBACK_CATEGORIES;
   }
+
+  // Standardize all products sitewide for 100% price, weight, size, and spec consistency
+  products = products.map((prod) => getStandardizedProduct(prod));
 
   console.log(
     `Fetched ${products.length} products, ${categories.length} categories, ${blogs.length} blogs from database.`
@@ -248,6 +252,8 @@ const generateSitemap = async () => {
       priceNum = prod.price;
     } else if (typeof prod.discountPrice === "number" && prod.discountPrice > 0) {
       priceNum = prod.discountPrice;
+    } else if (STANDARDIZED_SPECS[slug]?.price) {
+      priceNum = STANDARDIZED_SPECS[slug].price;
     } else {
       const raw = String(prod.price || prod.discountPrice || "999").replace(/,/g, "");
       const match = raw.match(/\d+(\.\d+)?/);
@@ -439,11 +445,17 @@ const generateSitemap = async () => {
     if (shippingWeight) {
       gmcXml += `      <g:shipping_weight>${shippingWeight}</g:shipping_weight>\n`;
     }
+    gmcXml += `      <g:min_handling_time>1</g:min_handling_time>\n`;
+    gmcXml += `      <g:max_handling_time>2</g:max_handling_time>\n`;
     gmcXml += `      <g:transit_time_label>Standard 3-7 Days</g:transit_time_label>\n`;
     gmcXml += `      <g:shipping>\n`;
     gmcXml += `        <g:country>IN</g:country>\n`;
-    gmcXml += `        <g:service>Standard Safe Delivery</g:service>\n`;
+    gmcXml += `        <g:service>Standard Safe Express Delivery</g:service>\n`;
     gmcXml += `        <g:price>0.00 INR</g:price>\n`;
+    gmcXml += `        <g:min_handling_time>1</g:min_handling_time>\n`;
+    gmcXml += `        <g:max_handling_time>2</g:max_handling_time>\n`;
+    gmcXml += `        <g:min_transit_time>3</g:min_transit_time>\n`;
+    gmcXml += `        <g:max_transit_time>7</g:max_transit_time>\n`;
     gmcXml += `      </g:shipping>\n`;
     gmcXml += `    </item>\n`;
   });
@@ -476,7 +488,19 @@ const generateSitemap = async () => {
   let localTsv = `store_code\tid\tavailability\tprice\tquantity\tpickup_method\tpickup_sla\n`;
 
   products.forEach((prod) => {
-    const priceNum = Number(prod.price) || 0;
+    const slug = prod.slug || prod._id;
+    let priceNum = 999;
+    if (typeof prod.price === "number" && prod.price > 0) {
+      priceNum = prod.price;
+    } else if (typeof prod.discountPrice === "number" && prod.discountPrice > 0) {
+      priceNum = prod.discountPrice;
+    } else if (STANDARDIZED_SPECS[slug]?.price) {
+      priceNum = STANDARDIZED_SPECS[slug].price;
+    } else {
+      const raw = String(prod.price || prod.discountPrice || "999").replace(/,/g, "");
+      const match = raw.match(/\d+(\.\d+)?/);
+      if (match && Number(match[0]) > 0) priceNum = Number(match[0]);
+    }
     const isOutOfStock = prod.stock === 0 || prod.stock === "0";
     const availability = isOutOfStock ? "out_of_stock" : "in_stock";
     const priceStr = `${priceNum.toFixed(2)} INR`;
