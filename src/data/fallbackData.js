@@ -180,7 +180,7 @@ export const FALLBACK_SUBCATEGORIES = [
 export const FALLBACK_PRODUCTS = [
   {
     "_id": "6aa67020a69037c73ebf0ce1",
-    "name": "Hand Carved Rose Quartz Ganesha with Sterling Silver Idol Statue for Home Temple & Vastu (4.2 Inch, 371 g)",
+    "name": "Hand Carved Rose Quartz Ganesha with Sterling Silver Idol Statue for Home Temple & Vastu",
     "slug": "hand-carved-rose-quartz-ganesha-with-sterling-silver-testing",
     "price": 5800,
     "detail": "Handcrafted from certified Natural Rose Quartz (Pink Quartz), this auspicious Hand Carved Rose Quartz Ganesha with Sterling Silver is sculpted by master artisans at Crystal Jaipuria, Jaipur (est. 1989). Revered as Vighnaharta (the remover of obstacles) and the harbinger of prosperity, this divine idol brings peaceful energy, good fortune, and aesthetic grace to home temples, office desks, and sacred spaces.",
@@ -246,7 +246,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6aa66b34a69037c73ebf090c",
-    "name": "Australian Jade Ganesha Carving Idol Statue for Home Temple & Vastu (4.2 Inch, 462 g)",
+    "name": "Australian Jade Ganesha Carving Idol Statue for Home Temple & Vastu",
     "slug": "australian-jade-ganesha-carving",
     "price": 500,
     "detail": "Handcrafted from certified Natural Green Jade (Nephrite / Columbian Jadeite), this auspicious Australian Jade Ganesha Carving is sculpted by master artisans at Crystal Jaipuria, Jaipur (est. 1989). Revered as Vighnaharta (the remover of obstacles) and the harbinger of prosperity, this divine idol brings peaceful energy, good fortune, and aesthetic grace to home temples, office desks, and sacred spaces.",
@@ -303,7 +303,7 @@ export const FALLBACK_PRODUCTS = [
     },
     "subCategoryName": "Ganesha Statues",
     "size": "2 inch to 7 inch",
-    "weight": "50 gram to 500gram",
+    "weight": "50 gram to 500 gram",
     "stock": 10,
     "featured": true,
     "pricePerUnit": "₹4.5 / gram",
@@ -312,7 +312,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6aa669efa69037c73ebf0869",
-    "name": "Hand Carved Ruby Ganesha Idol Statue for Home Temple & Vastu (4.2 Inch, 616 g)",
+    "name": "Hand Carved Ruby Ganesha Idol Statue for Home Temple & Vastu",
     "slug": "hand-carved-ruby-ganesha",
     "price": 30,
     "detail": "Handcrafted from certified Natural Ruby (Certified Manikya), this auspicious Hand Carved Ruby Ganesha is sculpted by master artisans at Crystal Jaipuria, Jaipur (est. 1989). Revered as Vighnaharta (the remover of obstacles) and the harbinger of prosperity, this divine idol brings peaceful energy, good fortune, and aesthetic grace to home temples, office desks, and sacred spaces.",
@@ -369,7 +369,7 @@ export const FALLBACK_PRODUCTS = [
     },
     "subCategoryName": "Ganesha Statues",
     "size": "2 inch to 5 inch",
-    "weight": "200 carat to 5000carat",
+    "weight": "200 carat to 5000 carat",
     "stock": 10,
     "featured": true,
     "pricePerUnit": "₹30 / carat",
@@ -378,7 +378,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6aa66899a69037c73ebf0806",
-    "name": "Natural Ruby Radha Krishna Idol Hand Carved for Home Temple & Vastu (4.2 Inch, 616 g)",
+    "name": "Natural Ruby Radha Krishna Idol Hand Carved for Home Temple & Vastu",
     "slug": "natural-ruby-radha-krishna-idol-hand-carved",
     "price": 20300,
     "detail": "Handcrafted from certified Natural Ruby (Certified Manikya), this elegant Natural Ruby Radha Krishna Idol Hand Carved is sculpted by master generational artisans at Crystal Jaipuria, Jaipur (est. 1989). Combining classical craftsmanship with authentic earth-mined gemstone, it radiates positive vibrations and brings timeless spiritual elegance to home sanctums, office spaces, and sacred altars.",
@@ -435,7 +435,7 @@ export const FALLBACK_PRODUCTS = [
     },
     "subCategoryName": "Krishna Statues",
     "size": "4 inch to 8 inch",
-    "weight": "200 carat to 4500carat",
+    "weight": "200 carat to 4500 carat",
     "stock": 10,
     "featured": true,
     "pricePerUnit": "₹60 / carat",
@@ -444,7 +444,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6aa58ecaa69037c73ebed354",
-    "name": "Crystal Shree Yantra 3D Meru for Wealth & Vastu (3.0 Inch, 420 g)",
+    "name": "Crystal Shree Yantra 3D Meru for Wealth & Vastu",
     "slug": "crystal-shree-yantra",
     "price": 5800,
     "detail": "Handcrafted from certified Natural Sphatik (Clear Quartz), this sacred 3D Meru Crystal Shree Yantra is carved with precise sacred geometry by master lapidaries at Crystal Jaipuria, Jaipur (est. 1989). Revered as the King of Yantras (Yantraraja), it continuously attracts financial abundance, purifies surrounding Vastu energy, and elevates spiritual meditation.",
@@ -510,7 +510,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6aa58ce5a69037c73ebed099",
-    "name": "Green Jade Ganesha Idol Statue for Home Temple & Vastu (2.2 Inch, 460 g)",
+    "name": "Green Jade Ganesha Idol Statue for Home Temple & Vastu",
     "slug": "green-jade-ganesha",
     "price": 5200,
     "detail": "Handcrafted from certified Natural Green Jade (Nephrite / Columbian Jadeite), this auspicious Green Jade Ganesha is sculpted by master artisans at Crystal Jaipuria, Jaipur (est. 1989). Revered as Vighnaharta (the remover of obstacles) and the harbinger of prosperity, this divine idol brings peaceful energy, good fortune, and aesthetic grace to home temples, office desks, and sacred spaces.",
@@ -576,7 +576,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6aa58b0fa69037c73ebecef5",
-    "name": "Rose Quartz Ganesha Idol Statue for Home Temple & Vastu (2.0 Inch, 370 g)",
+    "name": "Rose Quartz Ganesha Idol Statue for Home Temple & Vastu",
     "slug": "rose-quartz-ganesha",
     "price": 500,
     "detail": "Handcrafted from certified Natural Rose Quartz (Pink Quartz), this auspicious Rose Quartz Ganesha is sculpted by master artisans at Crystal Jaipuria, Jaipur (est. 1989). Revered as Vighnaharta (the remover of obstacles) and the harbinger of prosperity, this divine idol brings peaceful energy, good fortune, and aesthetic grace to home temples, office desks, and sacred spaces.",
@@ -633,7 +633,7 @@ export const FALLBACK_PRODUCTS = [
     },
     "subCategoryName": "Ganesha Statues",
     "size": "2 inch to 5 in",
-    "weight": "50gram to 1 kg",
+    "weight": "50 gram to 1 kg",
     "stock": 10,
     "featured": true,
     "pricePerUnit": "₹4.5 / gram",
@@ -642,7 +642,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6aa58606a69037c73ebecb33",
-    "name": "Green Jade Shree Yantra 3D Meru for Wealth & Vastu (3.0 Inch, 480 g)",
+    "name": "Green Jade Shree Yantra 3D Meru for Wealth & Vastu",
     "slug": "green-jade-shree-yantra",
     "price": 4900,
     "detail": "Handcrafted from certified Natural Green Jade (Nephrite / Columbian Jadeite), this sacred 3D Meru Green Jade Shree Yantra is carved with precise sacred geometry by master lapidaries at Crystal Jaipuria, Jaipur (est. 1989). Revered as the King of Yantras (Yantraraja), it continuously attracts financial abundance, purifies surrounding Vastu energy, and elevates spiritual meditation.",
@@ -708,7 +708,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6aa58550a69037c73ebecacf",
-    "name": "Green Jade Shivling for Home Temple & Jalabhishek (2.8 Inch, 420 g)",
+    "name": "Green Jade Shivling for Home Temple & Jalabhishek",
     "slug": "green-jade-shivling",
     "price": 4200,
     "detail": "Handcrafted from certified Natural Green Jade (Nephrite / Columbian Jadeite), this sacred Green Jade Shivling is sculpted by generational master artisans at Crystal Jaipuria, Jaipur (est. 1989). Carved in accordance with classical Vedic Shilpa Shastras, this sacred piece is designed for daily Jalabhishek, home temple worship, Vastu purification, and deep spiritual meditation.",
@@ -774,7 +774,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6aa5839ba69037c73ebec9f3",
-    "name": "Crystal Ganesha Idol Statue for Home Temple & Vastu (2.1 Inch, 410 g)",
+    "name": "Crystal Ganesha Idol Statue for Home Temple & Vastu",
     "slug": "crystal-ganesha",
     "price": 25,
     "detail": "Handcrafted from certified Natural Sphatik (Clear Quartz), this auspicious Crystal Ganesha is sculpted by master artisans at Crystal Jaipuria, Jaipur (est. 1989). Revered as Vighnaharta (the remover of obstacles) and the harbinger of prosperity, this divine idol brings peaceful energy, good fortune, and aesthetic grace to home temples, office desks, and sacred spaces.",
@@ -840,7 +840,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6aa57ca2a69037c73ebec317",
-    "name": "Crystal Shivling for Home Temple & Jalabhishek (2.8 Inch, 380 g)",
+    "name": "Crystal Shivling for Home Temple & Jalabhishek",
     "slug": "crystal-shivling",
     "price": 4500,
     "detail": "Handcrafted from certified Natural Sphatik (Clear Quartz), this sacred Crystal Shivling is sculpted by generational master artisans at Crystal Jaipuria, Jaipur (est. 1989). Carved in accordance with classical Vedic Shilpa Shastras, this sacred piece is designed for daily Jalabhishek, home temple worship, Vastu purification, and deep spiritual meditation.",
@@ -906,7 +906,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6aa2f217a69037c73ebe8dd2",
-    "name": "Blue Sodalite Carved Ganesha Statue for Home Temple & Vastu (2.5 Inch, 750 g)",
+    "name": "Blue Sodalite Carved Ganesha Statue for Home Temple & Vastu",
     "slug": "blue-sodalite-carved-ganesha-statue",
     "price": 9500,
     "detail": "Handcrafted from certified Natural Blue Sodalite, this auspicious Blue Sodalite Carved Ganesha Statue is sculpted by master artisans at Crystal Jaipuria, Jaipur (est. 1989). Revered as Vighnaharta (the remover of obstacles) and the harbinger of prosperity, this divine idol brings peaceful energy, good fortune, and aesthetic grace to home temples, office desks, and sacred spaces.",
@@ -972,7 +972,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6aa2f0cda69037c73ebe8da5",
-    "name": "Rose Quartz Ganesha with Gold Painted Idol Statue for Home Temple & Vastu (3.0 Inch, 1.1 kg)",
+    "name": "Rose Quartz Ganesha with Gold Painted Idol Statue for Home Temple & Vastu",
     "slug": "rose-quartz-ganesha-with-gold-painted",
     "price": 16500,
     "detail": "Handcrafted from certified Natural Rose Quartz (Pink Quartz), this auspicious Rose Quartz Ganesha with Gold Painted is sculpted by master artisans at Crystal Jaipuria, Jaipur (est. 1989). Revered as Vighnaharta (the remover of obstacles) and the harbinger of prosperity, this divine idol brings peaceful energy, good fortune, and aesthetic grace to home temples, office desks, and sacred spaces.",
@@ -1038,7 +1038,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6aa2f02ea69037c73ebe8d79",
-    "name": "Blue Sodalite Carved Lord Shiva Statue for Home Temple & Vastu (2.8 Inch, 1.2 kg)",
+    "name": "Blue Sodalite Carved Lord Shiva Statue for Home Temple & Vastu",
     "slug": "blue-sodalite-carved-lord-shiva-statue",
     "price": 14000,
     "detail": "Handcrafted from certified Natural Blue Sodalite, this sacred Blue Sodalite Carved Lord Shiva Statue is sculpted by master generational artisans at Crystal Jaipuria, Jaipur (est. 1989). Depicting Lord Shiva in serene meditation with the sacred Trishul and Damru, this divine murti radiates pure spiritual courage, dispels negative energies, and anchors profound peace in home altars and sacred spaces.",
@@ -1104,7 +1104,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6aa2ef74a69037c73ebe8d4e",
-    "name": "Natural Blue Sodalite Hanuman Ji Statue for Home Temple & Vastu (2.5 Inch, 1.1 kg)",
+    "name": "Natural Blue Sodalite Hanuman Ji Statue for Home Temple & Vastu",
     "slug": "natural-blue-sodalite-hanuman-ji-statue",
     "price": 13500,
     "detail": "Handcrafted from certified Natural Blue Sodalite, this elegant Natural Blue Sodalite Hanuman Ji Statue is sculpted by master generational artisans at Crystal Jaipuria, Jaipur (est. 1989). Combining classical craftsmanship with authentic earth-mined gemstone, it radiates positive vibrations and brings timeless spiritual elegance to home sanctums, office spaces, and sacred altars.",
@@ -1160,7 +1160,7 @@ export const FALLBACK_PRODUCTS = [
       "slug": "hanuman-statues"
     },
     "subCategoryName": "Hanuman Statues",
-    "size": "5 inch to 25inch",
+    "size": "5 inch to 25 inch",
     "weight": "1 kg to 30 kg",
     "stock": 10,
     "featured": true,
@@ -1170,7 +1170,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6aa2ee69a69037c73ebe8d24",
-    "name": "Natural Red Jasper Gemstone Shivling for Home Temple & Jalabhishek (2.5 Inch, 280 g)",
+    "name": "Natural Red Jasper Gemstone Shivling for Home Temple & Jalabhishek",
     "slug": "natural-red-jasper-gemstone-shivling",
     "price": 1200,
     "detail": "Handcrafted from certified Natural Sphatik (Clear Quartz), this sacred Natural Red Jasper Gemstone Shivling is sculpted by generational master artisans at Crystal Jaipuria, Jaipur (est. 1989). Carved in accordance with classical Vedic Shilpa Shastras, this sacred piece is designed for daily Jalabhishek, home temple worship, Vastu purification, and deep spiritual meditation.",
@@ -1236,7 +1236,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6aa2eddda69037c73ebe8cfb",
-    "name": "Blue Sodalite Carving Shiva Face Idol for Home Temple & Vastu (2.8 Inch, 900 g)",
+    "name": "Blue Sodalite Carving Shiva Face Idol for Home Temple & Vastu",
     "slug": "blue-sodalite-carving-shiva-face-idol",
     "price": 11000,
     "detail": "Handcrafted from certified Natural Blue Sodalite, this sacred Blue Sodalite Carving Shiva Face Idol is sculpted by master generational artisans at Crystal Jaipuria, Jaipur (est. 1989). Depicting Lord Shiva in serene meditation with the sacred Trishul and Damru, this divine murti radiates pure spiritual courage, dispels negative energies, and anchors profound peace in home altars and sacred spaces.",
@@ -1302,7 +1302,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6aa2ed41a69037c73ebe8cd3",
-    "name": "Labradorite Power Mini Shiva Face Idol Statue for Home Temple & Vastu (1.2 Inch, 180 g)",
+    "name": "Labradorite Power Mini Shiva Face Idol Statue for Home Temple & Vastu",
     "slug": "labradorite-power-mini-shiva-face",
     "price": 2200,
     "detail": "Handcrafted from certified Natural Sphatik (Clear Quartz), this sacred Labradorite Power Mini Shiva Face is sculpted by master generational artisans at Crystal Jaipuria, Jaipur (est. 1989). Depicting Lord Shiva in serene meditation with the sacred Trishul and Damru, this divine murti radiates pure spiritual courage, dispels negative energies, and anchors profound peace in home altars and sacred spaces.",
@@ -1368,7 +1368,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6aa2ec48a69037c73ebe8c85",
-    "name": "Natural Yellow Jade Ganesha Statue for Home Temple & Vastu (2.5 Inch, 850 g)",
+    "name": "Natural Yellow Jade Ganesha Statue for Home Temple & Vastu",
     "slug": "natural-yellow-jade-ganesha-statue",
     "price": 12500,
     "detail": "Handcrafted Natural Yellow Jade Ganesha Statue carved from Natural Green Jade (Nephrite / Columbian Jadeite) by master artisans in Jaipur. Radiates divine spiritual vibrations, harmonizes planetary energies, and purifies surrounding Vastu aura. Ideal for home temple altar, removing obstacles and welcoming prosperity, and auspicious spiritual gifting. Comes with secure shockproof packaging and worldwide doorstep delivery.",
@@ -1434,7 +1434,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6aa2ebbda69037c73ebe8c5f",
-    "name": "Rose Quartz Bhagwan Mahaveer Statue for Home Temple & Vastu (2.2 Inch, 900 g)",
+    "name": "Rose Quartz Bhagwan Mahaveer Statue for Home Temple & Vastu",
     "slug": "rose-quartz-bhagwan-mahaveer-statue",
     "price": 14000,
     "detail": "Handcrafted Rose Quartz Bhagwan Mahaveer Statue carved from Natural Rose Quartz (Pink Quartz) by master artisans in Jaipur. Radiates divine spiritual vibrations, harmonizes planetary energies, and purifies surrounding Vastu aura. Ideal for home temple altar, serene Samayika contemplation and Ahimsa aura, and auspicious spiritual gifting. Comes with secure shockproof packaging and worldwide doorstep delivery.",
@@ -1500,7 +1500,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6aa2e8c5a69037c73ebe8c11",
-    "name": "Tiger Eye Carving Shiva Statue for Home Temple & Vastu (2.8 Inch, 1.2 kg)",
+    "name": "Tiger Eye Carving Shiva Statue for Home Temple & Vastu",
     "slug": "tiger-eye-carving-shiva-statue",
     "price": 16500,
     "detail": "Handcrafted Tiger Eye Carving Shiva Statue carved from Natural Tiger Eye (Chatoyant Quartz) by master artisans in Jaipur. Radiates divine spiritual vibrations, harmonizes planetary energies, and purifies surrounding Vastu aura. Ideal for home temple altar, meditative focus, inner courage, and home protection, and auspicious spiritual gifting. Comes with secure shockproof packaging and worldwide doorstep delivery.",
@@ -1566,7 +1566,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a9bda4aa69037c73ebe572c",
-    "name": "Rose Quartz Carved Shree Krishna Ji Idol for Home Temple & Vastu (2.5 Inch, 1.4 kg)",
+    "name": "Rose Quartz Carved Shree Krishna Ji Idol for Home Temple & Vastu",
     "slug": "rose-quartz-carved-shree-krishna-ji-idol",
     "price": 21000,
     "detail": "Handcrafted Rose Quartz Carved Shree Krishna Ji Idol carved from Natural Rose Quartz (Pink Quartz) by master artisans in Jaipur. Radiates divine spiritual vibrations, harmonizes planetary energies, and purifies surrounding Vastu aura. Ideal for home temple altar, spiritual meditation and daily worship, and auspicious spiritual gifting. Comes with secure shockproof packaging and worldwide doorstep delivery.",
@@ -1632,7 +1632,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a9bda27a69037c73ebe5709",
-    "name": "Natural Amethyst Gemstone Shiva Face Idol for Home Temple & Vastu (2.8 Inch, 950 g)",
+    "name": "Natural Amethyst Gemstone Shiva Face Idol for Home Temple & Vastu",
     "slug": "natural-amethyst-gemstone-shiva-face-idol",
     "price": 14500,
     "detail": "Handcrafted Natural Amethyst Gemstone Shiva Face Idol carved from Natural Amethyst (Jamunia) by master artisans in Jaipur. Radiates divine spiritual vibrations, harmonizes planetary energies, and purifies surrounding Vastu aura. Ideal for home temple altar, meditative focus, inner courage, and home protection, and auspicious spiritual gifting. Comes with secure shockproof packaging and worldwide doorstep delivery.",
@@ -1698,7 +1698,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a9bda04a69037c73ebe56e7",
-    "name": "Green Jade Mahalakshmi Ji Idol for Home Temple & Vastu (2.8 Inch, 1.4 kg)",
+    "name": "Green Jade Mahalakshmi Ji Idol for Home Temple & Vastu",
     "slug": "green-jade-mahalakshmi-ji-idol",
     "price": 19500,
     "detail": "Handcrafted Green Jade Mahalakshmi Ji Idol carved from Natural Green Jade (Nephrite / Columbian Jadeite) by master artisans in Jaipur. Radiates divine spiritual vibrations, harmonizes planetary energies, and purifies surrounding Vastu aura. Ideal for home temple altar, spiritual meditation and daily worship, and auspicious spiritual gifting. Comes with secure shockproof packaging and worldwide doorstep delivery.",
@@ -1755,7 +1755,7 @@ export const FALLBACK_PRODUCTS = [
     },
     "subCategoryName": "Other Divine Deities",
     "size": "5 inch to 12 inch",
-    "weight": "1kg to 10 kg",
+    "weight": "1 kg to 10 kg",
     "stock": 10,
     "featured": true,
     "pricePerUnit": "₹20 / gram",
@@ -1764,7 +1764,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a9bd9dca69037c73ebe56c6",
-    "name": "Green Aventurine Parshvanath Ji Statue (2.2 Inch, 750 g)",
+    "name": "Green Aventurine Parshvanath Ji Statue",
     "slug": "green-aventurine-parshvanath-ji-statue",
     "price": 9500,
     "detail": "Handcrafted Green Aventurine Parshvanath Ji Statue carved from Natural Green Jade (Nephrite / Columbian Jadeite) by master artisans in Jaipur. Radiates divine spiritual vibrations, harmonizes planetary energies, and purifies surrounding Vastu aura. Ideal for home temple altar, serene Samayika contemplation and Ahimsa aura, and auspicious spiritual gifting. Comes with secure shockproof packaging and worldwide doorstep delivery.",
@@ -1830,7 +1830,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a9bd9baa69037c73ebe56a6",
-    "name": "Green Jade Goddess Maa Saraswati Carving (3.0 Inch, 1.6 kg)",
+    "name": "Green Jade Goddess Maa Saraswati Carving",
     "slug": "green-jade-goddess-maa-saraswati-carving",
     "price": 24000,
     "detail": "Handcrafted Green Jade Goddess Maa Saraswati Carving carved from Natural Green Jade (Nephrite / Columbian Jadeite) by master artisans in Jaipur. Radiates divine spiritual vibrations, harmonizes planetary energies, and purifies surrounding Vastu aura. Ideal for home temple altar, spiritual meditation and daily worship, and auspicious spiritual gifting. Comes with secure shockproof packaging and worldwide doorstep delivery.",
@@ -1896,7 +1896,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a9bd990a69037c73ebe5687",
-    "name": "Smokey Quartz Crystal Shiva Face Idol for Home Temple & Vastu (3.0 Inch, 1.1 kg)",
+    "name": "Smokey Quartz Crystal Shiva Face Idol for Home Temple & Vastu",
     "slug": "smokey-quartz-crystal-shiva-face-idol",
     "price": 16500,
     "detail": "Handcrafted Smokey Quartz Crystal Shiva Face Idol carved from Natural Sphatik (Clear Quartz) by master artisans in Jaipur. Radiates divine spiritual vibrations, harmonizes planetary energies, and purifies surrounding Vastu aura. Ideal for home temple altar, meditative focus, inner courage, and home protection, and auspicious spiritual gifting. Comes with secure shockproof packaging and worldwide doorstep delivery.",
@@ -1962,7 +1962,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a9bd955a69037c73ebe5669",
-    "name": "Green Jade Radha Krishna Statue Carving for Home Temple & Vastu (3.5 Inch, 2.8 kg)",
+    "name": "Green Jade Radha Krishna Statue Carving for Home Temple & Vastu",
     "slug": "green-jade-radha-krishna-statue-carving",
     "price": 38000,
     "detail": "Handcrafted from certified Natural Green Jade (Nephrite / Columbian Jadeite), this elegant Green Jade Radha Krishna Statue Carving is sculpted by master generational artisans at Crystal Jaipuria, Jaipur (est. 1989). Combining classical craftsmanship with authentic earth-mined gemstone, it radiates positive vibrations and brings timeless spiritual elegance to home sanctums, office spaces, and sacred altars.",
@@ -2028,7 +2028,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a9bd930a69037c73ebe564c",
-    "name": "Natural Labradorite Gemstone Shivling for Home Temple & Jalabhishek (3.0 Inch, 400 g)",
+    "name": "Natural Labradorite Gemstone Shivling for Home Temple & Jalabhishek",
     "slug": "natural-labradorite-gemstone-shivling",
     "price": 2400,
     "detail": "Handcrafted from certified Natural Sphatik (Clear Quartz), this sacred Natural Labradorite Gemstone Shivling is sculpted by generational master artisans at Crystal Jaipuria, Jaipur (est. 1989). Carved in accordance with classical Vedic Shilpa Shastras, this sacred piece is designed for daily Jalabhishek, home temple worship, Vastu purification, and deep spiritual meditation.",
@@ -2094,7 +2094,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a9bd90ca69037c73ebe5630",
-    "name": "Rose Quartz Shiva Statue with Gold Painting for Home Temple & Vastu (3.5 Inch, 2.0 kg)",
+    "name": "Rose Quartz Shiva Statue with Gold Painting for Home Temple & Vastu",
     "slug": "rose-quartz-shiva-statue-with-gold-painting",
     "price": 28000,
     "detail": "Handcrafted from certified Natural Rose Quartz (Pink Quartz), this sacred Rose Quartz Shiva Statue with Gold Painting is sculpted by master generational artisans at Crystal Jaipuria, Jaipur (est. 1989). Depicting Lord Shiva in serene meditation with the sacred Trishul and Damru, this divine murti radiates pure spiritual courage, dispels negative energies, and anchors profound peace in home altars and sacred spaces.",
@@ -2160,7 +2160,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a9bd8e6a69037c73ebe5615",
-    "name": "Natural Howlite Gemstone Shivling for Home Temple & Jalabhishek (2.5 Inch, 280 g)",
+    "name": "Natural Howlite Gemstone Shivling for Home Temple & Jalabhishek",
     "slug": "natural-howlite-gemstone-shivling",
     "price": 1400,
     "detail": "Handcrafted Natural Howlite Gemstone Shivling carved from Natural Sphatik (Clear Quartz) by master artisans in Jaipur. Radiates divine spiritual vibrations, harmonizes planetary energies, and purifies surrounding Vastu aura. Ideal for home temple altar, daily sacred Jalabhishek and Vastu harmony, and auspicious spiritual gifting. Comes with secure shockproof packaging and worldwide doorstep delivery.",
@@ -2226,7 +2226,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a9bd8b9a69037c73ebe55fb",
-    "name": "Natural Tiger Eye Gemstone Shivling for Home Temple & Jalabhishek (2.8 Inch, 320 g)",
+    "name": "Natural Tiger Eye Gemstone Shivling for Home Temple & Jalabhishek",
     "slug": "natural-tiger-eye-gemstone-shivling",
     "price": 1800,
     "detail": "Handcrafted Natural Tiger Eye Gemstone Shivling carved from Natural Tiger Eye (Chatoyant Quartz) by master artisans in Jaipur. Radiates divine spiritual vibrations, harmonizes planetary energies, and purifies surrounding Vastu aura. Ideal for home temple altar, daily sacred Jalabhishek and Vastu harmony, and auspicious spiritual gifting. Comes with secure shockproof packaging and worldwide doorstep delivery.",
@@ -2292,7 +2292,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a9a8d12a69037c73ebe400b",
-    "name": "Natural Lapis Lazuli Lord Krishna Statue for Home Temple & Vastu (2.8 Inch, 1.5 kg)",
+    "name": "Natural Lapis Lazuli Lord Krishna Statue for Home Temple & Vastu",
     "slug": "natural-lapis-lazuli-lord-krishna-statue",
     "price": 22000,
     "detail": "Handcrafted Natural Lapis Lazuli Lord Krishna Statue carved from Natural Lapis Lazuli (Sacred Lajward) by master artisans in Jaipur. Radiates divine spiritual vibrations, harmonizes planetary energies, and purifies surrounding Vastu aura. Ideal for home temple altar, spiritual meditation and daily worship, and auspicious spiritual gifting. Comes with secure shockproof packaging and worldwide doorstep delivery.",
@@ -2358,7 +2358,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a9a8c5ea69037c73ebe3ff3",
-    "name": "Natural Lapis Lazuli Shiva Face Carving Idol for Home Temple & Vastu (3.5 Inch, 1.2 kg)",
+    "name": "Natural Lapis Lazuli Shiva Face Carving Idol for Home Temple & Vastu",
     "slug": "natural-lapis-lazuli-shiva-face-carving-idol",
     "price": 18500,
     "detail": "Handcrafted Natural Lapis Lazuli Shiva Face Carving Idol carved from Natural Lapis Lazuli (Sacred Lajward) by master artisans in Jaipur. Radiates divine spiritual vibrations, harmonizes planetary energies, and purifies surrounding Vastu aura. Ideal for home temple altar, meditative focus, inner courage, and home protection, and auspicious spiritual gifting. Comes with secure shockproof packaging and worldwide doorstep delivery.",
@@ -2424,7 +2424,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a9a8898a69037c73ebe3ebb",
-    "name": "Natural Opal Stone Shivling for Home Temple & Jalabhishek (2.5 Inch, 350 g)",
+    "name": "Natural Opal Stone Shivling for Home Temple & Jalabhishek",
     "slug": "natural-opal-stone-shivling",
     "price": 3500,
     "detail": "Handcrafted Natural Opal Stone Shivling carved from Natural Sphatik (Clear Quartz) by master artisans in Jaipur. Radiates divine spiritual vibrations, harmonizes planetary energies, and purifies surrounding Vastu aura. Ideal for home temple altar, daily sacred Jalabhishek and Vastu harmony, and auspicious spiritual gifting. Comes with secure shockproof packaging and worldwide doorstep delivery.",
@@ -2490,7 +2490,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a94071c31429323dcbafd9f",
-    "name": "Natural Sphatik Shivling for Home Temple & Jalabhishek (4.0 Inch, 376 g)",
+    "name": "Natural Sphatik Shivling for Home Temple & Jalabhishek",
     "slug": "natural-sphatik-shivling",
     "price": 2500,
     "detail": "Handcrafted from certified Natural Sphatik (Clear Quartz), this sacred Natural Sphatik Shivling is sculpted by generational master artisans at Crystal Jaipuria, Jaipur (est. 1989). Carved in accordance with classical Vedic Shilpa Shastras, this sacred piece is designed for daily Jalabhishek, home temple worship, Vastu purification, and deep spiritual meditation.",
@@ -2556,7 +2556,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a94011831429323dcbafcce",
-    "name": "Clear Crystal Quartz Shivling With Shiva Face for Home Temple & Jalabhishek (4 Inch, 500 g)",
+    "name": "Clear Crystal Quartz Shivling With Shiva Face for Home Temple & Jalabhishek",
     "slug": "clear-crystal-quartz-shivling-with-shiva-face",
     "price": 3800,
     "detail": "Handcrafted from natural Sphatik (100% Natural Clear Quartz), this Clear Crystal Quartz Shivling With Shiva Face is sculpted in Jaipur, India by master lapidary artisans following classical Vedic Shilpa Shastras. Revered for its deep resonance with the Crown Chakra (Sahasrara) and planetary ruler Venus (Shukra) & Moon (Chandra), it serves as an authentic spiritual focal point for home sanctums, Vastu alignment, and auspicious worship.",
@@ -2622,7 +2622,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a93ffb431429323dcbafcb6",
-    "name": "Green Jade Shiva Statue with Gold Panting for Home Temple & Vastu (4.2 Inch, 462 g)",
+    "name": "Green Jade Shiva Statue with Gold Panting for Home Temple & Vastu",
     "slug": "green-jade-shiva-statue-with-gold-panting",
     "price": 4200,
     "detail": "Handcrafted from certified Natural Green Jade (Nephrite / Columbian Jadeite), this sacred Green Jade Shiva Statue with Gold Panting is sculpted by master generational artisans at Crystal Jaipuria, Jaipur (est. 1989). Depicting Lord Shiva in serene meditation with the sacred Trishul and Damru, this divine murti radiates pure spiritual courage, dispels negative energies, and anchors profound peace in home altars and sacred spaces.",
@@ -2688,7 +2688,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a93fbac31429323dcbafbe8",
-    "name": "Natural Rose Quartz Pair of Swan (5 Inch, 100 g)",
+    "name": "Natural Rose Quartz Pair of Swan",
     "slug": "natural-rose-quartz-pair-of-swan",
     "price": 2000,
     "detail": "Handcrafted Natural Rose Quartz Pair of Swans carved from Natural rose quartz (pink quartz) by master artisans in Jaipur. Radiates divine spiritual vibrations, harmonizes planetary energies, and purifies the surrounding Vastu aura. Ideal for home temple altar, spiritual meditation and daily worship, and auspicious spiritual gifting. Comes with secure shockproof packaging and worldwide doorstep delivery.",
@@ -2754,7 +2754,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a93f8e131429323dcbafb11",
-    "name": "Gemston Ruby Shree Yantra 3D Meru for Wealth & Vastu (1 Inch, 40 g)",
+    "name": "Gemston Ruby Shree Yantra 3D Meru for Wealth & Vastu",
     "slug": "gemston-ruby-shree-yantra",
     "price": 16800,
     "detail": "Buy a Natural Ruby Shree Yantra from Crystal Jaipuria, Jaipur, India. This handcrafted ruby gemstone Yantra is ideal for prosperity, abundance, success, meditation, pooja, Vastu, and home and office décor. Available for wholesale and bulk orders to retailers and international buyers across India, the USA, the UK, Australia, and worldwide.",
@@ -2820,7 +2820,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a93f72d31429323dcbafa84",
-    "name": "Blue Sapphire Carving Shiva Statue for Home Temple & Vastu (3 Inch, 400 g)",
+    "name": "Blue Sapphire Carving Shiva Statue for Home Temple & Vastu",
     "slug": "blue-sapphire-carving-shiva-statue",
     "price": 14700,
     "detail": "Handcrafted Blue Sapphire Carving Shiva Statue carved from natural blue sapphire (certified neelam corundum) by master artisans in Jaipur. Radiates divine spiritual vibrations, harmonizes planetary energies, and purifies the surrounding Vastu aura. Ideal for home temple altar, meditative focus, inner courage, home protection, and auspicious spiritual gifting. Comes with secure shockproof packaging and worldwide doorstep delivery.",
@@ -2886,7 +2886,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a93f43331429323dcbafa32",
-    "name": "Green Jade Carved Shree Krishana Statue for Home Temple & Vastu (4.2 Inch, 462 g)",
+    "name": "Green Jade Carved Shree Krishana Statue for Home Temple & Vastu",
     "slug": "green-jade-carved-shree-krishana-statue",
     "price": 5400,
     "detail": "Handcrafted from certified Natural Green Jade (Nephrite / Columbian Jadeite), this elegant Green Jade Carved Shree Krishana Statue is sculpted by master generational artisans at Crystal Jaipuria, Jaipur (est. 1989). Combining classical craftsmanship with authentic earth-mined gemstone, it radiates positive vibrations and brings timeless spiritual elegance to home sanctums, office spaces, and sacred altars.",
@@ -2952,7 +2952,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a93f23c31429323dcbaf931",
-    "name": "Pyrite Gemston Shivling for Home Temple & Jalabhishek (4.0 Inch, 710 g)",
+    "name": "Pyrite Gemston Shivling for Home Temple & Jalabhishek",
     "slug": "pyrite-gemston-shivling",
     "price": 3800,
     "detail": "Handcrafted from certified Golden Iron Pyrite (Natural Healer's Gold), this sacred Pyrite Gemston Shivling is sculpted by generational master artisans at Crystal Jaipuria, Jaipur (est. 1989). Carved in accordance with classical Vedic Shilpa Shastras, this sacred piece is designed for daily Jalabhishek, home temple worship, Vastu purification, and deep spiritual meditation.",
@@ -3018,7 +3018,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a93efff31429323dcbaf8cc",
-    "name": "Natural Green Jade Stone Panchmukhi Shivling for Home Temple (4.5 Inch, 500 g)",
+    "name": "Natural Green Jade Stone Panchmukhi Shivling for Home Temple",
     "slug": "green-jade-panchmukhi-shivling",
     "price": 3800,
     "detail": "Authentic Natural Green Jade Stone Panchmukhi Shivling (500g, 4.5 Inches) handcrafted by Jaipur master artisans. Sacred Pashupatinath Mahadev Swaroop with 5 divine faces (Sadyojata, Vamadeva, Aghora, Tatpurusha, Ishana) for home pooja and Jalabhishek at factory direct price.",
@@ -3084,7 +3084,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a93e63631429323dcbaf7b7",
-    "name": "Natural Ruby Shivling for Home Temple & Jalabhishek (4.0 Inch, 568 g)",
+    "name": "Natural Ruby Shivling for Home Temple & Jalabhishek",
     "slug": "natural-ruby-shivling",
     "price": 8750,
     "detail": "Handcrafted from certified Natural Ruby (Certified Manikya), this sacred Natural Ruby Shivling is sculpted by generational master artisans at Crystal Jaipuria, Jaipur (est. 1989). Carved in accordance with classical Vedic Shilpa Shastras, this sacred piece is designed for daily Jalabhishek, home temple worship, Vastu purification, and deep spiritual meditation.",
@@ -3150,7 +3150,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a91697b31429323dcbaf2cd",
-    "name": "Green Jade Elephant Staute (4.2 Inch, 462 g)",
+    "name": "Green Jade Elephant Staute",
     "slug": "green-jade-elephant-staute",
     "price": 800,
     "detail": "Handcrafted from certified Natural Green Jade (Nephrite / Columbian Jadeite), this elegant Green Jade Elephant Staute is sculpted by master generational artisans at Crystal Jaipuria, Jaipur (est. 1989). Combining classical craftsmanship with authentic earth-mined gemstone, it radiates positive vibrations and brings timeless spiritual elegance to home sanctums, office spaces, and sacred altars.",
@@ -3216,7 +3216,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a55c1012dcf49aacd71efd9",
-    "name": "Lapis Lazuli Gemstone Shiva Linga with Face of Shiva for Home Temple & Jalabhishek (4.0 Inch, 405 g)",
+    "name": "Lapis Lazuli Gemstone Shiva Linga with Face of Shiva for Home Temple & Jalabhishek",
     "slug": "lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva",
     "price": 2500,
     "detail": "Handcrafted from certified Natural Lapis Lazuli (Sacred Lajward), this sacred Lapis Lazuli Gemstone Shiva Linga with Face of Shiva is sculpted by generational master artisans at Crystal Jaipuria, Jaipur (est. 1989). Carved in accordance with classical Vedic Shilpa Shastras, this sacred piece is designed for daily Jalabhishek, home temple worship, Vastu purification, and deep spiritual meditation.",
@@ -3282,7 +3282,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a55c07e2dcf49aacd71efc3",
-    "name": "Green Jade Carving Shiva Face Statue for Home Temple & Vastu (8 Inch, 462 g)",
+    "name": "Green Jade Carving Shiva Face Statue for Home Temple & Vastu",
     "slug": "green-jade-carving-shiva-face-statue",
     "price": 37500,
     "detail": "Bring the blessings of Lord Shiva and the calming energy of Green Jade into your home or meditation space. This unique creation from Crystal Jaipuria is a beautiful representation of divine grace and tranquility.",
@@ -3348,7 +3348,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a55bf8b2dcf49aacd71efae",
-    "name": "Crystal Sphtik Shree Yantra On Kamal Flower 3D Meru for Wealth & Vastu (3 Inch, 100 g)",
+    "name": "Crystal Sphtik Shree Yantra On Kamal Flower 3D Meru for Wealth & Vastu",
     "slug": "crystal-sphtik-shree-yantra-on-kamal-flower",
     "price": 2000,
     "detail": "Bring the transformative power of the Shree Yantra and the purity of crystal into your home or office. This unique creation from Crystal Jaipuria is believed to harmonize energies, attract wealth, and foster success in all endeavors. The elegant lotus flower base adds a touch of grace and serenity, making this “Crystal Sphtik Shree Yantra” a powerful and aesthetically pleasing addition to any sacred space.",
@@ -3414,7 +3414,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a55bf102dcf49aacd71efac",
-    "name": "Black Agate Gemstone Carving of Ganesh Idol Statue for Home Temple & Vastu (8 Inch, 2 kg)",
+    "name": "Black Agate Gemstone Carving of Ganesh Idol Statue for Home Temple & Vastu",
     "slug": "black-agate-gemstone-carving-of-ganesh",
     "price": 12000,
     "detail": "Handcrafted Black Agate Gemstone Carving of Ganesh carved from Natural Black Agate (Kala Hakik) by master artisans in Jaipur. Radiates divine spiritual vibrations, harmonizes planetary energies, and purifies surrounding Vastu aura. Ideal for home temple altar, removing obstacles and welcoming prosperity, and auspicious spiritual gifting. Comes with secure shockproof packaging and worldwide doorstep delivery.",
@@ -3480,7 +3480,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a55beb62dcf49aacd71ef9e",
-    "name": "Gemston Amethyst Diya for Mandir Pooja (2.5 Inch, 66 g)",
+    "name": "Gemston Amethyst Diya for Mandir Pooja",
     "slug": "gemston-amethyst-diya",
     "price": 250,
     "detail": "Handcrafted from certified Natural Amethyst (Jamunia), this elegant Gemston Amethyst Diya is sculpted by master generational artisans at Crystal Jaipuria, Jaipur (est. 1989). Combining classical craftsmanship with authentic earth-mined gemstone, it radiates positive vibrations and brings timeless spiritual elegance to home sanctums, office spaces, and sacred altars.",
@@ -3546,7 +3546,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a55be4f2dcf49aacd71ef80",
-    "name": "Crystal Clear Mahvaveer Ji Statue (4.2 Inch, 411 g)",
+    "name": "Crystal Clear Mahvaveer Ji Statue",
     "slug": "crystal-clear-mahvaveer-ji-statue",
     "price": 4200,
     "detail": "Handcrafted from certified Natural Sphatik (Clear Quartz), this elegant Crystal Clear Mahvaveer Ji Statue is sculpted by master generational artisans at Crystal Jaipuria, Jaipur (est. 1989). Combining classical craftsmanship with authentic earth-mined gemstone, it radiates positive vibrations and brings timeless spiritual elegance to home sanctums, office spaces, and sacred altars.",
@@ -3612,7 +3612,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a55bdcd2dcf49aacd71ef71",
-    "name": "Amethyst Gemston Angel for Reiki Healing & Positive Energy (2.2 Inch, 37 g)",
+    "name": "Amethyst Gemston Angel for Reiki Healing & Positive Energy",
     "slug": "amethyst-gemston-angel",
     "price": 350,
     "detail": "Handcrafted from certified Natural Amethyst (Jamunia), this beautiful Guardian Amethyst Gemston Angel is carved by master artisans at Crystal Jaipuria, Jaipur (est. 1989). Radiating gentle celestial frequencies, it aids in auric shielding, emotional healing, and mental peace, making it an ideal companion for bedside tables, meditation corners, and meaningful spiritual gifting.",

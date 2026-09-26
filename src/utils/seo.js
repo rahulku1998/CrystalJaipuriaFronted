@@ -18,7 +18,7 @@ const SUPER_TITLE_MAPPINGS = {
   "blue-sapphire-carving-shiva-statue": "Handcrafted Blue Sapphire Carving Shiva Statue | Jaipur Gemstone Wholesaler",
   "green-jade-carved-shree-krishana-statue": "Green Jade Carved Shree Krishna Statue | Authentic Jaipur Gemstone Idol",
   "pyrite-gemston-shivling": "Golden Pyrite Gemstone Shivling (Money Magnet & Vastu) | Crystal Jaipuria",
-  "green-jade-panchmukhi-shivling": "Natural Green Jade Stone Panchmukhi Shivling (500g, 4.5\") | Pashupatinath Swaroop | Crystal Jaipuria",
+  "green-jade-panchmukhi-shivling": "Natural Green Jade Stone Panchmukhi Shivling | Pashupatinath Swaroop | Crystal Jaipuria",
   "natural-ruby-shivling": "Natural Ruby Gemstone Shivling | Certified Precious Gem Carving",
   "green-jade-elephant-staute": "Handcrafted Green Jade Elephant Statue for Good Luck & Vastu | Jaipur",
   "lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva": "Natural Lapis Lazuli Shiva Linga With Face | Authentic Gemstone Murti",
@@ -70,7 +70,7 @@ export const getProductMetaTitle = (productName, slug = "") => {
 };
 
 const SUPER_DESCRIPTION_MAPPINGS = {
-  "green-jade-panchmukhi-shivling": "Buy 100% Certified Natural Green Jade Stone Panchmukhi Shivling (500g, 4.5\"). 5 divine faces of Pashupatinath Mahadev. Handcrafted in Jaipur at ₹5,000 direct.",
+  "green-jade-panchmukhi-shivling": "Buy 100% Certified Natural Green Jade Stone Panchmukhi Shivling. 5 divine faces of Pashupatinath Mahadev. Handcrafted in Jaipur at factory direct price.",
 };
 
 export const getProductMetaDescription = (product) => {

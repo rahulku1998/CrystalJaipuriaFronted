@@ -246,10 +246,6 @@ export const runPrerender = async () => {
     }
 
     let displayTitle = cleanName;
-    if (!displayTitle.includes("(") && (shippingWeight || size)) {
-      const specLabel = [shippingWeight, size].filter(Boolean).join(", ");
-      displayTitle = `${cleanName} (${specLabel})`;
-    }
 
     let metaTitle = prod.metaTitle || "";
     let metaDesc = prod.metaDescription || "";
@@ -451,7 +447,11 @@ export const runPrerender = async () => {
             <div style="flex:1.2;min-width:280px;">
               <span style="display:inline-block;background:#fef3c7;color:#92400e;font-size:12px;font-weight:700;padding:4px 12px;border-radius:9999px;margin-bottom:12px;letter-spacing:0.5px;">100% NATURAL CERTIFIED GEMSTONE</span>
               <h1 style="font-size:26px;font-weight:800;color:#0f172a;line-height:1.3;margin-bottom:12px;">${escapeHtml(customHeading || displayTitle)}</h1>
-              <div style="font-size:24px;font-weight:800;color:#4f46e5;margin-bottom:12px;">₹${priceNum.toLocaleString("en-IN")}</div>
+              <div style="font-size:24px;font-weight:800;color:#154734;margin-bottom:10px;">₹${priceNum.toLocaleString("en-IN")}${prod.pricePerUnit ? ` <span style="font-size:15px;color:#6B5E55;font-weight:500;">(${escapeHtml(prod.pricePerUnit)})</span>` : ""}</div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;">
+                ${prod.weight ? `<span style="display:inline-block;background:#FDF8F3;color:#221C18;font-size:13px;font-weight:600;padding:4px 10px;border-radius:6px;border:1px solid #D4AF37;"><strong>Weight Range:</strong> ${escapeHtml(String(prod.weight))}</span>` : ""}
+                ${prod.size ? `<span style="display:inline-block;background:#FDF8F3;color:#221C18;font-size:13px;font-weight:600;padding:4px 10px;border-radius:6px;border:1px solid #D4AF37;"><strong>Size Range:</strong> ${escapeHtml(String(prod.size))}</span>` : ""}
+              </div>
               <p style="font-size:15px;color:#475569;line-height:1.6;margin-bottom:20px;">${escapeHtml(cleanDesc.slice(0, 350))}...</p>
               <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px;">
                 <a href="https://wa.me/918306317032?text=Hello%20Crystal%20Jaipuria,%20I%20am%20interested%20in%20${encodeURIComponent(displayTitle)}" style="background:#25D366;color:#ffffff;font-weight:700;padding:12px 24px;border-radius:12px;text-decoration:none;font-size:15px;display:inline-flex;align-items:center;gap:8px;">WhatsApp Inquiry</a>

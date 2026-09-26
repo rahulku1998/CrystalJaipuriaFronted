@@ -405,11 +405,11 @@ const generateSitemap = async () => {
     }
 
     if (slug === "green-jade-panchmukhi-shivling") {
-      feedTitle = "Natural Green Jade Stone Panchmukhi Shivling for Home Temple (4.5 Inch, 500 g)";
+      feedTitle = "Natural Green Jade Stone Panchmukhi Shivling for Home Temple";
     }
 
     const feedDesc = (slug === "green-jade-panchmukhi-shivling")
-      ? "Authentic Natural Green Jade Stone Panchmukhi Shivling (500g, 4.5 Inches) handcrafted by Jaipur master artisans. Sacred Pashupatinath Mahadev Swaroop with 5 divine faces (Sadyojata, Vamadeva, Aghora, Tatpurusha, Ishana) for home pooja and Jalabhishek at factory direct price."
+      ? `Authentic Natural Green Jade Stone Panchmukhi Shivling (${prod.weight || "1 kg to 10 kg"}, ${prod.size || "1 inch to 6 inch"}) handcrafted by Jaipur master artisans. Sacred Pashupatinath Mahadev Swaroop with 5 divine faces (Sadyojata, Vamadeva, Aghora, Tatpurusha, Ishana) for home pooja and Jalabhishek at factory direct price.`
       : cleanDesc;
 
     gmcXml += `    <item>\n`;

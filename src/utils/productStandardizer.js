@@ -7,11 +7,149 @@ import { STATIC_CATALOG_SLUGS } from "./imageOptimizer.js";
  */
 
 export const STANDARDIZED_SPECS = {
-  "natural-opal-stone-shivling": {
-    price: 3500,
-    weight: "20 gram to 300 gram",
-    size: "1 inch to 6 inch",
-    pricePerUnit: "₹7 / gram",
+  "hand-carved-rose-quartz-ganesha-with-sterling-silver-testing": {
+    price: 5800,
+    weight: "371 g to 2 kg",
+    size: "2 in to 5 inch",
+    pricePerUnit: "₹10 / gram",
+  },
+  "australian-jade-ganesha-carving": {
+    price: 500,
+    weight: "50 gram to 500 gram",
+    size: "2 inch to 7 inch",
+    pricePerUnit: "₹4.5 / gram",
+  },
+  "hand-carved-ruby-ganesha": {
+    price: 30,
+    weight: "200 carat to 5000 carat",
+    size: "2 inch to 5 inch",
+    pricePerUnit: "₹30 / carat",
+  },
+  "natural-ruby-radha-krishna-idol-hand-carved": {
+    price: 20300,
+    weight: "200 carat to 4500 carat",
+    size: "4 inch to 8 inch",
+    pricePerUnit: "₹60 / carat",
+  },
+  "green-jade-ganesha": {
+    price: 5200,
+    weight: "50 gram to 1 kg",
+    size: "2 inch to 7 inch",
+    pricePerUnit: "₹4.5 / gram",
+  },
+  "rose-quartz-ganesha": {
+    price: 500,
+    weight: "50 gram to 1 kg",
+    size: "2 inch to 5 in",
+    pricePerUnit: "₹4.5 / gram",
+  },
+  "crystal-ganesha": {
+    price: 25,
+    weight: "50 gram to 2 kg",
+    size: "2 inch to 5 inch",
+    pricePerUnit: "₹50 / gram",
+  },
+  "blue-sodalite-carved-ganesha-statue": {
+    price: 9500,
+    weight: "500 gram to 10 kg",
+    size: "4 inch to 12 inch",
+    pricePerUnit: "₹6 / gram",
+  },
+  "rose-quartz-ganesha-with-gold-painted": {
+    price: 16500,
+    weight: "1 kg to 50 kg",
+    size: "8 inch to 40 inch",
+    pricePerUnit: "₹3 / gram",
+  },
+  "blue-sodalite-carved-lord-shiva-statue": {
+    price: 14000,
+    weight: "1 kg to 25 kg",
+    size: "5 inch to 20 inch",
+    pricePerUnit: "₹10 / gram",
+  },
+  "natural-blue-sodalite-hanuman-ji-statue": {
+    price: 13500,
+    weight: "1 kg to 30 kg",
+    size: "5 inch to 25 inch",
+    pricePerUnit: "₹15 / gram",
+  },
+  "blue-sodalite-carving-shiva-face-idol": {
+    price: 11000,
+    weight: "500 gram to 15 kg",
+    size: "5 inch to 15 inch",
+    pricePerUnit: "₹15 / gram",
+  },
+  "labradorite-power-mini-shiva-face": {
+    price: 2200,
+    weight: "200 gram to 50 kg",
+    size: "4 inch to 45 inch",
+    pricePerUnit: "₹8 / gram",
+  },
+  "natural-yellow-jade-ganesha-statue": {
+    price: 12500,
+    weight: "500 gram to 20 kg",
+    size: "5 inch to 15 inch",
+    pricePerUnit: "₹5 / gram",
+  },
+  "rose-quartz-bhagwan-mahaveer-statue": {
+    price: 14000,
+    weight: "1 kg to 50 kg",
+    size: "5 inch to 50 inch",
+    pricePerUnit: "₹15 / gram",
+  },
+  "tiger-eye-carving-shiva-statue": {
+    price: 16500,
+    weight: "500 gram to 25 kg",
+    size: "4 inch to 40 inch",
+    pricePerUnit: "₹15 / gram",
+  },
+  "rose-quartz-carved-shree-krishna-ji-idol": {
+    price: 21000,
+    weight: "5 kg to 100 kg",
+    size: "4 inch to 80 inch",
+    pricePerUnit: "₹10 / gram",
+  },
+  "natural-amethyst-gemstone-shiva-face-idol": {
+    price: 14500,
+    weight: "200 gram to 10 kg",
+    size: "3 inch to 10 inch",
+    pricePerUnit: "₹15 / gram",
+  },
+  "green-jade-mahalakshmi-ji-idol": {
+    price: 19500,
+    weight: "1 kg to 10 kg",
+    size: "5 inch to 12 inch",
+    pricePerUnit: "₹20 / gram",
+  },
+  "green-aventurine-parshvanath-ji-statue": {
+    price: 9500,
+    weight: "1 kg to 50 kg",
+    size: "5 inch to 50 inch",
+    pricePerUnit: "₹10 / gram",
+  },
+  "green-jade-goddess-maa-saraswati-carving": {
+    price: 24000,
+    weight: "1 kg to 20 kg",
+    size: "5 inch to 20 inch",
+    pricePerUnit: "₹15 / gram",
+  },
+  "smokey-quartz-crystal-shiva-face-idol": {
+    price: 16500,
+    weight: "200 gram to 2 kg",
+    size: "5 inch to 15 inch",
+    pricePerUnit: "₹17 / gram",
+  },
+  "green-jade-radha-krishna-statue-carving": {
+    price: 38000,
+    weight: "5 kg to 50 kg",
+    size: "15 inch to 40 inch",
+    pricePerUnit: "₹20 / gram",
+  },
+  "rose-quartz-shiva-statue-with-gold-painting": {
+    price: 28000,
+    weight: "1 kg to 70 kg",
+    size: "10 inch to 40 inch",
+    pricePerUnit: "₹5 / gram",
   },
   "natural-lapis-lazuli-lord-krishna-statue": {
     price: 22000,
@@ -25,35 +163,11 @@ export const STANDARDIZED_SPECS = {
     size: "5 inch to 20 inch",
     pricePerUnit: "₹19 / gram",
   },
-  "natural-sphatik-shivling": {
-    price: 2500,
-    weight: "20 gram to 200 gram",
-    size: "1 inch to 6 inch",
-    pricePerUnit: "₹20 / gram",
-  },
-  "clear-crystal-quartz-shivling-with-shiva-face": {
-    price: 3800,
-    weight: "500 gram to 10 kg",
-    size: "1 inch to 6 inch",
-    pricePerUnit: "₹25 / gram",
-  },
   "green-jade-shiva-statue-with-gold-panting": {
     price: 4200,
     weight: "5 kg to 100 kg",
     size: "5 inch to 40 inch",
     pricePerUnit: "₹5 / gram",
-  },
-  "natural-rose-quartz-pair-of-swan": {
-    price: 2000,
-    weight: "50 gram to 500 gram",
-    size: "1 inch to 6 inch",
-    pricePerUnit: "₹4.5 / gram",
-  },
-  "gemston-ruby-shree-yantra": {
-    price: 16800,
-    weight: "100 carat to 1000 carat",
-    size: "1 inch to 6 inch",
-    pricePerUnit: "₹40 / carat",
   },
   "blue-sapphire-carving-shiva-statue": {
     price: 14700,
@@ -66,6 +180,78 @@ export const STANDARDIZED_SPECS = {
     weight: "10 kg to 80 kg",
     size: "15 inch to 50 inch",
     pricePerUnit: "₹10 / gram",
+  },
+  "green-jade-carving-shiva-face-statue": {
+    price: 37500,
+    weight: "1 kg to 50 kg",
+    size: "10 in to 50 inch",
+    pricePerUnit: "₹5 / gram",
+  },
+  "black-agate-gemstone-carving-of-ganesh": {
+    price: 12000,
+    weight: "2 kg to 10 kg",
+    size: "5 inch to 15 inch",
+    pricePerUnit: "₹5 / gram",
+  },
+  "crystal-clear-mahvaveer-ji-statue": {
+    price: 4200,
+    weight: "500 gram to 10 kg",
+    size: "7 inch to 29 inch",
+    pricePerUnit: "₹100 / gram",
+  },
+  "green-jade-shivling": {
+    price: 4200,
+    weight: "20 gram to 500 gram",
+    size: "1 inch to 6 inch",
+    pricePerUnit: "₹4 / gram",
+  },
+  "crystal-shivling": {
+    price: 4500,
+    weight: "20 gram to 500 gram",
+    size: "1 inch to 6 inch",
+    pricePerUnit: "₹15 / gram",
+  },
+  "natural-red-jasper-gemstone-shivling": {
+    price: 1200,
+    weight: "20 gram to 500 gram",
+    size: "1 inch to 6 inch",
+    pricePerUnit: "₹7 / gram",
+  },
+  "natural-labradorite-gemstone-shivling": {
+    price: 2400,
+    weight: "20 gram to 500 gram",
+    size: "1 inch to 6 inch",
+    pricePerUnit: "₹8 / gram",
+  },
+  "natural-howlite-gemstone-shivling": {
+    price: 1400,
+    weight: "20 gram to 500 gram",
+    size: "1 inch to 6 inch",
+    pricePerUnit: "₹8 / gram",
+  },
+  "natural-tiger-eye-gemstone-shivling": {
+    price: 1800,
+    weight: "20 gram to 200 gram",
+    size: "1 inch to 6 inch",
+    pricePerUnit: "₹9 / gram",
+  },
+  "natural-opal-stone-shivling": {
+    price: 3500,
+    weight: "20 gram to 300 gram",
+    size: "1 inch to 6 inch",
+    pricePerUnit: "₹7 / gram",
+  },
+  "natural-sphatik-shivling": {
+    price: 2500,
+    weight: "20 gram to 200 gram",
+    size: "1 inch to 6 inch",
+    pricePerUnit: "₹20 / gram",
+  },
+  "clear-crystal-quartz-shivling-with-shiva-face": {
+    price: 3800,
+    weight: "500 gram to 10 kg",
+    size: "1 inch to 6 inch",
+    pricePerUnit: "₹25 / gram",
   },
   "pyrite-gemston-shivling": {
     price: 3800,
@@ -85,23 +271,29 @@ export const STANDARDIZED_SPECS = {
     size: "1 inch to 6 inch",
     pricePerUnit: "₹50 / carat",
   },
-  "green-jade-elephant-staute": {
-    price: 800,
-    weight: "100 gram to 500gram",
-    size: "1 inch to 6 inch",
-    pricePerUnit: "₹6 / gram",
-  },
   "lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva": {
     price: 2500,
     weight: "500 gram to 10 kg",
     size: "1 inch to 6 inch",
     pricePerUnit: "₹15 / gram",
   },
-  "green-jade-carving-shiva-face-statue": {
-    price: 37500,
-    weight: "1 kg to 50 kg",
-    size: "10 in to 50 inch",
-    pricePerUnit: "₹5 / gram",
+  "crystal-shree-yantra": {
+    price: 5800,
+    weight: "50 gram to 2 kg",
+    size: "1 inch to 6 inch",
+    pricePerUnit: "₹15 / gram",
+  },
+  "green-jade-shree-yantra": {
+    price: 4900,
+    weight: "50 gram to 5 kg",
+    size: "1 inch to 6 inch",
+    pricePerUnit: "₹8 / gram",
+  },
+  "gemston-ruby-shree-yantra": {
+    price: 16800,
+    weight: "100 carat to 1000 carat",
+    size: "1 inch to 6 inch",
+    pricePerUnit: "₹40 / carat",
   },
   "crystal-sphtik-shree-yantra-on-kamal-flower": {
     price: 2000,
@@ -109,28 +301,28 @@ export const STANDARDIZED_SPECS = {
     size: "1 inch to 6 inch",
     pricePerUnit: "₹10 / gram",
   },
-  "black-agate-gemstone-carving-of-ganesh": {
-    price: 12000,
-    weight: "2 kg to 10 kg",
-    size: "5 inch to 15 inch",
-    pricePerUnit: "₹5 / gram",
+  "amethyst-gemston-angel": {
+    price: 350,
+    weight: "37 g",
+    size: "1 inch to 6 inch",
+    pricePerUnit: "",
+  },
+  "natural-rose-quartz-pair-of-swan": {
+    price: 2000,
+    weight: "50 gram to 500 gram",
+    size: "1 inch to 6 inch",
+    pricePerUnit: "₹4.5 / gram",
+  },
+  "green-jade-elephant-staute": {
+    price: 800,
+    weight: "100 gram to 500gram",
+    size: "1 inch to 6 inch",
+    pricePerUnit: "₹6 / gram",
   },
   "gemston-amethyst-diya": {
     price: 250,
     weight: "66 g",
     size: "2.5 Inch",
-    pricePerUnit: "",
-  },
-  "crystal-clear-mahvaveer-ji-statue": {
-    price: 4200,
-    weight: "500 gram to 10 kg",
-    size: "7 inch to 29 inch",
-    pricePerUnit: "₹100 / gram",
-  },
-  "amethyst-gemston-angel": {
-    price: 350,
-    weight: "37 g",
-    size: "1 inch to 6 inch",
     pricePerUnit: "",
   },
 };
@@ -266,10 +458,10 @@ export const formatAdditionalInfo = (inputHtmlOrText, product = {}) => {
         key = "Usage & Application";
       }
 
-      if (key.toLowerCase() === "weight" && cleanWeight) {
+      if (key.toLowerCase().includes("weight") && cleanWeight) {
         val = cleanWeight;
       }
-      if (key.toLowerCase() === "size" && cleanSize) {
+      if ((key.toLowerCase().includes("size") || key.toLowerCase().includes("dimension")) && cleanSize) {
         val = cleanSize;
       }
 
@@ -343,7 +535,7 @@ export const STANDARDIZED_NAMES = {
   "green-jade-elephant-staute": "Green Jade Elephant Statue",
   "green-jade-shiva-statue-with-gold-panting": "Green Jade Shiva Statue With Gold Painting",
   "green-jade-carved-shree-krishana-statue": "Green Jade Carved Shree Krishna Statue",
-  "green-jade-panchmukhi-shivling": "Natural Green Jade Stone Panchmukhi Shivling (500g, 4.5\")"
+  "green-jade-panchmukhi-shivling": "Natural Green Jade Stone Panchmukhi Shivling"
 };
 
 export const MULTI_IMAGE_SLUGS = new Set([
@@ -386,40 +578,20 @@ export const getStandardizedProduct = (product) => {
 
   const slug = (product.slug || "").toLowerCase().trim();
   const spec = STANDARDIZED_SPECS[slug];
-  const cleanName = STANDARDIZED_NAMES[slug] || product.name;
+  let cleanName = STANDARDIZED_NAMES[slug] || product.name || "";
 
-  let standardizedPrice = product.price;
-  let standardizedWeight = product.weight;
-  let standardizedSize = product.size;
+  // Strip outdated single weight/dimension strings in trailing parentheses like (4.2 Inch, 462 g)
+  cleanName = cleanName
+    .replace(/\s*\([^\)]*?(?:g|kg|inch|cm|mm|[0-9])[^\)]*?\)/gi, "")
+    .replace(/\s*-\s*testing\b/gi, "")
+    .replace(/\btesting\b/gi, "")
+    .replace(/\s{2,}/g, " ")
+    .trim();
 
-  if (spec) {
-    if (
-      !standardizedPrice ||
-      String(standardizedPrice).trim() === "" ||
-      String(standardizedPrice).includes("/GRAM") ||
-      standardizedPrice === "120"
-    ) {
-      standardizedPrice = spec.price;
-    }
-
-    if (
-      !standardizedWeight ||
-      String(standardizedWeight).trim() === "" ||
-      standardizedWeight === "N/A" ||
-      (standardizedWeight.includes("-") && !standardizedWeight.includes("Approx"))
-    ) {
-      standardizedWeight = spec.weight;
-    }
-
-    if (
-      !standardizedSize ||
-      String(standardizedSize).trim() === "" ||
-      standardizedSize === "N/A" ||
-      (standardizedSize.includes("-") && !standardizedSize.includes("to"))
-    ) {
-      standardizedSize = spec.size;
-    }
-  }
+  let standardizedPrice = spec?.price !== undefined && spec?.price !== "" ? spec.price : product.price;
+  let standardizedWeight = spec?.weight !== undefined && spec?.weight !== "" ? spec.weight : product.weight;
+  let standardizedSize = spec?.size !== undefined && spec?.size !== "" ? spec.size : product.size;
+  let standardizedPricePerUnit = spec?.pricePerUnit !== undefined && spec?.pricePerUnit !== "" ? spec.pricePerUnit : (product.pricePerUnit || "");
 
   const dimensions = spec?.dimensions || product.dimensions || standardizedSize;
   const formattedAdditionalInfo = formatAdditionalInfo(product.additionalInfo, {
@@ -442,6 +614,17 @@ export const getStandardizedProduct = (product) => {
   }
 
   if (cleanDescription) {
+    if (standardizedWeight) {
+      cleanDescription = cleanDescription
+        .replace(/(Estimated\s*Weight\s*<\/td>\s*<td[^>]*>).*?(<\/td>)/gis, `$1${standardizedWeight}$2`)
+        .replace(/(<strong>\s*Estimated\s*Weight\s*:\s*<\/strong>\s*)[^<\n]+/gi, `$1${standardizedWeight}`);
+    }
+    if (standardizedSize) {
+      cleanDescription = cleanDescription
+        .replace(/(Size\s*(&amp;|&)\s*Dimensions\s*<\/td>\s*<td[^>]*>).*?(<\/td>)/gis, `$1${standardizedSize}$3`)
+        .replace(/(<strong>\s*Size\s*(&amp;|&)\s*Dimensions\s*:\s*<\/strong>\s*)[^<\n]+/gi, `$1${standardizedSize}`);
+    }
+
     // 1. Fix Labradorite products showing Sphatik
     if (slug.includes("labradorite")) {
       cleanDescription = cleanDescription
@@ -599,7 +782,7 @@ export const getStandardizedProduct = (product) => {
 
   if (slug === "green-jade-panchmukhi-shivling") {
     cleanDescription = `
-<p class="mb-4">Experience the divine presence of Lord Shiva with the <strong>Natural Green Jade Stone Panchmukhi Shivling</strong> (500g, 4.5 Inches) hand-carved by master artisans at Crystal Jaipuria, Jaipur. This sacred idol represents the revered <strong>Pashupatinath Mahadev Swaroop</strong> featuring five distinct faces (Panchmukh) symbolizing the five cosmic elements (Panchamahabhuta) and eternal aspects of Lord Shiva.</p>
+<p class="mb-4">Experience the divine presence of Lord Shiva with the <strong>Natural Green Jade Stone Panchmukhi Shivling</strong> (${standardizedWeight ? `Available in ${standardizedWeight}` : ""}${standardizedSize ? `, ${standardizedSize}` : ""}) hand-carved by master artisans at Crystal Jaipuria, Jaipur. This sacred idol represents the revered <strong>Pashupatinath Mahadev Swaroop</strong> featuring five distinct faces (Panchmukh) symbolizing the five cosmic elements (Panchamahabhuta) and eternal aspects of Lord Shiva.</p>
 
 <h3 class="text-lg font-bold text-slate-900 mt-6 mb-3">Significance of the 5 Sacred Divine Faces (Panchamukha)</h3>
 <ul class="list-disc pl-5 space-y-2 mb-6">
@@ -615,11 +798,10 @@ export const getStandardizedProduct = (product) => {
   <table class="w-full text-sm border border-slate-200 rounded-lg">
     <tbody>
       <tr class="border-b border-slate-100 bg-slate-50"><td class="p-2.5 font-bold text-slate-900">Gemstone Material</td><td class="p-2.5 text-slate-700">100% Certified Natural Green Jade (Earth-Mined)</td></tr>
-      <tr class="border-b border-slate-100"><td class="p-2.5 font-bold text-slate-900">Height</td><td class="p-2.5 text-slate-700">4.5 Inches (approx. 11.4 cm)</td></tr>
-      <tr class="border-b border-slate-100 bg-slate-50"><td class="p-2.5 font-bold text-slate-900">Base Width</td><td class="p-2.5 text-slate-700">3.1 Inches (approx. 8.0 cm)</td></tr>
-      <tr class="border-b border-slate-100"><td class="p-2.5 font-bold text-slate-900">Weight</td><td class="p-2.5 text-slate-700">500 Grams (approx.) &bull; Custom orders up to 2.5 kg available</td></tr>
-      <tr class="border-b border-slate-100 bg-slate-50"><td class="p-2.5 font-bold text-slate-900">Spiritual Swaroop</td><td class="p-2.5 text-slate-700">Pashupatinath Mahadev 5-Faced Shiva Lingam</td></tr>
-      <tr class="border-b border-slate-100"><td class="p-2.5 font-bold text-slate-900">Color &amp; Finish</td><td class="p-2.5 text-slate-700">Natural Deep Forest Green &bull; Smooth Mirror Polish</td></tr>
+      <tr class="border-b border-slate-100"><td class="p-2.5 font-bold text-slate-900">Size / Height Range</td><td class="p-2.5 text-slate-700">${standardizedSize || "1 inch to 6 inch"}</td></tr>
+      <tr class="border-b border-slate-100 bg-slate-50"><td class="p-2.5 font-bold text-slate-900">Weight Range</td><td class="p-2.5 text-slate-700">${standardizedWeight || "1 kg to 10 kg"}</td></tr>
+      <tr class="border-b border-slate-100"><td class="p-2.5 font-bold text-slate-900">Spiritual Swaroop</td><td class="p-2.5 text-slate-700">Pashupatinath Mahadev 5-Faced Shiva Lingam</td></tr>
+      <tr class="border-b border-slate-100 bg-slate-50"><td class="p-2.5 font-bold text-slate-900">Color &amp; Finish</td><td class="p-2.5 text-slate-700">Natural Deep Forest Green &bull; Smooth Mirror Polish</td></tr>
       <tr class="bg-slate-50"><td class="p-2.5 font-bold text-slate-900">Origin &amp; Certification</td><td class="p-2.5 text-slate-700">Jaipur Heritage Workshop &bull; Lab Certificate Included</td></tr>
     </tbody>
   </table>
@@ -639,7 +821,7 @@ export const getStandardizedProduct = (product) => {
 
   let cleanDetail = product.detail;
   if (slug === "green-jade-panchmukhi-shivling") {
-    cleanDetail = "Buy 100% Certified Natural Green Jade Stone Panchmukhi Shivling (500g, 4.5 Inches) handcrafted in Jaipur, India. Sacred Pashupatinath Mahadev Swaroop with 5 divine faces for home temple pooja, Jalabhishek, and Vastu prosperity at factory direct price.";
+    cleanDetail = `Buy 100% Certified Natural Green Jade Stone Panchmukhi Shivling (${standardizedWeight || "1 kg to 10 kg"}, ${standardizedSize || "1 inch to 6 inch"}) handcrafted in Jaipur, India. Sacred Pashupatinath Mahadev Swaroop with 5 divine faces for home temple pooja, Jalabhishek, and Vastu prosperity at factory direct price.`;
   } else if (cleanDetail) {
     if (slug.includes("labradorite")) {
       cleanDetail = cleanDetail.replace(/Natural\s+Sphatik\s*\([^)]*\)/gi, "Natural Labradorite Gemstone").replace(/Sphatik/gi, "Labradorite");
@@ -695,7 +877,7 @@ export const getStandardizedProduct = (product) => {
     price: standardizedPrice,
     weight: standardizedWeight,
     size: standardizedSize,
-    pricePerUnit: product.pricePerUnit || spec?.pricePerUnit || "",
+    pricePerUnit: standardizedPricePerUnit,
     dimensions,
     detail: cleanDetail,
     description: cleanDescription,

@@ -73,7 +73,7 @@ const ProductCard = ({ product, headingTag = "p" }) => {
           </div>
 
           {item.weight && (
-            <span className="text-[10px] sm:text-xs bg-stone-100 text-stone-600 px-1.5 py-0.5 rounded font-medium truncate max-w-[80px] sm:max-w-none mb-0.5">
+            <span className="text-[10px] sm:text-xs bg-stone-100 text-stone-600 px-1.5 py-0.5 rounded font-medium whitespace-nowrap mb-0.5">
               {item.weight}
             </span>
           )}

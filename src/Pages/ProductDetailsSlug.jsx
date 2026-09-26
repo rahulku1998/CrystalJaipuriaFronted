@@ -4,7 +4,7 @@ import API from "../api/axios";
 import { formatPrice } from "../utils/price";
 import { getProductImageUrl } from "../utils/imageOptimizer";
 import { unpackProductMetadata, getVedicVastuForProduct } from "../utils/productMetadata";
-import { getStandardizedProduct, getSacredShloka } from "../utils/productStandardizer";
+import { getStandardizedProduct, getSacredShloka, STANDARDIZED_SPECS } from "../utils/productStandardizer";
 import { getLegacyProductBySlug, resolveProductSlug } from "../utils/legacyProducts";
 import { FALLBACK_PRODUCTS } from "../data/fallbackData";
 import {
@@ -318,18 +318,29 @@ Hello Crystal Jaipuria, I have a query regarding this product.
         }
       }
 
-      if (data && !data.pricePerUnit) {
-        const norm = (s) => (s || "").toLowerCase().replace(/[^a-z0-9]/g, "");
-        const cleanNorm = norm(cleanSlug);
-        const fbMatch = FALLBACK_PRODUCTS.find(
-          (p) =>
-            p.slug === cleanSlug ||
-            p._id === cleanSlug ||
-            norm(p.slug) === cleanNorm ||
-            norm(p.name) === cleanNorm
-        );
-        if (fbMatch?.pricePerUnit) {
-          data.pricePerUnit = fbMatch.pricePerUnit;
+      if (data) {
+        const spec = STANDARDIZED_SPECS[cleanSlug] || STANDARDIZED_SPECS[data.slug];
+        if (spec) {
+          if (spec.price) data.price = spec.price;
+          if (spec.weight) data.weight = spec.weight;
+          if (spec.size) data.size = spec.size;
+          if (spec.pricePerUnit) data.pricePerUnit = spec.pricePerUnit;
+        } else {
+          const norm = (s) => (s || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+          const cleanNorm = norm(cleanSlug);
+          const fbMatch = FALLBACK_PRODUCTS.find(
+            (p) =>
+              p.slug === cleanSlug ||
+              p._id === cleanSlug ||
+              norm(p.slug) === cleanNorm ||
+              norm(p.name) === cleanNorm
+          );
+          if (fbMatch) {
+            if (fbMatch.price) data.price = fbMatch.price;
+            if (fbMatch.weight) data.weight = fbMatch.weight;
+            if (fbMatch.size) data.size = fbMatch.size;
+            if (fbMatch.pricePerUnit) data.pricePerUnit = fbMatch.pricePerUnit;
+          }
         }
       }
 
