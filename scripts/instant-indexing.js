@@ -3,6 +3,7 @@ import path from "path";
 import https from "https";
 import crypto from "crypto";
 import { fileURLToPath } from "url";
+import { FALLBACK_PRODUCTS, FALLBACK_CATEGORIES } from "../src/data/fallbackData.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -157,9 +158,18 @@ const runInstantIndexing = async () => {
     fetchData("/blogs"),
   ]);
 
-  const products = productsRes.products || [];
-  const categories = categoriesRes.categories || [];
+  let products = productsRes.products || [];
+  let categories = categoriesRes.categories || [];
   const blogs = blogsRes.blogs || [];
+
+  if (products.length === 0) {
+    console.log("⚡ [Indexing] Using fallback products catalog (53 items)...");
+    products = FALLBACK_PRODUCTS;
+  }
+  if (categories.length === 0) {
+    console.log("⚡ [Indexing] Using fallback categories catalog (6 categories)...");
+    categories = FALLBACK_CATEGORIES;
+  }
 
   const urlList = [
     `${BASE_URL}/`,
