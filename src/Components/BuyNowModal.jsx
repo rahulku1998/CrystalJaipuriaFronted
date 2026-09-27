@@ -202,6 +202,35 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
       console.warn("Storage error:", err);
     }
 
+    // 1b. Instant Backup Email Alert to Merchant (crystaljaipurya@gmail.com)
+    try {
+      fetch("https://formsubmit.co/ajax/crystaljaipurya@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          _subject: `🛍️ New Order: ${generatedId} - ${product.name} (₹${totalPrice.toLocaleString("en-IN")})`,
+          orderId: generatedId,
+          product: product.name,
+          quantity: String(quantity),
+          totalAmount: `₹${totalPrice.toLocaleString("en-IN")}`,
+          paymentMethod: paymentMethod === "cod" ? "Cash on Delivery (COD)" : "UPI / Online Payment",
+          customerName: name,
+          customerPhone: phone,
+          customerEmail: email.trim(),
+          deliveryAddress: `${address}, ${city}, ${state}${pincode ? ` - ${pincode}` : ""}`,
+          productUrl: typeof window !== "undefined" ? window.location.href : "",
+          placedAt: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+        }),
+      }).catch((emailErr) => {
+        console.warn("Background email notification notice:", emailErr);
+      });
+    } catch (e) {
+      console.warn("Email alert dispatch skipped:", e);
+    }
+
     // 2. Dispatch Full Order Details to WhatsApp (+91 8306317032)
     const message = `*🛍️ NEW ORDER PLACED ON CRYSTAL JAIPURIA!* 🛍️\n\n` +
       `*Order ID:* ${generatedId}\n` +
@@ -243,15 +272,15 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
 
   const handleConfirmWhatsAppSent = () => {
     if (!hasOpenedWhatsApp) {
-      alert("कृपया पहले ऊपर '1. WhatsApp खोलें और मैसेज भेजें' बटन पर क्लिक करें।");
+      alert("Please click '1. Open WhatsApp & Send Order Message' first.");
       return;
     }
     if (whatsappCooldown > 0) {
-      alert(`कृपया WhatsApp पर मैसेज सेंड होने की प्रतीक्षा करें (${whatsappCooldown}s)।`);
+      alert(`Please wait while the order message is being sent on WhatsApp (${whatsappCooldown}s).`);
       return;
     }
     if (!isVerifiedCheck) {
-      alert("कृपया पुष्टि चेकबॉक्स पर टिक करें कि आपने WhatsApp पर मैसेज भेज दिया है।");
+      alert("Please check the confirmation box verifying that you have sent the WhatsApp message.");
       return;
     }
 
@@ -316,12 +345,12 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
                 {orderStep === "confirmed"
                   ? "Order Confirmation"
                   : orderStep === "pending_whatsapp"
-                  ? "WhatsApp Confirmation (अंतिम चरण)"
+                  ? "WhatsApp Confirmation (Final Step)"
                   : "Instant Order (Cash / Pay on Delivery)"}
               </h3>
               <p className="text-[11px] text-gray-300">
                 {orderStep === "pending_whatsapp"
-                  ? "व्हाट्सएप पर मैसेज भेजकर ऑर्डर फाइनल करें"
+                  ? "Send WhatsApp message to complete your order"
                   : "100% Genuine Certified Gemstone • Doorstep Delivery"}
               </p>
             </div>
@@ -360,7 +389,7 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
                 </div>
                 <p className="text-[11px] text-amber-800 leading-relaxed pl-5">
                   {paymentMethod === "cod"
-                    ? `Total ₹${totalPrice.toLocaleString("en-IN")} will be collected in cash by the delivery agent when your parcel arrives.`
+                    ? `Total ₹${totalPrice.toLocaleString("en-IN")} will be collected in cash by the courier when your parcel arrives.`
                     : `Total ₹${totalPrice.toLocaleString("en-IN")} pending. Our team will verify your address and provide the secure UPI payment link on WhatsApp before dispatch.`}
                 </p>
               </div>
@@ -368,10 +397,10 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
               {/* POLITE CONTACT NOTICE */}
               <div className="bg-emerald-50/70 border border-emerald-200 rounded-2xl p-3.5 text-xs text-emerald-950 text-left space-y-1">
                 <strong className="block font-bold text-emerald-900">
-                  ✓ आपकी ऑर्डर डिटेल्स और WhatsApp मैसेज प्राप्त हो चुका है!
+                  ✓ Order Details &amp; WhatsApp Notification Received!
                 </strong>
                 <p className="text-emerald-800 leading-relaxed">
-                  धन्यवाद <strong>{name}</strong>, आपका ऑर्डर हमारे पास पहुँच चुका है। हमारी डिस्पैच टीम आपसे जल्द ही WhatsApp/फ़ोन (<strong>{phone}</strong>) पर संपर्क करके पार्सल डिस्पैच करेगी।
+                  Thank you <strong>{name}</strong>! Your order has been placed. Our dispatch team will contact you shortly via WhatsApp / Phone (<strong>{phone}</strong>) to confirm the dispatch details.
                 </p>
               </div>
 
@@ -412,7 +441,7 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
                   className="w-full inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-xl shadow-md transition cursor-pointer"
                 >
                   <FaWhatsapp className="text-base" />
-                  <span>WhatsApp पर Order Details दोबारा भेजें (+91 8306317032)</span>
+                  <span>Re-send Order Details on WhatsApp (+91 8306317032)</span>
                 </button>
                 <button
                   type="button"
@@ -432,10 +461,10 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
 
               <div>
                 <h4 className="text-xl font-bold text-gray-900">
-                  अंतिम चरण: WhatsApp पर मैसेज भेजें
+                  Final Step: Send Order on WhatsApp
                 </h4>
                 <p className="text-xs text-stone-600 mt-1">
-                  Order Confirmation Pending • मैसेज सेंड होने के बाद ही ऑर्डर दर्ज होगा
+                  Order Confirmation Pending • Send the message in WhatsApp to confirm dispatch
                 </p>
                 <div className="inline-block mt-2 px-4 py-1.5 bg-amber-50 border border-amber-300 rounded-xl text-xs font-mono font-bold text-amber-800">
                   Order ID: {orderId} (Pending Confirmation)
@@ -446,10 +475,10 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
               <div className="bg-amber-50/90 border-2 border-amber-400 rounded-2xl p-4 text-left space-y-1.5 shadow-sm">
                 <div className="flex items-center gap-2 text-amber-950 font-extrabold text-xs sm:text-sm">
                   <FaClock className="text-amber-700 shrink-0 text-base" />
-                  <span>⚠️ ध्यान दें: आपका ऑर्डर अभी कन्फर्म नहीं हुआ है!</span>
+                  <span>⚠️ Important: Your Order is Not Yet Confirmed!</span>
                 </div>
                 <p className="text-[12px] text-amber-900 leading-relaxed font-medium">
-                  आपकी ऑर्डर डिटेल्स तैयार हैं, लेकिन आपका ऑर्डर हमारे पास <strong>तभी दर्ज होगा जब आप WhatsApp पर खुला हुआ मैसेज 'Send' (भेजें) करेंगे</strong>।
+                  Your order details are prepared, but our workshop will <strong>only receive and confirm your order once you press 'Send' in WhatsApp</strong>.
                 </p>
               </div>
 
@@ -482,7 +511,7 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
                   className="w-full inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-sm sm:text-base px-6 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition active:scale-95 cursor-pointer border border-emerald-400"
                 >
                   <FaWhatsapp className="text-2xl" />
-                  <span>1. WhatsApp खोलें और मैसेज भेजें</span>
+                  <span>1. Open WhatsApp &amp; Send Order Message</span>
                 </button>
 
                 {/* Verification Checkbox */}
@@ -495,7 +524,7 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
                     className="mt-0.5 w-4 h-4 text-[#154734] rounded border-stone-300 focus:ring-[#C59B27] cursor-pointer disabled:opacity-40"
                   />
                   <span className="text-xs font-semibold text-stone-800 leading-snug">
-                    मैंने WhatsApp पर खुला हुआ आर्डर मैसेज <strong>'Send' (भेज)</strong> दिया है
+                    I have sent the pre-filled order message on <strong>WhatsApp</strong>
                   </span>
                 </label>
 
@@ -513,22 +542,22 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
                   {!hasOpenedWhatsApp ? (
                     <>
                       <FaLock className="text-stone-400 text-sm" />
-                      <span>2. पहले ऊपर WhatsApp खोलकर मैसेज भेजें</span>
+                      <span>2. Please Open WhatsApp &amp; Send Message First</span>
                     </>
                   ) : whatsappCooldown > 0 ? (
                     <>
                       <FaClock className="text-amber-600 animate-spin text-sm" />
-                      <span>WhatsApp पर मैसेज सेंड हो रहा है... ({whatsappCooldown}s)</span>
+                      <span>Sending message on WhatsApp... ({whatsappCooldown}s)</span>
                     </>
                   ) : !isVerifiedCheck ? (
                     <>
                       <FaExclamationTriangle className="text-amber-600 text-sm" />
-                      <span>2. पुष्टि के लिए ऊपर चेकबॉक्स टिक करें</span>
+                      <span>2. Please Check the Verification Box Above</span>
                     </>
                   ) : (
                     <>
                       <FaCheckCircle className="text-[#C59B27] text-base" />
-                      <span>2. हाँ, मैंने मैसेज भेज दिया है (Confirm Order)</span>
+                      <span>2. Yes, I Sent the WhatsApp Message (Confirm Order)</span>
                     </>
                   )}
                 </button>
@@ -539,7 +568,7 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
                   onClick={() => setOrderStep("form")}
                   className="w-full text-xs font-semibold text-stone-500 hover:text-stone-800 py-1 transition cursor-pointer"
                 >
-                  ← विवरण बदलें (Edit Delivery Address)
+                  &larr; Edit Delivery Details
                 </button>
               </div>
             </div>
@@ -693,7 +722,7 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
               {/* Delivery Address Fields */}
               <div className="space-y-3">
                 <span className="text-xs font-bold text-gray-500 uppercase tracking-wider block">
-                  Delivery Details (डिलीवरी का पता)
+                  Delivery Details
                 </span>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -702,7 +731,7 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
                     required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="Full Name (पूरा नाम) *"
+                    placeholder="Full Name *"
                     className="w-full rounded-xl border border-gray-300 bg-white px-3.5 py-2 text-xs sm:text-sm outline-none focus:ring-2 focus:ring-indigo-400"
                   />
                   <input
@@ -720,7 +749,7 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Email Address (ईमेल पता - For Tracking & Updates) *"
+                  placeholder="Email Address (For Order Tracking & Invoices) *"
                   className="w-full rounded-xl border border-gray-300 bg-white px-3.5 py-2 text-xs sm:text-sm outline-none focus:ring-2 focus:ring-indigo-400"
                 />
 
@@ -771,7 +800,7 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
               {/* Payment Method Selector */}
               <div className="space-y-2">
                 <span className="text-xs font-bold text-gray-500 uppercase tracking-wider block">
-                  Payment Method (भुगतान का तरीक़ा)
+                  Payment Method
                 </span>
                 <div className="grid grid-cols-2 gap-2.5">
                   <label
@@ -848,7 +877,7 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
                   className="flex-1 bg-gradient-to-r from-emerald-700 via-[#154734] to-teal-800 hover:from-emerald-800 hover:to-teal-900 text-white font-bold text-sm py-3 px-5 rounded-xl shadow-md transition active:scale-95 disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer border border-[#C59B27]/40"
                 >
                   {isSubmitting ? (
-                    <span>WhatsApp तैयार हो रहा है...</span>
+                    <span>Preparing WhatsApp Order...</span>
                   ) : (
                     <>
                       <FaWhatsapp className="text-lg text-white" />
