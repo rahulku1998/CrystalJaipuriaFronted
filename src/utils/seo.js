@@ -6,11 +6,12 @@ import { GOOGLE_BUSINESS_STATS } from "../config/businessStats.js";
 import { getVedicVastuForProduct } from "./productMetadata.js";
 
 
-const SUPER_TITLE_MAPPINGS = {
+export const SUPER_TITLE_MAPPINGS = {
   "natural-opal-stone-shivling": "Natural Opal Stone Shivling (Certified Upal Ratna) | Crystal Jaipuria",
   "natural-lapis-lazuli-lord-krishna-statue": "Natural Lapis Lazuli Lord Krishna Statue | Authentic Gemstone Murti",
   "natural-lapis-lazuli-shiva-face-carving-idol": "Natural Lapis Lazuli Shiva Face Carving Idol | Jaipur Gemstone Murti",
-  "natural-sphatik-shivling": "Natural Sphatik Shivling (100% Certified Clear Quartz) | Jaipur Manufacturer",
+  "crystal-shivling": "Original Sphatik Shivling in Jaipur | Natural Crystal Shivling | Crystal Jaipuria",
+  "natural-sphatik-shivling": "Natural Sphatik Shivling in Jaipur | Original Crystal Shivling | Crystal Jaipuria",
   "clear-crystal-quartz-shivling-with-shiva-face": "Clear Quartz Shivling With Shiva Face (Handcrafted Sphatik Murti)",
   "green-jade-shiva-statue-with-gold-panting": "Green Jade Shiva Statue With 24K Gold Painting | Authentic Jaipur Carving",
   "natural-rose-quartz-pair-of-swan": "Natural Rose Quartz Pair of Swans for Love & Vastu Harmony",
@@ -69,8 +70,10 @@ export const getProductMetaTitle = (productName, slug = "") => {
   return `${trimmed}${brand}`;
 };
 
-const SUPER_DESCRIPTION_MAPPINGS = {
+export const SUPER_DESCRIPTION_MAPPINGS = {
   "green-jade-panchmukhi-shivling": "Buy 100% Certified Natural Green Jade Stone Panchmukhi Shivling. 5 divine faces of Pashupatinath Mahadev. Handcrafted in Jaipur at factory direct price.",
+  "crystal-shivling": "Buy 100% original certified Sphatik Shivling in Jaipur directly from manufacturer. Ideal for daily Jalabhishek. Visit our Sanganer workshop or order online.",
+  "natural-sphatik-shivling": "Original certified Natural Sphatik Shivling in Jaipur crafted by master artisans. Direct factory price in Jaipur. 100% pure Clear Quartz for holy Jalabhishek.",
 };
 
 export const getProductMetaDescription = (product) => {

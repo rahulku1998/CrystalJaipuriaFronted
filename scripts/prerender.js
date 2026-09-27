@@ -6,6 +6,12 @@ import { CATEGORY_CONTENT } from "../src/utils/categoryContent.js";
 import { sanitizeNaturalStutter } from "../src/utils/aiGenerator.js";
 import { getVedicVastuForProduct } from "../src/utils/productMetadata.js";
 import { FALLBACK_PRODUCTS, FALLBACK_CATEGORIES } from "../src/data/fallbackData.js";
+import {
+  getProductMetaTitle,
+  getProductMetaDescription,
+  SUPER_TITLE_MAPPINGS,
+  SUPER_DESCRIPTION_MAPPINGS,
+} from "../src/utils/seo.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -199,7 +205,19 @@ export const runPrerender = async () => {
   // ==========================================
   let prodCount = 0;
   products.forEach((rawProd) => {
-    const prod = getStandardizedProduct(rawProd);
+    const rawSlug = rawProd.slug || rawProd._id;
+    const fbMatch = FALLBACK_PRODUCTS.find(
+      (p) => p.slug === rawSlug || p._id === rawProd._id || p.slug === rawProd.slug
+    );
+    const isJaipurTarget = rawSlug === "crystal-shivling" || rawSlug === "natural-sphatik-shivling" || rawProd.slug === "crystal-shivling" || rawProd.slug === "natural-sphatik-shivling";
+    const enrichedProd = fbMatch ? {
+      ...rawProd,
+      detail: (isJaipurTarget && fbMatch.detail) ? fbMatch.detail : ((fbMatch.detail && fbMatch.detail.length > (rawProd.detail || "").length) ? fbMatch.detail : rawProd.detail),
+      description: (isJaipurTarget && fbMatch.description) ? fbMatch.description : ((fbMatch.description && fbMatch.description.length > (rawProd.description || "").length) ? fbMatch.description : rawProd.description),
+      additionalInfo: (isJaipurTarget && fbMatch.additionalInfo) ? fbMatch.additionalInfo : (fbMatch.additionalInfo || rawProd.additionalInfo),
+      faqs: (isJaipurTarget && fbMatch.faqs) ? fbMatch.faqs : ((fbMatch.faqs && fbMatch.faqs.length > 0) ? fbMatch.faqs : rawProd.faqs),
+    } : rawProd;
+    const prod = getStandardizedProduct(enrichedProd);
     const vedicVastu = getVedicVastuForProduct(prod);
     const slug = prod.slug || prod._id;
     if (!slug) return;
@@ -274,11 +292,17 @@ export const runPrerender = async () => {
         .trim()
     );
 
-    if (!metaTitle) {
-      metaTitle = `${displayTitle} | Crystal Jaipuria`;
+    const pSlugKey = (cleanProductSlug || slug || "").toLowerCase().trim();
+    if (SUPER_TITLE_MAPPINGS[pSlugKey]) {
+      metaTitle = SUPER_TITLE_MAPPINGS[pSlugKey];
+    } else if (!metaTitle) {
+      metaTitle = getProductMetaTitle(displayTitle, slug);
     }
-    if (!metaDesc) {
-      metaDesc = cleanDesc.slice(0, 160);
+
+    if (SUPER_DESCRIPTION_MAPPINGS[pSlugKey]) {
+      metaDesc = SUPER_DESCRIPTION_MAPPINGS[pSlugKey];
+    } else if (!metaDesc) {
+      metaDesc = getProductMetaDescription(prod);
     }
 
     let productFaqs = [];

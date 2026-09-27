@@ -12,6 +12,8 @@ import {
   getProductMetaDescription,
   getProductSchema,
   getDefaultProductFaqs,
+  SUPER_TITLE_MAPPINGS,
+  SUPER_DESCRIPTION_MAPPINGS,
 } from "../utils/seo";
 import {
   trackProductView,
@@ -357,13 +359,21 @@ Hello Crystal Jaipuria, I have a query regarding this product.
 
       let standardized = null;
       if (data) {
+        const norm = (s) => (s || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+        const curNorm = norm(data.slug || cleanSlug);
+        const fbMatch = FALLBACK_PRODUCTS.find(
+          (p) => p.slug === data.slug || p._id === data._id || norm(p.slug) === curNorm
+        );
         const unpacked = unpackProductMetadata(data);
+        const isJaipurTarget = (data.slug === "crystal-shivling" || data.slug === "natural-sphatik-shivling" || cleanSlug === "crystal-shivling" || cleanSlug === "natural-sphatik-shivling");
         const mergedData = {
           ...data,
-          faqs: (unpacked.faqs && unpacked.faqs.length > 0) ? unpacked.faqs : data.faqs,
+          detail: (isJaipurTarget && fbMatch?.detail) ? fbMatch.detail : ((fbMatch?.detail && fbMatch.detail.length > (data.detail || "").length) ? fbMatch.detail : (data.detail || fbMatch?.detail)),
+          description: (isJaipurTarget && fbMatch?.description) ? fbMatch.description : ((fbMatch?.description && fbMatch.description.length > (data.description || "").length) ? fbMatch.description : (data.description || fbMatch?.description)),
+          faqs: (isJaipurTarget && fbMatch?.faqs) ? fbMatch.faqs : ((fbMatch?.faqs && fbMatch.faqs.length > (data.faqs?.length || 0)) ? fbMatch.faqs : ((unpacked.faqs && unpacked.faqs.length > 0) ? unpacked.faqs : data.faqs)),
           metaTitle: unpacked.metaTitle || data.metaTitle,
           metaDescription: unpacked.metaDescription || data.metaDescription,
-          additionalInfo: unpacked.cleanAdditionalInfo || data.additionalInfo,
+          additionalInfo: (isJaipurTarget && fbMatch?.additionalInfo) ? fbMatch.additionalInfo : (unpacked.cleanAdditionalInfo || data.additionalInfo || fbMatch?.additionalInfo),
         };
         standardized = getStandardizedProduct(mergedData);
       }
@@ -423,8 +433,9 @@ Hello Crystal Jaipuria, I have a query regarding this product.
   const unpackedMetadata = unpackProductMetadata(product);
   const displayH1 = product.heading || product.h1 || unpackedMetadata.heading || product.name;
   const canonicalUrl = `https://www.crystaljaipuria.com/product/${product.slug || slug}`;
-  const metaTitle = product.metaTitle || unpackedMetadata.metaTitle || getProductMetaTitle(displayH1 || product.name, product.slug || slug);
-  const metaDescription = product.metaDescription || unpackedMetadata.metaDescription || getProductMetaDescription(product);
+  const curSlug = (product.slug || slug || "").toLowerCase().trim();
+  const metaTitle = SUPER_TITLE_MAPPINGS[curSlug] || product.metaTitle || unpackedMetadata.metaTitle || getProductMetaTitle(displayH1 || product.name, product.slug || slug);
+  const metaDescription = SUPER_DESCRIPTION_MAPPINGS[curSlug] || product.metaDescription || unpackedMetadata.metaDescription || getProductMetaDescription(product);
   const schema = getProductSchema(product, canonicalUrl);
   const whatsappMessage = `Hi Crystal Jaipuria, I am interested in buying "${product.name}". Please share more details on this Number .`;
   const whatsappLink = `https://wa.me/918306317032?text=${encodeURIComponent(whatsappMessage)}`;
