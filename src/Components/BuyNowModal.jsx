@@ -10,6 +10,8 @@ import {
   FaMoneyBillWave,
   FaQrcode,
   FaMapMarkerAlt,
+  FaArrowRight,
+  FaExclamationTriangle,
 } from "react-icons/fa";
 import { getProductImageUrl } from "../utils/imageOptimizer";
 
@@ -61,8 +63,9 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
   const [pincodeError, setPincodeError] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("cod"); // 'cod' | 'upi'
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [orderPlaced, setOrderPlaced] = useState(false);
+  const [orderStep, setOrderStep] = useState("form"); // "form" | "pending_whatsapp" | "confirmed"
   const [orderId, setOrderId] = useState("");
+  const [whatsappUrl, setWhatsappUrl] = useState("");
 
   useEffect(() => {
     if (isOpen) {
@@ -95,9 +98,9 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
     } catch {}
   };
 
-  // Trigger Google Customer Reviews Opt-In Modal upon Order Placement (Declared before any early returns)
+  // Trigger Google Customer Reviews Opt-In Modal upon Confirmed Order Placement
   useEffect(() => {
-    if (orderPlaced && orderId && email.trim()) {
+    if (orderStep === "confirmed" && orderId && email.trim()) {
       const timer = setTimeout(() => {
         const deliveryDateObj = new Date();
         deliveryDateObj.setDate(deliveryDateObj.getDate() + 7);
@@ -129,7 +132,7 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
 
       return () => clearTimeout(timer);
     }
-  }, [orderPlaced, orderId, email, product]);
+  }, [orderStep, orderId, email, product]);
 
   // Calculate Unit Price safely
   let unitPrice = 0;
@@ -164,7 +167,7 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
     setIsSubmitting(true);
     const generatedId = `CJ-${Math.floor(100000 + Math.random() * 900000)}`;
 
-    // 1. Save order to LocalStorage
+    // 1. Save order to LocalStorage with Pending WhatsApp Status
     const orderData = {
       orderId: generatedId,
       productName: product.name,
@@ -172,7 +175,7 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
       unitPrice,
       totalPrice,
       paymentMethod,
-      paymentStatus: "Pending",
+      paymentStatus: "Pending WhatsApp Verification",
       customerName: name,
       customerPhone: phone,
       customerEmail: email.trim(),
@@ -202,14 +205,29 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
       `• Product Link: ${typeof window !== "undefined" ? window.location.href : ""}\n\n` +
       `Please contact the customer and confirm dispatch from Jaipur!`;
 
-    const whatsappUrl = `https://wa.me/918306317032?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, "_blank");
+    const url = `https://wa.me/918306317032?text=${encodeURIComponent(message)}`;
+    setWhatsappUrl(url);
+    setOrderId(generatedId);
 
-    setTimeout(() => {
-      setOrderId(generatedId);
-      setIsSubmitting(false);
-      setOrderPlaced(true);
-    }, 400);
+    // Open WhatsApp in new tab / application
+    window.open(url, "_blank");
+
+    // Transition to pending_whatsapp step — DO NOT CONFIRM YET!
+    setIsSubmitting(false);
+    setOrderStep("pending_whatsapp");
+  };
+
+  const handleConfirmWhatsAppSent = () => {
+    // Update local storage status to Confirmed
+    try {
+      const orders = JSON.parse(localStorage.getItem("cj_store_orders") || "[]");
+      const updated = orders.map((o) =>
+        o.orderId === orderId ? { ...o, paymentStatus: "Confirmed via WhatsApp" } : o
+      );
+      localStorage.setItem("cj_store_orders", JSON.stringify(updated));
+    } catch {}
+
+    setOrderStep("confirmed");
   };
 
   const handleWhatsAppContact = () => {
@@ -225,7 +243,9 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
   };
 
   const resetAndClose = () => {
-    setOrderPlaced(false);
+    setOrderStep("form");
+    setOrderId("");
+    setWhatsappUrl("");
     setQuantity(1);
     setName("");
     setPhone("");
@@ -253,10 +273,16 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
             </span>
             <div>
               <h3 className="text-base font-bold text-white leading-tight">
-                {orderPlaced ? "Order Confirmation" : "Instant Order (Cash / Pay on Delivery)"}
+                {orderStep === "confirmed"
+                  ? "Order Confirmation"
+                  : orderStep === "pending_whatsapp"
+                  ? "WhatsApp Confirmation (अंतिम चरण)"
+                  : "Instant Order (Cash / Pay on Delivery)"}
               </h3>
               <p className="text-[11px] text-gray-300">
-                100% Genuine Certified Gemstone • Doorstep Delivery
+                {orderStep === "pending_whatsapp"
+                  ? "व्हाट्सएप पर मैसेज भेजकर ऑर्डर फाइनल करें"
+                  : "100% Genuine Certified Gemstone • Doorstep Delivery"}
               </p>
             </div>
           </div>
@@ -271,8 +297,8 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
 
         {/* Modal Content */}
         <div className="flex-1 overflow-y-auto p-5 sm:p-6">
-          {orderPlaced ? (
-            /* SUCCESS CONFIRMATION SCREEN */
+          {orderStep === "confirmed" ? (
+            /* SUCCESS CONFIRMATION SCREEN (Only after WhatsApp message is confirmed sent) */
             <div className="text-center py-4 space-y-4">
               <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-2xl shadow-inner">
                 <FaCheckCircle />
@@ -302,10 +328,10 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
               {/* POLITE CONTACT NOTICE */}
               <div className="bg-emerald-50/70 border border-emerald-200 rounded-2xl p-3.5 text-xs text-emerald-950 text-left space-y-1">
                 <strong className="block font-bold text-emerald-900">
-                  ✓ आपकी ऑर्डर डिटेल्स दर्ज हो चुकी हैं!
+                  ✓ आपकी ऑर्डर डिटेल्स और WhatsApp मैसेज प्राप्त हो चुका है!
                 </strong>
                 <p className="text-emerald-800 leading-relaxed">
-                  धन्यवाद <strong>{name}</strong>, आपका ऑर्डर और पता हमारे पास पहुँच चुका है। हमारी डिस्पैच टीम आपसे जल्द ही WhatsApp/फ़ोन (<strong>{phone}</strong>) पर संपर्क करके ऑर्डर कन्फर्म करेगी।
+                  धन्यवाद <strong>{name}</strong>, आपका ऑर्डर हमारे पास पहुँच चुका है। हमारी डिस्पैच टीम आपसे जल्द ही WhatsApp/फ़ोन (<strong>{phone}</strong>) पर संपर्क करके पार्सल डिस्पैच करेगी।
                 </p>
               </div>
 
@@ -354,6 +380,89 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
                 </button>
               </div>
             </div>
+          ) : orderStep === "pending_whatsapp" ? (
+            /* PENDING WHATSAPP VERIFICATION SCREEN */
+            <div className="text-center py-2 space-y-4">
+              <div className="w-16 h-16 bg-emerald-50 text-[#25D366] rounded-full flex items-center justify-center mx-auto text-3xl shadow-sm border-2 border-emerald-300">
+                <FaWhatsapp className="text-4xl animate-pulse" />
+              </div>
+
+              <div>
+                <h4 className="text-xl font-bold text-gray-900">
+                  अंतिम चरण: WhatsApp पर मैसेज भेजें
+                </h4>
+                <p className="text-xs text-stone-600 mt-1">
+                  Order Confirmation Pending • मैसेज सेंड होने के बाद ही ऑर्डर दर्ज होगा
+                </p>
+                <div className="inline-block mt-2 px-4 py-1.5 bg-amber-50 border border-amber-300 rounded-xl text-xs font-mono font-bold text-amber-800">
+                  Order ID: {orderId} (Pending Confirmation)
+                </div>
+              </div>
+
+              {/* CRITICAL WARNING BANNER */}
+              <div className="bg-amber-50/90 border-2 border-amber-400 rounded-2xl p-4 text-left space-y-1.5 shadow-sm">
+                <div className="flex items-center gap-2 text-amber-950 font-extrabold text-xs sm:text-sm">
+                  <FaClock className="text-amber-700 shrink-0 text-base" />
+                  <span>⚠️ ध्यान दें: आपका ऑर्डर अभी कन्फर्म नहीं हुआ है!</span>
+                </div>
+                <p className="text-[12px] text-amber-900 leading-relaxed font-medium">
+                  आपकी ऑर्डर डिटेल्स तैयार हैं, लेकिन आपका ऑर्डर हमारे पास <strong>तभी दर्ज होगा जब आप WhatsApp पर खुला हुआ मैसेज 'Send' (भेजें) करेंगे</strong>।
+                </p>
+              </div>
+
+              {/* Order Mini Summary */}
+              <div className="bg-stone-50 rounded-2xl p-3.5 border border-stone-200 text-left text-xs space-y-2">
+                <div className="flex justify-between border-b pb-1.5">
+                  <span className="text-gray-500">Item:</span>
+                  <span className="font-bold text-gray-800">{product.name} (x{quantity})</span>
+                </div>
+                <div className="flex justify-between border-b pb-1.5">
+                  <span className="text-gray-500">Total Payable:</span>
+                  <span className="font-extrabold text-[#C59B27] text-sm">₹{totalPrice.toLocaleString("en-IN")}</span>
+                </div>
+                <div className="flex justify-between border-b pb-1.5">
+                  <span className="text-gray-500">Customer Phone:</span>
+                  <span className="font-medium text-gray-800">{phone}</span>
+                </div>
+                <div className="flex justify-between pt-1">
+                  <span className="text-gray-500">Delivery Address:</span>
+                  <span className="text-right text-gray-700 max-w-[220px] truncate">{address}, {city}</span>
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="space-y-2.5 pt-1">
+                {/* 1. Open WhatsApp & Send Button */}
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-sm sm:text-base px-6 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition active:scale-95 cursor-pointer no-underline"
+                >
+                  <FaWhatsapp className="text-2xl" />
+                  <span>1. WhatsApp खोलें और मैसेज भेजें</span>
+                </a>
+
+                {/* 2. Confirm Sent Button */}
+                <button
+                  type="button"
+                  onClick={handleConfirmWhatsAppSent}
+                  className="w-full inline-flex items-center justify-center gap-2 bg-[#154734] hover:bg-[#0e3324] text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-xl shadow-md transition active:scale-95 cursor-pointer border border-[#C59B27]/40"
+                >
+                  <FaCheckCircle className="text-[#C59B27] text-base" />
+                  <span>2. हाँ, मैंने मैसेज भेज दिया है (Confirm Order)</span>
+                </button>
+
+                {/* 3. Edit Form Back Button */}
+                <button
+                  type="button"
+                  onClick={() => setOrderStep("form")}
+                  className="w-full text-xs font-semibold text-stone-500 hover:text-stone-800 py-1 transition cursor-pointer"
+                >
+                  ← विवरण बदलें (Edit Delivery Address)
+                </button>
+              </div>
+            </div>
           ) : (
             /* CHECKOUT FORM */
             <form onSubmit={handlePlaceOrder} className="space-y-5">
@@ -362,9 +471,7 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
                 <img
                   src={productImage}
                   onError={(e) => {
-                    if (optimizedRaw && e.target.src !== optimizedRaw) {
-                      e.target.src = optimizedRaw;
-                    } else if (!e.target.src.endsWith("/Gemstone.webp")) {
+                    if (!e.target.src.endsWith("/Gemstone.webp")) {
                       e.target.src = "/Gemstone.webp";
                     }
                   }}
@@ -658,13 +765,14 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="flex-1 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold text-sm py-3 px-5 rounded-xl shadow-md transition active:scale-95 disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer"
+                  className="flex-1 bg-gradient-to-r from-emerald-700 via-[#154734] to-teal-800 hover:from-emerald-800 hover:to-teal-900 text-white font-bold text-sm py-3 px-5 rounded-xl shadow-md transition active:scale-95 disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer border border-[#C59B27]/40"
                 >
                   {isSubmitting ? (
-                    <span>Registering Order...</span>
+                    <span>WhatsApp तैयार हो रहा है...</span>
                   ) : (
                     <>
-                      <span>Confirm Order Now</span>
+                      <FaWhatsapp className="text-lg text-white" />
+                      <span>Confirm Order via WhatsApp</span>
                       <span>&rarr;</span>
                     </>
                   )}
