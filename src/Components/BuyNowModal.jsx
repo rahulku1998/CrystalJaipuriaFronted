@@ -66,6 +66,19 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
   const [orderStep, setOrderStep] = useState("form"); // "form" | "pending_whatsapp" | "confirmed"
   const [orderId, setOrderId] = useState("");
   const [whatsappUrl, setWhatsappUrl] = useState("");
+  const [hasOpenedWhatsApp, setHasOpenedWhatsApp] = useState(false);
+  const [whatsappCooldown, setWhatsappCooldown] = useState(0);
+  const [isVerifiedCheck, setIsVerifiedCheck] = useState(false);
+
+  useEffect(() => {
+    let timer;
+    if (whatsappCooldown > 0) {
+      timer = setInterval(() => {
+        setWhatsappCooldown((prev) => (prev > 0 ? prev - 1 : 0));
+      }, 1000);
+    }
+    return () => clearInterval(timer);
+  }, [whatsappCooldown]);
 
   useEffect(() => {
     if (isOpen) {
@@ -212,12 +225,36 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
     // Open WhatsApp in new tab / application
     window.open(url, "_blank");
 
-    // Transition to pending_whatsapp step — DO NOT CONFIRM YET!
+    // Transition to pending_whatsapp step — locked until WhatsApp message is sent
+    setHasOpenedWhatsApp(true);
+    setWhatsappCooldown(7);
+    setIsVerifiedCheck(false);
     setIsSubmitting(false);
     setOrderStep("pending_whatsapp");
   };
 
+  const handleOpenWhatsApp = () => {
+    if (whatsappUrl) {
+      window.open(whatsappUrl, "_blank");
+      setHasOpenedWhatsApp(true);
+      setWhatsappCooldown(7);
+    }
+  };
+
   const handleConfirmWhatsAppSent = () => {
+    if (!hasOpenedWhatsApp) {
+      alert("कृपया पहले ऊपर '1. WhatsApp खोलें और मैसेज भेजें' बटन पर क्लिक करें।");
+      return;
+    }
+    if (whatsappCooldown > 0) {
+      alert(`कृपया WhatsApp पर मैसेज सेंड होने की प्रतीक्षा करें (${whatsappCooldown}s)।`);
+      return;
+    }
+    if (!isVerifiedCheck) {
+      alert("कृपया पुष्टि चेकबॉक्स पर टिक करें कि आपने WhatsApp पर मैसेज भेज दिया है।");
+      return;
+    }
+
     // Update local storage status to Confirmed
     try {
       const orders = JSON.parse(localStorage.getItem("cj_store_orders") || "[]");
@@ -246,10 +283,13 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
     setOrderStep("form");
     setOrderId("");
     setWhatsappUrl("");
+    setHasOpenedWhatsApp(false);
+    setWhatsappCooldown(0);
+    setIsVerifiedCheck(false);
     setQuantity(1);
     setName("");
-    setPhone("");
     setEmail("");
+    setPhone("");
     setAddress("");
     setCity("");
     setState("");
@@ -365,11 +405,14 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
               <div className="space-y-2 pt-1">
                 <button
                   type="button"
-                  onClick={handleWhatsAppContact}
-                  className="w-full inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-xl shadow-md transition cursor-pointer"
+                  onClick={() => {
+                    if (whatsappUrl) window.open(whatsappUrl, "_blank");
+                    else handleWhatsAppContact();
+                  }}
+                  className="w-full inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-xl shadow-md transition cursor-pointer"
                 >
                   <FaWhatsapp className="text-base" />
-                  <span>Chat with Us on WhatsApp (+91 8306317032)</span>
+                  <span>WhatsApp पर Order Details दोबारा भेजें (+91 8306317032)</span>
                 </button>
                 <button
                   type="button"
@@ -431,26 +474,63 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
               </div>
 
               {/* Action Buttons */}
-              <div className="space-y-2.5 pt-1">
+              <div className="space-y-3 pt-1">
                 {/* 1. Open WhatsApp & Send Button */}
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-sm sm:text-base px-6 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition active:scale-95 cursor-pointer no-underline"
+                <button
+                  type="button"
+                  onClick={handleOpenWhatsApp}
+                  className="w-full inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-sm sm:text-base px-6 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition active:scale-95 cursor-pointer border border-emerald-400"
                 >
                   <FaWhatsapp className="text-2xl" />
                   <span>1. WhatsApp खोलें और मैसेज भेजें</span>
-                </a>
+                </button>
+
+                {/* Verification Checkbox */}
+                <label className="flex items-start gap-2.5 p-3 rounded-xl bg-amber-50/80 border border-amber-300 cursor-pointer text-left select-none transition hover:bg-amber-50">
+                  <input
+                    type="checkbox"
+                    checked={isVerifiedCheck}
+                    onChange={(e) => setIsVerifiedCheck(e.target.checked)}
+                    disabled={!hasOpenedWhatsApp || whatsappCooldown > 0}
+                    className="mt-0.5 w-4 h-4 text-[#154734] rounded border-stone-300 focus:ring-[#C59B27] cursor-pointer disabled:opacity-40"
+                  />
+                  <span className="text-xs font-semibold text-stone-800 leading-snug">
+                    मैंने WhatsApp पर खुला हुआ आर्डर मैसेज <strong>'Send' (भेज)</strong> दिया है
+                  </span>
+                </label>
 
                 {/* 2. Confirm Sent Button */}
                 <button
                   type="button"
                   onClick={handleConfirmWhatsAppSent}
-                  className="w-full inline-flex items-center justify-center gap-2 bg-[#154734] hover:bg-[#0e3324] text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-xl shadow-md transition active:scale-95 cursor-pointer border border-[#C59B27]/40"
+                  disabled={!hasOpenedWhatsApp || whatsappCooldown > 0 || !isVerifiedCheck}
+                  className={`w-full inline-flex items-center justify-center gap-2 font-bold text-xs sm:text-sm px-6 py-3 rounded-xl transition ${
+                    hasOpenedWhatsApp && whatsappCooldown === 0 && isVerifiedCheck
+                      ? "bg-[#154734] hover:bg-[#0e3324] text-white shadow-md active:scale-95 cursor-pointer border border-[#C59B27]"
+                      : "bg-stone-200 text-stone-400 cursor-not-allowed border border-stone-300"
+                  }`}
                 >
-                  <FaCheckCircle className="text-[#C59B27] text-base" />
-                  <span>2. हाँ, मैंने मैसेज भेज दिया है (Confirm Order)</span>
+                  {!hasOpenedWhatsApp ? (
+                    <>
+                      <FaLock className="text-stone-400 text-sm" />
+                      <span>2. पहले ऊपर WhatsApp खोलकर मैसेज भेजें</span>
+                    </>
+                  ) : whatsappCooldown > 0 ? (
+                    <>
+                      <FaClock className="text-amber-600 animate-spin text-sm" />
+                      <span>WhatsApp पर मैसेज सेंड हो रहा है... ({whatsappCooldown}s)</span>
+                    </>
+                  ) : !isVerifiedCheck ? (
+                    <>
+                      <FaExclamationTriangle className="text-amber-600 text-sm" />
+                      <span>2. पुष्टि के लिए ऊपर चेकबॉक्स टिक करें</span>
+                    </>
+                  ) : (
+                    <>
+                      <FaCheckCircle className="text-[#C59B27] text-base" />
+                      <span>2. हाँ, मैंने मैसेज भेज दिया है (Confirm Order)</span>
+                    </>
+                  )}
                 </button>
 
                 {/* 3. Edit Form Back Button */}

@@ -54,6 +54,7 @@ export const runPrerender = async () => {
     ogImage,
     schema,
     bodyContent = "",
+    noscriptContent = "",
     productMeta = null,
   }) => {
     let html = baseHtml;
@@ -127,6 +128,11 @@ export const runPrerender = async () => {
     // 6. Pre-rendered Body Content (instant visual paint before React hydrates)
     if (bodyContent) {
       html = html.replace('<div id="root"></div>', `<div id="root">${bodyContent}</div>`);
+    }
+
+    // 6b. Noscript Content (for SEO crawlers and non-JS clients without flashing to JS users)
+    if (noscriptContent) {
+      html = html.replace('</body>', `<noscript>\n${noscriptContent}\n</noscript>\n</body>`);
     }
 
     // 7. Inject OpenGraph & Google Merchant Microdata for Instant Price Verification
@@ -806,16 +812,35 @@ export const runPrerender = async () => {
     </div>
   `.trim();
 
+  const luxuryHomepageLoader = `
+    <div style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#FAF8F5;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:24px;text-align:center;">
+      <div style="position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+        <div style="position:absolute;width:96px;height:96px;border-radius:50%;background:radial-gradient(circle, rgba(197,155,39,0.25) 0%, rgba(21,71,52,0.06) 70%, transparent 100%);filter:blur(8px);"></div>
+        <div style="width:72px;height:72px;border-radius:50%;border:2px solid #F3E8D2;border-top-color:#C59B27;border-right-color:#154734;animation:cj-spin 1s linear infinite;"></div>
+        <div style="position:absolute;width:50px;height:50px;border-radius:50%;background:#ffffff;box-shadow:0 4px 14px rgba(0,0,0,0.06);display:flex;align-items:center;justify-content:center;border:1px solid #FAF7F2;">
+          <img src="${BASE_URL}/logo.png" alt="Crystal Jaipuria" style="width:34px;height:34px;object-fit:contain;" width="34" height="34" />
+        </div>
+      </div>
+      <div style="font-size:18px;font-weight:800;letter-spacing:3px;color:#154734;text-transform:uppercase;margin-bottom:4px;">CRYSTAL JAIPURIA</div>
+      <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:#C59B27;text-transform:uppercase;margin-bottom:12px;">JAIPUR HERITAGE &bull; EST. 1989</div>
+      <div style="font-size:13px;color:#64748b;font-weight:500;">Loading handcrafted gemstone collection...</div>
+      <style>
+        @keyframes cj-spin { to { transform: rotate(360deg); } }
+      </style>
+    </div>
+  `.trim();
+
   const homeHtml = buildPageHtml({
     title: "Gemstone God Statues Manufacturer & Wholesale Supplier in Jaipur, India | Crystal Jaipuria",
     description: "Leading gemstone god statues manufacturer & wholesale supplier in Jaipur, Rajasthan (India). Handcrafted natural crystal idols, Sphatik Shivlings & Vedic spiritual decor since 1989.",
     canonical: `${BASE_URL}/`,
     ogTitle: "Gemstone God Statues Manufacturer & Wholesale Supplier in Jaipur, India | Crystal Jaipuria",
     ogDescription: "Leading gemstone god statues manufacturer & wholesale supplier in Jaipur, Rajasthan (India). Handcrafted natural crystal idols, Sphatik Shivlings & Vedic spiritual decor since 1989.",
-    bodyContent: homepageBodyPreview,
+    bodyContent: luxuryHomepageLoader,
+    noscriptContent: homepageBodyPreview,
   });
   saveFile("index.html", homeHtml);
-  console.log("✓ Pre-rendered homepage with rich SEO content to /dist/index.html");
+  console.log("✓ Pre-rendered homepage with luxury brand loader & noscript SEO content to /dist/index.html");
 
   console.log("🎉 Static Pre-rendering Completed Successfully!");
 };
