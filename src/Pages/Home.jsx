@@ -6,11 +6,10 @@ import SEO from "../Components/SEO";
 import homeImg from "../assets/images/banner-divine.webp";
 import StatsSection from "../Components/StatsSection";
 import { Link } from "react-router-dom";
-import { formatPrice } from "../utils/price";
 import AboutGemstoneSection from "../Components/about";
 import FAQSection from "../Components/FAQSection";
 import GoogleReviewsSection from "../Components/GoogleReviewsSection";
-import { FaWhatsapp, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaGem, FaAward, FaTruck, FaIndustry, FaCogs, FaCheckCircle, FaGlobeAmericas } from "react-icons/fa";
+import { FaWhatsapp, FaEnvelope, FaIndustry, FaCogs, FaCheckCircle, FaGlobeAmericas } from "react-icons/fa";
 
 const B2BWholesaleSection = () => (
   <section className="py-12 sm:py-16 bg-white border-t border-stone-200">

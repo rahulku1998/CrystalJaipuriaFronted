@@ -1,6 +1,6 @@
 import React from "react";
 import SEO from "../../Components/SEO";
-import { FaTruck, FaShieldAlt, FaPlane, FaBoxOpen, FaClock, FaPhoneAlt } from "react-icons/fa";
+import { FaTruck, FaShieldAlt, FaClock } from "react-icons/fa";
 
 const ShippingPolicy = () => {
   return (

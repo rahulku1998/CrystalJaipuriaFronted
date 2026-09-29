@@ -38,7 +38,6 @@ import {
   FaShieldAlt,
   FaBoxOpen,
   FaUndo,
-  FaCertificate,
 } from "react-icons/fa";
 import SEO from "../Components/SEO";
 import BuyNowModal from "../Components/BuyNowModal";
@@ -100,7 +99,6 @@ const ProductDetails = () => {
 
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [selectedImage, setSelectedImage] = useState("");
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [copied, setCopied] = useState(false);
   const [relatedProducts, setRelatedProducts] = useState([]);
@@ -150,7 +148,6 @@ Hello Crystal Jaipuria, I have a query regarding this product.
     setProduct(null);
     setLoading(true);
     setSelectedImageIndex(0);
-    setSelectedImage("");
     if (slug) {
       fetchProduct();
     }
@@ -385,7 +382,6 @@ Hello Crystal Jaipuria, I have a query regarding this product.
         fetchRelatedProducts(standardized);
 
         setSelectedImageIndex(0);
-        setSelectedImage(getProductImageUrl(standardized, 0, 800));
       }
     } catch (err) {
       console.error("Error in fetchProduct:", err);
@@ -395,7 +391,6 @@ Hello Crystal Jaipuria, I have a query regarding this product.
         const std = getStandardizedProduct(legacyFallback);
         setProduct(std);
         setSelectedImageIndex(0);
-        setSelectedImage(getProductImageUrl(std, 0, 800));
       } else {
         setProduct(null);
       }

@@ -839,13 +839,13 @@ export const runPrerender = async () => {
   const luxuryHomepageLoader = `
     <div style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#FAF8F5;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:24px;text-align:center;">
       <div style="position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
-        <div style="position:absolute;width:96px;height:96px;border-radius:50%;background:radial-gradient(circle, rgba(197,155,39,0.25) 0%, rgba(21,71,52,0.06) 70%, transparent 100%);filter:blur(8px);"></div>
-        <div style="width:72px;height:72px;border-radius:50%;border:2px solid #F3E8D2;border-top-color:#C59B27;border-right-color:#154734;animation:cj-spin 1s linear infinite;"></div>
+        <div style="position:absolute;width:96px;height:96px;border-radius:50%;background:radial-gradient(circle, rgba(197,155,39,0.25) 0%, rgba(217,119,6,0.1) 70%, transparent 100%);filter:blur(8px);"></div>
+        <div style="width:72px;height:72px;border-radius:50%;border:2px solid #F3E8D2;border-top-color:#C59B27;border-right-color:#D4AF37;animation:cj-spin 1s linear infinite;"></div>
         <div style="position:absolute;width:50px;height:50px;border-radius:50%;background:#ffffff;box-shadow:0 4px 14px rgba(0,0,0,0.06);display:flex;align-items:center;justify-content:center;border:1px solid #FAF7F2;">
           <img src="${BASE_URL}/logo.png" alt="Crystal Jaipuria" style="width:34px;height:34px;object-fit:contain;" width="34" height="34" />
         </div>
       </div>
-      <div style="font-size:18px;font-weight:800;letter-spacing:3px;color:#154734;text-transform:uppercase;margin-bottom:4px;">CRYSTAL JAIPURIA</div>
+      <div style="font-size:18px;font-weight:800;letter-spacing:3px;color:#1e293b;text-transform:uppercase;margin-bottom:4px;">CRYSTAL JAIPURIA</div>
       <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:#C59B27;text-transform:uppercase;margin-bottom:12px;">JAIPUR HERITAGE &bull; EST. 1989</div>
       <div style="font-size:13px;color:#64748b;font-weight:500;">Loading handcrafted gemstone collection...</div>
       <style>
@@ -865,6 +865,51 @@ export const runPrerender = async () => {
   });
   saveFile("index.html", homeHtml);
   console.log("✓ Pre-rendered homepage with luxury brand loader & noscript SEO content to /dist/index.html");
+
+  // ==========================================
+  // 5. Pre-render 404 Page (dist/404.html & dist/404/index.html)
+  // ==========================================
+  const notFoundBodyPreview = `
+    <div style="min-height:85vh;background:linear-gradient(180deg, #fdfbf7 0%, #faf5eb 50%, #f5ede0 100%);display:flex;align-items:center;justify-content:center;padding:48px 16px;font-family:system-ui,-apple-system,sans-serif;text-align:center;">
+      <div style="max-width:620px;width:100%;background:rgba(255,255,255,0.95);border:1px solid rgba(245,215,140,0.6);border-radius:24px;padding:48px 32px;box-shadow:0 20px 45px -10px rgba(180,83,9,0.08);">
+        <div style="display:inline-block;padding:6px 16px;background:#fef3c7;color:#92400e;border:1px solid #fde68a;border-radius:9999px;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:20px;">
+          Crystal Jaipuria • Jaipur Art &amp; Craft
+        </div>
+        <div style="font-size:80px;font-weight:800;line-height:1;margin-bottom:12px;background:linear-gradient(135deg, #b45309 0%, #d97706 50%, #1e293b 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-2px;">
+          404
+        </div>
+        <h2 style="font-size:24px;font-weight:700;color:#1e293b;margin-bottom:12px;">Sacred Piece or Page Not Found</h2>
+        <p style="color:#64748b;font-size:15px;line-height:1.6;margin-bottom:28px;max-width:480px;margin-left:auto;margin-right:auto;">
+          The gemstone statue, Shivling, or page you are looking for may have been moved, renamed, or is currently unavailable.
+        </p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:32px;">
+          <a href="${BASE_URL}/" style="display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;background:#0f172a;color:#ffffff;">Back to Homepage</a>
+          <a href="${BASE_URL}/shop" style="display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;background:#d97706;color:#ffffff;">Explore All Shop</a>
+          <a href="https://wa.me/918306317032?text=Hello%20Crystal%20Jaipuria,%20I%20was%20looking%20for%20a%20product%20on%20your%20website" style="display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;background:#16a34a;color:#ffffff;" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
+        </div>
+        <div style="border-top:1px solid #e2e8f0;padding-top:24px;">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#94a3b8;margin-bottom:12px;">Popular Gemstone Categories</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;">
+            <a href="${BASE_URL}/shivling" style="font-size:12px;font-weight:600;color:#475569;background:#faf8f5;border:1px solid #e2e8f0;padding:6px 14px;border-radius:6px;text-decoration:none;">Gemstone Shivling</a>
+            <a href="${BASE_URL}/god-statues" style="font-size:12px;font-weight:600;color:#475569;background:#faf8f5;border:1px solid #e2e8f0;padding:6px 14px;border-radius:6px;text-decoration:none;">God Statues</a>
+            <a href="${BASE_URL}/shree-yantra" style="font-size:12px;font-weight:600;color:#475569;background:#faf8f5;border:1px solid #e2e8f0;padding:6px 14px;border-radius:6px;text-decoration:none;">Crystal Shree Yantra</a>
+            <a href="${BASE_URL}/diya" style="font-size:12px;font-weight:600;color:#475569;background:#faf8f5;border:1px solid #e2e8f0;padding:6px 14px;border-radius:6px;text-decoration:none;">Handcrafted Diyas</a>
+            <a href="${BASE_URL}/shop" style="font-size:12px;font-weight:600;color:#475569;background:#faf8f5;border:1px solid #e2e8f0;padding:6px 14px;border-radius:6px;text-decoration:none;">All Products</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  `.trim();
+
+  const notFoundHtml = buildPageHtml({
+    title: "404 - Page Not Found | Crystal Jaipuria",
+    description: "The page you are looking for does not exist. Explore authentic handcrafted gemstone statues, Shivlings, Shree Yantra, and crystal spiritual decor from Crystal Jaipuria.",
+    canonical: `${BASE_URL}/404`,
+    bodyContent: notFoundBodyPreview,
+  });
+  saveFile("404.html", notFoundHtml);
+  saveFile("404/index.html", notFoundHtml);
+  console.log("✓ Pre-rendered 404 page to /dist/404.html and /dist/404/index.html");
 
   console.log("🎉 Static Pre-rendering Completed Successfully!");
 };

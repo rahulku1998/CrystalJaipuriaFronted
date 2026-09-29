@@ -1,6 +1,6 @@
 import React from "react";
 import SEO from "../../Components/SEO";
-import { FaFileContract, FaGavel, FaGem, FaHandshake } from "react-icons/fa";
+import { FaFileContract } from "react-icons/fa";
 
 const TermsConditions = () => {
   return (

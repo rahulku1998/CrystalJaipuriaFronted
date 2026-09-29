@@ -13,12 +13,13 @@ import ScrollTop from "./Components/ScrollTop";
 import FloatingWhatsApp from "./Components/FloatingWhatsApp";
 import BrandLoader from "./Components/BrandLoader";
 
+import NotFound from './Pages/NotFound';
+
 // Lazy-loaded customer-facing pages (code-split for blazing mobile performance)
 const About = lazy(() => import("./Pages/About"));
 const Contact = lazy(() => import('./Pages/Contact'));
 const CategoryPage = lazy(() => import('./Pages/CategoryPage'));
 const SubCategoryProducts = lazy(() => import('./Pages/SubCategoryProducts'));
-const NotFound = lazy(() => import('./Pages/NotFound'));
 const Blog = lazy(() => import("./Pages/Blog/Blogs"));
 const BlogDetails = lazy(() => import('./Pages/Blog/BlogDetails'));
 const Shop = lazy(() => import("./Pages/Shop"));

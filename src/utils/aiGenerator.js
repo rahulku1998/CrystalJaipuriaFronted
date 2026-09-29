@@ -1284,7 +1284,8 @@ export const generateCompetitorMeta = (
 
   return {
     metaTitle: title,
-    metaDescription: desc
+    metaDescription: desc,
+    featureTag
   };
 };
 
@@ -1311,7 +1312,7 @@ export const resolveIdolDeity = (name = "", stone = {}) => {
   return stone.deity || "Supreme Divinity";
 };
 
-export const getDynamicVastuVidhiHtml = (archetype, cleanName, stone) => {
+export const getDynamicVastuVidhiHtml = (archetype, _cleanName = "", _stone = {}) => {
   switch (archetype) {
     case "krishna":
       return `Establish upon a clean wooden or silver chowki in the North-East (Ishanya Kon) or East quadrant. Pair with a pure cow ghee diya, holy Tulsi leaves, and fragrant sandalwood dhoop to invite eternal love, joy, and spiritual harmony.`;
@@ -2032,10 +2033,6 @@ export const generateBuiltInContent = (productName, categoryName = "") => {
   const sectionTwoHeading = "Gemological Provenance & Jaipur Lapidary Heritage";
   const sectionTwoBody = `<p>Every specimen is carved from a single, hand-selected rough crystal at Crystal Jaipuria's generational artisan workshops in Jaipur (Est. 1989). We preserve the natural crystalline lattice of genuine ${stone.name}, guaranteeing authentic earth-mined quality without synthetic polymer coatings or resin casting.</p><p><strong>Authenticity Identification:</strong> ${stone.authenticityTest}</p>`;
 
-  const competitorKeywordsIntro = `<p>Looking to <strong>buy authentic ${cleanName} online</strong>? Hand-carved with precision by generational master lapidaries at Crystal Jaipuria, Jaipur (est. 1989), this genuine earth-mined gemstone masterpiece offers direct Jaipur manufacturer pricing, Vedic Agama Shastra adherence, and complete lab certification.</p>`;
-
-  const dynamicVastuText = getDynamicVastuVidhiHtml(archetype, cleanName, stone);
-
   let fullDescription =
     `<p>${citationHook}</p>\n\n` +
     `<h2>${sectionOneHeading}</h2>\n${sectionOneBody}\n\n` +
@@ -2301,7 +2298,7 @@ Return ONLY the raw plain text paragraph (no markdown formatting, no quotes).`;
     const json = await response.json();
     const rawText = json?.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
     return rawText || fallback;
-  } catch (err) {
+  } catch {
     return fallback;
   }
 };
@@ -2537,7 +2534,7 @@ export const generateBestH1Options = ({
   categoryName = "",
   weight = "",
   size = "",
-  price = 0,
+  _price = 0,
   originalTitle = "",
 }) => {
   const cleanName = toProperTitleCase((name || originalTitle || "Gemstone Idol").trim());

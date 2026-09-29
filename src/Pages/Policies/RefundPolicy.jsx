@@ -1,6 +1,6 @@
 import React from "react";
 import SEO from "../../Components/SEO";
-import { FaUndoAlt, FaShieldAlt, FaCheckCircle, FaMoneyCheckAlt, FaWhatsapp, FaBoxOpen, FaBolt } from "react-icons/fa";
+import { FaUndoAlt, FaBoxOpen, FaBolt } from "react-icons/fa";
 
 const RefundPolicy = () => {
   return (
