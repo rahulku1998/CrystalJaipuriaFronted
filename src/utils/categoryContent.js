@@ -44,16 +44,16 @@ export const CATEGORY_CONTENT = {
   "crystal-statues": {
     slug: "crystal-statues",
     name: "Crystal Statues",
-    title: "Natural Crystal Animal Statues & Vastu Figurines in Jaipur, India | Crystal Jaipuria",
+    title: "Handcrafted Crystal Statues, Healing Angels & Gemstone Diyas | Crystal Jaipuria",
     description:
-      "Handcrafted natural crystal animal statues, swan pairs & elephant carvings in Jaipur, Rajasthan (India). Authentic Vastu decor and gemstone figurines at wholesale rates.",
+      "Explore natural crystal animal statues, swan pairs, hand-carved gemstone healing angels & pure amethyst diyas handcrafted in Jaipur at factory wholesale prices.",
     canonical: "https://www.crystaljaipuria.com/crystal-statues",
-    ogTitle: "Natural Crystal Animal Statues & Vastu Figurines in Jaipur, India | Crystal Jaipuria",
+    ogTitle: "Handcrafted Crystal Statues, Healing Angels & Gemstone Diyas | Crystal Jaipuria",
     ogDescription:
-      "Handcrafted natural crystal animal statues, swan pairs & elephant carvings in Jaipur, Rajasthan (India). Authentic Vastu decor and gemstone figurines at wholesale rates.",
-    headline: "Handcrafted Crystal Animal Carvings & Vastu Figurines",
+      "Explore natural crystal animal statues, swan pairs, hand-carved gemstone healing angels & pure amethyst diyas handcrafted in Jaipur at factory wholesale prices.",
+    headline: "Handcrafted Crystal Statues, Healing Angels & Puja Diyas",
     intro:
-      "Discover our artisan-crafted collection of natural gemstone animal carvings, birds, and Vastu decor figurines. Sculpted from pure crystals like Rose Quartz, Aventurine, and Green Jade, each figurine embodies symbolic harmony—such as Pair of Swans for marital bliss and love, and Elephants for strength, wisdom, and protection. Perfectly sized for tabletop displays, living rooms, and thoughtful gifting.",
+      "Discover our artisan-crafted collection of natural gemstone animal carvings, healing angels, puja diyas, and Vastu decor figurines. Sculpted from pure earth-mined crystals like Rose Quartz, Amethyst, and Green Jade, each piece embodies symbolic harmony, spiritual healing, and aesthetic grace—including Pair of Swans for marital bliss, Elephants for protection, Amethyst Angels for Reiki peace, and hand-carved Diyas for auspicious home worship.",
     faqs: [
       {
         question: "What is the Vastu significance of a Rose Quartz Pair of Swans?",
@@ -66,9 +66,14 @@ export const CATEGORY_CONTENT = {
           "An elephant statue made of Green Jade brings prosperity, wisdom, and obstacle removal. Placing it facing inward near the main entrance or on a work desk attracts good fortune.",
       },
       {
-        question: "Are Crystal Statues different from God Statues?",
+        question: "What are the spiritual benefits of a hand-carved Gemstone Angel?",
         answer:
-          "Yes. Our Crystal Statues collection focuses on animal carvings, birds, nature motifs, and Feng Shui/Vastu decorative pieces, whereas God Statues is dedicated to sacred Hindu and spiritual deity murtis.",
+          "Hand-carved Gemstone Angels (such as in natural Amethyst) serve as personal talismans for meditation, stress relief, and Reiki healing, channeling calming guardian vibrations into your living or workspace.",
+      },
+      {
+        question: "Can real oil or ghee be used in a natural gemstone Diya?",
+        answer:
+          "Yes, our gemstone diyas are carved from heat-tolerant natural crystals and are completely functional for daily puja, aartis, and festive lighting with pure ghee and cotton wicks.",
       },
     ],
   },
@@ -140,7 +145,7 @@ export const CATEGORY_CONTENT = {
     title: "Hand-Carved Gemstone Healing Angels & Crystals in Jaipur, India | Crystal Jaipuria",
     description:
       "Explore artisan-carved gemstone healing angels & pocket guardian angels handcrafted in Jaipur, Rajasthan. Natural Amethyst, Rose Quartz & crystal angels for Reiki & peace.",
-    canonical: "https://www.crystaljaipuria.com/angel",
+    canonical: "https://www.crystaljaipuria.com/crystal-statues",
     ogTitle: "Hand-Carved Gemstone Healing Angels & Crystals in Jaipur, India | Crystal Jaipuria",
     ogDescription:
       "Explore artisan-carved gemstone healing angels & pocket guardian angels handcrafted in Jaipur, Rajasthan. Natural Amethyst, Rose Quartz & crystal angels for Reiki & peace.",
@@ -171,7 +176,7 @@ export const CATEGORY_CONTENT = {
     title: "Handcrafted Gemstone & Crystal Diyas Manufacturer in Jaipur, India | Crystal Jaipuria",
     description:
       "Buy handcrafted gemstone and crystal diyas from Jaipur manufacturer. Hand-carved Amethyst & quartz deepaks for daily puja, Diwali, and spiritual gifting at factory direct rates.",
-    canonical: "https://www.crystaljaipuria.com/diya",
+    canonical: "https://www.crystaljaipuria.com/crystal-statues",
     ogTitle: "Handcrafted Gemstone & Crystal Diyas Manufacturer in Jaipur, India | Crystal Jaipuria",
     ogDescription:
       "Buy handcrafted gemstone and crystal diyas from Jaipur manufacturer. Hand-carved Amethyst & quartz deepaks for daily puja, Diwali, and spiritual gifting at factory direct rates.",

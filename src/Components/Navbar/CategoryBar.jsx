@@ -21,9 +21,7 @@ const DEFAULT_CATEGORIES = [
   { name: "God Statues", path: "/god-statues", icon: <HiOutlineShoppingBag /> },
   { name: "Shivling", path: "/shivling", icon: <HiOutlineShoppingBag /> },
   { name: "Shree Yantra", path: "/shree-yantra", icon: <HiOutlineShoppingBag /> },
-  { name: "Angel", path: "/angel", icon: <HiOutlineShoppingBag /> },
   { name: "Crystal Statues", path: "/crystal-statues", icon: <HiOutlineShoppingBag /> },
-  { name: "Diya", path: "/diya", icon: <HiOutlineShoppingBag /> },
 ];
 
 const CategoryBar = ({ mobileMenuOpen, setMobileMenuOpen }) => {
@@ -74,11 +72,17 @@ const CategoryBar = ({ mobileMenuOpen, setMobileMenuOpen }) => {
   const fetchCategories = async () => {
     try {
       const res = await API.get("/categories");
-      let data = (res.data.categories || []).map((cat) => ({
-        name: cat.name,
-        path: `/${cat.slug === "luxurious-idols-&-decor" ? "luxurious-idols-decor" : cat.slug}`,
-        icon: <HiOutlineShoppingBag />,
-      }));
+      let data = (res.data.categories || [])
+        .filter((cat) => {
+          const s = (cat.slug || "").toLowerCase().trim();
+          const n = (cat.name || "").toLowerCase().trim();
+          return s !== "angel" && s !== "diya" && n !== "angel" && n !== "diya";
+        })
+        .map((cat) => ({
+          name: cat.name,
+          path: `/${cat.slug === "luxurious-idols-&-decor" ? "luxurious-idols-decor" : cat.slug}`,
+          icon: <HiOutlineShoppingBag />,
+        }));
       const luxIdx = data.findIndex(c => c.name.toLowerCase().includes("luxurious"));
       if (luxIdx > -1) {
         const [luxItem] = data.splice(luxIdx, 1);

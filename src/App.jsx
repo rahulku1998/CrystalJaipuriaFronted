@@ -160,6 +160,10 @@ function App() {
         <Route path="/checkout" element={<Navigate to="/shop" replace />} />
         <Route path="/my-account" element={<Navigate to="/" replace />} />
 
+        {/* REDIRECT ANGEL & DIYA TO CONSOLIDATED CRYSTAL STATUES CATEGORY */}
+        <Route path="/angel" element={<Navigate to="/crystal-statues" replace />} />
+        <Route path="/diya" element={<Navigate to="/crystal-statues" replace />} />
+
         {/* DYNAMIC CATEGORY */}
         <Route path="/:slug" element={<CategoryPage />} />
         

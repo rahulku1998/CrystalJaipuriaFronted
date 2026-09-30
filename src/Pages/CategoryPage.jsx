@@ -220,7 +220,17 @@ const CategoryPage = () => {
       (s) =>
         s.categoryId?._id === cat._id ||
         s.categoryId === cat._id ||
-        (s.categoryId?.slug && s.categoryId.slug === cat.slug)
+        (s.categoryId?.slug && s.categoryId.slug === cat.slug) ||
+        (cleanSlug === "crystal-statues" && (
+          s.categoryId?.slug === "angel" ||
+          s.categoryId?.slug === "diya" ||
+          s.name?.toLowerCase().includes("angel") ||
+          s.name?.toLowerCase().includes("diya") ||
+          s._id === "6a55bc912dcf49aacd71ef6c" ||
+          s._id === "6a55bcad2dcf49aacd71ef6e" ||
+          s._id === "sub-angel-gemstone" ||
+          s._id === "sub-diya-gemstone"
+        ))
     );
 
     const curName = (cat.name || "").toLowerCase();
@@ -237,7 +247,22 @@ const CategoryPage = () => {
         (cleanSlug === "god-statues" && pCatSlug === "god-statues") ||
         (cleanSlug === "diya" && (p.name?.toLowerCase().includes("diya") || p.slug?.includes("diya"))) ||
         (cleanSlug === "angel" && (p.name?.toLowerCase().includes("angel") || p.slug?.includes("angel"))) ||
-        (cleanSlug === "crystal-statues" && pCatSlug === "crystal-statues") ||
+        (cleanSlug === "crystal-statues" && (
+          pCatSlug === "crystal-statues" ||
+          pCatSlug === "angel" ||
+          pCatSlug === "diya" ||
+          pCatName.includes("crystal statue") ||
+          pCatName.includes("angel") ||
+          pCatName.includes("diya") ||
+          p.name?.toLowerCase().includes("swan") ||
+          p.name?.toLowerCase().includes("elephant") ||
+          p.name?.toLowerCase().includes("angel") ||
+          p.name?.toLowerCase().includes("diya") ||
+          p.slug?.includes("swan") ||
+          p.slug?.includes("elephant") ||
+          p.slug?.includes("angel") ||
+          p.slug?.includes("diya")
+        )) ||
         ((cleanSlug === "luxurious-idols-decor" || cleanSlug === "luxurious-idols-&-decor") &&
           (pCatSlug === "luxurious-idols-decor" || pCatSlug === "luxurious-idols-&-decor" || pCatName.includes("luxurious") || p.slug?.includes("silver-work") || p.slug?.includes("green-jade-carved-ganesha")))
       );
@@ -393,7 +418,17 @@ const CategoryPage = () => {
         (s) =>
           s.categoryId?._id === currentCat._id ||
           s.categoryId === currentCat._id ||
-          (s.categoryId?.slug && s.categoryId.slug === currentCat.slug)
+          (s.categoryId?.slug && s.categoryId.slug === currentCat.slug) ||
+          (cleanSlug === "crystal-statues" && (
+            s.categoryId?.slug === "angel" ||
+            s.categoryId?.slug === "diya" ||
+            s.name?.toLowerCase().includes("angel") ||
+            s.name?.toLowerCase().includes("diya") ||
+            s._id === "6a55bc912dcf49aacd71ef6c" ||
+            s._id === "6a55bcad2dcf49aacd71ef6e" ||
+            s._id === "sub-angel-gemstone" ||
+            s._id === "sub-diya-gemstone"
+          ))
       );
       setSubCategories(filteredSubs);
 
@@ -411,7 +446,22 @@ const CategoryPage = () => {
           (cleanSlug === "god-statues" && pCatSlug === "god-statues") ||
           (cleanSlug === "diya" && (p.name?.toLowerCase().includes("diya") || p.slug?.includes("diya"))) ||
           (cleanSlug === "angel" && (p.name?.toLowerCase().includes("angel") || p.slug?.includes("angel"))) ||
-          (cleanSlug === "crystal-statues" && pCatSlug === "crystal-statues") ||
+          (cleanSlug === "crystal-statues" && (
+            pCatSlug === "crystal-statues" ||
+            pCatSlug === "angel" ||
+            pCatSlug === "diya" ||
+            pCatName.includes("crystal statue") ||
+            pCatName.includes("angel") ||
+            pCatName.includes("diya") ||
+            p.name?.toLowerCase().includes("swan") ||
+            p.name?.toLowerCase().includes("elephant") ||
+            p.name?.toLowerCase().includes("angel") ||
+            p.name?.toLowerCase().includes("diya") ||
+            p.slug?.includes("swan") ||
+            p.slug?.includes("elephant") ||
+            p.slug?.includes("angel") ||
+            p.slug?.includes("diya")
+          )) ||
           ((cleanSlug === "luxurious-idols-decor" || cleanSlug === "luxurious-idols-&-decor") &&
             (pCatSlug === "luxurious-idols-decor" || pCatSlug === "luxurious-idols-&-decor" || pCatName.includes("luxurious") || p.slug?.includes("silver-work") || p.slug?.includes("green-jade-carved-ganesha")))
         );

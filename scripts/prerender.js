@@ -545,7 +545,15 @@ export const runPrerender = async () => {
       (p) =>
         p.categoryId?.slug === cat.slug ||
         p.categoryId?._id === cat._id ||
-        (typeof p.categoryId === "string" && p.categoryId === cat._id)
+        (typeof p.categoryId === "string" && p.categoryId === cat._id) ||
+        (cat.slug === "crystal-statues" && (
+          p.categoryId?.slug === "angel" ||
+          p.categoryId?.slug === "diya" ||
+          p.slug === "amethyst-gemston-angel" ||
+          p.slug === "gemston-amethyst-diya" ||
+          p.name?.toLowerCase().includes("angel") ||
+          p.name?.toLowerCase().includes("diya")
+        ))
     );
 
     const cardsHtml = catProducts
@@ -674,7 +682,23 @@ export const runPrerender = async () => {
       bodyContent: categoryBodyPreview,
     });
 
-    saveFile(`${cat.slug}/index.html`, catHtml);
+    if (cat.slug === "angel" || cat.slug === "diya") {
+      const redirectContent = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting to Crystal Statues | Crystal Jaipuria</title>
+  <meta http-equiv="refresh" content="0;url=/crystal-statues">
+  <link rel="canonical" href="${BASE_URL}/crystal-statues">
+</head>
+<body style="font-family:sans-serif;text-align:center;padding:50px;">
+  <p>Redirecting to <a href="${BASE_URL}/crystal-statues">${BASE_URL}/crystal-statues</a>...</p>
+</body>
+</html>`;
+      saveFile(`${cat.slug}/index.html`, redirectContent);
+    } else {
+      saveFile(`${cat.slug}/index.html`, catHtml);
+    }
     if (cat.slug === "luxurious-idols-&-decor") {
       saveFile("luxurious-idols-decor/index.html", catHtml);
     } else if (cat.slug === "luxurious-idols-decor") {

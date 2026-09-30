@@ -20,6 +20,7 @@ const Shop = () => {
   const fetchProducts = async () => {
     try {
       setLoading(true);
+      const res = await API.get("/products");
       const dbList = res.data?.products || res.data || [];
       const mergedList = [...dbList];
       FALLBACK_PRODUCTS.forEach((fb) => {
