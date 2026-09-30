@@ -11,6 +11,8 @@ import FAQSection from "../Components/FAQSection";
 import GoogleReviewsSection from "../Components/GoogleReviewsSection";
 import { FaWhatsapp, FaEnvelope, FaIndustry, FaCogs, FaCheckCircle, FaGlobeAmericas } from "react-icons/fa";
 
+import { FALLBACK_PRODUCTS } from "../data/fallbackData";
+
 const B2BWholesaleSection = () => (
   <section className="py-12 sm:py-16 bg-white border-t border-stone-200">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
@@ -84,9 +86,150 @@ const Home = () => {
     const fetchData = async () => {
       try {
         const res = await API.get("/home");
-        setProducts(res.data.latestProducts || []);
-        setCategories(res.data.categories || []);
-        setCategoryProducts(res.data.categoryProducts || {});
+        const latest = res.data?.latestProducts || [];
+        const rawCategories = res.data?.categories || [];
+        const rawCategoryProducts = res.data?.categoryProducts || {};
+
+        const isAngelOrDiya = (c) => {
+          const s = (c.slug || "").toLowerCase().trim();
+          const n = (c.name || "").toLowerCase().trim();
+          return s === "angel" || s === "diya" || n === "angel" || n === "diya";
+        };
+
+        const isCrystalStatues = (c) => {
+          const s = (c.slug || "").toLowerCase().trim();
+          const n = (c.name || "").toLowerCase().trim();
+          return s === "crystal-statues" || n.includes("crystal statue");
+        };
+
+        const isGodStatues = (c) => {
+          const s = (c.slug || "").toLowerCase().trim();
+          const n = (c.name || "").toLowerCase().trim();
+          return s === "god-statues" || (n.includes("god") && n.includes("statue"));
+        };
+
+        const isLux = (c) => {
+          const s = (c.slug || "").toLowerCase().trim();
+          const n = (c.name || "").toLowerCase().trim();
+          return s.includes("luxurious") || n.includes("luxurious");
+        };
+
+        // 1. Gather & consolidate products for Crystal Statues (statues + angel + diya)
+        const mergedCrystalProducts = [];
+        const seenCrystalKeys = new Set();
+        const addCrystalProduct = (p) => {
+          if (!p) return;
+          const key = p._id || p.slug || p.name;
+          if (key && !seenCrystalKeys.has(key)) {
+            seenCrystalKeys.add(key);
+            mergedCrystalProducts.push(p);
+          }
+        };
+
+        // From live categoryProducts
+        rawCategories.forEach((cat) => {
+          if (isCrystalStatues(cat) || isAngelOrDiya(cat)) {
+            (rawCategoryProducts[cat._id] || []).forEach(addCrystalProduct);
+          }
+        });
+
+        // Ensure fallback items are also populated
+        FALLBACK_PRODUCTS.forEach((p) => {
+          const catSlug = p.categoryId?.slug || "";
+          const name = (p.name || "").toLowerCase();
+          const slug = (p.slug || "").toLowerCase();
+          if (
+            catSlug === "crystal-statues" ||
+            catSlug === "angel" ||
+            catSlug === "diya" ||
+            name.includes("swan") ||
+            name.includes("elephant") ||
+            name.includes("angel") ||
+            name.includes("diya") ||
+            slug.includes("swan") ||
+            slug.includes("elephant") ||
+            slug.includes("angel") ||
+            slug.includes("diya")
+          ) {
+            addCrystalProduct(p);
+          }
+        });
+
+        // 2. Identify or configure Luxurious Idols & Decor
+        let luxCat = rawCategories.find(isLux);
+        if (!luxCat) {
+          luxCat = {
+            _id: "6abd39523618032686f04291",
+            name: "Luxurious Idols & Decor",
+            slug: "luxurious-idols-decor",
+          };
+        } else {
+          luxCat = {
+            ...luxCat,
+            slug: "luxurious-idols-decor",
+          };
+        }
+
+        const mergedLuxProducts = [];
+        const seenLuxKeys = new Set();
+        const addLuxProduct = (p) => {
+          if (!p) return;
+          const key = p._id || p.slug || p.name;
+          if (key && !seenLuxKeys.has(key)) {
+            seenLuxKeys.add(key);
+            mergedLuxProducts.push(p);
+          }
+        };
+        (rawCategoryProducts[luxCat._id] || []).forEach(addLuxProduct);
+        FALLBACK_PRODUCTS.filter(
+          (p) =>
+            p.categoryId?.slug === "luxurious-idols-decor" ||
+            p.categoryId?.slug === "luxurious-idols-&-decor" ||
+            (p.name && (p.name.includes("Silver Work") || p.name.includes("Silver & Gold")))
+        ).forEach(addLuxProduct);
+
+        let crystalCat = rawCategories.find(isCrystalStatues);
+        if (!crystalCat) {
+          crystalCat = {
+            _id: "6a55bc492dcf49aacd71ef68",
+            name: "Crystal Statues",
+            slug: "crystal-statues",
+          };
+        }
+
+        const updatedCategoryProducts = {
+          ...rawCategoryProducts,
+          [crystalCat._id]: mergedCrystalProducts,
+          "crystal-statues": mergedCrystalProducts,
+          [luxCat._id]: mergedLuxProducts,
+          "luxurious-idols-decor": mergedLuxProducts,
+        };
+
+        // 3. Exclude standalone Angel and Diya from homepage categories
+        const baseCategories = rawCategories.filter(
+          (c) => !isAngelOrDiya(c) && !isLux(c)
+        );
+
+        if (!baseCategories.some(isCrystalStatues)) {
+          baseCategories.push(crystalCat);
+        }
+
+        // 4. Place Luxurious category directly below God Statues
+        const godIdx = baseCategories.findIndex(isGodStatues);
+        let finalCategories = [];
+        if (godIdx !== -1) {
+          finalCategories = [
+            ...baseCategories.slice(0, godIdx + 1),
+            luxCat,
+            ...baseCategories.slice(godIdx + 1),
+          ];
+        } else {
+          finalCategories = [luxCat, ...baseCategories];
+        }
+
+        setProducts(latest.length > 0 ? latest : FALLBACK_PRODUCTS.slice(0, 10));
+        setCategories(finalCategories);
+        setCategoryProducts(updatedCategoryProducts);
       } catch (err) {
         console.log("Home data fetch error:", err);
       }
@@ -180,26 +323,23 @@ const Home = () => {
 
 
 <div className="mt-8 sm:mt-12">
-        {categories.map((category) => {
-          const isDiya =
-            category.slug === "diya" ||
-            category.name?.toLowerCase().includes("diya");
-
-          return (
-            <React.Fragment key={category._id}>
-              <CategorySection
-                title={category.name}
-                slug={category.slug}
-                products={categoryProducts[category._id] || []}
-              />
-              {isDiya && <B2BWholesaleSection />}
-            </React.Fragment>
-          );
-        })}
-        {categories.length > 0 &&
-          !categories.some(
-            (c) => c.slug === "diya" || c.name?.toLowerCase().includes("diya")
-          ) && <B2BWholesaleSection />}
+        {categories.map((category) => (
+          <CategorySection
+            key={category._id || category.slug}
+            title={category.name}
+            slug={
+              category.slug === "luxurious-idols-&-decor"
+                ? "luxurious-idols-decor"
+                : category.slug
+            }
+            products={
+              categoryProducts[category._id] ||
+              categoryProducts[category.slug] ||
+              []
+            }
+          />
+        ))}
+        <B2BWholesaleSection />
       </div>
 
 <StatsSection />

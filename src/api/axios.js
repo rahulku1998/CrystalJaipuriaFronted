@@ -84,7 +84,15 @@ const getFallbackResponse = (rawUrl) => {
         (p) =>
           p.categoryId?._id === cat._id ||
           p.categoryId === cat._id ||
-          p.categoryId?.slug === cat.slug
+          p.categoryId?.slug === cat.slug ||
+          (cat.slug === "crystal-statues" && (
+            p.categoryId?.slug === "angel" ||
+            p.categoryId?.slug === "diya" ||
+            p.name?.toLowerCase().includes("angel") ||
+            p.name?.toLowerCase().includes("diya") ||
+            p.slug?.includes("angel") ||
+            p.slug?.includes("diya")
+          ))
       );
     });
     return {

@@ -3,14 +3,14 @@
 
 export const FALLBACK_CATEGORIES = [
   {
-      "_id": "6abd39523618032686f04291",
-      "name": "Luxurious Idols & Decor",
-      "slug": "luxurious-idols-decor"
-  },
-  {
     "_id": "6a55bb1f2e9a358fc926cbab",
     "name": "God Statues",
     "slug": "god-statues"
+  },
+  {
+    "_id": "6abd39523618032686f04291",
+    "name": "Luxurious Idols & Decor",
+    "slug": "luxurious-idols-decor"
   },
   {
     "_id": "6a55bc292dcf49aacd71ef65",
@@ -23,19 +23,9 @@ export const FALLBACK_CATEGORIES = [
     "slug": "shree-yantra"
   },
   {
-    "_id": "6a55bc3f2dcf49aacd71ef67",
-    "name": "Angel",
-    "slug": "angel"
-  },
-  {
     "_id": "6a55bc492dcf49aacd71ef68",
     "name": "Crystal Statues",
     "slug": "crystal-statues"
-  },
-  {
-    "_id": "6a55bc522dcf49aacd71ef69",
-    "name": "Diya",
-    "slug": "diya"
   }
 ];
 

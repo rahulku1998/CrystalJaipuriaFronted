@@ -194,8 +194,36 @@ export const runPrerender = async () => {
     products = FALLBACK_PRODUCTS;
   }
   if (categories.length === 0) {
-    console.log("⚡ [Prerender] Using fallback categories catalog (6 categories)...");
+    console.log("⚡ [Prerender] Using fallback categories catalog (5 categories)...");
     categories = FALLBACK_CATEGORIES;
+  }
+
+  // Filter out Angel and Diya (merged into Crystal Statues)
+  categories = categories.filter((c) => {
+    const s = (c.slug || "").toLowerCase().trim();
+    const n = (c.name || "").toLowerCase().trim();
+    return s !== "angel" && s !== "diya" && n !== "angel" && n !== "diya";
+  });
+
+  // Re-order categories so Luxurious Idols & Decor is directly below God Statues
+  const luxIdx = categories.findIndex(
+    (c) =>
+      (c.slug || "").includes("luxurious") ||
+      (c.name || "").toLowerCase().includes("luxurious")
+  );
+  if (luxIdx > -1) {
+    const [luxItem] = categories.splice(luxIdx, 1);
+    luxItem.slug = "luxurious-idols-decor";
+    const godIdx = categories.findIndex(
+      (c) =>
+        (c.slug || "").toLowerCase() === "god-statues" ||
+        (c.name || "").toLowerCase().includes("god")
+    );
+    if (godIdx > -1) {
+      categories.splice(godIdx + 1, 0, luxItem);
+    } else {
+      categories.unshift(luxItem);
+    }
   }
 
   console.log(`📦 Pre-rendering ${products.length} Products & ${categories.length} Categories...`);
