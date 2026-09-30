@@ -34,7 +34,7 @@
     <item>
       <g:store_code>11769123335765617743</g:store_code>
       <g:id>6abe9e153618032686f05291</g:id>
-      <g:availability>out_of_stock</g:availability>
+      <g:availability>in_stock</g:availability>
       <g:price>110000.00 INR</g:price>
       <g:quantity>10</g:quantity>
       <g:pickup_method>buy</g:pickup_method>

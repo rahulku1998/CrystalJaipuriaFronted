@@ -354,14 +354,14 @@ export const STANDARDIZED_SPECS = {
     weight: "432 ct (86.4 g)",
     size: "4.2 in (H) x 3.4 in (L) x 4.1 in (W)",
     pricePerUnit: "₹255 / carat",
-    outOfStock: true
+    stock: 1
   },
   "durga-devi-ruby-idol": {
     price: 110000,
     weight: "432 ct (86.4 g)",
     size: "4.2 in (H) x 3.4 in (L) x 4.1 in (W)",
     pricePerUnit: "₹255 / carat",
-    outOfStock: true
+    stock: 1
   },
   "green-aventurine-shankh-648g": {
     price: 12500,
