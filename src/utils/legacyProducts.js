@@ -16,6 +16,10 @@ export const SLUG_ALIASES = {
   "natural-rose-quartz-shree-yantra": "crystal-shree-yantra",
   "rose-quartz-ganesh-with-silver-work": "rose-quartz-ganesh-with-silver-work-idol-for-luxury-decor",
   "green-jade-carved-ganesha": "green-jade-carved-ganesha-statue-with-silver-gold-work",
+  "durga-devi-ruby-idol": "durga-devi-ruby-idol-432-carats",
+  "green-aventurine-shankh": "green-aventurine-shankh-648g",
+  "nataraja-dancing-shiva-sunstone-idol": "nataraja-dancing-shiva-sunstone-idol-22kg",
+  "shiva-in-lepidolite": "lord-shiva-in-natural-lepidolite-101kg",
   "luxurious-idols-&-decor": "luxurious-idols-decor"
 };
 

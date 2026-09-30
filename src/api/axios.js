@@ -90,8 +90,10 @@ const getFallbackResponse = (rawUrl) => {
             p.categoryId?.slug === "diya" ||
             p.name?.toLowerCase().includes("angel") ||
             p.name?.toLowerCase().includes("diya") ||
+            p.name?.toLowerCase().includes("shankh") ||
             p.slug?.includes("angel") ||
-            p.slug?.includes("diya")
+            p.slug?.includes("diya") ||
+            p.slug?.includes("shankh")
           ))
       );
     });

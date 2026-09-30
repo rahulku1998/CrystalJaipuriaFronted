@@ -79,7 +79,59 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- Dynamic Product Pages (55 Live Products) -->
+  <!-- Dynamic Product Pages (59 Live Products) -->
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/lord-shiva-in-natural-lepidolite-101kg</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/lord-shiva-in-natural-lepidolite-101kg.webp</image:loc>
+      <image:title>Lord Shiva in Natural Lepidolite | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/lord-shiva-in-natural-lepidolite-101kg-2.webp</image:loc>
+      <image:title>Lord Shiva in Natural Lepidolite - Alternate View | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/nataraja-dancing-shiva-sunstone-idol-22kg</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/nataraja-dancing-shiva-sunstone-idol-22kg.webp</image:loc>
+      <image:title>Nataraja Sunstone Idol | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/nataraja-dancing-shiva-sunstone-idol-22kg-2.webp</image:loc>
+      <image:title>Nataraja Sunstone Idol - Alternate View | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/green-aventurine-shankh-648g</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/green-aventurine-shankh-648g.webp</image:loc>
+      <image:title>Green Aventurine Shankh | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/green-aventurine-shankh-648g-2.webp</image:loc>
+      <image:title>Green Aventurine Shankh - Alternate View | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/durga-devi-ruby-idol-432-carats</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/durga-devi-ruby-idol-432-carats.webp</image:loc>
+      <image:title>Durga Devi Ruby Idol | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/durga-devi-ruby-idol-432-carats-2.webp</image:loc>
+      <image:title>Durga Devi Ruby Idol - Alternate View | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://www.crystaljaipuria.com/product/green-jade-carved-ganesha-statue-with-silver-gold-work</loc>
     <image:image>

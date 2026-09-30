@@ -349,6 +349,56 @@ export const STANDARDIZED_SPECS = {
     size: "8 in to 16 inch",
     pricePerUnit: "₹8 / gram",
   },
+  "durga-devi-ruby-idol-432-carats": {
+    price: 110000,
+    weight: "432 ct (86.4 g)",
+    size: "4.2 in (H) x 3.4 in (L) x 4.1 in (W)",
+    pricePerUnit: "₹255 / carat",
+    outOfStock: true
+  },
+  "durga-devi-ruby-idol": {
+    price: 110000,
+    weight: "432 ct (86.4 g)",
+    size: "4.2 in (H) x 3.4 in (L) x 4.1 in (W)",
+    pricePerUnit: "₹255 / carat",
+    outOfStock: true
+  },
+  "green-aventurine-shankh-648g": {
+    price: 12500,
+    weight: "648 g",
+    size: "5.4 in (H) x 2.9 in (L) x 2.9 in (W)",
+    pricePerUnit: "₹19.3 / gram",
+  },
+  "green-aventurine-shankh": {
+    price: 12500,
+    weight: "648 g",
+    size: "5.4 in (H) x 2.9 in (L) x 2.9 in (W)",
+    pricePerUnit: "₹19.3 / gram",
+  },
+  "nataraja-dancing-shiva-sunstone-idol-22kg": {
+    price: 33900,
+    weight: "2,214 g (2.21 kg)",
+    size: "10.5 in (H) x 6.1 in (L) x 2.6 in (W)",
+    pricePerUnit: "₹15.3 / gram",
+  },
+  "nataraja-dancing-shiva-sunstone-idol": {
+    price: 33900,
+    weight: "2,214 g (2.21 kg)",
+    size: "10.5 in (H) x 6.1 in (L) x 2.6 in (W)",
+    pricePerUnit: "₹15.3 / gram",
+  },
+  "lord-shiva-in-natural-lepidolite-101kg": {
+    price: 8600,
+    weight: "1,010 g (1.01 kg)",
+    size: "5 in (H) x 4.3 in (L) x 2.8 in (W)",
+    pricePerUnit: "₹8.5 / gram",
+  },
+  "shiva-in-lepidolite": {
+    price: 8600,
+    weight: "1,010 g (1.01 kg)",
+    size: "5 in (H) x 4.3 in (L) x 2.8 in (W)",
+    pricePerUnit: "₹8.5 / gram",
+  },
 };
 
 /**
@@ -405,6 +455,16 @@ export const SACRED_SHLOKAS = {
     source: "Ṇamōkāra Mahamantra",
     meaning: "Universal veneration to the enlightened conquerors, teachers, and seekers of Ahimsa.",
   },
+  durga: {
+    shloka: "सर्वमङ्गलमाङ्गल्ये शिवे सर्वार्थसाधिके। शरण्ये त्र्यम्बके गौरि नारायणि नमोऽस्तु ते॥",
+    source: "Devi Mahatmyam",
+    meaning: "Salutations to Maa Durga, the auspicious of all auspiciousness, fulfilling all righteous pursuits.",
+  },
+  shankh: {
+    shloka: "त्वं पुरा सागरोत्पन्नो विष्णूना विधृतः करे। निर्मितः सर्वदेवैश्च पाञ्चजन्य नमोऽस्तु ते॥",
+    source: "Varaha Purana",
+    meaning: "Born of the cosmic ocean and held in the sacred hand of Lord Vishnu, salutations to the divine Conch.",
+  },
 };
 
 export const getSacredShloka = (nameOrSlug = "") => {
@@ -413,7 +473,9 @@ export const getSacredShloka = (nameOrSlug = "") => {
   if (text.includes("shree yantra") || text.includes("shree-yantra") || text.includes("meru")) return SACRED_SHLOKAS["shree-yantra"];
   if (text.includes("ganesh") || text.includes("ganpati")) return SACRED_SHLOKAS.ganesha;
   if (text.includes("krishna") || text.includes("krishana") || text.includes("radha")) return SACRED_SHLOKAS.krishna;
-  if (text.includes("shiva") || text.includes("shiv")) return SACRED_SHLOKAS.shiva;
+  if (text.includes("durga") || text.includes("devi") || text.includes("shakti")) return SACRED_SHLOKAS.durga;
+  if (text.includes("shankh") || text.includes("conch")) return SACRED_SHLOKAS.shankh;
+  if (text.includes("shiva") || text.includes("shiv") || text.includes("nataraja")) return SACRED_SHLOKAS.shiva;
   if (text.includes("mahvaveer") || text.includes("mahaveer") || text.includes("jain")) return SACRED_SHLOKAS.jain;
   return null;
 };

@@ -20,10 +20,26 @@ export const PROTECTED_STUDIO_SLUGS = new Set([
   "rose-quartz-ganesh-with-silver-work-idol-for-luxury-decor",
   "rose-quartz-ganesh-with-silver-work",
   "green-jade-carved-ganesha-statue-with-silver-gold-work",
-  "green-jade-carved-ganesha"
+  "green-jade-carved-ganesha",
+  "durga-devi-ruby-idol-432-carats",
+  "durga-devi-ruby-idol",
+  "green-aventurine-shankh-648g",
+  "green-aventurine-shankh",
+  "nataraja-dancing-shiva-sunstone-idol-22kg",
+  "nataraja-dancing-shiva-sunstone-idol",
+  "lord-shiva-in-natural-lepidolite-101kg",
+  "shiva-in-lepidolite"
 ]);
 
 export const STATIC_CATALOG_SLUGS = new Set([
+  "durga-devi-ruby-idol-432-carats",
+  "durga-devi-ruby-idol",
+  "green-aventurine-shankh-648g",
+  "green-aventurine-shankh",
+  "nataraja-dancing-shiva-sunstone-idol-22kg",
+  "nataraja-dancing-shiva-sunstone-idol",
+  "lord-shiva-in-natural-lepidolite-101kg",
+  "shiva-in-lepidolite",
   "rose-quartz-ganesh-with-silver-work-idol-for-luxury-decor",
   "rose-quartz-ganesh-with-silver-work",
   "green-jade-carved-ganesha-statue-with-silver-gold-work",

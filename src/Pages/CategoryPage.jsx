@@ -258,10 +258,12 @@ const CategoryPage = () => {
           p.name?.toLowerCase().includes("elephant") ||
           p.name?.toLowerCase().includes("angel") ||
           p.name?.toLowerCase().includes("diya") ||
+          p.name?.toLowerCase().includes("shankh") ||
           p.slug?.includes("swan") ||
           p.slug?.includes("elephant") ||
           p.slug?.includes("angel") ||
-          p.slug?.includes("diya")
+          p.slug?.includes("diya") ||
+          p.slug?.includes("shankh")
         )) ||
         ((cleanSlug === "luxurious-idols-decor" || cleanSlug === "luxurious-idols-&-decor") &&
           (pCatSlug === "luxurious-idols-decor" || pCatSlug === "luxurious-idols-&-decor" || pCatName.includes("luxurious") || p.slug?.includes("silver-work") || p.slug?.includes("green-jade-carved-ganesha")))
@@ -457,10 +459,12 @@ const CategoryPage = () => {
             p.name?.toLowerCase().includes("elephant") ||
             p.name?.toLowerCase().includes("angel") ||
             p.name?.toLowerCase().includes("diya") ||
+            p.name?.toLowerCase().includes("shankh") ||
             p.slug?.includes("swan") ||
             p.slug?.includes("elephant") ||
             p.slug?.includes("angel") ||
-            p.slug?.includes("diya")
+            p.slug?.includes("diya") ||
+            p.slug?.includes("shankh")
           )) ||
           ((cleanSlug === "luxurious-idols-decor" || cleanSlug === "luxurious-idols-&-decor") &&
             (pCatSlug === "luxurious-idols-decor" || pCatSlug === "luxurious-idols-&-decor" || pCatName.includes("luxurious") || p.slug?.includes("silver-work") || p.slug?.includes("green-jade-carved-ganesha")))

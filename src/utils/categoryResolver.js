@@ -29,13 +29,13 @@ export const detectCategoryAndSubCategory = (
   const isDiya = /\b(diya|deepak|deepam|aarti|arti)\b/i.test(name);
 
   // 5. Animal / Decorative Crystal Statues:
-  // swan, elephant, turtle, tortoise, horse, owl, lion, bird, pyramid, geode, cluster, tree, wand, ball, sphere
-  const isCrystalDecorative = /\b(swan|elephant|tortoise|turtle|owl|horse|lion|bird|peacock|pyramid|geode|cluster|tree|wand|ball|sphere|pencil|tower)\b/i.test(name);
+  // swan, elephant, turtle, tortoise, horse, owl, lion, bird, shankh, conch, pyramid, geode, cluster, tree, wand, ball, sphere
+  const isCrystalDecorative = /\b(swan|elephant|tortoise|turtle|owl|horse|lion|bird|peacock|shankh|conch|pyramid|geode|cluster|tree|wand|ball|sphere|pencil|tower)\b/i.test(name);
 
   // 6. God Statues:
   // Ganesh / Ganpati
   const isGanesh = /\b(ganesh|ganesha|ganpati|vinayak|vinayaka)\b/i.test(name);
-  const isShiva = /\b(shiva|lord shiva|shiv|mahadev|bholenath|shankar)\b/i.test(name);
+  const isShiva = /\b(shiva|lord shiva|shiv|mahadev|bholenath|shankar|nataraja|tandav|tandava)\b/i.test(name);
 
   // Deities: shiva, krishna, radha, hanuman, lakshmi, saraswati, mahaveer, parshvanath, buddha, etc.
   const isGodStatue =

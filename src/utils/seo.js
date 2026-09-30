@@ -33,6 +33,14 @@ export const SUPER_TITLE_MAPPINGS = {
   "rose-quartz-ganesh-with-silver-work": "Rose Quartz Ganesh With Silver Work | Luxury Home Decor & Gifts | Crystal Jaipuria",
   "green-jade-carved-ganesha-statue-with-silver-gold-work": "Green Jade Carved Ganesha With Silver & Gold Work | Luxury Decor | Crystal Jaipuria",
   "green-jade-carved-ganesha": "Green Jade Carved Ganesha With Silver & Gold Work | Luxury Decor | Crystal Jaipuria",
+  "durga-devi-ruby-idol-432-carats": "Durga Devi Ruby Idol (432 Carats) | Natural Gemstone Murti | Crystal Jaipuria",
+  "durga-devi-ruby-idol": "Durga Devi Ruby Idol (432 Carats) | Natural Gemstone Murti | Crystal Jaipuria",
+  "green-aventurine-shankh-648g": "Green Aventurine Shankh (648g) | Wealth & Vastu Crystal Conch | Crystal Jaipuria",
+  "green-aventurine-shankh": "Green Aventurine Shankh (648g) | Wealth & Vastu Crystal Conch | Crystal Jaipuria",
+  "nataraja-dancing-shiva-sunstone-idol-22kg": "Nataraja Dancing Shiva Sunstone Idol (2.2kg) | Cosmic Tandav Murti | Crystal Jaipuria",
+  "nataraja-dancing-shiva-sunstone-idol": "Nataraja Dancing Shiva Sunstone Idol (2.2kg) | Cosmic Tandav Murti | Crystal Jaipuria",
+  "lord-shiva-in-natural-lepidolite-101kg": "Lord Shiva in Natural Lepidolite (1.01kg) | Rahu Mahadasha Idol | Crystal Jaipuria",
+  "shiva-in-lepidolite": "Lord Shiva in Natural Lepidolite (1.01kg) | Rahu Mahadasha Idol | Crystal Jaipuria",
 };
 
 export const getProductMetaTitle = (productName, slug = "") => {

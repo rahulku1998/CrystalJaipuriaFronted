@@ -184,6 +184,239 @@ export const FALLBACK_SUBCATEGORIES = [
 
 export const FALLBACK_PRODUCTS = [
   {
+    "_id": "6abe9e153618032686f05291",
+    "name": "Durga Devi Ruby Idol (432 Carats)",
+    "slug": "durga-devi-ruby-idol-432-carats",
+    "price": 110000,
+    "detail": "Sacred hand-carved Durga Devi Ruby Idol sculpted from 432 carats of natural earth-mined precious Ruby (Manikya) with natural green zoisite matrix accents. Depicting eight-armed Maa Durga seated upon her divine lion (Simhavahini), wielding celestial weapons (Trishul, Chakra, Shankh, Sword). Radiates sovereign Solar and Mars vitality, shielding the home altar with supreme Shakti protection, dispelling fear, and ushering courage and prosperity.",
+    "description": "<p>Sacred hand-carved Durga Devi Ruby Idol sculpted from 432 carats of natural earth-mined precious Ruby (Manikya) with natural green zoisite matrix accents. Depicting eight-armed Maa Durga seated upon her divine lion (Simhavahini), wielding celestial weapons (Trishul, Chakra, Shankh, Sword). Radiates sovereign Solar and Mars vitality, shielding the home altar with supreme Shakti protection, dispelling fear, and ushering courage and prosperity.</p>\n\n<h2>Shakti Iconography & Precious Ruby Heritage</h2>\n<p>Carved strictly according to ancient Vedic Shilpa Shastra proportions by master lapidaries in Jaipur (est. 1989), this rare ruby murti embodies the supreme warrior swaroop of Adishakti:</p>\n<ul>\n  <li><strong>Ashtabhuja (Eight Arms):</strong> Holding sacred cosmic armaments—Trishul (destroyer of three miseries), Sudarshana Chakra, Shankh, Bow &amp; Arrow, Lotus, and Sword—while extending the Abhaya Mudra of fearless grace.</li>\n  <li><strong>Simhavahini Swaroop:</strong> Seated proudly atop the roaring lion/tiger, signifying absolute dominion over animal instincts, ego, and adversity.</li>\n  <li><strong>Natural Ruby &amp; Green Zoisite Fusion:</strong> The vibrant pink-red corundum (Ruby) radiates Sun (Surya) energy of royal authority, while natural green mineral bands ground heart-centered compassion.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Durga Devi Ruby Idol (432 Carats)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Ruby (Manikya) &amp; Green Zoisite</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Weight Category</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">432 ct (86.4 g)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">4.2 in (H) x 3.4 in (L) x 4.1 in (W)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Unit</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹255 / carat (₹1,10,000 Total)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Stock Availability</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#dc2626; font-weight:700;\">Out of Stock (Bespoke custom order available)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North-East (Ishanya Kon) or North Puja Altar</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Precious Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Durga Devi Ruby Idol (432 Carats)</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Earth-Mined Precious Ruby (Corundum) with Natural Matrix</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 432 ct (86.4 g)</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 4.2 in (H) x 3.4 in (L) x 4.1 in (W)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing :</strong> ₹1,10,000 (₹255 / carat)</li>\n  <li><strong class=\"font-bold text-gray-900\">Stock Status :</strong> Out of Stock (Custom Commissions Available)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North-East or North facing altar</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Certified Natural Earth-Mined Gemstone</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty cushioned wooden crate with 100% door-to-door insurance</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"Is this Durga Devi idol carved from genuine natural ruby gemstone?\",\"answer\":\"Yes, this idol is hand-carved from a single rough specimen of 100% natural earth-mined Ruby (432 carats / 86.4g) with certified natural inclusions and comes with a laboratory gemological certificate.\"},{\"question\":\"What is the spiritual significance of worshiping Maa Durga in natural ruby?\",\"answer\":\"Ruby (Manikya) is the gem of the Sun (Surya Dev). When sculpted into the swaroop of Maa Durga (Adishakti), it channels combined solar authority and Mars courage, annihilating negative energies, clearing court or financial obstacles, and blessing devotees with supreme self-confidence.\"},{\"question\":\"Where should this Ruby Durga murti be positioned in the home temple?\",\"answer\":\"Place the idol in the North-East (Ishanya Kon) or North direction of your home altar or puja room, facing East or North. Consecrate with pure Gangajal, Kumkum, and recite the sacred Navarna Mantra (Om Aim Hreem Kleem Chamundayai Vichche).\"},{\"question\":\"Can this out of stock Ruby Durga idol be customized or pre-ordered?\",\"answer\":\"Yes, our master lapidary workshop in Jaipur specializes in bespoke deity carvings. Contact us directly via WhatsApp (+91 83063 17032) to commission a custom Ruby Maa Durga in your desired weight and carat specifications.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Durga Devi Ruby Idol (432 Carats) | Natural Gemstone Murti | Crystal Jaipuria\",\"metaDescription\":\"Buy authentic hand-carved Durga Devi Ruby Idol (432 ct, 4.2\\\") online. Eight-armed Maa Durga on lion carved from certified natural ruby gemstone in Jaipur, India.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North-East (Ishanya Kon) or North direction of home mandir or puja altar\",\"chakraPlanet\":\"Root Chakra (Muladhara) & Solar Plexus (Manipura) · Planet Sun (Surya) & Mars (Mangal)\",\"poojaVidhi\":\"Consecrate with pure Gangajal, red sandalwood (Raktachandan), and hibiscus flowers. Chant Om Dum Durgayai Namah or Chamundaye mantra during Navratri and Tuesdays.\",\"vedicBenefits\":\"Invokes invincible divine protection, destroys evil planetary afflictions, grants immense courage, and bestows uninterrupted success and prosperity.\"} -->",
+    "faqs": [
+      {
+        "question": "Is this Durga Devi idol carved from genuine natural ruby gemstone?",
+        "answer": "Yes, this idol is hand-carved from a single rough specimen of 100% natural earth-mined Ruby (432 carats / 86.4g) with certified natural inclusions and comes with a laboratory gemological certificate."
+      },
+      {
+        "question": "What is the spiritual significance of worshiping Maa Durga in natural ruby?",
+        "answer": "Ruby (Manikya) is the gem of the Sun (Surya Dev). When sculpted into the swaroop of Maa Durga (Adishakti), it channels combined solar authority and Mars courage, annihilating negative energies, clearing court or financial obstacles, and blessing devotees with supreme self-confidence."
+      },
+      {
+        "question": "Where should this Ruby Durga murti be positioned in the home temple?",
+        "answer": "Place the idol in the North-East (Ishanya Kon) or North direction of your home altar or puja room, facing East or North. Consecrate with pure Gangajal, Kumkum, and recite the sacred Navarna Mantra (Om Aim Hreem Kleem Chamundayai Vichche)."
+      },
+      {
+        "question": "Can this out of stock Ruby Durga idol be customized or pre-ordered?",
+        "answer": "Yes, our master lapidary workshop in Jaipur specializes in bespoke deity carvings. Contact us directly via WhatsApp (+91 83063 17032) to commission a custom Ruby Maa Durga in your desired weight and carat specifications."
+      }
+    ],
+    "metaTitle": "Durga Devi Ruby Idol (432 Carats) | Natural Gemstone Murti | Crystal Jaipuria",
+    "metaDescription": "Buy authentic hand-carved Durga Devi Ruby Idol (432 ct, 4.2\") online. Eight-armed Maa Durga on lion carved from certified natural ruby gemstone in Jaipur, India.",
+    "vedicVastu": {
+      "placementDirection": "North-East (Ishanya Kon) or North direction of home mandir or puja altar",
+      "chakraPlanet": "Root Chakra (Muladhara) & Solar Plexus (Manipura) · Planet Sun (Surya) & Mars (Mangal)",
+      "poojaVidhi": "Consecrate with pure Gangajal, red sandalwood (Raktachandan), and hibiscus flowers. Chant Om Dum Durgayai Namah or Chamundaye mantra during Navratri and Tuesdays.",
+      "vedicBenefits": "Invokes invincible divine protection, destroys evil planetary afflictions, grants immense courage, and bestows uninterrupted success and prosperity."
+    },
+    "images": [
+      "/images/durga-devi-ruby-idol-432-carats.webp",
+      "/images/durga-devi-ruby-idol-432-carats-2.webp",
+      "/images/durga-devi-ruby-idol-432-carats-3.webp",
+      "/images/durga-devi-ruby-idol-432-carats-4.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "categoryName": "God Statues",
+    "subCategoryId": {
+      "_id": "6aa58c80a69037c73ebed098",
+      "name": "Other",
+      "slug": "other"
+    },
+    "subCategoryName": "Other",
+    "size": "4.2 in (H) x 3.4 in (L) x 4.1 in (W)",
+    "weight": "432 ct (86.4 g)",
+    "stock": 0,
+    "featured": true,
+    "pricePerUnit": "₹255 / carat",
+    "pricePerCarat": 255
+  },
+  {
+    "_id": "6abe9e193618032686f05296",
+    "name": "Green Aventurine Shankh (648g)",
+    "slug": "green-aventurine-shankh-648g",
+    "price": 12500,
+    "detail": "Auspicious hand-carved Green Aventurine Shankh (Sacred Vastu Conch) weighing 648 grams, sculpted from a solid specimen of natural green aventurine (Stone of Opportunity). Associated with Lord Vishnu and Goddess Lakshmi, this sacred crystal shankh attracts wealth, business growth, and heart chakra vitality while dispelling financial stagnancy from living and workspaces.",
+    "description": "<p>Auspicious hand-carved Green Aventurine Shankh (Sacred Vastu Conch) weighing 648 grams, sculpted from a solid specimen of natural green aventurine (Stone of Opportunity). Associated with Lord Vishnu and Goddess Lakshmi, this sacred crystal shankh attracts wealth, business growth, and heart chakra vitality while dispelling financial stagnancy from living and workspaces.</p>\n\n<h2>Sacred Conch Geometry & Aventurine Metaphysics</h2>\n<p>Revered in Vedic scriptures as Panchajanya and a prime manifestation of Goddess Lakshmi, the sacred Shankh sculpted in Green Aventurine unites cosmic sound vibration with earth crystal wealth energies:</p>\n<ul>\n  <li><strong>Vastu Wealth Magnet:</strong> Dissolves Vastu doshas related to the North (Kubera) and South-East (Agni) corners, rectifying financial blockages.</li>\n  <li><strong>Heart Chakra (Anahata) Healing:</strong> Soothing green crystalline rays harmonize emotions, ease financial anxiety, and cultivate optimistic growth.</li>\n  <li><strong>Functional Puja Abhishek:</strong> Completely non-porous and naturally carved, perfect for storing holy water (Teertha) or performing Jalabhishek during temple rituals.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Green Aventurine Shankh (648g)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Green Aventurine Quartz</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Weight Category</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">648 g</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">5.4 in (H) x 2.9 in (L) x 2.9 in (W)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Unit</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹19.3 / gram (₹12,500 Total)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North (Kubera Direction), Cash Locker, or East Altar</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Green Aventurine Shankh (648g)</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Natural Green Aventurine</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 648 g</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 5.4 in (H) x 2.9 in (L) x 2.9 in (W)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing Basis :</strong> ₹12,500 (₹19.3 / gram)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North, Cash Safe, or East Mandir Altar</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Quartz Gemstone</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof crating with 100% insured transit</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"What are the Vastu benefits of keeping a Green Aventurine Shankh at home or office?\",\"answer\":\"Green Aventurine is revered as the ultimate Stone of Opportunity and abundance. Placed in the cash locker, puja room, or North corner (Kubera direction), this sacred shankh invites financial stability, commercial prosperity, and harmonious domestic relationships.\"},{\"question\":\"Can sacred water or Gangajal be placed in this gemstone conch shell?\",\"answer\":\"Yes, the shankh is meticulously carved and hollowed from genuine non-porous gemstone, allowing you to consecrate it with holy Gangajal, raw cow milk, or tulsi water during festive Lakshmi-Vishnu pujas.\"},{\"question\":\"How should the Green Aventurine Shankh be positioned on the puja altar?\",\"answer\":\"Place the conch on an elevated wooden or brass stand with the pointed beak pointing towards your temple deity and the broad belly open towards the worshiper, or in the North / East direction of the room.\"},{\"question\":\"Is this shankh 100% natural and laboratory tested?\",\"answer\":\"Yes, every Green Aventurine Shankh from Crystal Jaipuria is sculpted from 100% natural earth-mined quartz-aventurine with natural shimmer (aventurescence) and zero synthetic resin.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Green Aventurine Shankh (648g) | Wealth & Vastu Crystal Conch | Crystal Jaipuria\",\"metaDescription\":\"Buy natural Green Aventurine Shankh (648g, 5.4\\\") online. Handcrafted gemstone conch shell for Lakshmi-Vishnu puja, home temple, wealth and heart chakra vitality.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North (Kubera wealth direction), Cash Safe, or East altar of home mandir\",\"chakraPlanet\":\"Heart Chakra (Anahata) · Planet Mercury (Budh) & Venus (Shukra)\",\"poojaVidhi\":\"Consecrate with pure Gangajal on Friday or Ekadashi. Adorn with fresh tulsi leaves and chant Om Namo Bhagavate Vasudevaya or Om Shreem Hreem Kleem Mahalakshmaye Namah.\",\"vedicBenefits\":\"Magnifies financial prosperity, dissolves Vastu stagnancy, blesses commercial ventures with steady profits, and spreads soothing healing peace.\"} -->",
+    "faqs": [
+      {
+        "question": "What are the Vastu benefits of keeping a Green Aventurine Shankh at home or office?",
+        "answer": "Green Aventurine is revered as the ultimate Stone of Opportunity and abundance. Placed in the cash locker, puja room, or North corner (Kubera direction), this sacred shankh invites financial stability, commercial prosperity, and harmonious domestic relationships."
+      },
+      {
+        "question": "Can sacred water or Gangajal be placed in this gemstone conch shell?",
+        "answer": "Yes, the shankh is meticulously carved and hollowed from genuine non-porous gemstone, allowing you to consecrate it with holy Gangajal, raw cow milk, or tulsi water during festive Lakshmi-Vishnu pujas."
+      },
+      {
+        "question": "How should the Green Aventurine Shankh be positioned on the puja altar?",
+        "answer": "Place the conch on an elevated wooden or brass stand with the pointed beak pointing towards your temple deity and the broad belly open towards the worshiper, or in the North / East direction of the room."
+      },
+      {
+        "question": "Is this shankh 100% natural and laboratory tested?",
+        "answer": "Yes, every Green Aventurine Shankh from Crystal Jaipuria is sculpted from 100% natural earth-mined quartz-aventurine with natural shimmer (aventurescence) and zero synthetic resin."
+      }
+    ],
+    "metaTitle": "Green Aventurine Shankh (648g) | Wealth & Vastu Crystal Conch | Crystal Jaipuria",
+    "metaDescription": "Buy natural Green Aventurine Shankh (648g, 5.4\") online. Handcrafted gemstone conch shell for Lakshmi-Vishnu puja, home temple, wealth and heart chakra vitality.",
+    "vedicVastu": {
+      "placementDirection": "North (Kubera wealth direction), Cash Safe, or East altar of home mandir",
+      "chakraPlanet": "Heart Chakra (Anahata) · Planet Mercury (Budh) & Venus (Shukra)",
+      "poojaVidhi": "Consecrate with pure Gangajal on Friday or Ekadashi. Adorn with fresh tulsi leaves and chant Om Namo Bhagavate Vasudevaya or Om Shreem Hreem Kleem Mahalakshmaye Namah.",
+      "vedicBenefits": "Magnifies financial prosperity, dissolves Vastu stagnancy, blesses commercial ventures with steady profits, and spreads soothing healing peace."
+    },
+    "images": [
+      "/images/green-aventurine-shankh-648g.webp",
+      "/images/green-aventurine-shankh-648g-2.webp",
+      "/images/green-aventurine-shankh-648g-3.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bc492dcf49aacd71ef68",
+      "name": "Crystal Statues",
+      "slug": "crystal-statues"
+    },
+    "categoryName": "Crystal Statues",
+    "subCategoryId": {
+      "_id": "6a55bc9f2dcf49aacd71ef6d",
+      "name": "Crystal Statues",
+      "slug": "crystal-statues"
+    },
+    "subCategoryName": "Crystal Statues",
+    "size": "5.4 in (H) x 2.9 in (L) x 2.9 in (W)",
+    "weight": "648 g",
+    "stock": 5,
+    "featured": true,
+    "pricePerUnit": "₹19.3 / gram",
+    "pricePerGram": 19.3
+  },
+  {
+    "_id": "6abe9e203618032686f0529a",
+    "name": "Nataraja (Dancing Shiva) Sunstone Idol (2.2kg)",
+    "slug": "nataraja-dancing-shiva-sunstone-idol-22kg",
+    "price": 33900,
+    "detail": "Spectacular monument-grade Nataraja (Dancing Shiva) idol hand-carved from a single solid 2.2 kg boulder of natural Golden Sunstone. Depicts Lord Shiva performing the sacred Ananda Tandava within the circular flaming aureole (Prabhamandala), crushing the dwarf demon Apasmara underfoot. The golden copper platelet inclusions inside the sunstone catch the light, symbolizing eternal cosmic rhythm, radiant solar power, and the triumph of divine truth over ignorance.",
+    "description": "<p>Spectacular monument-grade Nataraja (Dancing Shiva) idol hand-carved from a single solid 2.2 kg boulder of natural Golden Sunstone. Depicts Lord Shiva performing the sacred Ananda Tandava within the circular flaming aureole (Prabhamandala), crushing the dwarf demon Apasmara underfoot. The golden copper platelet inclusions inside the sunstone catch the light, symbolizing eternal cosmic rhythm, radiant solar power, and the triumph of divine truth over ignorance.</p>\n\n<h2>The Ananda Tandava & Sunstone Energetics</h2>\n<p>Handcrafted by Jaipur master artisans strictly preserving Chola dynasty Shaivite iconography:</p>\n<ul>\n  <li><strong>Prabhamandala (Ring of Fire):</strong> Symbolizes the endless cosmic cycle of creation, preservation, and dissolution.</li>\n  <li><strong>Damru &amp; Agni:</strong> Upper right hand sounds the Damru (creation primal sound OM); upper left hand holds the purifying flame (Agni).</li>\n  <li><strong>Abhaya Mudra &amp; Gajahasta:</strong> Lower right hand gestures divine fearlessness, while the lower left hand points downwards to the uplifted foot of liberation.</li>\n  <li><strong>Crushing Apasmara Demon:</strong> Standing upon the demon of spiritual forgetfulness, dispelling delusion, confusion, and fear.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Nataraja (Dancing Shiva) Sunstone Idol (2.2kg)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Golden Sunstone (Feldspar)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Weight Category</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">2,214 g (2.21 kg)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">10.5 in (H) x 6.1 in (L) x 2.6 in (W)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Unit</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹15.3 / gram (₹33,900 Total)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North-East (Ishanya Kon), East Meditation Hall, or Creative Studio</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Nataraja (Dancing Shiva) Sunstone Idol (2.2kg)</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Earth-Mined Natural Sunstone</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 2,214 g (2.21 kg)</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 10.5 in (H) x 6.1 in (L) x 2.6 in (W)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing Basis :</strong> ₹33,900 (₹15.3 / gram)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North-East or East Creative Altar</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Feldspar Gemstone</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof wooden crating with 100% door-to-door insurance</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"What is the significance of the Nataraja swaroop in natural Sunstone?\",\"answer\":\"Nataraja represents the five sacred cosmic activities (Pancha-Kriya): creation, preservation, destruction, illusion, and liberation. Sunstone channels the supreme radiant energy of Surya, instilling dynamic leadership, courage, creative fire, and victory over inertia.\"},{\"question\":\"What does the demon under Nataraja’s foot signify?\",\"answer\":\"The demon Apasmara Purusha crushed under Lord Shiva’s right foot represents spiritual ignorance, arrogance, and ego, reminding devotees that higher consciousness effortlessly overcomes all ignorance.\"},{\"question\":\"Where is the ideal placement for this 10.5-inch Nataraja idol?\",\"answer\":\"Place in the North-East (Ishanya) corner for spiritual awakening, or in an office/studio facing East or North to stimulate innovative leadership and artistic mastery.\"},{\"question\":\"How is this heavy 2.2 kg gemstone sculpture packaged for shipping?\",\"answer\":\"It is cushioned in form-fitted high-density shock absorbent foam and shipped in reinforced wooden crates with 100% door-to-door transit insurance across India and internationally.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Nataraja Dancing Shiva Sunstone Idol (2.2kg) | Cosmic Tandav Murti | Crystal Jaipuria\",\"metaDescription\":\"Buy handcrafted Nataraja Dancing Shiva idol in natural Golden Sunstone (2.21 kg, 10.5\\\"). Sacred Ananda Tandava cosmic dance murti for vitality, courage & obstacle removal.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North-East (Ishanya Kon), East meditation altar, or executive office console\",\"chakraPlanet\":\"Solar Plexus (Manipura) & Crown Chakra (Sahasrara) · Planet Sun (Surya) & Lord Shiva\",\"poojaVidhi\":\"Consecrate with sacred Gangajal on Monday or Pradosham. Offer white flowers, bilva patra, and chant Om Namah Shivaya or Shiva Tandava Stotram.\",\"vedicBenefits\":\"Awakens boundless vitality, breaks through procrastination and artistic blockages, dissolves self-doubt, and protects the space from depressive energies.\"} -->",
+    "faqs": [
+      {
+        "question": "What is the significance of the Nataraja swaroop in natural Sunstone?",
+        "answer": "Nataraja represents the five sacred cosmic activities (Pancha-Kriya): creation, preservation, destruction, illusion, and liberation. Sunstone channels the supreme radiant energy of Surya, instilling dynamic leadership, courage, creative fire, and victory over inertia."
+      },
+      {
+        "question": "What does the demon under Nataraja’s foot signify?",
+        "answer": "The demon Apasmara Purusha crushed under Lord Shiva’s right foot represents spiritual ignorance, arrogance, and ego, reminding devotees that higher consciousness effortlessly overcomes all ignorance."
+      },
+      {
+        "question": "Where is the ideal placement for this 10.5-inch Nataraja idol?",
+        "answer": "Place in the North-East (Ishanya) corner for spiritual awakening, or in an office/studio facing East or North to stimulate innovative leadership and artistic mastery."
+      },
+      {
+        "question": "How is this heavy 2.2 kg gemstone sculpture packaged for shipping?",
+        "answer": "It is cushioned in form-fitted high-density shock absorbent foam and shipped in reinforced wooden crates with 100% door-to-door transit insurance across India and internationally."
+      }
+    ],
+    "metaTitle": "Nataraja Dancing Shiva Sunstone Idol (2.2kg) | Cosmic Tandav Murti | Crystal Jaipuria",
+    "metaDescription": "Buy handcrafted Nataraja Dancing Shiva idol in natural Golden Sunstone (2.21 kg, 10.5\"). Sacred Ananda Tandava cosmic dance murti for vitality, courage & obstacle removal.",
+    "vedicVastu": {
+      "placementDirection": "North-East (Ishanya Kon), East meditation altar, or executive office console",
+      "chakraPlanet": "Solar Plexus (Manipura) & Crown Chakra (Sahasrara) · Planet Sun (Surya) & Lord Shiva",
+      "poojaVidhi": "Consecrate with sacred Gangajal on Monday or Pradosham. Offer white flowers, bilva patra, and chant Om Namah Shivaya or Shiva Tandava Stotram.",
+      "vedicBenefits": "Awakens boundless vitality, breaks through procrastination and artistic blockages, dissolves self-doubt, and protects the space from depressive energies."
+    },
+    "images": [
+      "/images/nataraja-dancing-shiva-sunstone-idol-22kg.webp",
+      "/images/nataraja-dancing-shiva-sunstone-idol-22kg-2.webp",
+      "/images/nataraja-dancing-shiva-sunstone-idol-22kg-3.webp",
+      "/images/nataraja-dancing-shiva-sunstone-idol-22kg-4.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "categoryName": "God Statues",
+    "subCategoryId": {
+      "_id": "6a55bc772dcf49aacd71ef6a",
+      "name": "Shiva",
+      "slug": "shiva"
+    },
+    "subCategoryName": "Shiva",
+    "size": "10.5 in (H) x 6.1 in (L) x 2.6 in (W)",
+    "weight": "2,214 g (2.21 kg)",
+    "stock": 3,
+    "featured": true,
+    "pricePerUnit": "₹15.3 / gram",
+    "pricePerGram": 15.3
+  },
+  {
+    "_id": "6abe9e233618032686f0529f",
+    "name": "Lord Shiva in Natural Lepidolite (1.01kg)",
+    "slug": "lord-shiva-in-natural-lepidolite-101kg",
+    "price": 8600,
+    "detail": "Exquisitely sculpted Lord Shiva Face idol carved from 1.01 kg of natural lilac-violet Lepidolite gemstone. Adorned with Lord Shiva’s sacred crescent moon (Chandra), third eye (Trinetra), Vasuki serpent, and matted locks (Jata). Revered in Vedic astrology and crystal healing as the ultimate remedy for Rahu Mahadasha, emotional tumult, and anxiety, this tranquil idol radiates calming vibrations and profound meditative stillness.",
+    "description": "<p>Exquisitely sculpted Lord Shiva Face idol carved from 1.01 kg of natural lilac-violet Lepidolite gemstone. Adorned with Lord Shiva’s sacred crescent moon (Chandra), third eye (Trinetra), Vasuki serpent, and matted locks (Jata). Revered in Vedic astrology and crystal healing as the ultimate remedy for Rahu Mahadasha, emotional tumult, and anxiety, this tranquil idol radiates calming vibrations and profound meditative stillness.</p>\n\n<h2>Mahadev Iconography & Lepidolite Tranquility</h2>\n<p>Carved with serene meditative contemplation by Jaipur master craftsmen:</p>\n<ul>\n  <li><strong>Lithium-Infused Calming Vibration:</strong> Lepidolite is Earth’s richest natural source of lithium, celebrated worldwide for releasing stress, insomnia, and erratic emotional shifts.</li>\n  <li><strong>Sacred Shaivite Iconography:</strong> Intricately sculpted with Ardha Chandra (crescent moon of mental peace), Trinetra (higher insight), and sacred Vasuki serpent symbolizing mastery over desires.</li>\n  <li><strong>Rahu &amp; Saturn Astrological Remedy:</strong> In Vedic Jyotish, worshiping Lord Shiva through lilac Lepidolite calms the aggressive, deceptive disturbances of Rahu and Saturn.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Lord Shiva in Natural Lepidolite (1.01kg)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Lilac Lepidolite (Mica Group)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Weight Category</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">1,010 g (1.01 kg)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">5 in (H) x 4.3 in (L) x 2.8 in (W)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Unit</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹8.5 / gram (₹8,600 Total)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North-East (Ishanya Kon), Meditation Hall, or Bedroom Altar</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Lord Shiva in Natural Lepidolite (1.01kg)</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Earth-Mined Natural Lepidolite</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 1,010 g (1.01 kg)</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 5 in (H) x 4.3 in (L) x 2.8 in (W)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing Basis :</strong> ₹8,600 (₹8.5 / gram)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North-East or North Meditation Altar</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof box with 100% insured transit</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"Why is Lepidolite recommended for Lord Shiva worship and Rahu Mahadasha?\",\"answer\":\"Lepidolite is naturally rich in lithium, making it the premier stone for calming an overactive mind, panic, and emotional trauma. Astrologically, Lord Shiva’s grace combined with Lepidolite’s soothing lilac vibrations pacifies the harsh, restless energies of Rahu and Saturn (Shani).\"},{\"question\":\"Where should this Lepidolite Shiva idol be placed?\",\"answer\":\"Ideal for your meditation altar, bedroom nightstand, study desk, or temple facing North or East to foster tranquility, clear thinking, and peaceful sleep.\"},{\"question\":\"Can this statue be consecrated with daily Jalabhishek?\",\"answer\":\"Lepidolite has a soft to medium hardness (approx. 2.5–3.5 Mohs). For daily worship, wipe gently with a soft damp cloth rather than continuous water immersion to preserve its lustrous mica sheen.\"},{\"question\":\"Is this Lepidolite 100% natural and certified?\",\"answer\":\"Yes, it is carved from 100% certified earth-mined lilac Lepidolite displaying natural micaceous flash and crystalline layers with zero synthetic coloring.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Lord Shiva in Natural Lepidolite (1.01kg) | Rahu Mahadasha Idol | Crystal Jaipuria\",\"metaDescription\":\"Buy hand-carved Lord Shiva idol in natural lilac Lepidolite gemstone (1.01 kg, 5\\\"). Masterpiece Mahadev statue for Rahu Mahadasha remedies, emotional calm & inner peace.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North-East (Ishanya Kon), North temple, or bedside meditation shelf\",\"chakraPlanet\":\"Crown Chakra (Sahasrara) & Third Eye (Ajna) · Planet Rahu & Saturn (Shani) Shanti\",\"poojaVidhi\":\"Wipe with holy Gangajal cloth on Monday or Pradosh. Light a pure camphor diya, offer white flowers, and chant Om Namah Shivaya or Mahamrityunjaya Mantra.\",\"vedicBenefits\":\"Soothes acute anxiety and sleep disturbances, relieves Rahu planetary afflictions, centers mental focus, and fosters divine inner peace.\"} -->",
+    "faqs": [
+      {
+        "question": "Why is Lepidolite recommended for Lord Shiva worship and Rahu Mahadasha?",
+        "answer": "Lepidolite is naturally rich in lithium, making it the premier stone for calming an overactive mind, panic, and emotional trauma. Astrologically, Lord Shiva’s grace combined with Lepidolite’s soothing lilac vibrations pacifies the harsh, restless energies of Rahu and Saturn (Shani)."
+      },
+      {
+        "question": "Where should this Lepidolite Shiva idol be placed?",
+        "answer": "Ideal for your meditation altar, bedroom nightstand, study desk, or temple facing North or East to foster tranquility, clear thinking, and peaceful sleep."
+      },
+      {
+        "question": "Can this statue be consecrated with daily Jalabhishek?",
+        "answer": "Lepidolite has a soft to medium hardness (approx. 2.5–3.5 Mohs). For daily worship, wipe gently with a soft damp cloth rather than continuous water immersion to preserve its lustrous mica sheen."
+      },
+      {
+        "question": "Is this Lepidolite 100% natural and certified?",
+        "answer": "Yes, it is carved from 100% certified earth-mined lilac Lepidolite displaying natural micaceous flash and crystalline layers with zero synthetic coloring."
+      }
+    ],
+    "metaTitle": "Lord Shiva in Natural Lepidolite (1.01kg) | Rahu Mahadasha Idol | Crystal Jaipuria",
+    "metaDescription": "Buy hand-carved Lord Shiva idol in natural lilac Lepidolite gemstone (1.01 kg, 5\"). Masterpiece Mahadev statue for Rahu Mahadasha remedies, emotional calm & inner peace.",
+    "vedicVastu": {
+      "placementDirection": "North-East (Ishanya Kon), North temple, or bedside meditation shelf",
+      "chakraPlanet": "Crown Chakra (Sahasrara) & Third Eye (Ajna) · Planet Rahu & Saturn (Shani) Shanti",
+      "poojaVidhi": "Wipe with holy Gangajal cloth on Monday or Pradosh. Light a pure camphor diya, offer white flowers, and chant Om Namah Shivaya or Mahamrityunjaya Mantra.",
+      "vedicBenefits": "Soothes acute anxiety and sleep disturbances, relieves Rahu planetary afflictions, centers mental focus, and fosters divine inner peace."
+    },
+    "images": [
+      "/images/lord-shiva-in-natural-lepidolite-101kg.webp",
+      "/images/lord-shiva-in-natural-lepidolite-101kg-2.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "categoryName": "God Statues",
+    "subCategoryId": {
+      "_id": "6a55bc772dcf49aacd71ef6a",
+      "name": "Shiva",
+      "slug": "shiva"
+    },
+    "subCategoryName": "Shiva",
+    "size": "5 in (H) x 4.3 in (L) x 2.8 in (W)",
+    "weight": "1,010 g (1.01 kg)",
+    "stock": 4,
+    "featured": true,
+    "pricePerUnit": "₹8.5 / gram",
+    "pricePerGram": 8.5
+  },
+  {
     "_id": "6abd48173618032686f04316",
     "name": "Rose Quartz Ganesh with Silver Work Idol for Luxury Decor",
     "slug": "rose-quartz-ganesh-with-silver-work-idol-for-luxury-decor",

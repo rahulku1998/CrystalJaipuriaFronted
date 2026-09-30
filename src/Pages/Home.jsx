@@ -146,10 +146,12 @@ const Home = () => {
             name.includes("elephant") ||
             name.includes("angel") ||
             name.includes("diya") ||
+            name.includes("shankh") ||
             slug.includes("swan") ||
             slug.includes("elephant") ||
             slug.includes("angel") ||
-            slug.includes("diya")
+            slug.includes("diya") ||
+            slug.includes("shankh")
           ) {
             addCrystalProduct(p);
           }
@@ -197,12 +199,33 @@ const Home = () => {
           };
         }
 
+        let godCat = rawCategories.find(isGodStatues);
+        const mergedGodProducts = [];
+        const seenGodKeys = new Set();
+        const addGodProduct = (p) => {
+          if (!p) return;
+          const key = p._id || p.slug || p.name;
+          if (key && !seenGodKeys.has(key)) {
+            seenGodKeys.add(key);
+            mergedGodProducts.push(p);
+          }
+        };
+        if (godCat) {
+          (rawCategoryProducts[godCat._id] || []).forEach(addGodProduct);
+        }
+        FALLBACK_PRODUCTS.filter(
+          (p) =>
+            p.categoryId?.slug === "god-statues" ||
+            p.categoryName === "God Statues"
+        ).forEach(addGodProduct);
+
         const updatedCategoryProducts = {
           ...rawCategoryProducts,
           [crystalCat._id]: mergedCrystalProducts,
           "crystal-statues": mergedCrystalProducts,
           [luxCat._id]: mergedLuxProducts,
           "luxurious-idols-decor": mergedLuxProducts,
+          ...(godCat ? { [godCat._id]: mergedGodProducts, "god-statues": mergedGodProducts } : {}),
         };
 
         // 3. Exclude standalone Angel and Diya from homepage categories

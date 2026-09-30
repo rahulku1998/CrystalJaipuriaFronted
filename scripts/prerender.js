@@ -579,8 +579,10 @@ export const runPrerender = async () => {
           p.categoryId?.slug === "diya" ||
           p.slug === "amethyst-gemston-angel" ||
           p.slug === "gemston-amethyst-diya" ||
+          p.slug === "green-aventurine-shankh" ||
           p.name?.toLowerCase().includes("angel") ||
-          p.name?.toLowerCase().includes("diya")
+          p.name?.toLowerCase().includes("diya") ||
+          p.name?.toLowerCase().includes("shankh")
         ))
     );
 
