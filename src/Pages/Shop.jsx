@@ -20,9 +20,14 @@ const Shop = () => {
   const fetchProducts = async () => {
     try {
       setLoading(true);
-      const res = await API.get("/products");
       const dbList = res.data?.products || res.data || [];
-      setAllProducts(dbList.length > 0 ? dbList : FALLBACK_PRODUCTS);
+      const mergedList = [...dbList];
+      FALLBACK_PRODUCTS.forEach((fb) => {
+        if (!mergedList.some((p) => (p.slug || p._id) === (fb.slug || fb._id))) {
+          mergedList.unshift(fb);
+        }
+      });
+      setAllProducts(mergedList.length > 0 ? mergedList : FALLBACK_PRODUCTS);
     } catch (error) {
       console.warn("Shop API fetch error, fallback active:", error);
       setAllProducts(FALLBACK_PRODUCTS);

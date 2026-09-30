@@ -17,6 +17,7 @@ import {
 import API from "../../api/axios";
 
 const DEFAULT_CATEGORIES = [
+  { name: "Luxurious Idols & Decor", path: "/luxurious-idols-decor", icon: <HiOutlineShoppingBag /> },
   { name: "God Statues", path: "/god-statues", icon: <HiOutlineShoppingBag /> },
   { name: "Shivling", path: "/shivling", icon: <HiOutlineShoppingBag /> },
   { name: "Shree Yantra", path: "/shree-yantra", icon: <HiOutlineShoppingBag /> },
@@ -73,11 +74,25 @@ const CategoryBar = ({ mobileMenuOpen, setMobileMenuOpen }) => {
   const fetchCategories = async () => {
     try {
       const res = await API.get("/categories");
-      const data = (res.data.categories || []).map((cat) => ({
+      let data = (res.data.categories || []).map((cat) => ({
         name: cat.name,
-        path: `/${cat.slug}`,
+        path: `/${cat.slug === "luxurious-idols-&-decor" ? "luxurious-idols-decor" : cat.slug}`,
         icon: <HiOutlineShoppingBag />,
       }));
+      const luxIdx = data.findIndex(c => c.name.toLowerCase().includes("luxurious"));
+      if (luxIdx > -1) {
+        const [luxItem] = data.splice(luxIdx, 1);
+        data.unshift({
+          ...luxItem,
+          path: "/luxurious-idols-decor"
+        });
+      } else {
+        data.unshift({
+          name: "Luxurious Idols & Decor",
+          path: "/luxurious-idols-decor",
+          icon: <HiOutlineShoppingBag />,
+        });
+      }
       setCategories(data);
     } catch (err) {
       console.log("Category Error:", err);

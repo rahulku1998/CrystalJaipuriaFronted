@@ -325,6 +325,30 @@ export const STANDARDIZED_SPECS = {
     size: "2.5 Inch",
     pricePerUnit: "",
   },
+  "rose-quartz-ganesh-with-silver-work-idol-for-luxury-decor": {
+    price: 30000,
+    weight: "5 kg to Custom Order",
+    size: "10 in to 18 inch",
+    pricePerUnit: "₹6 / gram",
+  },
+  "rose-quartz-ganesh-with-silver-work": {
+    price: 30000,
+    weight: "5 kg to Custom Order",
+    size: "10 in to 18 inch",
+    pricePerUnit: "₹6 / gram",
+  },
+  "green-jade-carved-ganesha-statue-with-silver-gold-work": {
+    price: 32000,
+    weight: "4 kg to Custom Order",
+    size: "8 in to 16 inch",
+    pricePerUnit: "₹8 / gram",
+  },
+  "green-jade-carved-ganesha": {
+    price: 32000,
+    weight: "4 kg to Custom Order",
+    size: "8 in to 16 inch",
+    pricePerUnit: "₹8 / gram",
+  },
 };
 
 /**
@@ -332,6 +356,10 @@ export const STANDARDIZED_SPECS = {
  * These are strictly preserved and never auto-modified so their live SEO rankings remain untouched.
  */
 export const PROTECTED_RANKING_SLUGS = new Set([
+  "rose-quartz-ganesh-with-silver-work-idol-for-luxury-decor",
+  "rose-quartz-ganesh-with-silver-work",
+  "green-jade-carved-ganesha-statue-with-silver-gold-work",
+  "green-jade-carved-ganesha",
   "natural-sphatik-shivling",
   "gemston-ruby-shree-yantra",
   "pyrite-gemston-shivling",

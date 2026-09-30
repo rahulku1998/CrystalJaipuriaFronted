@@ -516,6 +516,12 @@ export const runPrerender = async () => {
     });
 
     saveFile(`product/${slug}/index.html`, pageHtml);
+    if (slug === "rose-quartz-ganesh-with-silver-work-idol-for-luxury-decor") {
+      saveFile("product/rose-quartz-ganesh-with-silver-work/index.html", pageHtml);
+    }
+    if (slug === "green-jade-carved-ganesha-statue-with-silver-gold-work") {
+      saveFile("product/green-jade-carved-ganesha/index.html", pageHtml);
+    }
     prodCount++;
   });
 
@@ -669,6 +675,11 @@ export const runPrerender = async () => {
     });
 
     saveFile(`${cat.slug}/index.html`, catHtml);
+    if (cat.slug === "luxurious-idols-&-decor") {
+      saveFile("luxurious-idols-decor/index.html", catHtml);
+    } else if (cat.slug === "luxurious-idols-decor") {
+      saveFile("luxurious-idols-&-decor/index.html", catHtml);
+    }
     catCount++;
   });
 

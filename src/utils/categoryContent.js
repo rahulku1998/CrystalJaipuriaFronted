@@ -196,4 +196,76 @@ export const CATEGORY_CONTENT = {
       },
     ],
   },
+  "luxurious-idols-decor": {
+    slug: "luxurious-idols-decor",
+    name: "Luxurious Idols & Decor",
+    title: "Luxury Gemstone God Statues & High-End Home Decor in Jaipur, India | Crystal Jaipuria",
+    description:
+      "Explore bespoke luxury gemstone God statues, 925 sterling silver work idols & high-end spiritual home decor handcrafted in Jaipur. Rose Quartz & Green Jade idols.",
+    canonical: "https://www.crystaljaipuria.com/luxurious-idols-decor",
+    ogTitle: "Luxury Gemstone God Statues & High-End Home Decor in Jaipur, India | Crystal Jaipuria",
+    ogDescription:
+      "Explore bespoke luxury gemstone God statues, 925 sterling silver work idols & high-end spiritual home decor handcrafted in Jaipur. Rose Quartz & Green Jade idols.",
+    headline: "Bespoke Luxury Gemstone Idols & High-End Spiritual Decor",
+    intro:
+      "Indulge in Crystal Jaipuria's crowning achievement of artisan lapidary craft: our Luxurious Idols & Decor collection. Sculpted from rare single-block rough gemstones like Natural Rose Quartz and deep Imperial Green Jade, each monumental idol is adorned with intricate 925 sterling silver filigree jewelry and 24K gold foil crown (Mukut) work. Tailored for luxury estates, corporate gifting, and grand home mandirs.",
+    faqs: [
+      {
+        question: "What makes this Luxurious Idols & Decor collection unique?",
+        answer:
+          "This collection unites two revered Jaipur artisan traditions: master gemstone lapidary carving and heritage royal silversmithing. Every large-format idol is sculpted from a single rough gemstone block and embellished with genuine 925 sterling silver and 24K gold accents.",
+      },
+      {
+        question: "Can these luxury idols be custom commissioned in bespoke weights and sizes?",
+        answer:
+          "Yes. Our Jaipur atelier accepts bespoke custom orders from 4 kg to 100+ kg single-block statues, tailored to your exact architectural spaces, interior themes, and Vedic Vastu specifications.",
+      },
+      {
+        question: "Are these luxury idols suitable for high-end corporate and wedding gifting?",
+        answer:
+          "Absolutely. These museum-grade masterpieces are favored by discerning industrialists, luxury interior designers, and corporate houses seeking memorable, heirloom-grade gifts with full gemological lab certification.",
+      },
+      {
+        question: "How are these heavy gemstone idols safely shipped?",
+        answer:
+          "Every luxury idol is secured inside custom shockproof high-density foam casing, encased in reinforced export wooden crates, and covered by 100% door-to-door transit insurance worldwide.",
+      },
+    ],
+  },
+  "luxurious-idols-&-decor": {
+    slug: "luxurious-idols-decor",
+    name: "Luxurious Idols & Decor",
+    title: "Luxury Gemstone God Statues & High-End Home Decor in Jaipur, India | Crystal Jaipuria",
+    description:
+      "Explore bespoke luxury gemstone God statues, 925 sterling silver work idols & high-end spiritual home decor handcrafted in Jaipur. Rose Quartz & Green Jade idols.",
+    canonical: "https://www.crystaljaipuria.com/luxurious-idols-decor",
+    ogTitle: "Luxury Gemstone God Statues & High-End Home Decor in Jaipur, India | Crystal Jaipuria",
+    ogDescription:
+      "Explore bespoke luxury gemstone God statues, 925 sterling silver work idols & high-end spiritual home decor handcrafted in Jaipur. Rose Quartz & Green Jade idols.",
+    headline: "Bespoke Luxury Gemstone Idols & High-End Spiritual Decor",
+    intro:
+      "Indulge in Crystal Jaipuria's crowning achievement of artisan lapidary craft: our Luxurious Idols & Decor collection. Sculpted from rare single-block rough gemstones like Natural Rose Quartz and deep Imperial Green Jade, each monumental idol is adorned with intricate 925 sterling silver filigree jewelry and 24K gold foil crown (Mukut) work. Tailored for luxury estates, corporate gifting, and grand home mandirs.",
+    faqs: [
+      {
+        question: "What makes this Luxurious Idols & Decor collection unique?",
+        answer:
+          "This collection unites two revered Jaipur artisan traditions: master gemstone lapidary carving and heritage royal silversmithing. Every large-format idol is sculpted from a single rough gemstone block and embellished with genuine 925 sterling silver and 24K gold accents.",
+      },
+      {
+        question: "Can these luxury idols be custom commissioned in bespoke weights and sizes?",
+        answer:
+          "Yes. Our Jaipur atelier accepts bespoke custom orders from 4 kg to 100+ kg single-block statues, tailored to your exact architectural spaces, interior themes, and Vedic Vastu specifications.",
+      },
+      {
+        question: "Are these luxury idols suitable for high-end corporate and wedding gifting?",
+        answer:
+          "Absolutely. These museum-grade masterpieces are favored by discerning industrialists, luxury interior designers, and corporate houses seeking memorable, heirloom-grade gifts with full gemological lab certification.",
+      },
+      {
+        question: "How are these heavy gemstone idols safely shipped?",
+        answer:
+          "Every luxury idol is secured inside custom shockproof high-density foam casing, encased in reinforced export wooden crates, and covered by 100% door-to-door transit insurance worldwide.",
+      },
+    ],
+  },
 };

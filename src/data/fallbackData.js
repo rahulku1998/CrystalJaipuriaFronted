@@ -3,6 +3,11 @@
 
 export const FALLBACK_CATEGORIES = [
   {
+      "_id": "6abd39523618032686f04291",
+      "name": "Luxurious Idols & Decor",
+      "slug": "luxurious-idols-decor"
+  },
+  {
     "_id": "6a55bb1f2e9a358fc926cbab",
     "name": "God Statues",
     "slug": "god-statues"
@@ -35,6 +40,16 @@ export const FALLBACK_CATEGORIES = [
 ];
 
 export const FALLBACK_SUBCATEGORIES = [
+  {
+      "_id": "6abd3aad3618032686f04292",
+      "name": "Luxury Ganesha Idols",
+      "slug": "luxury-ganesha-idols",
+      "categoryId": {
+          "_id": "6abd39523618032686f04291",
+          "name": "Luxurious Idols & Decor",
+          "slug": "luxurious-idols-decor"
+      }
+  },
   {
     "_id": "sub-god-ganesha",
     "name": "Ganesha Statues",
@@ -178,6 +193,122 @@ export const FALLBACK_SUBCATEGORIES = [
 ];
 
 export const FALLBACK_PRODUCTS = [
+  {
+    "_id": "6abd48173618032686f04316",
+    "name": "Rose Quartz Ganesh with Silver Work Idol for Luxury Decor",
+    "slug": "rose-quartz-ganesh-with-silver-work-idol-for-luxury-decor",
+    "price": 30000,
+    "detail": "Masterpiece Rose Quartz Ganesh hand-carved from rare earth-mined pink quartz, adorned with ornate 925 Sterling Silver filigree jewelry, crown (Mukut), and Trishul ornamentation. Designed for high-end luxury interiors, palatial home mandirs, and prestigious executive gifts. Weighing from 5 kg upwards, each monumental sculpture embodies boundless unconditional love, family harmony, and obstacle-clearing auspiciousness (Vighnaharta grace).",
+    "description": "<p>Masterpiece Rose Quartz Ganesh hand-carved from rare earth-mined pink quartz, adorned with ornate 925 Sterling Silver filigree jewelry, crown (Mukut), and Trishul ornamentation. Designed for high-end luxury interiors, palatial home mandirs, and prestigious executive gifts. Weighing from 5 kg upwards, each monumental sculpture embodies boundless unconditional love, family harmony, and obstacle-clearing auspiciousness (Vighnaharta grace).</p>\n\n<h2>Vighnaharta Iconography & Sterling Silver Heritage</h2>\n<p>Sculpted from single solid gemstone boulders by generational master lapidaries in Jaipur (est. 1989), this bespoke luxury idol captures Lord Ganesha in divine Vamamukhi swaroop:</p>\n<ul>\n  <li><strong>Vamamukhi (Left-Turned Trunk):</strong> Radiates soothing, lunar Ida Nadi energy, promoting family contentment, affection, and uninterrupted abundance.</li>\n  <li><strong>925 Sterling Silver Mukut &amp; Jewelry:</strong> Handcrafted filigree silver crown, necklace, armlets, and sacred trunk bands forged with pure silver and 24K gold foil accents.</li>\n  <li><strong>Abhaya Mudra &amp; Modaka:</strong> Bestows perpetual divine protection while celebrating supreme spiritual and material prosperity.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Rose Quartz Ganesh with Silver Work Idol for Luxury Decor</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Rose Quartz &amp; 925 Sterling Silver</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Weight Category</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">5 kg to Custom Order (5,000g+ Base)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">10 in to 18 inch (Custom architectural sizes on request)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Unit</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹6 / gram (Base 5kg: ₹30,000)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North-East (Ishanya Kon) or North Altar</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Gemstone &amp; Hallmarked 925 Silver (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Rose Quartz Ganesh with Silver Work Idol for Luxury Decor</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Earth-Mined Rose Quartz &amp; 925 Sterling Silver Jewelry</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight Range :</strong> 5 kg to Custom Order</li>\n  <li><strong class=\"font-bold text-gray-900\">Size &amp; Dimensions :</strong> 10 in to 18 inch (Bespoke custom orders available)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing Basis :</strong> ₹6 / gram (₹30,000 for 5 kg base)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North-East (Ishanya Kon) or North facing altar</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Certified Natural Gemstone (Zero resin/glass)</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof crating with 100% insured transit</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"Can this luxury Rose Quartz Ganesha be custom made in heavier sizes?\",\"answer\":\"Yes, our Jaipur lapidary studio creates custom commissions from 5 kg to over 100 kg single-block gemstone idols with full gemological lab certificates.\"},{\"question\":\"Is the silver work pure 925 sterling silver?\",\"answer\":\"Yes, all embellishments, crowns (Mukut), and necklaces are hand-forged in genuine 925 sterling silver with optional 24K gold foil highlighting.\"},{\"question\":\"What are the Vastu benefits of placing Rose Quartz Ganesha at home or office?\",\"answer\":\"Rose Quartz resonates with the Heart Chakra (Anahata), radiating calm love, resolving domestic conflicts, and inviting positive professional opportunities.\"},{\"question\":\"How is this large gemstone idol shipped safely?\",\"answer\":\"Each idol is cocooned in high-density customized shockproof foam and shipped inside reinforced wooden export crates with 100% door-to-door transit insurance.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Rose Quartz Ganesh With Silver Work | Luxury Home Decor & Gifts | Crystal Jaipuria\",\"metaDescription\":\"Buy luxury Handcrafted Rose Quartz Ganesh with 925 Sterling Silver Work & 24K Gold Mukut. 100% natural certified gemstone idol for luxury home decor from Jaipur.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North-East (Ishanya Kon) or North (Kubera direction) on an elevated luxury altar or console\",\"chakraPlanet\":\"Heart Chakra (Anahata) & Root Chakra · Planet Venus (Shukra) & Mercury (Budh)\",\"poojaVidhi\":\"Consecrate with sacred Gangajal and raw cow milk on Wednesday or Friday. Adorn with fresh lotus or pink flowers and natural sandalwood.\",\"vedicBenefits\":\"Harmonizes household relationships, dissolves deep-rooted stress, radiates loving vibrations, and secures enduring wealth and prestige.\"} -->",
+    "faqs": [
+      {
+        "question": "Can this luxury Rose Quartz Ganesha be custom made in heavier sizes?",
+        "answer": "Yes, our Jaipur lapidary studio creates custom commissions from 5 kg to over 100 kg single-block gemstone idols with full gemological lab certificates."
+      },
+      {
+        "question": "Is the silver work pure 925 sterling silver?",
+        "answer": "Yes, all embellishments, crowns (Mukut), and necklaces are hand-forged in genuine 925 sterling silver with optional 24K gold foil highlighting."
+      },
+      {
+        "question": "What are the Vastu benefits of placing Rose Quartz Ganesha at home or office?",
+        "answer": "Rose Quartz resonates with the Heart Chakra (Anahata), radiating calm love, resolving domestic conflicts, and inviting positive professional opportunities."
+      },
+      {
+        "question": "How is this large gemstone idol shipped safely?",
+        "answer": "Each idol is cocooned in high-density customized shockproof foam and shipped inside reinforced wooden export crates with 100% door-to-door transit insurance."
+      }
+    ],
+    "metaTitle": "Rose Quartz Ganesh With Silver Work | Luxury Home Decor & Gifts | Crystal Jaipuria",
+    "metaDescription": "Buy luxury Handcrafted Rose Quartz Ganesh with 925 Sterling Silver Work & 24K Gold Mukut. 100% natural certified gemstone idol for luxury home decor from Jaipur.",
+    "vedicVastu": {
+      "placementDirection": "North-East (Ishanya Kon) or North (Kubera direction) on an elevated luxury altar or console",
+      "chakraPlanet": "Heart Chakra (Anahata) & Root Chakra · Planet Venus (Shukra) & Mercury (Budh)",
+      "poojaVidhi": "Consecrate with sacred Gangajal and raw cow milk on Wednesday or Friday. Adorn with fresh lotus or pink flowers and natural sandalwood.",
+      "vedicBenefits": "Harmonizes household relationships, dissolves deep-rooted stress, radiates loving vibrations, and secures enduring wealth and prestige."
+    },
+    "images": [
+      "/images/rose-quartz-ganesh-with-silver-work-idol-for-luxury-decor.webp",
+      "/images/rose-quartz-ganesh-with-silver-work.webp"
+    ],
+    "categoryId": {
+      "_id": "6abd39523618032686f04291",
+      "name": "Luxurious Idols & Decor",
+      "slug": "luxurious-idols-decor"
+    },
+    "categoryName": "Luxurious Idols & Decor",
+    "subCategoryId": {
+      "_id": "6abd3aad3618032686f04292",
+      "name": "Luxury Ganesha Idols",
+      "slug": "luxury-ganesha-idols"
+    },
+    "subCategoryName": "Luxury Ganesha Idols",
+    "size": "10 in to 18 inch",
+    "weight": "5 kg to Custom Order",
+    "stock": 5,
+    "featured": true,
+    "pricePerUnit": "₹6 / gram",
+    "pricePerGram": 6,
+    "pricePerCarat": ""
+  },
+  {
+    "_id": "6abd482d3618032686f04318",
+    "name": "Green Jade Carved Ganesha Statue with Silver & Gold Work",
+    "slug": "green-jade-carved-ganesha-statue-with-silver-gold-work",
+    "price": 32000,
+    "detail": "Magnificent Imperial Green Jade Ganesha idol exquisitely hand-carved from a single boulder of certified natural Jade stone. Embellished with handcrafted 925 Sterling Silver garments, Mukut, and 24K gold foil detailing by heritage Jaipur silversmiths. Renowned globally as the ultimate stone of sovereign prosperity, financial abundance, and Vighnaharta wisdom.",
+    "description": "<p>Magnificent Imperial Green Jade Ganesha idol exquisitely hand-carved from a single boulder of certified natural Jade stone. Embellished with handcrafted 925 Sterling Silver garments, Mukut, and 24K gold foil detailing by heritage Jaipur silversmiths. Renowned globally as the ultimate stone of sovereign prosperity, financial abundance, and Vighnaharta wisdom.</p>\n\n<h2>Vedic Jade Craftsmanship & Auspicious Symbolism</h2>\n<p>Each sculpture is sculpted honoring sacred Shilpa Shastras from natural earth-mined Green Jade:</p>\n<ul>\n  <li><strong>Imperial Green Jade Resonance:</strong> Revered across ancient Vedic and Eastern traditions as the stone of extraordinary luck, business expansion, and financial stability.</li>\n  <li><strong>Handcrafted Silver &amp; Gold Mukut:</strong> Features ornate filigree crown work, sacred Janeu cord, and Modak bowl wrought in 925 hallmarked sterling silver.</li>\n  <li><strong>Vastu Alignment:</strong> Ideal for boardroom credenzas, corporate reception entries, and opulent residential mandirs facing North.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Green Jade Carved Ganesha Statue with Silver &amp; Gold Work</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Green Jade &amp; 925 Sterling Silver</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Weight Category</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">4 kg to Custom Order (4,000g+ Base)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">8 in to 16 inch (Custom architectural sizes on request)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Unit</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹8 / gram (Base 4kg: ₹32,000)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North (Kubera / Wealth direction) or East</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Gemstone &amp; Hallmarked 925 Silver (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Green Jade Carved Ganesha Statue with Silver &amp; Gold Work</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Earth-Mined Natural Green Jade &amp; 925 Silver Work</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight Range :</strong> 4 kg to Custom Order</li>\n  <li><strong class=\"font-bold text-gray-900\">Size &amp; Dimensions :</strong> 8 in to 16 inch (Custom architectural sizes on request)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing Basis :</strong> ₹8 / gram (₹32,000 for 4 kg base)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North (Kubera / Wealth direction) or East</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Certified Natural Gemstone (Zero resin/glass)</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof crating with 100% insured transit</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"Why is Green Jade considered exceptionally auspicious for Lord Ganesha?\",\"answer\":\"In Vedic gemology and Vastu Shastra, Green Jade vibrates with Lord Mercury (Budh) and Lord Kubera. Combining it with Lord Ganesha multiplies business acumen, removes commercial hurdles, and attracts continuous financial prosperity.\"},{\"question\":\"Are the silver and gold accents durable for long-term worship?\",\"answer\":\"Yes, the ornaments are crafted in pure 925 sterling silver with protective lacquer and genuine 24K gold foil, ensuring lasting brilliance under normal indoor puja conditions.\"},{\"question\":\"Can we order this Green Jade Ganesha for luxury corporate gifting?\",\"answer\":\"Yes, it is one of our most prestigious options for executive leadership gifts, milestone celebrations, and luxury residence inaugurations, accompanied by custom gift packaging and certification cards.\"},{\"question\":\"What is the ideal ritual for consecrating this Green Jade idol?\",\"answer\":\"Wash gently with Gangajal and fresh cow milk on Wednesday morning. Offer green grass (Durva), motichoor laddu, and sandalwood paste.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Green Jade Carved Ganesha With Silver & Gold Work | Luxury Decor | Crystal Jaipuria\",\"metaDescription\":\"Buy luxury Handcrafted Green Jade Carved Ganesha Statue with Silver & 24K Gold Work. 100% natural certified gemstone idol for luxury home decor & corporate gifts.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North (Kubera / Wealth direction) or East in executive offices, corporate reception, or home temple\",\"chakraPlanet\":\"Heart Chakra (Anahata) & Solar Plexus · Planet Mercury (Budh) & Jupiter (Brihaspati)\",\"poojaVidhi\":\"Perform sacred Shuddhi with Gangajal and Tulsi leaves on auspicious Wednesdays. Offer Durva grass, sweet modaks, and green cardamom.\",\"vedicBenefits\":\"Magnetizes extraordinary business opportunities, protects investments, sharpens commercial intellect, and dispels financial obstacles.\"} -->",
+    "faqs": [
+      {
+        "question": "Why is Green Jade considered exceptionally auspicious for Lord Ganesha?",
+        "answer": "In Vedic gemology and Vastu Shastra, Green Jade vibrates with Lord Mercury (Budh) and Lord Kubera. Combining it with Lord Ganesha multiplies business acumen, removes commercial hurdles, and attracts continuous financial prosperity."
+      },
+      {
+        "question": "Are the silver and gold accents durable for long-term worship?",
+        "answer": "Yes, the ornaments are crafted in pure 925 sterling silver with protective lacquer and genuine 24K gold foil, ensuring lasting brilliance under normal indoor puja conditions."
+      },
+      {
+        "question": "Can we order this Green Jade Ganesha for luxury corporate gifting?",
+        "answer": "Yes, it is one of our most prestigious options for executive leadership gifts, milestone celebrations, and luxury residence inaugurations, accompanied by custom gift packaging and certification cards."
+      },
+      {
+        "question": "What is the ideal ritual for consecrating this Green Jade idol?",
+        "answer": "Wash gently with Gangajal and fresh cow milk on Wednesday morning. Offer green grass (Durva), motichoor laddu, and sandalwood paste."
+      }
+    ],
+    "metaTitle": "Green Jade Carved Ganesha With Silver & Gold Work | Luxury Decor | Crystal Jaipuria",
+    "metaDescription": "Buy luxury Handcrafted Green Jade Carved Ganesha Statue with Silver & 24K Gold Work. 100% natural certified gemstone idol for luxury home decor & corporate gifts.",
+    "vedicVastu": {
+      "placementDirection": "North (Kubera / Wealth direction) or East in executive offices, corporate reception, or home temple",
+      "chakraPlanet": "Heart Chakra (Anahata) & Solar Plexus · Planet Mercury (Budh) & Jupiter (Brihaspati)",
+      "poojaVidhi": "Perform sacred Shuddhi with Gangajal and Tulsi leaves on auspicious Wednesdays. Offer Durva grass, sweet modaks, and green cardamom.",
+      "vedicBenefits": "Magnetizes extraordinary business opportunities, protects investments, sharpens commercial intellect, and dispels financial obstacles."
+    },
+    "images": [
+      "/images/green-jade-carved-ganesha-statue-with-silver-gold-work.webp",
+      "/images/green-jade-carved-ganesha.webp"
+    ],
+    "categoryId": {
+      "_id": "6abd39523618032686f04291",
+      "name": "Luxurious Idols & Decor",
+      "slug": "luxurious-idols-decor"
+    },
+    "categoryName": "Luxurious Idols & Decor",
+    "subCategoryId": {
+      "_id": "6abd3aad3618032686f04292",
+      "name": "Luxury Ganesha Idols",
+      "slug": "luxury-ganesha-idols"
+    },
+    "subCategoryName": "Luxury Ganesha Idols",
+    "size": "8 in to 16 inch",
+    "weight": "4 kg to Custom Order",
+    "stock": 5,
+    "featured": true,
+    "pricePerUnit": "₹8 / gram",
+    "pricePerGram": 8,
+    "pricePerCarat": ""
+  },
   {
     "_id": "6aa67020a69037c73ebf0ce1",
     "name": "Hand Carved Rose Quartz Ganesha with Sterling Silver Idol Statue for Home Temple & Vastu",

@@ -6,6 +6,24 @@
     <description>Local in-store product inventory for Crystal Jaipuria store in Jaipur.</description>
     <item>
       <g:store_code>11769123335765617743</g:store_code>
+      <g:id>6abd482d3618032686f04318</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>32000.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>11769123335765617743</g:store_code>
+      <g:id>6abd48173618032686f04316</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>30000.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>11769123335765617743</g:store_code>
       <g:id>6aa67020a69037c73ebf0ce1</g:id>
       <g:availability>in_stock</g:availability>
       <g:price>5800.00 INR</g:price>

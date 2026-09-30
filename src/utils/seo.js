@@ -29,6 +29,10 @@ export const SUPER_TITLE_MAPPINGS = {
   "gemston-amethyst-diya": "Natural Amethyst Gemstone Diya for Meditation & Temple Pooja",
   "crystal-clear-mahvaveer-ji-statue": "Crystal Clear Mahaveer Ji Statue | Authentic Digambar & Shwetambar Jain Idol",
   "amethyst-gemston-angel": "Natural Amethyst Gemstone Guardian Angel for Healing & Positive Energy",
+  "rose-quartz-ganesh-with-silver-work-idol-for-luxury-decor": "Rose Quartz Ganesh With Silver Work | Luxury Home Decor & Gifts | Crystal Jaipuria",
+  "rose-quartz-ganesh-with-silver-work": "Rose Quartz Ganesh With Silver Work | Luxury Home Decor & Gifts | Crystal Jaipuria",
+  "green-jade-carved-ganesha-statue-with-silver-gold-work": "Green Jade Carved Ganesha With Silver & Gold Work | Luxury Decor | Crystal Jaipuria",
+  "green-jade-carved-ganesha": "Green Jade Carved Ganesha With Silver & Gold Work | Luxury Decor | Crystal Jaipuria",
 };
 
 export const getProductMetaTitle = (productName, slug = "") => {
@@ -74,6 +78,10 @@ export const SUPER_DESCRIPTION_MAPPINGS = {
   "green-jade-panchmukhi-shivling": "Buy 100% Certified Natural Green Jade Stone Panchmukhi Shivling. 5 divine faces of Pashupatinath Mahadev. Handcrafted in Jaipur at factory direct price.",
   "crystal-shivling": "Buy 100% original certified Sphatik Shivling in Jaipur directly from manufacturer. Ideal for daily Jalabhishek. Visit our Sanganer workshop or order online.",
   "natural-sphatik-shivling": "Original certified Natural Sphatik Shivling in Jaipur crafted by master artisans. Direct factory price in Jaipur. 100% pure Clear Quartz for holy Jalabhishek.",
+  "rose-quartz-ganesh-with-silver-work-idol-for-luxury-decor": "Buy luxury Handcrafted Rose Quartz Ganesh with 925 Sterling Silver Work & 24K Gold Mukut. 100% natural certified gemstone idol for luxury home decor from Jaipur.",
+  "rose-quartz-ganesh-with-silver-work": "Buy luxury Handcrafted Rose Quartz Ganesh with 925 Sterling Silver Work & 24K Gold Mukut. 100% natural certified gemstone idol for luxury home decor from Jaipur.",
+  "green-jade-carved-ganesha-statue-with-silver-gold-work": "Buy luxury Handcrafted Green Jade Carved Ganesha Statue with Silver & 24K Gold Work. 100% natural certified gemstone idol for luxury home decor & corporate gifts.",
+  "green-jade-carved-ganesha": "Buy luxury Handcrafted Green Jade Carved Ganesha Statue with Silver & 24K Gold Work. 100% natural certified gemstone idol for luxury home decor & corporate gifts.",
 };
 
 export const getProductMetaDescription = (product) => {

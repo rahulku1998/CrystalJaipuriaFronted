@@ -83,8 +83,31 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/luxurious-idols-decor</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
 
-  <!-- Dynamic Product Pages (53 Live Products) -->
+  <!-- Dynamic Product Pages (55 Live Products) -->
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/green-jade-carved-ganesha-statue-with-silver-gold-work</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/green-jade-carved-ganesha-statue-with-silver-gold-work.webp</image:loc>
+      <image:title>Green Jade Carved Ganesha Statue with Silver &amp; Gold Work | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/rose-quartz-ganesh-with-silver-work-idol-for-luxury-decor</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/rose-quartz-ganesh-with-silver-work-idol-for-luxury-decor.webp</image:loc>
+      <image:title>Rose Quartz Ganesh with Silver Work Idol for Luxury Decor | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://www.crystaljaipuria.com/product/hand-carved-rose-quartz-ganesha-with-sterling-silver-testing</loc>
     <image:image>

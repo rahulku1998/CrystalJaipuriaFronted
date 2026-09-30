@@ -101,8 +101,9 @@ const generateSitemap = async () => {
     xml += `\n  <!-- Category Pages -->\n`;
     categories.forEach((cat) => {
       if (cat.slug) {
+        const catSlug = cat.slug === "luxurious-idols-&-decor" ? "luxurious-idols-decor" : cat.slug;
         xml += `  <url>\n`;
-        xml += `    <loc>${BASE_URL}/${cat.slug}</loc>\n`;
+        xml += `    <loc>${BASE_URL}/${escapeXml(catSlug)}</loc>\n`;
         xml += `    <changefreq>weekly</changefreq>\n`;
         xml += `    <priority>0.85</priority>\n`;
         xml += `  </url>\n`;

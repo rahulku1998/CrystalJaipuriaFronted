@@ -395,13 +395,24 @@ Hello Crystal Jaipuria, I have a query regarding this product.
     } catch (err) {
       console.error("Error in fetchProduct:", err);
       const cleanSlug = String(slug || "").trim().toLowerCase().replace(/^\/product\//, "").replace(/\/$/, "");
-      const legacyFallback = getLegacyProductBySlug(cleanSlug);
-      if (legacyFallback) {
-        const std = getStandardizedProduct(legacyFallback);
+      const fbMatch = FALLBACK_PRODUCTS.find(
+        (p) => p.slug === cleanSlug || p._id === cleanSlug || (p.slug && p.slug.toLowerCase().includes(cleanSlug))
+      );
+      if (fbMatch) {
+        const std = getStandardizedProduct(fbMatch);
         setProduct(std);
         setSelectedImageIndex(0);
+        trackProductView(std);
+        fetchRelatedProducts(std);
       } else {
-        setProduct(null);
+        const legacyFallback = getLegacyProductBySlug(cleanSlug);
+        if (legacyFallback) {
+          const std = getStandardizedProduct(legacyFallback);
+          setProduct(std);
+          setSelectedImageIndex(0);
+        } else {
+          setProduct(null);
+        }
       }
     } finally {
       setLoading(false);

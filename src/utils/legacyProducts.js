@@ -13,7 +13,10 @@ export const SLUG_ALIASES = {
   "rose-quartz-handmade-carving-of-ganesh": "rose-quartz-ganesha",
   "rose-quartz-mahaveer": "rose-quartz-bhagwan-mahaveer-statue",
   "lapis-lazuli-shivlnga": "lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva",
-  "natural-rose-quartz-shree-yantra": "crystal-shree-yantra"
+  "natural-rose-quartz-shree-yantra": "crystal-shree-yantra",
+  "rose-quartz-ganesh-with-silver-work": "rose-quartz-ganesh-with-silver-work-idol-for-luxury-decor",
+  "green-jade-carved-ganesha": "green-jade-carved-ganesha-statue-with-silver-gold-work",
+  "luxurious-idols-&-decor": "luxurious-idols-decor"
 };
 
 export function resolveProductSlug(slug) {

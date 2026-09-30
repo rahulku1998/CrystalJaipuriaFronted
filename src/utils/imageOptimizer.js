@@ -16,10 +16,18 @@ export const PROTECTED_STUDIO_SLUGS = new Set([
   "rose-quartz-shiva-statue-with-gold-painting",
   "smokey-quartz-crystal-shiva-face-idol",
   "natural-tiger-eye-gemstone-shivling",
-  "mahalakshmi-idol-in-natural-columbian-green-jade"
+  "mahalakshmi-idol-in-natural-columbian-green-jade",
+  "rose-quartz-ganesh-with-silver-work-idol-for-luxury-decor",
+  "rose-quartz-ganesh-with-silver-work",
+  "green-jade-carved-ganesha-statue-with-silver-gold-work",
+  "green-jade-carved-ganesha"
 ]);
 
 export const STATIC_CATALOG_SLUGS = new Set([
+  "rose-quartz-ganesh-with-silver-work-idol-for-luxury-decor",
+  "rose-quartz-ganesh-with-silver-work",
+  "green-jade-carved-ganesha-statue-with-silver-gold-work",
+  "green-jade-carved-ganesha",
   "amethyst-gemston-angel",
   "black-agate-gemstone-carving-of-ganesh",
   "blue-sapphire-carving-shiva-statue",

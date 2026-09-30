@@ -104,9 +104,39 @@ const CATEGORY_SEO = {
       "Buy handcrafted gemstone and crystal diyas from Jaipur manufacturer. Hand-carved Amethyst & quartz deepaks for daily puja, Diwali, and spiritual gifting at factory direct rates.",
     image: "https://www.crystaljaipuria.com/logo.png",
   },
+  "luxurious-idols-decor": {
+    title: "Luxury Gemstone God Statues & High-End Home Decor in Jaipur, India | Crystal Jaipuria",
+    description: "Explore bespoke luxury gemstone God statues, 925 sterling silver work idols & high-end spiritual home decor handcrafted in Jaipur. Rose Quartz & Green Jade idols.",
+    canonical: "https://www.crystaljaipuria.com/luxurious-idols-decor",
+    ogTitle: "Luxury Gemstone God Statues & High-End Home Decor in Jaipur, India | Crystal Jaipuria",
+    ogDescription: "Explore bespoke luxury gemstone God statues, 925 sterling silver work idols & high-end spiritual home decor handcrafted in Jaipur. Rose Quartz & Green Jade idols.",
+    twitterTitle: "Luxury Gemstone God Statues & High-End Home Decor in Jaipur, India | Crystal Jaipuria",
+    twitterDescription: "Explore bespoke luxury gemstone God statues, 925 sterling silver work idols & high-end spiritual home decor handcrafted in Jaipur. Rose Quartz & Green Jade idols.",
+    image: "https://www.crystaljaipuria.com/logo.png",
+  },
+  "luxurious-idols-&-decor": {
+    title: "Luxury Gemstone God Statues & High-End Home Decor in Jaipur, India | Crystal Jaipuria",
+    description: "Explore bespoke luxury gemstone God statues, 925 sterling silver work idols & high-end spiritual home decor handcrafted in Jaipur. Rose Quartz & Green Jade idols.",
+    canonical: "https://www.crystaljaipuria.com/luxurious-idols-decor",
+    ogTitle: "Luxury Gemstone God Statues & High-End Home Decor in Jaipur, India | Crystal Jaipuria",
+    ogDescription: "Explore bespoke luxury gemstone God statues, 925 sterling silver work idols & high-end spiritual home decor handcrafted in Jaipur. Rose Quartz & Green Jade idols.",
+    twitterTitle: "Luxury Gemstone God Statues & High-End Home Decor in Jaipur, India | Crystal Jaipuria",
+    twitterDescription: "Explore bespoke luxury gemstone God statues, 925 sterling silver work idols & high-end spiritual home decor handcrafted in Jaipur. Rose Quartz & Green Jade idols.",
+    image: "https://www.crystaljaipuria.com/logo.png",
+  },
 };
 
 export const STATIC_CATEGORIES = {
+  "luxurious-idols-decor": {
+    _id: "6abd39523618032686f04291",
+    name: "Luxurious Idols & Decor",
+    slug: "luxurious-idols-decor",
+  },
+  "luxurious-idols-&-decor": {
+    _id: "6abd39523618032686f04291",
+    name: "Luxurious Idols & Decor",
+    slug: "luxurious-idols-decor",
+  },
   "god-statues": {
     _id: "6a55bb1f2e9a358fc926cbab",
     name: "God Statues",
@@ -207,7 +237,9 @@ const CategoryPage = () => {
         (cleanSlug === "god-statues" && pCatSlug === "god-statues") ||
         (cleanSlug === "diya" && (p.name?.toLowerCase().includes("diya") || p.slug?.includes("diya"))) ||
         (cleanSlug === "angel" && (p.name?.toLowerCase().includes("angel") || p.slug?.includes("angel"))) ||
-        (cleanSlug === "crystal-statues" && pCatSlug === "crystal-statues")
+        (cleanSlug === "crystal-statues" && pCatSlug === "crystal-statues") ||
+        ((cleanSlug === "luxurious-idols-decor" || cleanSlug === "luxurious-idols-&-decor") &&
+          (pCatSlug === "luxurious-idols-decor" || pCatSlug === "luxurious-idols-&-decor" || pCatName.includes("luxurious") || p.slug?.includes("silver-work") || p.slug?.includes("green-jade-carved-ganesha")))
       );
     });
 
@@ -303,9 +335,21 @@ const CategoryPage = () => {
 
         if (!prodData || prodData.length === 0) {
           prodData = FALLBACK_PRODUCTS;
+        } else {
+          FALLBACK_PRODUCTS.forEach((fb) => {
+            if (!prodData.some((p) => (p.slug || p._id) === (fb.slug || fb._id))) {
+              prodData.push(fb);
+            }
+          });
         }
         if (!catData || catData.length === 0) {
           catData = FALLBACK_CATEGORIES;
+        } else {
+          FALLBACK_CATEGORIES.forEach((fb) => {
+            if (!catData.some((c) => c.slug === fb.slug || c._id === fb._id)) {
+              catData.push(fb);
+            }
+          });
         }
         if (!subData) {
           subData = FALLBACK_SUBCATEGORIES;
@@ -367,7 +411,9 @@ const CategoryPage = () => {
           (cleanSlug === "god-statues" && pCatSlug === "god-statues") ||
           (cleanSlug === "diya" && (p.name?.toLowerCase().includes("diya") || p.slug?.includes("diya"))) ||
           (cleanSlug === "angel" && (p.name?.toLowerCase().includes("angel") || p.slug?.includes("angel"))) ||
-          (cleanSlug === "crystal-statues" && pCatSlug === "crystal-statues")
+          (cleanSlug === "crystal-statues" && pCatSlug === "crystal-statues") ||
+          ((cleanSlug === "luxurious-idols-decor" || cleanSlug === "luxurious-idols-&-decor") &&
+            (pCatSlug === "luxurious-idols-decor" || pCatSlug === "luxurious-idols-&-decor" || pCatName.includes("luxurious") || p.slug?.includes("silver-work") || p.slug?.includes("green-jade-carved-ganesha")))
         );
       });
 

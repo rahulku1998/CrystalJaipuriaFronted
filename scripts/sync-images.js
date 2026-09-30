@@ -50,7 +50,11 @@ export const syncImages = async () => {
       "rose-quartz-shiva-statue-with-gold-painting",
       "smokey-quartz-crystal-shiva-face-idol",
       "natural-tiger-eye-gemstone-shivling",
-      "mahalakshmi-idol-in-natural-columbian-green-jade"
+      "mahalakshmi-idol-in-natural-columbian-green-jade",
+      "rose-quartz-ganesh-with-silver-work-idol-for-luxury-decor",
+      "rose-quartz-ganesh-with-silver-work",
+      "green-jade-carved-ganesha-statue-with-silver-gold-work",
+      "green-jade-carved-ganesha"
     ]);
 
     for (const prod of products) {
