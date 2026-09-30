@@ -149,6 +149,15 @@ Hello Crystal Jaipuria, I have a query regarding this product.
     setLoading(true);
     setSelectedImageIndex(0);
     if (slug) {
+      const curSlug = (slug || "").toLowerCase().trim();
+      const readableSlug = slug
+        .split("-")
+        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+        .join(" ");
+      const immediateTitle =
+        SUPER_TITLE_MAPPINGS[curSlug] ||
+        `${readableSlug} | Crystal Jaipuria`;
+      document.title = immediateTitle;
       fetchProduct();
     }
   }, [slug, cleanSlug]);
@@ -418,7 +427,20 @@ Hello Crystal Jaipuria, I have a query regarding this product.
   };
 
   if (loading && !product) {
-    return <BrandLoader message="Loading authentic gemstone idol..." minHeight="65vh" />;
+    const curSlug = (slug || "").toLowerCase().trim();
+    const readableSlug = (slug || "")
+      .split("-")
+      .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+      .join(" ");
+    const loadingTitle =
+      SUPER_TITLE_MAPPINGS[curSlug] ||
+      `${readableSlug} | Crystal Jaipuria`;
+    return (
+      <>
+        <SEO title={loadingTitle} />
+        <BrandLoader message="Loading authentic gemstone idol..." minHeight="65vh" />
+      </>
+    );
   }
 
   if (!product) {

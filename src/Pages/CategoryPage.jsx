@@ -2,8 +2,6 @@ import { useEffect, useState, useMemo } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import API from "../api/axios";
 import SEO from "../Components/SEO";
-import { formatPrice } from "../utils/price";
-import { getBreadcrumbSchema } from "../utils/seo";
 import { trackCategoryView } from "../utils/analytics";
 import { LEGACY_PRODUCTS } from "../utils/legacyProducts";
 import ProductCard from "../Components/ProductCard";
@@ -462,7 +460,12 @@ const CategoryPage = () => {
   );
 
   if (loadingProducts && !category) {
-    return <BrandLoader message="Loading gemstone collection..." minHeight="60vh" />;
+    return (
+      <>
+        {seo}
+        <BrandLoader message="Loading gemstone collection..." minHeight="60vh" />
+      </>
+    );
   }
 
   if (!category) {
