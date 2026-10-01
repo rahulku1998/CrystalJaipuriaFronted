@@ -1,4 +1,5 @@
 import { STATIC_CATALOG_SLUGS } from "./imageOptimizer.js";
+import { formatPricePerUnit } from "./price.js";
 
 /**
  * Product Data Standardizer for Crystal Jaipuria
@@ -7,27 +8,27 @@ import { STATIC_CATALOG_SLUGS } from "./imageOptimizer.js";
  */
 
 export const STANDARDIZED_SPECS = {
-  "red-jade-shree-yantra": { price: 1100, size: "1.6 L × 1.6 B × 1.9 H in", weight: "88 g" },
-  "sunstone-shree-yantra": { price: 1000, size: "1.4 L × 1.4 B × 1.6 H in", weight: "58 g" },
-  "tiger-eye-shree-yantra": { price: 975, size: "1.6 L × 1.6 B × 1.3 H in", weight: "49 g" },
-  "unakite-shree-yantra": { price: 1085, size: "1.2 L × 1.2 B × 1.5 H in", weight: "47 g" },
-  "yellow-jade-shree-yantra": { price: 725, size: "1.6 L × 1.6 W × 1.5 H in", weight: "58 g" },
-  "amethyst-shree-yantra": { price: 1375, size: "1.6 L × 1.6 B × 1.7 H in", weight: "70 g" },
-  "blue-sodalite-shree-yantra": { price: 1020, size: "1.5 L × 1.5 B × 1.5 H in", weight: "51 g" },
-  "blue-sunstone-shree-yantra": { price: 625, size: "1.3 L × 1.3 B × 1.5 H in", weight: "42 g" },
-  "emerald-shree-yantra-on-lotus": { price: 16275, size: "H 1.7 in; Base Diameter 0.7 in", weight: "174.30 carats (34.86 g)" },
-  "fluorite-shree-yantra": { price: 1560, size: "1.5 L × 1.5 B × 1.7 H in", weight: "78 g" },
-  "howlite-shree-yantra": { price: 2975, size: "1.6 L × 1.6 B × 2.1 H in", weight: "119 g" },
-  "labradorite-shree-yantra": { price: 1675, size: "1.7 L × 1.7 B × 1.4 H in", weight: "72 g" },
-  "lapis-lazuli-shree-yantra": { price: 1725, size: "1.6 L × 1.6 B × 1.7 H in", weight: "86 g" },
-  "rose-quartz-kurma-shree-yantra": { price: 2900, size: "3.1 L × 2.1 W × 2.5 H in", weight: "193 g" },
-  "cats-eye-shree-yantra": { price: 1475, size: "1.2 L × 1.2 B × 1.3 H in", weight: "33 g" },
-  "gomedh-shree-yantra": { price: 2075, size: "1.2 L × 1.2 W × 1.7 H in", weight: "69 g" },
-  "jasper-shree-yantra": { price: 800, size: "1 L × 1 B × 2 H in", weight: "47 g" },
-  "lapis-lazuli-elephant-idols-set-of-2": { price: 5550, size: "2.6 L × 1.1 W × 2 H in", weight: "225 g" },
-  "sunstone-ganesha": { price: 18350, size: "4.75 L × 3 W × 5.25 H in", weight: "1,223 g" },
-  "tiger-eye-ganesha-idol": { price: 7200, size: "2.5 L × 1.1 W × 4 H in", weight: "260 g" },
-  "emerald-ganesha-idol": { price: 64300, size: "1.6 L × 1.1 W × 2.7 H in", weight: "102 g / 509.10 carats" },
+  "red-jade-shree-yantra": { price: 1100, size: "1.6 L × 1.6 B × 1.9 H in", weight: "88 g", pricePerUnit: "₹12.5 / gram" },
+  "sunstone-shree-yantra": { price: 1000, size: "1.4 L × 1.4 B × 1.6 H in", weight: "58 g", pricePerUnit: "₹17.2 / gram" },
+  "tiger-eye-shree-yantra": { price: 975, size: "1.6 L × 1.6 B × 1.3 H in", weight: "49 g", pricePerUnit: "₹19.9 / gram" },
+  "unakite-shree-yantra": { price: 1085, size: "1.2 L × 1.2 B × 1.5 H in", weight: "47 g", pricePerUnit: "₹23.1 / gram" },
+  "yellow-jade-shree-yantra": { price: 725, size: "1.6 L × 1.6 W × 1.5 H in", weight: "58 g", pricePerUnit: "₹12.5 / gram" },
+  "amethyst-shree-yantra": { price: 1375, size: "1.6 L × 1.6 B × 1.7 H in", weight: "70 g", pricePerUnit: "₹19.6 / gram" },
+  "blue-sodalite-shree-yantra": { price: 1020, size: "1.5 L × 1.5 B × 1.5 H in", weight: "51 g", pricePerUnit: "₹20 / gram" },
+  "blue-sunstone-shree-yantra": { price: 625, size: "1.3 L × 1.3 B × 1.5 H in", weight: "42 g", pricePerUnit: "₹14.9 / gram" },
+  "emerald-shree-yantra-on-lotus": { price: 16275, size: "H 1.7 in; Base Diameter 0.7 in", weight: "174.30 carats (34.86 g)", pricePerUnit: "₹93.4 / carat" },
+  "fluorite-shree-yantra": { price: 1560, size: "1.5 L × 1.5 B × 1.7 H in", weight: "78 g", pricePerUnit: "₹20 / gram" },
+  "howlite-shree-yantra": { price: 2975, size: "1.6 L × 1.6 B × 2.1 H in", weight: "119 g", pricePerUnit: "₹25 / gram" },
+  "labradorite-shree-yantra": { price: 1675, size: "1.7 L × 1.7 B × 1.4 H in", weight: "72 g", pricePerUnit: "₹23.3 / gram" },
+  "lapis-lazuli-shree-yantra": { price: 1725, size: "1.6 L × 1.6 B × 1.7 H in", weight: "86 g", pricePerUnit: "₹20.1 / gram" },
+  "rose-quartz-kurma-shree-yantra": { price: 2900, size: "3.1 L × 2.1 W × 2.5 H in", weight: "193 g", pricePerUnit: "₹15 / gram" },
+  "cats-eye-shree-yantra": { price: 1475, size: "1.2 L × 1.2 B × 1.3 H in", weight: "33 g", pricePerUnit: "₹44.7 / gram" },
+  "gomedh-shree-yantra": { price: 2075, size: "1.2 L × 1.2 W × 1.7 H in", weight: "69 g", pricePerUnit: "₹30.1 / gram" },
+  "jasper-shree-yantra": { price: 800, size: "1 L × 1 B × 2 H in", weight: "47 g", pricePerUnit: "₹17 / gram" },
+  "lapis-lazuli-elephant-idols-set-of-2": { price: 5550, size: "2.6 L × 1.1 W × 2 H in", weight: "225 g", pricePerUnit: "₹24.7 / gram" },
+  "sunstone-ganesha": { price: 18350, size: "4.75 L × 3 W × 5.25 H in", weight: "1,223 g", pricePerUnit: "₹15 / gram" },
+  "tiger-eye-ganesha-idol": { price: 7200, size: "2.5 L × 1.1 W × 4 H in", weight: "260 g", pricePerUnit: "₹27.7 / gram" },
+  "emerald-ganesha-idol": { price: 64300, size: "1.6 L × 1.1 W × 2.7 H in", weight: "102 g / 509.10 carats", pricePerUnit: "₹126.3 / carat" },
 
   "hand-carved-rose-quartz-ganesha-with-sterling-silver-testing": {
     price: 5800,
@@ -712,7 +713,9 @@ export const getStandardizedProduct = (product) => {
   let standardizedPrice = spec?.price !== undefined && spec?.price !== "" ? spec.price : product.price;
   let standardizedWeight = spec?.weight !== undefined && spec?.weight !== "" ? spec.weight : product.weight;
   let standardizedSize = spec?.size !== undefined && spec?.size !== "" ? spec.size : product.size;
-  let standardizedPricePerUnit = spec?.pricePerUnit !== undefined && spec?.pricePerUnit !== "" ? spec.pricePerUnit : (product.pricePerUnit || "");
+  let standardizedPricePerUnit = spec?.pricePerUnit !== undefined && spec?.pricePerUnit !== ""
+    ? spec.pricePerUnit
+    : formatPricePerUnit(product.pricePerUnit, standardizedPrice, standardizedWeight);
 
   const dimensions = spec?.dimensions || product.dimensions || standardizedSize;
   const formattedAdditionalInfo = formatAdditionalInfo(product.additionalInfo, {

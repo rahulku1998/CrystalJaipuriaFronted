@@ -440,7 +440,18 @@ ${emeraldHighlight}
     weight: item.weight,
     stock: "in_stock",
     featured: true,
-    pricePerUnit: item.price,
+    pricePerUnit: (() => {
+      const isCarat = item.weight.includes("carats") || item.weight.includes("carat") || item.weight.includes("ct");
+      if (isCarat) {
+        const match = item.weight.match(/([\d.]+)\s*(?:carats|carat|ct)/i);
+        const ct = match ? parseFloat(match[1]) : 0;
+        return ct > 0 ? `₹${Math.round((item.price / ct) * 10) / 10} / carat` : "";
+      } else {
+        const match = item.weight.match(/([\d,]+(?:\.\d+)?)\s*g/i);
+        const g = match ? parseFloat(match[1].replace(/,/g, "")) : 0;
+        return g > 0 ? `₹${Math.round((item.price / g) * 10) / 10} / gram` : "";
+      }
+    })(),
     pricePerCarat: isYantra && item.slug.includes("emerald") ? Math.round(item.price / 174.3) : (isGanesha && item.slug.includes("emerald") ? Math.round(item.price / 509.1) : undefined)
   };
 };

@@ -36,4 +36,46 @@ export const formatPrice = (price, options = { preferSingle: true }) => {
   return `₹${str}`;
 };
 
+/**
+ * Format price per unit (per gram / per carat).
+ * Handles strings like "₹17.2 / gram", raw numeric rates like 15,
+ * or auto-calculates if accidentally passed total price or missing.
+ */
+export const formatPricePerUnit = (pricePerUnit, price, weight) => {
+  // If pricePerUnit is a valid string that contains / (e.g. "₹17.2 / gram", "₹40 / carat")
+  if (typeof pricePerUnit === "string" && pricePerUnit.includes("/")) {
+    let clean = pricePerUnit.trim().replace(/^\(|\)$/g, "").trim();
+    if (!clean.startsWith("₹")) {
+      clean = `₹${clean}`;
+    }
+    return clean;
+  }
+
+  // If pricePerUnit is a raw number (or numeric string) like 1000 (which was accidentally total price)
+  // or empty, calculate it dynamically from price and weight!
+  const priceNum = typeof price === "number" ? price : parseFloat(String(price || "").replace(/[^\d.]/g, ""));
+  if (!priceNum || isNaN(priceNum)) return "";
+
+  const weightStr = String(weight || "");
+  const isCarat = /carat|ct\b/i.test(weightStr);
+  let cleanWeight = 0;
+  if (isCarat) {
+    const match = weightStr.match(/([\d.]+)\s*(?:carats|carat|ct)/i);
+    cleanWeight = match ? parseFloat(match[1]) : 0;
+  } else {
+    const match = weightStr.match(/([\d,]+(?:\.\d+)?)\s*g/i);
+    cleanWeight = match ? parseFloat(match[1].replace(/,/g, "")) : 0;
+  }
+
+  if (cleanWeight > 0) {
+    const unit = isCarat ? "carat" : "gram";
+    const rawRate = priceNum / cleanWeight;
+    const rate = Number.isInteger(rawRate) ? rawRate : Math.round(rawRate * 10) / 10;
+    return `₹${rate} / ${unit}`;
+  }
+
+  return "";
+};
+
 export default formatPrice;
+

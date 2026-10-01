@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useMemo } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import API from "../api/axios";
-import { formatPrice } from "../utils/price";
+import { formatPrice, formatPricePerUnit } from "../utils/price";
 import { getProductImageUrl } from "../utils/imageOptimizer";
 import { unpackProductMetadata, getVedicVastuForProduct } from "../utils/productMetadata";
 import { getStandardizedProduct, getSacredShloka, STANDARDIZED_SPECS } from "../utils/productStandardizer";
@@ -350,6 +350,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
             if (fbMatch.pricePerUnit) data.pricePerUnit = fbMatch.pricePerUnit;
           }
         }
+        data.pricePerUnit = formatPricePerUnit(data.pricePerUnit, data.price, data.weight);
       }
 
       // Automatically strip junk query parameters from browser URL
@@ -610,11 +611,14 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                   <span className="text-2xl sm:text-3xl font-extrabold text-amber-600">
                     {formatPrice(product.price)}
                   </span>
-                  {product.pricePerUnit && (
-                    <p className="text-xs sm:text-sm font-semibold text-stone-500 mt-1">
-                      ({product.pricePerUnit})
-                    </p>
-                  )}
+                  {(() => {
+                    const unitRate = formatPricePerUnit(product.pricePerUnit, product.price, product.weight);
+                    return unitRate ? (
+                      <p className="text-xs sm:text-sm font-semibold text-stone-500 mt-1">
+                        ({unitRate})
+                      </p>
+                    ) : null;
+                  })()}
                 </div>
               )}
 

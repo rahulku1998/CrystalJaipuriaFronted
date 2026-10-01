@@ -4102,7 +4102,7 @@ export const FALLBACK_PRODUCTS = [
     "weight": "88 g",
     "stock": "in_stock",
     "featured": true,
-    "pricePerUnit": 1100
+    "pricePerUnit": "₹12.5 / gram"
   },
   {
     "_id": "6abd50010000000000000000",
@@ -4159,7 +4159,7 @@ export const FALLBACK_PRODUCTS = [
     "weight": "58 g",
     "stock": "in_stock",
     "featured": true,
-    "pricePerUnit": 1000
+    "pricePerUnit": "₹17.2 / gram"
   },
   {
     "_id": "6abd50020000000000000000",
@@ -4216,7 +4216,7 @@ export const FALLBACK_PRODUCTS = [
     "weight": "49 g",
     "stock": "in_stock",
     "featured": true,
-    "pricePerUnit": 975
+    "pricePerUnit": "₹19.9 / gram"
   },
   {
     "_id": "6abd50030000000000000000",
@@ -4273,7 +4273,7 @@ export const FALLBACK_PRODUCTS = [
     "weight": "47 g",
     "stock": "in_stock",
     "featured": true,
-    "pricePerUnit": 1085
+    "pricePerUnit": "₹23.1 / gram"
   },
   {
     "_id": "6abd50040000000000000000",
@@ -4330,7 +4330,7 @@ export const FALLBACK_PRODUCTS = [
     "weight": "58 g",
     "stock": "in_stock",
     "featured": true,
-    "pricePerUnit": 725
+    "pricePerUnit": "₹12.5 / gram"
   },
   {
     "_id": "6abd50050000000000000000",
@@ -4388,7 +4388,7 @@ export const FALLBACK_PRODUCTS = [
     "weight": "70 g",
     "stock": "in_stock",
     "featured": true,
-    "pricePerUnit": 1375
+    "pricePerUnit": "₹19.6 / gram"
   },
   {
     "_id": "6abd50060000000000000000",
@@ -4445,7 +4445,7 @@ export const FALLBACK_PRODUCTS = [
     "weight": "51 g",
     "stock": "in_stock",
     "featured": true,
-    "pricePerUnit": 1020
+    "pricePerUnit": "₹20 / gram"
   },
   {
     "_id": "6abd50070000000000000000",
@@ -4502,7 +4502,7 @@ export const FALLBACK_PRODUCTS = [
     "weight": "42 g",
     "stock": "in_stock",
     "featured": true,
-    "pricePerUnit": 625
+    "pricePerUnit": "₹14.9 / gram"
   },
   {
     "_id": "6abd50080000000000000000",
@@ -4560,7 +4560,7 @@ export const FALLBACK_PRODUCTS = [
     "weight": "174.30 carats (34.86 g)",
     "stock": "in_stock",
     "featured": true,
-    "pricePerUnit": 16275,
+    "pricePerUnit": "₹93.4 / carat",
     "pricePerCarat": 93
   },
   {
@@ -4619,7 +4619,7 @@ export const FALLBACK_PRODUCTS = [
     "weight": "78 g",
     "stock": "in_stock",
     "featured": true,
-    "pricePerUnit": 1560
+    "pricePerUnit": "₹20 / gram"
   },
   {
     "_id": "6abd500a0000000000000000",
@@ -4677,7 +4677,7 @@ export const FALLBACK_PRODUCTS = [
     "weight": "119 g",
     "stock": "in_stock",
     "featured": true,
-    "pricePerUnit": 2975
+    "pricePerUnit": "₹25 / gram"
   },
   {
     "_id": "6abd500b0000000000000000",
@@ -4735,7 +4735,7 @@ export const FALLBACK_PRODUCTS = [
     "weight": "72 g",
     "stock": "in_stock",
     "featured": true,
-    "pricePerUnit": 1675
+    "pricePerUnit": "₹23.3 / gram"
   },
   {
     "_id": "6abd500c0000000000000000",
@@ -4793,7 +4793,7 @@ export const FALLBACK_PRODUCTS = [
     "weight": "86 g",
     "stock": "in_stock",
     "featured": true,
-    "pricePerUnit": 1725
+    "pricePerUnit": "₹20.1 / gram"
   },
   {
     "_id": "6abd500d0000000000000000",
@@ -4851,7 +4851,7 @@ export const FALLBACK_PRODUCTS = [
     "weight": "193 g",
     "stock": "in_stock",
     "featured": true,
-    "pricePerUnit": 2900
+    "pricePerUnit": "₹15 / gram"
   },
   {
     "_id": "6abd500e0000000000000000",
@@ -4909,7 +4909,7 @@ export const FALLBACK_PRODUCTS = [
     "weight": "33 g",
     "stock": "in_stock",
     "featured": true,
-    "pricePerUnit": 1475
+    "pricePerUnit": "₹44.7 / gram"
   },
   {
     "_id": "6abd500f0000000000000000",
@@ -4967,7 +4967,7 @@ export const FALLBACK_PRODUCTS = [
     "weight": "69 g",
     "stock": "in_stock",
     "featured": true,
-    "pricePerUnit": 2075
+    "pricePerUnit": "₹30.1 / gram"
   },
   {
     "_id": "6abd50100000000000000000",
@@ -5024,7 +5024,7 @@ export const FALLBACK_PRODUCTS = [
     "weight": "47 g",
     "stock": "in_stock",
     "featured": true,
-    "pricePerUnit": 800
+    "pricePerUnit": "₹17 / gram"
   },
   {
     "_id": "6abd50110000000000000000",
@@ -5082,7 +5082,7 @@ export const FALLBACK_PRODUCTS = [
     "weight": "225 g",
     "stock": "in_stock",
     "featured": true,
-    "pricePerUnit": 5550
+    "pricePerUnit": "₹24.7 / gram"
   },
   {
     "_id": "6abd50120000000000000000",
@@ -5141,7 +5141,7 @@ export const FALLBACK_PRODUCTS = [
     "weight": "1,223 g",
     "stock": "in_stock",
     "featured": true,
-    "pricePerUnit": 18350
+    "pricePerUnit": "₹15 / gram"
   },
   {
     "_id": "6abd50130000000000000000",
@@ -5200,7 +5200,7 @@ export const FALLBACK_PRODUCTS = [
     "weight": "260 g",
     "stock": "in_stock",
     "featured": true,
-    "pricePerUnit": 7200
+    "pricePerUnit": "₹27.7 / gram"
   },
   {
     "_id": "6abd50140000000000000000",
@@ -5259,7 +5259,7 @@ export const FALLBACK_PRODUCTS = [
     "weight": "102 g / 509.10 carats",
     "stock": "in_stock",
     "featured": true,
-    "pricePerUnit": 64300,
+    "pricePerUnit": "₹126.3 / carat",
     "pricePerCarat": 126
   }
 ];
