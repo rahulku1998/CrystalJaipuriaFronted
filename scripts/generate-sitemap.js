@@ -36,6 +36,7 @@ const fetchData = (endpoint) => {
 
 const escapeXml = (unsafe) => {
   return String(unsafe || "")
+    .replace(/&amp;/g, "&")
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
@@ -118,21 +119,52 @@ const generateSitemap = async () => {
       const slug = prod.slug || prod._id;
       const cleanName = (prod.name || "Gemstone Product").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
       const cleanProductSlug = (prod.slug || slug || "product").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-      const imageMain = `${BASE_URL}/images/${cleanProductSlug}.webp`;
+      let imageMain = "";
+      const localMainPath = path.join(__dirname, `../public/images/${cleanProductSlug}.webp`);
+      if (fs.existsSync(localMainPath)) {
+        imageMain = `${BASE_URL}/images/${cleanProductSlug}.webp`;
+      } else if (Array.isArray(prod.images) && prod.images.length > 0) {
+        const first = typeof prod.images[0] === "string" ? prod.images[0] : prod.images[0]?.url;
+        if (first) {
+          imageMain = first.startsWith("http") ? first : `${BASE_URL}${first.startsWith("/") ? "" : "/"}${first}`;
+        }
+      }
+      if (!imageMain) {
+        imageMain = `${BASE_URL}/images/${cleanProductSlug}.webp`;
+      }
+
       xml += `  <url>\n`;
       xml += `    <loc>${BASE_URL}/product/${slug}</loc>\n`;
       xml += `    <image:image>\n`;
-      xml += `      <image:loc>${imageMain}</image:loc>\n`;
+      xml += `      <image:loc>${imageMain.replace(/&/g, "&amp;")}</image:loc>\n`;
       xml += `      <image:title>${cleanName} | Crystal Jaipuria</image:title>\n`;
       xml += `    </image:image>\n`;
 
-      const secImgPath = path.join(__dirname, `../public/images/${cleanProductSlug}-2.webp`);
-      if (fs.existsSync(secImgPath)) {
-        xml += `    <image:image>\n`;
-        xml += `      <image:loc>${BASE_URL}/images/${cleanProductSlug}-2.webp</image:loc>\n`;
-        xml += `      <image:title>${cleanName} - Alternate View | Crystal Jaipuria</image:title>\n`;
-        xml += `    </image:image>\n`;
+      const additionalImages = [];
+      for (let i = 2; i <= 10; i++) {
+        const secImgPath = path.join(__dirname, `../public/images/${cleanProductSlug}-${i}.webp`);
+        if (fs.existsSync(secImgPath)) {
+          additionalImages.push(`${BASE_URL}/images/${cleanProductSlug}-${i}.webp`);
+        }
       }
+      if (Array.isArray(prod.images)) {
+        for (let i = 1; i < prod.images.length; i++) {
+          const raw = typeof prod.images[i] === "string" ? prod.images[i] : (prod.images[i]?.url || "");
+          if (raw) {
+            const fullUrl = raw.startsWith("http") ? raw : `${BASE_URL}${raw.startsWith("/") ? "" : "/"}${raw}`;
+            if (fullUrl !== imageMain && !additionalImages.includes(fullUrl)) {
+              additionalImages.push(fullUrl);
+            }
+          }
+        }
+      }
+
+      additionalImages.forEach((imgUrl, idx) => {
+        xml += `    <image:image>\n`;
+        xml += `      <image:loc>${imgUrl.replace(/&/g, "&amp;")}</image:loc>\n`;
+        xml += `      <image:title>${cleanName} - View ${idx + 2} | Crystal Jaipuria</image:title>\n`;
+        xml += `    </image:image>\n`;
+      });
 
       xml += `    <changefreq>weekly</changefreq>\n`;
       xml += `    <priority>0.8</priority>\n`;
@@ -231,9 +263,6 @@ const generateSitemap = async () => {
     const cleanName = (prod.name || "Gemstone Product")
       .replace(/\s*-\s*100%\s*certified/gi, "")
       .replace(/\s*100%\s*certified/gi, "")
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
       .trim();
     const cleanDesc = (prod.detail || prod.description || cleanName)
       .replace(/<[^>]*>?/gm, "")
@@ -241,9 +270,6 @@ const generateSitemap = async () => {
       .replace(/(\b100%\s*)?natural\s+natural\b/gi, "Natural")
       .replace(/\bauthentic\s+natural\s+natural\b/gi, "authentic Natural")
       .replace(/\bnatural\s+natural\b/gi, "Natural")
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
       .replace(/\r?\n|\r/g, " ")
       .trim()
       .slice(0, 1000);
@@ -264,9 +290,20 @@ const generateSitemap = async () => {
     }
     const cleanProductSlug = (prod.slug || slug || "product").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
     
-    // 100% Official Crystal Jaipuria Brand Domain URLs (No third-party CDN URLs)
-    // ?v=2 forces Google Merchant Center to re-crawl and approve previously cached failed images
-    const imageMain = `${BASE_URL}/images/${cleanProductSlug}.webp?v=2`;
+    // 100% Valid Google Merchant Center Compliant Image URLs (Clean without query params)
+    let imageMain = "";
+    const localMainPath = path.join(__dirname, `../public/images/${cleanProductSlug}.webp`);
+    if (fs.existsSync(localMainPath)) {
+      imageMain = `${BASE_URL}/images/${cleanProductSlug}.webp`;
+    } else if (Array.isArray(prod.images) && prod.images.length > 0) {
+      const first = typeof prod.images[0] === "string" ? prod.images[0] : prod.images[0]?.url;
+      if (first) {
+        imageMain = first.startsWith("http") ? first : `${BASE_URL}${first.startsWith("/") ? "" : "/"}${first}`;
+      }
+    }
+    if (!imageMain) {
+      imageMain = `${BASE_URL}/images/${cleanProductSlug}.webp`;
+    }
 
     const categoryName = prod.categoryId?.name ? prod.categoryId.name.replace(/&/g, "&amp;") : "Gemstones";
 
@@ -419,13 +456,28 @@ const generateSitemap = async () => {
     gmcXml += `      <g:description>${escapeXml(feedDesc)}</g:description>\n`;
     gmcXml += `      <g:link>${prodUrl}</g:link>\n`;
     gmcXml += `      <g:image_link>${imageMain.replace(/&/g, "&amp;")}</g:image_link>\n`;
-    // Secondary images on crystaljaipuria.com domain
-    for (let i = 2; i <= 5; i++) {
+    // Additional images (up to 10 additional images per GMC spec, clean without query params)
+    const gmcAdditionalImages = [];
+    for (let i = 2; i <= 10; i++) {
       const secImgPath = path.join(__dirname, `../public/images/${cleanProductSlug}-${i}.webp`);
       if (fs.existsSync(secImgPath)) {
-        gmcXml += `      <g:additional_image_link>${BASE_URL}/images/${cleanProductSlug}-${i}.webp?v=2</g:additional_image_link>\n`;
+        gmcAdditionalImages.push(`${BASE_URL}/images/${cleanProductSlug}-${i}.webp`);
       }
     }
+    if (Array.isArray(prod.images)) {
+      for (let i = 1; i < prod.images.length; i++) {
+        const raw = typeof prod.images[i] === "string" ? prod.images[i] : (prod.images[i]?.url || "");
+        if (raw) {
+          const fullUrl = raw.startsWith("http") ? raw : `${BASE_URL}${raw.startsWith("/") ? "" : "/"}${raw}`;
+          if (fullUrl !== imageMain && !gmcAdditionalImages.includes(fullUrl)) {
+            gmcAdditionalImages.push(fullUrl);
+          }
+        }
+      }
+    }
+    gmcAdditionalImages.slice(0, 10).forEach((addImg) => {
+      gmcXml += `      <g:additional_image_link>${addImg.replace(/&/g, "&amp;")}</g:additional_image_link>\n`;
+    });
     gmcXml += `      <g:availability>${(prod.stock === 0 || prod.stock === "0") ? "out_of_stock" : "in_stock"}</g:availability>\n`;
     gmcXml += `      <g:price>${priceNum.toFixed(2)} INR</g:price>\n`;
     gmcXml += `      <g:brand>Crystal Jaipuria</g:brand>\n`;

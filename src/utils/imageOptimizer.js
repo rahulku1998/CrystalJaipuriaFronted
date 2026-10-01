@@ -116,22 +116,22 @@ export const getProductImageUrl = (product, index = 0, width = 800) => {
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 
-  // 1. Core catalog studio products: serve pristine local static WebP
+  // 1. If it is already an explicit local static path
+  if (rawUrl && (rawUrl.startsWith("/images/") || rawUrl.startsWith("/assets/"))) {
+    return rawUrl;
+  }
+
+  // 2. Newly added products from Admin: immediately deliver live uploaded photo
+  if (rawUrl && (rawUrl.startsWith("http://") || rawUrl.startsWith("https://"))) {
+    return optimizeCloudinaryUrl(rawUrl, width);
+  }
+
+  // 3. Core catalog studio products: serve pristine local static WebP
   if (cleanSlug && STATIC_CATALOG_SLUGS.has(cleanSlug)) {
     if (index === 0) {
       return `/images/${cleanSlug}.webp`;
     }
     return `/images/${cleanSlug}-${index + 1}.webp`;
-  }
-
-  // 2. If it is already a local static path
-  if (rawUrl && (rawUrl.startsWith("/images/") || rawUrl.startsWith("/assets/"))) {
-    return rawUrl;
-  }
-
-  // 3. Newly added products from Admin: immediately deliver live uploaded photo
-  if (rawUrl && (rawUrl.startsWith("http://") || rawUrl.startsWith("https://"))) {
-    return optimizeCloudinaryUrl(rawUrl, width);
   }
 
   // 4. Fallback to clean slug static path if exists

@@ -194,9 +194,34 @@ const runInstantIndexing = async () => {
     const slug = prod.slug || prod._id;
     urlList.push(`${BASE_URL}/product/${slug}`);
     const cleanProductSlug = (prod.slug || slug || "product").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-    imageUrlList.push(`${BASE_URL}/images/${cleanProductSlug}.webp`);
-    if (prod.images && prod.images.length > 1) {
-      imageUrlList.push(`${BASE_URL}/images/${cleanProductSlug}-2.webp`);
+    
+    let mainImgUrl = "";
+    const localMain = path.join(__dirname, `../public/images/${cleanProductSlug}.webp`);
+    if (fs.existsSync(localMain)) {
+      mainImgUrl = `${BASE_URL}/images/${cleanProductSlug}.webp`;
+    } else if (Array.isArray(prod.images) && prod.images.length > 0) {
+      const first = typeof prod.images[0] === "string" ? prod.images[0] : prod.images[0]?.url;
+      if (first) mainImgUrl = first.startsWith("http") ? first : `${BASE_URL}${first.startsWith("/") ? "" : "/"}${first}`;
+    }
+    if (!mainImgUrl) mainImgUrl = `${BASE_URL}/images/${cleanProductSlug}.webp`;
+    if (!imageUrlList.includes(mainImgUrl)) imageUrlList.push(mainImgUrl);
+
+    for (let i = 2; i <= 10; i++) {
+      const secImg = path.join(__dirname, `../public/images/${cleanProductSlug}-${i}.webp`);
+      if (fs.existsSync(secImg)) {
+        const secUrl = `${BASE_URL}/images/${cleanProductSlug}-${i}.webp`;
+        if (!imageUrlList.includes(secUrl)) imageUrlList.push(secUrl);
+      }
+    }
+
+    if (Array.isArray(prod.images)) {
+      for (let i = 1; i < prod.images.length; i++) {
+        const raw = typeof prod.images[i] === "string" ? prod.images[i] : (prod.images[i]?.url || "");
+        if (raw) {
+          const fullUrl = raw.startsWith("http") ? raw : `${BASE_URL}${raw.startsWith("/") ? "" : "/"}${raw}`;
+          if (!imageUrlList.includes(fullUrl)) imageUrlList.push(fullUrl);
+        }
+      }
     }
   });
 

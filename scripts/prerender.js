@@ -262,7 +262,36 @@ export const runPrerender = async () => {
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/^-|-$/g, "");
 
-    const imageUrl = `${BASE_URL}/images/${cleanProductSlug}.webp?v=2`;
+    let imageUrl = "";
+    const localMainPath = path.join(__dirname, `../public/images/${cleanProductSlug}.webp`);
+    if (fs.existsSync(localMainPath)) {
+      imageUrl = `${BASE_URL}/images/${cleanProductSlug}.webp`;
+    } else if (Array.isArray(prod.images) && prod.images.length > 0) {
+      const first = typeof prod.images[0] === "string" ? prod.images[0] : prod.images[0]?.url;
+      if (first) {
+        imageUrl = first.startsWith("http") ? first : `${BASE_URL}${first.startsWith("/") ? "" : "/"}${first}`;
+      }
+    }
+    if (!imageUrl) {
+      imageUrl = `${BASE_URL}/images/${cleanProductSlug}.webp`;
+    }
+
+    const allProductImages = [imageUrl];
+    for (let i = 2; i <= 10; i++) {
+      const secImg = path.join(__dirname, `../public/images/${cleanProductSlug}-${i}.webp`);
+      if (fs.existsSync(secImg)) {
+        allProductImages.push(`${BASE_URL}/images/${cleanProductSlug}-${i}.webp`);
+      }
+    }
+    if (Array.isArray(prod.images)) {
+      for (let i = 1; i < prod.images.length; i++) {
+        const raw = typeof prod.images[i] === "string" ? prod.images[i] : (prod.images[i]?.url || "");
+        if (raw) {
+          const fullUrl = raw.startsWith("http") ? raw : `${BASE_URL}${raw.startsWith("/") ? "" : "/"}${raw}`;
+          if (!allProductImages.includes(fullUrl)) allProductImages.push(fullUrl);
+        }
+      }
+    }
 
     let priceNum = 999;
     if (typeof prod.price === "number" && prod.price > 0) {
@@ -352,7 +381,7 @@ export const runPrerender = async () => {
         "@type": "Product",
         "@id": `${BASE_URL}/product/${slug}#product`,
         name: displayTitle,
-        image: [imageUrl],
+        image: allProductImages,
         description: cleanDesc.slice(0, 500),
         sku: prod._id,
         mpn: slug,

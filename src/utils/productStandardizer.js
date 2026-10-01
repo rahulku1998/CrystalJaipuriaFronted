@@ -657,7 +657,16 @@ export const MULTI_IMAGE_SLUGS = new Set([
   "rose-quartz-carved-shree-krishan-ji-idol",
   "rose-quartz-carved-shree-krishna-ji-idol",
   "rose-quartz-shiva-statue-with-gold-painting",
-  "smokey-quartz-crystal-shiva-face-idol"
+  "smokey-quartz-crystal-shiva-face-idol",
+  "durga-devi-ruby-idol",
+  "durga-devi-ruby-idol-432-carats",
+  "green-aventurine-shankh",
+  "green-aventurine-shankh-648g",
+  "nataraja-dancing-shiva-sunstone-idol",
+  "nataraja-dancing-shiva-sunstone-idol-22kg",
+  "shiva-in-lepidolite",
+  "lord-shiva-in-natural-lepidolite-101kg",
+  "lord-shiva-in-natural-lepidolite"
 ]);
 
 /**
@@ -931,33 +940,69 @@ export const getStandardizedProduct = (product) => {
       .replace(/\bnatural\s+natural\b/gi, "Natural");
   }
 
-  // Bulletproof Pure Local Static WebP Delivery for Catalog & Live Support for Dynamic Products
+  // Bulletproof Multi-Image Delivery for Catalog, Fallback & Dynamic Admin Products
   let standardizedImages = [];
-  if (slug === "natural-sphatik-shivling") {
-    standardizedImages = [
-      { url: `/images/${slug}.webp`, public_id: `products/${slug}` },
-      { url: `/images/${slug}-2.webp`, public_id: `products/${slug}-2` },
-      { url: `/images/${slug}-3.webp`, public_id: `products/${slug}-3` },
-    ];
-  } else if (MULTI_IMAGE_SLUGS.has(slug)) {
-    standardizedImages = [
-      { url: `/images/${slug}.webp`, public_id: `products/${slug}` },
-      { url: `/images/${slug}-2.webp`, public_id: `products/${slug}-2` },
-    ];
-  } else if (STATIC_CATALOG_SLUGS.has(slug)) {
-    standardizedImages = [
-      { url: `/images/${slug}.webp`, public_id: `products/${slug}` },
-    ];
-  } else if (Array.isArray(product.images) && product.images.length > 0) {
-    // Preserve uploaded images for newly added admin products!
-    standardizedImages = product.images.map((img) =>
-      typeof img === "string" ? { url: img, public_id: img } : img
-    );
-  } else if (slug) {
-    standardizedImages = [
-      { url: `/images/${slug}.webp`, public_id: `products/${slug}` },
-    ];
-  } else {
+
+  // 1. If product already has an array of images (API, Cloudinary, fallbackData, or Admin upload), PRESERVE ALL OF THEM!
+  if (Array.isArray(product.images) && product.images.length > 0) {
+    standardizedImages = product.images.map((img, idx) => {
+      if (typeof img === "string") {
+        return { url: img, public_id: `products/${slug || "item"}-${idx + 1}` };
+      }
+      return {
+        url: img.url || img.secure_url || "",
+        public_id: img.public_id || `products/${slug || "item"}-${idx + 1}`,
+        ...img,
+      };
+    }).filter((img) => Boolean(img.url));
+  }
+
+  // 2. If product.images had only 1 image or was empty, check if catalog known multi-images exist:
+  if (standardizedImages.length <= 1 && slug) {
+    if (slug === "natural-sphatik-shivling") {
+      standardizedImages = [
+        { url: `/images/${slug}.webp`, public_id: `products/${slug}` },
+        { url: `/images/${slug}-2.webp`, public_id: `products/${slug}-2` },
+        { url: `/images/${slug}-3.webp`, public_id: `products/${slug}-3` },
+      ];
+    } else if (slug === "durga-devi-ruby-idol" || slug === "durga-devi-ruby-idol-432-carats") {
+      standardizedImages = [
+        { url: `/images/durga-devi-ruby-idol.webp`, public_id: `products/durga-devi-ruby-idol` },
+        { url: `/images/durga-devi-ruby-idol-2.webp`, public_id: `products/durga-devi-ruby-idol-2` },
+        { url: `/images/durga-devi-ruby-idol-3.webp`, public_id: `products/durga-devi-ruby-idol-3` },
+        { url: `/images/durga-devi-ruby-idol-4.webp`, public_id: `products/durga-devi-ruby-idol-4` },
+      ];
+    } else if (slug === "green-aventurine-shankh" || slug === "green-aventurine-shankh-648g") {
+      standardizedImages = [
+        { url: `/images/green-aventurine-shankh.webp`, public_id: `products/green-aventurine-shankh` },
+        { url: `/images/green-aventurine-shankh-2.webp`, public_id: `products/green-aventurine-shankh-2` },
+        { url: `/images/green-aventurine-shankh-3.webp`, public_id: `products/green-aventurine-shankh-3` },
+      ];
+    } else if (slug === "nataraja-dancing-shiva-sunstone-idol" || slug === "nataraja-dancing-shiva-sunstone-idol-22kg") {
+      standardizedImages = [
+        { url: `/images/nataraja-dancing-shiva-sunstone-idol.webp`, public_id: `products/nataraja-dancing-shiva-sunstone-idol` },
+        { url: `/images/nataraja-dancing-shiva-sunstone-idol-2.webp`, public_id: `products/nataraja-dancing-shiva-sunstone-idol-2` },
+        { url: `/images/nataraja-dancing-shiva-sunstone-idol-3.webp`, public_id: `products/nataraja-dancing-shiva-sunstone-idol-3` },
+        { url: `/images/nataraja-dancing-shiva-sunstone-idol-4.webp`, public_id: `products/nataraja-dancing-shiva-sunstone-idol-4` },
+      ];
+    } else if (slug === "shiva-in-lepidolite" || slug === "lord-shiva-in-natural-lepidolite-101kg" || slug === "lord-shiva-in-natural-lepidolite") {
+      standardizedImages = [
+        { url: `/images/shiva-in-lepidolite.webp`, public_id: `products/shiva-in-lepidolite` },
+        { url: `/images/shiva-in-lepidolite-2.webp`, public_id: `products/shiva-in-lepidolite-2` },
+      ];
+    } else if (MULTI_IMAGE_SLUGS.has(slug)) {
+      standardizedImages = [
+        { url: `/images/${slug}.webp`, public_id: `products/${slug}` },
+        { url: `/images/${slug}-2.webp`, public_id: `products/${slug}-2` },
+      ];
+    } else if (standardizedImages.length === 0) {
+      standardizedImages = [
+        { url: `/images/${slug}.webp`, public_id: `products/${slug}` },
+      ];
+    }
+  }
+
+  if (standardizedImages.length === 0) {
     standardizedImages = [{ url: "/Gemstone.webp", public_id: "placeholder" }];
   }
 
