@@ -57,10 +57,13 @@ const generateSitemap = async () => {
   let categories = categoriesRes.categories || [];
   const blogs = blogsRes.blogs || [];
 
-  if (products.length === 0) {
-    console.log("⚡ [Sitemap] Using fallback products catalog (53 items)...");
-    products = FALLBACK_PRODUCTS;
-  }
+  const existingSlugs = new Set(products.map((p) => p.slug || p._id));
+  FALLBACK_PRODUCTS.forEach((fbProd) => {
+    if (!existingSlugs.has(fbProd.slug) && !existingSlugs.has(fbProd._id)) {
+      products.push(fbProd);
+      existingSlugs.add(fbProd.slug);
+    }
+  });
   if (categories.length === 0) {
     console.log("⚡ [Sitemap] Using fallback categories catalog (6 categories)...");
     categories = FALLBACK_CATEGORIES;
@@ -313,7 +316,40 @@ const generateSitemap = async () => {
     let material = "Natural Gemstone";
     let color = "Natural";
 
-    if (titleSlug.includes("green aventurine") || (!titleSlug.includes("jade") && text.includes("green aventurine"))) {
+    if (titleSlug.includes("red jade") || text.includes("red jade")) {
+      material = "Natural Red Jade";
+      color = "Red";
+    } else if (titleSlug.includes("yellow jade") || text.includes("yellow jade")) {
+      material = "Natural Yellow Jade";
+      color = "Yellow";
+    } else if (titleSlug.includes("blue sunstone") || text.includes("blue sunstone")) {
+      material = "Natural Blue Sunstone";
+      color = "Blue";
+    } else if (titleSlug.includes("sunstone") || text.includes("sunstone") || titleSlug.includes("sun stone")) {
+      material = "Natural Sunstone";
+      color = "Orange / Golden Peach";
+    } else if (titleSlug.includes("emerald") || text.includes("emerald") || text.includes("panna")) {
+      material = "Natural Emerald (Panna)";
+      color = "Green";
+    } else if (titleSlug.includes("unakite") || text.includes("unakite")) {
+      material = "Natural Unakite";
+      color = "Green and Pink";
+    } else if (titleSlug.includes("fluorite") || text.includes("fluorite")) {
+      material = "Natural Rainbow Fluorite";
+      color = "Multi-Color";
+    } else if (titleSlug.includes("cats eye") || titleSlug.includes("cat's eye") || text.includes("cat's eye") || text.includes("lehsuniya")) {
+      material = "Natural Cat's Eye Quartz";
+      color = "Honey Yellow";
+    } else if (titleSlug.includes("gomed") || titleSlug.includes("hessonite") || text.includes("gomed") || text.includes("hessonite")) {
+      material = "Natural Hessonite Garnet (Gomedh)";
+      color = "Brownish Red / Amber";
+    } else if (titleSlug.includes("jasper") || text.includes("jasper")) {
+      material = "Natural Red Jasper";
+      color = "Red";
+    } else if (titleSlug.includes("blue sodalite") || titleSlug.includes("sodalite") || text.includes("sodalite")) {
+      material = "Natural Blue Sodalite";
+      color = "Blue";
+    } else if (titleSlug.includes("green aventurine") || (!titleSlug.includes("jade") && text.includes("green aventurine"))) {
       material = "Natural Green Aventurine";
       color = "Green";
     } else if (titleSlug.includes("smokey quartz") || text.includes("smokey quartz")) {

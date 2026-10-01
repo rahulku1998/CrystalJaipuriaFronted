@@ -33,6 +33,28 @@ export const syncImages = async () => {
     console.log(`Syncing ${products.length} product images to clean static .webp...`);
 
     const PROTECTED_STUDIO_SLUGS = new Set([
+      "red-jade-shree-yantra",
+      "sunstone-shree-yantra",
+      "tiger-eye-shree-yantra",
+      "unakite-shree-yantra",
+      "yellow-jade-shree-yantra",
+      "amethyst-shree-yantra",
+      "blue-sodalite-shree-yantra",
+      "blue-sunstone-shree-yantra",
+      "emerald-shree-yantra-on-lotus",
+      "fluorite-shree-yantra",
+      "howlite-shree-yantra",
+      "labradorite-shree-yantra",
+      "lapis-lazuli-shree-yantra",
+      "rose-quartz-kurma-shree-yantra",
+      "cats-eye-shree-yantra",
+      "gomedh-shree-yantra",
+      "jasper-shree-yantra",
+      "lapis-lazuli-elephant-idols-set-of-2",
+      "sunstone-ganesha",
+      "tiger-eye-ganesha-idol",
+      "emerald-ganesha-idol",
+
       "natural-amethyst-gemstone-shiva-face-idol",
       "gemston-ruby-shree-yantra",
       "green-aventurine-parshvanath-ji-statue",
@@ -81,8 +103,13 @@ export const syncImages = async () => {
           const targetPath = path.join(imagesDir, outName);
           const prodSubPath = path.join(productsDir, outName);
 
+          if (fs.existsSync(targetPath) && fs.statSync(targetPath).size > 1000) {
+            continue;
+          }
+
           try {
-            const imgRes = await fetch(imgUrl);
+            const imgRes = await fetch(imgUrl, { signal: AbortSignal.timeout(5000) });
+            if (!imgRes.ok) continue;
             const buf = Buffer.from(await imgRes.arrayBuffer());
             await sharp(buf)
               .resize({ width: 1200, withoutEnlargement: true })

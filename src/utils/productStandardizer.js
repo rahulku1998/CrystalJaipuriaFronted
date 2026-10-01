@@ -7,6 +7,28 @@ import { STATIC_CATALOG_SLUGS } from "./imageOptimizer.js";
  */
 
 export const STANDARDIZED_SPECS = {
+  "red-jade-shree-yantra": { price: 1100, size: "1.6 L × 1.6 B × 1.9 H in", weight: "88 g" },
+  "sunstone-shree-yantra": { price: 1000, size: "1.4 L × 1.4 B × 1.6 H in", weight: "58 g" },
+  "tiger-eye-shree-yantra": { price: 975, size: "1.6 L × 1.6 B × 1.3 H in", weight: "49 g" },
+  "unakite-shree-yantra": { price: 1085, size: "1.2 L × 1.2 B × 1.5 H in", weight: "47 g" },
+  "yellow-jade-shree-yantra": { price: 725, size: "1.6 L × 1.6 W × 1.5 H in", weight: "58 g" },
+  "amethyst-shree-yantra": { price: 1375, size: "1.6 L × 1.6 B × 1.7 H in", weight: "70 g" },
+  "blue-sodalite-shree-yantra": { price: 1020, size: "1.5 L × 1.5 B × 1.5 H in", weight: "51 g" },
+  "blue-sunstone-shree-yantra": { price: 625, size: "1.3 L × 1.3 B × 1.5 H in", weight: "42 g" },
+  "emerald-shree-yantra-on-lotus": { price: 16275, size: "H 1.7 in; Base Diameter 0.7 in", weight: "174.30 carats (34.86 g)" },
+  "fluorite-shree-yantra": { price: 1560, size: "1.5 L × 1.5 B × 1.7 H in", weight: "78 g" },
+  "howlite-shree-yantra": { price: 2975, size: "1.6 L × 1.6 B × 2.1 H in", weight: "119 g" },
+  "labradorite-shree-yantra": { price: 1675, size: "1.7 L × 1.7 B × 1.4 H in", weight: "72 g" },
+  "lapis-lazuli-shree-yantra": { price: 1725, size: "1.6 L × 1.6 B × 1.7 H in", weight: "86 g" },
+  "rose-quartz-kurma-shree-yantra": { price: 2900, size: "3.1 L × 2.1 W × 2.5 H in", weight: "193 g" },
+  "cats-eye-shree-yantra": { price: 1475, size: "1.2 L × 1.2 B × 1.3 H in", weight: "33 g" },
+  "gomedh-shree-yantra": { price: 2075, size: "1.2 L × 1.2 W × 1.7 H in", weight: "69 g" },
+  "jasper-shree-yantra": { price: 800, size: "1 L × 1 B × 2 H in", weight: "47 g" },
+  "lapis-lazuli-elephant-idols-set-of-2": { price: 5550, size: "2.6 L × 1.1 W × 2 H in", weight: "225 g" },
+  "sunstone-ganesha": { price: 18350, size: "4.75 L × 3 W × 5.25 H in", weight: "1,223 g" },
+  "tiger-eye-ganesha-idol": { price: 7200, size: "2.5 L × 1.1 W × 4 H in", weight: "260 g" },
+  "emerald-ganesha-idol": { price: 64300, size: "1.6 L × 1.1 W × 2.7 H in", weight: "102 g / 509.10 carats" },
+
   "hand-carved-rose-quartz-ganesha-with-sterling-silver-testing": {
     price: 5800,
     weight: "371 g to 2 kg",
@@ -989,6 +1011,127 @@ export const getStandardizedProduct = (product) => {
       standardizedImages = [
         { url: `/images/shiva-in-lepidolite.webp`, public_id: `products/shiva-in-lepidolite` },
         { url: `/images/shiva-in-lepidolite-2.webp`, public_id: `products/shiva-in-lepidolite-2` },
+      ];
+        } else if (slug === "red-jade-shree-yantra") {
+      standardizedImages = [
+        { url: "/images/red-jade-shree-yantra.webp", public_id: "products/red-jade-shree-yantra" },
+        { url: "/images/red-jade-shree-yantra-2.webp", public_id: "products/red-jade-shree-yantra-2" },
+      ];
+    } else if (slug === "sunstone-shree-yantra") {
+      standardizedImages = [
+        { url: "/images/sunstone-shree-yantra.webp", public_id: "products/sunstone-shree-yantra" },
+        { url: "/images/sunstone-shree-yantra-2.webp", public_id: "products/sunstone-shree-yantra-2" },
+      ];
+    } else if (slug === "tiger-eye-shree-yantra") {
+      standardizedImages = [
+        { url: "/images/tiger-eye-shree-yantra.webp", public_id: "products/tiger-eye-shree-yantra" },
+        { url: "/images/tiger-eye-shree-yantra-2.webp", public_id: "products/tiger-eye-shree-yantra-2" },
+      ];
+    } else if (slug === "unakite-shree-yantra") {
+      standardizedImages = [
+        { url: "/images/unakite-shree-yantra.webp", public_id: "products/unakite-shree-yantra" },
+        { url: "/images/unakite-shree-yantra-2.webp", public_id: "products/unakite-shree-yantra-2" },
+      ];
+    } else if (slug === "yellow-jade-shree-yantra") {
+      standardizedImages = [
+        { url: "/images/yellow-jade-shree-yantra.webp", public_id: "products/yellow-jade-shree-yantra" },
+        { url: "/images/yellow-jade-shree-yantra-2.webp", public_id: "products/yellow-jade-shree-yantra-2" },
+      ];
+    } else if (slug === "amethyst-shree-yantra") {
+      standardizedImages = [
+        { url: "/images/amethyst-shree-yantra.webp", public_id: "products/amethyst-shree-yantra" },
+        { url: "/images/amethyst-shree-yantra-2.webp", public_id: "products/amethyst-shree-yantra-2" },
+        { url: "/images/amethyst-shree-yantra-3.webp", public_id: "products/amethyst-shree-yantra-3" },
+      ];
+    } else if (slug === "blue-sodalite-shree-yantra") {
+      standardizedImages = [
+        { url: "/images/blue-sodalite-shree-yantra.webp", public_id: "products/blue-sodalite-shree-yantra" },
+        { url: "/images/blue-sodalite-shree-yantra-2.webp", public_id: "products/blue-sodalite-shree-yantra-2" },
+      ];
+    } else if (slug === "blue-sunstone-shree-yantra") {
+      standardizedImages = [
+        { url: "/images/blue-sunstone-shree-yantra.webp", public_id: "products/blue-sunstone-shree-yantra" },
+        { url: "/images/blue-sunstone-shree-yantra-2.webp", public_id: "products/blue-sunstone-shree-yantra-2" },
+      ];
+    } else if (slug === "emerald-shree-yantra-on-lotus") {
+      standardizedImages = [
+        { url: "/images/emerald-shree-yantra-on-lotus.webp", public_id: "products/emerald-shree-yantra-on-lotus" },
+        { url: "/images/emerald-shree-yantra-on-lotus-2.webp", public_id: "products/emerald-shree-yantra-on-lotus-2" },
+        { url: "/images/emerald-shree-yantra-on-lotus-3.webp", public_id: "products/emerald-shree-yantra-on-lotus-3" },
+      ];
+    } else if (slug === "fluorite-shree-yantra") {
+      standardizedImages = [
+        { url: "/images/fluorite-shree-yantra.webp", public_id: "products/fluorite-shree-yantra" },
+        { url: "/images/fluorite-shree-yantra-2.webp", public_id: "products/fluorite-shree-yantra-2" },
+        { url: "/images/fluorite-shree-yantra-3.webp", public_id: "products/fluorite-shree-yantra-3" },
+      ];
+    } else if (slug === "howlite-shree-yantra") {
+      standardizedImages = [
+        { url: "/images/howlite-shree-yantra.webp", public_id: "products/howlite-shree-yantra" },
+        { url: "/images/howlite-shree-yantra-2.webp", public_id: "products/howlite-shree-yantra-2" },
+        { url: "/images/howlite-shree-yantra-3.webp", public_id: "products/howlite-shree-yantra-3" },
+      ];
+    } else if (slug === "labradorite-shree-yantra") {
+      standardizedImages = [
+        { url: "/images/labradorite-shree-yantra.webp", public_id: "products/labradorite-shree-yantra" },
+        { url: "/images/labradorite-shree-yantra-2.webp", public_id: "products/labradorite-shree-yantra-2" },
+        { url: "/images/labradorite-shree-yantra-3.webp", public_id: "products/labradorite-shree-yantra-3" },
+      ];
+    } else if (slug === "lapis-lazuli-shree-yantra") {
+      standardizedImages = [
+        { url: "/images/lapis-lazuli-shree-yantra.webp", public_id: "products/lapis-lazuli-shree-yantra" },
+        { url: "/images/lapis-lazuli-shree-yantra-2.webp", public_id: "products/lapis-lazuli-shree-yantra-2" },
+        { url: "/images/lapis-lazuli-shree-yantra-3.webp", public_id: "products/lapis-lazuli-shree-yantra-3" },
+      ];
+    } else if (slug === "rose-quartz-kurma-shree-yantra") {
+      standardizedImages = [
+        { url: "/images/rose-quartz-kurma-shree-yantra.webp", public_id: "products/rose-quartz-kurma-shree-yantra" },
+        { url: "/images/rose-quartz-kurma-shree-yantra-2.webp", public_id: "products/rose-quartz-kurma-shree-yantra-2" },
+        { url: "/images/rose-quartz-kurma-shree-yantra-3.webp", public_id: "products/rose-quartz-kurma-shree-yantra-3" },
+      ];
+    } else if (slug === "cats-eye-shree-yantra") {
+      standardizedImages = [
+        { url: "/images/cats-eye-shree-yantra.webp", public_id: "products/cats-eye-shree-yantra" },
+        { url: "/images/cats-eye-shree-yantra-2.webp", public_id: "products/cats-eye-shree-yantra-2" },
+        { url: "/images/cats-eye-shree-yantra-3.webp", public_id: "products/cats-eye-shree-yantra-3" },
+      ];
+    } else if (slug === "gomedh-shree-yantra") {
+      standardizedImages = [
+        { url: "/images/gomedh-shree-yantra.webp", public_id: "products/gomedh-shree-yantra" },
+        { url: "/images/gomedh-shree-yantra-2.webp", public_id: "products/gomedh-shree-yantra-2" },
+        { url: "/images/gomedh-shree-yantra-3.webp", public_id: "products/gomedh-shree-yantra-3" },
+      ];
+    } else if (slug === "jasper-shree-yantra") {
+      standardizedImages = [
+        { url: "/images/jasper-shree-yantra.webp", public_id: "products/jasper-shree-yantra" },
+        { url: "/images/jasper-shree-yantra-2.webp", public_id: "products/jasper-shree-yantra-2" },
+      ];
+    } else if (slug === "lapis-lazuli-elephant-idols-set-of-2") {
+      standardizedImages = [
+        { url: "/images/lapis-lazuli-elephant-idols-set-of-2.webp", public_id: "products/lapis-lazuli-elephant-idols-set-of-2" },
+        { url: "/images/lapis-lazuli-elephant-idols-set-of-2-2.webp", public_id: "products/lapis-lazuli-elephant-idols-set-of-2-2" },
+        { url: "/images/lapis-lazuli-elephant-idols-set-of-2-3.webp", public_id: "products/lapis-lazuli-elephant-idols-set-of-2-3" },
+      ];
+    } else if (slug === "sunstone-ganesha") {
+      standardizedImages = [
+        { url: "/images/sunstone-ganesha.webp", public_id: "products/sunstone-ganesha" },
+        { url: "/images/sunstone-ganesha-2.webp", public_id: "products/sunstone-ganesha-2" },
+        { url: "/images/sunstone-ganesha-3.webp", public_id: "products/sunstone-ganesha-3" },
+        { url: "/images/sunstone-ganesha-4.webp", public_id: "products/sunstone-ganesha-4" },
+      ];
+    } else if (slug === "tiger-eye-ganesha-idol") {
+      standardizedImages = [
+        { url: "/images/tiger-eye-ganesha-idol.webp", public_id: "products/tiger-eye-ganesha-idol" },
+        { url: "/images/tiger-eye-ganesha-idol-2.webp", public_id: "products/tiger-eye-ganesha-idol-2" },
+        { url: "/images/tiger-eye-ganesha-idol-3.webp", public_id: "products/tiger-eye-ganesha-idol-3" },
+        { url: "/images/tiger-eye-ganesha-idol-4.webp", public_id: "products/tiger-eye-ganesha-idol-4" },
+      ];
+    } else if (slug === "emerald-ganesha-idol") {
+      standardizedImages = [
+        { url: "/images/emerald-ganesha-idol.webp", public_id: "products/emerald-ganesha-idol" },
+        { url: "/images/emerald-ganesha-idol-2.webp", public_id: "products/emerald-ganesha-idol-2" },
+        { url: "/images/emerald-ganesha-idol-3.webp", public_id: "products/emerald-ganesha-idol-3" },
+        { url: "/images/emerald-ganesha-idol-4.webp", public_id: "products/emerald-ganesha-idol-4" },
       ];
     } else if (MULTI_IMAGE_SLUGS.has(slug)) {
       standardizedImages = [

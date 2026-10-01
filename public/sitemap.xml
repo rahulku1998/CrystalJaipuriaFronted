@@ -79,7 +79,7 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- Dynamic Product Pages (59 Live Products) -->
+  <!-- Dynamic Product Pages (80 Live Products) -->
   <url>
     <loc>https://www.crystaljaipuria.com/product/shiva-in-lepidolite</loc>
     <image:image>
@@ -839,6 +839,343 @@
     <image:image>
       <image:loc>https://res.cloudinary.com/dd6akzezt/image/upload/v1784004045/products/u6w7jxjcyky3swnqhgur.webp</image:loc>
       <image:title>Amethyst Gemston Angel - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/red-jade-shree-yantra</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/red-jade-shree-yantra.webp</image:loc>
+      <image:title>Red Jade Shree Yantra | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/red-jade-shree-yantra-2.webp</image:loc>
+      <image:title>Red Jade Shree Yantra - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/sunstone-shree-yantra</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/sunstone-shree-yantra.webp</image:loc>
+      <image:title>Sunstone Shree Yantra | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/sunstone-shree-yantra-2.webp</image:loc>
+      <image:title>Sunstone Shree Yantra - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/tiger-eye-shree-yantra</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/tiger-eye-shree-yantra.webp</image:loc>
+      <image:title>Tiger Eye Shree Yantra | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/tiger-eye-shree-yantra-2.webp</image:loc>
+      <image:title>Tiger Eye Shree Yantra - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/unakite-shree-yantra</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/unakite-shree-yantra.webp</image:loc>
+      <image:title>Unakite Shree Yantra | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/unakite-shree-yantra-2.webp</image:loc>
+      <image:title>Unakite Shree Yantra - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/yellow-jade-shree-yantra</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/yellow-jade-shree-yantra.webp</image:loc>
+      <image:title>Yellow Jade Shree Yantra | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/yellow-jade-shree-yantra-2.webp</image:loc>
+      <image:title>Yellow Jade Shree Yantra - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/amethyst-shree-yantra</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/amethyst-shree-yantra.webp</image:loc>
+      <image:title>Amethyst Shree Yantra | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/amethyst-shree-yantra-2.webp</image:loc>
+      <image:title>Amethyst Shree Yantra - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/amethyst-shree-yantra-3.webp</image:loc>
+      <image:title>Amethyst Shree Yantra - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/blue-sodalite-shree-yantra</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/blue-sodalite-shree-yantra.webp</image:loc>
+      <image:title>Blue Sodalite Shree Yantra | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/blue-sodalite-shree-yantra-2.webp</image:loc>
+      <image:title>Blue Sodalite Shree Yantra - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/blue-sunstone-shree-yantra</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/blue-sunstone-shree-yantra.webp</image:loc>
+      <image:title>Blue Sunstone Shree Yantra | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/blue-sunstone-shree-yantra-2.webp</image:loc>
+      <image:title>Blue Sunstone Shree Yantra - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/emerald-shree-yantra-on-lotus</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/emerald-shree-yantra-on-lotus.webp</image:loc>
+      <image:title>Emerald Shree Yantra on Lotus | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/emerald-shree-yantra-on-lotus-2.webp</image:loc>
+      <image:title>Emerald Shree Yantra on Lotus - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/emerald-shree-yantra-on-lotus-3.webp</image:loc>
+      <image:title>Emerald Shree Yantra on Lotus - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/fluorite-shree-yantra</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/fluorite-shree-yantra.webp</image:loc>
+      <image:title>Fluorite Shree Yantra | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/fluorite-shree-yantra-2.webp</image:loc>
+      <image:title>Fluorite Shree Yantra - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/fluorite-shree-yantra-3.webp</image:loc>
+      <image:title>Fluorite Shree Yantra - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/howlite-shree-yantra</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/howlite-shree-yantra.webp</image:loc>
+      <image:title>Howlite Shree Yantra | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/howlite-shree-yantra-2.webp</image:loc>
+      <image:title>Howlite Shree Yantra - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/howlite-shree-yantra-3.webp</image:loc>
+      <image:title>Howlite Shree Yantra - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/labradorite-shree-yantra</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/labradorite-shree-yantra.webp</image:loc>
+      <image:title>Labradorite Shree Yantra | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/labradorite-shree-yantra-2.webp</image:loc>
+      <image:title>Labradorite Shree Yantra - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/labradorite-shree-yantra-3.webp</image:loc>
+      <image:title>Labradorite Shree Yantra - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/lapis-lazuli-shree-yantra</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/lapis-lazuli-shree-yantra.webp</image:loc>
+      <image:title>Lapis Lazuli Shree Yantra | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/lapis-lazuli-shree-yantra-2.webp</image:loc>
+      <image:title>Lapis Lazuli Shree Yantra - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/lapis-lazuli-shree-yantra-3.webp</image:loc>
+      <image:title>Lapis Lazuli Shree Yantra - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/rose-quartz-kurma-shree-yantra</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/rose-quartz-kurma-shree-yantra.webp</image:loc>
+      <image:title>Rose Quartz Kurma Shree Yantra | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/rose-quartz-kurma-shree-yantra-2.webp</image:loc>
+      <image:title>Rose Quartz Kurma Shree Yantra - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/rose-quartz-kurma-shree-yantra-3.webp</image:loc>
+      <image:title>Rose Quartz Kurma Shree Yantra - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/cats-eye-shree-yantra</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/cats-eye-shree-yantra.webp</image:loc>
+      <image:title>Cat's Eye Shree Yantra | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/cats-eye-shree-yantra-2.webp</image:loc>
+      <image:title>Cat's Eye Shree Yantra - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/cats-eye-shree-yantra-3.webp</image:loc>
+      <image:title>Cat's Eye Shree Yantra - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/gomedh-shree-yantra</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/gomedh-shree-yantra.webp</image:loc>
+      <image:title>Gomedh Shree Yantra | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/gomedh-shree-yantra-2.webp</image:loc>
+      <image:title>Gomedh Shree Yantra - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/gomedh-shree-yantra-3.webp</image:loc>
+      <image:title>Gomedh Shree Yantra - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/jasper-shree-yantra</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/jasper-shree-yantra.webp</image:loc>
+      <image:title>Jasper Shree Yantra | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/jasper-shree-yantra-2.webp</image:loc>
+      <image:title>Jasper Shree Yantra - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/lapis-lazuli-elephant-idols-set-of-2</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/lapis-lazuli-elephant-idols-set-of-2.webp</image:loc>
+      <image:title>Lapis Lazuli Elephant Idols – Set of 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/lapis-lazuli-elephant-idols-set-of-2-2.webp</image:loc>
+      <image:title>Lapis Lazuli Elephant Idols – Set of 2 - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/lapis-lazuli-elephant-idols-set-of-2-3.webp</image:loc>
+      <image:title>Lapis Lazuli Elephant Idols – Set of 2 - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/sunstone-ganesha</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/sunstone-ganesha.webp</image:loc>
+      <image:title>Sunstone Ganesha | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/sunstone-ganesha-2.webp</image:loc>
+      <image:title>Sunstone Ganesha - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/sunstone-ganesha-3.webp</image:loc>
+      <image:title>Sunstone Ganesha - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/sunstone-ganesha-4.webp</image:loc>
+      <image:title>Sunstone Ganesha - View 4 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/tiger-eye-ganesha-idol</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/tiger-eye-ganesha-idol.webp</image:loc>
+      <image:title>Tiger Eye Ganesha Idol | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/tiger-eye-ganesha-idol-2.webp</image:loc>
+      <image:title>Tiger Eye Ganesha Idol - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/tiger-eye-ganesha-idol-3.webp</image:loc>
+      <image:title>Tiger Eye Ganesha Idol - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/tiger-eye-ganesha-idol-4.webp</image:loc>
+      <image:title>Tiger Eye Ganesha Idol - View 4 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/emerald-ganesha-idol</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/emerald-ganesha-idol.webp</image:loc>
+      <image:title>Emerald Ganesha Idol | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/emerald-ganesha-idol-2.webp</image:loc>
+      <image:title>Emerald Ganesha Idol - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/emerald-ganesha-idol-3.webp</image:loc>
+      <image:title>Emerald Ganesha Idol - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/emerald-ganesha-idol-4.webp</image:loc>
+      <image:title>Emerald Ganesha Idol - View 4 | Crystal Jaipuria</image:title>
     </image:image>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

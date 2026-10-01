@@ -30,7 +30,7 @@ const fetchData = async (endpoint) => {
 };
 
 const escapeHtml = (str = "") =>
-  str
+  String(str ?? "")
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
@@ -189,10 +189,13 @@ export const runPrerender = async () => {
     ? categoriesData.categories
     : (Array.isArray(categoriesData) ? categoriesData : []);
 
-  if (products.length === 0) {
-    console.log("⚡ [Prerender] Using fallback products catalog (53 items)...");
-    products = FALLBACK_PRODUCTS;
-  }
+  const existingSlugs = new Set(products.map((p) => p.slug || p._id));
+  FALLBACK_PRODUCTS.forEach((fbProd) => {
+    if (!existingSlugs.has(fbProd.slug) && !existingSlugs.has(fbProd._id)) {
+      products.push(fbProd);
+      existingSlugs.add(fbProd.slug);
+    }
+  });
   if (categories.length === 0) {
     console.log("⚡ [Prerender] Using fallback categories catalog (5 categories)...");
     categories = FALLBACK_CATEGORIES;
