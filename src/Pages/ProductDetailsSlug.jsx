@@ -638,10 +638,10 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                 )}
                 <p>
                   <span className="font-semibold">Availability :</span>{" "}
-                  {product.stock > 0 ? (
-                    <span className="text-green-600 font-semibold">In Stock</span>
-                  ) : (
+                  {product.stock === 0 || product.stock === "0" ? (
                     <span className="text-red-600 font-semibold">Out Of Stock</span>
+                  ) : (
+                    <span className="text-green-600 font-semibold">In Stock</span>
                   )}
                 </p>
               </div>

@@ -1161,5 +1161,6 @@ export const getStandardizedProduct = (product) => {
     description: cleanDescription,
     additionalInfo: formattedAdditionalInfo,
     images: standardizedImages,
+    stock: (product.stock === 0 || product.stock === "0") ? 0 : (product.stock || 10),
   };
 };
