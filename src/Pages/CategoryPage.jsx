@@ -216,21 +216,42 @@ const CategoryPage = () => {
     const cat = allCats.find((c) => c.slug === cleanSlug) || staticCat;
     if (!cat) return null;
 
-    const subs = (categoryMemoryCache.subCategories || []).filter(
-      (s) =>
-        s.categoryId?._id === cat._id ||
-        s.categoryId === cat._id ||
-        (s.categoryId?.slug && s.categoryId.slug === cat.slug) ||
-        (cleanSlug === "crystal-statues" && (
-          s.categoryId?.slug === "angel" ||
-          s.categoryId?.slug === "diya" ||
-          s.name?.toLowerCase().includes("angel") ||
-          s.name?.toLowerCase().includes("diya") ||
-          s._id === "6a55bc912dcf49aacd71ef6c" ||
-          s._id === "6a55bcad2dcf49aacd71ef6e" ||
-          s._id === "sub-angel-gemstone" ||
-          s._id === "sub-diya-gemstone"
-        ))
+    const allSubs = (categoryMemoryCache.subCategories && categoryMemoryCache.subCategories.length > 0)
+      ? categoryMemoryCache.subCategories
+      : FALLBACK_SUBCATEGORIES;
+
+    const subs = allSubs.filter(
+      (s) => {
+        const belongs =
+          s.categoryId?._id === cat._id ||
+          s.categoryId === cat._id ||
+          (s.categoryId?.slug && s.categoryId.slug === cat.slug) ||
+          (cleanSlug === "crystal-statues" && (
+            s.categoryId?.slug === "angel" ||
+            s.categoryId?.slug === "diya" ||
+            s.name?.toLowerCase().includes("angel") ||
+            s.name?.toLowerCase().includes("diya") ||
+            s._id === "6a55bc912dcf49aacd71ef6c" ||
+            s._id === "6a55bcad2dcf49aacd71ef6e" ||
+            s._id === "sub-angel-gemstone" ||
+            s._id === "sub-diya-gemstone"
+          ));
+        if (!belongs) return false;
+
+        const sName = (s.name || "").toLowerCase().trim();
+        const sSlug = (s.slug || "").toLowerCase().trim();
+        const catName = (cat.name || "").toLowerCase().trim();
+
+        // Exclude accidental 'God' subcategory under Shree Yantra
+        if (cleanSlug === "shree-yantra" && (sName === "god" || sSlug === "god")) return false;
+
+        // Exclude redundant subcategory with the exact same name as the category
+        if ((sName === catName || sSlug === cat.slug) && (cleanSlug === "shree-yantra" || cleanSlug === "shivling")) {
+          return false;
+        }
+
+        return true;
+      }
     );
 
     const curName = (cat.name || "").toLowerCase();
@@ -313,9 +334,21 @@ const CategoryPage = () => {
       return;
     }
 
-    const filtered = allCategoryProducts.filter(
-      (p) => (p.subCategoryId?._id || p.subCategoryId) === subCategoryId
-    );
+    const targetSub = subCategories.find((s) => s._id === subCategoryId);
+    const targetSlug = (targetSub?.slug || "").toLowerCase();
+    const targetName = (targetSub?.name || "").toLowerCase();
+
+    const filtered = allCategoryProducts.filter((p) => {
+      const pSubId = p.subCategoryId?._id || p.subCategoryId;
+      const pSubSlug = (p.subCategoryId?.slug || "").toLowerCase();
+      const pSubName = (p.subCategoryName || p.subCategoryId?.name || "").toLowerCase();
+
+      return (
+        pSubId === subCategoryId ||
+        (targetSlug && pSubSlug && (pSubSlug === targetSlug || pSubSlug.includes(targetSlug) || targetSlug.includes(pSubSlug))) ||
+        (targetName && pSubName && (pSubName === targetName || pSubName.includes(targetName) || targetName.includes(pSubName)))
+      );
+    });
 
     if (filtered.length > 0) {
       setProducts(filtered);
@@ -331,10 +364,11 @@ const CategoryPage = () => {
           const matched = all.filter(
             (p) => (p.subCategoryId?._id || p.subCategoryId) === subCategoryId
           );
-          setProducts(matched);
+          setProducts(matched.length > 0 ? matched : allCategoryProducts);
         }
       } catch (err) {
         console.log(err);
+        setProducts(allCategoryProducts);
       }
     }
   };
@@ -378,8 +412,14 @@ const CategoryPage = () => {
             }
           });
         }
-        if (!subData) {
+        if (!subData || subData.length === 0) {
           subData = FALLBACK_SUBCATEGORIES;
+        } else {
+          FALLBACK_SUBCATEGORIES.forEach((fb) => {
+            if (!subData.some((s) => s._id === fb._id || (s.slug && s.slug === fb.slug))) {
+              subData.push(fb);
+            }
+          });
         }
 
         categoryMemoryCache = {
@@ -416,8 +456,8 @@ const CategoryPage = () => {
 
       setCategory(currentCat);
 
-      const filteredSubs = subData.filter(
-        (s) =>
+      const filteredSubs = subData.filter((s) => {
+        const belongs =
           s.categoryId?._id === currentCat._id ||
           s.categoryId === currentCat._id ||
           (s.categoryId?.slug && s.categoryId.slug === currentCat.slug) ||
@@ -430,8 +470,23 @@ const CategoryPage = () => {
             s._id === "6a55bcad2dcf49aacd71ef6e" ||
             s._id === "sub-angel-gemstone" ||
             s._id === "sub-diya-gemstone"
-          ))
-      );
+          ));
+        if (!belongs) return false;
+
+        const sName = (s.name || "").toLowerCase().trim();
+        const sSlug = (s.slug || "").toLowerCase().trim();
+        const catName = (currentCat.name || "").toLowerCase().trim();
+
+        // Never show accidental 'God' subcategory under Shree Yantra
+        if (cleanSlug === "shree-yantra" && (sName === "god" || sSlug === "god")) return false;
+
+        // Never show redundant self-named subcategory if better subcategories exist
+        if ((sName === catName || sSlug === currentCat.slug) && (cleanSlug === "shree-yantra" || cleanSlug === "shivling")) {
+          return false;
+        }
+
+        return true;
+      });
       setSubCategories(filteredSubs);
 
       const curName = (currentCat.name || "").toLowerCase();
@@ -610,7 +665,16 @@ const CategoryPage = () => {
             {subCategories.map((sub) => {
               const subCount = allCategoryProducts.filter((p) => {
                 const pSubId = p.subCategoryId?._id || p.subCategoryId;
-                return pSubId === sub._id;
+                const pSubSlug = (p.subCategoryId?.slug || "").toLowerCase();
+                const pSubName = (p.subCategoryName || p.subCategoryId?.name || "").toLowerCase();
+                const targetSlug = (sub.slug || "").toLowerCase();
+                const targetName = (sub.name || "").toLowerCase();
+
+                return (
+                  pSubId === sub._id ||
+                  (targetSlug && pSubSlug && (pSubSlug === targetSlug || pSubSlug.includes(targetSlug) || targetSlug.includes(pSubSlug))) ||
+                  (targetName && pSubName && (pSubName === targetName || pSubName.includes(targetName) || targetName.includes(pSubName)))
+                );
               }).length;
               return (
                 <button
@@ -670,7 +734,16 @@ const CategoryPage = () => {
                 {subCategories.map((sub) => {
                   const productCount = allCategoryProducts.filter((product) => {
                     const pSubId = product.subCategoryId?._id || product.subCategoryId;
-                    return pSubId === sub._id;
+                    const pSubSlug = (product.subCategoryId?.slug || "").toLowerCase();
+                    const pSubName = (product.subCategoryName || product.subCategoryId?.name || "").toLowerCase();
+                    const targetSlug = (sub.slug || "").toLowerCase();
+                    const targetName = (sub.name || "").toLowerCase();
+
+                    return (
+                      pSubId === sub._id ||
+                      (targetSlug && pSubSlug && (pSubSlug === targetSlug || pSubSlug.includes(targetSlug) || targetSlug.includes(pSubSlug))) ||
+                      (targetName && pSubName && (pSubName === targetName || pSubName.includes(targetName) || targetName.includes(pSubName)))
+                    );
                   }).length;
 
                   return (

@@ -5,7 +5,7 @@ import { STANDARDIZED_SPECS, getStandardizedProduct } from "../src/utils/product
 import { CATEGORY_CONTENT } from "../src/utils/categoryContent.js";
 import { sanitizeNaturalStutter } from "../src/utils/aiGenerator.js";
 import { getVedicVastuForProduct } from "../src/utils/productMetadata.js";
-import { FALLBACK_PRODUCTS, FALLBACK_CATEGORIES } from "../src/data/fallbackData.js";
+import { FALLBACK_PRODUCTS, FALLBACK_CATEGORIES, FALLBACK_SUBCATEGORIES } from "../src/data/fallbackData.js";
 import {
   getProductMetaTitle,
   getProductMetaDescription,
@@ -669,12 +669,50 @@ export const runPrerender = async () => {
       `
       : "";
 
+    const catSubs = FALLBACK_SUBCATEGORIES.filter((s) => {
+      const belongs =
+        s.categoryId?._id === cat._id ||
+        s.categoryId === cat._id ||
+        (s.categoryId?.slug && s.categoryId.slug === cat.slug);
+      if (!belongs) return false;
+      const sName = (s.name || "").toLowerCase().trim();
+      const sSlug = (s.slug || "").toLowerCase().trim();
+      const cName = (cat.name || "").toLowerCase().trim();
+      if (cat.slug === "shree-yantra" && (sName === "god" || sSlug === "god")) return false;
+      if (sName === cName || sSlug === cat.slug) return false;
+      return true;
+    });
+
+    const subPillsHtml = catSubs.length > 0
+      ? `
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;">
+          <span style="background:#78350f;color:#ffffff;font-size:13px;font-weight:600;padding:6px 14px;border-radius:9999px;">All (${catProducts.length})</span>
+          ${catSubs.map((sub) => {
+            const count = catProducts.filter((p) => {
+              const pSubId = p.subCategoryId?._id || p.subCategoryId;
+              const pSubSlug = (p.subCategoryId?.slug || "").toLowerCase();
+              const pSubName = (p.subCategoryName || p.subCategoryId?.name || "").toLowerCase();
+              const targetSlug = (sub.slug || "").toLowerCase();
+              const targetName = (sub.name || "").toLowerCase();
+              return (
+                pSubId === sub._id ||
+                (targetSlug && pSubSlug && (pSubSlug === targetSlug || pSubSlug.includes(targetSlug) || targetSlug.includes(pSubSlug))) ||
+                (targetName && pSubName && (pSubName === targetName || pSubName.includes(targetName) || targetName.includes(pSubName)))
+              );
+            }).length;
+            return `<a href="${BASE_URL}/subcategory/${sub._id}" style="text-decoration:none;background:#f3f4f6;color:#374151;font-size:13px;font-weight:500;padding:6px 14px;border-radius:9999px;border:1px solid #e5e7eb;display:inline-flex;align-items:center;gap:6px;"><span>${escapeHtml(sub.name)}</span><span style="background:#e5e7eb;color:#4b5563;font-size:11px;padding:2px 6px;border-radius:9999px;">${count}</span></a>`;
+          }).join("\n")}
+        </div>
+      `
+      : "";
+
     const categoryBodyPreview = `
       <div style="max-width:1200px;margin:0 auto;padding:24px 16px;font-family:system-ui,-apple-system,sans-serif;">
         <div style="margin-bottom:24px;">
           <h1 style="font-size:28px;font-weight:800;color:#1e293b;">All <span style="color:#92400e;">${escapeHtml(catName)}</span></h1>
           <p style="font-size:14px;color:#64748b;margin-top:4px;">${catProducts.length} Products</p>
         </div>
+        ${subPillsHtml}
         <div style="display:grid;grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));gap:16px;">
           ${cardsHtml}
         </div>

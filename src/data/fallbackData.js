@@ -131,9 +131,9 @@ export const FALLBACK_SUBCATEGORIES = [
     }
   },
   {
-    "_id": "sub-yantra-ruby",
-    "name": "Ruby Shree Yantra",
-    "slug": "ruby-shree-yantra",
+    "_id": "6a55bcc32dcf49aacd71ef6f",
+    "name": "Sphatik & Crystal Yantra",
+    "slug": "sphatik-crystal-shree-yantra",
     "categoryId": {
       "_id": "6a55bc362dcf49aacd71ef66",
       "name": "Shree Yantra",
@@ -141,9 +141,29 @@ export const FALLBACK_SUBCATEGORIES = [
     }
   },
   {
-    "_id": "sub-yantra-other",
-    "name": "Sacred Gemstone Yantra",
-    "slug": "gemstone-shree-yantra",
+    "_id": "6abffb9d3618032686f0780b",
+    "name": "Jade Shree Yantra",
+    "slug": "jade-shree-yantra",
+    "categoryId": {
+      "_id": "6a55bc362dcf49aacd71ef66",
+      "name": "Shree Yantra",
+      "slug": "shree-yantra"
+    }
+  },
+  {
+    "_id": "6abffba53618032686f0780c",
+    "name": "Precious Gemstone Yantra",
+    "slug": "precious-gemstone-yantra",
+    "categoryId": {
+      "_id": "6a55bc362dcf49aacd71ef66",
+      "name": "Shree Yantra",
+      "slug": "shree-yantra"
+    }
+  },
+  {
+    "_id": "6abffba53618032686f0780d",
+    "name": "Natural Healing Stone Yantra",
+    "slug": "natural-healing-stone-yantra",
     "categoryId": {
       "_id": "6a55bc362dcf49aacd71ef66",
       "name": "Shree Yantra",
@@ -849,11 +869,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shree Yantra",
     "subCategoryId": {
-      "_id": "sub-yantra-other",
-      "name": "Sacred Gemstone Yantra",
-      "slug": "gemstone-shree-yantra"
+      "_id": "6a55bcc32dcf49aacd71ef6f",
+      "name": "Sphatik & Crystal Yantra",
+      "slug": "sphatik-crystal-shree-yantra"
     },
-    "subCategoryName": "Sacred Gemstone Yantra",
+    "subCategoryName": "Sphatik & Crystal Yantra",
     "size": "1 inch to 6 inch",
     "weight": "50 gram to 2 kg",
     "stock": 10,
@@ -1047,11 +1067,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shree Yantra",
     "subCategoryId": {
-      "_id": "sub-yantra-other",
-      "name": "Sacred Gemstone Yantra",
-      "slug": "gemstone-shree-yantra"
+      "_id": "6abffb9d3618032686f0780b",
+      "name": "Jade Shree Yantra",
+      "slug": "jade-shree-yantra"
     },
-    "subCategoryName": "Sacred Gemstone Yantra",
+    "subCategoryName": "Jade Shree Yantra",
     "size": "1 inch to 6 inch",
     "weight": "50 gram to 5 kg",
     "stock": 10,
@@ -3167,11 +3187,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shree Yantra",
     "subCategoryId": {
-      "_id": "sub-yantra-ruby",
-      "name": "Ruby Shree Yantra",
-      "slug": "ruby-shree-yantra"
+      "_id": "6abffba53618032686f0780c",
+      "name": "Precious Gemstone Yantra",
+      "slug": "precious-gemstone-yantra"
     },
-    "subCategoryName": "Ruby Shree Yantra",
+    "subCategoryName": "Precious Gemstone Yantra",
     "size": "1 inch to 6 inch",
     "weight": "100 carat to 1000 carat",
     "stock": 10,
@@ -3761,11 +3781,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shree Yantra",
     "subCategoryId": {
-      "_id": "sub-yantra-other",
-      "name": "Sacred Gemstone Yantra",
-      "slug": "gemstone-shree-yantra"
+      "_id": "6a55bcc32dcf49aacd71ef6f",
+      "name": "Sphatik & Crystal Yantra",
+      "slug": "sphatik-crystal-shree-yantra"
     },
-    "subCategoryName": "Sacred Gemstone Yantra",
+    "subCategoryName": "Sphatik & Crystal Yantra",
     "size": "1 inch to 6 inch",
     "weight": "50 gram to 1 kg",
     "stock": 10,
@@ -4084,11 +4104,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shree Yantra",
     "subCategoryId": {
-      "_id": "sub-yantra-gemstone",
-      "name": "Sacred Gemstone Yantra",
-      "slug": "gemstone-shree-yantra"
+      "_id": "6abffb9d3618032686f0780b",
+      "name": "Jade Shree Yantra",
+      "slug": "jade-shree-yantra"
     },
-    "subCategoryName": "Sacred Gemstone Yantra",
+    "subCategoryName": "Jade Shree Yantra",
     "size": "1.6 L × 1.6 B × 1.9 H in",
     "weight": "88 g",
     "stock": "in_stock",
@@ -4141,11 +4161,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shree Yantra",
     "subCategoryId": {
-      "_id": "sub-yantra-gemstone",
-      "name": "Sacred Gemstone Yantra",
-      "slug": "gemstone-shree-yantra"
+      "_id": "6abffba53618032686f0780d",
+      "name": "Natural Healing Stone Yantra",
+      "slug": "natural-healing-stone-yantra"
     },
-    "subCategoryName": "Sacred Gemstone Yantra",
+    "subCategoryName": "Natural Healing Stone Yantra",
     "size": "1.4 L × 1.4 B × 1.6 H in",
     "weight": "58 g",
     "stock": "in_stock",
@@ -4198,11 +4218,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shree Yantra",
     "subCategoryId": {
-      "_id": "sub-yantra-gemstone",
-      "name": "Sacred Gemstone Yantra",
-      "slug": "gemstone-shree-yantra"
+      "_id": "6abffba53618032686f0780d",
+      "name": "Natural Healing Stone Yantra",
+      "slug": "natural-healing-stone-yantra"
     },
-    "subCategoryName": "Sacred Gemstone Yantra",
+    "subCategoryName": "Natural Healing Stone Yantra",
     "size": "1.6 L × 1.6 B × 1.3 H in",
     "weight": "49 g",
     "stock": "in_stock",
@@ -4255,11 +4275,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shree Yantra",
     "subCategoryId": {
-      "_id": "sub-yantra-gemstone",
-      "name": "Sacred Gemstone Yantra",
-      "slug": "gemstone-shree-yantra"
+      "_id": "6abffb9d3618032686f0780b",
+      "name": "Jade Shree Yantra",
+      "slug": "jade-shree-yantra"
     },
-    "subCategoryName": "Sacred Gemstone Yantra",
+    "subCategoryName": "Jade Shree Yantra",
     "size": "1.2 L × 1.2 B × 1.5 H in",
     "weight": "47 g",
     "stock": "in_stock",
@@ -4312,11 +4332,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shree Yantra",
     "subCategoryId": {
-      "_id": "sub-yantra-gemstone",
-      "name": "Sacred Gemstone Yantra",
-      "slug": "gemstone-shree-yantra"
+      "_id": "6abffb9d3618032686f0780b",
+      "name": "Jade Shree Yantra",
+      "slug": "jade-shree-yantra"
     },
-    "subCategoryName": "Sacred Gemstone Yantra",
+    "subCategoryName": "Jade Shree Yantra",
     "size": "1.6 L × 1.6 W × 1.5 H in",
     "weight": "58 g",
     "stock": "in_stock",
@@ -4370,11 +4390,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shree Yantra",
     "subCategoryId": {
-      "_id": "sub-yantra-gemstone",
-      "name": "Sacred Gemstone Yantra",
-      "slug": "gemstone-shree-yantra"
+      "_id": "6a55bcc32dcf49aacd71ef6f",
+      "name": "Sphatik & Crystal Yantra",
+      "slug": "sphatik-crystal-shree-yantra"
     },
-    "subCategoryName": "Sacred Gemstone Yantra",
+    "subCategoryName": "Sphatik & Crystal Yantra",
     "size": "1.6 L × 1.6 B × 1.7 H in",
     "weight": "70 g",
     "stock": "in_stock",
@@ -4427,11 +4447,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shree Yantra",
     "subCategoryId": {
-      "_id": "sub-yantra-gemstone",
-      "name": "Sacred Gemstone Yantra",
-      "slug": "gemstone-shree-yantra"
+      "_id": "6abffba53618032686f0780d",
+      "name": "Natural Healing Stone Yantra",
+      "slug": "natural-healing-stone-yantra"
     },
-    "subCategoryName": "Sacred Gemstone Yantra",
+    "subCategoryName": "Natural Healing Stone Yantra",
     "size": "1.5 L × 1.5 B × 1.5 H in",
     "weight": "51 g",
     "stock": "in_stock",
@@ -4484,11 +4504,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shree Yantra",
     "subCategoryId": {
-      "_id": "sub-yantra-gemstone",
-      "name": "Sacred Gemstone Yantra",
-      "slug": "gemstone-shree-yantra"
+      "_id": "6abffba53618032686f0780d",
+      "name": "Natural Healing Stone Yantra",
+      "slug": "natural-healing-stone-yantra"
     },
-    "subCategoryName": "Sacred Gemstone Yantra",
+    "subCategoryName": "Natural Healing Stone Yantra",
     "size": "1.3 L × 1.3 B × 1.5 H in",
     "weight": "42 g",
     "stock": "in_stock",
@@ -4542,11 +4562,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shree Yantra",
     "subCategoryId": {
-      "_id": "sub-yantra-gemstone",
-      "name": "Sacred Gemstone Yantra",
-      "slug": "gemstone-shree-yantra"
+      "_id": "6abffba53618032686f0780c",
+      "name": "Precious Gemstone Yantra",
+      "slug": "precious-gemstone-yantra"
     },
-    "subCategoryName": "Sacred Gemstone Yantra",
+    "subCategoryName": "Precious Gemstone Yantra",
     "size": "H 1.7 in; Base Diameter 0.7 in",
     "weight": "174.30 carats (34.86 g)",
     "stock": "in_stock",
@@ -4601,11 +4621,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shree Yantra",
     "subCategoryId": {
-      "_id": "sub-yantra-gemstone",
-      "name": "Sacred Gemstone Yantra",
-      "slug": "gemstone-shree-yantra"
+      "_id": "6abffba53618032686f0780d",
+      "name": "Natural Healing Stone Yantra",
+      "slug": "natural-healing-stone-yantra"
     },
-    "subCategoryName": "Sacred Gemstone Yantra",
+    "subCategoryName": "Natural Healing Stone Yantra",
     "size": "1.5 L × 1.5 B × 1.7 H in",
     "weight": "78 g",
     "stock": "in_stock",
@@ -4659,11 +4679,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shree Yantra",
     "subCategoryId": {
-      "_id": "sub-yantra-gemstone",
-      "name": "Sacred Gemstone Yantra",
-      "slug": "gemstone-shree-yantra"
+      "_id": "6abffba53618032686f0780d",
+      "name": "Natural Healing Stone Yantra",
+      "slug": "natural-healing-stone-yantra"
     },
-    "subCategoryName": "Sacred Gemstone Yantra",
+    "subCategoryName": "Natural Healing Stone Yantra",
     "size": "1.6 L × 1.6 B × 2.1 H in",
     "weight": "119 g",
     "stock": "in_stock",
@@ -4717,11 +4737,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shree Yantra",
     "subCategoryId": {
-      "_id": "sub-yantra-gemstone",
-      "name": "Sacred Gemstone Yantra",
-      "slug": "gemstone-shree-yantra"
+      "_id": "6abffba53618032686f0780d",
+      "name": "Natural Healing Stone Yantra",
+      "slug": "natural-healing-stone-yantra"
     },
-    "subCategoryName": "Sacred Gemstone Yantra",
+    "subCategoryName": "Natural Healing Stone Yantra",
     "size": "1.7 L × 1.7 B × 1.4 H in",
     "weight": "72 g",
     "stock": "in_stock",
@@ -4775,11 +4795,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shree Yantra",
     "subCategoryId": {
-      "_id": "sub-yantra-gemstone",
-      "name": "Sacred Gemstone Yantra",
-      "slug": "gemstone-shree-yantra"
+      "_id": "6abffba53618032686f0780c",
+      "name": "Precious Gemstone Yantra",
+      "slug": "precious-gemstone-yantra"
     },
-    "subCategoryName": "Sacred Gemstone Yantra",
+    "subCategoryName": "Precious Gemstone Yantra",
     "size": "1.6 L × 1.6 B × 1.7 H in",
     "weight": "86 g",
     "stock": "in_stock",
@@ -4833,11 +4853,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shree Yantra",
     "subCategoryId": {
-      "_id": "sub-yantra-gemstone",
-      "name": "Sacred Gemstone Yantra",
-      "slug": "gemstone-shree-yantra"
+      "_id": "6a55bcc32dcf49aacd71ef6f",
+      "name": "Sphatik & Crystal Yantra",
+      "slug": "sphatik-crystal-shree-yantra"
     },
-    "subCategoryName": "Sacred Gemstone Yantra",
+    "subCategoryName": "Sphatik & Crystal Yantra",
     "size": "3.1 L × 2.1 W × 2.5 H in",
     "weight": "193 g",
     "stock": "in_stock",
@@ -4891,11 +4911,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shree Yantra",
     "subCategoryId": {
-      "_id": "sub-yantra-gemstone",
-      "name": "Sacred Gemstone Yantra",
-      "slug": "gemstone-shree-yantra"
+      "_id": "6abffba53618032686f0780d",
+      "name": "Natural Healing Stone Yantra",
+      "slug": "natural-healing-stone-yantra"
     },
-    "subCategoryName": "Sacred Gemstone Yantra",
+    "subCategoryName": "Natural Healing Stone Yantra",
     "size": "1.2 L × 1.2 B × 1.3 H in",
     "weight": "33 g",
     "stock": "in_stock",
@@ -4949,11 +4969,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shree Yantra",
     "subCategoryId": {
-      "_id": "sub-yantra-gemstone",
-      "name": "Sacred Gemstone Yantra",
-      "slug": "gemstone-shree-yantra"
+      "_id": "6abffba53618032686f0780c",
+      "name": "Precious Gemstone Yantra",
+      "slug": "precious-gemstone-yantra"
     },
-    "subCategoryName": "Sacred Gemstone Yantra",
+    "subCategoryName": "Precious Gemstone Yantra",
     "size": "1.2 L × 1.2 W × 1.7 H in",
     "weight": "69 g",
     "stock": "in_stock",
@@ -5006,11 +5026,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shree Yantra",
     "subCategoryId": {
-      "_id": "sub-yantra-gemstone",
-      "name": "Sacred Gemstone Yantra",
-      "slug": "gemstone-shree-yantra"
+      "_id": "6abffba53618032686f0780d",
+      "name": "Natural Healing Stone Yantra",
+      "slug": "natural-healing-stone-yantra"
     },
-    "subCategoryName": "Sacred Gemstone Yantra",
+    "subCategoryName": "Natural Healing Stone Yantra",
     "size": "1 L × 1 B × 2 H in",
     "weight": "47 g",
     "stock": "in_stock",

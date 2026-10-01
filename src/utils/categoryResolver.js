@@ -55,7 +55,15 @@ export const detectCategoryAndSubCategory = (
     targetSubSlug = "shivling";
   } else if (isShreeYantra) {
     targetCatSlug = "shree-yantra";
-    targetSubSlug = "shree-yantra";
+    if (/\b(crystal|sphatik|quartz|amethyst|kamal)\b/i.test(name)) {
+      targetSubSlug = "sphatik-crystal-shree-yantra";
+    } else if (/\b(jade|unakite)\b/i.test(name)) {
+      targetSubSlug = "jade-shree-yantra";
+    } else if (/\b(ruby|emerald|panna|lapis|gomedh|garnet)\b/i.test(name)) {
+      targetSubSlug = "precious-gemstone-yantra";
+    } else {
+      targetSubSlug = "natural-healing-stone-yantra";
+    }
   } else if (isAngel) {
     targetCatSlug = "angel";
     targetSubSlug = "angel";
