@@ -673,13 +673,21 @@ export const runPrerender = async () => {
       const belongs =
         s.categoryId?._id === cat._id ||
         s.categoryId === cat._id ||
-        (s.categoryId?.slug && s.categoryId.slug === cat.slug);
+        (s.categoryId?.slug && s.categoryId.slug === cat.slug) ||
+        (cat.slug === "crystal-statues" && (
+          s.categoryId?.slug === "angel" ||
+          s.categoryId?.slug === "diya" ||
+          s._id === "6a55bc912dcf49aacd71ef6c" ||
+          s._id === "6a55bcad2dcf49aacd71ef6e"
+        ));
       if (!belongs) return false;
       const sName = (s.name || "").toLowerCase().trim();
       const sSlug = (s.slug || "").toLowerCase().trim();
       const cName = (cat.name || "").toLowerCase().trim();
       if (cat.slug === "shree-yantra" && (sName === "god" || sSlug === "god")) return false;
-      if (sName === cName || sSlug === cat.slug) return false;
+      if ((sName === cName || sSlug === cat.slug) && (cat.slug === "shree-yantra" || cat.slug === "shivling")) return false;
+      if (cat.slug === "god-statues" && (sSlug.includes("krishna") || sSlug.includes("hanuman") || sName.includes("statues") || sName.includes("deities"))) return false;
+      if (cat.slug === "crystal-statues" && (sName.includes("gemstone") || sName.includes("handcrafted"))) return false;
       return true;
     });
 
@@ -690,14 +698,14 @@ export const runPrerender = async () => {
           ${catSubs.map((sub) => {
             const count = catProducts.filter((p) => {
               const pSubId = p.subCategoryId?._id || p.subCategoryId;
-              const pSubSlug = (p.subCategoryId?.slug || "").toLowerCase();
-              const pSubName = (p.subCategoryName || p.subCategoryId?.name || "").toLowerCase();
-              const targetSlug = (sub.slug || "").toLowerCase();
-              const targetName = (sub.name || "").toLowerCase();
+              const pSubSlug = (p.subCategoryId?.slug || "").toLowerCase().trim();
+              const pSubName = (p.subCategoryName || p.subCategoryId?.name || "").toLowerCase().trim();
+              const targetSlug = (sub.slug || "").toLowerCase().trim();
+              const targetName = (sub.name || "").toLowerCase().trim();
               return (
                 pSubId === sub._id ||
-                (targetSlug && pSubSlug && (pSubSlug === targetSlug || pSubSlug.includes(targetSlug) || targetSlug.includes(pSubSlug))) ||
-                (targetName && pSubName && (pSubName === targetName || pSubName.includes(targetName) || targetName.includes(pSubName)))
+                (targetSlug && pSubSlug && targetSlug === pSubSlug) ||
+                (targetName && pSubName && targetName === pSubName)
               );
             }).length;
             return `<a href="${BASE_URL}/subcategory/${sub._id}" style="text-decoration:none;background:#f3f4f6;color:#374151;font-size:13px;font-weight:500;padding:6px 14px;border-radius:9999px;border:1px solid #e5e7eb;display:inline-flex;align-items:center;gap:6px;"><span>${escapeHtml(sub.name)}</span><span style="background:#e5e7eb;color:#4b5563;font-size:11px;padding:2px 6px;border-radius:9999px;">${count}</span></a>`;

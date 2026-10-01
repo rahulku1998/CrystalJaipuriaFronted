@@ -30,20 +30,11 @@ export const FALLBACK_CATEGORIES = [
 ];
 
 export const FALLBACK_SUBCATEGORIES = [
+  // God Statues (3)
   {
-      "_id": "6abd3aad3618032686f04292",
-      "name": "Luxury Ganesha Idols",
-      "slug": "luxury-ganesha-idols",
-      "categoryId": {
-          "_id": "6abd39523618032686f04291",
-          "name": "Luxurious Idols & Decor",
-          "slug": "luxurious-idols-decor"
-      }
-  },
-  {
-    "_id": "sub-god-ganesha",
-    "name": "Ganesha Statues",
-    "slug": "ganesha-statues",
+    "_id": "6a55bc772dcf49aacd71ef6a",
+    "name": "Shiva",
+    "slug": "shiva",
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
       "name": "God Statues",
@@ -51,9 +42,9 @@ export const FALLBACK_SUBCATEGORIES = [
     }
   },
   {
-    "_id": "sub-god-shiva",
-    "name": "Shiva Statues",
-    "slug": "shiva-statues",
+    "_id": "6a55bc842dcf49aacd71ef6b",
+    "name": "Ganesh",
+    "slug": "ganesh",
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
       "name": "God Statues",
@@ -61,37 +52,19 @@ export const FALLBACK_SUBCATEGORIES = [
     }
   },
   {
-    "_id": "sub-god-krishna",
-    "name": "Krishna Statues",
-    "slug": "krishna-statues",
+    "_id": "6aa58c80a69037c73ebed098",
+    "name": "Other",
+    "slug": "other",
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
       "name": "God Statues",
       "slug": "god-statues"
     }
   },
+
+  // Shivling (4)
   {
-    "_id": "sub-god-hanuman",
-    "name": "Hanuman Statues",
-    "slug": "hanuman-statues",
-    "categoryId": {
-      "_id": "6a55bb1f2e9a358fc926cbab",
-      "name": "God Statues",
-      "slug": "god-statues"
-    }
-  },
-  {
-    "_id": "sub-god-other",
-    "name": "Other Divine Deities",
-    "slug": "other-deities",
-    "categoryId": {
-      "_id": "6a55bb1f2e9a358fc926cbab",
-      "name": "God Statues",
-      "slug": "god-statues"
-    }
-  },
-  {
-    "_id": "sub-shiv-sphatik",
+    "_id": "6a55bcd02dcf49aacd71ef70",
     "name": "Sphatik Shivling",
     "slug": "sphatik-shivling",
     "categoryId": {
@@ -101,7 +74,7 @@ export const FALLBACK_SUBCATEGORIES = [
     }
   },
   {
-    "_id": "sub-shiv-lapis",
+    "_id": "6abfff473618032686f07d14",
     "name": "Lapis Lazuli Shivling",
     "slug": "lapis-lazuli-shivling",
     "categoryId": {
@@ -111,7 +84,7 @@ export const FALLBACK_SUBCATEGORIES = [
     }
   },
   {
-    "_id": "sub-shiv-ruby",
+    "_id": "6abfff473618032686f07d15",
     "name": "Ruby Shivling",
     "slug": "ruby-shivling",
     "categoryId": {
@@ -121,15 +94,17 @@ export const FALLBACK_SUBCATEGORIES = [
     }
   },
   {
-    "_id": "sub-shiv-other",
+    "_id": "6abfff473618032686f07d16",
     "name": "Natural Gemstone Shivling",
-    "slug": "gemstone-shivling",
+    "slug": "natural-gemstone-shivling",
     "categoryId": {
       "_id": "6a55bc292dcf49aacd71ef65",
       "name": "Shivling",
       "slug": "shivling"
     }
   },
+
+  // Shree Yantra (4)
   {
     "_id": "6a55bcc32dcf49aacd71ef6f",
     "name": "Sphatik & Crystal Yantra",
@@ -170,10 +145,12 @@ export const FALLBACK_SUBCATEGORIES = [
       "slug": "shree-yantra"
     }
   },
+
+  // Crystal Statues (3)
   {
-    "_id": "sub-angel-gemstone",
-    "name": "Gemstone Angels",
-    "slug": "gemstone-angels",
+    "_id": "6a55bc912dcf49aacd71ef6c",
+    "name": "Angel",
+    "slug": "angel",
     "categoryId": {
       "_id": "6a55bc3f2dcf49aacd71ef67",
       "name": "Angel",
@@ -181,9 +158,9 @@ export const FALLBACK_SUBCATEGORIES = [
     }
   },
   {
-    "_id": "sub-statues-handcrafted",
-    "name": "Handcrafted Crystal Statues",
-    "slug": "handcrafted-crystal-statues",
+    "_id": "6a55bc9f2dcf49aacd71ef6d",
+    "name": "Crystal Statues",
+    "slug": "crystal-statues",
     "categoryId": {
       "_id": "6a55bc492dcf49aacd71ef68",
       "name": "Crystal Statues",
@@ -191,13 +168,25 @@ export const FALLBACK_SUBCATEGORIES = [
     }
   },
   {
-    "_id": "sub-diya-gemstone",
-    "name": "Gemstone Diyas",
-    "slug": "gemstone-diyas",
+    "_id": "6a55bcad2dcf49aacd71ef6e",
+    "name": "Diya",
+    "slug": "diya",
     "categoryId": {
       "_id": "6a55bc522dcf49aacd71ef69",
       "name": "Diya",
       "slug": "diya"
+    }
+  },
+
+  // Luxurious Idols & Decor (1)
+  {
+    "_id": "6abd3aad3618032686f04292",
+    "name": "Luxury Ganesha Idols",
+    "slug": "luxury-ganesha-idols",
+    "categoryId": {
+      "_id": "6abd39523618032686f04291",
+      "name": "Luxurious Idols & Decor",
+      "slug": "luxurious-idols-decor"
     }
   }
 ];
@@ -605,11 +594,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-ganesha",
-      "name": "Ganesha Statues",
-      "slug": "ganesha-statues"
+      "_id": "6a55bc842dcf49aacd71ef6b",
+      "name": "Ganesh",
+      "slug": "ganesh"
     },
-    "subCategoryName": "Ganesha Statues",
+    "subCategoryName": "Ganesh",
     "size": "2 in to 5 inch",
     "weight": "371 g to 2 kg",
     "stock": 10,
@@ -671,11 +660,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-ganesha",
-      "name": "Ganesha Statues",
-      "slug": "ganesha-statues"
+      "_id": "6a55bc842dcf49aacd71ef6b",
+      "name": "Ganesh",
+      "slug": "ganesh"
     },
-    "subCategoryName": "Ganesha Statues",
+    "subCategoryName": "Ganesh",
     "size": "2 inch to 7 inch",
     "weight": "50 gram to 500 gram",
     "stock": 10,
@@ -737,11 +726,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-ganesha",
-      "name": "Ganesha Statues",
-      "slug": "ganesha-statues"
+      "_id": "6a55bc842dcf49aacd71ef6b",
+      "name": "Ganesh",
+      "slug": "ganesh"
     },
-    "subCategoryName": "Ganesha Statues",
+    "subCategoryName": "Ganesh",
     "size": "2 inch to 5 inch",
     "weight": "200 carat to 5000 carat",
     "stock": 10,
@@ -803,11 +792,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-krishna",
-      "name": "Krishna Statues",
-      "slug": "krishna-statues"
+      "_id": "6aa58c80a69037c73ebed098",
+      "name": "Other",
+      "slug": "other"
     },
-    "subCategoryName": "Krishna Statues",
+    "subCategoryName": "Other",
     "size": "4 inch to 8 inch",
     "weight": "200 carat to 4500 carat",
     "stock": 10,
@@ -935,11 +924,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-ganesha",
-      "name": "Ganesha Statues",
-      "slug": "ganesha-statues"
+      "_id": "6a55bc842dcf49aacd71ef6b",
+      "name": "Ganesh",
+      "slug": "ganesh"
     },
-    "subCategoryName": "Ganesha Statues",
+    "subCategoryName": "Ganesh",
     "size": "2 inch to 7 inch",
     "weight": "50 gram to 1 kg",
     "stock": 10,
@@ -1001,11 +990,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-ganesha",
-      "name": "Ganesha Statues",
-      "slug": "ganesha-statues"
+      "_id": "6a55bc842dcf49aacd71ef6b",
+      "name": "Ganesh",
+      "slug": "ganesh"
     },
-    "subCategoryName": "Ganesha Statues",
+    "subCategoryName": "Ganesh",
     "size": "2 inch to 5 in",
     "weight": "50 gram to 1 kg",
     "stock": 10,
@@ -1133,9 +1122,9 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shivling",
     "subCategoryId": {
-      "_id": "sub-shiv-other",
+      "_id": "6abfff473618032686f07d16",
       "name": "Natural Gemstone Shivling",
-      "slug": "gemstone-shivling"
+      "slug": "natural-gemstone-shivling"
     },
     "subCategoryName": "Natural Gemstone Shivling",
     "size": "1 inch to 6 inch",
@@ -1199,11 +1188,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-ganesha",
-      "name": "Ganesha Statues",
-      "slug": "ganesha-statues"
+      "_id": "6a55bc842dcf49aacd71ef6b",
+      "name": "Ganesh",
+      "slug": "ganesh"
     },
-    "subCategoryName": "Ganesha Statues",
+    "subCategoryName": "Ganesh",
     "size": "2 inch to 5 inch",
     "weight": "50 gram to 2 kg",
     "stock": 10,
@@ -1269,11 +1258,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shivling",
     "subCategoryId": {
-      "_id": "sub-shiv-other",
-      "name": "Natural Gemstone Shivling",
-      "slug": "gemstone-shivling"
+      "_id": "6a55bcd02dcf49aacd71ef70",
+      "name": "Sphatik Shivling",
+      "slug": "sphatik-shivling"
     },
-    "subCategoryName": "Natural Gemstone Shivling",
+    "subCategoryName": "Sphatik Shivling",
     "size": "1 inch to 6 inch",
     "weight": "20 gram to 500 gram",
     "stock": 10,
@@ -1335,11 +1324,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-ganesha",
-      "name": "Ganesha Statues",
-      "slug": "ganesha-statues"
+      "_id": "6a55bc842dcf49aacd71ef6b",
+      "name": "Ganesh",
+      "slug": "ganesh"
     },
-    "subCategoryName": "Ganesha Statues",
+    "subCategoryName": "Ganesh",
     "size": "4 inch to 12 inch",
     "weight": "500 gram to 10 kg",
     "stock": 10,
@@ -1401,11 +1390,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-ganesha",
-      "name": "Ganesha Statues",
-      "slug": "ganesha-statues"
+      "_id": "6a55bc842dcf49aacd71ef6b",
+      "name": "Ganesh",
+      "slug": "ganesh"
     },
-    "subCategoryName": "Ganesha Statues",
+    "subCategoryName": "Ganesh",
     "size": "8 inch to 40 inch",
     "weight": "1 kg to 50 kg",
     "stock": 10,
@@ -1467,11 +1456,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-shiva",
-      "name": "Shiva Statues",
-      "slug": "shiva-statues"
+      "_id": "6a55bc772dcf49aacd71ef6a",
+      "name": "Shiva",
+      "slug": "shiva"
     },
-    "subCategoryName": "Shiva Statues",
+    "subCategoryName": "Shiva",
     "size": "5 inch to 20 inch",
     "weight": "1 kg to 25 kg",
     "stock": 10,
@@ -1533,11 +1522,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-hanuman",
-      "name": "Hanuman Statues",
-      "slug": "hanuman-statues"
+      "_id": "6aa58c80a69037c73ebed098",
+      "name": "Other",
+      "slug": "other"
     },
-    "subCategoryName": "Hanuman Statues",
+    "subCategoryName": "Other",
     "size": "5 inch to 25 inch",
     "weight": "1 kg to 30 kg",
     "stock": 10,
@@ -1599,9 +1588,9 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shivling",
     "subCategoryId": {
-      "_id": "sub-shiv-other",
+      "_id": "6abfff473618032686f07d16",
       "name": "Natural Gemstone Shivling",
-      "slug": "gemstone-shivling"
+      "slug": "natural-gemstone-shivling"
     },
     "subCategoryName": "Natural Gemstone Shivling",
     "size": "1 inch to 6 inch",
@@ -1665,11 +1654,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-shiva",
-      "name": "Shiva Statues",
-      "slug": "shiva-statues"
+      "_id": "6a55bc772dcf49aacd71ef6a",
+      "name": "Shiva",
+      "slug": "shiva"
     },
-    "subCategoryName": "Shiva Statues",
+    "subCategoryName": "Shiva",
     "size": "5 inch to 15 inch",
     "weight": "500 gram to 15 kg",
     "stock": 10,
@@ -1731,11 +1720,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-shiva",
-      "name": "Shiva Statues",
-      "slug": "shiva-statues"
+      "_id": "6a55bc772dcf49aacd71ef6a",
+      "name": "Shiva",
+      "slug": "shiva"
     },
-    "subCategoryName": "Shiva Statues",
+    "subCategoryName": "Shiva",
     "size": "4 inch to 45 inch",
     "weight": "200 gram to 50 kg",
     "stock": 10,
@@ -1797,11 +1786,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-ganesha",
-      "name": "Ganesha Statues",
-      "slug": "ganesha-statues"
+      "_id": "6a55bc842dcf49aacd71ef6b",
+      "name": "Ganesh",
+      "slug": "ganesh"
     },
-    "subCategoryName": "Ganesha Statues",
+    "subCategoryName": "Ganesh",
     "size": "5 inch to 15 inch",
     "weight": "500 gram to 20 kg",
     "stock": 10,
@@ -1863,11 +1852,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-other",
-      "name": "Other Divine Deities",
-      "slug": "other-deities"
+      "_id": "6aa58c80a69037c73ebed098",
+      "name": "Other",
+      "slug": "other"
     },
-    "subCategoryName": "Other Divine Deities",
+    "subCategoryName": "Other",
     "size": "5 inch to 50 inch",
     "weight": "1 kg to 50 kg",
     "stock": 10,
@@ -1929,11 +1918,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-shiva",
-      "name": "Shiva Statues",
-      "slug": "shiva-statues"
+      "_id": "6a55bc772dcf49aacd71ef6a",
+      "name": "Shiva",
+      "slug": "shiva"
     },
-    "subCategoryName": "Shiva Statues",
+    "subCategoryName": "Shiva",
     "size": "4 inch to 40 inch",
     "weight": "500 gram to 25 kg",
     "stock": 10,
@@ -1995,11 +1984,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-krishna",
-      "name": "Krishna Statues",
-      "slug": "krishna-statues"
+      "_id": "6aa58c80a69037c73ebed098",
+      "name": "Other",
+      "slug": "other"
     },
-    "subCategoryName": "Krishna Statues",
+    "subCategoryName": "Other",
     "size": "4 inch to 80 inch",
     "weight": "5 kg to 100 kg",
     "stock": 10,
@@ -2061,11 +2050,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-shiva",
-      "name": "Shiva Statues",
-      "slug": "shiva-statues"
+      "_id": "6a55bc772dcf49aacd71ef6a",
+      "name": "Shiva",
+      "slug": "shiva"
     },
-    "subCategoryName": "Shiva Statues",
+    "subCategoryName": "Shiva",
     "size": "3 inch to 10 inch",
     "weight": "200 gram to 10 kg",
     "stock": 10,
@@ -2127,11 +2116,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-other",
-      "name": "Other Divine Deities",
-      "slug": "other-deities"
+      "_id": "6aa58c80a69037c73ebed098",
+      "name": "Other",
+      "slug": "other"
     },
-    "subCategoryName": "Other Divine Deities",
+    "subCategoryName": "Other",
     "size": "5 inch to 12 inch",
     "weight": "1 kg to 10 kg",
     "stock": 10,
@@ -2193,11 +2182,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-other",
-      "name": "Other Divine Deities",
-      "slug": "other-deities"
+      "_id": "6aa58c80a69037c73ebed098",
+      "name": "Other",
+      "slug": "other"
     },
-    "subCategoryName": "Other Divine Deities",
+    "subCategoryName": "Other",
     "size": "5 inch to 50 inch",
     "weight": "1 kg to 50 kg",
     "stock": 10,
@@ -2259,11 +2248,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-other",
-      "name": "Other Divine Deities",
-      "slug": "other-deities"
+      "_id": "6aa58c80a69037c73ebed098",
+      "name": "Other",
+      "slug": "other"
     },
-    "subCategoryName": "Other Divine Deities",
+    "subCategoryName": "Other",
     "size": "5 inch to 20 inch",
     "weight": "1 kg to 20 kg",
     "stock": 10,
@@ -2325,11 +2314,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-shiva",
-      "name": "Shiva Statues",
-      "slug": "shiva-statues"
+      "_id": "6a55bc772dcf49aacd71ef6a",
+      "name": "Shiva",
+      "slug": "shiva"
     },
-    "subCategoryName": "Shiva Statues",
+    "subCategoryName": "Shiva",
     "size": "5 inch to 15 inch",
     "weight": "200 gram to 2 kg",
     "stock": 10,
@@ -2391,11 +2380,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-krishna",
-      "name": "Krishna Statues",
-      "slug": "krishna-statues"
+      "_id": "6aa58c80a69037c73ebed098",
+      "name": "Other",
+      "slug": "other"
     },
-    "subCategoryName": "Krishna Statues",
+    "subCategoryName": "Other",
     "size": "15 inch to 40 inch",
     "weight": "5 kg to 50 kg",
     "stock": 10,
@@ -2457,9 +2446,9 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shivling",
     "subCategoryId": {
-      "_id": "sub-shiv-other",
+      "_id": "6abfff473618032686f07d16",
       "name": "Natural Gemstone Shivling",
-      "slug": "gemstone-shivling"
+      "slug": "natural-gemstone-shivling"
     },
     "subCategoryName": "Natural Gemstone Shivling",
     "size": "1 inch to 6 inch",
@@ -2523,11 +2512,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-shiva",
-      "name": "Shiva Statues",
-      "slug": "shiva-statues"
+      "_id": "6a55bc772dcf49aacd71ef6a",
+      "name": "Shiva",
+      "slug": "shiva"
     },
-    "subCategoryName": "Shiva Statues",
+    "subCategoryName": "Shiva",
     "size": "10 inch to 40 inch",
     "weight": "1 kg to 70 kg",
     "stock": 10,
@@ -2589,9 +2578,9 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shivling",
     "subCategoryId": {
-      "_id": "sub-shiv-other",
+      "_id": "6abfff473618032686f07d16",
       "name": "Natural Gemstone Shivling",
-      "slug": "gemstone-shivling"
+      "slug": "natural-gemstone-shivling"
     },
     "subCategoryName": "Natural Gemstone Shivling",
     "size": "1 inch to 6 inch",
@@ -2655,9 +2644,9 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shivling",
     "subCategoryId": {
-      "_id": "sub-shiv-other",
+      "_id": "6abfff473618032686f07d16",
       "name": "Natural Gemstone Shivling",
-      "slug": "gemstone-shivling"
+      "slug": "natural-gemstone-shivling"
     },
     "subCategoryName": "Natural Gemstone Shivling",
     "size": "1 inch to 6 inch",
@@ -2721,11 +2710,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-krishna",
-      "name": "Krishna Statues",
-      "slug": "krishna-statues"
+      "_id": "6aa58c80a69037c73ebed098",
+      "name": "Other",
+      "slug": "other"
     },
-    "subCategoryName": "Krishna Statues",
+    "subCategoryName": "Other",
     "size": "8 inch to 20 inch",
     "weight": "1 kg to 50 kg",
     "stock": 10,
@@ -2787,11 +2776,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-shiva",
-      "name": "Shiva Statues",
-      "slug": "shiva-statues"
+      "_id": "6a55bc772dcf49aacd71ef6a",
+      "name": "Shiva",
+      "slug": "shiva"
     },
-    "subCategoryName": "Shiva Statues",
+    "subCategoryName": "Shiva",
     "size": "5 inch to 20 inch",
     "weight": "500 gram to 50 kg",
     "stock": 10,
@@ -2853,9 +2842,9 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shivling",
     "subCategoryId": {
-      "_id": "sub-shiv-other",
+      "_id": "6abfff473618032686f07d16",
       "name": "Natural Gemstone Shivling",
-      "slug": "gemstone-shivling"
+      "slug": "natural-gemstone-shivling"
     },
     "subCategoryName": "Natural Gemstone Shivling",
     "size": "1 inch to 6 inch",
@@ -2923,7 +2912,7 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shivling",
     "subCategoryId": {
-      "_id": "sub-shiv-sphatik",
+      "_id": "6a55bcd02dcf49aacd71ef70",
       "name": "Sphatik Shivling",
       "slug": "sphatik-shivling"
     },
@@ -2989,7 +2978,7 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shivling",
     "subCategoryId": {
-      "_id": "sub-shiv-sphatik",
+      "_id": "6a55bcd02dcf49aacd71ef70",
       "name": "Sphatik Shivling",
       "slug": "sphatik-shivling"
     },
@@ -3055,11 +3044,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-shiva",
-      "name": "Shiva Statues",
-      "slug": "shiva-statues"
+      "_id": "6a55bc772dcf49aacd71ef6a",
+      "name": "Shiva",
+      "slug": "shiva"
     },
-    "subCategoryName": "Shiva Statues",
+    "subCategoryName": "Shiva",
     "size": "5 inch to 40 inch",
     "weight": "5 kg to 100 kg",
     "stock": 10,
@@ -3121,11 +3110,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Crystal Statues",
     "subCategoryId": {
-      "_id": "sub-statues-handcrafted",
-      "name": "Handcrafted Crystal Statues",
-      "slug": "handcrafted-crystal-statues"
+      "_id": "6a55bc9f2dcf49aacd71ef6d",
+      "name": "Crystal Statues",
+      "slug": "crystal-statues"
     },
-    "subCategoryName": "Handcrafted Crystal Statues",
+    "subCategoryName": "Crystal Statues",
     "size": "1 inch to 6 inch",
     "weight": "50 gram to 500 gram",
     "stock": 10,
@@ -3253,11 +3242,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-shiva",
-      "name": "Shiva Statues",
-      "slug": "shiva-statues"
+      "_id": "6a55bc772dcf49aacd71ef6a",
+      "name": "Shiva",
+      "slug": "shiva"
     },
-    "subCategoryName": "Shiva Statues",
+    "subCategoryName": "Shiva",
     "size": "2 inch to 6 inch",
     "weight": "50 carat to 2000 carat",
     "stock": 10,
@@ -3319,11 +3308,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-other",
-      "name": "Other Divine Deities",
-      "slug": "other-deities"
+      "_id": "6aa58c80a69037c73ebed098",
+      "name": "Other",
+      "slug": "other"
     },
-    "subCategoryName": "Other Divine Deities",
+    "subCategoryName": "Other",
     "size": "15 inch to 50 inch",
     "weight": "10 kg to 80 kg",
     "stock": 10,
@@ -3385,9 +3374,9 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shivling",
     "subCategoryId": {
-      "_id": "sub-shiv-other",
+      "_id": "6abfff473618032686f07d16",
       "name": "Natural Gemstone Shivling",
-      "slug": "gemstone-shivling"
+      "slug": "natural-gemstone-shivling"
     },
     "subCategoryName": "Natural Gemstone Shivling",
     "size": "1 inch to 6 inch",
@@ -3451,9 +3440,9 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shivling",
     "subCategoryId": {
-      "_id": "sub-shiv-other",
+      "_id": "6abfff473618032686f07d16",
       "name": "Natural Gemstone Shivling",
-      "slug": "gemstone-shivling"
+      "slug": "natural-gemstone-shivling"
     },
     "subCategoryName": "Natural Gemstone Shivling",
     "size": "1 inch to 6 inch",
@@ -3517,7 +3506,7 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shivling",
     "subCategoryId": {
-      "_id": "sub-shiv-ruby",
+      "_id": "6abfff473618032686f07d15",
       "name": "Ruby Shivling",
       "slug": "ruby-shivling"
     },
@@ -3583,11 +3572,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Crystal Statues",
     "subCategoryId": {
-      "_id": "sub-statues-handcrafted",
-      "name": "Handcrafted Crystal Statues",
-      "slug": "handcrafted-crystal-statues"
+      "_id": "6a55bc9f2dcf49aacd71ef6d",
+      "name": "Crystal Statues",
+      "slug": "crystal-statues"
     },
-    "subCategoryName": "Handcrafted Crystal Statues",
+    "subCategoryName": "Crystal Statues",
     "size": "1 inch to 6 inch",
     "weight": "100 gram to 500gram",
     "stock": 10,
@@ -3649,7 +3638,7 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Shivling",
     "subCategoryId": {
-      "_id": "sub-shiv-lapis",
+      "_id": "6abfff473618032686f07d14",
       "name": "Lapis Lazuli Shivling",
       "slug": "lapis-lazuli-shivling"
     },
@@ -3715,11 +3704,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-shiva",
-      "name": "Shiva Statues",
-      "slug": "shiva-statues"
+      "_id": "6a55bc772dcf49aacd71ef6a",
+      "name": "Shiva",
+      "slug": "shiva"
     },
-    "subCategoryName": "Shiva Statues",
+    "subCategoryName": "Shiva",
     "size": "10 in to 50 inch",
     "weight": "1 kg to 50 kg",
     "stock": 10,
@@ -3847,11 +3836,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-ganesha",
-      "name": "Ganesha Statues",
-      "slug": "ganesha-statues"
+      "_id": "6a55bc842dcf49aacd71ef6b",
+      "name": "Ganesh",
+      "slug": "ganesh"
     },
-    "subCategoryName": "Ganesha Statues",
+    "subCategoryName": "Ganesh",
     "size": "5 inch to 15 inch",
     "weight": "2 kg to 10 kg",
     "stock": 10,
@@ -3913,11 +3902,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Diya",
     "subCategoryId": {
-      "_id": "sub-diya-gemstone",
-      "name": "Gemstone Diyas",
-      "slug": "gemstone-diyas"
+      "_id": "6a55bcad2dcf49aacd71ef6e",
+      "name": "Diya",
+      "slug": "diya"
     },
-    "subCategoryName": "Gemstone Diyas",
+    "subCategoryName": "Diya",
     "size": "2.5 Inch",
     "weight": "66 g",
     "stock": 10,
@@ -3979,11 +3968,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "sub-god-other",
-      "name": "Other Divine Deities",
-      "slug": "other-deities"
+      "_id": "6aa58c80a69037c73ebed098",
+      "name": "Other",
+      "slug": "other"
     },
-    "subCategoryName": "Other Divine Deities",
+    "subCategoryName": "Other",
     "size": "7 inch to 29 inch",
     "weight": "500 gram to 10 kg",
     "stock": 10,
@@ -4045,11 +4034,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Angel",
     "subCategoryId": {
-      "_id": "sub-angel-gemstone",
-      "name": "Gemstone Angels",
-      "slug": "gemstone-angels"
+      "_id": "6a55bc912dcf49aacd71ef6c",
+      "name": "Angel",
+      "slug": "angel"
     },
-    "subCategoryName": "Gemstone Angels",
+    "subCategoryName": "Angel",
     "size": "1 inch to 6 inch",
     "weight": "37 g",
     "stock": 10,
@@ -5084,11 +5073,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "Crystal Statues",
     "subCategoryId": {
-      "_id": "sub-statues-handcrafted",
-      "name": "Handcrafted Crystal Statues",
-      "slug": "handcrafted-crystal-statues"
+      "_id": "6a55bc9f2dcf49aacd71ef6d",
+      "name": "Crystal Statues",
+      "slug": "crystal-statues"
     },
-    "subCategoryName": "Handcrafted Crystal Statues",
+    "subCategoryName": "Crystal Statues",
     "size": "2.6 L × 1.1 W × 2 H in",
     "weight": "225 g",
     "stock": "in_stock",
@@ -5143,11 +5132,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "6a55bc662dcf49aacd71ef69",
-      "name": "Ganesha",
-      "slug": "ganesha"
+      "_id": "6a55bc842dcf49aacd71ef6b",
+      "name": "Ganesh",
+      "slug": "ganesh"
     },
-    "subCategoryName": "Ganesha",
+    "subCategoryName": "Ganesh",
     "size": "4.75 L × 3 W × 5.25 H in",
     "weight": "1,223 g",
     "stock": "in_stock",
@@ -5202,11 +5191,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "6a55bc662dcf49aacd71ef69",
-      "name": "Ganesha",
-      "slug": "ganesha"
+      "_id": "6a55bc842dcf49aacd71ef6b",
+      "name": "Ganesh",
+      "slug": "ganesh"
     },
-    "subCategoryName": "Ganesha",
+    "subCategoryName": "Ganesh",
     "size": "2.5 L × 1.1 W × 4 H in",
     "weight": "260 g",
     "stock": "in_stock",
@@ -5261,11 +5250,11 @@ export const FALLBACK_PRODUCTS = [
     },
     "categoryName": "God Statues",
     "subCategoryId": {
-      "_id": "6a55bc662dcf49aacd71ef69",
-      "name": "Ganesha",
-      "slug": "ganesha"
+      "_id": "6a55bc842dcf49aacd71ef6b",
+      "name": "Ganesh",
+      "slug": "ganesh"
     },
-    "subCategoryName": "Ganesha",
+    "subCategoryName": "Ganesh",
     "size": "1.6 L × 1.1 W × 2.7 H in",
     "weight": "102 g / 509.10 carats",
     "stock": "in_stock",

@@ -229,12 +229,8 @@ const CategoryPage = () => {
           (cleanSlug === "crystal-statues" && (
             s.categoryId?.slug === "angel" ||
             s.categoryId?.slug === "diya" ||
-            s.name?.toLowerCase().includes("angel") ||
-            s.name?.toLowerCase().includes("diya") ||
             s._id === "6a55bc912dcf49aacd71ef6c" ||
-            s._id === "6a55bcad2dcf49aacd71ef6e" ||
-            s._id === "sub-angel-gemstone" ||
-            s._id === "sub-diya-gemstone"
+            s._id === "6a55bcad2dcf49aacd71ef6e"
           ));
         if (!belongs) return false;
 
@@ -247,6 +243,16 @@ const CategoryPage = () => {
 
         // Exclude redundant subcategory with the exact same name as the category
         if ((sName === catName || sSlug === cat.slug) && (cleanSlug === "shree-yantra" || cleanSlug === "shivling")) {
+          return false;
+        }
+
+        // Exclude legacy duplicate subcategories under God Statues
+        if (cleanSlug === "god-statues" && (sSlug.includes("krishna") || sSlug.includes("hanuman") || sName.includes("statues") || sName.includes("deities"))) {
+          return false;
+        }
+
+        // Exclude legacy duplicate subcategories under Crystal Statues
+        if (cleanSlug === "crystal-statues" && (sName.includes("gemstone") || sName.includes("handcrafted"))) {
           return false;
         }
 
@@ -340,13 +346,13 @@ const CategoryPage = () => {
 
     const filtered = allCategoryProducts.filter((p) => {
       const pSubId = p.subCategoryId?._id || p.subCategoryId;
-      const pSubSlug = (p.subCategoryId?.slug || "").toLowerCase();
-      const pSubName = (p.subCategoryName || p.subCategoryId?.name || "").toLowerCase();
+      const pSubSlug = (p.subCategoryId?.slug || "").toLowerCase().trim();
+      const pSubName = (p.subCategoryName || p.subCategoryId?.name || "").toLowerCase().trim();
 
       return (
         pSubId === subCategoryId ||
-        (targetSlug && pSubSlug && (pSubSlug === targetSlug || pSubSlug.includes(targetSlug) || targetSlug.includes(pSubSlug))) ||
-        (targetName && pSubName && (pSubName === targetName || pSubName.includes(targetName) || targetName.includes(pSubName)))
+        (targetSlug && pSubSlug && targetSlug === pSubSlug) ||
+        (targetName && pSubName && targetName === pSubName)
       );
     });
 
@@ -398,8 +404,12 @@ const CategoryPage = () => {
           prodData = FALLBACK_PRODUCTS;
         } else {
           FALLBACK_PRODUCTS.forEach((fb) => {
-            if (!prodData.some((p) => (p.slug || p._id) === (fb.slug || fb._id))) {
+            const existing = prodData.find((p) => (p.slug || p._id) === (fb.slug || fb._id));
+            if (!existing) {
               prodData.push(fb);
+            } else if (fb.subCategoryId && (!existing.subCategoryId || existing.subCategoryName !== fb.subCategoryName)) {
+              existing.subCategoryId = fb.subCategoryId;
+              existing.subCategoryName = fb.subCategoryName;
             }
           });
         }
@@ -464,12 +474,8 @@ const CategoryPage = () => {
           (cleanSlug === "crystal-statues" && (
             s.categoryId?.slug === "angel" ||
             s.categoryId?.slug === "diya" ||
-            s.name?.toLowerCase().includes("angel") ||
-            s.name?.toLowerCase().includes("diya") ||
             s._id === "6a55bc912dcf49aacd71ef6c" ||
-            s._id === "6a55bcad2dcf49aacd71ef6e" ||
-            s._id === "sub-angel-gemstone" ||
-            s._id === "sub-diya-gemstone"
+            s._id === "6a55bcad2dcf49aacd71ef6e"
           ));
         if (!belongs) return false;
 
@@ -482,6 +488,16 @@ const CategoryPage = () => {
 
         // Never show redundant self-named subcategory if better subcategories exist
         if ((sName === catName || sSlug === currentCat.slug) && (cleanSlug === "shree-yantra" || cleanSlug === "shivling")) {
+          return false;
+        }
+
+        // Exclude legacy duplicate subcategories under God Statues
+        if (cleanSlug === "god-statues" && (sSlug.includes("krishna") || sSlug.includes("hanuman") || sName.includes("statues") || sName.includes("deities"))) {
+          return false;
+        }
+
+        // Exclude legacy duplicate subcategories under Crystal Statues
+        if (cleanSlug === "crystal-statues" && (sName.includes("gemstone") || sName.includes("handcrafted"))) {
           return false;
         }
 
@@ -672,8 +688,8 @@ const CategoryPage = () => {
 
                 return (
                   pSubId === sub._id ||
-                  (targetSlug && pSubSlug && (pSubSlug === targetSlug || pSubSlug.includes(targetSlug) || targetSlug.includes(pSubSlug))) ||
-                  (targetName && pSubName && (pSubName === targetName || pSubName.includes(targetName) || targetName.includes(pSubName)))
+                  (targetSlug && pSubSlug && targetSlug === pSubSlug) ||
+                  (targetName && pSubName && targetName === pSubName)
                 );
               }).length;
               return (
@@ -741,8 +757,8 @@ const CategoryPage = () => {
 
                     return (
                       pSubId === sub._id ||
-                      (targetSlug && pSubSlug && (pSubSlug === targetSlug || pSubSlug.includes(targetSlug) || targetSlug.includes(pSubSlug))) ||
-                      (targetName && pSubName && (pSubName === targetName || pSubName.includes(targetName) || targetName.includes(pSubName)))
+                      (targetSlug && pSubSlug && targetSlug === pSubSlug) ||
+                      (targetName && pSubName && targetName === pSubName)
                     );
                   }).length;
 
