@@ -8,6 +8,60 @@ import { formatPricePerUnit } from "./price.js";
  */
 
 export const STANDARDIZED_SPECS = {
+  "ruby-ram-darbar-carving": {
+    price: 759000,
+    weight: "4.85 kg",
+    size: "8.5 in (H) x 7.5 in (W) x 3.5 in (D)",
+    pricePerUnit: "₹1,56,494 / kg",
+  },
+  "green-aventurine-lord-shiva": {
+    price: 112300,
+    weight: "6.4 kg",
+    size: "10 in (H) x 7 in (W) x 4.5 in (D)",
+    pricePerUnit: "₹17.5 / gram",
+  },
+  "goddess-tara-in-green-aventurine": {
+    price: 61600,
+    weight: "4.2 kg",
+    size: "10 in (H) x 6 in (W) x 3.8 in (D)",
+    pricePerUnit: "₹14.6 / gram",
+  },
+  "tirupati-balaji-in-tiger-eye": {
+    price: 72400,
+    weight: "3.6 kg",
+    size: "9 in (H) x 5 in (W) x 3.2 in (D)",
+    pricePerUnit: "₹20.1 / gram",
+  },
+  "carving-of-4-horse-bust-together-in-lapis-lazuli": {
+    price: 383000,
+    weight: "11.2 kg",
+    size: "11 in (H) x 14 in (W) x 5.5 in (D)",
+    pricePerUnit: "₹34.1 / gram",
+  },
+  "7-running-horses-in-lapis-lazuli": {
+    price: 345800,
+    weight: "14.5 kg",
+    size: "12 in (H) x 16 in (W) x 6.2 in (D)",
+    pricePerUnit: "₹23.8 / gram",
+  },
+  "tea-set-in-crystal-quartz": {
+    price: 111270,
+    weight: "2.45 kg",
+    size: "Teapot: 5.5 x 7.5 in, 4 Cups: 2.2 x 2.8 in",
+    pricePerUnit: "₹45.4 / gram",
+  },
+  "sodalite-buddha": {
+    price: 192000,
+    weight: "18.2 kg",
+    size: "17 in (H) x 13 in (W) x 7.5 in (D)",
+    pricePerUnit: "₹10.5 / gram",
+  },
+  "ruby-kyanite-buddha": {
+    price: 234500,
+    weight: "12.6 kg",
+    size: "14 in (H) x 8.5 in (W) x 5.2 in (D)",
+    pricePerUnit: "₹18.6 / gram",
+  },
   "red-jade-shree-yantra": { price: 1100, size: "1.6 L × 1.6 B × 1.9 H in", weight: "88 g", pricePerUnit: "₹12.5 / gram" },
   "sunstone-shree-yantra": { price: 1000, size: "1.4 L × 1.4 B × 1.6 H in", weight: "58 g", pricePerUnit: "₹17.2 / gram" },
   "tiger-eye-shree-yantra": { price: 975, size: "1.6 L × 1.6 B × 1.3 H in", weight: "49 g", pricePerUnit: "₹19.9 / gram" },
@@ -641,6 +695,15 @@ ${items
 };
 
 export const STANDARDIZED_NAMES = {
+  "ruby-ram-darbar-carving": "Elegant Ruby Ram Darbar Carving",
+  "green-aventurine-lord-shiva": "Green Aventurine Lord Shiva",
+  "goddess-tara-in-green-aventurine": "Goddess Tara in Green Aventurine",
+  "tirupati-balaji-in-tiger-eye": "Tirupati Balaji in Tiger's Eye",
+  "carving-of-4-horse-bust-together-in-lapis-lazuli": "Exquisite Carving of 4 Horse Bust Together in Lapis Lazuli",
+  "7-running-horses-in-lapis-lazuli": "7 Running Horses in Lapis Lazuli",
+  "tea-set-in-crystal-quartz": "Tea Set in Crystal Quartz",
+  "sodalite-buddha": "Sodalite Buddha",
+  "ruby-kyanite-buddha": "Ruby Kyanite Buddha",
   "gemston-ruby-shree-yantra": "Natural Gemstone Ruby Shree Yantra",
   "gemston-amethyst-diya": "Natural Amethyst Gemstone Diya",
   "crystal-clear-mahvaveer-ji-statue": "Crystal Clear Mahaveer Ji Statue",
@@ -990,6 +1053,67 @@ export const getStandardizedProduct = (product) => {
         { url: `/images/${slug}-2.webp`, public_id: `products/${slug}-2` },
         { url: `/images/${slug}-3.webp`, public_id: `products/${slug}-3` },
       ];
+
+    } else if (slug === "ruby-ram-darbar-carving" || slug === "elegant-ruby-ram-darbar-carving") {
+      standardizedImages = [
+        { url: "/images/ruby-ram-darbar-carving.webp", public_id: "products/ruby-ram-darbar-carving" },
+        { url: "/images/ruby-ram-darbar-carving-2.webp", public_id: "products/ruby-ram-darbar-carving-2" },
+        { url: "/images/ruby-ram-darbar-carving-3.webp", public_id: "products/ruby-ram-darbar-carving-3" },
+        { url: "/images/ruby-ram-darbar-carving-4.webp", public_id: "products/ruby-ram-darbar-carving-4" },
+      ];
+    } else if (slug === "green-aventurine-lord-shiva") {
+      standardizedImages = [
+        { url: "/images/green-aventurine-lord-shiva.webp", public_id: "products/green-aventurine-lord-shiva" },
+        { url: "/images/green-aventurine-lord-shiva-2.webp", public_id: "products/green-aventurine-lord-shiva-2" },
+        { url: "/images/green-aventurine-lord-shiva-3.webp", public_id: "products/green-aventurine-lord-shiva-3" },
+        { url: "/images/green-aventurine-lord-shiva-4.webp", public_id: "products/green-aventurine-lord-shiva-4" },
+      ];
+    } else if (slug === "goddess-tara-in-green-aventurine" || slug === "green-aventurine-goddess-tara") {
+      standardizedImages = [
+        { url: "/images/goddess-tara-in-green-aventurine.webp", public_id: "products/goddess-tara-in-green-aventurine" },
+        { url: "/images/goddess-tara-in-green-aventurine-2.webp", public_id: "products/goddess-tara-in-green-aventurine-2" },
+        { url: "/images/goddess-tara-in-green-aventurine-3.webp", public_id: "products/goddess-tara-in-green-aventurine-3" },
+        { url: "/images/goddess-tara-in-green-aventurine-4.webp", public_id: "products/goddess-tara-in-green-aventurine-4" },
+      ];
+    } else if (slug === "tirupati-balaji-in-tiger-eye" || slug === "tiger-eye-tirupati-balaji") {
+      standardizedImages = [
+        { url: "/images/tirupati-balaji-in-tiger-eye.webp", public_id: "products/tirupati-balaji-in-tiger-eye" },
+        { url: "/images/tirupati-balaji-in-tiger-eye-2.webp", public_id: "products/tirupati-balaji-in-tiger-eye-2" },
+        { url: "/images/tirupati-balaji-in-tiger-eye-3.webp", public_id: "products/tirupati-balaji-in-tiger-eye-3" },
+        { url: "/images/tirupati-balaji-in-tiger-eye-4.webp", public_id: "products/tirupati-balaji-in-tiger-eye-4" },
+      ];
+    } else if (slug === "carving-of-4-horse-bust-together-in-lapis-lazuli" || slug === "lapis-lazuli-four-horse-carving" || slug === "4-horse-bust-together-in-lapis-lazuli") {
+      standardizedImages = [
+        { url: "/images/carving-of-4-horse-bust-together-in-lapis-lazuli.webp", public_id: "products/carving-of-4-horse-bust-together-in-lapis-lazuli" },
+        { url: "/images/carving-of-4-horse-bust-together-in-lapis-lazuli-2.webp", public_id: "products/carving-of-4-horse-bust-together-in-lapis-lazuli-2" },
+        { url: "/images/carving-of-4-horse-bust-together-in-lapis-lazuli-3.webp", public_id: "products/carving-of-4-horse-bust-together-in-lapis-lazuli-3" },
+        { url: "/images/carving-of-4-horse-bust-together-in-lapis-lazuli-4.webp", public_id: "products/carving-of-4-horse-bust-together-in-lapis-lazuli-4" },
+      ];
+    } else if (slug === "7-running-horses-in-lapis-lazuli" || slug === "lapis-lazuli-7-running-horses" || slug === "seven-running-horses-in-lapis-lazuli") {
+      standardizedImages = [
+        { url: "/images/7-running-horses-in-lapis-lazuli.webp", public_id: "products/7-running-horses-in-lapis-lazuli" },
+        { url: "/images/7-running-horses-in-lapis-lazuli-2.webp", public_id: "products/7-running-horses-in-lapis-lazuli-2" },
+        { url: "/images/7-running-horses-in-lapis-lazuli-3.webp", public_id: "products/7-running-horses-in-lapis-lazuli-3" },
+      ];
+    } else if (slug === "tea-set-in-crystal-quartz" || slug === "crystal-quartz-tea-set") {
+      standardizedImages = [
+        { url: "/images/tea-set-in-crystal-quartz.webp", public_id: "products/tea-set-in-crystal-quartz" },
+        { url: "/images/tea-set-in-crystal-quartz-2.webp", public_id: "products/tea-set-in-crystal-quartz-2" },
+      ];
+    } else if (slug === "sodalite-buddha") {
+      standardizedImages = [
+        { url: "/images/sodalite-buddha.webp", public_id: "products/sodalite-buddha" },
+        { url: "/images/sodalite-buddha-2.webp", public_id: "products/sodalite-buddha-2" },
+        { url: "/images/sodalite-buddha-3.webp", public_id: "products/sodalite-buddha-3" },
+        { url: "/images/sodalite-buddha-4.webp", public_id: "products/sodalite-buddha-4" },
+      ];
+    } else if (slug === "ruby-kyanite-buddha") {
+      standardizedImages = [
+        { url: "/images/ruby-kyanite-buddha.webp", public_id: "products/ruby-kyanite-buddha" },
+        { url: "/images/ruby-kyanite-buddha-2.webp", public_id: "products/ruby-kyanite-buddha-2" },
+        { url: "/images/ruby-kyanite-buddha-3.webp", public_id: "products/ruby-kyanite-buddha-3" },
+        { url: "/images/ruby-kyanite-buddha-4.webp", public_id: "products/ruby-kyanite-buddha-4" },
+      ];
     } else if (slug === "durga-devi-ruby-idol" || slug === "durga-devi-ruby-idol-432-carats") {
       standardizedImages = [
         { url: `/images/durga-devi-ruby-idol.webp`, public_id: `products/durga-devi-ruby-idol` },
@@ -1015,7 +1139,13 @@ export const getStandardizedProduct = (product) => {
         { url: `/images/shiva-in-lepidolite.webp`, public_id: `products/shiva-in-lepidolite` },
         { url: `/images/shiva-in-lepidolite-2.webp`, public_id: `products/shiva-in-lepidolite-2` },
       ];
-        } else if (slug === "red-jade-shree-yantra") {
+    } else if (slug === "lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva") {
+      standardizedImages = [
+        { url: `/images/lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva.webp`, public_id: `products/lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva` },
+        { url: `/images/lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva-2.webp`, public_id: `products/lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva-2` },
+        { url: `/images/lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva-3.webp`, public_id: `products/lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva-3` },
+      ];
+    } else if (slug === "red-jade-shree-yantra") {
       standardizedImages = [
         { url: "/images/red-jade-shree-yantra.webp", public_id: "products/red-jade-shree-yantra" },
         { url: "/images/red-jade-shree-yantra-2.webp", public_id: "products/red-jade-shree-yantra-2" },

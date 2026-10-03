@@ -79,7 +79,7 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- Dynamic Product Pages (80 Live Products) -->
+  <!-- Dynamic Product Pages (89 Live Products) -->
   <url>
     <loc>https://www.crystaljaipuria.com/product/shiva-in-lepidolite</loc>
     <image:image>
@@ -754,6 +754,14 @@
       <image:loc>https://www.crystaljaipuria.com/images/lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva.webp</image:loc>
       <image:title>Lapis Lazuli Gemstone Shiva Linga with Face of Shiva | Crystal Jaipuria</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva-2.webp</image:loc>
+      <image:title>Lapis Lazuli Gemstone Shiva Linga with Face of Shiva - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva-3.webp</image:loc>
+      <image:title>Lapis Lazuli Gemstone Shiva Linga with Face of Shiva - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -839,6 +847,183 @@
     <image:image>
       <image:loc>https://res.cloudinary.com/dd6akzezt/image/upload/v1784004045/products/u6w7jxjcyky3swnqhgur.webp</image:loc>
       <image:title>Amethyst Gemston Angel - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/ruby-ram-darbar-carving</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/ruby-ram-darbar-carving.webp</image:loc>
+      <image:title>Elegant Ruby Ram Darbar Carving | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/ruby-ram-darbar-carving-2.webp</image:loc>
+      <image:title>Elegant Ruby Ram Darbar Carving - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/ruby-ram-darbar-carving-3.webp</image:loc>
+      <image:title>Elegant Ruby Ram Darbar Carving - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/ruby-ram-darbar-carving-4.webp</image:loc>
+      <image:title>Elegant Ruby Ram Darbar Carving - View 4 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/green-aventurine-lord-shiva</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/green-aventurine-lord-shiva.webp</image:loc>
+      <image:title>Green Aventurine Lord Shiva | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/green-aventurine-lord-shiva-2.webp</image:loc>
+      <image:title>Green Aventurine Lord Shiva - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/green-aventurine-lord-shiva-3.webp</image:loc>
+      <image:title>Green Aventurine Lord Shiva - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/green-aventurine-lord-shiva-4.webp</image:loc>
+      <image:title>Green Aventurine Lord Shiva - View 4 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/goddess-tara-in-green-aventurine</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/goddess-tara-in-green-aventurine.webp</image:loc>
+      <image:title>Goddess Tara in Green Aventurine | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/goddess-tara-in-green-aventurine-2.webp</image:loc>
+      <image:title>Goddess Tara in Green Aventurine - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/goddess-tara-in-green-aventurine-3.webp</image:loc>
+      <image:title>Goddess Tara in Green Aventurine - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/goddess-tara-in-green-aventurine-4.webp</image:loc>
+      <image:title>Goddess Tara in Green Aventurine - View 4 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/tirupati-balaji-in-tiger-eye</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/tirupati-balaji-in-tiger-eye.webp</image:loc>
+      <image:title>Tirupati Balaji in Tiger's Eye | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/tirupati-balaji-in-tiger-eye-2.webp</image:loc>
+      <image:title>Tirupati Balaji in Tiger's Eye - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/tirupati-balaji-in-tiger-eye-3.webp</image:loc>
+      <image:title>Tirupati Balaji in Tiger's Eye - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/tirupati-balaji-in-tiger-eye-4.webp</image:loc>
+      <image:title>Tirupati Balaji in Tiger's Eye - View 4 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/carving-of-4-horse-bust-together-in-lapis-lazuli</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/carving-of-4-horse-bust-together-in-lapis-lazuli.webp</image:loc>
+      <image:title>Exquisite Carving of 4 Horse Bust Together in Lapis Lazuli | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/carving-of-4-horse-bust-together-in-lapis-lazuli-2.webp</image:loc>
+      <image:title>Exquisite Carving of 4 Horse Bust Together in Lapis Lazuli - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/carving-of-4-horse-bust-together-in-lapis-lazuli-3.webp</image:loc>
+      <image:title>Exquisite Carving of 4 Horse Bust Together in Lapis Lazuli - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/carving-of-4-horse-bust-together-in-lapis-lazuli-4.webp</image:loc>
+      <image:title>Exquisite Carving of 4 Horse Bust Together in Lapis Lazuli - View 4 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/7-running-horses-in-lapis-lazuli</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/7-running-horses-in-lapis-lazuli.webp</image:loc>
+      <image:title>7 Running Horses in Lapis Lazuli | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/7-running-horses-in-lapis-lazuli-2.webp</image:loc>
+      <image:title>7 Running Horses in Lapis Lazuli - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/7-running-horses-in-lapis-lazuli-3.webp</image:loc>
+      <image:title>7 Running Horses in Lapis Lazuli - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/tea-set-in-crystal-quartz</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/tea-set-in-crystal-quartz.webp</image:loc>
+      <image:title>Tea Set in Crystal Quartz | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/tea-set-in-crystal-quartz-2.webp</image:loc>
+      <image:title>Tea Set in Crystal Quartz - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/sodalite-buddha</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/sodalite-buddha.webp</image:loc>
+      <image:title>Sodalite Buddha | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/sodalite-buddha-2.webp</image:loc>
+      <image:title>Sodalite Buddha - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/sodalite-buddha-3.webp</image:loc>
+      <image:title>Sodalite Buddha - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/sodalite-buddha-4.webp</image:loc>
+      <image:title>Sodalite Buddha - View 4 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/ruby-kyanite-buddha</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/ruby-kyanite-buddha.webp</image:loc>
+      <image:title>Ruby Kyanite Buddha | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/ruby-kyanite-buddha-2.webp</image:loc>
+      <image:title>Ruby Kyanite Buddha - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/ruby-kyanite-buddha-3.webp</image:loc>
+      <image:title>Ruby Kyanite Buddha - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/ruby-kyanite-buddha-4.webp</image:loc>
+      <image:title>Ruby Kyanite Buddha - View 4 | Crystal Jaipuria</image:title>
     </image:image>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

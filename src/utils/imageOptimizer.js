@@ -1,4 +1,14 @@
 export const PROTECTED_STUDIO_SLUGS = new Set([
+  "ruby-ram-darbar-carving",
+  "green-aventurine-lord-shiva",
+  "goddess-tara-in-green-aventurine",
+  "tirupati-balaji-in-tiger-eye",
+  "carving-of-4-horse-bust-together-in-lapis-lazuli",
+  "7-running-horses-in-lapis-lazuli",
+  "tea-set-in-crystal-quartz",
+  "sodalite-buddha",
+  "ruby-kyanite-buddha",
+
   "natural-amethyst-gemstone-shiva-face-idol",
   "gemston-ruby-shree-yantra",
   "green-aventurine-parshvanath-ji-statue",
@@ -28,10 +38,21 @@ export const PROTECTED_STUDIO_SLUGS = new Set([
   "nataraja-dancing-shiva-sunstone-idol-22kg",
   "nataraja-dancing-shiva-sunstone-idol",
   "lord-shiva-in-natural-lepidolite-101kg",
-  "shiva-in-lepidolite"
+  "shiva-in-lepidolite",
+  "lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva"
 ]);
 
 export const STATIC_CATALOG_SLUGS = new Set([
+  "ruby-ram-darbar-carving",
+  "green-aventurine-lord-shiva",
+  "goddess-tara-in-green-aventurine",
+  "tirupati-balaji-in-tiger-eye",
+  "carving-of-4-horse-bust-together-in-lapis-lazuli",
+  "7-running-horses-in-lapis-lazuli",
+  "tea-set-in-crystal-quartz",
+  "sodalite-buddha",
+  "ruby-kyanite-buddha",
+
   "durga-devi-ruby-idol-432-carats",
   "durga-devi-ruby-idol",
   "green-aventurine-shankh-648g",

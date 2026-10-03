@@ -4,6 +4,7 @@ import API from "../api/axios";
 import ProductCard from "../Components/ProductCard";
 import SEO from "../Components/SEO";
 import NotFound from "./NotFound";
+import { FALLBACK_PRODUCTS, FALLBACK_SUBCATEGORIES } from "../data/fallbackData";
 
 const SubCategoryProducts = () => {
   const { id } = useParams();
@@ -19,15 +20,43 @@ const SubCategoryProducts = () => {
     try {
       setLoading(true);
       const res = await API.get(`/products/subcategory/${id}`);
-      const fetchedProducts = res.data.products || [];
+      let fetchedProducts = res.data?.products || [];
+
+      if (fetchedProducts.length === 0) {
+        const cleanId = (id || "").toLowerCase().trim();
+        fetchedProducts = FALLBACK_PRODUCTS.filter(
+          (p) =>
+            p.subCategoryId?._id === cleanId ||
+            p.subCategoryId?.slug === cleanId ||
+            (p.subCategoryName && p.subCategoryName.toLowerCase().replace(/[^a-z0-9]+/g, "-") === cleanId)
+        );
+      }
+
       setProducts(fetchedProducts);
 
       if (fetchedProducts.length > 0) {
-        setSubCategoryName(fetchedProducts[0].subCategoryId?.name || "");
+        setSubCategoryName(fetchedProducts[0].subCategoryId?.name || fetchedProducts[0].subCategoryName || "");
+      } else {
+        const subMatch = FALLBACK_SUBCATEGORIES.find(
+          (s) => s._id === id || s.slug === id
+        );
+        if (subMatch) {
+          setSubCategoryName(subMatch.name);
+        }
       }
     } catch (err) {
       console.log(err);
-      setProducts([]);
+      const cleanId = (id || "").toLowerCase().trim();
+      const fbProds = FALLBACK_PRODUCTS.filter(
+        (p) =>
+          p.subCategoryId?._id === cleanId ||
+          p.subCategoryId?.slug === cleanId ||
+          (p.subCategoryName && p.subCategoryName.toLowerCase().replace(/[^a-z0-9]+/g, "-") === cleanId)
+      );
+      setProducts(fbProds);
+      if (fbProds.length > 0) {
+        setSubCategoryName(fbProds[0].subCategoryId?.name || fbProds[0].subCategoryName || "");
+      }
     } finally {
       setLoading(false);
     }

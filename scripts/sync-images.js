@@ -33,6 +33,16 @@ export const syncImages = async () => {
     console.log(`Syncing ${products.length} product images to clean static .webp...`);
 
     const PROTECTED_STUDIO_SLUGS = new Set([
+  "ruby-ram-darbar-carving",
+  "green-aventurine-lord-shiva",
+  "goddess-tara-in-green-aventurine",
+  "tirupati-balaji-in-tiger-eye",
+  "carving-of-4-horse-bust-together-in-lapis-lazuli",
+  "7-running-horses-in-lapis-lazuli",
+  "tea-set-in-crystal-quartz",
+  "sodalite-buddha",
+  "ruby-kyanite-buddha",
+
       "red-jade-shree-yantra",
       "sunstone-shree-yantra",
       "tiger-eye-shree-yantra",
@@ -80,7 +90,8 @@ export const syncImages = async () => {
       "durga-devi-ruby-idol",
       "green-aventurine-shankh",
       "nataraja-dancing-shiva-sunstone-idol",
-      "shiva-in-lepidolite"
+      "shiva-in-lepidolite",
+      "lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva"
     ]);
 
     for (const prod of products) {

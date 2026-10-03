@@ -193,6 +193,535 @@ export const FALLBACK_SUBCATEGORIES = [
 
 export const FALLBACK_PRODUCTS = [
   {
+    "_id": "6abe9e303618032686f05301",
+    "name": "Elegant Ruby Ram Darbar Carving",
+    "slug": "ruby-ram-darbar-carving",
+    "price": 759000,
+    "detail": "Sacred heirloom-grade Elegant Ruby Ram Darbar Carving meticulously hand-sculpted from certified natural earth-mined precious Ruby (Manikya) with natural green zoisite matrix. Depicts Lord Ram with Kodanda bow and Abhaya Mudra, Mata Sita, Lakshman, and devotee Hanuman kneeling in eternal surrender beneath an ornate hand-carved arch (Prabhavati). Radiates solar leadership, righteous dharma, family unity, and unshakeable divine protection for elite home mandirs.",
+    "description": "<p>Sacred heirloom-grade <strong>Elegant Ruby Ram Darbar Carving</strong> meticulously hand-sculpted from certified natural earth-mined precious Ruby (Manikya) with natural green zoisite matrix. Depicts Lord Ram with Kodanda bow and Abhaya Mudra, Mata Sita, Lakshman, and devotee Hanuman kneeling in eternal surrender beneath an ornate hand-carved arch (Prabhavati). Radiates solar leadership, righteous dharma, family unity, and unshakeable divine protection for elite home mandirs.</p>\n\n<h2>Vedic Shilpa Shastra Anatomy & Ruby Ram Darbar Heritage</h2>\n<p>Carved strictly according to ancient Vedic Shilpa Shastra proportions by master lapidaries in Jaipur (est. 1989), this rare ruby carving embodies the supreme divine assembly (Ram Darbar):</p>\n<ul>\n  <li><strong>Maryada Purushottama Lord Ram:</strong> Standing tall in tribhanga posture holding the divine Kodanda bow in the left hand and bestowing Abhaya Mudra (fearlessness) with the right.</li>\n  <li><strong>Mata Sita (Adishakti Swaroop):</strong> Gracefully positioned by Lord Ram's side, radiating gentle maternal compassion, marital auspiciousness, and unswerving devotion.</li>\n  <li><strong>Brother Lakshman:</strong> Standing vigilant as the eternal protector and warrior of righteous dharma, holding bow and arrows.</li>\n  <li><strong>Bhakta Hanuman:</strong> Kneeling reverently at the divine lotus feet in Anjali Mudra, channeling absolute humility, courage, and selfless surrender.</li>\n  <li><strong>Precious Ruby Matrix:</strong> Sculpted from authentic natural corundum ruby matrix, channeling the royal planetary energy of Surya (Sun) for societal honor, victory over obstacles, and prosperity.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Elegant Ruby Ram Darbar Carving</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Precious Ruby (Corundum) with Natural Matrix</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Weight Category</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">4.85 kg (Approx. 24,250 Carats)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">8.5 in (H) x 7.5 in (W) x 3.5 in (D)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Unit</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹1,56,494 / kg (₹7,59,000 Total)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">East or North-East (Ishanya Kon) Home Mandir Altar</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Precious Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Elegant Ruby Ram Darbar Carving</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Earth-Mined Precious Ruby (Corundum) with Natural Matrix</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 4.85 kg (Approx. 24,250 Carats)</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 8.5 in (H) x 7.5 in (W) x 3.5 in (D)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing Basis :</strong> ₹7,59,000 Total (Collector's Heirloom Grade)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> East or North-East facing altar</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Precious Gemstone (Zero synthetic resin/glass, Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty cushioned wooden export crate with 100% door-to-door transit insurance</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"Is this Ruby Ram Darbar carving sculpted from genuine natural ruby?\",\"answer\":\"Yes, this Ram Darbar idol is master-crafted from 100% certified earth-mined precious natural Ruby (Corundum) featuring natural mineral inclusions and accompanied by a comprehensive gemological laboratory authenticity certificate.\"},{\"question\":\"What are the spiritual and astrological benefits of keeping a Ruby Ram Darbar carving at home?\",\"answer\":\"Worshiping Lord Ram Darbar sculpted in natural Ruby invites divine solar grace (Surya Dev), promoting righteous leadership, domestic concord, unshakeable family loyalty, and victory over financial or legal obstacles.\"},{\"question\":\"Where should this Ruby Ram Darbar statue be positioned in the home temple?\",\"answer\":\"Place the idol in the East or North-East (Ishanya Kon) of your home mandir facing West or South, allowing the deities to face towards East or North during daily prayers.\"},{\"question\":\"How is such a valuable high-ticket gemstone carving packaged and delivered?\",\"answer\":\"Every heirloom carving is cushioned inside custom multi-layer high-density foam, secured within heavy-duty reinforced wooden containers, and dispatched with 100% door-to-door transit insurance worldwide.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Ruby Ram Darbar Carving | Natural Gemstone Idol | Crystal Jaipuria\",\"metaDescription\":\"Buy handcrafted natural Ruby Ram Darbar carving online. Masterpiece Lord Ram, Mata Sita, Lakshman & Hanuman idol in certified precious ruby gemstone from Jaipur.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"East or North-East (Ishanya Kon) facing altar of home mandir\",\"chakraPlanet\":\"Solar Plexus (Manipura) & Heart Chakra · Planet Sun (Surya) & Lord Rama\",\"poojaVidhi\":\"Consecrate with pure Gangajal, offer chandan, tulsi leaves, and yellow flowers. Chant Sri Rama Raksha Stotram or Om Sri Ramaya Namah on Sundays and Tuesdays.\",\"vedicBenefits\":\"Restores family harmony, destroys evil planetary afflictions, grants immense courage, and bestows uninterrupted success and prosperity.\"} -->",
+    "faqs": [
+      {
+        "question": "Is this Ruby Ram Darbar carving sculpted from genuine natural ruby?",
+        "answer": "Yes, this Ram Darbar idol is master-crafted from 100% certified earth-mined precious natural Ruby (Corundum) featuring natural mineral inclusions and accompanied by a comprehensive gemological laboratory authenticity certificate."
+      },
+      {
+        "question": "What are the spiritual and astrological benefits of keeping a Ruby Ram Darbar carving at home?",
+        "answer": "Worshiping Lord Ram Darbar sculpted in natural Ruby invites divine solar grace (Surya Dev), promoting righteous leadership, domestic concord, unshakeable family loyalty, and victory over financial or legal obstacles."
+      },
+      {
+        "question": "Where should this Ruby Ram Darbar statue be positioned in the home temple?",
+        "answer": "Place the idol in the East or North-East (Ishanya Kon) of your home mandir facing West or South, allowing the deities to face towards East or North during daily prayers."
+      },
+      {
+        "question": "How is such a valuable high-ticket gemstone carving packaged and delivered?",
+        "answer": "Every heirloom carving is cushioned inside custom multi-layer high-density foam, secured within heavy-duty reinforced wooden containers, and dispatched with 100% door-to-door transit insurance worldwide."
+      }
+    ],
+    "metaTitle": "Ruby Ram Darbar Carving | Natural Gemstone Idol | Crystal Jaipuria",
+    "metaDescription": "Buy handcrafted natural Ruby Ram Darbar carving online. Masterpiece Lord Ram, Mata Sita, Lakshman & Hanuman idol in certified precious ruby gemstone from Jaipur.",
+    "vedicVastu": {
+      "placementDirection": "East or North-East (Ishanya Kon) facing altar of home mandir",
+      "chakraPlanet": "Solar Plexus (Manipura) & Heart Chakra · Planet Sun (Surya) & Lord Rama",
+      "poojaVidhi": "Consecrate with pure Gangajal, offer chandan, tulsi leaves, and yellow flowers. Chant Sri Rama Raksha Stotram or Om Sri Ramaya Namah on Sundays and Tuesdays.",
+      "vedicBenefits": "Restores family harmony, destroys evil planetary afflictions, grants immense courage, and bestows uninterrupted success and prosperity."
+    },
+    "images": [
+      "/images/ruby-ram-darbar-carving.webp",
+      "/images/ruby-ram-darbar-carving-2.webp",
+      "/images/ruby-ram-darbar-carving-3.webp",
+      "/images/ruby-ram-darbar-carving-4.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "categoryName": "God Statues",
+    "subCategoryId": {
+      "_id": "6aa58c80a69037c73ebed098",
+      "name": "Other",
+      "slug": "other"
+    },
+    "subCategoryName": "Other",
+    "size": "8.5 in (H) x 7.5 in (W) x 3.5 in (D)",
+    "weight": "4.85 kg",
+    "stock": 1,
+    "featured": true,
+    "pricePerUnit": "₹1,56,494 / kg",
+    "pricePerGram": 156.49
+  },
+  {
+    "_id": "6abe9e303618032686f05302",
+    "name": "Green Aventurine Lord Shiva",
+    "slug": "green-aventurine-lord-shiva",
+    "price": 112300,
+    "detail": "Magnificent 10-inch Green Aventurine Lord Shiva statue hand-carved from a solid block of natural green aventurine (Stone of Opportunity). Depicts Mahadev in serene meditative Dhyana mudra with Trishul, Damru, crescent moon (Chandra), and holy serpent Vasuki. Radiates heart-centered calm, financial abundance, and cosmic tranquility for home temple worship and deep meditation.",
+    "description": "<p>Magnificent 10-inch <strong>Green Aventurine Lord Shiva</strong> statue hand-carved from a solid block of natural green aventurine (Stone of Opportunity). Depicts Mahadev in serene meditative Dhyana mudra with Trishul, Damru, crescent moon (Chandra), and holy serpent Vasuki. Radiates heart-centered calm, financial abundance, and cosmic tranquility for home temple worship and deep meditation.</p>\n\n<h2>Meditative Shaivite Iconography in Green Aventurine</h2>\n<p>Sculpted in Jaipur according to traditional Agama Shastras, this green gemstone Shiva idol unites cosmic consciousness with earth-element vitality:</p>\n<ul>\n  <li><strong>Dhyana Mudra (Meditative Posture):</strong> Lord Shiva seated upon a stylized pedestal in deep meditative stillness, calming anxious minds and radiating peaceful sattvic vibrations.</li>\n  <li><strong>Sacred Shaivite Emblems:</strong> Hand-carved with the crescent moon on matted Jata (mental equilibrium), Trinetra (third-eye wisdom), sacred Vasuki serpent (conquest over desires), and cosmic Trishul-Damru.</li>\n  <li><strong>Heart Chakra (Anahata) Healing:</strong> Green aventurine quartz resonates deeply with heart frequencies, dissipating stress, awakening compassion, and unlocking auspicious abundance.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Green Aventurine Lord Shiva (10\" H x 7\" W)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Green Aventurine Quartz</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Weight Category</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">6.4 kg (6,400 g)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">10 in (H) x 7 in (W) x 4.5 in (D)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Unit</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹17.5 / gram (₹1,12,300 Total)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North-East (Ishanya Kon), North or East Puja Altar</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Green Aventurine Lord Shiva (10\" H x 7\" W)</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Earth-Mined Natural Green Aventurine</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 6.4 kg (6,400 g)</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 10 in (H) x 7 in (W) x 4.5 in (D)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing Basis :</strong> ₹1,12,300 (₹17.5 / gram)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North-East (Ishanya Kon) or North facing altar</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Certified Natural Earth-Mined Gemstone</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof wooden crating with 100% door-to-door insurance</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"What are the Vastu benefits of worshiping Lord Shiva in Green Aventurine?\",\"answer\":\"Green Aventurine is celebrated as the premier stone of new opportunities, abundance, and heart healing. When combined with Lord Shiva's meditative presence, it dissolves household negativity, eliminates financial stagnancy, and bestows profound inner peace.\"},{\"question\":\"Where should this 10-inch Green Aventurine Shiva statue be placed?\",\"answer\":\"Place in the North-East (Ishanya Kon) or North corner of your home temple, living area, or meditation room facing East or North for maximum spiritual clarity.\"},{\"question\":\"Can daily Jalabhishek or milk Abhishek be performed on this statue?\",\"answer\":\"Yes, Green Aventurine has a durable Mohs hardness of 6.5–7.0. It is impervious to Gangajal, raw milk, and panchamrit rituals. Simply wipe gently with a soft cotton cloth afterwards.\"},{\"question\":\"Is this Shiva statue carved from single natural gemstone?\",\"answer\":\"Yes, it is sculpted entirely by hand from a single natural boulder of green aventurine quartz by Jaipur master craftsmen, free from artificial resins or synthetic colors.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Green Aventurine Lord Shiva Statue | Natural Gemstone Idol | Crystal Jaipuria\",\"metaDescription\":\"Buy authentic Green Aventurine Lord Shiva statue (10\" H x 7\" W). Handcrafted natural green aventurine Mahadev idol for meditation, home temple & Vastu at Crystal Jaipuria.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North-East (Ishanya Kon) or North altar of home mandir\",\"chakraPlanet\":\"Heart Chakra (Anahata) & Third Eye · Planet Mercury (Budh) & Lord Shiva\",\"poojaVidhi\":\"Perform Gangajal abhishek on Mondays or Pradosham. Offer bilva leaves, white flowers, and chant Om Namah Shivaya or Maha Mrityunjaya Mantra.\",\"vedicBenefits\":\"Clears financial hurdles, relieves mental stress, attracts positive career opportunities, and fosters meditative focus.\"} -->",
+    "faqs": [
+      {
+        "question": "What are the Vastu benefits of worshiping Lord Shiva in Green Aventurine?",
+        "answer": "Green Aventurine is celebrated as the premier stone of new opportunities, abundance, and heart healing. When combined with Lord Shiva's meditative presence, it dissolves household negativity, eliminates financial stagnancy, and bestows profound inner peace."
+      },
+      {
+        "question": "Where should this 10-inch Green Aventurine Shiva statue be placed?",
+        "answer": "Place in the North-East (Ishanya Kon) or North corner of your home temple, living area, or meditation room facing East or North for maximum spiritual clarity."
+      },
+      {
+        "question": "Can daily Jalabhishek or milk Abhishek be performed on this statue?",
+        "answer": "Yes, Green Aventurine has a durable Mohs hardness of 6.5–7.0. It is impervious to Gangajal, raw milk, and panchamrit rituals. Simply wipe gently with a soft cotton cloth afterwards."
+      },
+      {
+        "question": "Is this Shiva statue carved from single natural gemstone?",
+        "answer": "Yes, it is sculpted entirely by hand from a single natural boulder of green aventurine quartz by Jaipur master craftsmen, free from artificial resins or synthetic colors."
+      }
+    ],
+    "metaTitle": "Green Aventurine Lord Shiva Statue | Natural Gemstone Idol | Crystal Jaipuria",
+    "metaDescription": "Buy authentic Green Aventurine Lord Shiva statue (10\" H x 7\" W). Handcrafted natural green aventurine Mahadev idol for meditation, home temple & Vastu at Crystal Jaipuria.",
+    "vedicVastu": {
+      "placementDirection": "North-East (Ishanya Kon) or North altar of home mandir",
+      "chakraPlanet": "Heart Chakra (Anahata) & Third Eye · Planet Mercury (Budh) & Lord Shiva",
+      "poojaVidhi": "Perform Gangajal abhishek on Mondays or Pradosham. Offer bilva leaves, white flowers, and chant Om Namah Shivaya or Maha Mrityunjaya Mantra.",
+      "vedicBenefits": "Clears financial hurdles, relieves mental stress, attracts positive career opportunities, and fosters meditative focus."
+    },
+    "images": [
+      "/images/green-aventurine-lord-shiva.webp",
+      "/images/green-aventurine-lord-shiva-2.webp",
+      "/images/green-aventurine-lord-shiva-3.webp",
+      "/images/green-aventurine-lord-shiva-4.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "categoryName": "God Statues",
+    "subCategoryId": {
+      "_id": "6a55bc772dcf49aacd71ef6a",
+      "name": "Shiva",
+      "slug": "shiva"
+    },
+    "subCategoryName": "Shiva",
+    "size": "10 in (H) x 7 in (W) x 4.5 in (D)",
+    "weight": "6.4 kg",
+    "stock": 2,
+    "featured": true,
+    "pricePerUnit": "₹17.5 / gram",
+    "pricePerGram": 17.5
+  },
+  {
+    "_id": "6abe9e303618032686f05303",
+    "name": "Goddess Tara in Green Aventurine",
+    "slug": "goddess-tara-in-green-aventurine",
+    "price": 61600,
+    "detail": "Exquisite 10-inch hand-carved Goddess Tara in Green Aventurine statue sculpted from pure natural earth-mined aventurine quartz. Depicting the compassionate mother of liberation seated in Lalitasana atop a lotus throne with blooming Utpala lotus blossoms and Varada mudra of supreme generosity. Radiates heart-chakra healing, fearlessness, and unhindered prosperity for meditation spaces and sacred altars.",
+    "description": "<p>Exquisite 10-inch hand-carved <strong>Goddess Tara in Green Aventurine</strong> statue sculpted from pure natural earth-mined aventurine quartz. Depicting the compassionate mother of liberation seated in Lalitasana atop a lotus throne with blooming Utpala lotus blossoms and Varada mudra of supreme generosity. Radiates heart-chakra healing, fearlessness, and unhindered prosperity for meditation spaces and sacred altars.</p>\n\n<h2>Buddhist Iconography & Compassionate Healing Matrix</h2>\n<p>Revered as Arya Tara (The Mother of All Buddhas) and the swift savior who liberates devotees from the eight great fears (Ashtabhaya):</p>\n<ul>\n  <li><strong>Lalitasana &amp; Lotus Stepping:</strong> Seated with right leg extended forward ready to instantly leap to the aid of any suffering soul, embodying swift compassionate action.</li>\n  <li><strong>Varada &amp; Vitarka Mudra:</strong> Right hand extended down granting wishes and boons; left hand at the heart holding the blue/night lotus stem (Utpala), symbolizing spiritual triumph over worldly afflictions.</li>\n  <li><strong>Green Aventurine Vibrations:</strong> Known as the heart-stone of universal loving-kindness, shielding the aura against emotional exhaustion while fostering creative abundance.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Goddess Tara in Green Aventurine (10\" H x 6\" W)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Green Aventurine</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Weight Category</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">4.2 kg (4,200 g)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">10 in (H) x 6 in (W) x 3.8 in (D)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Unit</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹14.6 / gram (₹61,600 Total)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North-East (Ishanya), East or Zen Meditation Corner</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Goddess Tara in Green Aventurine (10\" H x 6\" W)</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Earth-Mined Natural Green Aventurine Quartz</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 4.2 kg (4,200 g)</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 10 in (H) x 6 in (W) x 3.8 in (D)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing Basis :</strong> ₹61,600 (₹14.6 / gram)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North-East or East sacred meditation corner</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone (Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty cushioned wooden crate with 100% door-to-door insurance</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"Who is Green Tara and what does she symbolize?\",\"answer\":\"Green Tara is the female bodhisattva of enlightened activity, swift protection, and limitless compassion. She protects devotees from internal fear (greed, anger, delusion) and external obstacles, guiding them toward peace and spiritual fulfillment.\"},{\"question\":\"Where should this Green Tara statue be placed in the home or office?\",\"answer\":\"Place on an elevated altar in the North-East, East, or your personal meditation space facing inward into the room to channel soothing, compassionate energies.\"},{\"question\":\"How can I care for and cleanse this gemstone statue?\",\"answer\":\"Dust gently with a soft micro-fiber brush or wipe with a damp cloth moistened with pure water. Green Aventurine's natural quartz toughness ensures lifelong durability without discoloration.\"},{\"question\":\"Does this sculpture come with a laboratory authenticity certificate?\",\"answer\":\"Yes, all gemstone statues at Crystal Jaipuria are dispatched with an authentic gemological certificate verifying natural earth-mined origin.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Goddess Tara in Green Aventurine Statue | Sacred Healing Idol | Crystal Jaipuria\",\"metaDescription\":\"Buy handcrafted Green Aventurine Goddess Tara statue (10\" H x 6\" W). 100% natural green gemstone Buddhist deity sculpture for compassionate healing & home altar.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North-East (Ishanya Kon), East altar, or personal meditation room\",\"chakraPlanet\":\"Heart Chakra (Anahata) · Planet Mercury & Tara Adishakti\",\"poojaVidhi\":\"Cleanse with fragrant rose water, light a pure sandalwood incense stick, and chant the sacred Green Tara mantra: Om Tare Tuttare Ture Soha.\",\"vedicBenefits\":\"Dispels fear and anxiety, dissolves karmic obstructions, protects travels, and instills peaceful emotional harmony.\"} -->",
+    "faqs": [
+      {
+        "question": "Who is Green Tara and what does she symbolize?",
+        "answer": "Green Tara is the female bodhisattva of enlightened activity, swift protection, and limitless compassion. She protects devotees from internal fear (greed, anger, delusion) and external obstacles, guiding them toward peace and spiritual fulfillment."
+      },
+      {
+        "question": "Where should this Green Tara statue be placed in the home or office?",
+        "answer": "Place on an elevated altar in the North-East, East, or your personal meditation space facing inward into the room to channel soothing, compassionate energies."
+      },
+      {
+        "question": "How can I care for and cleanse this gemstone statue?",
+        "answer": "Dust gently with a soft micro-fiber brush or wipe with a damp cloth moistened with pure water. Green Aventurine's natural quartz toughness ensures lifelong durability without discoloration."
+      },
+      {
+        "question": "Does this sculpture come with a laboratory authenticity certificate?",
+        "answer": "Yes, all gemstone statues at Crystal Jaipuria are dispatched with an authentic gemological certificate verifying natural earth-mined origin."
+      }
+    ],
+    "metaTitle": "Goddess Tara in Green Aventurine Statue | Sacred Healing Idol | Crystal Jaipuria",
+    "metaDescription": "Buy handcrafted Green Aventurine Goddess Tara statue (10\" H x 6\" W). 100% natural green gemstone Buddhist deity sculpture for compassionate healing & home altar.",
+    "vedicVastu": {
+      "placementDirection": "North-East (Ishanya Kon), East altar, or personal meditation room",
+      "chakraPlanet": "Heart Chakra (Anahata) · Planet Mercury & Tara Adishakti",
+      "poojaVidhi": "Cleanse with fragrant rose water, light a pure sandalwood incense stick, and chant the sacred Green Tara mantra: Om Tare Tuttare Ture Soha.",
+      "vedicBenefits": "Dispels fear and anxiety, dissolves karmic obstructions, protects travels, and instills peaceful emotional harmony."
+    },
+    "images": [
+      "/images/goddess-tara-in-green-aventurine.webp",
+      "/images/goddess-tara-in-green-aventurine-2.webp",
+      "/images/goddess-tara-in-green-aventurine-3.webp",
+      "/images/goddess-tara-in-green-aventurine-4.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "categoryName": "God Statues",
+    "subCategoryId": {
+      "_id": "6aa58c80a69037c73ebed098",
+      "name": "Other",
+      "slug": "other"
+    },
+    "subCategoryName": "Other",
+    "size": "10 in (H) x 6 in (W) x 3.8 in (D)",
+    "weight": "4.2 kg",
+    "stock": 2,
+    "featured": true,
+    "pricePerUnit": "₹14.6 / gram",
+    "pricePerGram": 14.6
+  },
+  {
+    "_id": "6abe9e303618032686f05304",
+    "name": "Tirupati Balaji in Tiger's Eye",
+    "slug": "tirupati-balaji-in-tiger-eye",
+    "price": 72400,
+    "detail": "Sacred 9-inch Tirupati Balaji in Tiger's Eye idol intricately sculpted from natural golden-brown chatoyant Tiger Eye gemstone. Depicting Lord Venkateswara (Govinda) adorned with Shankha, Chakra, holy Namam, and Katya-valambita mudra. Renowned for combining the financial prosperity vibrations of Lord Balaji with the grounding, courage, and evil-eye shielding properties of natural Tiger's Eye.",
+    "description": "<p>Sacred 9-inch <strong>Tirupati Balaji in Tiger's Eye</strong> idol intricately sculpted from natural golden-brown chatoyant Tiger Eye gemstone. Depicting Lord Venkateswara (Govinda) adorned with Shankha, Chakra, holy Namam, and Katya-valambita mudra. Renowned for combining the financial prosperity vibrations of Lord Balaji with the grounding, courage, and evil-eye shielding properties of natural Tiger's Eye.</p>\n\n<h2>Sacred Vaikuntha Iconography in Chatoyant Tiger Eye</h2>\n<p>Sculpted with devotional precision by master lapidaries in Jaipur strictly according to Tirumala temple iconography:</p>\n<ul>\n  <li><strong>Venkateswara Swaroop:</strong> Adorned with celestial crown (Kiritam), sacred Vaishnavite Tirumann (Namam), Makarakundalas, and intricate hand-carved floral garlands (Vanamala).</li>\n  <li><strong>Panchajanya &amp; Sudarshana:</strong> Upper hands carry the sacred Shankh and rotating Sudarshana Chakra, dispelling dark planetary influences and purifying the domestic environment.</li>\n  <li><strong>Golden Chatoyant Brilliance:</strong> Tiger's Eye exhibits silky optical chatoyancy (cat's-eye optical effect) that actively wards off Nazar (evil eye), dissolves fear, and anchors supreme confidence.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Tirupati Balaji in Tiger's Eye (9\" H x 5\" W)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Chatoyant Tiger's Eye</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Weight Category</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">3.6 kg (3,600 g)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">9 in (H) x 5 in (W) x 3.2 in (D)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Unit</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹20.1 / gram (₹72,400 Total)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">East or North-East (Ishanya Kon) Home Mandir Altar</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Tirupati Balaji in Tiger's Eye (9\" H x 5\" W)</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Earth-Mined Natural Tiger's Eye</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 3.6 kg (3,600 g)</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 9 in (H) x 5 in (W) x 3.2 in (D)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing Basis :</strong> ₹72,400 (₹20.1 / gram)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> East or North-East facing altar, or Cash Office</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Chatoyant Gemstone</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof crating with 100% door-to-door insurance</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"Why is Tirupati Balaji in Tiger's Eye considered a powerful wealth magnet?\",\"answer\":\"Lord Venkateswara is the presiding deity of wealth, relief from debt (Kuber Rin), and supreme abundance in the Kali Yuga. Tiger's Eye reinforces this by grounding finances, enhancing sharp business acumen, and deflecting jealousy or evil eye.\"},{\"question\":\"Where should this Tiger Eye Balaji statue be placed according to Vastu?\",\"answer\":\"Ideal placement is in the North-East (Ishanya Kon), East altar, or on your office executive desk/cash safe facing the entrance.\"},{\"question\":\"Can daily puja be offered to this gemstone idol?\",\"answer\":\"Yes, Tiger's Eye is a hard silicate mineral (Mohs 7). You can consecrate it with sacred Gangajal, chandan, tulsi leaves, and light a ghee lamp daily.\"},{\"question\":\"Is each piece unique in its color bands?\",\"answer\":\"Yes, natural Tiger's Eye displays organic bands of golden amber, warm bronze, and rich chocolate brown, ensuring each hand-carved murti is completely one-of-a-kind.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Tirupati Balaji in Tiger's Eye Idol | Lord Venkateswara Statue | Crystal Jaipuria\",\"metaDescription\":\"Buy authentic Tiger Eye Tirupati Balaji idol (9\" H x 5\" W). Handcrafted natural golden chatoyant Lord Venkateswara gemstone statue for wealth & temple worship.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"East, North-East (Ishanya Kon), or Cash Safe facing East\",\"chakraPlanet\":\"Solar Plexus (Manipura) & Root Chakra · Planet Sun (Surya) & Jupiter (Guru)\",\"poojaVidhi\":\"Consecrate on Saturday or Friday with holy Gangajal. Offer fresh tulsi leaves, natural yellow chandan, and chant Om Namo Venkateshaya or Govinda Hari Govinda.\",\"vedicBenefits\":\"Accelerates wealth accumulation, clears persistent financial blockages, protects commercial spaces from evil eye, and blesses with supreme self-confidence.\"} -->",
+    "faqs": [
+      {
+        "question": "Why is Tirupati Balaji in Tiger's Eye considered a powerful wealth magnet?",
+        "answer": "Lord Venkateswara is the presiding deity of wealth, relief from debt (Kuber Rin), and supreme abundance in the Kali Yuga. Tiger's Eye reinforces this by grounding finances, enhancing sharp business acumen, and deflecting jealousy or evil eye."
+      },
+      {
+        "question": "Where should this Tiger Eye Balaji statue be placed according to Vastu?",
+        "answer": "Ideal placement is in the North-East (Ishanya Kon), East altar, or on your office executive desk/cash safe facing the entrance."
+      },
+      {
+        "question": "Can daily puja be offered to this gemstone idol?",
+        "answer": "Yes, Tiger's Eye is a hard silicate mineral (Mohs 7). You can consecrate it with sacred Gangajal, chandan, tulsi leaves, and light a ghee lamp daily."
+      },
+      {
+        "question": "Is each piece unique in its color bands?",
+        "answer": "Yes, natural Tiger's Eye displays organic bands of golden amber, warm bronze, and rich chocolate brown, ensuring each hand-carved murti is completely one-of-a-kind."
+      }
+    ],
+    "metaTitle": "Tirupati Balaji in Tiger's Eye Idol | Lord Venkateswara Statue | Crystal Jaipuria",
+    "metaDescription": "Buy authentic Tiger Eye Tirupati Balaji idol (9\" H x 5\" W). Handcrafted natural golden chatoyant Lord Venkateswara gemstone statue for wealth & temple worship.",
+    "vedicVastu": {
+      "placementDirection": "East, North-East (Ishanya Kon), or Cash Safe facing East",
+      "chakraPlanet": "Solar Plexus (Manipura) & Root Chakra · Planet Sun (Surya) & Jupiter (Guru)",
+      "poojaVidhi": "Consecrate on Saturday or Friday with holy Gangajal. Offer fresh tulsi leaves, natural yellow chandan, and chant Om Namo Venkateshaya or Govinda Hari Govinda.",
+      "vedicBenefits": "Accelerates wealth accumulation, clears persistent financial blockages, protects commercial spaces from evil eye, and blesses with supreme self-confidence."
+    },
+    "images": [
+      "/images/tirupati-balaji-in-tiger-eye.webp",
+      "/images/tirupati-balaji-in-tiger-eye-2.webp",
+      "/images/tirupati-balaji-in-tiger-eye-3.webp",
+      "/images/tirupati-balaji-in-tiger-eye-4.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "categoryName": "God Statues",
+    "subCategoryId": {
+      "_id": "6aa58c80a69037c73ebed098",
+      "name": "Other",
+      "slug": "other"
+    },
+    "subCategoryName": "Other",
+    "size": "9 in (H) x 5 in (W) x 3.2 in (D)",
+    "weight": "3.6 kg",
+    "stock": 2,
+    "featured": true,
+    "pricePerUnit": "₹20.1 / gram",
+    "pricePerGram": 20.1
+  },
+  {
+    "_id": "6abe9e303618032686f05305",
+    "name": "Exquisite Carving of 4 Horse Bust Together in Lapis Lazuli",
+    "slug": "carving-of-4-horse-bust-together-in-lapis-lazuli",
+    "price": 383000,
+    "detail": "Heirloom luxury statement sculpture: Exquisite Carving of 4 Horse Bust Together in Lapis Lazuli hand-chiseled from an 11.2 kg block of natural royal blue Afghan Lapis Lazuli shimmering with golden pyrite flecks. Featuring four dynamic galloping horse busts united in harmony, symbolizing unhindered momentum, victory, prestige, and executive authority for luxury offices and estates.",
+    "description": "<p>Heirloom luxury statement sculpture: <strong>Exquisite Carving of 4 Horse Bust Together in Lapis Lazuli</strong> hand-chiseled from an 11.2 kg block of natural royal blue Afghan Lapis Lazuli shimmering with golden pyrite flecks. Featuring four dynamic galloping horse busts united in harmony, symbolizing unhindered momentum, victory, prestige, and executive authority for luxury offices and estates.</p>\n\n<h2>Equestrian Mastery & Royal Lapis Lazuli Heritage</h2>\n<p>Crafted by senior master lapidaries in Jaipur, this monumental sculpture captures the untamed spirit of four equine steeds carved in harmonious synchronization:</p>\n<ul>\n  <li><strong>Four Horses Symbolism:</strong> Represents the four cardinal directions, mastery over the four Ashramas of life, and the quadruple engines of enterprise: Speed, Strength, Endurance, and Vision.</li>\n  <li><strong>Anatomical Realism:</strong> Flared nostrils, muscular neck contours, streaming manes, and spirited facial expressions sculpted with lifelike three-dimensional depth.</li>\n  <li><strong>Celestial Afghan Lapis Lazuli:</strong> Deep ultramarine royal blue metamorphic gemstone speckled with shimmering gold pyrite (fool's gold) and white calcite bands, echoing the starry cosmic vault.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Exquisite Carving of 4 Horse Bust Together in Lapis Lazuli</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Royal Lapis Lazuli</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Weight Category</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">11.2 kg (11,200 g)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">11 in (H) x 14 in (W) x 5.5 in (D)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Unit</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹34.1 / gram (₹3,83,000 Total)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">South or South-East (Victory/Fame zone), or Executive Foyer</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Exquisite Carving of 4 Horse Bust Together in Lapis Lazuli</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Earth-Mined Natural Lapis Lazuli</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 11.2 kg (11,200 g)</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 11 in (H) x 14 in (W) x 5.5 in (D)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing Basis :</strong> ₹3,83,000 (₹34.1 / gram)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> South (Fame &amp; Recognition) or Boardroom Console</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone (Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof wooden crating with 100% door-to-door insurance</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"What does the 4 Horse Bust carving signify in Vastu and Feng Shui?\",\"answer\":\"Horses are the supreme symbols of swift speed, unrelenting stamina, commercial success, and victory over adversaries. Displaying 4 unified horse busts in an office or home establishes leadership authority and breaks through stagnant business cycles.\"},{\"question\":\"Where should this 14-inch Lapis Lazuli horse carving be placed?\",\"answer\":\"Place in the South sector (fame, status, and recognition) of your office or living room, or on the main console facing into the room to channel victorious energy.\"},{\"question\":\"Is this carving made from natural solid Lapis Lazuli?\",\"answer\":\"Yes, it is carved from an authentic monolithic 11.2 kg boulder of natural royal blue Lapis Lazuli rich in natural golden pyrite flecks and genuine mineral veins.\"},{\"question\":\"How is such a heavy fine-art sculpture shipped safely?\",\"answer\":\"It is packed inside custom molded foam cavities and shipped inside heavy-gauge wooden export crates with 100% comprehensive transit insurance.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Lapis Lazuli Four Horse Carving | 4 Horse Bust Sculpture | Crystal Jaipuria\",\"metaDescription\":\"Buy luxury Lapis Lazuli Four Horse Carving (11\" H x 14\" W). Handcrafted natural royal blue gemstone 4 horse bust equestrian sculpture for Vastu success & prestige.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"South sector (Fame & Recognition), Executive Office, or Living Room Console\",\"chakraPlanet\":\"Third Eye Chakra (Ajna) & Throat Chakra · Planet Saturn (Shani) & Mars (Mangal)\",\"poojaVidhi\":\"Wipe with a soft dry cloth. Place facing into the interior room to continuously project momentum, vigor, and success.\",\"vedicBenefits\":\"Supercharges career velocity, establishes executive reputation, protects against corporate stagnation, and inspires decisive leadership.\"} -->",
+    "faqs": [
+      {
+        "question": "What does the 4 Horse Bust carving signify in Vastu and Feng Shui?",
+        "answer": "Horses are the supreme symbols of swift speed, unrelenting stamina, commercial success, and victory over adversaries. Displaying 4 unified horse busts in an office or home establishes leadership authority and breaks through stagnant business cycles."
+      },
+      {
+        "question": "Where should this 14-inch Lapis Lazuli horse carving be placed?",
+        "answer": "Place in the South sector (fame, status, and recognition) of your office or living room, or on the main console facing into the room to channel victorious energy."
+      },
+      {
+        "question": "Is this carving made from natural solid Lapis Lazuli?",
+        "answer": "Yes, it is carved from an authentic monolithic 11.2 kg boulder of natural royal blue Lapis Lazuli rich in natural golden pyrite flecks and genuine mineral veins."
+      },
+      {
+        "question": "How is such a heavy fine-art sculpture shipped safely?",
+        "answer": "It is packed inside custom molded foam cavities and shipped inside heavy-gauge wooden export crates with 100% comprehensive transit insurance."
+      }
+    ],
+    "metaTitle": "Lapis Lazuli Four Horse Carving | 4 Horse Bust Sculpture | Crystal Jaipuria",
+    "metaDescription": "Buy luxury Lapis Lazuli Four Horse Carving (11\" H x 14\" W). Handcrafted natural royal blue gemstone 4 horse bust equestrian sculpture for Vastu success & prestige.",
+    "vedicVastu": {
+      "placementDirection": "South sector (Fame & Recognition), Executive Office, or Living Room Console",
+      "chakraPlanet": "Third Eye Chakra (Ajna) & Throat Chakra · Planet Saturn (Shani) & Mars (Mangal)",
+      "poojaVidhi": "Wipe with a soft dry cloth. Place facing into the interior room to continuously project momentum, vigor, and success.",
+      "vedicBenefits": "Supercharges career velocity, establishes executive reputation, protects against corporate stagnation, and inspires decisive leadership."
+    },
+    "images": [
+      "/images/carving-of-4-horse-bust-together-in-lapis-lazuli.webp",
+      "/images/carving-of-4-horse-bust-together-in-lapis-lazuli-2.webp",
+      "/images/carving-of-4-horse-bust-together-in-lapis-lazuli-3.webp",
+      "/images/carving-of-4-horse-bust-together-in-lapis-lazuli-4.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bc492dcf49aacd71ef68",
+      "name": "Crystal Statues",
+      "slug": "crystal-statues"
+    },
+    "categoryName": "Crystal Statues",
+    "subCategoryId": {
+      "_id": "6a55bc9f2dcf49aacd71ef6d",
+      "name": "Crystal Statues",
+      "slug": "crystal-statues"
+    },
+    "subCategoryName": "Crystal Statues",
+    "size": "11 in (H) x 14 in (W) x 5.5 in (D)",
+    "weight": "11.2 kg",
+    "stock": 1,
+    "featured": true,
+    "pricePerUnit": "₹34.1 / gram",
+    "pricePerGram": 34.1
+  },
+  {
+    "_id": "6abe9e303618032686f05306",
+    "name": "7 Running Horses in Lapis Lazuli",
+    "slug": "7-running-horses-in-lapis-lazuli",
+    "price": 345800,
+    "detail": "Monumental Vastu masterpiece: 7 Running Horses in Lapis Lazuli carved from a massive 14.5 kg single boulder of authentic natural deep celestial blue Lapis Lazuli with golden pyrite striations. Symbolizing the seven horses of the Sun god (Surya Dev), this majestic sculpture activates lightning career acceleration, business conquest, unstoppable financial velocity, and aristocratic prominence.",
+    "description": "<p>Monumental Vastu masterpiece: <strong>7 Running Horses in Lapis Lazuli</strong> carved from a massive 14.5 kg single boulder of authentic natural deep celestial blue Lapis Lazuli with golden pyrite striations. Symbolizing the seven horses of the Sun god (Surya Dev), this majestic sculpture activates lightning career acceleration, business conquest, unstoppable financial velocity, and aristocratic prominence.</p>\n\n<h2>Vedic Seven Horses (Sapta Ashva) & Solar Prosperity</h2>\n<p>In Vedic Vastu Shastra, seven galloping horses represent the seven divine steeds of Lord Surya's celestial chariot (representing the seven days of the week, seven rainbow rays, and the seven chakras):</p>\n<ul>\n  <li><strong>Uninterrupted Galloping Stride:</strong> Each horse is dynamically carved mid-stride with lifted hooves, soaring manes, and spirited heads, representing the swift elimination of business inertia.</li>\n  <li><strong>Royal Blue Lapis &amp; Gold Pyrite:</strong> Natural royal blue matrix laced with golden iron pyrite specks attracts wealth and clears third-eye mental clutter for strategic commercial decisions.</li>\n  <li><strong>Vastu Wealth &amp; Career Velocity:</strong> Placed in the South or East wall, it supercharges promotion opportunities, new client acquisition, and commercial prosperity.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">7 Running Horses in Lapis Lazuli (12\" H x 16\" W)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Royal Lapis Lazuli</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Weight Category</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">14.5 kg (14,500 g)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">12 in (H) x 16 in (W) x 6.2 in (D)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Unit</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹23.8 / gram (₹3,45,800 Total)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">South (Fame & Success) or East Living Room/Office Console</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> 7 Running Horses in Lapis Lazuli (12\" H x 16\" W)</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Earth-Mined Natural Lapis Lazuli</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 14.5 kg (14,500 g)</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 12 in (H) x 16 in (W) x 6.2 in (D)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing Basis :</strong> ₹3,45,800 (₹23.8 / gram)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> South (Fame) or East (Growth) facing into the room</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone (Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof crating with 100% door-to-door insurance</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"Why is 7 Running Horses considered so auspicious in Vastu Shastra?\",\"answer\":\"Seven represents completeness and the seven days of sustained progress. Seven running horses symbolize swift success, continuous growth in business, victory over competitors, and financial elevation.\"},{\"question\":\"Which direction should the 7 Running Horses in Lapis Lazuli face?\",\"answer\":\"Position the statue so the horses are running into your home or office, never out towards an exit or door. Place on the South wall for fame and promotion, or the East wall for robust business expansion.\"},{\"question\":\"Is this carving solid Lapis Lazuli?\",\"answer\":\"Yes, it is hand-sculpted from a single 14.5 kg solid boulder of certified natural earth-mined Lapis Lazuli featuring authentic lazurite blue coloration and golden pyrite inclusions.\"},{\"question\":\"How do you handle shipping for this 14.5 kg gemstone artwork?\",\"answer\":\"Every sculpture is packaged in multi-layer custom shock-absorbent high-density foam, encased in heavy export-grade timber crates, and delivered with 100% insured courier service.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"7 Running Horses in Lapis Lazuli | Vastu Seven Horses Sculpture | Crystal Jaipuria\",\"metaDescription\":\"Buy magnificent 7 Running Horses in Lapis Lazuli (12\" H x 16\" W). Certified natural royal blue gemstone seven horses statue for career velocity, wealth & Vastu growth.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"South wall (Fame & Victory) or East wall (Growth) running into the premises\",\"chakraPlanet\":\"Third Eye Chakra (Ajna) & Solar Plexus · Planet Sun (Surya) & Saturn (Shani)\",\"poojaVidhi\":\"Keep clean and dust-free with a soft microfiber cloth. Ensure the horses are depicted advancing inward towards the living or office space.\",\"vedicBenefits\":\"Clears commercial stagnancy, brings rapid career promotions, invites royal prestige, and ensures uninterrupted business cash flow.\"} -->",
+    "faqs": [
+      {
+        "question": "Why is 7 Running Horses considered so auspicious in Vastu Shastra?",
+        "answer": "Seven represents completeness and the seven days of sustained progress. Seven running horses symbolize swift success, continuous growth in business, victory over competitors, and financial elevation."
+      },
+      {
+        "question": "Which direction should the 7 Running Horses in Lapis Lazuli face?",
+        "answer": "Position the statue so the horses are running into your home or office, never out towards an exit or door. Place on the South wall for fame and promotion, or the East wall for robust business expansion."
+      },
+      {
+        "question": "Is this carving solid Lapis Lazuli?",
+        "answer": "Yes, it is hand-sculpted from a single 14.5 kg solid boulder of certified natural earth-mined Lapis Lazuli featuring authentic lazurite blue coloration and golden pyrite inclusions."
+      },
+      {
+        "question": "How do you handle shipping for this 14.5 kg gemstone artwork?",
+        "answer": "Every sculpture is packaged in multi-layer custom shock-absorbent high-density foam, encased in heavy export-grade timber crates, and delivered with 100% insured courier service."
+      }
+    ],
+    "metaTitle": "7 Running Horses in Lapis Lazuli | Vastu Seven Horses Sculpture | Crystal Jaipuria",
+    "metaDescription": "Buy magnificent 7 Running Horses in Lapis Lazuli (12\" H x 16\" W). Certified natural royal blue gemstone seven horses statue for career velocity, wealth & Vastu growth.",
+    "vedicVastu": {
+      "placementDirection": "South wall (Fame & Victory) or East wall (Growth) running into the premises",
+      "chakraPlanet": "Third Eye Chakra (Ajna) & Solar Plexus · Planet Sun (Surya) & Saturn (Shani)",
+      "poojaVidhi": "Keep clean and dust-free with a soft microfiber cloth. Ensure the horses are depicted advancing inward towards the living or office space.",
+      "vedicBenefits": "Clears commercial stagnancy, brings rapid career promotions, invites royal prestige, and ensures uninterrupted business cash flow."
+    },
+    "images": [
+      "/images/7-running-horses-in-lapis-lazuli.webp",
+      "/images/7-running-horses-in-lapis-lazuli-2.webp",
+      "/images/7-running-horses-in-lapis-lazuli-3.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bc492dcf49aacd71ef68",
+      "name": "Crystal Statues",
+      "slug": "crystal-statues"
+    },
+    "categoryName": "Crystal Statues",
+    "subCategoryId": {
+      "_id": "6a55bc9f2dcf49aacd71ef6d",
+      "name": "Crystal Statues",
+      "slug": "crystal-statues"
+    },
+    "subCategoryName": "Crystal Statues",
+    "size": "12 in (H) x 16 in (W) x 6.2 in (D)",
+    "weight": "14.5 kg",
+    "stock": 1,
+    "featured": true,
+    "pricePerUnit": "₹23.8 / gram",
+    "pricePerGram": 23.8
+  },
+  {
+    "_id": "6abe9e303618032686f05307",
+    "name": "Tea Set in Crystal Quartz",
+    "slug": "tea-set-in-crystal-quartz",
+    "price": 111270,
+    "detail": "Rare luxury artisanal tableware: Tea Set in Crystal Quartz expertly hand-carved from 100% natural earth-mined Clear Quartz crystal (Sphatik) with genuine natural mineral veil inclusions. Includes one sculpted crystal teapot with matching faceted lid and four hand-turned crystal tea cups. Radiates supreme purity, energetic purification, and aristocratic elegance for ceremonial tea rituals and luxury dining decor.",
+    "description": "<p>Rare luxury artisanal tableware: <strong>Tea Set in Crystal Quartz</strong> expertly hand-carved from 100% natural earth-mined Clear Quartz crystal (Sphatik) with genuine natural mineral veil inclusions. Includes one sculpted crystal teapot with matching faceted lid and four hand-turned crystal tea cups. Radiates supreme purity, energetic purification, and aristocratic elegance for ceremonial tea rituals and luxury dining decor.</p>\n\n<h2>Lapidary Precision & Pure Quartz Crockery Mastery</h2>\n<p>Carving functional hollowed vessels from brittle, unyielding rock crystal quartz requires extraordinary lapidary craftsmanship honed over generations in Jaipur:</p>\n<ul>\n  <li><strong>5-Piece Master Set:</strong> Features 1 hand-hollowed Crystal Quartz Teapot with ergonomic spout, lid finial, and carved handle, plus 4 matching hand-turned Crystal Tea Cups.</li>\n  <li><strong>Natural Internal Veil Inclusions:</strong> Light refracts through natural micro-crystalline veils and silver-ice fractures, proving authentic 100% earth-mined quartz origin without synthetic glass casting.</li>\n  <li><strong>Energetic Water Purification:</strong> Clear Quartz (Sphatik) is recognized across ancient cultures as the Master Healer stone, imparting crisp vibrational clarity and peace to any elixir or tea served within.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Tea Set in Crystal Quartz (Teapot + 4 Cups)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Clear Quartz (Sphatik)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Weight Category</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">2.45 kg (Complete 5-Piece Set)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Teapot: 5.5 x 7.5 in, 4 Cups: 2.2 x 2.8 in each</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Unit</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹45.4 / gram (₹1,11,270 Complete Set)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North-East, Dining Room Centerpiece, or Luxury Showcase</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Tea Set in Crystal Quartz (Teapot + 4 Cups)</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Earth-Mined Clear Quartz (Sphatik)</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 2.45 kg (Complete Set)</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> Teapot: 5.5 x 7.5 in; Cups: 2.2 x 2.8 in</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing Basis :</strong> ₹1,11,270 (Complete Handcrafted Set)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North-East or Luxury Dining Showcase</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Certified Natural Rock Crystal (Zero synthetic glass)</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Bespoke velvet-lined shockproof wooden box with 100% insurance</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"Can actual warm tea or beverages be consumed in this Crystal Quartz tea set?\",\"answer\":\"Yes! While primarily collected as high-luxury decorative art and ceremonial teaware, pure natural quartz has high thermal stability. For beverage service, warm or room-temperature herbal teas are ideal (avoid sudden boiling thermal shocks to preserve natural inclusions).\"},{\"question\":\"How is genuine crystal quartz tableware different from molded glass?\",\"answer\":\"Natural rock crystal quartz is carved by hand from mined mineral blocks and displays natural cool surface touch, high refractive rainbow dispersals, and subtle internal crystalline veils that cannot be replicated by pressed factory glass.\"},{\"question\":\"How should this luxury tea set be cleaned?\",\"answer\":\"Hand wash gently with mild lukewarm water and a soft sponge. Never place in an automated dishwasher. Dry with a lint-free microfiber towel to maintain mirror-like optical brilliance.\"},{\"question\":\"Is transit insurance included for this delicate set?\",\"answer\":\"Yes, each cup and the teapot are nestled in form-fitted shockproof velvet foam inside export wooden crates with full transit insurance.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Crystal Quartz Tea Set | Handcrafted Gemstone Tea Service | Crystal Jaipuria\",\"metaDescription\":\"Buy luxury handcrafted Crystal Quartz Tea Set with carved teapot & 4 matching cups. 100% natural clear quartz crystal crockery for luxury dining & spiritual decor.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North-East (Ishanya Kon), Center of Dining Table, or Luxury Living Credenza\",\"chakraPlanet\":\"Crown Chakra (Sahasrara) · Planet Venus (Shukra) & Moon (Chandra)\",\"poojaVidhi\":\"Cleanse with Gangajal or clean spring water. Display in illuminated vitrines or use during festive gatherings to elevate harmony.\",\"vedicBenefits\":\"Infuses dining space with pure sattvic vibrations, promotes refined social warmth, resolves domestic friction, and reflects elite lifestyle taste.\"} -->",
+    "faqs": [
+      {
+        "question": "Can actual warm tea or beverages be consumed in this Crystal Quartz tea set?",
+        "answer": "Yes! While primarily collected as high-luxury decorative art and ceremonial teaware, pure natural quartz has high thermal stability. For beverage service, warm or room-temperature herbal teas are ideal (avoid sudden boiling thermal shocks to preserve natural inclusions)."
+      },
+      {
+        "question": "How is genuine crystal quartz tableware different from molded glass?",
+        "answer": "Natural rock crystal quartz is carved by hand from mined mineral blocks and displays natural cool surface touch, high refractive rainbow dispersals, and subtle internal crystalline veils that cannot be replicated by pressed factory glass."
+      },
+      {
+        "question": "How should this luxury tea set be cleaned?",
+        "answer": "Hand wash gently with mild lukewarm water and a soft sponge. Never place in an automated dishwasher. Dry with a lint-free microfiber towel to maintain mirror-like optical brilliance."
+      },
+      {
+        "question": "Is transit insurance included for this delicate set?",
+        "answer": "Yes, each cup and the teapot are nestled in form-fitted shockproof velvet foam inside export wooden crates with full transit insurance."
+      }
+    ],
+    "metaTitle": "Crystal Quartz Tea Set | Handcrafted Gemstone Tea Service | Crystal Jaipuria",
+    "metaDescription": "Buy luxury handcrafted Crystal Quartz Tea Set with carved teapot & 4 matching cups. 100% natural clear quartz crystal crockery for luxury dining & spiritual decor.",
+    "vedicVastu": {
+      "placementDirection": "North-East (Ishanya Kon), Center of Dining Table, or Luxury Living Credenza",
+      "chakraPlanet": "Crown Chakra (Sahasrara) · Planet Venus (Shukra) & Moon (Chandra)",
+      "poojaVidhi": "Cleanse with Gangajal or clean spring water. Display in illuminated vitrines or use during festive gatherings to elevate harmony.",
+      "vedicBenefits": "Infuses dining space with pure sattvic vibrations, promotes refined social warmth, resolves domestic friction, and reflects elite lifestyle taste."
+    },
+    "images": [
+      "/images/tea-set-in-crystal-quartz.webp",
+      "/images/tea-set-in-crystal-quartz-2.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bc492dcf49aacd71ef68",
+      "name": "Crystal Statues",
+      "slug": "crystal-statues"
+    },
+    "categoryName": "Crystal Statues",
+    "subCategoryId": {
+      "_id": "6a55bc9f2dcf49aacd71ef6d",
+      "name": "Crystal Statues",
+      "slug": "crystal-statues"
+    },
+    "subCategoryName": "Crystal Statues",
+    "size": "Teapot: 5.5 x 7.5 in, 4 Cups: 2.2 x 2.8 in",
+    "weight": "2.45 kg (Complete Set)",
+    "stock": 2,
+    "featured": true,
+    "pricePerUnit": "₹45.4 / gram",
+    "pricePerGram": 45.4
+  },
+  {
+    "_id": "6abe9e303618032686f05308",
+    "name": "Sodalite Buddha",
+    "slug": "sodalite-buddha",
+    "price": 192000,
+    "detail": "Monumental 17-inch Sodalite Buddha statue hand-carved from an 18.2 kg specimen of royal blue natural Sodalite gemstone with calcite clouding. Depicts Lord Gautama Buddha seated in profound meditation (Padmasana) with Dhyana Mudra. Celebrated as the ultimate stone of mental awakening, intellectual synthesis, and emotional composure, creating an aura of supreme Zen serenity in luxury residences and meditation sanctuaries.",
+    "description": "<p>Monumental 17-inch <strong>Sodalite Buddha</strong> statue hand-carved from an 18.2 kg specimen of royal blue natural Sodalite gemstone with calcite clouding. Depicts Lord Gautama Buddha seated in profound meditation (Padmasana) with Dhyana Mudra. Celebrated as the ultimate stone of mental awakening, intellectual synthesis, and emotional composure, creating an aura of supreme Zen serenity in luxury residences and meditation sanctuaries.</p>\n\n<h2>Zen Awakening & Sodalite Deep Blue Metaphysics</h2>\n<p>Sculpted with serene facial composure by generational master stone carvers in Jaipur:</p>\n<ul>\n  <li><strong>Dhyana Mudra (Meditative Equanimity):</strong> Both hands resting gently in the lap with palms upward, thumbs lightly touching to signify the balance of mind, ego, and supreme enlightenment.</li>\n  <li><strong>Ushnisha &amp; Urna:</strong> Featuring the cranial bump of spiritual illumination (Ushnisha) and forehead Urna, radiating waves of deep insight and clarity into the surrounding environment.</li>\n  <li><strong>Royal Deep Blue Sodalite Matrix:</strong> Resonates powerfully with the Throat and Third Eye chakras, calming overactive analytical minds, bridging logic with intuition, and extinguishing anger.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Sodalite Buddha (17\" H x 13\" W)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Royal Blue Sodalite</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Weight Category</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">18.2 kg (18,200 g)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">17 in (H) x 13 in (W) x 7.5 in (D)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Unit</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹10.5 / gram (₹1,92,000 Total)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North-East (Ishanya), East, or Zen Meditation Room</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Sodalite Buddha (17\" H x 13\" W)</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Earth-Mined Royal Sodalite Gemstone</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 18.2 kg (18,200 g)</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 17 in (H) x 13 in (W) x 7.5 in (D)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing Basis :</strong> ₹1,92,000 (₹10.5 / gram)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North-East or Zen Meditation Space</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone (Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof crating with 100% door-to-door insurance</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"What are the metaphysical benefits of meditating near a Sodalite Buddha statue?\",\"answer\":\"Sodalite brings order and calmness to the mind. It encourages rational thought, objectivity, and truth, while Lord Buddha's posture harmonizes the spirit, helping dissolve panic attacks and chronic mental restlessness.\"},{\"question\":\"Where is the best place to install this 17-inch Buddha statue?\",\"answer\":\"Install on an elevated plinth or altar in your meditation room, living room facing the entrance, or executive study facing East or North-East.\"},{\"question\":\"Is this carving made from natural solid Sodalite?\",\"answer\":\"Yes, this magnificent 18.2 kg statue is hand-carved from a single rough boulder of natural deep royal blue Sodalite featuring characteristic white calcite and feldspar veins.\"},{\"question\":\"How is an 18.2 kg large gemstone sculpture shipped?\",\"answer\":\"It is packed in multi-layer custom foam and shipped in reinforced wooden crates with door-to-door full insurance across India and internationally.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Sodalite Buddha Statue (17\") | Meditating Gemstone Buddha | Crystal Jaipuria\",\"metaDescription\":\"Buy handcrafted 17-inch Sodalite Buddha statue online. Monumental natural blue sodalite meditating Buddha sculpture for mindfulness, inner calm & luxury zen decor.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North-East (Ishanya Kon), East Altar, or Zen Meditation Room\",\"chakraPlanet\":\"Third Eye Chakra (Ajna) & Throat Chakra · Planet Saturn (Shani) & Mercury (Budh)\",\"poojaVidhi\":\"Wipe gently with a soft dry cloth. Light a pure beeswax candle or agarbatti and practice mindfulness or breathwork before the idol.\",\"vedicBenefits\":\"Calms turbulent emotions, enhances deep mental focus, dispels insomnia and mental fog, and establishes a serene spiritual sanctuary.\"} -->",
+    "faqs": [
+      {
+        "question": "What are the metaphysical benefits of meditating near a Sodalite Buddha statue?",
+        "answer": "Sodalite brings order and calmness to the mind. It encourages rational thought, objectivity, and truth, while Lord Buddha's posture harmonizes the spirit, helping dissolve panic attacks and chronic mental restlessness."
+      },
+      {
+        "question": "Where is the best place to install this 17-inch Buddha statue?",
+        "answer": "Install on an elevated plinth or altar in your meditation room, living room facing the entrance, or executive study facing East or North-East."
+      },
+      {
+        "question": "Is this carving made from natural solid Sodalite?",
+        "answer": "Yes, this magnificent 18.2 kg statue is hand-carved from a single rough boulder of natural deep royal blue Sodalite featuring characteristic white calcite and feldspar veins."
+      },
+      {
+        "question": "How is an 18.2 kg large gemstone sculpture shipped?",
+        "answer": "It is packed in multi-layer custom foam and shipped in reinforced wooden crates with door-to-door full insurance across India and internationally."
+      }
+    ],
+    "metaTitle": "Sodalite Buddha Statue (17\") | Meditating Gemstone Buddha | Crystal Jaipuria",
+    "metaDescription": "Buy handcrafted 17-inch Sodalite Buddha statue online. Monumental natural blue sodalite meditating Buddha sculpture for mindfulness, inner calm & luxury zen decor.",
+    "vedicVastu": {
+      "placementDirection": "North-East (Ishanya Kon), East Altar, or Zen Meditation Room",
+      "chakraPlanet": "Third Eye Chakra (Ajna) & Throat Chakra · Planet Saturn (Shani) & Mercury (Budh)",
+      "poojaVidhi": "Wipe gently with a soft dry cloth. Light a pure beeswax candle or agarbatti and practice mindfulness or breathwork before the idol.",
+      "vedicBenefits": "Calms turbulent emotions, enhances deep mental focus, dispels insomnia and mental fog, and establishes a serene spiritual sanctuary."
+    },
+    "images": [
+      "/images/sodalite-buddha.webp",
+      "/images/sodalite-buddha-2.webp",
+      "/images/sodalite-buddha-3.webp",
+      "/images/sodalite-buddha-4.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "categoryName": "God Statues",
+    "subCategoryId": {
+      "_id": "6aa58c80a69037c73ebed098",
+      "name": "Other",
+      "slug": "other"
+    },
+    "subCategoryName": "Other",
+    "size": "17 in (H) x 13 in (W) x 7.5 in (D)",
+    "weight": "18.2 kg",
+    "stock": 1,
+    "featured": true,
+    "pricePerUnit": "₹10.5 / gram",
+    "pricePerGram": 10.5
+  },
+  {
+    "_id": "6abe9e303618032686f05309",
+    "name": "Ruby Kyanite Buddha",
+    "slug": "ruby-kyanite-buddha",
+    "price": 234500,
+    "detail": "Majestic 14-inch Ruby Kyanite Buddha statue hand-carved from a rare single 12.6 kg boulder of natural deep crimson-magenta Ruby embedded in electric-blue Kyanite and fuchsite matrix. Depicts Shakyamuni Buddha in Dhyana Mudra of transcendent awakening. Combines Ruby’s sovereign root-chakra courage and life-force with Kyanite’s throat and third-eye chakra alignment, providing immediate chakra clearing and profound spiritual luxury.",
+    "description": "<p>Majestic 14-inch <strong>Ruby Kyanite Buddha</strong> statue hand-carved from a rare single 12.6 kg boulder of natural deep crimson-magenta Ruby embedded in electric-blue Kyanite and fuchsite matrix. Depicts Shakyamuni Buddha in Dhyana Mudra of transcendent awakening. Combines Ruby’s sovereign root-chakra courage and life-force with Kyanite’s throat and third-eye chakra alignment, providing immediate chakra clearing and profound spiritual luxury.</p>\n\n<h2>Rare Mineral Synergy & Transcendental Buddha Form</h2>\n<p>The natural geological coexistence of corundum Ruby inside blue Kyanite creates one of the most energetically dynamic stones known to lapidary science:</p>\n<ul>\n  <li><strong>Dual Energy Alignment:</strong> Vibrant red-pink Ruby awakens the Root and Heart chakras (vitality, passion, and grounding), while electric blue bladed Kyanite instantly opens the Throat and Third Eye chakras without accumulating negative energy.</li>\n  <li><strong>Dhyana Mudra of Boundless Stillness:</strong> Shakyamuni Buddha seated upon an organic carved gemstone plinth, channeling calm transcendence and unshakeable inner authority.</li>\n  <li><strong>Jaipur Master Carving:</strong> Intricately rendered monastic robes draped softly across the chest, serene downcast meditative eyes, and elongated earlobes signifying renunciation of worldly delusion.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Ruby Kyanite Buddha (14\" H x 8.5\" W)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Ruby in Blue Kyanite Matrix</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Weight Category</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">12.6 kg (12,600 g)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">14 in (H) x 8.5 in (W) x 5.2 in (D)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Unit</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹18.6 / gram (₹2,34,500 Total)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North-East (Ishanya Kon), East Altar, or Zen Meditation Space</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Ruby Kyanite Buddha (14\" H x 8.5\" W)</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Natural Ruby in Kyanite Matrix</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 12.6 kg (12,600 g)</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 14 in (H) x 8.5 in (W) x 5.2 in (D)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing Basis :</strong> ₹2,34,500 (₹18.6 / gram)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North-East or East sacred meditation corner</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone (Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof wooden crating with 100% door-to-door insurance</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"What makes Ruby Kyanite so rare and spiritually potent?\",\"answer\":\"Ruby in Kyanite is a rare natural mineral composite that unites the root-chakra vitality of precious corundum ruby with the high-vibrational, throat-and-third-eye attunement of kyanite. It acts as an energetic conduit that aligns all seven chakras instantly.\"},{\"question\":\"Where should this 14-inch Buddha idol be placed at home?\",\"answer\":\"Place on an elevated plinth in the North-East (Ishanya), East altar, or meditation hall facing into the room. Its presence anchors mental clarity and serene luxury.\"},{\"question\":\"Is this carving made from natural earth-mined stone?\",\"answer\":\"Yes, it is carved from an authentic monolithic 12.6 kg block of natural earth-mined Ruby in Kyanite, showcasing striking contrast between deep blue kyanite blades and red-magenta ruby crystals.\"},{\"question\":\"How is the shipment of this heavy sculpture safeguarded?\",\"answer\":\"Cushioned with bespoke high-density shockproof foam and sealed within export-grade reinforced wooden containers, dispatched with 100% comprehensive transit insurance.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Ruby Kyanite Buddha Statue (14\") | Natural Gemstone Murti | Crystal Jaipuria\",\"metaDescription\":\"Buy majestic 14-inch Ruby Kyanite Buddha statue online. Hand-carved in rare natural ruby in blue kyanite matrix for deep meditation, alignment & spiritual luxury.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North-East (Ishanya Kon), East Altar, or Zen Meditation Room\",\"chakraPlanet\":\"Root Chakra (Muladhara) & Throat/Third Eye · Planet Sun (Surya) & Jupiter (Guru)\",\"poojaVidhi\":\"Wipe with a soft dry cloth. Light a natural ghee diya or sandalwood incense to activate profound meditative stillness.\",\"vedicBenefits\":\"Harmonizes conflicting emotions, stimulates spiritual intuition, unblocks self-expression, and shields the home with grounding protection.\"} -->",
+    "faqs": [
+      {
+        "question": "What makes Ruby Kyanite so rare and spiritually potent?",
+        "answer": "Ruby in Kyanite is a rare natural mineral composite that unites the root-chakra vitality of precious corundum ruby with the high-vibrational, throat-and-third-eye attunement of kyanite. It acts as an energetic conduit that aligns all seven chakras instantly."
+      },
+      {
+        "question": "Where should this 14-inch Buddha idol be placed at home?",
+        "answer": "Place on an elevated plinth in the North-East (Ishanya), East altar, or meditation hall facing into the room. Its presence anchors mental clarity and serene luxury."
+      },
+      {
+        "question": "Is this carving made from natural earth-mined stone?",
+        "answer": "Yes, it is carved from an authentic monolithic 12.6 kg block of natural earth-mined Ruby in Kyanite, showcasing striking contrast between deep blue kyanite blades and red-magenta ruby crystals."
+      },
+      {
+        "question": "How is the shipment of this heavy sculpture safeguarded?",
+        "answer": "Cushioned with bespoke high-density shockproof foam and sealed within export-grade reinforced wooden containers, dispatched with 100% comprehensive transit insurance."
+      }
+    ],
+    "metaTitle": "Ruby Kyanite Buddha Statue (14\") | Natural Gemstone Murti | Crystal Jaipuria",
+    "metaDescription": "Buy majestic 14-inch Ruby Kyanite Buddha statue online. Hand-carved in rare natural ruby in blue kyanite matrix for deep meditation, alignment & spiritual luxury.",
+    "vedicVastu": {
+      "placementDirection": "North-East (Ishanya Kon), East Altar, or Zen Meditation Room",
+      "chakraPlanet": "Root Chakra (Muladhara) & Throat/Third Eye · Planet Sun (Surya) & Jupiter (Guru)",
+      "poojaVidhi": "Wipe with a soft dry cloth. Light a natural ghee diya or sandalwood incense to activate profound meditative stillness.",
+      "vedicBenefits": "Harmonizes conflicting emotions, stimulates spiritual intuition, unblocks self-expression, and shields the home with grounding protection."
+    },
+    "images": [
+      "/images/ruby-kyanite-buddha.webp",
+      "/images/ruby-kyanite-buddha-2.webp",
+      "/images/ruby-kyanite-buddha-3.webp",
+      "/images/ruby-kyanite-buddha-4.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "categoryName": "God Statues",
+    "subCategoryId": {
+      "_id": "6aa58c80a69037c73ebed098",
+      "name": "Other",
+      "slug": "other"
+    },
+    "subCategoryName": "Other",
+    "size": "14 in (H) x 8.5 in (W) x 5.2 in (D)",
+    "weight": "12.6 kg",
+    "stock": 1,
+    "featured": true,
+    "pricePerUnit": "₹18.6 / gram",
+    "pricePerGram": 18.6
+  },
+
+  {
     "_id": "6abe9e153618032686f05291",
     "name": "Durga Devi Ruby Idol",
     "slug": "durga-devi-ruby-idol",
@@ -3629,7 +4158,8 @@ export const FALLBACK_PRODUCTS = [
     },
     "images": [
       "/images/lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva.webp",
-      "/images/lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva-2.webp"
+      "/images/lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva-2.webp",
+      "/images/lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva-3.webp"
     ],
     "categoryId": {
       "_id": "6a55bc292dcf49aacd71ef65",

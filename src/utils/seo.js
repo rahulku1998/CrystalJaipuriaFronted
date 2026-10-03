@@ -7,6 +7,21 @@ import { getVedicVastuForProduct } from "./productMetadata.js";
 
 
 export const SUPER_TITLE_MAPPINGS = {
+  "ruby-ram-darbar-carving": "Ruby Ram Darbar Carving | Natural Gemstone Idol | Crystal Jaipuria",
+  "elegant-ruby-ram-darbar-carving": "Ruby Ram Darbar Carving | Natural Gemstone Idol | Crystal Jaipuria",
+  "green-aventurine-lord-shiva": "Green Aventurine Lord Shiva Statue | Natural Gemstone Idol | Crystal Jaipuria",
+  "goddess-tara-in-green-aventurine": "Goddess Tara in Green Aventurine Statue | Sacred Healing Idol | Crystal Jaipuria",
+  "green-aventurine-goddess-tara": "Goddess Tara in Green Aventurine Statue | Sacred Healing Idol | Crystal Jaipuria",
+  "tirupati-balaji-in-tiger-eye": "Tirupati Balaji in Tiger's Eye Idol | Lord Venkateswara Statue | Crystal Jaipuria",
+  "tiger-eye-tirupati-balaji": "Tirupati Balaji in Tiger's Eye Idol | Lord Venkateswara Statue | Crystal Jaipuria",
+  "carving-of-4-horse-bust-together-in-lapis-lazuli": "Lapis Lazuli Four Horse Carving | 4 Horse Bust Sculpture | Crystal Jaipuria",
+  "lapis-lazuli-four-horse-carving": "Lapis Lazuli Four Horse Carving | 4 Horse Bust Sculpture | Crystal Jaipuria",
+  "7-running-horses-in-lapis-lazuli": "7 Running Horses in Lapis Lazuli | Vastu Seven Horses Sculpture | Crystal Jaipuria",
+  "lapis-lazuli-7-running-horses": "7 Running Horses in Lapis Lazuli | Vastu Seven Horses Sculpture | Crystal Jaipuria",
+  "tea-set-in-crystal-quartz": "Crystal Quartz Tea Set | Handcrafted Gemstone Tea Service | Crystal Jaipuria",
+  "crystal-quartz-tea-set": "Crystal Quartz Tea Set | Handcrafted Gemstone Tea Service | Crystal Jaipuria",
+  "sodalite-buddha": "Sodalite Buddha Statue (17\") | Meditating Gemstone Buddha | Crystal Jaipuria",
+  "ruby-kyanite-buddha": "Ruby Kyanite Buddha Statue (14\") | Natural Gemstone Murti | Crystal Jaipuria",
   "natural-opal-stone-shivling": "Natural Opal Stone Shivling (Certified Upal Ratna) | Crystal Jaipuria",
   "natural-lapis-lazuli-lord-krishna-statue": "Natural Lapis Lazuli Lord Krishna Statue | Authentic Gemstone Murti",
   "natural-lapis-lazuli-shiva-face-carving-idol": "Natural Lapis Lazuli Shiva Face Carving Idol | Jaipur Gemstone Murti",
