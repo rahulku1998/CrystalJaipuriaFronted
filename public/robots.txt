@@ -1,6 +1,11 @@
 User-agent: *
 Allow: /
 
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /
+
+
 # Admin Controls
 Disallow: /admin
 Disallow: /admin/*
