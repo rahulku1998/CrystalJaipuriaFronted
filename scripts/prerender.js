@@ -190,12 +190,10 @@ export const runPrerender = async () => {
     : (Array.isArray(categoriesData) ? categoriesData : []);
 
   const existingSlugs = new Set(products.map((p) => p.slug || p._id));
-  FALLBACK_PRODUCTS.forEach((fbProd) => {
-    if (!existingSlugs.has(fbProd.slug) && !existingSlugs.has(fbProd._id)) {
-      products.push(fbProd);
-      existingSlugs.add(fbProd.slug);
-    }
-  });
+  const missingFallbacks = FALLBACK_PRODUCTS.filter(
+    (fbProd) => !existingSlugs.has(fbProd.slug) && !existingSlugs.has(fbProd._id)
+  );
+  products = [...missingFallbacks, ...products];
   if (categories.length === 0) {
     console.log("⚡ [Prerender] Using fallback categories catalog (5 categories)...");
     categories = FALLBACK_CATEGORIES;
@@ -612,9 +610,13 @@ export const runPrerender = async () => {
           p.slug === "amethyst-gemston-angel" ||
           p.slug === "gemston-amethyst-diya" ||
           p.slug === "green-aventurine-shankh" ||
+          p.slug?.includes("horse") ||
+          p.slug?.includes("tea-set") ||
           p.name?.toLowerCase().includes("angel") ||
           p.name?.toLowerCase().includes("diya") ||
-          p.name?.toLowerCase().includes("shankh")
+          p.name?.toLowerCase().includes("shankh") ||
+          p.name?.toLowerCase().includes("horse") ||
+          p.name?.toLowerCase().includes("tea set")
         ))
     );
 
@@ -848,6 +850,35 @@ export const runPrerender = async () => {
     },
   ];
 
+  const shopCardsHtml = products.slice(0, 15)
+    .map((p) => {
+      const pSlug = p.slug || p._id;
+      const pImg = `${BASE_URL}/images/${pSlug}.webp`;
+      const pPrice = parsePrice(p);
+      return `
+        <a href="${BASE_URL}/product/${pSlug}" style="text-decoration:none;background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:12px;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="aspect-ratio:1/1;background:#faf8f5;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:8px;">
+              <img src="${pImg}" alt="${escapeHtml(p.name)}" style="max-height:100%;max-width:100%;object-fit:contain;" width="300" height="300" loading="lazy" />
+            </div>
+            <h3 style="font-size:14px;font-weight:700;color:#1e293b;margin:12px 0 6px 0;line-height:1.4;">${escapeHtml(p.name)}</h3>
+          </div>
+          <div style="font-size:16px;font-weight:800;color:#92400e;margin-top:8px;">${pPrice}</div>
+        </a>
+      `;
+    })
+    .join("\n");
+
+  const shopBodyPreview = `
+    <div style="max-width:1200px;margin:0 auto;padding:24px 16px;font-family:system-ui,-apple-system,sans-serif;">
+      <h1 style="font-size:28px;font-weight:800;color:#0f172a;margin-bottom:8px;">Shop All Gemstone Statues &amp; Crystal Handicrafts</h1>
+      <p style="font-size:14px;color:#64748b;margin-bottom:24px;">Explore 100% natural certified gemstone god statues, Sphatik Shivlings, and Vastu artifacts handcrafted in Jaipur.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));gap:16px;">
+        ${shopCardsHtml}
+      </div>
+    </div>
+  `.trim();
+
   corePages.forEach((cp) => {
     const pageHtml = buildPageHtml({
       title: cp.title,
@@ -855,6 +886,7 @@ export const runPrerender = async () => {
       canonical: `${BASE_URL}/${cp.slug}`,
       ogTitle: cp.title,
       ogDescription: cp.description,
+      bodyContent: cp.slug === "shop" ? shopBodyPreview : "",
     });
     saveFile(`${cp.slug}/index.html`, pageHtml);
   });

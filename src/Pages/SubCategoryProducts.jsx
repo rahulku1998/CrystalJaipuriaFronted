@@ -22,15 +22,19 @@ const SubCategoryProducts = () => {
       const res = await API.get(`/products/subcategory/${id}`);
       let fetchedProducts = res.data?.products || [];
 
-      if (fetchedProducts.length === 0) {
-        const cleanId = (id || "").toLowerCase().trim();
-        fetchedProducts = FALLBACK_PRODUCTS.filter(
-          (p) =>
-            p.subCategoryId?._id === cleanId ||
-            p.subCategoryId?.slug === cleanId ||
-            (p.subCategoryName && p.subCategoryName.toLowerCase().replace(/[^a-z0-9]+/g, "-") === cleanId)
-        );
-      }
+      const cleanId = (id || "").toLowerCase().trim();
+      const matchingFallbacks = FALLBACK_PRODUCTS.filter(
+        (p) =>
+          p.subCategoryId?._id === cleanId ||
+          p.subCategoryId?._id === id ||
+          p.subCategoryId?.slug === cleanId ||
+          (p.subCategoryName && p.subCategoryName.toLowerCase().replace(/[^a-z0-9]+/g, "-") === cleanId)
+      );
+
+      const missingFallbacks = matchingFallbacks.filter(
+        (fb) => !fetchedProducts.some((p) => (p.slug || p._id) === (fb.slug || fb._id))
+      );
+      fetchedProducts = [...missingFallbacks, ...fetchedProducts];
 
       setProducts(fetchedProducts);
 
@@ -50,6 +54,7 @@ const SubCategoryProducts = () => {
       const fbProds = FALLBACK_PRODUCTS.filter(
         (p) =>
           p.subCategoryId?._id === cleanId ||
+          p.subCategoryId?._id === id ||
           p.subCategoryId?.slug === cleanId ||
           (p.subCategoryName && p.subCategoryName.toLowerCase().replace(/[^a-z0-9]+/g, "-") === cleanId)
       );

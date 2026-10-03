@@ -362,8 +362,20 @@ const CategoryPage = () => {
       try {
         const res = await API.get(`/products/subcategory/${subCategoryId}`);
         const list = res.data.products || [];
-        if (list.length > 0) {
-          setProducts(list);
+        const missingSubFallbacks = FALLBACK_PRODUCTS.filter((p) => {
+          const pSubId = p.subCategoryId?._id || p.subCategoryId;
+          const pSubSlug = (p.subCategoryId?.slug || "").toLowerCase().trim();
+          const pSubName = (p.subCategoryName || p.subCategoryId?.name || "").toLowerCase().trim();
+          return (
+            (pSubId === subCategoryId ||
+              (targetSlug && pSubSlug && targetSlug === pSubSlug) ||
+              (targetName && pSubName && targetName === pSubName)) &&
+            !list.some((existing) => (existing.slug || existing._id) === (p.slug || p._id))
+          );
+        });
+        const combined = [...missingSubFallbacks, ...list];
+        if (combined.length > 0) {
+          setProducts(combined);
         } else {
           const pRes = await API.get("/products");
           const all = pRes.data.products || [];
@@ -403,11 +415,15 @@ const CategoryPage = () => {
         if (!prodData || prodData.length === 0) {
           prodData = FALLBACK_PRODUCTS;
         } else {
+          const missingFallbacks = FALLBACK_PRODUCTS.filter(
+            (fb) => !prodData.some((p) => (p.slug || p._id) === (fb.slug || fb._id))
+          );
+          // Prepend new fallback products so new arrivals appear at the top of categories
+          prodData = [...missingFallbacks, ...prodData];
+
           FALLBACK_PRODUCTS.forEach((fb) => {
             const existing = prodData.find((p) => (p.slug || p._id) === (fb.slug || fb._id));
-            if (!existing) {
-              prodData.push(fb);
-            } else if (fb.subCategoryId && (!existing.subCategoryId || existing.subCategoryName !== fb.subCategoryName)) {
+            if (existing && fb.subCategoryId && (!existing.subCategoryId || existing.subCategoryName !== fb.subCategoryName)) {
               existing.subCategoryId = fb.subCategoryId;
               existing.subCategoryName = fb.subCategoryName;
             }
@@ -531,11 +547,15 @@ const CategoryPage = () => {
             p.name?.toLowerCase().includes("angel") ||
             p.name?.toLowerCase().includes("diya") ||
             p.name?.toLowerCase().includes("shankh") ||
+            p.name?.toLowerCase().includes("horse") ||
+            p.name?.toLowerCase().includes("tea set") ||
             p.slug?.includes("swan") ||
             p.slug?.includes("elephant") ||
             p.slug?.includes("angel") ||
             p.slug?.includes("diya") ||
-            p.slug?.includes("shankh")
+            p.slug?.includes("shankh") ||
+            p.slug?.includes("horse") ||
+            p.slug?.includes("tea-set")
           )) ||
           ((cleanSlug === "luxurious-idols-decor" || cleanSlug === "luxurious-idols-&-decor") &&
             (pCatSlug === "luxurious-idols-decor" || pCatSlug === "luxurious-idols-&-decor" || pCatName.includes("luxurious") || p.slug?.includes("silver-work") || p.slug?.includes("green-jade-carved-ganesha")))

@@ -22,12 +22,11 @@ const Shop = () => {
       setLoading(true);
       const res = await API.get("/products");
       const dbList = res.data?.products || res.data || [];
-      const mergedList = [...dbList];
-      FALLBACK_PRODUCTS.forEach((fb) => {
-        if (!mergedList.some((p) => (p.slug || p._id) === (fb.slug || fb._id))) {
-          mergedList.unshift(fb);
-        }
-      });
+      const missingFallbacks = FALLBACK_PRODUCTS.filter(
+        (fb) => !dbList.some((p) => (p.slug || p._id) === (fb.slug || fb._id))
+      );
+      // Prepend missing fallbacks in natural order so new arrivals appear at the top on Page 1
+      const mergedList = [...missingFallbacks, ...dbList];
       setAllProducts(mergedList.length > 0 ? mergedList : FALLBACK_PRODUCTS);
     } catch (error) {
       console.warn("Shop API fetch error, fallback active:", error);

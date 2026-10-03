@@ -126,14 +126,7 @@ const Home = () => {
           }
         };
 
-        // From live categoryProducts
-        rawCategories.forEach((cat) => {
-          if (isCrystalStatues(cat) || isAngelOrDiya(cat)) {
-            (rawCategoryProducts[cat._id] || []).forEach(addCrystalProduct);
-          }
-        });
-
-        // Ensure fallback items are also populated
+        // Ensure fallback items are populated first so new arrivals show first
         FALLBACK_PRODUCTS.forEach((p) => {
           const catSlug = p.categoryId?.slug || "";
           const name = (p.name || "").toLowerCase();
@@ -147,13 +140,24 @@ const Home = () => {
             name.includes("angel") ||
             name.includes("diya") ||
             name.includes("shankh") ||
+            name.includes("horse") ||
+            name.includes("tea set") ||
             slug.includes("swan") ||
             slug.includes("elephant") ||
             slug.includes("angel") ||
             slug.includes("diya") ||
-            slug.includes("shankh")
+            slug.includes("shankh") ||
+            slug.includes("horse") ||
+            slug.includes("tea-set")
           ) {
             addCrystalProduct(p);
+          }
+        });
+
+        // From live categoryProducts
+        rawCategories.forEach((cat) => {
+          if (isCrystalStatues(cat) || isAngelOrDiya(cat)) {
+            (rawCategoryProducts[cat._id] || []).forEach(addCrystalProduct);
           }
         });
 
@@ -182,13 +186,13 @@ const Home = () => {
             mergedLuxProducts.push(p);
           }
         };
-        (rawCategoryProducts[luxCat._id] || []).forEach(addLuxProduct);
         FALLBACK_PRODUCTS.filter(
           (p) =>
             p.categoryId?.slug === "luxurious-idols-decor" ||
             p.categoryId?.slug === "luxurious-idols-&-decor" ||
             (p.name && (p.name.includes("Silver Work") || p.name.includes("Silver & Gold")))
         ).forEach(addLuxProduct);
+        (rawCategoryProducts[luxCat._id] || []).forEach(addLuxProduct);
 
         let crystalCat = rawCategories.find(isCrystalStatues);
         if (!crystalCat) {
@@ -210,14 +214,14 @@ const Home = () => {
             mergedGodProducts.push(p);
           }
         };
-        if (godCat) {
-          (rawCategoryProducts[godCat._id] || []).forEach(addGodProduct);
-        }
         FALLBACK_PRODUCTS.filter(
           (p) =>
             p.categoryId?.slug === "god-statues" ||
             p.categoryName === "God Statues"
         ).forEach(addGodProduct);
+        if (godCat) {
+          (rawCategoryProducts[godCat._id] || []).forEach(addGodProduct);
+        }
 
         const updatedCategoryProducts = {
           ...rawCategoryProducts,
@@ -250,7 +254,11 @@ const Home = () => {
           finalCategories = [luxCat, ...baseCategories];
         }
 
-        setProducts(latest.length > 0 ? latest : FALLBACK_PRODUCTS.slice(0, 10));
+        const missingLatestFallbacks = FALLBACK_PRODUCTS.filter(
+          (fb) => !latest.some((p) => (p.slug || p._id) === (fb.slug || fb._id))
+        );
+        const combinedLatest = [...missingLatestFallbacks.slice(0, 8), ...latest];
+        setProducts(combinedLatest.slice(0, 10));
         setCategories(finalCategories);
         setCategoryProducts(updatedCategoryProducts);
       } catch (err) {
