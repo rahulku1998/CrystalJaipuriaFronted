@@ -163,12 +163,14 @@ const runInstantIndexing = async () => {
   const blogs = blogsRes.blogs || [];
 
   const existingSlugs = new Set(products.map((p) => p.slug || p._id));
+  const newFallbacks = [];
   FALLBACK_PRODUCTS.forEach((fbProd) => {
     if (!existingSlugs.has(fbProd.slug) && !existingSlugs.has(fbProd._id)) {
-      products.push(fbProd);
+      newFallbacks.push(fbProd);
       existingSlugs.add(fbProd.slug);
     }
   });
+  products = [...newFallbacks, ...products];
   if (categories.length === 0) {
     console.log("⚡ [Indexing] Using fallback categories catalog (6 categories)...");
     categories = FALLBACK_CATEGORIES;
