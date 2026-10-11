@@ -193,6 +193,422 @@ export const FALLBACK_SUBCATEGORIES = [
 
 export const FALLBACK_PRODUCTS = [
   {
+    "_id": "6abfa0013618032686f06001",
+    "name": "Goddess Kali in Black Obsidian",
+    "slug": "goddess-kali-in-black-obsidian",
+    "price": 106000,
+    "originalPrice": 132500,
+    "detail": "Magnificent 11-inch Goddess Kali statue hand-carved from solid natural volcanic Black Obsidian gemstone. Depicts Maa Kali in her fierce protective Dakshina Kali swaroop holding the khadga sword and trishul upon a carved gemstone pedestal. Revered as the ultimate shield against negativity, dark energies, and evil eye (Nazar), Black Obsidian grounds the root chakra while invoking supreme courage and fearlessness for your home or sacred altar.",
+    "description": "<p>Magnificent 11-inch <strong>Goddess Kali in Black Obsidian</strong> statue hand-carved from solid natural volcanic Black Obsidian gemstone. Depicts Maa Kali in her fierce protective Dakshina Kali swaroop holding the khadga sword and trishul upon a carved gemstone pedestal. Revered as the ultimate shield against negativity, dark energies, and evil eye (Nazar), Black Obsidian grounds the root chakra while invoking supreme courage and fearlessness for your home or sacred altar.</p>\n\n<h2>Spiritual Significance & Fearless Shakti Energies</h2>\n<p>In Vedic tradition, Mahakali represents the untamed primordial power (Shakti) that destroys ego, illusions, and malicious forces:</p>\n<ul>\n  <li><strong>Supreme Psychic Shield:</strong> Natural volcanic glass Black Obsidian forms an impenetrable energetic barrier that absorbs psychic toxicity, cleanses auric pollution, and dispels malevolent influences.</li>\n  <li><strong>Dakshina Kali Swaroop:</strong> Rendered with intricate hair locks (Jata), garland of skulls (Mundamala), protective Abhaya Mudra, and divine weaponry hand-sculpted by master artisans of Jaipur.</li>\n  <li><strong>Root Chakra (Muladhara) Mastery:</strong> Stabilizes scattered emotions, dispels unfounded fears, and fosters unshakeable confidence during personal transformation.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Goddess Kali in Black Obsidian (11 in H x 7 in W)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Volcanic Black Obsidian Gemstone</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Weight Category</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">3.8 kg (3,800 g)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">11 in (H) x 7 in (W) x 3.5 in (D)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Unit</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹27.8 / gram (₹1,06,000 Total)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">South or South-West corner facing North, or Shakti Mandir Altar</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Goddess Kali in Black Obsidian (11 in H x 7 in W)</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Natural Volcanic Black Obsidian</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 3.8 kg (3,800 g)</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 11 in (H) x 7 in (W) x 3.5 in (D)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing Basis :</strong> ₹1,06,000 (₹27.8 / gram)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> South or South-West altar facing North</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone (Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof wooden crating with 100% door-to-door insurance</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"What are the spiritual benefits of a Black Obsidian Kali idol?\",\"answer\":\"Black Obsidian is renowned as a supreme psychic vacuum stone that draws out negativity, psychic attack, and fear. When carved in Maa Kali swaroop, it creates an impenetrable shield against evil eye while fostering inner courage and spiritual awakening.\"},{\"question\":\"Where should this Goddess Kali statue be placed at home or office?\",\"answer\":\"In Vedic Vastu, fierce protective deities like Maa Kali are ideally positioned in the South or South-West corner facing North, or placed on a dedicated puja altar. Keep elevated and well-illuminated.\"},{\"question\":\"Is this idol carved from genuine natural black obsidian?\",\"answer\":\"Yes, this statue is hand-sculpted from a single monolithic boulder of 100% natural volcanic black obsidian with mirror-smooth lustrous finish by master artisans in Jaipur.\"},{\"question\":\"How do I care for and maintain this Black Obsidian idol?\",\"answer\":\"Gently wipe with a soft, clean microfiber or cotton cloth. You can perform occasional aarti with a mustard oil or sesame diya. Avoid abrasive chemical cleansers.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Black Obsidian Goddess Kali Statue | Crystal Jaipuria\",\"metaDescription\":\"Buy hand-carved Black Obsidian Goddess Kali statue (11 in H x 7 in W). Protective Maa Kali idol for home temple, fearlessness & root chakra grounding.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"South or South-West corner facing North, or sacred personal Shakti altar\",\"chakraPlanet\":\"Root Chakra (Muladhara) · Planet Saturn (Shani) & Rahu\",\"poojaVidhi\":\"Wipe with a soft dry cotton cloth. Offer red hibiscus flowers, camphor aarti, or mustard oil diya during Kali Puja or Navratri.\",\"vedicBenefits\":\"Dissolves negative energetic attachments, shields against the evil eye (Nazar), anchors courage, and provides grounding root-chakra protection.\"} -->",
+    "faqs": [
+      {
+        "question": "What are the spiritual benefits of a Black Obsidian Kali idol?",
+        "answer": "Black Obsidian is renowned as a supreme psychic vacuum stone that draws out negativity, psychic attack, and fear. When carved in Maa Kali swaroop, it creates an impenetrable shield against evil eye while fostering inner courage and spiritual awakening."
+      },
+      {
+        "question": "Where should this Goddess Kali statue be placed at home or office?",
+        "answer": "In Vedic Vastu, fierce protective deities like Maa Kali are ideally positioned in the South or South-West corner facing North, or placed on a dedicated puja altar. Keep elevated and well-illuminated."
+      },
+      {
+        "question": "Is this idol carved from genuine natural black obsidian?",
+        "answer": "Yes, this statue is hand-sculpted from a single monolithic boulder of 100% natural volcanic black obsidian with mirror-smooth lustrous finish by master artisans in Jaipur."
+      },
+      {
+        "question": "How do I care for and maintain this Black Obsidian idol?",
+        "answer": "Gently wipe with a soft, clean microfiber or cotton cloth. You can perform occasional aarti with a mustard oil or sesame diya. Avoid abrasive chemical cleansers."
+      }
+    ],
+    "metaTitle": "Black Obsidian Goddess Kali Statue | Crystal Jaipuria",
+    "metaDescription": "Buy hand-carved Black Obsidian Goddess Kali statue (11 in H x 7 in W). Protective Maa Kali idol for home temple, fearlessness & root chakra grounding.",
+    "vedicVastu": {
+      "placementDirection": "South or South-West corner facing North, or sacred personal Shakti altar",
+      "chakraPlanet": "Root Chakra (Muladhara) · Planet Saturn (Shani) & Rahu",
+      "poojaVidhi": "Wipe with a soft dry cotton cloth. Offer red hibiscus flowers, camphor aarti, or mustard oil diya during Kali Puja or Navratri.",
+      "vedicBenefits": "Dissolves negative energetic attachments, shields against the evil eye (Nazar), anchors courage, and provides grounding root-chakra protection."
+    },
+    "images": [
+      "/images/goddess-kali-in-black-obsidian.webp",
+      "/images/goddess-kali-in-black-obsidian-2.webp",
+      "/images/goddess-kali-in-black-obsidian-3.webp",
+      "/images/goddess-kali-in-black-obsidian-4.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "categoryName": "God Statues",
+    "subCategoryId": {
+      "_id": "6aa58c80a69037c73ebed098",
+      "name": "Other",
+      "slug": "other"
+    },
+    "subCategoryName": "Other",
+    "size": "11 in (H) x 7 in (W) x 3.5 in (D)",
+    "weight": "3.8 kg",
+    "stock": 1,
+    "featured": true,
+    "pricePerUnit": "₹27.8 / gram",
+    "pricePerGram": 27.8
+  },
+  {
+    "_id": "6abfa0013618032686f06002",
+    "name": "Special Sphatik Crystal Lingam for Temple",
+    "slug": "special-sphatik-crystal-lingam-for-temple",
+    "price": 293000,
+    "originalPrice": 365000,
+    "detail": "Magnificent 16.375 kg monumental temple-grade Special Sphatik Crystal Lingam with carved quartz Jaladhari Yoni base. Sculpted from 100% natural earth-mined Himalayan rock crystal quartz with high optic clarity. Total height 13 inches (Lingam 12 in x 5.5 in, Base 3 in; Lingam weight 8,450 g, Base weight 7,925 g). Revered in Shiva Purana as the supreme emblem of formless Brahman, this consecrated Sphatik Shivling amplifies cosmic energies, grants spiritual liberation, and bestows boundless prosperity.",
+    "description": "<p>Magnificent 16.375 kg monumental temple-grade <strong>Special Sphatik Crystal Lingam for Temple</strong> with carved quartz Jaladhari Yoni base. Sculpted from 100% natural earth-mined Himalayan rock crystal quartz with high optic clarity. Total height 13 inches (Lingam 12 in x 5.5 in, Base 3 in; Lingam weight 8,450 g, Base weight 7,925 g). Revered in Shiva Purana as the supreme emblem of formless Brahman, this consecrated Sphatik Shivling amplifies cosmic energies, grants spiritual liberation, and bestows boundless prosperity.</p>\n\n<h2>Vedic Sanctity of Sphatik Lingam in Temple & Mandir</h2>\n<p>According to the ancient Shiva Purana and Linga Purana, worshipping a natural Sphatik (quartz) Lingam yields millions of times the spiritual merit of conventional stones:</p>\n<ul>\n  <li><strong>Pran Pratishtha & Abhishek Ready:</strong> Specially proportioned for Jalabhishek, Dudhabhishek, and Rudrabhishek without erosion, maintaining immaculate crystal purity across generations.</li>\n  <li><strong>Two-Piece Precision Fit:</strong> Precision-lapidary quartz cylindrical lingam (8.45 kg) resting snugly into the contoured quartz Yoni Peetham base (7.925 kg) with carved drainage spout facing North.</li>\n  <li><strong>Cosmic Energy Conduction:</strong> Emits steady piezoelectric frequencies that neutralize environmental stress, Geopathic radiation, and astrological doshas.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Special Sphatik Crystal Lingam for Temple (16.375 kg)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Rock Crystal Quartz (Sphatik)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Weight Breakdown</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Total 16.375 kg (Lingam: 8,450 g, Base: 7,925 g)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Lingam 12 in (H) x 5.5 in (W), Base 3 in (H), Total 13 in (H)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Unit</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹17.9 / gram (₹2,93,000 Total)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North-East (Ishanya Kon) with Yoni Snout facing North</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Quartz (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Special Sphatik Crystal Lingam for Temple (16.375 kg)</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Natural Earth-Mined Himalayan Rock Crystal (Sphatik)</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 16.375 kg (Lingam 8,450 g, Base 7,925 g)</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> Lingam 12 in (H) x 5.5 in (W), Base 3 in (H), Total 13 in (H)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing Basis :</strong> ₹2,93,000 (₹17.9 / gram)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North-East (Ishanya Kon) of temple sanctum</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Quartz (Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof wooden crating with 100% door-to-door insurance</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"Why is a Sphatik Lingam preferred for temple and home puja?\",\"answer\":\"According to the Shiva Purana, Sphatik is considered the purest medium for Lord Shiva. A Sphatik Shivling does not accumulate negative energy and conducting abhishek over it purifies the entire household or temple premises with divine vibrations.\"},{\"question\":\"Can daily Jalabhishek and milk abhishek be done on this quartz lingam?\",\"answer\":\"Yes, absolutely. Being genuine natural rock crystal quartz with Mohs hardness 7, it is completely impervious to water, cow milk, honey, panchamrit, and gangajal.\"},{\"question\":\"What is the correct Vastu placement for this large Sphatik Shivling?\",\"answer\":\"Install in the North-East (Ishanya Kon) of your temple or mandir. The Yoni base spout must always face towards the North direction to channel auspicious positive energy.\"},{\"question\":\"How will this heavy 16.3 kg crystal lingam be delivered safely?\",\"answer\":\"Both the Lingam and Jaladhari base are individually packed in bespoke laser-cut shock-absorbing foam inside a reinforced export wooden crate, fully insured against transit loss.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Sphatik Crystal Lingam for Temple (16.3 kg) | Crystal Jaipuria\",\"metaDescription\":\"Buy 16.3 kg large Sphatik Crystal Lingam for temple (13 in total height). 100% natural quartz Shivling with jaladhari base for Rudrabhishek & pran pratishtha.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North-East (Ishanya Kon) of temple sanctum or home mandir, with Yoni facing North\",\"chakraPlanet\":\"Crown Chakra (Sahasrara) & Soul Star Chakra · Lord Shiva & Moon (Chandra)\",\"poojaVidhi\":\"Perform Jalabhishek and Panchamrit abhishek with pure cow milk and gangajal. Offer bilva patra, bhasma, and white flowers.\",\"vedicBenefits\":\"Infuses cosmic Shiva consciousness, removes negative planetary doshas (Kaal Sarp / Pitra), radiates peace, and bestows boundless prosperity.\"} -->",
+    "faqs": [
+      {
+        "question": "Why is a Sphatik Lingam preferred for temple and home puja?",
+        "answer": "According to the Shiva Purana, Sphatik is considered the purest medium for Lord Shiva. A Sphatik Shivling does not accumulate negative energy and conducting abhishek over it purifies the entire household or temple premises with divine vibrations."
+      },
+      {
+        "question": "Can daily Jalabhishek and milk abhishek be done on this quartz lingam?",
+        "answer": "Yes, absolutely. Being genuine natural rock crystal quartz with Mohs hardness 7, it is completely impervious to water, cow milk, honey, panchamrit, and gangajal."
+      },
+      {
+        "question": "What is the correct Vastu placement for this large Sphatik Shivling?",
+        "answer": "Install in the North-East (Ishanya Kon) of your temple or mandir. The Yoni base spout must always face towards the North direction to channel auspicious positive energy."
+      },
+      {
+        "question": "How will this heavy 16.3 kg crystal lingam be delivered safely?",
+        "answer": "Both the Lingam and Jaladhari base are individually packed in bespoke laser-cut shock-absorbing foam inside a reinforced export wooden crate, fully insured against transit loss."
+      }
+    ],
+    "metaTitle": "Sphatik Crystal Lingam for Temple (16.3 kg) | Crystal Jaipuria",
+    "metaDescription": "Buy 16.3 kg large Sphatik Crystal Lingam for temple (13 in total height). 100% natural quartz Shivling with jaladhari base for Rudrabhishek & pran pratishtha.",
+    "vedicVastu": {
+      "placementDirection": "North-East (Ishanya Kon) of temple sanctum or home mandir, with Yoni facing North",
+      "chakraPlanet": "Crown Chakra (Sahasrara) & Soul Star Chakra · Lord Shiva & Moon (Chandra)",
+      "poojaVidhi": "Perform Jalabhishek and Panchamrit abhishek with pure cow milk and gangajal. Offer bilva patra, bhasma, and white flowers.",
+      "vedicBenefits": "Infuses cosmic Shiva consciousness, removes negative planetary doshas (Kaal Sarp / Pitra), radiates peace, and bestows boundless prosperity."
+    },
+    "images": [
+      "/images/special-sphatik-crystal-lingam-for-temple.webp",
+      "/images/special-sphatik-crystal-lingam-for-temple-2.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bc292dcf49aacd71ef65",
+      "name": "Shivling",
+      "slug": "shivling"
+    },
+    "categoryName": "Shivling",
+    "subCategoryId": {
+      "_id": "6a55bcd02dcf49aacd71ef70",
+      "name": "Sphatik Shivling",
+      "slug": "sphatik-shivling"
+    },
+    "subCategoryName": "Sphatik Shivling",
+    "size": "Lingam 12 in (H) x 5.5 in (W), Base 3 in (H), Total 13 in (H)",
+    "weight": "16.375 kg",
+    "stock": 1,
+    "featured": true,
+    "pricePerUnit": "₹17.9 / gram",
+    "pricePerGram": 17.9
+  },
+  {
+    "_id": "6abfa0013618032686f06003",
+    "name": "Laughing Buddha in Labradorite",
+    "slug": "laughing-buddha-in-labradorite",
+    "price": 87000,
+    "originalPrice": 108000,
+    "detail": "Exquisite 10-inch hand-carved Laughing Buddha (Budai / Hotei) statue sculpted from rare natural Labradorite gemstone with brilliant peacock-blue and golden labradorescence flash. Depicts the cheerful celestial monk seated holding the wealth sack and prayer beads, radiating contagious joy, good fortune, and magnetic Feng Shui prosperity for modern homes and executive workspaces.",
+    "description": "<p>Exquisite 10-inch hand-carved <strong>Laughing Buddha in Labradorite</strong> (Budai / Hotei) statue sculpted from rare natural Labradorite gemstone with brilliant peacock-blue and golden labradorescence flash. Depicts the cheerful celestial monk seated holding the wealth sack and prayer beads, radiating contagious joy, good fortune, and magnetic Feng Shui prosperity for modern homes and executive workspaces.</p>\n\n<h2>Feng Shui Prosperity & Labradorite Optical Magic</h2>\n<p>Known as the stone of magic and synchronicity, natural Labradorite pairs wonderfully with the blissful abundance of the Laughing Buddha:</p>\n<ul>\n  <li><strong>Vibrant Schiller Effect (Labradorescence):</strong> Shifts radiantly between electric blue, emerald green, and shimmering gold when catching ambient light from different room angles.</li>\n  <li><strong>Budai's Auspicious Bag of Wealth:</strong> Represents the continuous gathering of positive opportunities, financial windfalls, and liberation from material anxiety.</li>\n  <li><strong>Jaipur Master Craftsmanship:</strong> Smoothly sculpted jolly facial expressions, folded garments, and balanced base crafted by master gemstone carvers.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Laughing Buddha in Labradorite (10 in H x 8 in W)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Labradorite with Optical Flash</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Weight Category</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">4.5 kg (4,500 g)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">10 in (H) x 8 in (W) x 4.2 in (D)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Unit</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹19.3 / gram (₹87,000 Total)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">South-East (Wealth), East living hall, or facing front door</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Laughing Buddha in Labradorite (10 in H x 8 in W)</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Earth-Mined Natural Labradorite</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 4.5 kg (4,500 g)</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 10 in (H) x 8 in (W) x 4.2 in (D)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing Basis :</strong> ₹87,000 (₹19.3 / gram)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> South-East wealth zone or entrance console</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone (Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof wooden crating with 100% door-to-door insurance</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"What does the Laughing Buddha carved in Labradorite signify?\",\"answer\":\"The Laughing Buddha represents boundless cheer, contentment, and wealth. When sculpted from Labradorite, which shields against negative energies and enhances intuition, it serves as a dual powerhouse of prosperity and spiritual upliftment.\"},{\"question\":\"Where is the best spot to position a Laughing Buddha?\",\"answer\":\"Position at approximately eye level in the South-East corner (wealth corner), the living room facing the front door, or on your office desk to foster auspicious financial flow.\"},{\"question\":\"Does this Labradorite statue display natural blue and gold flash?\",\"answer\":\"Yes, this statue has been carved from premium feldspar Labradorite showcasing luminous flashes of blue, green, and golden fire that shift as lighting changes.\"},{\"question\":\"Is this product suitable as a housewarming or corporate gift?\",\"answer\":\"Absolutely. The Laughing Buddha is globally celebrated as the premier gift for housewarming, new business openings, and festive occasions.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Laughing Buddha in Labradorite Statue | Crystal Jaipuria\",\"metaDescription\":\"Buy hand-carved Laughing Buddha in Labradorite (10 in H x 8 in W). Authentic gemstone Budai statue with iridescent labradorescence for Feng Shui wealth & joy.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"South-East (Wealth corner), East living area, or facing the main entrance at eye level\",\"chakraPlanet\":\"Third Eye & Solar Plexus Chakras · Planet Mercury (Budh) & Venus (Shukra)\",\"poojaVidhi\":\"Clean gently with a soft microfiber cloth. Rub the Buddha's belly daily with joyful intention to welcome prosperity and laughter into the home.\",\"vedicBenefits\":\"Attracts financial abundance, clears auric fog, fosters harmonious family relations, and dissolves everyday stress.\"} -->",
+    "faqs": [
+      {
+        "question": "What does the Laughing Buddha carved in Labradorite signify?",
+        "answer": "The Laughing Buddha represents boundless cheer, contentment, and wealth. When sculpted from Labradorite, which shields against negative energies and enhances intuition, it serves as a dual powerhouse of prosperity and spiritual upliftment."
+      },
+      {
+        "question": "Where is the best spot to position a Laughing Buddha?",
+        "answer": "Position at approximately eye level in the South-East corner (wealth corner), the living room facing the front door, or on your office desk to foster auspicious financial flow."
+      },
+      {
+        "question": "Does this Labradorite statue display natural blue and gold flash?",
+        "answer": "Yes, this statue has been carved from premium feldspar Labradorite showcasing luminous flashes of blue, green, and golden fire that shift as lighting changes."
+      },
+      {
+        "question": "Is this product suitable as a housewarming or corporate gift?",
+        "answer": "Absolutely. The Laughing Buddha is globally celebrated as the premier gift for housewarming, new business openings, and festive occasions."
+      }
+    ],
+    "metaTitle": "Laughing Buddha in Labradorite Statue | Crystal Jaipuria",
+    "metaDescription": "Buy hand-carved Laughing Buddha in Labradorite (10 in H x 8 in W). Authentic gemstone Budai statue with iridescent labradorescence for Feng Shui wealth & joy.",
+    "vedicVastu": {
+      "placementDirection": "South-East (Wealth corner), East living area, or facing the main entrance at eye level",
+      "chakraPlanet": "Third Eye & Solar Plexus Chakras · Planet Mercury (Budh) & Venus (Shukra)",
+      "poojaVidhi": "Clean gently with a soft microfiber cloth. Rub the Buddha's belly daily with joyful intention to welcome prosperity and laughter into the home.",
+      "vedicBenefits": "Attracts financial abundance, clears auric fog, fosters harmonious family relations, and dissolves everyday stress."
+    },
+    "images": [
+      "/images/laughing-buddha-in-labradorite.webp",
+      "/images/laughing-buddha-in-labradorite-2.webp",
+      "/images/laughing-buddha-in-labradorite-3.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "categoryName": "God Statues",
+    "subCategoryId": {
+      "_id": "6aa58c80a69037c73ebed098",
+      "name": "Other",
+      "slug": "other"
+    },
+    "subCategoryName": "Other",
+    "size": "10 in (H) x 8 in (W) x 4.2 in (D)",
+    "weight": "4.5 kg",
+    "stock": 1,
+    "featured": true,
+    "pricePerUnit": "₹19.3 / gram",
+    "pricePerGram": 19.3
+  },
+  {
+    "_id": "6abfa0013618032686f06004",
+    "name": "Lord Ganesha in Green Aventurine",
+    "slug": "lord-ganesha-in-green-aventurine",
+    "price": 109000,
+    "originalPrice": 136000,
+    "detail": "Majestic 13-inch Lord Ganesha idol hand-carved from natural Green Aventurine gemstone. Depicts Vighnaharta Ganpati in seated posture holding the laddu, axe, and giving Abhaya blessing. Known in crystal healing as the stone of opportunity and good luck, Green Aventurine opens the Heart Chakra (Anahata), clears financial hurdles, and welcomes auspicious success to new beginnings and home mandirs.",
+    "description": "<p>Majestic 13-inch <strong>Lord Ganesha in Green Aventurine</strong> idol hand-carved from natural Green Aventurine gemstone. Depicts Vighnaharta Ganpati in seated posture holding the laddu, axe, and giving Abhaya blessing. Known in crystal healing as the stone of opportunity and good luck, Green Aventurine opens the Heart Chakra (Anahata), clears financial hurdles, and welcomes auspicious success to new beginnings and home mandirs.</p>\n\n<h2>Spiritual Blessings of Green Aventurine Ganesha</h2>\n<p>Combining the remover of obstacles with the premier stone of growth and financial fortune:</p>\n<ul>\n  <li><strong>Stone of Opportunity:</strong> Green Aventurine is hailed across holistic traditions for manifesting luck in business, investments, and competitive ventures.</li>\n  <li><strong>Heart Chakra (Anahata) Harmonization:</strong> Dissolves emotional stress, fosters empathy, and promotes tranquil family harmony.</li>\n  <li><strong>Jaipur Fine Carving:</strong> Intricately sculpted trunk curved gently towards the modak, ornamental crown (Mukut), and soft gemstone luster polished to perfection.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Lord Ganesha in Green Aventurine (13 in H x 9 in W)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Green Aventurine Gemstone</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Weight Category</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">6.2 kg (6,200 g)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">13 in (H) x 9 in (W) x 5 in (D)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Unit</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹17.5 / gram (₹1,09,000 Total)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North (Kubera Direction) or North-East of temple or desk</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Lord Ganesha in Green Aventurine (13 in H x 9 in W)</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Earth-Mined Natural Green Aventurine</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 6.2 kg (6,200 g)</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 13 in (H) x 9 in (W) x 5 in (D)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing Basis :</strong> ₹1,09,000 (₹17.5 / gram)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North or North-East corner</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone (Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof wooden crating with 100% door-to-door insurance</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"Why is Green Aventurine auspicious for Ganesha idols?\",\"answer\":\"Green Aventurine carries the vibrational frequency of new beginnings, growth, and good luck. Lord Ganesha as Vighnaharta removes hurdles, making this gemstone Ganesha ideal for attracting prosperity and removing business blockages.\"},{\"question\":\"What is the recommended placement for this 13-inch Ganesha?\",\"answer\":\"Place in the North (Lord Kubera direction) or North-East corner of your temple, living room, or study desk facing South or West for optimal Vastu blessings.\"},{\"question\":\"How do I care for my Green Aventurine Ganesha idol?\",\"answer\":\"Clean with a dry, soft cotton or microfiber cloth. You can perform occasional Gangajal sprinkling and offer fresh durva grass and modaks.\"},{\"question\":\"Is this Ganesha carved from a single piece of natural stone?\",\"answer\":\"Yes, this statue is monolithic—sculpted by hand from a single solid block of authentic natural Green Aventurine.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Green Aventurine Lord Ganesha Idol | Crystal Jaipuria\",\"metaDescription\":\"Buy 13-inch Green Aventurine Lord Ganesha idol hand-carved from natural gemstone. Vighnaharta Ganpati statue for business luck, new beginnings & heart chakra.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North (Kubera direction) or North-East corner of temple or executive desk facing South/West\",\"chakraPlanet\":\"Heart Chakra (Anahata) · Planet Mercury (Budh)\",\"poojaVidhi\":\"Offer green durva grass, modak, and red kumkum during Wednesday puja or Ganesh Chaturthi. Chant Om Gam Ganapataye Namaha 108 times.\",\"vedicBenefits\":\"Known as the stone of opportunity, removes all hurdles in career and finance, and brings good fortune to new business ventures.\"} -->",
+    "faqs": [
+      {
+        "question": "Why is Green Aventurine auspicious for Ganesha idols?",
+        "answer": "Green Aventurine carries the vibrational frequency of new beginnings, growth, and good luck. Lord Ganesha as Vighnaharta removes hurdles, making this gemstone Ganesha ideal for attracting prosperity and removing business blockages."
+      },
+      {
+        "question": "What is the recommended placement for this 13-inch Ganesha?",
+        "answer": "Place in the North (Lord Kubera direction) or North-East corner of your temple, living room, or study desk facing South or West for optimal Vastu blessings."
+      },
+      {
+        "question": "How do I care for my Green Aventurine Ganesha idol?",
+        "answer": "Clean with a dry, soft cotton or microfiber cloth. You can perform occasional Gangajal sprinkling and offer fresh durva grass and modaks."
+      },
+      {
+        "question": "Is this Ganesha carved from a single piece of natural stone?",
+        "answer": "Yes, this statue is monolithic—sculpted by hand from a single solid block of authentic natural Green Aventurine."
+      }
+    ],
+    "metaTitle": "Green Aventurine Lord Ganesha Idol | Crystal Jaipuria",
+    "metaDescription": "Buy 13-inch Green Aventurine Lord Ganesha idol hand-carved from natural gemstone. Vighnaharta Ganpati statue for business luck, new beginnings & heart chakra.",
+    "vedicVastu": {
+      "placementDirection": "North (Kubera direction) or North-East corner of temple or executive desk facing South/West",
+      "chakraPlanet": "Heart Chakra (Anahata) · Planet Mercury (Budh)",
+      "poojaVidhi": "Offer green durva grass, modak, and red kumkum during Wednesday puja or Ganesh Chaturthi. Chant Om Gam Ganapataye Namaha 108 times.",
+      "vedicBenefits": "Known as the stone of opportunity, removes all hurdles in career and finance, and brings good fortune to new business ventures."
+    },
+    "images": [
+      "/images/lord-ganesha-in-green-aventurine.webp",
+      "/images/lord-ganesha-in-green-aventurine-2.webp",
+      "/images/lord-ganesha-in-green-aventurine-3.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "categoryName": "God Statues",
+    "subCategoryId": {
+      "_id": "6a55bc842dcf49aacd71ef6b",
+      "name": "Ganesh",
+      "slug": "ganesh"
+    },
+    "subCategoryName": "Ganesh",
+    "size": "13 in (H) x 9 in (W) x 5 in (D)",
+    "weight": "6.2 kg",
+    "stock": 1,
+    "featured": true,
+    "pricePerUnit": "₹17.5 / gram",
+    "pricePerGram": 17.5
+  },
+  {
+    "_id": "6abfa0013618032686f06005",
+    "name": "Buddha in Ruby Kyanite",
+    "slug": "buddha-in-ruby-kyanite",
+    "price": 123000,
+    "originalPrice": 153750,
+    "detail": "Serene 15-inch wide Buddha in Ruby Kyanite statue hand-carved from natural crimson-red corundum Ruby embedded within electric-blue Kyanite and green fuchsite matrix. Measures 12 in (H) x 15 in (W) x 5.5 in (D) with weight 8.5 kg. Depicts Gautama Buddha in profound meditation (Dhyana Mudra), harmonizing the passionate life-force of Ruby with the high-vibrational, throat-and-third-eye tranquility of Kyanite for sublime meditation spaces and zen decor.",
+    "description": "<p>Serene 15-inch wide <strong>Buddha in Ruby Kyanite</strong> statue hand-carved from natural crimson-red corundum Ruby embedded within electric-blue Kyanite and green fuchsite matrix. Measures 12 in (H) x 15 in (W) x 5.5 in (D) with weight 8.5 kg. Depicts Gautama Buddha in profound meditation (Dhyana Mudra), harmonizing the passionate life-force of Ruby with the high-vibrational, throat-and-third-eye tranquility of Kyanite for sublime meditation spaces and zen decor.</p>\n\n<h2>Natural Ruby & Kyanite Synergy for Meditation</h2>\n<p>The rare natural geological symbiosis of Ruby in Kyanite creates a balanced energetic bridge:</p>\n<ul>\n  <li><strong>Chakra Alignment:</strong> Ruby stimulates the Root and Heart chakras (vitality, passion, grounding), while Blue Kyanite instantly opens Throat and Third Eye chakras without absorbing negativity.</li>\n  <li><strong>Wide Meditative Stance:</strong> Broad 15-inch base provides an imposing, peaceful visual presence with Buddha seated in full padmasana upon an ornate carved pedestal.</li>\n  <li><strong>Rich Color Palette:</strong> Deep magenta ruby crystals contrasting dramatically against sapphire-blue and sea-green crystal matrix.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Buddha in Ruby Kyanite (12 in H x 15 in W)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Ruby in Kyanite Matrix</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Weight Category</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">8.5 kg (8,500 g)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">12 in (H) x 15 in (W) x 5.5 in (D)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Unit</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹14.4 / gram (₹1,23,000 Total)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North-East (Ishanya Kon), East Altar, or Zen Meditation Room</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Buddha in Ruby Kyanite (12 in H x 15 in W)</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Earth-Mined Natural Ruby in Kyanite Matrix</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 8.5 kg (8,500 g)</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 12 in (H) x 15 in (W) x 5.5 in (D)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing Basis :</strong> ₹1,23,000 (₹14.4 / gram)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North-East or East sacred meditation corner</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone (Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof wooden crating with 100% door-to-door insurance</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"What makes Ruby in Kyanite so special for Buddha sculptures?\",\"answer\":\"Ruby in Kyanite is an extraordinary geological pairing: Ruby brings courageous physical vitality and heart-centered warmth, while Kyanite clears psychic static and encourages transcendental meditation, making it the perfect stone for an enlightened Buddha.\"},{\"question\":\"Where should this 15-inch Buddha statue be placed?\",\"answer\":\"Place in a quiet meditation room, study, or living space in the North-East or East direction. Elevate slightly on a sturdy console or plinth facing into the room.\"},{\"question\":\"Are the colors in the stone completely natural?\",\"answer\":\"Yes, 100% natural and untreated. The vivid contrast of crimson-pink ruby grains embedded in deep blue kyanite blades was formed deep within the earth millions of years ago.\"},{\"question\":\"How do I care for this heavy gemstone sculpture?\",\"answer\":\"Dust occasionally with a dry soft cloth. Avoid chemical solvents or extreme heat.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Buddha in Ruby Kyanite Statue (15 in) | Crystal Jaipuria\",\"metaDescription\":\"Buy handcrafted Buddha in Ruby Kyanite statue (12 in H x 15 in W). Serene natural red & blue gemstone Shakyamuni Buddha for meditation room, zen decor & calm.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North-East, East, or quiet meditation room placed at eye level facing West or into the room\",\"chakraPlanet\":\"Root Chakra (Ruby) & Throat/Third Eye (Kyanite) · Sun & Jupiter\",\"poojaVidhi\":\"Dust with a dry soft cloth. Light a natural sandalwood incense or beeswax candle during morning meditation.\",\"vedicBenefits\":\"Unites grounding physical vitality with higher spiritual perception, dispels mental confusion, and establishes tranquility in sacred spaces.\"} -->",
+    "faqs": [
+      {
+        "question": "What makes Ruby in Kyanite so special for Buddha sculptures?",
+        "answer": "Ruby in Kyanite is an extraordinary geological pairing: Ruby brings courageous physical vitality and heart-centered warmth, while Kyanite clears psychic static and encourages transcendental meditation, making it the perfect stone for an enlightened Buddha."
+      },
+      {
+        "question": "Where should this 15-inch Buddha statue be placed?",
+        "answer": "Place in a quiet meditation room, study, or living space in the North-East or East direction. Elevate slightly on a sturdy console or plinth facing into the room."
+      },
+      {
+        "question": "Are the colors in the stone completely natural?",
+        "answer": "Yes, 100% natural and untreated. The vivid contrast of crimson-pink ruby grains embedded in deep blue kyanite blades was formed deep within the earth millions of years ago."
+      },
+      {
+        "question": "How do I care for this heavy gemstone sculpture?",
+        "answer": "Dust occasionally with a dry soft cloth. Avoid chemical solvents or extreme heat."
+      }
+    ],
+    "metaTitle": "Buddha in Ruby Kyanite Statue (15 in) | Crystal Jaipuria",
+    "metaDescription": "Buy handcrafted Buddha in Ruby Kyanite statue (12 in H x 15 in W). Serene natural red & blue gemstone Shakyamuni Buddha for meditation room, zen decor & calm.",
+    "vedicVastu": {
+      "placementDirection": "North-East, East, or quiet meditation room placed at eye level facing West or into the room",
+      "chakraPlanet": "Root Chakra (Ruby) & Throat/Third Eye (Kyanite) · Sun & Jupiter",
+      "poojaVidhi": "Dust with a dry soft cloth. Light a natural sandalwood incense or beeswax candle during morning meditation.",
+      "vedicBenefits": "Unites grounding physical vitality with higher spiritual perception, dispels mental confusion, and establishes tranquility in sacred spaces."
+    },
+    "images": [
+      "/images/buddha-in-ruby-kyanite.webp",
+      "/images/buddha-in-ruby-kyanite-2.webp",
+      "/images/buddha-in-ruby-kyanite-3.webp",
+      "/images/buddha-in-ruby-kyanite-4.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "categoryName": "God Statues",
+    "subCategoryId": {
+      "_id": "6aa58c80a69037c73ebed098",
+      "name": "Other",
+      "slug": "other"
+    },
+    "subCategoryName": "Other",
+    "size": "12 in (H) x 15 in (W) x 5.5 in (D)",
+    "weight": "8.5 kg",
+    "stock": 1,
+    "featured": true,
+    "pricePerUnit": "₹14.4 / gram",
+    "pricePerGram": 14.4
+  },
+  {
+    "_id": "6abfa0013618032686f06006",
+    "name": "Lord Parasnath in Lapis Lazuli",
+    "slug": "lord-parasnath-in-lapis-lazuli",
+    "price": 115000,
+    "originalPrice": 143750,
+    "detail": "Auspicious hand-carved Lord Parasnath (Bhagwan Parshvanath) idol sculpted from genuine royal deep-blue Lapis Lazuli with golden pyrite specks. Measures 6.5 in (H) x 4 in (W) x 2.5 in (D) with weight 1.25 kg. Depicts the 23rd Jain Tirthankara in deep Kayotsarga / Padmasana meditation protected by the seven-headed Dharanendra serpent hood, radiating pure non-violence, serenity, and spiritual truth for Jain home mandirs.",
+    "description": "<p>Auspicious hand-carved <strong>Lord Parasnath in Lapis Lazuli</strong> (Bhagwan Parshvanath) idol sculpted from genuine royal deep-blue Lapis Lazuli with golden pyrite specks. Measures 6.5 in (H) x 4 in (W) x 2.5 in (D) with weight 1.25 kg. Depicts the 23rd Jain Tirthankara in deep Kayotsarga / Padmasana meditation protected by the seven-headed Dharanendra serpent hood, radiating pure non-violence, serenity, and spiritual truth for Jain home mandirs.</p>\n\n<h2>Sacred Jain Heritage & Celestial Lapis Lazuli</h2>\n<p>Lord Parshvanath is worshipped across Digambar and Shwetambar Jain traditions as the supreme conqueror of passion and ignorance:</p>\n<ul>\n  <li><strong>Seven-Headed Sheshnaag Hood:</strong> Flawlessly detailed canopy of the serpent king Dharanendra protecting the meditating Tirthankara from worldly obstacles.</li>\n  <li><strong>Celestial Lapis Lazuli:</strong> Deep royal cobalt blue with shimmering golden pyrite inclusions, symbolizing infinite cosmic truth and Third Eye (Ajna) intuition.</li>\n  <li><strong>Pure Meditative Expression:</strong> Downcast eyes, upright posture, and peaceful visage carved according to traditional Jain Shilpa Shastra guidelines.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Lord Parasnath in Lapis Lazuli (6.5 in H x 4 in W)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Royal Lapis Lazuli Gemstone</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Weight Category</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">1.25 kg (1,250 g)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">6.5 in (H) x 4 in (W) x 2.5 in (D)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Unit</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹92 / gram (₹1,15,000 Total)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North-East (Ishanya) or East altar in Jain Mandir</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Lord Parasnath in Lapis Lazuli (6.5 in H x 4 in W)</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Earth-Mined Natural Royal Lapis Lazuli</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 1.25 kg (1,250 g)</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 6.5 in (H) x 4 in (W) x 2.5 in (D)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing Basis :</strong> ₹1,15,000 (₹92 / gram)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North-East or East sacred mandir altar</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone (Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof wooden crating with 100% door-to-door insurance</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"What is the significance of the serpent hood on Lord Parasnath?\",\"answer\":\"In Jainism, the 23rd Tirthankara Lord Parshvanath is sheltered by the celestial serpent king Dharanendra, representing divine non-attachment and supreme protection against adversity.\"},{\"question\":\"Is this idol suitable for daily Jain puja and pakshal?\",\"answer\":\"Yes, this idol is hand-carved from solid natural Lapis Lazuli and is ideal for daily darshan, pakshal with pure water, and chandan archana in a home Jain mandir.\"},{\"question\":\"Are the golden flecks in the Lapis Lazuli natural?\",\"answer\":\"Yes, authentic earth-mined lapis lazuli naturally features golden specks of iron pyrite, which authenticate its high-grade geological provenance.\"},{\"question\":\"How do I care for my Lapis Lazuli Tirthankara idol?\",\"answer\":\"Wipe with a soft cotton cloth after puja. Avoid harsh chemicals or acidic liquids.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Lord Parasnath in Lapis Lazuli Idol | Crystal Jaipuria\",\"metaDescription\":\"Buy hand-carved Lord Parasnath Lapis Lazuli idol (6.5 in H x 4 in W). Authentic 23rd Jain Tirthankara Parshvanath murti with 7-headed serpent hood in royal blue.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North-East (Ishanya) or East altar in Jain home mandir on a pure marble or silver chowki\",\"chakraPlanet\":\"Third Eye Chakra (Ajna) & Throat Chakra · Planet Saturn (Shani) & Jupiter (Guru)\",\"poojaVidhi\":\"Perform clean water pakshal and offer sandalwood paste (kesar-chandan) with Navkar Mantra recitation.\",\"vedicBenefits\":\"Inspires non-violence (Ahimsa), supreme serenity, mental peace, and protection against negative psychic vibrations.\"} -->",
+    "faqs": [
+      {
+        "question": "What is the significance of the serpent hood on Lord Parasnath?",
+        "answer": "In Jainism, the 23rd Tirthankara Lord Parshvanath is sheltered by the celestial serpent king Dharanendra, representing divine non-attachment and supreme protection against adversity."
+      },
+      {
+        "question": "Is this idol suitable for daily Jain puja and pakshal?",
+        "answer": "Yes, this idol is hand-carved from solid natural Lapis Lazuli and is ideal for daily darshan, pakshal with pure water, and chandan archana in a home Jain mandir."
+      },
+      {
+        "question": "Are the golden flecks in the Lapis Lazuli natural?",
+        "answer": "Yes, authentic earth-mined lapis lazuli naturally features golden specks of iron pyrite, which authenticate its high-grade geological provenance."
+      },
+      {
+        "question": "How do I care for my Lapis Lazuli Tirthankara idol?",
+        "answer": "Wipe with a soft cotton cloth after puja. Avoid harsh chemicals or acidic liquids."
+      }
+    ],
+    "metaTitle": "Lord Parasnath in Lapis Lazuli Idol | Crystal Jaipuria",
+    "metaDescription": "Buy hand-carved Lord Parasnath Lapis Lazuli idol (6.5 in H x 4 in W). Authentic 23rd Jain Tirthankara Parshvanath murti with 7-headed serpent hood in royal blue.",
+    "vedicVastu": {
+      "placementDirection": "North-East (Ishanya) or East altar in Jain home mandir on a pure marble or silver chowki",
+      "chakraPlanet": "Third Eye Chakra (Ajna) & Throat Chakra · Planet Saturn (Shani) & Jupiter (Guru)",
+      "poojaVidhi": "Perform clean water pakshal and offer sandalwood paste (kesar-chandan) with Navkar Mantra recitation.",
+      "vedicBenefits": "Inspires non-violence (Ahimsa), supreme serenity, mental peace, and protection against negative psychic vibrations."
+    },
+    "images": [
+      "/images/lord-parasnath-in-lapis-lazuli.webp",
+      "/images/lord-parasnath-in-lapis-lazuli-2.webp",
+      "/images/lord-parasnath-in-lapis-lazuli-3.webp",
+      "/images/lord-parasnath-in-lapis-lazuli-4.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "categoryName": "God Statues",
+    "subCategoryId": {
+      "_id": "6aa58c80a69037c73ebed098",
+      "name": "Other",
+      "slug": "other"
+    },
+    "subCategoryName": "Other",
+    "size": "6.5 in (H) x 4 in (W) x 2.5 in (D)",
+    "weight": "1.25 kg",
+    "stock": 1,
+    "featured": true,
+    "pricePerUnit": "₹92 / gram",
+    "pricePerGram": 92
+  },
+  {
+    "_id": "6abfa0013618032686f06007",
+    "name": "Lord Krishna in Ruby Zoisite",
+    "slug": "lord-krishna-in-ruby-zoisite",
+    "price": 141000,
+    "originalPrice": 176250,
+    "detail": "Rare gem-collector quality Lord Krishna idol intricately sculpted from genuine natural Ruby Zoisite (Anyolite) gemstone with vibrant ruby crystals embedded in emerald-green zoisite. Measures 3 in (H) x 2 in (W) x 1.2 in (D) with weight 220 grams. Depicts Kanha in his enchanting Tribhanga posture playing the flute (Murlidhar Swaroop), radiating unconditional love, devotion (Bhakti), and joy for personal puja altars and luxury collections.",
+    "description": "<p>Rare gem-collector quality <strong>Lord Krishna in Ruby Zoisite</strong> idol intricately sculpted from genuine natural Ruby Zoisite (Anyolite) gemstone with vibrant ruby crystals embedded in emerald-green zoisite. Measures 3 in (H) x 2 in (W) x 1.2 in (D) with weight 220 grams. Depicts Kanha in his enchanting Tribhanga posture playing the flute (Murlidhar Swaroop), radiating unconditional love, devotion (Bhakti), and joy for personal puja altars and luxury collections.</p>\n\n<h2>Spiritual Radiance of Anyolite Ruby Krishna</h2>\n<p>Ruby Zoisite is celebrated for creating a profound synthesis between the heart and root chakras:</p>\n<ul>\n  <li><strong>Vibrant Mineral Contrast:</strong> Deep ruby corundum crystals set against vibrant green zoisite with black hornblende accents create an astonishing visual display.</li>\n  <li><strong>Murlidhar Flute Posture:</strong> Kanha with his divine bansuri held gracefully to his lips, evoking joy, attraction, and release from worldly suffering.</li>\n  <li><strong>Miniature Masterpiece:</strong> Sculpted with microscopic precision by Jaipur master lapidary carvers, capturing facial expression, peacock feather crown, and lotus base.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Lord Krishna in Ruby Zoisite (3 in H x 2 in W)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Ruby Zoisite (Anyolite)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Weight Category</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">220 g (1,100 carats)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">3 in (H) x 2 in (W) x 1.2 in (D)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Unit</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹640.9 / gram (₹1,41,000 Total)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North-East or East direction of home mandir or study desk</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Lord Krishna in Ruby Zoisite (3 in H x 2 in W)</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Earth-Mined Natural Ruby Zoisite (Anyolite)</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 220 g (1,100 carats)</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 3 in (H) x 2 in (W) x 1.2 in (D)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing Basis :</strong> ₹1,41,000 (₹640.9 / gram)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North-East or East sacred mandir altar</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone (Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof wooden crating with 100% door-to-door insurance</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"What are the energetic benefits of a Ruby Zoisite Krishna idol?\",\"answer\":\"Ruby in Zoisite harmonizes the Heart and Root chakras. It fosters pure divine devotion (Bhakti), spiritual joy, and deep emotional healing while grounding positive energies into physical reality.\"},{\"question\":\"Is this Krishna statue made of solid earth-mined stone?\",\"answer\":\"Yes, this statue is carved from 100% natural, untreated Anyolite (Ruby Zoisite) with natural red corundum ruby crystals vividly contrasting against the green matrix.\"},{\"question\":\"Where should this compact 3-inch Krishna idol be placed?\",\"answer\":\"Place on your home mandir altar, meditation altar, or executive study desk in the North-East or East direction.\"},{\"question\":\"How should I care for this delicate gemstone carving?\",\"answer\":\"Clean gently using a dry soft silk or cotton cloth. Keep away from hard abrasive chemicals.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Lord Krishna in Ruby Zoisite Idol | Crystal Jaipuria\",\"metaDescription\":\"Buy exquisite Lord Krishna in Ruby Zoisite statue (3 in H x 2 in W). Handcrafted natural anyolite Kanha murti playing flute for home mandir, devotion & love.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North-East or East direction of home mandir or executive study desk facing into the room\",\"chakraPlanet\":\"Heart Chakra (Anahata) & Root Chakra · Lord Krishna & Planet Venus (Shukra)\",\"poojaVidhi\":\"Gently clean with dry silk cloth. Offer tulsi leaves, fresh makhan-mishri, and yellow flowers during Janmashtami or daily sandhya aarti.\",\"vedicBenefits\":\"Enhances loving devotion (Bhakti), spiritual joy, emotional healing, and divine grace throughout the household.\"} -->",
+    "faqs": [
+      {
+        "question": "What are the energetic benefits of a Ruby Zoisite Krishna idol?",
+        "answer": "Ruby in Zoisite harmonizes the Heart and Root chakras. It fosters pure divine devotion (Bhakti), spiritual joy, and deep emotional healing while grounding positive energies into physical reality."
+      },
+      {
+        "question": "Is this Krishna statue made of solid earth-mined stone?",
+        "answer": "Yes, this statue is carved from 100% natural, untreated Anyolite (Ruby Zoisite) with natural red corundum ruby crystals vividly contrasting against the green matrix."
+      },
+      {
+        "question": "Where should this compact 3-inch Krishna idol be placed?",
+        "answer": "Place on your home mandir altar, meditation altar, or executive study desk in the North-East or East direction."
+      },
+      {
+        "question": "How should I care for this delicate gemstone carving?",
+        "answer": "Clean gently using a dry soft silk or cotton cloth. Keep away from hard abrasive chemicals."
+      }
+    ],
+    "metaTitle": "Lord Krishna in Ruby Zoisite Idol | Crystal Jaipuria",
+    "metaDescription": "Buy exquisite Lord Krishna in Ruby Zoisite statue (3 in H x 2 in W). Handcrafted natural anyolite Kanha murti playing flute for home mandir, devotion & love.",
+    "vedicVastu": {
+      "placementDirection": "North-East or East direction of home mandir or executive study desk facing into the room",
+      "chakraPlanet": "Heart Chakra (Anahata) & Root Chakra · Lord Krishna & Planet Venus (Shukra)",
+      "poojaVidhi": "Gently clean with dry silk cloth. Offer tulsi leaves, fresh makhan-mishri, and yellow flowers during Janmashtami or daily sandhya aarti.",
+      "vedicBenefits": "Enhances loving devotion (Bhakti), spiritual joy, emotional healing, and divine grace throughout the household."
+    },
+    "images": [
+      "/images/lord-krishna-in-ruby-zoisite.webp",
+      "/images/lord-krishna-in-ruby-zoisite-2.webp",
+      "/images/lord-krishna-in-ruby-zoisite-3.webp",
+      "/images/lord-krishna-in-ruby-zoisite-4.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "categoryName": "God Statues",
+    "subCategoryId": {
+      "_id": "6aa58c80a69037c73ebed098",
+      "name": "Other",
+      "slug": "other"
+    },
+    "subCategoryName": "Other",
+    "size": "3 in (H) x 2 in (W) x 1.2 in (D)",
+    "weight": "220 g",
+    "stock": 1,
+    "featured": true,
+    "pricePerUnit": "₹640.9 / gram",
+    "pricePerGram": 640.9
+  },
+  {
     "_id": "6abe9e303618032686f05301",
     "name": "Elegant Ruby Ram Darbar Carving",
     "slug": "ruby-ram-darbar-carving",

@@ -28,7 +28,13 @@ export const SLUG_ALIASES = {
   "green-aventurine-shankh-648g": "green-aventurine-shankh",
   "nataraja-dancing-shiva-sunstone-idol-22kg": "nataraja-dancing-shiva-sunstone-idol",
   "lord-shiva-in-natural-lepidolite-101kg": "shiva-in-lepidolite",
-  "lord-shiva-in-natural-lepidolite": "shiva-in-lepidolite",
+  "sphatik-crystal-lingam-for-temple": "special-sphatik-crystal-lingam-for-temple",
+  "vibrant-ruby-kyanite-buddha": "buddha-in-ruby-kyanite",
+  "lord-parshvanath-in-lapis-lazuli": "lord-parasnath-in-lapis-lazuli",
+  "black-obsidian-goddess-kali": "goddess-kali-in-black-obsidian",
+  "green-aventurine-lord-ganesha": "lord-ganesha-in-green-aventurine",
+  "ruby-zoisite-lord-krishna": "lord-krishna-in-ruby-zoisite",
+  "labradorite-laughing-buddha": "laughing-buddha-in-labradorite",
   "luxurious-idols-&-decor": "luxurious-idols-decor"
 };
 

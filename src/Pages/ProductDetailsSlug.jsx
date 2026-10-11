@@ -14,6 +14,7 @@ import {
   getDefaultProductFaqs,
   SUPER_TITLE_MAPPINGS,
   SUPER_DESCRIPTION_MAPPINGS,
+  toAbsoluteUrl,
 } from "../utils/seo";
 import {
   trackProductView,
@@ -210,14 +211,17 @@ Hello Crystal Jaipuria, I have a query regarding this product.
         const itemText = `${item.name || ""} ${item.slug || ""}`.toLowerCase();
         let score = 0;
 
-        // Same material match (+10 points) - e.g. Ruby with Ruby, Jade with Jade
+        // Same material match (+20 points) - e.g. Ruby with Ruby, Jade with Jade
         for (const mat of currentMaterials) {
-          if (itemText.includes(mat)) score += 10;
+          if (itemText.includes(mat)) score += 20;
         }
 
-        // Same deity / form match (+6 points) - e.g. Shiva with Shiva, Ganesha with Ganesha
+        // Same deity / form match (+10 points) - e.g. Shiva with Shiva, Ganesha with Ganesha
         for (const deity of currentDeities) {
-          if (itemText.includes(deity)) score += 6;
+          if (itemText.includes(deity)) {
+            score += 10;
+            break;
+          }
         }
 
         // Same category (+2 points)
@@ -494,7 +498,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
         title={metaTitle}
         description={metaDescription}
         canonical={canonicalUrl}
-        image={(typeof product.images?.[0] === 'string' ? product.images[0] : product.images?.[0]?.url) || "https://www.crystaljaipuria.com/logo.png"}
+        image={toAbsoluteUrl(getProductImageUrl(product, 0))}
         type="product"
         schema={schema}
         robots={isPendingProduct ? "noindex, nofollow" : "index, follow"}
@@ -553,6 +557,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
                     }
                     width="600"
                     height="600"
+                    itemProp="image"
                     fetchPriority="high"
                     loading="eager"
                     decoding="async"
@@ -1051,7 +1056,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
 
       {/* SECTION 3: RELATED PRODUCTS (CRISP WHITE SHOWCASE - data-nosnippet prevents Google from mixing this with product snippet) */}
       {Array.isArray(relatedProducts) && relatedProducts.length > 0 && (
-        <div data-nosnippet className="bg-white py-12 sm:py-16">
+        <aside aria-label="Related Products" data-nosnippet className="bg-white py-12 sm:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <div className="flex items-center justify-between mb-8">
               <div>
@@ -1073,7 +1078,7 @@ Hello Crystal Jaipuria, I have a query regarding this product.
               ))}
             </div>
           </div>
-        </div>
+        </aside>
       )}
     </div>
 

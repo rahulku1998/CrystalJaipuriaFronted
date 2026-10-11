@@ -79,7 +79,7 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- Dynamic Product Pages (89 Live Products) -->
+  <!-- Dynamic Product Pages (96 Live Products) -->
   <url>
     <loc>https://www.crystaljaipuria.com/product/shiva-in-lepidolite</loc>
     <image:image>
@@ -194,6 +194,10 @@
       <image:loc>https://www.crystaljaipuria.com/images/green-jade-carved-ganesha-statue-with-silver-gold-work.webp</image:loc>
       <image:title>Green Jade Carved Ganesha Statue with Silver &amp; Gold Work | Crystal Jaipuria</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/green-jade-carved-ganesha-statue-with-silver-gold-work-2.webp</image:loc>
+      <image:title>Green Jade Carved Ganesha Statue with Silver &amp; Gold Work - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -202,6 +206,10 @@
     <image:image>
       <image:loc>https://www.crystaljaipuria.com/images/rose-quartz-ganesh-with-silver-work-idol-for-luxury-decor.webp</image:loc>
       <image:title>Rose Quartz Ganesh with Silver Work Idol for Luxury Decor | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/rose-quartz-ganesh-with-silver-work-idol-for-luxury-decor-2.webp</image:loc>
+      <image:title>Rose Quartz Ganesh with Silver Work Idol for Luxury Decor - View 2 | Crystal Jaipuria</image:title>
     </image:image>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -847,6 +855,137 @@
     <image:image>
       <image:loc>https://res.cloudinary.com/dd6akzezt/image/upload/v1784004045/products/u6w7jxjcyky3swnqhgur.webp</image:loc>
       <image:title>Amethyst Gemston Angel - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/goddess-kali-in-black-obsidian</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/goddess-kali-in-black-obsidian.webp</image:loc>
+      <image:title>Goddess Kali in Black Obsidian | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/goddess-kali-in-black-obsidian-2.webp</image:loc>
+      <image:title>Goddess Kali in Black Obsidian - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/goddess-kali-in-black-obsidian-3.webp</image:loc>
+      <image:title>Goddess Kali in Black Obsidian - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/goddess-kali-in-black-obsidian-4.webp</image:loc>
+      <image:title>Goddess Kali in Black Obsidian - View 4 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/special-sphatik-crystal-lingam-for-temple</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/special-sphatik-crystal-lingam-for-temple.webp</image:loc>
+      <image:title>Special Sphatik Crystal Lingam for Temple | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/special-sphatik-crystal-lingam-for-temple-2.webp</image:loc>
+      <image:title>Special Sphatik Crystal Lingam for Temple - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/laughing-buddha-in-labradorite</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/laughing-buddha-in-labradorite.webp</image:loc>
+      <image:title>Laughing Buddha in Labradorite | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/laughing-buddha-in-labradorite-2.webp</image:loc>
+      <image:title>Laughing Buddha in Labradorite - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/laughing-buddha-in-labradorite-3.webp</image:loc>
+      <image:title>Laughing Buddha in Labradorite - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/lord-ganesha-in-green-aventurine</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/lord-ganesha-in-green-aventurine.webp</image:loc>
+      <image:title>Lord Ganesha in Green Aventurine | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/lord-ganesha-in-green-aventurine-2.webp</image:loc>
+      <image:title>Lord Ganesha in Green Aventurine - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/lord-ganesha-in-green-aventurine-3.webp</image:loc>
+      <image:title>Lord Ganesha in Green Aventurine - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/buddha-in-ruby-kyanite</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/buddha-in-ruby-kyanite.webp</image:loc>
+      <image:title>Buddha in Ruby Kyanite | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/buddha-in-ruby-kyanite-2.webp</image:loc>
+      <image:title>Buddha in Ruby Kyanite - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/buddha-in-ruby-kyanite-3.webp</image:loc>
+      <image:title>Buddha in Ruby Kyanite - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/buddha-in-ruby-kyanite-4.webp</image:loc>
+      <image:title>Buddha in Ruby Kyanite - View 4 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/lord-parasnath-in-lapis-lazuli</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/lord-parasnath-in-lapis-lazuli.webp</image:loc>
+      <image:title>Lord Parasnath in Lapis Lazuli | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/lord-parasnath-in-lapis-lazuli-2.webp</image:loc>
+      <image:title>Lord Parasnath in Lapis Lazuli - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/lord-parasnath-in-lapis-lazuli-3.webp</image:loc>
+      <image:title>Lord Parasnath in Lapis Lazuli - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/lord-parasnath-in-lapis-lazuli-4.webp</image:loc>
+      <image:title>Lord Parasnath in Lapis Lazuli - View 4 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/lord-krishna-in-ruby-zoisite</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/lord-krishna-in-ruby-zoisite.webp</image:loc>
+      <image:title>Lord Krishna in Ruby Zoisite | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/lord-krishna-in-ruby-zoisite-2.webp</image:loc>
+      <image:title>Lord Krishna in Ruby Zoisite - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/lord-krishna-in-ruby-zoisite-3.webp</image:loc>
+      <image:title>Lord Krishna in Ruby Zoisite - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/lord-krishna-in-ruby-zoisite-4.webp</image:loc>
+      <image:title>Lord Krishna in Ruby Zoisite - View 4 | Crystal Jaipuria</image:title>
     </image:image>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

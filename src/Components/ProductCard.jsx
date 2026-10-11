@@ -28,6 +28,7 @@ const ProductCard = ({ product, headingTag = "p" }) => {
         <img
           loading="lazy"
           decoding="async"
+          data-nosnippet="true"
           width="400"
           height="400"
           src={initialSrc}

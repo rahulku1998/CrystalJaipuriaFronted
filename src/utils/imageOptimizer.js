@@ -8,6 +8,13 @@ export const PROTECTED_STUDIO_SLUGS = new Set([
   "tea-set-in-crystal-quartz",
   "sodalite-buddha",
   "ruby-kyanite-buddha",
+  "goddess-kali-in-black-obsidian",
+  "special-sphatik-crystal-lingam-for-temple",
+  "laughing-buddha-in-labradorite",
+  "lord-ganesha-in-green-aventurine",
+  "buddha-in-ruby-kyanite",
+  "lord-parasnath-in-lapis-lazuli",
+  "lord-krishna-in-ruby-zoisite",
 
   "natural-amethyst-gemstone-shiva-face-idol",
   "gemston-ruby-shree-yantra",
@@ -52,6 +59,13 @@ export const STATIC_CATALOG_SLUGS = new Set([
   "tea-set-in-crystal-quartz",
   "sodalite-buddha",
   "ruby-kyanite-buddha",
+  "goddess-kali-in-black-obsidian",
+  "special-sphatik-crystal-lingam-for-temple",
+  "laughing-buddha-in-labradorite",
+  "lord-ganesha-in-green-aventurine",
+  "buddha-in-ruby-kyanite",
+  "lord-parasnath-in-lapis-lazuli",
+  "lord-krishna-in-ruby-zoisite",
 
   "durga-devi-ruby-idol-432-carats",
   "durga-devi-ruby-idol",
@@ -122,7 +136,7 @@ export const STATIC_CATALOG_SLUGS = new Set([
  * - Serves clean local static WebP assets for all 49 core catalog products.
  * - Dynamically supports newly added products from Admin Panel with zero delay.
  */
-export const getProductImageUrl = (product, index = 0, width = 800) => {
+export const getProductImageUrl = (product, index = 0, _width = 800) => {
   if (!product) return "/Gemstone.webp";
 
   const images = Array.isArray(product.images)
@@ -132,55 +146,34 @@ export const getProductImageUrl = (product, index = 0, width = 800) => {
   const imgItem = images[index] || (index === 0 ? images[0] : null);
   const rawUrl = typeof imgItem === "string" ? imgItem : (imgItem?.url || "");
 
+  // 1. If it is already an explicit local static path
+  if (rawUrl && (rawUrl.startsWith("/images/") || rawUrl.startsWith("/assets/")) && !rawUrl.endsWith("/Gemstone.webp")) {
+    return rawUrl;
+  }
+
   const cleanSlug = (product.slug || product.name || "")
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 
-  // 1. If it is already an explicit local static path
-  if (rawUrl && (rawUrl.startsWith("/images/") || rawUrl.startsWith("/assets/"))) {
-    return rawUrl;
-  }
-
-  // 2. Newly added products from Admin: immediately deliver live uploaded photo
-  if (rawUrl && (rawUrl.startsWith("http://") || rawUrl.startsWith("https://"))) {
-    return optimizeCloudinaryUrl(rawUrl, width);
-  }
-
-  // 3. Core catalog studio products: serve pristine local static WebP
-  if (cleanSlug && STATIC_CATALOG_SLUGS.has(cleanSlug)) {
+  // 2. ALWAYS serve local static WebP for any product with a clean slug
+  if (cleanSlug) {
     if (index === 0) {
       return `/images/${cleanSlug}.webp`;
     }
     return `/images/${cleanSlug}-${index + 1}.webp`;
   }
 
-  // 4. Fallback to clean slug static path if exists
-  if (cleanSlug) {
-    return index === 0 ? `/images/${cleanSlug}.webp` : `/images/${cleanSlug}-${index + 1}.webp`;
-  }
-
   return "/Gemstone.webp";
 };
 
 /**
- * Responsive Image Delivery Utility
- * Formats remote Cloudinary URLs for fast loading or returns static paths.
+ * Responsive Image Delivery Utility - strictly returns local clean WebP
  */
 export const optimizeCloudinaryUrl = (url, width = 800, seoSlug = "") => {
   if (!url || typeof url !== "string") return "/Gemstone.webp";
 
   if (url.startsWith("/images/") || url.startsWith("/assets/")) {
-    return url;
-  }
-
-  if (url.includes("res.cloudinary.com") && url.includes("/image/upload/")) {
-    return url.includes("/f_auto")
-      ? url
-      : url.replace("/image/upload/", `/image/upload/f_auto,q_auto:good,w_${width},c_limit/`);
-  }
-
-  if (url.startsWith("http://") || url.startsWith("https://")) {
     return url;
   }
 

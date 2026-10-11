@@ -62,6 +62,48 @@ export const STANDARDIZED_SPECS = {
     size: "14 in (H) x 8.5 in (W) x 5.2 in (D)",
     pricePerUnit: "₹18.6 / gram",
   },
+  "goddess-kali-in-black-obsidian": {
+    price: 106000,
+    weight: "3.8 kg",
+    size: "11 in (H) x 7 in (W) x 3.5 in (D)",
+    pricePerUnit: "₹27.8 / gram",
+  },
+  "special-sphatik-crystal-lingam-for-temple": {
+    price: 293000,
+    weight: "16.375 kg",
+    size: "Lingam 12 in (H) x 5.5 in (W), Base 3 in (H), Total 13 in (H)",
+    pricePerUnit: "₹17.9 / gram",
+  },
+  "laughing-buddha-in-labradorite": {
+    price: 87000,
+    weight: "4.5 kg",
+    size: "10 in (H) x 8 in (W) x 4.2 in (D)",
+    pricePerUnit: "₹19.3 / gram",
+  },
+  "lord-ganesha-in-green-aventurine": {
+    price: 109000,
+    weight: "6.2 kg",
+    size: "13 in (H) x 9 in (W) x 5 in (D)",
+    pricePerUnit: "₹17.5 / gram",
+  },
+  "buddha-in-ruby-kyanite": {
+    price: 123000,
+    weight: "8.5 kg",
+    size: "12 in (H) x 15 in (W) x 5.5 in (D)",
+    pricePerUnit: "₹14.4 / gram",
+  },
+  "lord-parasnath-in-lapis-lazuli": {
+    price: 115000,
+    weight: "1.25 kg",
+    size: "6.5 in (H) x 4 in (W) x 2.5 in (D)",
+    pricePerUnit: "₹92 / gram",
+  },
+  "lord-krishna-in-ruby-zoisite": {
+    price: 141000,
+    weight: "220 g",
+    size: "3 in (H) x 2 in (W) x 1.2 in (D)",
+    pricePerUnit: "₹640.9 / gram",
+  },
   "red-jade-shree-yantra": { price: 1100, size: "1.6 L × 1.6 B × 1.9 H in", weight: "88 g", pricePerUnit: "₹12.5 / gram" },
   "sunstone-shree-yantra": { price: 1000, size: "1.4 L × 1.4 B × 1.6 H in", weight: "58 g", pricePerUnit: "₹17.2 / gram" },
   "tiger-eye-shree-yantra": { price: 975, size: "1.6 L × 1.6 B × 1.3 H in", weight: "49 g", pricePerUnit: "₹19.9 / gram" },
@@ -704,6 +746,13 @@ export const STANDARDIZED_NAMES = {
   "tea-set-in-crystal-quartz": "Tea Set in Crystal Quartz",
   "sodalite-buddha": "Sodalite Buddha",
   "ruby-kyanite-buddha": "Ruby Kyanite Buddha",
+  "goddess-kali-in-black-obsidian": "Goddess Kali in Black Obsidian",
+  "special-sphatik-crystal-lingam-for-temple": "Special Sphatik Crystal Lingam for Temple",
+  "laughing-buddha-in-labradorite": "Laughing Buddha in Labradorite",
+  "lord-ganesha-in-green-aventurine": "Lord Ganesha in Green Aventurine",
+  "buddha-in-ruby-kyanite": "Buddha in Ruby Kyanite",
+  "lord-parasnath-in-lapis-lazuli": "Lord Parasnath in Lapis Lazuli",
+  "lord-krishna-in-ruby-zoisite": "Lord Krishna in Ruby Zoisite",
   "gemston-ruby-shree-yantra": "Natural Gemstone Ruby Shree Yantra",
   "gemston-amethyst-diya": "Natural Amethyst Gemstone Diya",
   "crystal-clear-mahvaveer-ji-statue": "Crystal Clear Mahaveer Ji Statue",
@@ -752,7 +801,14 @@ export const MULTI_IMAGE_SLUGS = new Set([
   "nataraja-dancing-shiva-sunstone-idol-22kg",
   "shiva-in-lepidolite",
   "lord-shiva-in-natural-lepidolite-101kg",
-  "lord-shiva-in-natural-lepidolite"
+  "lord-shiva-in-natural-lepidolite",
+  "goddess-kali-in-black-obsidian",
+  "special-sphatik-crystal-lingam-for-temple",
+  "laughing-buddha-in-labradorite",
+  "lord-ganesha-in-green-aventurine",
+  "buddha-in-ruby-kyanite",
+  "lord-parasnath-in-lapis-lazuli",
+  "lord-krishna-in-ruby-zoisite"
 ]);
 
 /**
@@ -1031,18 +1087,27 @@ export const getStandardizedProduct = (product) => {
   // Bulletproof Multi-Image Delivery for Catalog, Fallback & Dynamic Admin Products
   let standardizedImages = [];
 
-  // 1. If product already has an array of images (API, Cloudinary, fallbackData, or Admin upload), PRESERVE ALL OF THEM!
+  // 1. Bulletproof Image Sanitization: Strictly replace ANY Cloudinary or remote URLs with local static webp
   if (Array.isArray(product.images) && product.images.length > 0) {
     standardizedImages = product.images.map((img, idx) => {
-      if (typeof img === "string") {
-        return { url: img, public_id: `products/${slug || "item"}-${idx + 1}` };
+      let raw = typeof img === "string" ? img : (img?.url || img?.secure_url || "");
+      if (slug && (raw.includes("cloudinary") || raw.startsWith("http"))) {
+        raw = idx === 0 ? `/images/${slug}.webp` : `/images/${slug}-${idx + 1}.webp`;
       }
       return {
-        url: img.url || img.secure_url || "",
-        public_id: img.public_id || `products/${slug || "item"}-${idx + 1}`,
-        ...img,
+        url: raw,
+        public_id: img?.public_id || `products/${slug || "item"}-${idx + 1}`,
+        ...(typeof img === "object" ? img : {}),
       };
     }).filter((img) => Boolean(img.url));
+  }
+
+  // Explicit studio images for Gemstone Ruby Shree Yantra
+  if (slug === "gemston-ruby-shree-yantra") {
+    standardizedImages = [
+      { url: "/images/gemston-ruby-shree-yantra.webp", public_id: "products/gemston-ruby-shree-yantra" },
+      { url: "/images/gemston-ruby-shree-yantra-2.webp", public_id: "products/gemston-ruby-shree-yantra-2" },
+    ];
   }
 
   // 2. If product.images had only 1 image or was empty, check if catalog known multi-images exist:
@@ -1113,6 +1178,51 @@ export const getStandardizedProduct = (product) => {
         { url: "/images/ruby-kyanite-buddha-2.webp", public_id: "products/ruby-kyanite-buddha-2" },
         { url: "/images/ruby-kyanite-buddha-3.webp", public_id: "products/ruby-kyanite-buddha-3" },
         { url: "/images/ruby-kyanite-buddha-4.webp", public_id: "products/ruby-kyanite-buddha-4" },
+      ];
+    } else if (slug === "goddess-kali-in-black-obsidian" || slug === "black-obsidian-goddess-kali") {
+      standardizedImages = [
+        { url: "/images/goddess-kali-in-black-obsidian.webp", public_id: "products/goddess-kali-in-black-obsidian" },
+        { url: "/images/goddess-kali-in-black-obsidian-2.webp", public_id: "products/goddess-kali-in-black-obsidian-2" },
+        { url: "/images/goddess-kali-in-black-obsidian-3.webp", public_id: "products/goddess-kali-in-black-obsidian-3" },
+        { url: "/images/goddess-kali-in-black-obsidian-4.webp", public_id: "products/goddess-kali-in-black-obsidian-4" },
+      ];
+    } else if (slug === "special-sphatik-crystal-lingam-for-temple" || slug === "sphatik-crystal-lingam-for-temple") {
+      standardizedImages = [
+        { url: "/images/special-sphatik-crystal-lingam-for-temple.webp", public_id: "products/special-sphatik-crystal-lingam-for-temple" },
+        { url: "/images/special-sphatik-crystal-lingam-for-temple-2.webp", public_id: "products/special-sphatik-crystal-lingam-for-temple-2" },
+      ];
+    } else if (slug === "laughing-buddha-in-labradorite" || slug === "labradorite-laughing-buddha") {
+      standardizedImages = [
+        { url: "/images/laughing-buddha-in-labradorite.webp", public_id: "products/laughing-buddha-in-labradorite" },
+        { url: "/images/laughing-buddha-in-labradorite-2.webp", public_id: "products/laughing-buddha-in-labradorite-2" },
+        { url: "/images/laughing-buddha-in-labradorite-3.webp", public_id: "products/laughing-buddha-in-labradorite-3" },
+      ];
+    } else if (slug === "lord-ganesha-in-green-aventurine" || slug === "green-aventurine-lord-ganesha") {
+      standardizedImages = [
+        { url: "/images/lord-ganesha-in-green-aventurine.webp", public_id: "products/lord-ganesha-in-green-aventurine" },
+        { url: "/images/lord-ganesha-in-green-aventurine-2.webp", public_id: "products/lord-ganesha-in-green-aventurine-2" },
+        { url: "/images/lord-ganesha-in-green-aventurine-3.webp", public_id: "products/lord-ganesha-in-green-aventurine-3" },
+      ];
+    } else if (slug === "buddha-in-ruby-kyanite" || slug === "vibrant-ruby-kyanite-buddha") {
+      standardizedImages = [
+        { url: "/images/buddha-in-ruby-kyanite.webp", public_id: "products/buddha-in-ruby-kyanite" },
+        { url: "/images/buddha-in-ruby-kyanite-2.webp", public_id: "products/buddha-in-ruby-kyanite-2" },
+        { url: "/images/buddha-in-ruby-kyanite-3.webp", public_id: "products/buddha-in-ruby-kyanite-3" },
+        { url: "/images/buddha-in-ruby-kyanite-4.webp", public_id: "products/buddha-in-ruby-kyanite-4" },
+      ];
+    } else if (slug === "lord-parasnath-in-lapis-lazuli" || slug === "lord-parshvanath-in-lapis-lazuli") {
+      standardizedImages = [
+        { url: "/images/lord-parasnath-in-lapis-lazuli.webp", public_id: "products/lord-parasnath-in-lapis-lazuli" },
+        { url: "/images/lord-parasnath-in-lapis-lazuli-2.webp", public_id: "products/lord-parasnath-in-lapis-lazuli-2" },
+        { url: "/images/lord-parasnath-in-lapis-lazuli-3.webp", public_id: "products/lord-parasnath-in-lapis-lazuli-3" },
+        { url: "/images/lord-parasnath-in-lapis-lazuli-4.webp", public_id: "products/lord-parasnath-in-lapis-lazuli-4" },
+      ];
+    } else if (slug === "lord-krishna-in-ruby-zoisite" || slug === "ruby-zoisite-lord-krishna") {
+      standardizedImages = [
+        { url: "/images/lord-krishna-in-ruby-zoisite.webp", public_id: "products/lord-krishna-in-ruby-zoisite" },
+        { url: "/images/lord-krishna-in-ruby-zoisite-2.webp", public_id: "products/lord-krishna-in-ruby-zoisite-2" },
+        { url: "/images/lord-krishna-in-ruby-zoisite-3.webp", public_id: "products/lord-krishna-in-ruby-zoisite-3" },
+        { url: "/images/lord-krishna-in-ruby-zoisite-4.webp", public_id: "products/lord-krishna-in-ruby-zoisite-4" },
       ];
     } else if (slug === "durga-devi-ruby-idol" || slug === "durga-devi-ruby-idol-432-carats") {
       standardizedImages = [

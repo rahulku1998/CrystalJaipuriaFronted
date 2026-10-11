@@ -531,7 +531,7 @@ const CategoryPage = () => {
           (pCatSlug && pCatSlug === currentCat.slug) ||
           (pCatName && pCatName === curName) ||
           (cleanSlug === "shree-yantra" && (p.name?.toLowerCase().includes("shree yantra") || p.slug?.includes("shree-yantra"))) ||
-          (cleanSlug === "shivling" && (p.name?.toLowerCase().includes("shivling") || p.slug?.includes("shivling"))) ||
+          (cleanSlug === "shivling" && (p.name?.toLowerCase().includes("shivling") || p.name?.toLowerCase().includes("lingam") || p.slug?.includes("shivling") || p.slug?.includes("lingam"))) ||
           (cleanSlug === "god-statues" && pCatSlug === "god-statues") ||
           (cleanSlug === "diya" && (p.name?.toLowerCase().includes("diya") || p.slug?.includes("diya"))) ||
           (cleanSlug === "angel" && (p.name?.toLowerCase().includes("angel") || p.slug?.includes("angel"))) ||

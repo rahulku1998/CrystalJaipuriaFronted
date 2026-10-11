@@ -4,6 +4,7 @@
  */
 import { GOOGLE_BUSINESS_STATS } from "../config/businessStats.js";
 import { getVedicVastuForProduct } from "./productMetadata.js";
+import { getProductImageUrl } from "./imageOptimizer.js";
 
 
 export const SUPER_TITLE_MAPPINGS = {
@@ -52,6 +53,20 @@ export const SUPER_TITLE_MAPPINGS = {
   "green-aventurine-shankh": "Green Aventurine Shankh | Wealth & Vastu Crystal | Crystal Jaipuria",
   "nataraja-dancing-shiva-sunstone-idol": "Nataraja Dancing Shiva Sunstone Idol | Murti | Crystal Jaipuria",
   "shiva-in-lepidolite": "Shiva in Lepidolite | Rahu Mahadasha Idol | Crystal Jaipuria",
+  "goddess-kali-in-black-obsidian": "Black Obsidian Goddess Kali Statue | Crystal Jaipuria",
+  "black-obsidian-goddess-kali": "Black Obsidian Goddess Kali Statue | Crystal Jaipuria",
+  "special-sphatik-crystal-lingam-for-temple": "Sphatik Crystal Lingam for Temple (16.3 kg) | Crystal Jaipuria",
+  "sphatik-crystal-lingam-for-temple": "Sphatik Crystal Lingam for Temple (16.3 kg) | Crystal Jaipuria",
+  "laughing-buddha-in-labradorite": "Laughing Buddha in Labradorite Statue | Crystal Jaipuria",
+  "labradorite-laughing-buddha": "Laughing Buddha in Labradorite Statue | Crystal Jaipuria",
+  "lord-ganesha-in-green-aventurine": "Green Aventurine Lord Ganesha Idol | Crystal Jaipuria",
+  "green-aventurine-lord-ganesha": "Green Aventurine Lord Ganesha Idol | Crystal Jaipuria",
+  "buddha-in-ruby-kyanite": "Buddha in Ruby Kyanite Statue (15 in) | Crystal Jaipuria",
+  "vibrant-ruby-kyanite-buddha": "Buddha in Ruby Kyanite Statue (15 in) | Crystal Jaipuria",
+  "lord-parasnath-in-lapis-lazuli": "Lord Parasnath in Lapis Lazuli Idol | Crystal Jaipuria",
+  "lord-parshvanath-in-lapis-lazuli": "Lord Parasnath in Lapis Lazuli Idol | Crystal Jaipuria",
+  "lord-krishna-in-ruby-zoisite": "Lord Krishna in Ruby Zoisite Idol | Crystal Jaipuria",
+  "ruby-zoisite-lord-krishna": "Lord Krishna in Ruby Zoisite Idol | Crystal Jaipuria",
 };
 
 export const getProductMetaTitle = (productName, slug = "") => {
@@ -216,12 +231,8 @@ export const getProductSchema = (product, canonicalUrl) => {
 
   const vedicVastu = getVedicVastuForProduct(product);
   const parsedPrice = parseSchemaPrice(product.price || product.discountPrice);
-  const rawImageUrl =
-    (Array.isArray(product.images) && product.images[0]?.url) ||
-    (Array.isArray(product.images) && typeof product.images[0] === "string" ? product.images[0] : null) ||
-    (typeof product.images === "string" ? product.images : null) ||
-    "https://www.crystaljaipuria.com/logo.png";
-  const imageUrl = toAbsoluteUrl(rawImageUrl);
+  const cleanImage = getProductImageUrl(product, 0);
+  const imageUrl = toAbsoluteUrl(cleanImage || "https://www.crystaljaipuria.com/logo.png");
   const desc = getProductMetaDescription(product);
   const categoryName = product.categoryId?.name || "Gemstone Statues";
   const categorySlug = product.categoryId?.slug || "";
@@ -324,7 +335,7 @@ export const getProductSchema = (product, canonicalUrl) => {
       "@id": `${canonicalUrl}#product`,
       name: product.name,
       image: Array.isArray(product.images) && product.images.length > 0
-        ? product.images.map((img) => toAbsoluteUrl(typeof img === "string" ? img : img?.url || imageUrl))
+        ? product.images.map((_, idx) => toAbsoluteUrl(getProductImageUrl(product, idx)))
         : [imageUrl],
       description: desc,
       sku: product._id,
