@@ -528,6 +528,22 @@ const generateSitemap = async () => {
     gmcXml += `      <g:product_highlight>Handcrafted by Hereditary Master Artisans in Jaipur, Rajasthan</g:product_highlight>\n`;
     gmcXml += `      <g:product_highlight>5-Layer Sacred Shockproof Packaging (100% Breakage-Free Guarantee)</g:product_highlight>\n`;
     gmcXml += `      <g:product_highlight>7-Day Replacement Guarantee with Free Express Delivery Across India</g:product_highlight>\n`;
+    gmcXml += `      <g:product_detail>\n`;
+    gmcXml += `        <g:section_name>General</g:section_name>\n`;
+    gmcXml += `        <g:attribute_name>Material</g:attribute_name>\n`;
+    gmcXml += `        <g:attribute_value>${escapeXml(material)}</g:attribute_value>\n`;
+    gmcXml += `      </g:product_detail>\n`;
+    gmcXml += `      <g:product_detail>\n`;
+    gmcXml += `        <g:section_name>Origin</g:section_name>\n`;
+    gmcXml += `        <g:attribute_name>Manufactured In</g:attribute_name>\n`;
+    gmcXml += `        <g:attribute_value>Jaipur, Rajasthan, India</g:attribute_value>\n`;
+    gmcXml += `      </g:product_detail>\n`;
+    gmcXml += `      <g:product_detail>\n`;
+    gmcXml += `        <g:section_name>Authenticity</g:section_name>\n`;
+    gmcXml += `        <g:attribute_name>Certification</g:attribute_name>\n`;
+    gmcXml += `        <g:attribute_value>100% Earth-Mined Natural Gemstone</g:attribute_value>\n`;
+    gmcXml += `      </g:product_detail>\n`;
+    gmcXml += `      <g:return_policy_label>Free 7-Day Replacement</g:return_policy_label>\n`;
     if (size) {
       gmcXml += `      <g:size>${size}</g:size>\n`;
     }
