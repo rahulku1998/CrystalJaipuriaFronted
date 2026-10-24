@@ -518,6 +518,48 @@ export const STANDARDIZED_SPECS = {
     size: "5 in (H) x 4.3 in (L) x 2.8 in (W)",
     pricePerUnit: "₹8.5 / gram",
   },
+  "black-agate-diya": {
+    price: 4000,
+    weight: "95 g",
+    size: "3.0 in (L) x 2.2 in (W) x 1.0 in (H)",
+    pricePerUnit: "₹4,000",
+  },
+  "lapis-lazuli-diya": {
+    price: 515,
+    weight: "105 g",
+    size: "3.0 in (L) x 2.2 in (W) x 1.0 in (H)",
+    pricePerUnit: "₹515",
+  },
+  "rose-quartz-diya": {
+    price: 600,
+    weight: "100 g",
+    size: "3.2 in (L) x 2.3 in (W) x 1.0 in (H)",
+    pricePerUnit: "₹600",
+  },
+  "yellow-aventurine-diya": {
+    price: 639,
+    weight: "95 g",
+    size: "3.0 in (L) x 2.2 in (W) x 1.0 in (H)",
+    pricePerUnit: "₹639",
+  },
+  "moonstone-diya": {
+    price: 639,
+    weight: "105 g",
+    size: "3.1 in (L) x 2.2 in (W) x 1.1 in (H)",
+    pricePerUnit: "₹639",
+  },
+  "green-jade-diya": {
+    price: 639,
+    weight: "95 g",
+    size: "3.0 in (L) x 2.2 in (W) x 1.0 in (H)",
+    pricePerUnit: "₹639",
+  },
+  "green-aventurine-diya": {
+    price: 499,
+    weight: "95 g",
+    size: "3.0 in (L) x 2.2 in (W) x 1.0 in (H)",
+    pricePerUnit: "₹499",
+  },
 };
 
 /**

@@ -74,6 +74,13 @@ export const syncImages = async () => {
       "sunstone-ganesha",
       "tiger-eye-ganesha-idol",
       "emerald-ganesha-idol",
+      "black-agate-diya",
+      "lapis-lazuli-diya",
+      "rose-quartz-diya",
+      "yellow-aventurine-diya",
+      "moonstone-diya",
+      "green-jade-diya",
+      "green-aventurine-diya",
 
       "natural-amethyst-gemstone-shiva-face-idol",
       "gemston-ruby-shree-yantra",

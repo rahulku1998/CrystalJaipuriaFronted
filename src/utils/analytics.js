@@ -25,6 +25,13 @@ export const pushEvent = (eventName, eventParams = {}) => {
     window.gtag("event", eventName, eventParams);
   }
 
+  // 3. Direct Meta Pixel tracking if available
+  if (typeof window.fbq === "function") {
+    try {
+      window.fbq("trackCustom", eventName, eventParams);
+    } catch (e) {}
+  }
+
   // Development debug log
   if (import.meta.env.DEV) {
     console.log(`[A4S / GTM Event] ${eventName}:`, eventParams);
@@ -43,6 +50,12 @@ export const trackPageView = (pageTTitle, pagePath) => {
     page_location: typeof window !== "undefined" ? window.location.href : "",
     page_path: path,
   });
+
+  if (typeof window !== "undefined" && typeof window.fbq === "function") {
+    try {
+      window.fbq("track", "PageView");
+    } catch (e) {}
+  }
 };
 	/**
  * Track Single Product View (view_item standard ecommerce event)
@@ -67,6 +80,19 @@ export const trackProductView = (product) => {
       },
     ],
   });
+
+  // Meta Pixel standard ViewContent event
+  if (typeof window !== "undefined" && typeof window.fbq === "function") {
+    try {
+      window.fbq("track", "ViewContent", {
+        content_name: product.name,
+        content_ids: [product._id],
+        content_type: "product",
+        value: price,
+        currency: "INR",
+      });
+    } catch (e) {}
+  }
 };
 
 /**
@@ -119,6 +145,17 @@ export const trackWhatsAppClick = (location = "floating_button", product = null)
   });
 
   pushEvent("whatsapp_click", eventParams);
+
+  // Meta Pixel standard Contact event
+  if (typeof window !== "undefined" && typeof window.fbq === "function") {
+    try {
+      window.fbq("track", "Contact", {
+        content_name: product ? product.name : "WhatsApp Chat Inquiry",
+        currency: "INR",
+        value: eventParams.value || 0,
+      });
+    } catch (e) {}
+  }
 };
 
 /**
@@ -140,6 +177,17 @@ export const trackInquirySubmit = (formData = {}, product = null) => {
   }
 
   pushEvent("generate_lead", eventParams);
+
+  // Meta Pixel standard Lead event
+  if (typeof window !== "undefined" && typeof window.fbq === "function") {
+    try {
+      window.fbq("track", "Lead", {
+        content_name: product?.name || "Product Query Form",
+        currency: "INR",
+        value: eventParams.value || 0,
+      });
+    } catch (e) {}
+  }
 };
 
 /**
@@ -155,6 +203,15 @@ export const trackSearch = (searchTerm, resultsCount = 0) => {
     search_term: searchTerm,
     results_count: resultsCount,
   });
+
+  // Meta Pixel standard Search event
+  if (typeof window !== "undefined" && typeof window.fbq === "function") {
+    try {
+      window.fbq("track", "Search", {
+        search_string: searchTerm,
+      });
+    } catch (e) {}
+  }
 };
 
 /**

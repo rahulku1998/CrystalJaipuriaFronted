@@ -46,7 +46,14 @@ export const PROTECTED_STUDIO_SLUGS = new Set([
   "nataraja-dancing-shiva-sunstone-idol",
   "lord-shiva-in-natural-lepidolite-101kg",
   "shiva-in-lepidolite",
-  "lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva"
+  "lapis-lazuli-gemstone-shiva-linga-with-face-of-shiva",
+  "black-agate-diya",
+  "lapis-lazuli-diya",
+  "rose-quartz-diya",
+  "yellow-aventurine-diya",
+  "moonstone-diya",
+  "green-jade-diya",
+  "green-aventurine-diya"
 ]);
 
 export const STATIC_CATALOG_SLUGS = new Set([
@@ -128,7 +135,14 @@ export const STATIC_CATALOG_SLUGS = new Set([
   "rose-quartz-ganesha-with-gold-painted",
   "rose-quartz-shiva-statue-with-gold-painting",
   "smokey-quartz-crystal-shiva-face-idol",
-  "tiger-eye-carving-shiva-statue"
+  "tiger-eye-carving-shiva-statue",
+  "black-agate-diya",
+  "lapis-lazuli-diya",
+  "rose-quartz-diya",
+  "yellow-aventurine-diya",
+  "moonstone-diya",
+  "green-jade-diya",
+  "green-aventurine-diya"
 ]);
 
 /**

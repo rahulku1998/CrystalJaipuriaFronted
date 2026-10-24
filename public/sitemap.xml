@@ -79,7 +79,7 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- Dynamic Product Pages (96 Live Products) -->
+  <!-- Dynamic Product Pages (103 Live Products) -->
   <url>
     <loc>https://www.crystaljaipuria.com/product/shiva-in-lepidolite</loc>
     <image:image>
@@ -1500,6 +1500,97 @@
     <image:image>
       <image:loc>https://www.crystaljaipuria.com/images/emerald-ganesha-idol-4.webp</image:loc>
       <image:title>Emerald Ganesha Idol - View 4 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/black-agate-diya</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/black-agate-diya.webp</image:loc>
+      <image:title>Natural Black Agate Diya | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/black-agate-diya-2.webp</image:loc>
+      <image:title>Natural Black Agate Diya - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/lapis-lazuli-diya</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/lapis-lazuli-diya.webp</image:loc>
+      <image:title>Natural Lapis Lazuli Diya | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/lapis-lazuli-diya-2.webp</image:loc>
+      <image:title>Natural Lapis Lazuli Diya - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/rose-quartz-diya</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/rose-quartz-diya.webp</image:loc>
+      <image:title>Natural Rose Quartz Diya | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/rose-quartz-diya-2.webp</image:loc>
+      <image:title>Natural Rose Quartz Diya - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/yellow-aventurine-diya</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/yellow-aventurine-diya.webp</image:loc>
+      <image:title>Natural Yellow Aventurine Diya | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/yellow-aventurine-diya-2.webp</image:loc>
+      <image:title>Natural Yellow Aventurine Diya - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/moonstone-diya</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/moonstone-diya.webp</image:loc>
+      <image:title>Natural Moonstone Diya | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/moonstone-diya-2.webp</image:loc>
+      <image:title>Natural Moonstone Diya - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/green-jade-diya</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/green-jade-diya.webp</image:loc>
+      <image:title>Natural Green Jade Diya | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/green-jade-diya-2.webp</image:loc>
+      <image:title>Natural Green Jade Diya - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/green-aventurine-diya</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/green-aventurine-diya.webp</image:loc>
+      <image:title>Natural Green Aventurine Diya | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/green-aventurine-diya-2.webp</image:loc>
+      <image:title>Natural Green Aventurine Diya - View 2 | Crystal Jaipuria</image:title>
     </image:image>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
