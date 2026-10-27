@@ -461,15 +461,16 @@ export const getBreadcrumbSchema = (items) => {
 
 /**
  * Generate Google Schema.org Article Structured Data (JSON-LD)
+ * Includes BlogPosting, Breadcrumbs, and FAQPage schemas.
  */
 export const getArticleSchema = (blog, canonicalUrl) => {
   if (!blog) return null;
 
-  return {
-    "@context": "https://schema.org",
+  const articleSchema = {
     "@type": "BlogPosting",
     "headline": blog.title,
-    "description": blog.description || blog.title,
+    "name": blog.metaTitle || blog.title,
+    "description": blog.metaDescription || blog.description || blog.title,
     "image": toAbsoluteUrl(blog.coverImage?.url || "https://www.crystaljaipuria.com/logo.png"),
     "datePublished": blog.createdAt || new Date().toISOString(),
     "dateModified": blog.updatedAt || blog.createdAt || new Date().toISOString(),
@@ -490,6 +491,51 @@ export const getArticleSchema = (blog, canonicalUrl) => {
       "@type": "WebPage",
       "@id": canonicalUrl
     }
+  };
+
+  const breadcrumbsSchema = {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.crystaljaipuria.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://www.crystaljaipuria.com/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": blog.title,
+        "item": canonicalUrl
+      }
+    ]
+  };
+
+  const graph = [articleSchema, breadcrumbsSchema];
+
+  if (Array.isArray(blog.faqs) && blog.faqs.length > 0) {
+    graph.push({
+      "@type": "FAQPage",
+      "mainEntity": blog.faqs.map((faq) => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    });
+  }
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": graph
   };
 };
 

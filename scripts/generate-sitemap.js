@@ -2,7 +2,8 @@ import fs from "fs";
 import path from "path";
 import https from "https";
 import { fileURLToPath } from "url";
-import { FALLBACK_PRODUCTS, FALLBACK_CATEGORIES } from "../src/data/fallbackData.js";
+import { FALLBACK_PRODUCTS, FALLBACK_CATEGORIES, FALLBACK_SUBCATEGORIES } from "../src/data/fallbackData.js";
+import { FALLBACK_BLOGS } from "../src/data/fallbackBlogs.js";
 import { getStandardizedProduct, STANDARDIZED_SPECS } from "../src/utils/productStandardizer.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -47,15 +48,27 @@ const escapeXml = (unsafe) => {
 const generateSitemap = async () => {
   console.log("Generating dynamic sitemap.xml and llms.txt...");
 
-  const [productsRes, categoriesRes, blogsRes] = await Promise.all([
+  const [productsRes, categoriesRes, blogsRes, subCategoriesRes] = await Promise.all([
     fetchData("/products"),
     fetchData("/categories"),
     fetchData("/blogs"),
+    fetchData("/subcategories"),
   ]);
 
   let products = productsRes.products || [];
   let categories = categoriesRes.categories || [];
-  const blogs = blogsRes.blogs || [];
+  let blogs = blogsRes.blogs || [];
+  const existingBlogSlugs = new Set(blogs.map((b) => b.slug));
+  FALLBACK_BLOGS.forEach((fbBlog) => {
+    if (!existingBlogSlugs.has(fbBlog.slug)) {
+      blogs.push(fbBlog);
+      existingBlogSlugs.add(fbBlog.slug);
+    }
+  });
+  let subCategories = subCategoriesRes.subCategories || [];
+  if (subCategories.length === 0) {
+    subCategories = FALLBACK_SUBCATEGORIES;
+  }
 
   const existingSlugs = new Set(products.map((p) => p.slug || p._id));
   FALLBACK_PRODUCTS.forEach((fbProd) => {
@@ -110,6 +123,25 @@ const generateSitemap = async () => {
         xml += `    <loc>${BASE_URL}/${escapeXml(catSlug)}</loc>\n`;
         xml += `    <changefreq>weekly</changefreq>\n`;
         xml += `    <priority>0.85</priority>\n`;
+        xml += `  </url>\n`;
+      }
+    });
+  }
+
+  if (subCategories.length > 0) {
+    xml += `\n  <!-- Subcategory Pages (Clean SEO Slugs) -->\n`;
+    const seenSubSlugs = new Set();
+    subCategories.forEach((sub) => {
+      let slug = sub.slug || (sub.name && sub.name.toLowerCase().replace(/[^a-z0-9]+/g, "-"));
+      if (slug) {
+        slug = slug.toLowerCase().replace(/&/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+      }
+      if (slug && !seenSubSlugs.has(slug)) {
+        seenSubSlugs.add(slug);
+        xml += `  <url>\n`;
+        xml += `    <loc>${BASE_URL}/subcategory/${escapeXml(slug)}</loc>\n`;
+        xml += `    <changefreq>weekly</changefreq>\n`;
+        xml += `    <priority>0.80</priority>\n`;
         xml += `  </url>\n`;
       }
     });
@@ -209,6 +241,10 @@ const generateSitemap = async () => {
   llms += `- [Home](${BASE_URL}/): Official homepage with latest collections and featured handicrafts.\n`;
   llms += `- [Shop](${BASE_URL}/shop): Browse all handcrafted gemstone statues, carvings, and spiritual items.\n`;
   llms += `- [Our Blog](${BASE_URL}/blog): Insights on gemstones, Vastu guidelines, crystal healing, and Indian handicrafts.\n`;
+  llms += `- [Natural vs Synthetic Gemstones Guide](${BASE_URL}/blog/natural-vs-synthetic-gemstones): In-depth comparison of earth-mined vs lab-grown stones, inclusion analysis, optical testing, and buying guide for gemstone carvings.\n`;
+  llms += `- [How Gemstone Carving Works](${BASE_URL}/blog/gemstone-carving-process): Step-by-step master lapidary guide from raw crystal selection to rough shaping, detailing, diamond polishing, and Jaipur craftsmanship.\n`;
+  llms += `- [How to Care for Gemstone Carvings](${BASE_URL}/blog/how-to-care-for-gemstone-carvings): Expert maintenance guide on gentle cleaning, safe water usage, puja abhishek guidelines, and impact protection.\n`;
+  llms += `- [What Determines Gemstone Carving Price](${BASE_URL}/blog/factors-affecting-gemstone-carving-price): Comprehensive buyer's guide on mineral rarity, weight yield, carving labor hours, Jaipur finishing, and certification.\n`;
   llms += `- [About Us](${BASE_URL}/about): Brand history, 35+ years of craftsmanship, workshop details, and values.\n`;
   llms += `- [Contact Us](${BASE_URL}/contact): Direct contact, manufacturing queries, and wholesale inquiries.\n`;
   llms += `- [Gemstone Authenticity Guide](${BASE_URL}/gemstone-authenticity-guide): Authoritative guide on verifying 100% natural earth-mined gemstones, cold-touch tests, inclusion checks, and Vedic Shilpa Shastra care.\n`;

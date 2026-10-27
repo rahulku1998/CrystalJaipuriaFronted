@@ -104,6 +104,22 @@ function App() {
                 }
               />
         <Route path="/blog" element={<Blog />} />
+        <Route
+          path="/blog/natural-gemstones-vs-synthetic-stones-key-differences-and-buying-guide"
+          element={<Navigate to="/blog/natural-vs-synthetic-gemstones" replace />}
+        />
+        <Route
+          path="/blog/how-gemstone-carving-works-from-raw-crystal-to-finished-sculpture"
+          element={<Navigate to="/blog/gemstone-carving-process" replace />}
+        />
+        <Route
+          path="/blog/how-to-care-for-natural-gemstone-carvings-cleaning-and-storage-tips"
+          element={<Navigate to="/blog/how-to-care-for-gemstone-carvings" replace />}
+        />
+        <Route
+          path="/blog/what-determines-the-price-of-a-natural-gemstone-carving-a-buyers-guide"
+          element={<Navigate to="/blog/factors-affecting-gemstone-carving-price" replace />}
+        />
         <Route path="/blog/:slug" element={<BlogDetails />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />

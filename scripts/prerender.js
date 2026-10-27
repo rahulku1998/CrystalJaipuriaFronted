@@ -6,11 +6,13 @@ import { CATEGORY_CONTENT } from "../src/utils/categoryContent.js";
 import { sanitizeNaturalStutter } from "../src/utils/aiGenerator.js";
 import { getVedicVastuForProduct } from "../src/utils/productMetadata.js";
 import { FALLBACK_PRODUCTS, FALLBACK_CATEGORIES, FALLBACK_SUBCATEGORIES } from "../src/data/fallbackData.js";
+import { FALLBACK_BLOGS } from "../src/data/fallbackBlogs.js";
 import {
   getProductMetaTitle,
   getProductMetaDescription,
   SUPER_TITLE_MAPPINGS,
   SUPER_DESCRIPTION_MAPPINGS,
+  getArticleSchema,
 } from "../src/utils/seo.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -710,7 +712,8 @@ export const runPrerender = async () => {
                 (targetName && pSubName && targetName === pSubName)
               );
             }).length;
-            return `<a href="${BASE_URL}/subcategory/${sub._id}" style="text-decoration:none;background:#f3f4f6;color:#374151;font-size:13px;font-weight:500;padding:6px 14px;border-radius:9999px;border:1px solid #e5e7eb;display:inline-flex;align-items:center;gap:6px;"><span>${escapeHtml(sub.name)}</span><span style="background:#e5e7eb;color:#4b5563;font-size:11px;padding:2px 6px;border-radius:9999px;">${count}</span></a>`;
+            const cleanSubSlug = sub.slug || sub._id;
+            return `<a href="${BASE_URL}/subcategory/${cleanSubSlug}" style="text-decoration:none;background:#f3f4f6;color:#374151;font-size:13px;font-weight:500;padding:6px 14px;border-radius:9999px;border:1px solid #e5e7eb;display:inline-flex;align-items:center;gap:6px;"><span>${escapeHtml(sub.name)}</span><span style="background:#e5e7eb;color:#4b5563;font-size:11px;padding:2px 6px;border-radius:9999px;">${count}</span></a>`;
           }).join("\n")}
         </div>
       `
@@ -820,6 +823,119 @@ export const runPrerender = async () => {
   console.log(`✓ Pre-rendered ${catCount} category pages to /dist/*/index.html`);
 
   // ==========================================
+  // 2b. Pre-render Subcategory Pages (Clean Name/Slugs + 301 Redirects for Old IDs)
+  // ==========================================
+  let subCount = 0;
+  FALLBACK_SUBCATEGORIES.forEach((sub) => {
+    if (!sub.slug) return;
+    const subProducts = products.filter((p) => {
+      const pSubId = p.subCategoryId?._id || p.subCategoryId;
+      const pSubSlug = (p.subCategoryId?.slug || "").toLowerCase().trim();
+      const pSubName = (p.subCategoryName || p.subCategoryId?.name || "").toLowerCase().trim();
+      const targetSlug = (sub.slug || "").toLowerCase().trim();
+      const targetName = (sub.name || "").toLowerCase().trim();
+      return (
+        pSubId === sub._id ||
+        (targetSlug && pSubSlug && targetSlug === pSubSlug) ||
+        (targetName && pSubName && targetName === pSubName)
+      );
+    });
+
+    const subTitle = `${sub.name} Manufacturer in Jaipur | Handcrafted Gemstone Statues | Crystal Jaipuria`;
+    const subDesc = `Explore authentic handcrafted ${sub.name} and 100% natural certified gemstone spiritual statues directly from manufacturer in Jaipur, India. Worldwide shipping.`;
+    const subCanonical = `${BASE_URL}/subcategory/${sub.slug}`;
+
+    const subCardsHtml = subProducts
+      .map((p) => {
+        const pSlug = p.slug || p._id;
+        const pImg = `${BASE_URL}/images/${pSlug}.webp`;
+        const pPrice = parsePrice(p);
+        return `
+          <a href="${BASE_URL}/product/${pSlug}" style="text-decoration:none;background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:12px;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+              <div style="aspect-ratio:1/1;background:#faf8f5;border-radius:12px;display:flex;align-items:center;justify-content:center;padding:8px;">
+                <img src="${pImg}" alt="${escapeHtml(p.name)}" style="max-height:100%;max-width:100%;object-fit:contain;" width="300" height="300" loading="lazy" />
+              </div>
+              <h3 style="font-size:14px;font-weight:700;color:#1e293b;margin:12px 0 6px 0;line-height:1.4;">${escapeHtml(p.name)}</h3>
+            </div>
+            <div style="font-size:16px;font-weight:800;color:#92400e;margin-top:8px;">${pPrice}</div>
+          </a>
+        `;
+      })
+      .join("\n");
+
+    const subBody = `
+      <div style="max-width:1200px;margin:0 auto;padding:24px 16px;font-family:system-ui,-apple-system,sans-serif;">
+        <nav style="display:flex;gap:8px;font-size:13px;color:#64748b;margin-bottom:20px;">
+          <a href="${BASE_URL}/" style="color:#64748b;text-decoration:none;">Home</a>
+          <span>/</span>
+          ${sub.categoryId?.slug ? `<a href="${BASE_URL}/${sub.categoryId.slug}" style="color:#64748b;text-decoration:none;">${escapeHtml(sub.categoryId.name)}</a><span>/</span>` : ""}
+          <span style="color:#1e293b;font-weight:600;">${escapeHtml(sub.name)}</span>
+        </nav>
+        <div style="margin-bottom:24px;">
+          <h1 style="font-size:28px;font-weight:800;color:#1e293b;">Handcrafted <span style="color:#92400e;">${escapeHtml(sub.name)}</span></h1>
+          <p style="font-size:14px;color:#64748b;margin-top:4px;">${subProducts.length} Authentic Products</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));gap:16px;">
+          ${subCardsHtml || '<p style="color:#94a3b8;font-size:14px;">Explore our handcrafted gemstone collection.</p>'}
+        </div>
+      </div>
+    `.trim();
+
+    const subSchema = {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: `${sub.name} - Crystal Jaipuria`,
+      description: subDesc,
+      url: subCanonical,
+      breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: `${BASE_URL}/` },
+          ...(sub.categoryId ? [{ "@type": "ListItem", position: 2, name: sub.categoryId.name, item: `${BASE_URL}/${sub.categoryId.slug}` }] : []),
+          { "@type": "ListItem", position: sub.categoryId ? 3 : 2, name: sub.name, item: subCanonical },
+        ],
+      },
+    };
+
+    const subHtml = buildPageHtml({
+      title: subTitle,
+      description: subDesc,
+      canonical: subCanonical,
+      ogTitle: subTitle,
+      ogDescription: subDesc,
+      schema: subSchema,
+      bodyContent: subBody,
+      noscriptContent: subBody,
+    });
+
+    // 1. Save Clean Slug Subcategory Page
+    saveFile(`subcategory/${sub.slug}/index.html`, subHtml);
+    if (sub.slug === "sphatik-crystal-yantra") {
+      saveFile("subcategory/sphatik-crystal-shree-yantra/index.html", subHtml);
+    }
+
+    // 2. Save Redirect HTML for Old MongoDB _id
+    const redirectHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting to ${escapeHtml(sub.name)} | Crystal Jaipuria</title>
+  <link rel="canonical" href="${subCanonical}">
+  <meta http-equiv="refresh" content="0; url=${subCanonical}">
+  <script>window.location.replace('${subCanonical}');</script>
+</head>
+<body>
+  <p>Redirecting to <a href="${subCanonical}">${escapeHtml(sub.name)}</a>...</p>
+</body>
+</html>`;
+    saveFile(`subcategory/${sub._id}/index.html`, redirectHtml);
+
+    subCount++;
+  });
+  console.log(`✓ Pre-rendered ${subCount} subcategory pages and old ID redirects to /dist/subcategory/*/index.html`);
+
+  // ==========================================
   // 3. Pre-render Core Pages
   // ==========================================
   const corePages = [
@@ -892,6 +1008,86 @@ export const runPrerender = async () => {
   });
 
   console.log(`✓ Pre-rendered ${corePages.length} core pages to /dist/*/index.html`);
+
+  // ==========================================
+  // 3b. Pre-render All Blog Detail Pages
+  // ==========================================
+  const blogsRes = await fetchData("/blogs");
+  let allBlogs = Array.isArray(blogsRes?.blogs) ? blogsRes.blogs : [];
+  const existingPrerenderBlogSlugs = new Set(allBlogs.map((b) => b.slug));
+  FALLBACK_BLOGS.forEach((fb) => {
+    if (!existingPrerenderBlogSlugs.has(fb.slug)) {
+      allBlogs.push(fb);
+      existingPrerenderBlogSlugs.add(fb.slug);
+    }
+  });
+
+  allBlogs.forEach((b) => {
+    const bSlug = b.slug || b._id;
+    const fbMatch = FALLBACK_BLOGS.find((fb) => fb.slug === bSlug || fb._id === b._id);
+    const blogData = fbMatch ? { ...fbMatch, ...b, faqs: fbMatch.faqs || b.faqs } : b;
+
+    const bTitle = blogData.metaTitle
+      ? (blogData.metaTitle.includes("Crystal Jaipuria") ? blogData.metaTitle : `${blogData.metaTitle} | Crystal Jaipuria`)
+      : `${blogData.title} | Crystal Jaipuria`;
+    const bDesc = blogData.metaDescription || blogData.description || blogData.title;
+    const bCanonical = `${BASE_URL}/blog/${bSlug}`;
+    const rawImg = blogData.coverImage?.url || "/Gemstone.webp";
+    const bImg = rawImg.startsWith("http") ? rawImg : `${BASE_URL}${rawImg}`;
+    const bSchema = getArticleSchema(blogData, bCanonical);
+
+    const bFaqsHtml = Array.isArray(blogData.faqs) && blogData.faqs.length > 0 ? `
+      <div style="margin-top:40px;background:#f8fafc;border-radius:16px;padding:24px;border:1px solid #e2e8f0;">
+        <h3 style="font-size:20px;font-weight:800;color:#0f172a;margin-bottom:16px;">Frequently Asked Questions</h3>
+        ${blogData.faqs.map((faq, i) => `
+          <div style="margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #e2e8f0;">
+            <h4 style="font-size:15px;font-weight:700;color:#1e293b;margin-bottom:6px;">${i + 1}. ${escapeHtml(faq.question)}</h4>
+            <p style="font-size:13px;color:#475569;line-height:1.6;margin:0;">${escapeHtml(faq.answer)}</p>
+          </div>
+        `).join("")}
+      </div>
+    ` : "";
+
+    const bBodyContent = `
+      <div style="max-width:900px;margin:0 auto;padding:32px 16px;font-family:system-ui,-apple-system,sans-serif;">
+        <div style="margin-bottom:16px;font-size:13px;color:#64748b;">
+          <a href="${BASE_URL}/" style="color:#d97706;text-decoration:none;">Home</a> &rsaquo; 
+          <a href="${BASE_URL}/blog" style="color:#d97706;text-decoration:none;">Blog</a> &rsaquo; 
+          <span style="color:#1e293b;font-weight:600;">${escapeHtml(blogData.title)}</span>
+        </div>
+        <h1 style="font-size:32px;font-weight:800;color:#0f172a;line-height:1.25;margin-bottom:16px;">${escapeHtml(blogData.title)}</h1>
+        <div style="font-size:13px;color:#64748b;margin-bottom:24px;">Published: ${escapeHtml(new Date(blogData.createdAt || Date.now()).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" }))} &bull; Crystal Jaipuria Jaipur</div>
+        <div style="margin-bottom:28px;border-radius:16px;overflow:hidden;border:1px solid #e2e8f0;">
+          <img src="${bImg}" alt="${escapeHtml(blogData.title)}" style="width:100%;max-height:480px;object-fit:cover;" />
+        </div>
+        <div style="font-size:16px;line-height:1.8;color:#334155;">
+          ${blogData.content || escapeHtml(blogData.description || "")}
+        </div>
+        ${bFaqsHtml}
+      </div>
+    `.trim();
+
+    const blogHtml = buildPageHtml({
+      title: bTitle,
+      description: bDesc,
+      canonical: bCanonical,
+      ogTitle: bTitle,
+      ogDescription: bDesc,
+      ogImage: bImg,
+      schema: bSchema,
+      bodyContent: bBodyContent,
+    });
+
+    saveFile(`blog/${bSlug}/index.html`, blogHtml);
+
+    if (Array.isArray(blogData.aliases)) {
+      blogData.aliases.forEach((alias) => {
+        saveFile(`blog/${alias}/index.html`, blogHtml);
+      });
+    }
+  });
+
+  console.log(`✓ Pre-rendered ${allBlogs.length} blog stories to /dist/blog/*/index.html`);
 
   // ==========================================
   // 4. Pre-render Homepage (dist/index.html)

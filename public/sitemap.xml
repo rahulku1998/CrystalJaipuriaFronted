@@ -79,6 +79,83 @@
     <priority>0.85</priority>
   </url>
 
+  <!-- Subcategory Pages (Clean SEO Slugs) -->
+  <url>
+    <loc>https://www.crystaljaipuria.com/subcategory/shiva</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/subcategory/ganesh</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/subcategory/angel</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/subcategory/crystal-statues</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/subcategory/diya</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/subcategory/sphatik-crystal-yantra</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/subcategory/sphatik-shivling</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/subcategory/other</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/subcategory/luxury-ganesha-idols</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/subcategory/jade-shree-yantra</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/subcategory/precious-gemstone-yantra</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/subcategory/natural-healing-stone-yantra</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/subcategory/lapis-lazuli-shivling</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/subcategory/ruby-shivling</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/subcategory/natural-gemstone-shivling</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
   <!-- Dynamic Product Pages (103 Live Products) -->
   <url>
     <loc>https://www.crystaljaipuria.com/product/shiva-in-lepidolite</loc>
@@ -1596,9 +1673,49 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Blog Detail Pages (1 Stories) -->
+  <!-- Blog Detail Pages (9 Stories) -->
+  <url>
+    <loc>https://www.crystaljaipuria.com/blog/what-determines-the-price-of-a-natural-gemstone-carving-a-buyers-guide</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/blog/how-to-care-for-natural-gemstone-carvings-cleaning-and-storage-tips</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/blog/how-gemstone-carving-works-from-raw-crystal-to-finished-sculpture</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/blog/natural-gemstones-vs-synthetic-stones-key-differences-and-buying-guide</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
   <url>
     <loc>https://www.crystaljaipuria.com/blog/crystal-statues-a-unique-and-meaningful-gift-idea</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/blog/natural-vs-synthetic-gemstones</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/blog/gemstone-carving-process</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/blog/how-to-care-for-gemstone-carvings</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/blog/factors-affecting-gemstone-carving-price</loc>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>

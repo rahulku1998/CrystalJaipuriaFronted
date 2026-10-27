@@ -4,6 +4,7 @@ import BlogItem from "../../Components/Blog/BlogItem";
 import BlogSkeleton from "../../Components/Blog/BlogSkeleton";
 import SEO from "../../Components/SEO";
 import blogBanner from "../../assets/handi.jpg";
+import { FALLBACK_BLOGS } from "../../data/fallbackBlogs";
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
@@ -12,9 +13,21 @@ const Blogs = () => {
   const fetchBlogs = async () => {
     try {
       const { data } = await API.get("/blogs");
-      setBlogs(data.blogs || []);
+      const live = Array.isArray(data?.blogs) ? data.blogs : [];
+      const liveSlugs = new Set(live.map((b) => b.slug));
+      const combined = [
+        ...FALLBACK_BLOGS.filter((fb) => !liveSlugs.has(fb.slug)),
+        ...live.map((liveBlog) => {
+          const match = FALLBACK_BLOGS.find(
+            (fb) => fb.slug === liveBlog.slug || fb._id === liveBlog._id
+          );
+          return match ? { ...match, ...liveBlog } : liveBlog;
+        }),
+      ];
+      setBlogs(combined);
     } catch (error) {
       console.log(error);
+      setBlogs(FALLBACK_BLOGS);
     } finally {
       setLoading(false);
     }

@@ -108,7 +108,7 @@ export const FALLBACK_SUBCATEGORIES = [
   {
     "_id": "6a55bcc32dcf49aacd71ef6f",
     "name": "Sphatik & Crystal Yantra",
-    "slug": "sphatik-crystal-shree-yantra",
+    "slug": "sphatik-crystal-yantra",
     "categoryId": {
       "_id": "6a55bc362dcf49aacd71ef66",
       "name": "Shree Yantra",

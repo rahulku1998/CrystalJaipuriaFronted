@@ -4,6 +4,7 @@ import https from "https";
 import crypto from "crypto";
 import { fileURLToPath } from "url";
 import { FALLBACK_PRODUCTS, FALLBACK_CATEGORIES } from "../src/data/fallbackData.js";
+import { FALLBACK_BLOGS } from "../src/data/fallbackBlogs.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -160,7 +161,14 @@ const runInstantIndexing = async () => {
 
   let products = productsRes.products || [];
   let categories = categoriesRes.categories || [];
-  const blogs = blogsRes.blogs || [];
+  let blogs = blogsRes.blogs || [];
+  const existingBlogSlugs = new Set(blogs.map((b) => b.slug));
+  FALLBACK_BLOGS.forEach((fb) => {
+    if (!existingBlogSlugs.has(fb.slug)) {
+      blogs.push(fb);
+      existingBlogSlugs.add(fb.slug);
+    }
+  });
 
   const existingSlugs = new Set(products.map((p) => p.slug || p._id));
   const newFallbacks = [];

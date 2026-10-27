@@ -6,22 +6,35 @@ const BlogItem = ({ blog }) => {
 
       {/* Blog Image */}
       <img
-        src={blog.coverImage?.url}
+        src={blog.coverImage?.url || "/Gemstone.webp"}
         alt={`${blog.title} - Crystal Jaipuria Blog`}
-        className="w-full h-[350px] object-cover"
+        className="w-full h-[240px] sm:h-[350px] object-cover"
+        loading="lazy"
+        onError={(e) => {
+          e.currentTarget.src = "/Gemstone.webp";
+        }}
       />
 
-
-      <div className="p-8">
-
-        {/* Category + Date */}
-        <div className="flex flex-wrap items-center gap-4 mb-5 text-sm">
-
-
+      <div className="p-6 sm:p-8">
+        {/* Category + Date + Read Time */}
+        <div className="flex flex-wrap items-center gap-3 mb-4 text-xs sm:text-sm">
+          {blog.category && (
+            <span className="bg-orange-100 text-orange-800 font-semibold px-3 py-1 rounded-full">
+              {blog.category}
+            </span>
+          )}
           <span className="text-gray-500">
-            📅 {new Date(blog.createdAt).toLocaleDateString("en-IN")}
+            📅 {new Date(blog.createdAt || Date.now()).toLocaleDateString("en-IN", {
+              day: "numeric",
+              month: "short",
+              year: "numeric"
+            })}
           </span>
-
+          {blog.readTime && (
+            <span className="text-gray-500">
+              ⏱️ {blog.readTime}
+            </span>
+          )}
         </div>
 
 

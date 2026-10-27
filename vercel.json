@@ -335,6 +335,106 @@
       "source": "/product/natural-rose-quartz-shree-yantra",
       "destination": "/product/crystal-shree-yantra",
       "permanent": true
+    },
+    {
+      "source": "/blog/natural-gemstones-vs-synthetic-stones-key-differences-and-buying-guide",
+      "destination": "/blog/natural-vs-synthetic-gemstones",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-gemstone-carving-works-from-raw-crystal-to-finished-sculpture",
+      "destination": "/blog/gemstone-carving-process",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-care-for-natural-gemstone-carvings-cleaning-and-storage-tips",
+      "destination": "/blog/how-to-care-for-gemstone-carvings",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-determines-the-price-of-a-natural-gemstone-carving-a-buyers-guide",
+      "destination": "/blog/factors-affecting-gemstone-carving-price",
+      "permanent": true
+    },
+    {
+      "source": "/subcategory/6a55bc772dcf49aacd71ef6a",
+      "destination": "/subcategory/shiva",
+      "permanent": true
+    },
+    {
+      "source": "/subcategory/6a55bc842dcf49aacd71ef6b",
+      "destination": "/subcategory/ganesh",
+      "permanent": true
+    },
+    {
+      "source": "/subcategory/6aa58c80a69037c73ebed098",
+      "destination": "/subcategory/other",
+      "permanent": true
+    },
+    {
+      "source": "/subcategory/6a55bcd02dcf49aacd71ef70",
+      "destination": "/subcategory/sphatik-shivling",
+      "permanent": true
+    },
+    {
+      "source": "/subcategory/6abfff473618032686f07d14",
+      "destination": "/subcategory/lapis-lazuli-shivling",
+      "permanent": true
+    },
+    {
+      "source": "/subcategory/6abfff473618032686f07d15",
+      "destination": "/subcategory/ruby-shivling",
+      "permanent": true
+    },
+    {
+      "source": "/subcategory/6abfff473618032686f07d16",
+      "destination": "/subcategory/natural-gemstone-shivling",
+      "permanent": true
+    },
+    {
+      "source": "/subcategory/6a55bcc32dcf49aacd71ef6f",
+      "destination": "/subcategory/sphatik-crystal-yantra",
+      "permanent": true
+    },
+    {
+      "source": "/subcategory/6abffb9d3618032686f0780b",
+      "destination": "/subcategory/jade-shree-yantra",
+      "permanent": true
+    },
+    {
+      "source": "/subcategory/6abffba53618032686f0780c",
+      "destination": "/subcategory/precious-gemstone-yantra",
+      "permanent": true
+    },
+    {
+      "source": "/subcategory/6abffba53618032686f0780d",
+      "destination": "/subcategory/natural-healing-stone-yantra",
+      "permanent": true
+    },
+    {
+      "source": "/subcategory/6abd3aad3618032686f04292",
+      "destination": "/subcategory/luxury-ganesha-idols",
+      "permanent": true
+    },
+    {
+      "source": "/subcategory/6a55bc912dcf49aacd71ef6c",
+      "destination": "/subcategory/angel",
+      "permanent": true
+    },
+    {
+      "source": "/subcategory/6a55bc9f2dcf49aacd71ef6d",
+      "destination": "/subcategory/crystal-statues",
+      "permanent": true
+    },
+    {
+      "source": "/subcategory/6a55bcad2dcf49aacd71ef6e",
+      "destination": "/subcategory/diya",
+      "permanent": true
+    },
+    {
+      "source": "/subcategory/sphatik-crystal-shree-yantra",
+      "destination": "/subcategory/sphatik-crystal-yantra",
+      "permanent": true
     }
   ],
   "rewrites": [
