@@ -12,6 +12,13 @@ export const FALLBACK_BLOGS = [
     title: "Natural Gemstones vs Synthetic Stones: Key Differences and Buying Guide",
     metaTitle: "Natural vs Synthetic Gemstones: Key Differences",
     metaDescription: "Learn how natural and synthetic gemstones differ in origin, inclusions, appearance and testing. Understand what to check before buying gemstone carvings.",
+    description: "Learn how natural and synthetic gemstones differ in origin, inclusions, appearance and testing. Understand what to check before buying gemstone carvings.",
+    keyTakeaways: [
+      "Natural gemstones form over millions of years deep in Earth's crust; synthetic stones are grown in weeks in high-pressure autoclaves.",
+      "Synthetic gemstones share the identical chemical and crystalline structure as natural stones, making lab testing necessary for certainty.",
+      "Sacred deity statues, Sphatik Shivlings, and astrological remedies strictly mandate 100% natural earth-mined crystals.",
+      "Always verify transparent material disclosure, independent gemological laboratory testing, and master lapidary origin before buying."
+    ],
     slug: "natural-vs-synthetic-gemstones",
     aliases: [
       "natural-gemstones-vs-synthetic-stones-key-differences-and-buying-guide",
@@ -253,6 +260,13 @@ export const FALLBACK_BLOGS = [
     title: "How Gemstone Carving Works: From Raw Crystal to Finished Sculpture",
     metaTitle: "How Gemstone Carving Works: A Step-by-Step Guide",
     metaDescription: "Discover how gemstone carving transforms raw crystals into sculptures, from stone selection and shaping to detailing, polishing and final quality checks.",
+    description: "Discover how gemstone carving transforms raw crystals into sculptures, from stone selection and shaping to detailing, polishing and final quality checks.",
+    keyTakeaways: [
+      "Lapidary carving transforms rough crystal blocks into intricate sculptures through an 8-stage precision artisan process.",
+      "Stone selection and design planning are critical: artisans evaluate natural crystal cleavage, internal veils, and color zoning before cutting.",
+      "Diamond-tipped abrasive saws, water cooling, and micro-chisels gradually shape contours, fine facial details, and ornamental folds.",
+      "Multi-stage polishing using progressive diamond and cerium oxide powders reveals the gem's natural vitreous luster without chemical coatings."
+    ],
     slug: "gemstone-carving-process",
     aliases: [
       "how-gemstone-carving-works-from-raw-crystal-to-finished-sculpture",
@@ -476,6 +490,13 @@ export const FALLBACK_BLOGS = [
     title: "How to Care for Natural Gemstone Carvings: Cleaning and Storage Tips",
     metaTitle: "How to Clean and Care for Gemstone Carvings",
     metaDescription: "Learn how to clean, store and protect natural gemstone carvings. Discover safe maintenance practices and common cleaning mistakes to avoid.",
+    description: "Learn how to clean, store and protect natural gemstone carvings. Discover safe maintenance practices and common cleaning mistakes to avoid.",
+    keyTakeaways: [
+      "Clean natural gemstone statues with lukewarm distilled water, mild pH-neutral soap, and an ultra-soft brush.",
+      "Never use ultrasonic cleaners, steam, or acidic chemicals on softer stones (Mohs < 7) like Malachite, Lapis Lazuli, or Fluorite.",
+      "Shield sensitive crystals like Amethyst, Rose Quartz, and Fluorite from direct sunlight to prevent photochemical color fading.",
+      "Display carvings on felt-lined, stable bases away from high vibrations, rapid thermal shocks, and air conditioning drafts."
+    ],
     slug: "how-to-care-for-gemstone-carvings",
     aliases: [
       "how-to-care-for-natural-gemstone-carvings-cleaning-and-storage-tips",
@@ -675,6 +696,13 @@ export const FALLBACK_BLOGS = [
     title: "What Determines the Price of a Natural Gemstone Carving? A Buyer's Guide",
     metaTitle: "What Affects the Price of Gemstone Carvings?",
     metaDescription: "Discover what influences gemstone carving prices, including material, weight, size, craftsmanship, design complexity, finish and certification.",
+    description: "Discover what influences gemstone carving prices, including material, weight, size, craftsmanship, design complexity, finish and certification.",
+    keyTakeaways: [
+      "Carving price is determined by mineral rarity, optical clarity, rough weight loss (often 60-80%), and Jaipur artisan sculpting hours.",
+      "Flawless monolithic quartz or rare grade-A minerals command exponential premiums due to high risk of cleavage fractures during sculpting.",
+      "Intricate anatomical proportions, undercut ornaments, and high-gloss polish add dozens of master artisan labor hours to the valuation.",
+      "Beware artificially low prices: cheap replicas frequently utilize dyed glass, synthetic composite resin, or chemically treated stones."
+    ],
     slug: "factors-affecting-gemstone-carving-price",
     aliases: [
       "what-determines-the-price-of-a-natural-gemstone-carving-a-buyers-guide",
@@ -905,6 +933,12 @@ export const FALLBACK_BLOGS = [
     title: "Crystal Statues: A Unique and Meaningful Gift Idea",
     metaTitle: "Crystal Statues: A Unique and Meaningful Gift Idea | Crystal Jaipuria",
     metaDescription: "Discover why hand-carved crystal statues make unforgettable, spiritual, and energizing gifts for weddings, housewarmings, and special occasions.",
+    description: "Discover why hand-carved crystal statues make unforgettable, spiritual, and energizing gifts for weddings, housewarmings, and special occasions.",
+    keyTakeaways: [
+      "Crystal deity statues and sacred carvings make timeless, auspicious gifts carrying deep spiritual symbolism and Vastu harmony.",
+      "Each gemstone radiates specific energies: Sphatik for clarity & peace, Rose Quartz for relationships, Jade for prosperity, and Aventurine for growth.",
+      "Handcrafted in Jaipur by generational lapidary artisans, every sculpture is unique and backed by certified natural origin."
+    ],
     slug: "crystal-statues-a-unique-and-meaningful-gift-idea",
     category: "Gifting & Decor",
     author: "Crystal Jaipuria",
@@ -964,3 +998,61 @@ export const getFallbackBlogBySlug = (rawSlug = "") => {
     ) || null
   );
 };
+
+/**
+ * Deduplicate live blogs with fallback blogs to prevent double-rendering
+ * Canonical short slugs take precedence, matching aliases and normalized titles
+ */
+export const getDeduplicatedBlogs = (liveBlogs = [], fallbackBlogs = FALLBACK_BLOGS) => {
+  const canonicalMap = new Map();
+  const aliasMap = new Map();
+
+  // Populate canonical records
+  fallbackBlogs.forEach((fb) => {
+    canonicalMap.set(fb.slug, { ...fb });
+    aliasMap.set(fb.slug, fb.slug);
+    if (Array.isArray(fb.aliases)) {
+      fb.aliases.forEach((a) => aliasMap.set(a.toLowerCase().trim(), fb.slug));
+    }
+    const normTitle = (fb.title || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+    if (normTitle) {
+      aliasMap.set(normTitle, fb.slug);
+    }
+  });
+
+  if (Array.isArray(liveBlogs)) {
+    liveBlogs.forEach((liveBlog) => {
+      if (!liveBlog) return;
+      const cleanSlug = (liveBlog.slug || "").toLowerCase().trim();
+      const normTitle = (liveBlog.title || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+
+      const canonicalSlug =
+        aliasMap.get(cleanSlug) ||
+        aliasMap.get(normTitle) ||
+        (canonicalMap.has(cleanSlug) ? cleanSlug : null);
+
+      if (canonicalSlug && canonicalMap.has(canonicalSlug)) {
+        const canonical = canonicalMap.get(canonicalSlug);
+        canonicalMap.set(canonicalSlug, {
+          ...canonical,
+          ...liveBlog,
+          slug: canonical.slug, // preserve clean target URL
+          coverImage: canonical.coverImage || liveBlog.coverImage,
+          faqs: canonical.faqs?.length ? canonical.faqs : (liveBlog.faqs || []),
+          keyTakeaways: canonical.keyTakeaways || liveBlog.keyTakeaways,
+          description: canonical.description || liveBlog.description || canonical.metaDescription,
+          readTime: canonical.readTime || liveBlog.readTime || "5 min read",
+        });
+      } else if (!canonicalSlug && cleanSlug && !canonicalMap.has(cleanSlug)) {
+        canonicalMap.set(cleanSlug, {
+          ...liveBlog,
+          description: liveBlog.description || liveBlog.metaDescription || liveBlog.title,
+          readTime: liveBlog.readTime || "5 min read",
+        });
+      }
+    });
+  }
+
+  return Array.from(canonicalMap.values());
+};
+

@@ -1673,32 +1673,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Blog Detail Pages (9 Stories) -->
-  <url>
-    <loc>https://www.crystaljaipuria.com/blog/what-determines-the-price-of-a-natural-gemstone-carving-a-buyers-guide</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.crystaljaipuria.com/blog/how-to-care-for-natural-gemstone-carvings-cleaning-and-storage-tips</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.crystaljaipuria.com/blog/how-gemstone-carving-works-from-raw-crystal-to-finished-sculpture</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.crystaljaipuria.com/blog/natural-gemstones-vs-synthetic-stones-key-differences-and-buying-guide</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.crystaljaipuria.com/blog/crystal-statues-a-unique-and-meaningful-gift-idea</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
+  <!-- Blog Detail Pages (5 Stories) -->
   <url>
     <loc>https://www.crystaljaipuria.com/blog/natural-vs-synthetic-gemstones</loc>
     <changefreq>monthly</changefreq>
@@ -1716,6 +1691,11 @@
   </url>
   <url>
     <loc>https://www.crystaljaipuria.com/blog/factors-affecting-gemstone-carving-price</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/blog/crystal-statues-a-unique-and-meaningful-gift-idea</loc>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>

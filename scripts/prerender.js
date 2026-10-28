@@ -6,7 +6,7 @@ import { CATEGORY_CONTENT } from "../src/utils/categoryContent.js";
 import { sanitizeNaturalStutter } from "../src/utils/aiGenerator.js";
 import { getVedicVastuForProduct } from "../src/utils/productMetadata.js";
 import { FALLBACK_PRODUCTS, FALLBACK_CATEGORIES, FALLBACK_SUBCATEGORIES } from "../src/data/fallbackData.js";
-import { FALLBACK_BLOGS } from "../src/data/fallbackBlogs.js";
+import { FALLBACK_BLOGS, getDeduplicatedBlogs } from "../src/data/fallbackBlogs.js";
 import {
   getProductMetaTitle,
   getProductMetaDescription,
@@ -1013,14 +1013,7 @@ export const runPrerender = async () => {
   // 3b. Pre-render All Blog Detail Pages
   // ==========================================
   const blogsRes = await fetchData("/blogs");
-  let allBlogs = Array.isArray(blogsRes?.blogs) ? blogsRes.blogs : [];
-  const existingPrerenderBlogSlugs = new Set(allBlogs.map((b) => b.slug));
-  FALLBACK_BLOGS.forEach((fb) => {
-    if (!existingPrerenderBlogSlugs.has(fb.slug)) {
-      allBlogs.push(fb);
-      existingPrerenderBlogSlugs.add(fb.slug);
-    }
-  });
+  const allBlogs = getDeduplicatedBlogs(blogsRes?.blogs || [], FALLBACK_BLOGS);
 
   allBlogs.forEach((b) => {
     const bSlug = b.slug || b._id;

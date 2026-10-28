@@ -3,7 +3,7 @@ import path from "path";
 import https from "https";
 import { fileURLToPath } from "url";
 import { FALLBACK_PRODUCTS, FALLBACK_CATEGORIES, FALLBACK_SUBCATEGORIES } from "../src/data/fallbackData.js";
-import { FALLBACK_BLOGS } from "../src/data/fallbackBlogs.js";
+import { FALLBACK_BLOGS, getDeduplicatedBlogs } from "../src/data/fallbackBlogs.js";
 import { getStandardizedProduct, STANDARDIZED_SPECS } from "../src/utils/productStandardizer.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -57,14 +57,7 @@ const generateSitemap = async () => {
 
   let products = productsRes.products || [];
   let categories = categoriesRes.categories || [];
-  let blogs = blogsRes.blogs || [];
-  const existingBlogSlugs = new Set(blogs.map((b) => b.slug));
-  FALLBACK_BLOGS.forEach((fbBlog) => {
-    if (!existingBlogSlugs.has(fbBlog.slug)) {
-      blogs.push(fbBlog);
-      existingBlogSlugs.add(fbBlog.slug);
-    }
-  });
+  let blogs = getDeduplicatedBlogs(blogsRes.blogs || [], FALLBACK_BLOGS);
   let subCategories = subCategoriesRes.subCategories || [];
   if (subCategories.length === 0) {
     subCategories = FALLBACK_SUBCATEGORIES;
