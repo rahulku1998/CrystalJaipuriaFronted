@@ -53,7 +53,14 @@ export const PROTECTED_STUDIO_SLUGS = new Set([
   "yellow-aventurine-diya",
   "moonstone-diya",
   "green-jade-diya",
-  "green-aventurine-diya"
+  "green-aventurine-diya",
+  "corundum-ruby-gemstone-ganesh-statue",
+  "natural-jade-stone-ganesha-with-arch",
+  "green-jade-stone-ganesha-with-arch",
+  "dark-green-aventurine-ganesha-idol",
+  "lapis-lazuli-ganesha-with-arch",
+  "natural-lapis-lazuli-ganesha-idol",
+  "intricately-carved-wooden-ganesha-shrine"
 ]);
 
 export const STATIC_CATALOG_SLUGS = new Set([
@@ -142,7 +149,14 @@ export const STATIC_CATALOG_SLUGS = new Set([
   "yellow-aventurine-diya",
   "moonstone-diya",
   "green-jade-diya",
-  "green-aventurine-diya"
+  "green-aventurine-diya",
+  "corundum-ruby-gemstone-ganesh-statue",
+  "natural-jade-stone-ganesha-with-arch",
+  "green-jade-stone-ganesha-with-arch",
+  "dark-green-aventurine-ganesha-idol",
+  "lapis-lazuli-ganesha-with-arch",
+  "natural-lapis-lazuli-ganesha-idol",
+  "intricately-carved-wooden-ganesha-shrine"
 ]);
 
 /**

@@ -33,6 +33,26 @@ export const FALLBACK_BLOGS = [
       url: "/images/natural-vs-synthetic-gemstones.webp",
       alt: "Natural Gemstones vs Synthetic Stones: Key Differences and Buying Guide - Crystal Jaipuria"
     },
+    keywords: [
+      "natural gemstones vs synthetic stones",
+      "how to identify natural gemstones",
+      "synthetic lab grown crystals",
+      "sphatik natural identification",
+      "vedic gemstone authenticity",
+      "gemstone inclusions microscope",
+      "natural gemstone carving jaipur"
+    ],
+    about: [
+      { "@type": "Thing", "name": "Natural Gemstone", "sameAs": "https://en.wikipedia.org/wiki/Gemstone" },
+      { "@type": "Thing", "name": "Synthetic Gemstone", "sameAs": "https://en.wikipedia.org/wiki/Synthetic_gem" },
+      { "@type": "Thing", "name": "Gemology", "sameAs": "https://en.wikipedia.org/wiki/Gemology" },
+      { "@type": "Thing", "name": "Sphatik Quartz" }
+    ],
+    mentions: [
+      { "@type": "Product", "name": "Sphatik Shivling", "url": "https://www.crystaljaipuria.com/shivling" },
+      { "@type": "Product", "name": "Gemstone God Statues", "url": "https://www.crystaljaipuria.com/god-statues" },
+      { "@type": "WebPage", "name": "Gemstone Authenticity Guide", "url": "https://www.crystaljaipuria.com/gemstone-authenticity-guide" }
+    ],
     faqs: [
       {
         question: "Are natural gemstones always more expensive than synthetic stones?",
@@ -282,6 +302,76 @@ export const FALLBACK_BLOGS = [
       url: "/images/gemstone-carving-process.webp",
       alt: "How Gemstone Carving Works: From Raw Crystal to Finished Sculpture - Crystal Jaipuria Jaipur"
     },
+    keywords: [
+      "gemstone carving process",
+      "how gemstone carving works",
+      "lapidary carving stages jaipur",
+      "rough stone to finished statue",
+      "diamond rotary carving tools",
+      "handcrafted sphatik shivling process",
+      "vedic shilpa shastra idol carving"
+    ],
+    about: [
+      { "@type": "Thing", "name": "Gemstone Carving", "sameAs": "https://en.wikipedia.org/wiki/Carving" },
+      { "@type": "Thing", "name": "Lapidary", "sameAs": "https://en.wikipedia.org/wiki/Lapidary" },
+      { "@type": "Thing", "name": "Shilpa Shastras", "sameAs": "https://en.wikipedia.org/wiki/Shilpa_Shastras" },
+      { "@type": "Thing", "name": "Jaipur Handicrafts" }
+    ],
+    mentions: [
+      { "@type": "Product", "name": "Crystal Statues", "url": "https://www.crystaljaipuria.com/crystal-statues" },
+      { "@type": "Product", "name": "Natural Sphatik Shivling", "url": "https://www.crystaljaipuria.com/shivling" },
+      { "@type": "Product", "name": "Gemstone God Statues", "url": "https://www.crystaljaipuria.com/god-statues" }
+    ],
+    howTo: {
+      name: "How Gemstone Carving Works: The 8-Step Lapidary Process",
+      description: "A complete step-by-step master artisan guide detailing how raw mineral crystals are sculpted, detailed, and polished into sacred deity sculptures in Jaipur.",
+      totalTime: "P21D",
+      supplies: [
+        "High-grade natural rough gemstone block (Quartz, Jade, Lapis Lazuli, Ruby)",
+        "Cerium oxide and diamond lapping powder",
+        "Continuous water cooling lubricant"
+      ],
+      tools: [
+        "Diamond-tipped circular saws",
+        "High-speed dental rotary burrs and diamond carvers",
+        "Progressive diamond grinding laps (80 to 3000 grit)",
+        "Felt and leather polishing buff wheels"
+      ],
+      steps: [
+        {
+          name: "Selecting the Right Gemstone",
+          text: "Artisans evaluate rough mineral blocks for color saturation, structural integrity, crystal cleavage planes, and natural inclusions to ensure the rough can support intricate carving."
+        },
+        {
+          name: "Planning the Design & Proportions",
+          text: "Sketches and proportional calipers layout the iconography and Shilpa Shastra proportions, positioning critical features around the stone's natural crystal geometry."
+        },
+        {
+          name: "Cutting the Rough Stone (Slabbing & Blocking)",
+          text: "Diamond saws slice away weathered matrix and external stone rinds under continuous water coolant to create a workable sculpture blank envelope."
+        },
+        {
+          name: "Rough Shaping and Sculpting",
+          text: "Coarse rotary diamond grinding wheels sculpt the main silhouette, bulk anatomy, and 3D proportions while preserving margins for fine details."
+        },
+        {
+          name: "Adding Intricate Details",
+          text: "Dental-grade micro rotary diamond points carve facial expressions (saumya bhava), ornate crowns, delicate mudra hand gestures, and flowing drapery."
+        },
+        {
+          name: "Grinding and Surface Refinement",
+          text: "Progressive abrasive diamond smoothing (from 220 to 1200 grit) removes all rough machining marks and refines surface curves."
+        },
+        {
+          name: "Multi-Stage Polishing & Finishing",
+          text: "Cerium oxide, diamond paste, and ultra-fine laps buff the carving to achieve a vitreous, radiant shine across all recesses and undercuts."
+        },
+        {
+          name: "Final Inspection, Cleaning, and Gemological Certification",
+          text: "The finished sculpture undergoes ultrasonic-free gentle cleansing, master inspection for anatomical perfection, and independent laboratory testing."
+        }
+      ]
+    },
     faqs: [
       {
         question: "What is gemstone carving?",
@@ -512,6 +602,66 @@ export const FALLBACK_BLOGS = [
       url: "/images/how-to-care-for-gemstone-carvings.webp",
       alt: "How to Care for Natural Gemstone Carvings: Cleaning and Storage Tips - Crystal Jaipuria"
     },
+    keywords: [
+      "how to care for gemstone carvings",
+      "cleaning crystal statues",
+      "sphatik shivling abhishek cleaning",
+      "how to clean gemstone idol",
+      "mohs hardness gemstone care",
+      "safe storage for crystal murtis",
+      "clean quartz statue without damage"
+    ],
+    about: [
+      { "@type": "Thing", "name": "Gemstone Care and Maintenance" },
+      { "@type": "Thing", "name": "Mohs Scale of Mineral Hardness", "sameAs": "https://en.wikipedia.org/wiki/Mohs_scale" },
+      { "@type": "Thing", "name": "Sphatik Shivling Care" },
+      { "@type": "Thing", "name": "Abhisheka Ritual Care", "sameAs": "https://en.wikipedia.org/wiki/Abhisheka" }
+    ],
+    mentions: [
+      { "@type": "Product", "name": "Sphatik Shivling", "url": "https://www.crystaljaipuria.com/shivling" },
+      { "@type": "WebPage", "name": "Gemstone Authenticity Guide", "url": "https://www.crystaljaipuria.com/gemstone-authenticity-guide" },
+      { "@type": "Product", "name": "Crystal Statues", "url": "https://www.crystaljaipuria.com/crystal-statues" }
+    ],
+    howTo: {
+      name: "How to Clean and Care for Natural Gemstone Carvings",
+      description: "A practical 7-step guide to gently clean, maintain, handle, and store natural crystal statues and sacred gemstone idols without scratching or surface degradation.",
+      totalTime: "PT15M",
+      tools: [
+        "Lint-free soft microfiber cloth",
+        "Soft goat-hair or sable artist dusting brush",
+        "Distilled lukewarm water (for non-porous stones only)"
+      ],
+      steps: [
+        {
+          name: "Identify the Gemstone Before Cleaning",
+          text: "Confirm the mineral variety and hardness. Quartz (Sphatik Mohs 7) is water-safe, whereas softer or porous stones like Lapis Lazuli and Malachite mandate strictly dry cleaning."
+        },
+        {
+          name: "Remove Dust with a Soft Microfiber Cloth",
+          text: "Gently wipe away surface dust using a dry, ultra-soft microfiber cloth or artist brush. Never rub vigorously, as airborne quartz dust can cause micro-scratches."
+        },
+        {
+          name: "Use Water Only When Appropriate",
+          text: "For durable, non-porous stones (Clear Quartz, Jade), wipe with a lightly dampened cloth in lukewarm water. Never soak, and never use hot water which causes thermal shock."
+        },
+        {
+          name: "Avoid Harsh Chemicals and Ultrasonic Cleaners",
+          text: "Strictly avoid bleach, ammonia, acidic cleaners, and ultrasonic cleaners. High-frequency acoustic vibrations can propagate internal veil fractures and shatter crystals."
+        },
+        {
+          name: "Protect Carvings from Impacts and Physical Scratches",
+          text: "Always lift sculptures with both hands supporting the solid base. Never lift by delicate limbs, crowns, or mudra fingers. Place felt pads under the base."
+        },
+        {
+          name: "Choose Suitable Storage Conditions",
+          text: "Store unmounted carvings individually in soft velvet pouches or acid-free tissue paper away from direct sunlight, thermal drafts, and high humidity."
+        },
+        {
+          name: "Care for Gemstone Murtis Used in Worship (Puja & Abhishek)",
+          text: "After performing daily Jalabhishekam or Panchamrit puja on Sphatik Shivlings, immediately rinse with clean water and dry thoroughly with a soft cloth to avoid milk/oil deposits."
+        }
+      ]
+    },
     faqs: [
       {
         question: "Can I clean gemstone carvings with water?",
@@ -719,6 +869,26 @@ export const FALLBACK_BLOGS = [
       url: "/images/factors-affecting-gemstone-carving-price.webp",
       alt: "What Determines the Price of a Natural Gemstone Carving? A Buyer's Guide - Crystal Jaipuria"
     },
+    keywords: [
+      "factors affecting gemstone carving price",
+      "what determines gemstone carving price",
+      "gemstone statue cost breakdown",
+      "sphatik shivling price factors",
+      "jaipur gemstone carving valuation",
+      "rough stone yield loss carving",
+      "certified gemstone carving cost"
+    ],
+    about: [
+      { "@type": "Thing", "name": "Gemstone Valuation", "sameAs": "https://en.wikipedia.org/wiki/Gemology" },
+      { "@type": "Thing", "name": "Mohs Hardness Scale", "sameAs": "https://en.wikipedia.org/wiki/Mohs_scale" },
+      { "@type": "Thing", "name": "Lapidary Art Valuation" },
+      { "@type": "Thing", "name": "Gemological Testing" }
+    ],
+    mentions: [
+      { "@type": "Product", "name": "Natural Gemstone Statues", "url": "https://www.crystaljaipuria.com/shop" },
+      { "@type": "Product", "name": "Gemstone God Statues", "url": "https://www.crystaljaipuria.com/god-statues" },
+      { "@type": "Product", "name": "Original Sphatik Shivling", "url": "https://www.crystaljaipuria.com/shivling" }
+    ],
     faqs: [
       {
         question: "What is the biggest factor affecting gemstone carving prices?",
@@ -949,6 +1119,21 @@ export const FALLBACK_BLOGS = [
       url: "https://res.cloudinary.com/dd6akzezt/image/upload/v1784822704/blogs/e4ochhkgcizlyf3v1fqm.jpg",
       alt: "Crystal Statues Gift Ideas - Crystal Jaipuria"
     },
+    keywords: [
+      "crystal statues gift idea",
+      "gemstone murti gifts",
+      "spiritual luxury gifts jaipur",
+      "sphatik ganesha gift",
+      "vedic vastu crystal statues"
+    ],
+    about: [
+      { "@type": "Thing", "name": "Crystal Statues" },
+      { "@type": "Thing", "name": "Spiritual Gifts" }
+    ],
+    mentions: [
+      { "@type": "Product", "name": "Crystal Statues", "url": "https://www.crystaljaipuria.com/crystal-statues" },
+      { "@type": "Product", "name": "Gemstone God Statues", "url": "https://www.crystaljaipuria.com/god-statues" }
+    ],
     faqs: [
       {
         question: "Why do crystal statues make meaningful gifts?",
@@ -1042,6 +1227,10 @@ export const getDeduplicatedBlogs = (liveBlogs = [], fallbackBlogs = FALLBACK_BL
           keyTakeaways: canonical.keyTakeaways || liveBlog.keyTakeaways,
           description: canonical.description || liveBlog.description || canonical.metaDescription,
           readTime: canonical.readTime || liveBlog.readTime || "5 min read",
+          howTo: canonical.howTo || liveBlog.howTo,
+          about: canonical.about || liveBlog.about,
+          mentions: canonical.mentions || liveBlog.mentions,
+          keywords: canonical.keywords || liveBlog.keywords,
         });
       } else if (!canonicalSlug && cleanSlug && !canonicalMap.has(cleanSlug)) {
         canonicalMap.set(cleanSlug, {

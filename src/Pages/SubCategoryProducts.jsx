@@ -23,19 +23,22 @@ const SubCategoryProducts = () => {
       (cleanId === "sphatik-&-crystal-yantra" && s.slug === "sphatik-crystal-yantra")
   );
 
-  // Auto 301-equivalent client redirect from raw MongoDB ID or legacy alias to SEO clean slug
-  if (
+  const needsRedirect =
     matchedSub &&
     (id === matchedSub._id ||
       cleanId === "sphatik-crystal-shree-yantra" ||
-      cleanId === "sphatik-&-crystal-yantra")
-  ) {
-    return <Navigate to={`/subcategory/${matchedSub.slug}`} replace />;
-  }
+      cleanId === "sphatik-&-crystal-yantra");
 
   useEffect(() => {
-    fetchProducts();
-  }, [id]);
+    if (!needsRedirect) {
+      fetchProducts();
+    }
+  }, [id, needsRedirect]);
+
+  // Auto 301-equivalent client redirect from raw MongoDB ID or legacy alias to SEO clean slug
+  if (needsRedirect) {
+    return <Navigate to={`/subcategory/${matchedSub.slug}`} replace />;
+  }
 
   const fetchProducts = async () => {
     try {

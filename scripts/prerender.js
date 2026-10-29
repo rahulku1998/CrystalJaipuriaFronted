@@ -64,6 +64,7 @@ export const runPrerender = async () => {
     bodyContent = "",
     noscriptContent = "",
     productMeta = null,
+    articleMeta = null,
   }) => {
     let html = baseHtml;
 
@@ -147,6 +148,24 @@ export const runPrerender = async () => {
     if (productMeta) {
       const productMetaTags = `  <meta property="og:type" content="product" />\n  <meta property="product:price:amount" content="${productMeta.price.toFixed(2)}" />\n  <meta property="product:price:currency" content="INR" />\n  <meta property="product:availability" content="${productMeta.inStock ? "in stock" : "out of stock"}" />\n  <meta property="product:condition" content="new" />\n  <meta property="product:brand" content="Crystal Jaipuria" />\n  <meta property="product:retailer_item_id" content="${escapeHtml(String(productMeta.id || productMeta.slug))}" />\n`;
       html = html.replace("</head>", `${productMetaTags}</head>`);
+    }
+
+    // 7b. Inject OpenGraph Article Metadata
+    if (articleMeta) {
+      let articleMetaTags = `  <meta property="og:type" content="article" />\n`;
+      if (articleMeta.publishedTime) {
+        articleMetaTags += `  <meta property="article:published_time" content="${escapeHtml(articleMeta.publishedTime)}" />\n`;
+      }
+      if (articleMeta.modifiedTime) {
+        articleMetaTags += `  <meta property="article:modified_time" content="${escapeHtml(articleMeta.modifiedTime)}" />\n`;
+      }
+      if (articleMeta.author) {
+        articleMetaTags += `  <meta property="article:author" content="${escapeHtml(articleMeta.author)}" />\n`;
+      }
+      if (articleMeta.section) {
+        articleMetaTags += `  <meta property="article:section" content="${escapeHtml(articleMeta.section)}" />\n`;
+      }
+      html = html.replace("</head>", `${articleMetaTags}</head>`);
     }
 
     return html;
@@ -1018,7 +1037,17 @@ export const runPrerender = async () => {
   allBlogs.forEach((b) => {
     const bSlug = b.slug || b._id;
     const fbMatch = FALLBACK_BLOGS.find((fb) => fb.slug === bSlug || fb._id === b._id);
-    const blogData = fbMatch ? { ...fbMatch, ...b, faqs: fbMatch.faqs || b.faqs } : b;
+    const blogData = fbMatch
+      ? {
+          ...fbMatch,
+          ...b,
+          faqs: fbMatch.faqs || b.faqs,
+          howTo: fbMatch.howTo || b.howTo,
+          about: fbMatch.about || b.about,
+          mentions: fbMatch.mentions || b.mentions,
+          keywords: fbMatch.keywords || b.keywords,
+        }
+      : b;
 
     const bTitle = blogData.metaTitle
       ? (blogData.metaTitle.includes("Crystal Jaipuria") ? blogData.metaTitle : `${blogData.metaTitle} | Crystal Jaipuria`)
@@ -1069,6 +1098,12 @@ export const runPrerender = async () => {
       ogImage: bImg,
       schema: bSchema,
       bodyContent: bBodyContent,
+      articleMeta: {
+        publishedTime: blogData.createdAt,
+        modifiedTime: blogData.updatedAt || blogData.createdAt,
+        author: blogData.author,
+        section: blogData.category,
+      },
     });
 
     saveFile(`blog/${bSlug}/index.html`, blogHtml);

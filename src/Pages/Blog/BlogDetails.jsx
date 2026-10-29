@@ -44,6 +44,10 @@ const BlogDetails = () => {
                 coverImage: fallback.coverImage || data.blog.coverImage,
                 keyTakeaways: fallback.keyTakeaways || data.blog.keyTakeaways,
                 faqs: fallback.faqs?.length ? fallback.faqs : data.blog.faqs,
+                howTo: fallback.howTo || data.blog.howTo,
+                about: fallback.about || data.blog.about,
+                mentions: fallback.mentions || data.blog.mentions,
+                keywords: fallback.keywords || data.blog.keywords,
                 metaTitle: fallback.metaTitle || data.blog.metaTitle,
                 metaDescription: fallback.metaDescription || data.blog.metaDescription,
                 description: fallback.description || data.blog.description,
@@ -186,6 +190,10 @@ const BlogDetails = () => {
             : `https://www.crystaljaipuria.com${coverImageUrl}`
         }
         type="article"
+        publishedTime={blog.createdAt}
+        modifiedTime={blog.updatedAt || blog.createdAt}
+        author={blog.author}
+        section={blog.category}
         schema={schema}
       />
 

@@ -931,5 +931,68 @@
       <g:pickup_method>buy</g:pickup_method>
       <g:pickup_sla>same_day</g:pickup_sla>
     </item>
+    <item>
+      <g:store_code>11769123335765617743</g:store_code>
+      <g:id>6a55cf012e9a358fc926c001</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>74500.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>11769123335765617743</g:store_code>
+      <g:id>6a55cf012e9a358fc926c002</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>68500.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>11769123335765617743</g:store_code>
+      <g:id>6a55cf012e9a358fc926c003</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>28500.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>11769123335765617743</g:store_code>
+      <g:id>6a55cf012e9a358fc926c004</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>14500.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>11769123335765617743</g:store_code>
+      <g:id>6a55cf012e9a358fc926c005</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>34500.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>11769123335765617743</g:store_code>
+      <g:id>6a55cf012e9a358fc926c006</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>22500.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
+    <item>
+      <g:store_code>11769123335765617743</g:store_code>
+      <g:id>6a55cf012e9a358fc926c007</g:id>
+      <g:availability>in_stock</g:availability>
+      <g:price>18500.00 INR</g:price>
+      <g:quantity>10</g:quantity>
+      <g:pickup_method>buy</g:pickup_method>
+      <g:pickup_sla>same_day</g:pickup_sla>
+    </item>
   </channel>
 </rss>

@@ -13,6 +13,10 @@ const SEO = ({
   twitterImage,
   schema,
   robots = "index, follow",
+  publishedTime,
+  modifiedTime,
+  author,
+  section,
 }) => {
   const finalOgTitle = ogTitle || title;
   const finalOgDesc = ogDescription || description;
@@ -68,6 +72,13 @@ const SEO = ({
       if (finalOgDesc) setMeta("property", "og:description", finalOgDesc);
       setMeta("property", "og:type", type);
       if (image) setMeta("property", "og:image", image);
+
+      if (type === "article") {
+        if (publishedTime) setMeta("property", "article:published_time", publishedTime);
+        if (modifiedTime) setMeta("property", "article:modified_time", modifiedTime);
+        if (author) setMeta("property", "article:author", author);
+        if (section) setMeta("property", "article:section", section);
+      }
 
       setMeta("name", "twitter:card", "summary_large_image");
       setMeta("name", "twitter:title", finalTwTitle);
@@ -130,6 +141,10 @@ const SEO = ({
     finalTwImage,
     schema,
     robots,
+    publishedTime,
+    modifiedTime,
+    author,
+    section,
   ]);
 
   return null;

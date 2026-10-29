@@ -204,10 +204,20 @@ const generateSitemap = async () => {
     xml += `\n  <!-- Blog Detail Pages (${blogs.length} Stories) -->\n`;
     blogs.forEach((blog) => {
       const slug = blog.slug || blog._id;
+      const rawCover = blog.coverImage?.url || "/Gemstone.webp";
+      const coverUrl = rawCover.startsWith("http")
+        ? rawCover
+        : `${BASE_URL}${rawCover.startsWith("/") ? "" : "/"}${rawCover}`;
+      const cleanTitle = escapeXml(blog.title || "Crystal Jaipuria Blog");
+
       xml += `  <url>\n`;
       xml += `    <loc>${BASE_URL}/blog/${slug}</loc>\n`;
+      xml += `    <image:image>\n`;
+      xml += `      <image:loc>${coverUrl.replace(/&/g, "&amp;")}</image:loc>\n`;
+      xml += `      <image:title>${cleanTitle} | Crystal Jaipuria</image:title>\n`;
+      xml += `    </image:image>\n`;
       xml += `    <changefreq>monthly</changefreq>\n`;
-      xml += `    <priority>0.75</priority>\n`;
+      xml += `    <priority>0.80</priority>\n`;
       xml += `  </url>\n`;
     });
   }

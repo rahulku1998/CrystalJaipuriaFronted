@@ -67,6 +67,13 @@ export const SUPER_TITLE_MAPPINGS = {
   "lord-parshvanath-in-lapis-lazuli": "Lord Parasnath in Lapis Lazuli Idol | Crystal Jaipuria",
   "lord-krishna-in-ruby-zoisite": "Lord Krishna in Ruby Zoisite Idol | Crystal Jaipuria",
   "ruby-zoisite-lord-krishna": "Lord Krishna in Ruby Zoisite Idol | Crystal Jaipuria",
+  "corundum-ruby-gemstone-ganesh-statue": "Natural Corundum Ruby Ganesha Statue (12.5 kg) | Crystal Jaipuria",
+  "natural-jade-stone-ganesha-with-arch": "Natural Green Jade Ganesha with Arch (5.8 kg) | Crystal Jaipuria",
+  "green-jade-stone-ganesha-with-arch": "Green Jade Stone Ganesha with Arch (11 in) | Crystal Jaipuria",
+  "dark-green-aventurine-ganesha-idol": "Dark Green Aventurine Ganesha Idol (2.1 kg) | Crystal Jaipuria",
+  "lapis-lazuli-ganesha-with-arch": "Hand-Carved Lapis Lazuli Ganesha with Arch (3.2 kg) | Crystal Jaipuria",
+  "natural-lapis-lazuli-ganesha-idol": "Natural Lapis Lazuli Ganesha Idol (1.55 kg) | Crystal Jaipuria",
+  "intricately-carved-wooden-ganesha-shrine": "Intricately Carved Wooden Ganesha Shrine (12 in) | Crystal Jaipuria",
 };
 
 export const getProductMetaTitle = (productName, slug = "") => {
@@ -116,6 +123,13 @@ export const SUPER_DESCRIPTION_MAPPINGS = {
   "rose-quartz-ganesh-with-silver-work": "Buy luxury Handcrafted Rose Quartz Ganesh with 925 Sterling Silver Work & 24K Gold Mukut. 100% natural certified gemstone idol for luxury home decor from Jaipur.",
   "green-jade-carved-ganesha-statue-with-silver-gold-work": "Buy luxury Handcrafted Green Jade Carved Ganesha Statue with Silver & 24K Gold Work. 100% natural certified gemstone idol for luxury home decor & corporate gifts.",
   "green-jade-carved-ganesha": "Buy luxury Handcrafted Green Jade Carved Ganesha Statue with Silver & 24K Gold Work. 100% natural certified gemstone idol for luxury home decor & corporate gifts.",
+  "corundum-ruby-gemstone-ganesh-statue": "Buy authentic 12.5 kg Hand-Carved Corundum Ruby Gemstone Ganesha Statue from Crystal Jaipuria. Certified natural ruby idol for puja & vastu at direct factory price.",
+  "natural-jade-stone-ganesha-with-arch": "Shop luxury 5.8 kg Natural Green Jade Stone Ganesha with Arch (Prabhavali). Master artisan carved Lord Ganesha for vastu, prosperity & temple decor from Jaipur.",
+  "green-jade-stone-ganesha-with-arch": "Buy 11-inch Handcrafted Green Jade Stone Ganesha with Arch (2.85 kg). Authentic natural green jade carving for prosperity & spiritual decor at factory direct price.",
+  "dark-green-aventurine-ganesha-idol": "Handcrafted 2.1 kg Dark Green Aventurine Ganesha Idol from Jaipur. Auspicious Ganpati murti for vastu, heart chakra healing & prosperity at manufacturer price.",
+  "lapis-lazuli-ganesha-with-arch": "Buy master-crafted 3.2 kg Natural Lapis Lazuli Lord Ganesha with Arch (Prabhavali). Authentic golden pyrite-flecked royal blue gemstone idol from Crystal Jaipuria.",
+  "natural-lapis-lazuli-ganesha-idol": "100% authentic 1.55 kg Natural Lapis Lazuli Ganesha Idol. Hand-carved deep royal blue gemstone Ganpati murti with natural golden pyrite flecks at wholesale price.",
+  "intricately-carved-wooden-ganesha-shrine": "Buy exquisite 12-inch Intricately Carved Wooden Ganesha Shrine & Temple Sculpture (2.4 kg). Master handcrafted spiritual artwork for home temple from Crystal Jaipuria.",
 };
 
 export const getProductMetaDescription = (product) => {
@@ -466,35 +480,120 @@ export const getBreadcrumbSchema = (items) => {
 export const getArticleSchema = (blog, canonicalUrl) => {
   if (!blog) return null;
 
+  const blogImageUrl = toAbsoluteUrl(blog.coverImage?.url || "https://www.crystaljaipuria.com/logo.png");
+  const authorName = blog.author || "Crystal Jaipuria Artisans";
+  const datePublished = blog.createdAt || new Date().toISOString();
+  const dateModified = blog.updatedAt || blog.createdAt || new Date().toISOString();
+
+  // Compute wordCount if blog content is present
+  let wordCount = undefined;
+  if (blog.content) {
+    const plainText = typeof blog.content === "string" ? blog.content.replace(/<[^>]*>/g, " ") : "";
+    const words = plainText.trim().split(/\s+/).filter(Boolean);
+    if (words.length > 50) {
+      wordCount = words.length;
+    }
+  }
+
+  const websiteSchema = {
+    "@type": "WebSite",
+    "@id": "https://www.crystaljaipuria.com/#website",
+    "url": "https://www.crystaljaipuria.com",
+    "name": "Crystal Jaipuria",
+    "description": "Original Gemstones, Crystal Idols & Certified Shivlings in Jaipur",
+    "publisher": {
+      "@id": "https://www.crystaljaipuria.com/#organization"
+    },
+    "inLanguage": "en-IN"
+  };
+
+  const organizationSchema = {
+    "@type": "Organization",
+    "@id": "https://www.crystaljaipuria.com/#organization",
+    "name": "Crystal Jaipuria",
+    "url": "https://www.crystaljaipuria.com",
+    "logo": {
+      "@type": "ImageObject",
+      "@id": "https://www.crystaljaipuria.com/#logo",
+      "url": "https://www.crystaljaipuria.com/logo.png",
+      "contentUrl": "https://www.crystaljaipuria.com/logo.png",
+      "caption": "Crystal Jaipuria"
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+91-9829000000",
+        "contactType": "customer service",
+        "areaServed": "IN",
+        "availableLanguage": ["English", "Hindi"]
+      }
+    ]
+  };
+
+  const webPageSchema = {
+    "@type": "WebPage",
+    "@id": canonicalUrl,
+    "url": canonicalUrl,
+    "name": blog.metaTitle || blog.title,
+    "isPartOf": {
+      "@id": "https://www.crystaljaipuria.com/#website"
+    },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "@id": `${canonicalUrl}#primaryimage`,
+      "url": blogImageUrl,
+      "contentUrl": blogImageUrl
+    },
+    "breadcrumb": {
+      "@id": `${canonicalUrl}#breadcrumb`
+    },
+    "inLanguage": "en-IN"
+  };
+
   const articleSchema = {
     "@type": "BlogPosting",
+    "@id": `${canonicalUrl}#article`,
+    "isPartOf": {
+      "@id": canonicalUrl
+    },
     "headline": blog.title,
     "name": blog.metaTitle || blog.title,
     "description": blog.metaDescription || blog.description || blog.title,
-    "image": toAbsoluteUrl(blog.coverImage?.url || "https://www.crystaljaipuria.com/logo.png"),
-    "datePublished": blog.createdAt || new Date().toISOString(),
-    "dateModified": blog.updatedAt || blog.createdAt || new Date().toISOString(),
+    "image": [blogImageUrl],
+    "datePublished": datePublished,
+    "dateModified": dateModified,
     "author": {
-      "@type": "Organization",
-      "name": "Crystal Jaipuria",
-      "url": "https://www.crystaljaipuria.com"
+      "@type": "Person",
+      "name": authorName
     },
     "publisher": {
-      "@type": "Organization",
-      "name": "Crystal Jaipuria",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.crystaljaipuria.com/logo.png"
-      }
+      "@id": "https://www.crystaljaipuria.com/#organization"
     },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": canonicalUrl
+    "mainEntityOfPage": canonicalUrl,
+    "inLanguage": "en-IN",
+    "articleSection": blog.category || "Gemstone Guides",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", ".blog-content p:first-of-type"]
     }
   };
 
+  if (wordCount) {
+    articleSchema.wordCount = wordCount;
+  }
+  if (blog.keywords) {
+    articleSchema.keywords = Array.isArray(blog.keywords) ? blog.keywords.join(", ") : blog.keywords;
+  }
+  if (blog.about) {
+    articleSchema.about = blog.about;
+  }
+  if (blog.mentions) {
+    articleSchema.mentions = blog.mentions;
+  }
+
   const breadcrumbsSchema = {
     "@type": "BreadcrumbList",
+    "@id": `${canonicalUrl}#breadcrumb`,
     "itemListElement": [
       {
         "@type": "ListItem",
@@ -517,18 +616,47 @@ export const getArticleSchema = (blog, canonicalUrl) => {
     ]
   };
 
-  const graph = [articleSchema, breadcrumbsSchema];
+  const graph = [websiteSchema, organizationSchema, webPageSchema, articleSchema, breadcrumbsSchema];
 
-  if (Array.isArray(blog.faqs) && blog.faqs.length > 0) {
+  // FAQ Page schema if present
+  let parsedFaqs = [];
+  if (blog.faqs) {
+    try {
+      parsedFaqs = typeof blog.faqs === "string" ? JSON.parse(blog.faqs) : blog.faqs;
+    } catch {
+      parsedFaqs = [];
+    }
+  }
+  const validFaqs = (parsedFaqs || []).filter((f) => f && f.question && f.answer);
+  if (validFaqs.length > 0) {
     graph.push({
       "@type": "FAQPage",
-      "mainEntity": blog.faqs.map((faq) => ({
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": validFaqs.map((faq) => ({
         "@type": "Question",
         "name": faq.question,
         "acceptedAnswer": {
           "@type": "Answer",
           "text": faq.answer
         }
+      }))
+    });
+  }
+
+  // HowTo schema if present
+  if (blog.howTo && blog.howTo.steps && Array.isArray(blog.howTo.steps)) {
+    graph.push({
+      "@type": "HowTo",
+      "@id": `${canonicalUrl}#howto`,
+      "name": blog.howTo.name || blog.title,
+      "description": blog.howTo.description || blog.description,
+      ...(blog.howTo.totalTime ? { "totalTime": blog.howTo.totalTime } : {}),
+      "step": blog.howTo.steps.map((st, i) => ({
+        "@type": "HowToStep",
+        "position": i + 1,
+        "name": st.name,
+        "text": st.text,
+        ...(st.url ? { "url": st.url } : {})
       }))
     });
   }

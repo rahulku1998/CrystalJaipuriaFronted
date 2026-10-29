@@ -81,6 +81,13 @@ export const syncImages = async () => {
       "moonstone-diya",
       "green-jade-diya",
       "green-aventurine-diya",
+      "corundum-ruby-gemstone-ganesh-statue",
+      "natural-jade-stone-ganesha-with-arch",
+      "green-jade-stone-ganesha-with-arch",
+      "dark-green-aventurine-ganesha-idol",
+      "lapis-lazuli-ganesha-with-arch",
+      "natural-lapis-lazuli-ganesha-idol",
+      "intricately-carved-wooden-ganesha-shrine",
 
       "natural-amethyst-gemstone-shiva-face-idol",
       "gemston-ruby-shree-yantra",

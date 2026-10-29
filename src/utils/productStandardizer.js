@@ -560,6 +560,48 @@ export const STANDARDIZED_SPECS = {
     size: "3.0 in (L) x 2.2 in (W) x 1.0 in (H)",
     pricePerUnit: "₹499",
   },
+  "corundum-ruby-gemstone-ganesh-statue": {
+    price: 74500,
+    weight: "12.5 kg",
+    size: "15.0 in (H) x 11.5 in (W) x 6.0 in (D)",
+    pricePerUnit: "₹74,500",
+  },
+  "natural-jade-stone-ganesha-with-arch": {
+    price: 68500,
+    weight: "5.80 kg",
+    size: "14.5 in (H) x 12.0 in (W) x 6.5 in (D)",
+    pricePerUnit: "₹68,500",
+  },
+  "green-jade-stone-ganesha-with-arch": {
+    price: 28500,
+    weight: "2.85 kg",
+    size: "11.0 in (H) x 8.5 in (W) x 4.8 in (D)",
+    pricePerUnit: "₹28,500",
+  },
+  "dark-green-aventurine-ganesha-idol": {
+    price: 14500,
+    weight: "2.10 kg",
+    size: "9.5 in (H) x 7.0 in (W) x 4.2 in (D)",
+    pricePerUnit: "₹14,500",
+  },
+  "lapis-lazuli-ganesha-with-arch": {
+    price: 34500,
+    weight: "3.20 kg",
+    size: "11.5 in (H) x 8.0 in (W) x 4.5 in (D)",
+    pricePerUnit: "₹34,500",
+  },
+  "natural-lapis-lazuli-ganesha-idol": {
+    price: 22500,
+    weight: "1.55 kg",
+    size: "5.7 in (H) x 5.3 in (W) x 3.5 in (D)",
+    pricePerUnit: "₹22,500",
+  },
+  "intricately-carved-wooden-ganesha-shrine": {
+    price: 18500,
+    weight: "2.40 kg",
+    size: "12.0 in (H) x 9.5 in (W) x 5.0 in (D)",
+    pricePerUnit: "₹18,500",
+  },
 };
 
 /**
@@ -1417,6 +1459,48 @@ export const getStandardizedProduct = (product) => {
         { url: "/images/emerald-ganesha-idol-2.webp", public_id: "products/emerald-ganesha-idol-2" },
         { url: "/images/emerald-ganesha-idol-3.webp", public_id: "products/emerald-ganesha-idol-3" },
         { url: "/images/emerald-ganesha-idol-4.webp", public_id: "products/emerald-ganesha-idol-4" },
+      ];
+    } else if (slug === "corundum-ruby-gemstone-ganesh-statue") {
+      standardizedImages = [
+        { url: "/images/corundum-ruby-gemstone-ganesh-statue.webp", public_id: "products/corundum-ruby-gemstone-ganesh-statue" },
+        { url: "/images/corundum-ruby-gemstone-ganesh-statue-2.webp", public_id: "products/corundum-ruby-gemstone-ganesh-statue-2" },
+      ];
+    } else if (slug === "natural-jade-stone-ganesha-with-arch") {
+      standardizedImages = [
+        { url: "/images/natural-jade-stone-ganesha-with-arch.webp", public_id: "products/natural-jade-stone-ganesha-with-arch" },
+        { url: "/images/natural-jade-stone-ganesha-with-arch-2.webp", public_id: "products/natural-jade-stone-ganesha-with-arch-2" },
+        { url: "/images/natural-jade-stone-ganesha-with-arch-3.webp", public_id: "products/natural-jade-stone-ganesha-with-arch-3" },
+        { url: "/images/natural-jade-stone-ganesha-with-arch-4.webp", public_id: "products/natural-jade-stone-ganesha-with-arch-4" },
+      ];
+    } else if (slug === "green-jade-stone-ganesha-with-arch") {
+      standardizedImages = [
+        { url: "/images/green-jade-stone-ganesha-with-arch.webp", public_id: "products/green-jade-stone-ganesha-with-arch" },
+        { url: "/images/green-jade-stone-ganesha-with-arch-2.webp", public_id: "products/green-jade-stone-ganesha-with-arch-2" },
+        { url: "/images/green-jade-stone-ganesha-with-arch-3.webp", public_id: "products/green-jade-stone-ganesha-with-arch-3" },
+      ];
+    } else if (slug === "dark-green-aventurine-ganesha-idol") {
+      standardizedImages = [
+        { url: "/images/dark-green-aventurine-ganesha-idol.webp", public_id: "products/dark-green-aventurine-ganesha-idol" },
+        { url: "/images/dark-green-aventurine-ganesha-idol-2.webp", public_id: "products/dark-green-aventurine-ganesha-idol-2" },
+        { url: "/images/dark-green-aventurine-ganesha-idol-3.webp", public_id: "products/dark-green-aventurine-ganesha-idol-3" },
+      ];
+    } else if (slug === "lapis-lazuli-ganesha-with-arch") {
+      standardizedImages = [
+        { url: "/images/lapis-lazuli-ganesha-with-arch.webp", public_id: "products/lapis-lazuli-ganesha-with-arch" },
+        { url: "/images/lapis-lazuli-ganesha-with-arch-2.webp", public_id: "products/lapis-lazuli-ganesha-with-arch-2" },
+        { url: "/images/lapis-lazuli-ganesha-with-arch-3.webp", public_id: "products/lapis-lazuli-ganesha-with-arch-3" },
+      ];
+    } else if (slug === "natural-lapis-lazuli-ganesha-idol") {
+      standardizedImages = [
+        { url: "/images/natural-lapis-lazuli-ganesha-idol.webp", public_id: "products/natural-lapis-lazuli-ganesha-idol" },
+        { url: "/images/natural-lapis-lazuli-ganesha-idol-2.webp", public_id: "products/natural-lapis-lazuli-ganesha-idol-2" },
+        { url: "/images/natural-lapis-lazuli-ganesha-idol-3.webp", public_id: "products/natural-lapis-lazuli-ganesha-idol-3" },
+      ];
+    } else if (slug === "intricately-carved-wooden-ganesha-shrine") {
+      standardizedImages = [
+        { url: "/images/intricately-carved-wooden-ganesha-shrine.webp", public_id: "products/intricately-carved-wooden-ganesha-shrine" },
+        { url: "/images/intricately-carved-wooden-ganesha-shrine-2.webp", public_id: "products/intricately-carved-wooden-ganesha-shrine-2" },
+        { url: "/images/intricately-carved-wooden-ganesha-shrine-3.webp", public_id: "products/intricately-carved-wooden-ganesha-shrine-3" },
       ];
     } else if (MULTI_IMAGE_SLUGS.has(slug)) {
       standardizedImages = [
