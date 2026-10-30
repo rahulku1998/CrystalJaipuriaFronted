@@ -50,7 +50,14 @@ export const runPrerender = async () => {
     return;
   }
 
-  const baseHtml = fs.readFileSync(templatePath, "utf-8");
+  let rawBaseHtml = fs.readFileSync(templatePath, "utf-8");
+  // Clean any previous prerender injections to ensure clean idempotent base template
+  rawBaseHtml = rawBaseHtml
+    .replace(/<script type="application\/ld\+json" id="page-dynamic-schema">[\s\S]*?<\/script>/gi, "")
+    .replace(/<noscript>[\s\S]*?<\/noscript>/gi, "")
+    .replace(/<meta property="og:type" content="product" \/>\s*<meta property="product:[\s\S]*?\/>/gi, "")
+    .replace(/<div id="root">[\s\S]*?<\/div>/i, '<div id="root"></div>');
+  const baseHtml = rawBaseHtml;
 
   // Helper to customize HTML head and root
   const buildPageHtml = ({
@@ -136,7 +143,7 @@ export const runPrerender = async () => {
 
     // 6. Pre-rendered Body Content (instant visual paint before React hydrates)
     if (bodyContent) {
-      html = html.replace('<div id="root"></div>', `<div id="root">${bodyContent}</div>`);
+      html = html.replace(/<div id="root">[\s\S]*?<\/div>/i, `<div id="root">${bodyContent}</div>`);
     }
 
     // 6b. Noscript Content (for SEO crawlers and non-JS clients without flashing to JS users)

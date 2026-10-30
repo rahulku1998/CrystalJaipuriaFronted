@@ -30,7 +30,6 @@ export const FALLBACK_CATEGORIES = [
 ];
 
 export const FALLBACK_SUBCATEGORIES = [
-  // God Statues (3)
   {
     "_id": "6a55bc772dcf49aacd71ef6a",
     "name": "Shiva",
@@ -61,8 +60,6 @@ export const FALLBACK_SUBCATEGORIES = [
       "slug": "god-statues"
     }
   },
-
-  // Shivling (4)
   {
     "_id": "6a55bcd02dcf49aacd71ef70",
     "name": "Sphatik Shivling",
@@ -103,8 +100,6 @@ export const FALLBACK_SUBCATEGORIES = [
       "slug": "shivling"
     }
   },
-
-  // Shree Yantra (4)
   {
     "_id": "6a55bcc32dcf49aacd71ef6f",
     "name": "Sphatik & Crystal Yantra",
@@ -145,8 +140,6 @@ export const FALLBACK_SUBCATEGORIES = [
       "slug": "shree-yantra"
     }
   },
-
-  // Crystal Statues (3)
   {
     "_id": "6a55bc912dcf49aacd71ef6c",
     "name": "Angel",
@@ -177,8 +170,6 @@ export const FALLBACK_SUBCATEGORIES = [
       "slug": "diya"
     }
   },
-
-  // Luxurious Idols & Decor (1)
   {
     "_id": "6abd3aad3618032686f04292",
     "name": "Luxury Ganesha Idols",
@@ -192,6 +183,391 @@ export const FALLBACK_SUBCATEGORIES = [
 ];
 
 export const FALLBACK_PRODUCTS = [
+  {
+    "_id": "6a55cf012e9a358fc926c001",
+    "name": "Corundum Ruby Gemstone Ganesh Statue",
+    "slug": "corundum-ruby-gemstone-ganesh-statue",
+    "price": 74500,
+    "discountPrice": 98000,
+    "detail": "Exquisite hand-carved Natural Corundum Ruby Gemstone Ganesha Statue sculpted from authentic single-piece ruby rough in Jaipur. Weighing 12.5 kg with majestic Lalitasana posture and fine details, this museum-grade ruby murti radiates deep raspberry-crimson luster and powerful solar vitality for sacred puja rooms and luxury vastu interiors.",
+    "description": "<p>Exquisite hand-carved Natural Corundum Ruby Gemstone Ganesha Statue sculpted from authentic single-piece unheated ruby rough in Jaipur. Lord Ganesha is seated in majestic Lalitasana blessing devotees with Abhaya mudra and holding sacred modak in trunk. Weighing an impressive 12.5 kg, this museum-grade ruby murti radiates deep raspberry-crimson luster and powerful solar vitality for sacred puja rooms and luxury vastu interiors.</p>\n\n<h2>Vedic Ruby Craftsmanship & Divine Auspiciousness</h2>\n<p>Masterfully carved by generational Jaipur lapidaries adhering to ancient Shilpa Shastra proportions:</p>\n<ul>\n  <li><strong>Natural Corundum Ruby Material:</strong> Earth-mined natural corundum mineral with natural silk inclusions and intense solar resonance.</li>\n  <li><strong>Exquisite Master Detailing:</strong> Detailed crown (Mukut), divine ornaments, ornate trunk curve, and carved pedestal.</li>\n  <li><strong>Sacred Vastu Energy:</strong> Aligns with Sun (Surya) and Muladhara chakra, dispelling negative energies and bestowing unstoppable commercial progress.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Corundum Ruby Gemstone Ganesh Statue</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Natural Earth-Mined Corundum Ruby Gemstone</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Gross Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">12.5 kg</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">15.0 in (H) x 11.5 in (W) x 6.0 in (D)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Basis</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Direct Jaipur Manufacturer Wholesale Rate (₹74,500)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Placement</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North, Northeast (Ishanya), or East Altar</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Certificate</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Natural Gemstone Guarantee</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Corundum Ruby Gemstone Ganesh Statue</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Natural Earth-Mined Corundum Ruby</li>\n  <li><strong class=\"font-bold text-gray-900\">Gross Weight :</strong> 12.5 kg</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 15.0 in (H) x 11.5 in (W) x 6.0 in (D)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing :</strong> ₹74,500 (Direct Workshop Price)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Direction :</strong> North, Northeast (Ishanya), or East</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Wooden crate packing with 100% transit insurance</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"Is this Corundum Ruby Ganesha statue made of real single-block natural ruby?\",\"answer\":\"Yes, it is carved entirely from a single solid block of 100% natural earth-mined corundum ruby rough by master artisans in Jaipur, displaying authentic natural crystal grain and natural inclusions.\"},{\"question\":\"What are the spiritual and astrological benefits of keeping a Ruby Ganesha idol?\",\"answer\":\"Ruby represents the Sun (Surya), symbolizing leadership, vitality, and power. Combined with Lord Ganesha (Vighnaharta), it removes financial obstacles, safeguards prestige, and invites enduring commercial success.\"},{\"question\":\"How should I clean and maintain this 12.5 kg gemstone idol?\",\"answer\":\"Wipe gently with a clean soft microfiber cloth. For ritual Abhishek, use holy Gangajal, raw milk, and pure water, then dry completely with a cotton towel.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Natural Corundum Ruby Ganesha Statue (12.5 kg) | Crystal Jaipuria\",\"metaDescription\":\"Buy authentic 12.5 kg Hand-Carved Corundum Ruby Gemstone Ganesha Statue from Crystal Jaipuria. Certified natural ruby idol for puja & vastu at direct factory price.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North (Kubera wealth direction), Northeast (Ishanya temple corner), or East-facing altar\",\"chakraPlanet\":\"Root Chakra (Muladhara) & Solar Plexus · Ruling Planet Sun (Surya Dev)\",\"poojaVidhi\":\"Consecrate on Sunday or Ganesh Chaturthi with holy Gangajal, raw cow milk, and red kumkum. Offer red hibiscus flowers, pure ghee deepak, and modak prasad.\",\"vedicBenefits\":\"Corundum Ruby radiates powerful solar energy that enhances leadership, attracts immense wealth, dispels obstacles (Vighnaharta), and protects family from negative energies.\"} -->",
+    "faqs": [
+      {
+        "question": "Is this Corundum Ruby Ganesha statue made of real single-block natural ruby?",
+        "answer": "Yes, it is carved entirely from a single solid block of 100% natural earth-mined corundum ruby rough by master artisans in Jaipur, displaying authentic natural crystal grain and natural inclusions."
+      },
+      {
+        "question": "What are the spiritual and astrological benefits of keeping a Ruby Ganesha idol?",
+        "answer": "Ruby represents the Sun (Surya), symbolizing leadership, vitality, and power. Combined with Lord Ganesha (Vighnaharta), it removes financial obstacles, safeguards prestige, and invites enduring commercial success."
+      },
+      {
+        "question": "How should I clean and maintain this 12.5 kg gemstone idol?",
+        "answer": "Wipe gently with a clean soft microfiber cloth. For ritual Abhishek, use holy Gangajal, raw milk, and pure water, then dry completely with a cotton towel."
+      }
+    ],
+    "metaTitle": "Natural Corundum Ruby Ganesha Statue (12.5 kg) | Crystal Jaipuria",
+    "metaDescription": "Buy authentic 12.5 kg Hand-Carved Corundum Ruby Gemstone Ganesha Statue from Crystal Jaipuria. Certified natural ruby idol for puja & vastu at direct factory price.",
+    "vedicVastu": {
+      "placementDirection": "North (Kubera wealth direction), Northeast (Ishanya temple corner), or East-facing altar",
+      "chakraPlanet": "Root Chakra (Muladhara) & Solar Plexus · Ruling Planet Sun (Surya Dev)",
+      "poojaVidhi": "Consecrate on Sunday or Ganesh Chaturthi with holy Gangajal, raw cow milk, and red kumkum. Offer red hibiscus flowers, pure ghee deepak, and modak prasad.",
+      "vedicBenefits": "Corundum Ruby radiates powerful solar energy that enhances leadership, attracts immense wealth, dispels obstacles (Vighnaharta), and protects family from negative energies."
+    },
+    "images": [
+      "/images/corundum-ruby-gemstone-ganesh-statue.webp",
+      "/images/corundum-ruby-gemstone-ganesh-statue-2.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "categoryName": "God Statues",
+    "subCategoryId": {
+      "_id": "6a55bc842dcf49aacd71ef6b",
+      "name": "Ganesh",
+      "slug": "ganesh"
+    },
+    "subCategoryName": "Ganesh",
+    "size": "15.0 in (H) x 11.5 in (W) x 6.0 in (D)",
+    "weight": "12.5 kg",
+    "stock": 4,
+    "featured": true,
+    "pricePerUnit": "₹74,500",
+    "pricePerCarat": ""
+  },
+  {
+    "_id": "6a55cf012e9a358fc926c002",
+    "name": "Natural Jade Stone Ganesha with Arch",
+    "slug": "natural-jade-stone-ganesha-with-arch",
+    "price": 68500,
+    "discountPrice": 89000,
+    "detail": "Majestic 5.80 kg Natural Green Jade Stone Ganesha sculpture adorned with an ornate carved arch (Prabhavali). Masterfully sculpted by Jaipur craftsmen from certified natural jade boulder, this auspicious idol invites boundless abundance, luck, and supreme Vastu harmony into homes and luxury workplaces.",
+    "description": "<p>Majestic 5.80 kg Natural Green Jade Stone Ganesha sculpture adorned with an ornate carved arch (Prabhavali). Masterfully sculpted by Jaipur craftsmen from a certified natural jade boulder, this auspicious idol invites boundless abundance, luck, and supreme Vastu harmony into homes and luxury workplaces.</p>\n\n<h2>Imperial Green Jade & Cosmic Prabhavali Symbolism</h2>\n<p>Sculpted adhering to sacred Shilpa Shastra traditions from natural earth-mined green jade:</p>\n<ul>\n  <li><strong>Protective Prabhavali Arch:</strong> Intricately carved halo arch symbolizes the infinite cosmic shield and divine aura of Vignaharta.</li>\n  <li><strong>Genuine Green Jade Stone:</strong> Earth-mined gemstone with rich natural emerald shades, silky polished surface, and enduring cooling touch.</li>\n  <li><strong>Vastu & Commercial Prosperity:</strong> Associated with Mercury (Budh) and Kubera, ensuring steady commercial wealth and family tranquility.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Natural Jade Stone Ganesha with Arch</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Natural Earth-Mined Green Jade</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Gross Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">5.80 kg</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">14.5 in (H) x 12.0 in (W) x 6.5 in (D)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Basis</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Direct Jaipur Workshop Rate (₹68,500)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North (Kubera wealth direction) or East</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Natural Earth-Mined Gemstone</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Natural Jade Stone Ganesha with Arch</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Natural Green Jade</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 5.80 kg</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 14.5 in (H) x 12.0 in (W) x 6.5 in (D)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing :</strong> ₹68,500 (Discounted from ₹89,000)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Direction :</strong> North or East in Mandir or Executive Office</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof crating with 100% insured transit</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"What is the spiritual significance of the arch (Prabhavali) around Lord Ganesha?\",\"answer\":\"The Prabhavali (divine aura arch) symbolizes the halo of supreme cosmic energy radiating from Lord Ganesha, creating a protective shield across the home or sanctuary.\"},{\"question\":\"Is this Jade Ganesha statue carved from 100% natural jade stone?\",\"answer\":\"Yes, each piece is carved from certified earth-mined natural Green Jade in our Jaipur workshop, retaining natural mineral banding and a smooth soothing tactile finish.\"},{\"question\":\"Where is the best place in the home or office to place this Jade Ganesha?\",\"answer\":\"According to Vastu Shastra, place it in the North (Kubera wealth direction) or East in your prayer mandir, living room, or executive desk facing inwards.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Natural Green Jade Ganesha with Arch (5.8 kg) | Crystal Jaipuria\",\"metaDescription\":\"Shop luxury 5.8 kg Natural Green Jade Stone Ganesha with Arch (Prabhavali). Master artisan carved Lord Ganesha for vastu, prosperity & temple decor from Jaipur.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North or Northeast facing East in home temple, executive office, or main entrance\",\"chakraPlanet\":\"Heart Chakra (Anahata) · Ruling Planet Mercury (Budha Dev)\",\"poojaVidhi\":\"Cleanse with Gangajal and unboiled milk on Wednesday. Offer Durva grass, yellow chandan, green cardamom, and fresh modaks.\",\"vedicBenefits\":\"Green Jade is the sacred stone of commercial fortune, harmony, and wisdom. The protective arch (Prabhavali) shields the sanctuary while inviting endless prosperity and peace.\"} -->",
+    "faqs": [
+      {
+        "question": "What is the spiritual significance of the arch (Prabhavali) around Lord Ganesha?",
+        "answer": "The Prabhavali (divine aura arch) symbolizes the halo of supreme cosmic energy radiating from Lord Ganesha, creating a protective shield across the home or sanctuary."
+      },
+      {
+        "question": "Is this Jade Ganesha statue carved from 100% natural jade stone?",
+        "answer": "Yes, each piece is carved from certified earth-mined natural Green Jade in our Jaipur workshop, retaining natural mineral banding and a smooth soothing tactile finish."
+      },
+      {
+        "question": "Where is the best place in the home or office to place this Jade Ganesha?",
+        "answer": "According to Vastu Shastra, place it in the North (Kubera wealth direction) or East in your prayer mandir, living room, or executive desk facing inwards."
+      }
+    ],
+    "metaTitle": "Natural Green Jade Ganesha with Arch (5.8 kg) | Crystal Jaipuria",
+    "metaDescription": "Shop luxury 5.8 kg Natural Green Jade Stone Ganesha with Arch (Prabhavali). Master artisan carved Lord Ganesha for vastu, prosperity & temple decor from Jaipur.",
+    "vedicVastu": {
+      "placementDirection": "North or Northeast facing East in home temple, executive office, or main entrance",
+      "chakraPlanet": "Heart Chakra (Anahata) · Ruling Planet Mercury (Budha Dev)",
+      "poojaVidhi": "Cleanse with Gangajal and unboiled milk on Wednesday. Offer Durva grass, yellow chandan, green cardamom, and fresh modaks.",
+      "vedicBenefits": "Green Jade is the sacred stone of commercial fortune, harmony, and wisdom. The protective arch (Prabhavali) shields the sanctuary while inviting endless prosperity and peace."
+    },
+    "images": [
+      "/images/natural-jade-stone-ganesha-with-arch.webp",
+      "/images/natural-jade-stone-ganesha-with-arch-2.webp",
+      "/images/natural-jade-stone-ganesha-with-arch-3.webp",
+      "/images/natural-jade-stone-ganesha-with-arch-4.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "categoryName": "God Statues",
+    "subCategoryId": {
+      "_id": "6a55bc842dcf49aacd71ef6b",
+      "name": "Ganesh",
+      "slug": "ganesh"
+    },
+    "subCategoryName": "Ganesh",
+    "size": "14.5 in (H) x 12.0 in (W) x 6.5 in (D)",
+    "weight": "5.80 kg",
+    "stock": 5,
+    "featured": true,
+    "pricePerUnit": "₹68,500",
+    "pricePerCarat": ""
+  },
+  {
+    "_id": "6a55cf012e9a358fc926c003",
+    "name": "Green Jade Stone Ganesha with Arch",
+    "slug": "green-jade-stone-ganesha-with-arch",
+    "price": 28500,
+    "discountPrice": 38000,
+    "detail": "Handcrafted 11-inch (2.85 kg) Green Jade Stone Ganesha statue surrounded by an intricately carved Prabhavali arch. Carved with exquisite balance and fine lapidary polishing in Jaipur, ideal for home mandirs, office desks, and spiritual gifting.",
+    "description": "<p>Handcrafted 11-inch (2.85 kg) Green Jade Stone Ganesha statue surrounded by an intricately carved Prabhavali arch. Carved with exquisite balance and fine lapidary polishing in Jaipur, ideal for home mandirs, office desks, and spiritual gifting.</p>\n\n<h2>Artisanal Jade Carving & Divine Vastu Energy</h2>\n<p>Honoring centuries-old Rajasthani stone crafting techniques:</p>\n<ul>\n  <li><strong>Single-Piece Jade Carving:</strong> Sculpted from authentic natural green jade featuring natural green translucence.</li>\n  <li><strong>Sacred Iconography:</strong> Ganesha seated in padmasana blessing with Abhaya mudra, holding modak and parashu.</li>\n  <li><strong>Direct Factory Value:</strong> Authentic artisan-direct pricing without distributor overheads.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Green Jade Stone Ganesha with Arch</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Natural Certified Green Jade Stone</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Gross Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">2.85 kg</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">11.0 in (H) x 8.5 in (W) x 4.8 in (D)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Basis</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹28,500 (Discounted from ₹38,000)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Placement</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North, East, or Home Mandir Altar</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Green Jade Stone Ganesha with Arch</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Natural Green Jade</li>\n  <li><strong class=\"font-bold text-gray-900\">Gross Weight :</strong> 2.85 kg</li>\n  <li><strong class=\"font-bold text-gray-900\">Height :</strong> 11.0 in (H) x 8.5 in (W) x 4.8 in (D)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing :</strong> ₹28,500 (Market Retail ₹48,000+)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Direction :</strong> North (Financial Growth) or East</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"How does this 11-inch Green Jade Ganesha compare with competitor retail pieces?\",\"answer\":\"Unlike commercial retail stores selling at ₹48,000+, Crystal Jaipuria crafts every statue directly at our Jaipur lapidary workshop, offering certified natural jade at direct manufacturer pricing of ₹28,500.\"},{\"question\":\"Can I perform daily puja and Jalabhishek on this Jade idol?\",\"answer\":\"Yes, natural green jade is durable and non-porous. You can offer water, Gangajal, and milk Abhishek safely, drying with a soft cotton cloth afterwards.\"},{\"question\":\"What benefits does Green Jade bring according to Vedic Vastu?\",\"answer\":\"Green Jade resonates with the Heart Chakra (Anahata) and planet Mercury (Budh), attracting commercial wealth, sharper decision-making, and harmonious relationships.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Green Jade Stone Ganesha with Arch (11 in) | Crystal Jaipuria\",\"metaDescription\":\"Buy 11-inch Handcrafted Green Jade Stone Ganesha with Arch (2.85 kg). Authentic natural green jade carving for prosperity & spiritual decor at factory direct price.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North, East, or puja room mandir\",\"chakraPlanet\":\"Heart Chakra (Anahata) · Ruling Planet Mercury (Budha)\",\"poojaVidhi\":\"Worship every Wednesday with sacred Gangajal abhishekam, green durva grass, and pure cow ghee diya.\",\"vedicBenefits\":\"Bestows business growth, sharp intellect, stress relief, and auspicious blessings of Siddhivinayak.\"} -->",
+    "faqs": [
+      {
+        "question": "How does this 11-inch Green Jade Ganesha compare with competitor retail pieces?",
+        "answer": "Unlike commercial retail stores selling at ₹48,000+, Crystal Jaipuria crafts every statue directly at our Jaipur lapidary workshop, offering certified natural jade at direct manufacturer pricing of ₹28,500."
+      },
+      {
+        "question": "Can I perform daily puja and Jalabhishek on this Jade idol?",
+        "answer": "Yes, natural green jade is durable and non-porous. You can offer water, Gangajal, and milk Abhishek safely, drying with a soft cotton cloth afterwards."
+      },
+      {
+        "question": "What benefits does Green Jade bring according to Vedic Vastu?",
+        "answer": "Green Jade resonates with the Heart Chakra (Anahata) and planet Mercury (Budh), attracting commercial wealth, sharper decision-making, and harmonious relationships."
+      }
+    ],
+    "metaTitle": "Green Jade Stone Ganesha with Arch (11 in) | Crystal Jaipuria",
+    "metaDescription": "Buy 11-inch Handcrafted Green Jade Stone Ganesha with Arch (2.85 kg). Authentic natural green jade carving for prosperity & spiritual decor at factory direct price.",
+    "vedicVastu": {
+      "placementDirection": "North, East, or puja room mandir",
+      "chakraPlanet": "Heart Chakra (Anahata) · Ruling Planet Mercury (Budha)",
+      "poojaVidhi": "Worship every Wednesday with sacred Gangajal abhishekam, green durva grass, and pure cow ghee diya.",
+      "vedicBenefits": "Bestows business growth, sharp intellect, stress relief, and auspicious blessings of Siddhivinayak."
+    },
+    "images": [
+      "/images/green-jade-stone-ganesha-with-arch.webp",
+      "/images/green-jade-stone-ganesha-with-arch-2.webp",
+      "/images/green-jade-stone-ganesha-with-arch-3.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "categoryName": "God Statues",
+    "subCategoryId": {
+      "_id": "6a55bc842dcf49aacd71ef6b",
+      "name": "Ganesh",
+      "slug": "ganesh"
+    },
+    "subCategoryName": "Ganesh",
+    "size": "11.0 in (H) x 8.5 in (W) x 4.8 in (D)",
+    "weight": "2.85 kg",
+    "stock": 6,
+    "featured": true,
+    "pricePerUnit": "₹28,500",
+    "pricePerCarat": ""
+  },
+  {
+    "_id": "6a55cf012e9a358fc926c004",
+    "name": "Dark Green Aventurine Ganesha Idol",
+    "slug": "dark-green-aventurine-ganesha-idol",
+    "price": 14500,
+    "discountPrice": 19500,
+    "detail": "Captivating 2.10 kg Dark Green Aventurine Ganesha Idol exquisitely hand-sculpted in Jaipur. Known globally as the premier 'Stone of Opportunity', this deep forest green Ganpati murti balances heart energy, attracts commercial fortune, and removes hurdles with graceful tranquility.",
+    "description": "<p>Captivating 2.10 kg Dark Green Aventurine Ganesha Idol exquisitely hand-sculpted in Jaipur. Known globally as the premier 'Stone of Opportunity', this deep forest green Ganpati murti balances heart energy, attracts commercial fortune, and removes hurdles with graceful tranquility.</p>\n\n<h2>Vedic Healing & Green Aventurine Energy</h2>\n<p>Carved with sacred devotion by master gemstone carvers:</p>\n<ul>\n  <li><strong>Deep Forest Green Aventurine:</strong> Earth-mined crystal displaying subtle natural aventurescence and soothing tactile polish.</li>\n  <li><strong>Sacred Ganpati Iconography:</strong> Lord Ganesha seated peacefully with blessings of wisdom, abundance, and hurdle elimination.</li>\n  <li><strong>Heart Chakra (Anahata) Healing:</strong> Calms emotional distress, inspires optimism, and invites financial opportunities.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Dark Green Aventurine Ganesha Idol</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Natural Dark Green Aventurine Gemstone</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Gross Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">2.10 kg</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">9.5 in (H) x 7.0 in (W) x 4.2 in (D)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Basis</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹14,500 (Discounted from ₹19,500)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Placement</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North (Wealth) or East (Spiritual Harmony)</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Dark Green Aventurine Ganesha Idol</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Natural Dark Green Aventurine</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 2.10 kg</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 9.5 in (H) x 7.0 in (W) x 4.2 in (D)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing :</strong> ₹14,500 (Direct Workshop Price)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Direction :</strong> North or East in Study, Altar, or Desk</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"What makes Dark Green Aventurine a favored gemstone for Ganpati idols?\",\"answer\":\"Known in lapidary lore as the 'Stone of Opportunity', Green Aventurine is renowned for drawing positive financial luck, commercial windfalls, and heart chakra balance.\"},{\"question\":\"How can I verify the authenticity of this Green Aventurine idol?\",\"answer\":\"Natural aventurine features characteristic natural shimmer (aventurescence) from microscopic mineral platelets, remains naturally cool, and has substantial weight.\"},{\"question\":\"What is the recommended Wednesday puja ritual for this Ganesha idol?\",\"answer\":\"Bathe the idol in clean water or Gangajal, offer fresh green Durva grass, light a pure cow ghee deepak, and chant 'Om Gam Ganapataye Namaha' 108 times.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Dark Green Aventurine Ganesha Idol (2.1 kg) | Crystal Jaipuria\",\"metaDescription\":\"Handcrafted 2.1 kg Dark Green Aventurine Ganesha Idol from Jaipur. Auspicious Ganpati murti for vastu, heart chakra healing & prosperity at manufacturer price.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North (Financial abundance) or East (Spiritual harmony) in living room, study, or mandir\",\"chakraPlanet\":\"Heart Chakra (Anahata) · Planet Mercury (Budha)\",\"poojaVidhi\":\"Perform regular morning aarti with fragrant incense and pure ghee lamp. Offer Durva grass on Wednesdays.\",\"vedicBenefits\":\"Celebrated as the Stone of Opportunity, green aventurine aligns with positive luck, emotional tranquility, financial vitality, and clear focus.\"} -->",
+    "faqs": [
+      {
+        "question": "What makes Dark Green Aventurine a favored gemstone for Ganpati idols?",
+        "answer": "Known in lapidary lore as the 'Stone of Opportunity', Green Aventurine is renowned for drawing positive financial luck, commercial windfalls, and heart chakra balance."
+      },
+      {
+        "question": "How can I verify the authenticity of this Green Aventurine idol?",
+        "answer": "Natural aventurine features characteristic natural shimmer (aventurescence) from microscopic mineral platelets, remains naturally cool, and has substantial weight."
+      },
+      {
+        "question": "What is the recommended Wednesday puja ritual for this Ganesha idol?",
+        "answer": "Bathe the idol in clean water or Gangajal, offer fresh green Durva grass, light a pure cow ghee deepak, and chant 'Om Gam Ganapataye Namaha' 108 times."
+      }
+    ],
+    "metaTitle": "Dark Green Aventurine Ganesha Idol (2.1 kg) | Crystal Jaipuria",
+    "metaDescription": "Handcrafted 2.1 kg Dark Green Aventurine Ganesha Idol from Jaipur. Auspicious Ganpati murti for vastu, heart chakra healing & prosperity at manufacturer price.",
+    "vedicVastu": {
+      "placementDirection": "North (Financial abundance) or East (Spiritual harmony) in living room, study, or mandir",
+      "chakraPlanet": "Heart Chakra (Anahata) · Planet Mercury (Budha)",
+      "poojaVidhi": "Perform regular morning aarti with fragrant incense and pure ghee lamp. Offer Durva grass on Wednesdays.",
+      "vedicBenefits": "Celebrated as the Stone of Opportunity, green aventurine aligns with positive luck, emotional tranquility, financial vitality, and clear focus."
+    },
+    "images": [
+      "/images/dark-green-aventurine-ganesha-idol.webp",
+      "/images/dark-green-aventurine-ganesha-idol-2.webp",
+      "/images/dark-green-aventurine-ganesha-idol-3.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "categoryName": "God Statues",
+    "subCategoryId": {
+      "_id": "6a55bc842dcf49aacd71ef6b",
+      "name": "Ganesh",
+      "slug": "ganesh"
+    },
+    "subCategoryName": "Ganesh",
+    "size": "9.5 in (H) x 7.0 in (W) x 4.2 in (D)",
+    "weight": "2.10 kg",
+    "stock": 7,
+    "featured": true,
+    "pricePerUnit": "₹14,500",
+    "pricePerCarat": ""
+  },
+  {
+    "_id": "6a55cf012e9a358fc926c005",
+    "name": "Hand-Carved Lapis Lazuli Ganesha with Arch",
+    "slug": "lapis-lazuli-ganesha-with-arch",
+    "price": 34500,
+    "discountPrice": 46000,
+    "detail": "Breathtaking 3.20 kg Natural Lapis Lazuli Lord Ganesha statue framed within a magnificent carved arch. Hand-hewn from prime celestial blue lapis lazuli rich with golden pyrite veins and white calcite matrices, bringing royal prestige, clarity of mind, and divine protection to your sanctuary.",
+    "description": "<p>Breathtaking 3.20 kg Natural Lapis Lazuli Lord Ganesha statue framed within a magnificent carved arch. Hand-hewn from prime celestial blue lapis lazuli rich with golden pyrite veins and white calcite matrices, bringing royal prestige, clarity of mind, and divine protection to your sanctuary.</p>\n\n<h2>Celestial Royal Blue Lapis Lazuli & Divine Wisdom</h2>\n<p>Mastercrafted in Jaipur according to sacred Vedic iconometry:</p>\n<ul>\n  <li><strong>Natural Royal Indigo Lapis Lazuli:</strong> Dense earth-mined stone naturally flecked with shining golden iron pyrite grains.</li>\n  <li><strong>Sacred Carved Archway (Prabhavali):</strong> Surrounds Lord Ganesha in an auspicious mandala of cosmic wisdom and boundary protection.</li>\n  <li><strong>Third Eye (Ajna) Activation:</strong> Sharpens vision, heightens intellectual decision-making, and shields against psychic negativity.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Hand-Carved Lapis Lazuli Ganesha with Arch</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Natural Lapis Lazuli with Pyrite</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Gross Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">3.20 kg</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">11.5 in (H) x 8.0 in (W) x 4.5 in (D)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Basis</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹34,500 (Discounted from ₹46,000)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Placement</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Northeast (Ishanya), East Altar, or Study Desk</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Hand-Carved Lapis Lazuli Ganesha with Arch</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Natural Lapis Lazuli with Natural Pyrite</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 3.20 kg</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 11.5 in (H) x 8.0 in (W) x 4.5 in (D)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing :</strong> ₹34,500 (Factory Direct Wholesale)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Direction :</strong> Northeast or East facing Altar</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"Why does this Lapis Lazuli Ganesha have golden speckles throughout?\",\"answer\":\"Authentic natural Lapis Lazuli naturally contains genuine golden Pyrite (fool's gold) inclusions and white Calcite veins, validating that the stone is 100% natural and untreated.\"},{\"question\":\"What are the Vedic benefits of worshiping Lord Ganesha in Lapis Lazuli?\",\"answer\":\"Lapis Lazuli activates the Third Eye (Ajna) and Throat (Vishuddha) chakras. It promotes supreme wisdom, royal eloquence, decisive focus, and protection from negative eye.\"},{\"question\":\"Where should I position this 3.2 kg Lapis Lazuli Ganesha with Arch?\",\"answer\":\"Position it facing East or Northeast in your puja room, study library, or executive boardroom to invoke higher intellect and divine protection.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Hand-Carved Lapis Lazuli Ganesha with Arch (3.2 kg) | Crystal Jaipuria\",\"metaDescription\":\"Buy master-crafted 3.2 kg Natural Lapis Lazuli Lord Ganesha with Arch (Prabhavali). Authentic golden pyrite-flecked royal blue gemstone idol from Crystal Jaipuria.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"Northeast (Ishanya) corner, study table, or meditation room facing East\",\"chakraPlanet\":\"Third Eye Chakra (Ajna) & Throat Chakra (Vishuddha) · Planet Saturn (Shani Dev) & Jupiter (Brihaspati)\",\"poojaVidhi\":\"Worship on Saturday or Ganesh Chaturthi with pure water, blue flowers, and frankincense dhoop.\",\"vedicBenefits\":\"Lapis Lazuli promotes supreme intuition, regal wisdom, truth, and mental clarity. Gold pyrite flecks symbolize natural abundance and royal prestige.\"} -->",
+    "faqs": [
+      {
+        "question": "Why does this Lapis Lazuli Ganesha have golden speckles throughout?",
+        "answer": "Authentic natural Lapis Lazuli naturally contains genuine golden Pyrite (fool's gold) inclusions and white Calcite veins, validating that the stone is 100% natural and untreated."
+      },
+      {
+        "question": "What are the Vedic benefits of worshiping Lord Ganesha in Lapis Lazuli?",
+        "answer": "Lapis Lazuli activates the Third Eye (Ajna) and Throat (Vishuddha) chakras. It promotes supreme wisdom, royal eloquence, decisive focus, and protection from negative eye."
+      },
+      {
+        "question": "Where should I position this 3.2 kg Lapis Lazuli Ganesha with Arch?",
+        "answer": "Position it facing East or Northeast in your puja room, study library, or executive boardroom to invoke higher intellect and divine protection."
+      }
+    ],
+    "metaTitle": "Hand-Carved Lapis Lazuli Ganesha with Arch (3.2 kg) | Crystal Jaipuria",
+    "metaDescription": "Buy master-crafted 3.2 kg Natural Lapis Lazuli Lord Ganesha with Arch (Prabhavali). Authentic golden pyrite-flecked royal blue gemstone idol from Crystal Jaipuria.",
+    "vedicVastu": {
+      "placementDirection": "Northeast (Ishanya) corner, study table, or meditation room facing East",
+      "chakraPlanet": "Third Eye Chakra (Ajna) & Throat Chakra (Vishuddha) · Planet Saturn (Shani Dev) & Jupiter (Brihaspati)",
+      "poojaVidhi": "Worship on Saturday or Ganesh Chaturthi with pure water, blue flowers, and frankincense dhoop.",
+      "vedicBenefits": "Lapis Lazuli promotes supreme intuition, regal wisdom, truth, and mental clarity. Gold pyrite flecks symbolize natural abundance and royal prestige."
+    },
+    "images": [
+      "/images/lapis-lazuli-ganesha-with-arch.webp",
+      "/images/lapis-lazuli-ganesha-with-arch-2.webp",
+      "/images/lapis-lazuli-ganesha-with-arch-3.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "categoryName": "God Statues",
+    "subCategoryId": {
+      "_id": "6a55bc842dcf49aacd71ef6b",
+      "name": "Ganesh",
+      "slug": "ganesh"
+    },
+    "subCategoryName": "Ganesh",
+    "size": "11.5 in (H) x 8.0 in (W) x 4.5 in (D)",
+    "weight": "3.20 kg",
+    "stock": 5,
+    "featured": true,
+    "pricePerUnit": "₹34,500",
+    "pricePerCarat": ""
+  },
+  {
+    "_id": "6a55cf012e9a358fc926c006",
+    "name": "Natural Lapis Lazuli Ganesha Idol",
+    "slug": "natural-lapis-lazuli-ganesha-idol",
+    "price": 22500,
+    "discountPrice": 32000,
+    "detail": "Exquisitely hand-carved 1.55 kg Natural Lapis Lazuli Ganesha Idol. Features dense royal cobalt blue tone enriched with glittering gold pyrite flecks, sculpted in seated meditative posture with trunk turned gracefully to the left, bestowing peace and obstacle removal.",
+    "description": "<p>Exquisitely hand-carved 1.55 kg Natural Lapis Lazuli Ganesha Idol. Features dense royal cobalt blue tone enriched with glittering gold pyrite flecks, sculpted in seated meditative posture with trunk turned gracefully to the left, bestowing peace and obstacle removal.</p>\n\n<h2>Hand-Carved Lapis Lazuli & Sacred Auspiciousness</h2>\n<p>Meticulously shaped by master Jaipur artisans from raw lapis blocks:</p>\n<ul>\n  <li><strong>Dense Indigo Color:</strong> Premium-grade natural lapis lazuli mineral with natural golden pyrite sparkles.</li>\n  <li><strong>Vamavarti Trunk Posture:</strong> Left-turned trunk represents Ida Nadi (Chandra), creating gentle, peaceful, and auspicious family blessings.</li>\n  <li><strong>Exceptional Factory Price:</strong> Sourced and carved directly in Jaipur at ₹22,500 (competitor retail ₹40,000).</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Natural Lapis Lazuli Ganesha Idol</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Natural Lapis Lazuli</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Gross Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">1.55 kg</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">5.7 in (H) x 5.3 in (W) x 3.5 in (D)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Basis</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹22,500 (Discounted from ₹32,000)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Placement</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Northeast, East, or Personal Altar / Desk</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Natural Lapis Lazuli Ganesha Idol</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Natural Lapis Lazuli</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 1.55 kg</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 5.7 in (H) x 5.3 in (W) x 3.5 in (D)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing :</strong> ₹22,500 (Market Retail ₹40,000)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Direction :</strong> Northeast, East, or Mandir</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"What grade of natural Lapis Lazuli is used in this carving?\",\"answer\":\"We use premium deep royal indigo blue Lapis Lazuli richly interspersed with natural golden pyrite flecks, hand-selected and hand-polished by master artisans in Jaipur.\"},{\"question\":\"Is this Ganesha idol suitable for a home temple or office altar?\",\"answer\":\"Yes, at 5.7 inches and 1.55 kg, it is an ideal size for personal shrines, office desks, and spiritual gifting.\"},{\"question\":\"Why is Crystal Jaipuria's pricing lower than luxury retail stores?\",\"answer\":\"As direct gemcutters and manufacturers based in Jaipur, we bypass retail distributors, galleries, and middleman markups to provide authentic factory-direct pricing.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Natural Lapis Lazuli Ganesha Idol (1.55 kg) | Crystal Jaipuria\",\"metaDescription\":\"100% authentic 1.55 kg Natural Lapis Lazuli Ganesha Idol. Hand-carved deep royal blue gemstone Ganpati murti with natural golden pyrite flecks at wholesale price.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"Northeast, East, or personal desk / altar\",\"chakraPlanet\":\"Third Eye Chakra (Ajna) · Planet Saturn (Shani)\",\"poojaVidhi\":\"Clean with soft muslin cloth, bathe periodically with holy Gangajal, and light a sesame oil diya.\",\"vedicBenefits\":\"Fosters deep spiritual focus, protects against evil eye and negative vibrations, enhances decisive leadership and intellectual excellence.\"} -->",
+    "faqs": [
+      {
+        "question": "What grade of natural Lapis Lazuli is used in this carving?",
+        "answer": "We use premium deep royal indigo blue Lapis Lazuli richly interspersed with natural golden pyrite flecks, hand-selected and hand-polished by master artisans in Jaipur."
+      },
+      {
+        "question": "Is this Ganesha idol suitable for a home temple or office altar?",
+        "answer": "Yes, at 5.7 inches and 1.55 kg, it is an ideal size for personal shrines, office desks, and spiritual gifting."
+      },
+      {
+        "question": "Why is Crystal Jaipuria's pricing lower than luxury retail stores?",
+        "answer": "As direct gemcutters and manufacturers based in Jaipur, we bypass retail distributors, galleries, and middleman markups to provide authentic factory-direct pricing."
+      }
+    ],
+    "metaTitle": "Natural Lapis Lazuli Ganesha Idol (1.55 kg) | Crystal Jaipuria",
+    "metaDescription": "100% authentic 1.55 kg Natural Lapis Lazuli Ganesha Idol. Hand-carved deep royal blue gemstone Ganpati murti with natural golden pyrite flecks at wholesale price.",
+    "vedicVastu": {
+      "placementDirection": "Northeast, East, or personal desk / altar",
+      "chakraPlanet": "Third Eye Chakra (Ajna) · Planet Saturn (Shani)",
+      "poojaVidhi": "Clean with soft muslin cloth, bathe periodically with holy Gangajal, and light a sesame oil diya.",
+      "vedicBenefits": "Fosters deep spiritual focus, protects against evil eye and negative vibrations, enhances decisive leadership and intellectual excellence."
+    },
+    "images": [
+      "/images/natural-lapis-lazuli-ganesha-idol.webp",
+      "/images/natural-lapis-lazuli-ganesha-idol-2.webp",
+      "/images/natural-lapis-lazuli-ganesha-idol-3.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "categoryName": "God Statues",
+    "subCategoryId": {
+      "_id": "6a55bc842dcf49aacd71ef6b",
+      "name": "Ganesh",
+      "slug": "ganesh"
+    },
+    "subCategoryName": "Ganesh",
+    "size": "5.7 in (H) x 5.3 in (W) x 3.5 in (D)",
+    "weight": "1.55 kg",
+    "stock": 6,
+    "featured": true,
+    "pricePerUnit": "₹22,500",
+    "pricePerCarat": ""
+  },
+  {
+    "_id": "6a55cf012e9a358fc926c007",
+    "name": "Intricately Carved Wooden Ganesha Shrine",
+    "slug": "intricately-carved-wooden-ganesha-shrine",
+    "price": 18500,
+    "discountPrice": 26000,
+    "detail": "Exquisite 12-inch Intricately Carved Wooden Ganesha Shrine and temple sculpture weighing 2.40 kg. Hand-sculpted by master artisans featuring ornate floral jali arches, pillar pillars, and seated Lord Ganesha, creating an awe-inspiring sacred sanctum for home and temple shrines.",
+    "description": "<p>Exquisite 12-inch Intricately Carved Wooden Ganesha Shrine and temple sculpture weighing 2.40 kg. Hand-sculpted by master artisans featuring ornate floral jali arches, pillar pillars, and seated Lord Ganesha, creating an awe-inspiring sacred sanctum for home and temple shrines.</p>\n\n<h2>Master Woodcraft & Architectural Sanctity</h2>\n<p>Carved with sacred precision from seasoned natural wood:</p>\n<ul>\n  <li><strong>Architectural Mandir Carving:</strong> Features grand ornamental archways, tiered crown shikhara, and delicate filigree openwork.</li>\n  <li><strong>Centerpiece Ganesha Murti:</strong> Seated Lord Ganpati in divine blessing pose with sacred trunk, modak, and weapons of protection.</li>\n  <li><strong>Heirloom Durability:</strong> Finished with protective natural wax sealant safeguarding against moisture and aging.</li>\n</ul>\n\n<h2>Technical & Woodcraft Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Intricately Carved Wooden Ganesha Shrine</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Natural Seasoned Hardwood with Natural Sealant</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Gross Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">2.40 kg</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">12.0 in (H) x 9.5 in (W) x 5.0 in (D)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Basis</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹18,500 (Discounted from ₹26,000)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Placement</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">East or Northeast Altar, Living Room Shrine</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Intricately Carved Wooden Ganesha Shrine</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> Seasoned Natural Hardwood</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 2.40 kg</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 12.0 in (H) x 9.5 in (W) x 5.0 in (D)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing :</strong> ₹18,500 (Direct Workshop Rate)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Direction :</strong> East or Northeast Altar</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"What makes this carved wooden Ganesha shrine special?\",\"answer\":\"This spiritual masterpiece features an intricately carved architectural temple shrine with floral jali work and a centered hand-sculpted Lord Ganesha, creating a complete mandir altar.\"},{\"question\":\"What wood is used and how is it preserved?\",\"answer\":\"Crafted from seasoned natural hardwood treated with natural wax and protective sealants to prevent moisture absorption and ensure heirloom longevity.\"},{\"question\":\"Where should this wooden Ganesha temple shrine be placed?\",\"answer\":\"Place in the Northeast (Ishanya) or East of your home, living room mantelpiece, or entryway to welcome divine auspiciousness and Vastu harmony.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Intricately Carved Wooden Ganesha Shrine (12 in) | Crystal Jaipuria\",\"metaDescription\":\"Buy exquisite 12-inch Intricately Carved Wooden Ganesha Shrine & Temple Sculpture (2.4 kg). Master handcrafted spiritual artwork for home temple from Crystal Jaipuria.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"East or Northeast in main altar, meditation space, or foyer\",\"chakraPlanet\":\"Root Chakra (Muladhara) & Crown Chakra (Sahasrara) · Planet Jupiter (Guru Dev)\",\"poojaVidhi\":\"Worship on Thursdays or auspicious beginnings with incense, fresh yellow marigold garlands, and chandan tilak.\",\"vedicBenefits\":\"Brings divine architectural sanctity, grounding energy, peaceful family harmony, and auspicious Vastu blessings of Lord Ganpati.\"} -->",
+    "faqs": [
+      {
+        "question": "What makes this carved wooden Ganesha shrine special?",
+        "answer": "This spiritual masterpiece features an intricately carved architectural temple shrine with floral jali work and a centered hand-sculpted Lord Ganesha, creating a complete mandir altar."
+      },
+      {
+        "question": "What wood is used and how is it preserved?",
+        "answer": "Crafted from seasoned natural hardwood treated with natural wax and protective sealants to prevent moisture absorption and ensure heirloom longevity."
+      },
+      {
+        "question": "Where should this wooden Ganesha temple shrine be placed?",
+        "answer": "Place in the Northeast (Ishanya) or East of your home, living room mantelpiece, or entryway to welcome divine auspiciousness and Vastu harmony."
+      }
+    ],
+    "metaTitle": "Intricately Carved Wooden Ganesha Shrine (12 in) | Crystal Jaipuria",
+    "metaDescription": "Buy exquisite 12-inch Intricately Carved Wooden Ganesha Shrine & Temple Sculpture (2.4 kg). Master handcrafted spiritual artwork for home temple from Crystal Jaipuria.",
+    "vedicVastu": {
+      "placementDirection": "East or Northeast in main altar, meditation space, or foyer",
+      "chakraPlanet": "Root Chakra (Muladhara) & Crown Chakra (Sahasrara) · Planet Jupiter (Guru Dev)",
+      "poojaVidhi": "Worship on Thursdays or auspicious beginnings with incense, fresh yellow marigold garlands, and chandan tilak.",
+      "vedicBenefits": "Brings divine architectural sanctity, grounding energy, peaceful family harmony, and auspicious Vastu blessings of Lord Ganpati."
+    },
+    "images": [
+      "/images/intricately-carved-wooden-ganesha-shrine.webp",
+      "/images/intricately-carved-wooden-ganesha-shrine-2.webp",
+      "/images/intricately-carved-wooden-ganesha-shrine-3.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "categoryName": "God Statues",
+    "subCategoryId": {
+      "_id": "6a55bc842dcf49aacd71ef6b",
+      "name": "Ganesh",
+      "slug": "ganesh"
+    },
+    "subCategoryName": "Ganesh",
+    "size": "12.0 in (H) x 9.5 in (W) x 5.0 in (D)",
+    "weight": "2.40 kg",
+    "stock": 5,
+    "featured": true,
+    "pricePerUnit": "₹18,500",
+    "pricePerCarat": ""
+  },
   {
     "_id": "6abfa0013618032686f06001",
     "name": "Goddess Kali in Black Obsidian",
@@ -1136,7 +1512,6 @@ export const FALLBACK_PRODUCTS = [
     "pricePerUnit": "₹18.6 / gram",
     "pricePerGram": 18.6
   },
-
   {
     "_id": "6abe9e153618032686f05291",
     "name": "Durga Devi Ruby Idol",
@@ -1529,7 +1904,7 @@ export const FALLBACK_PRODUCTS = [
       "vedicBenefits": "Vighnaharta grace removing professional blockages, awakening creative clarity, and protecting new business ventures."
     },
     "images": [
-      "/images/hand-carved-rose-quartz-ganesha-with-sterling-silver-testing.webp",
+      "/images/hand-carved-rose-quartz-ganesha-with-sterling-silver-testing.webp"
     ],
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
@@ -1594,7 +1969,7 @@ export const FALLBACK_PRODUCTS = [
       "vedicBenefits": "Vighnaharta grace removing professional blockages, awakening creative clarity, and protecting new business ventures."
     },
     "images": [
-      "/images/australian-jade-ganesha-carving.webp",
+      "/images/australian-jade-ganesha-carving.webp"
     ],
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
@@ -1659,7 +2034,7 @@ export const FALLBACK_PRODUCTS = [
       "vedicBenefits": "Vighnaharta grace removing professional blockages, awakening creative clarity, and protecting new business ventures."
     },
     "images": [
-      "/images/hand-carved-ruby-ganesha.webp",
+      "/images/hand-carved-ruby-ganesha.webp"
     ],
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
@@ -1724,7 +2099,7 @@ export const FALLBACK_PRODUCTS = [
       "vedicBenefits": "Radiates unconditional love, heals emotional heartache, dissolves domestic friction, and blesses relationships with joyous unity."
     },
     "images": [
-      "/images/natural-ruby-radha-krishna-idol-hand-carved.webp",
+      "/images/natural-ruby-radha-krishna-idol-hand-carved.webp"
     ],
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
@@ -1789,7 +2164,7 @@ export const FALLBACK_PRODUCTS = [
       "vedicBenefits": "Multi-directional pyramidal vortex that continuously clears stagnant financial blockages and attracts high-vibrational wealth."
     },
     "images": [
-      "/images/crystal-shree-yantra.webp",
+      "/images/crystal-shree-yantra.webp"
     ],
     "categoryId": {
       "_id": "6a55bc362dcf49aacd71ef66",
@@ -1854,7 +2229,7 @@ export const FALLBACK_PRODUCTS = [
       "vedicBenefits": "Vighnaharta grace removing professional blockages, awakening creative clarity, and protecting new business ventures."
     },
     "images": [
-      "/images/green-jade-ganesha.webp",
+      "/images/green-jade-ganesha.webp"
     ],
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
@@ -1919,7 +2294,7 @@ export const FALLBACK_PRODUCTS = [
       "vedicBenefits": "Vighnaharta grace removing professional blockages, awakening creative clarity, and protecting new business ventures."
     },
     "images": [
-      "/images/rose-quartz-ganesha.webp",
+      "/images/rose-quartz-ganesha.webp"
     ],
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
@@ -1984,7 +2359,7 @@ export const FALLBACK_PRODUCTS = [
       "vedicBenefits": "Multi-directional pyramidal vortex that continuously clears stagnant financial blockages and attracts high-vibrational wealth."
     },
     "images": [
-      "/images/green-jade-shree-yantra.webp",
+      "/images/green-jade-shree-yantra.webp"
     ],
     "categoryId": {
       "_id": "6a55bc362dcf49aacd71ef66",
@@ -2049,7 +2424,7 @@ export const FALLBACK_PRODUCTS = [
       "vedicBenefits": "Purifies household Vastu doshas, dispels negative astral energies, and bestows profound meditative stillness."
     },
     "images": [
-      "/images/green-jade-shivling.webp",
+      "/images/green-jade-shivling.webp"
     ],
     "categoryId": {
       "_id": "6a55bc292dcf49aacd71ef65",
@@ -2114,7 +2489,7 @@ export const FALLBACK_PRODUCTS = [
       "vedicBenefits": "Vighnaharta grace removing professional blockages, awakening creative clarity, and protecting new business ventures."
     },
     "images": [
-      "/images/crystal-ganesha.webp",
+      "/images/crystal-ganesha.webp"
     ],
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
@@ -2183,7 +2558,7 @@ export const FALLBACK_PRODUCTS = [
       "vedicBenefits": "Purifies household Vastu doshas, dispels negative astral energies, and bestows profound meditative stillness."
     },
     "images": [
-      "/images/crystal-shivling.webp",
+      "/images/crystal-shivling.webp"
     ],
     "categoryId": {
       "_id": "6a55bc292dcf49aacd71ef65",
@@ -2248,7 +2623,7 @@ export const FALLBACK_PRODUCTS = [
       "vedicBenefits": "Vighnaharta grace removing professional blockages, awakening creative clarity, and protecting new business ventures."
     },
     "images": [
-      "/images/blue-sodalite-carved-ganesha-statue.webp",
+      "/images/blue-sodalite-carved-ganesha-statue.webp"
     ],
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
@@ -2313,7 +2688,7 @@ export const FALLBACK_PRODUCTS = [
       "vedicBenefits": "Vighnaharta grace removing professional blockages, awakening creative clarity, and protecting new business ventures."
     },
     "images": [
-      "/images/rose-quartz-ganesha-with-gold-painted.webp",
+      "/images/rose-quartz-ganesha-with-gold-painted.webp"
     ],
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
@@ -2378,7 +2753,7 @@ export const FALLBACK_PRODUCTS = [
       "vedicBenefits": "Awakens inner fearlessness, yogic clarity, mental discipline, and destroys deep-seated anxiety."
     },
     "images": [
-      "/images/blue-sodalite-carved-lord-shiva-statue.webp",
+      "/images/blue-sodalite-carved-lord-shiva-statue.webp"
     ],
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
@@ -2443,7 +2818,7 @@ export const FALLBACK_PRODUCTS = [
       "vedicBenefits": "Impenetrable shield against evil eye (Buri Nazar), fear, and acute planetary distress. Bestows moral courage and physical endurance."
     },
     "images": [
-      "/images/natural-blue-sodalite-hanuman-ji-statue.webp",
+      "/images/natural-blue-sodalite-hanuman-ji-statue.webp"
     ],
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
@@ -2508,7 +2883,7 @@ export const FALLBACK_PRODUCTS = [
       "vedicBenefits": "Purifies household Vastu doshas, dispels negative astral energies, and bestows profound meditative stillness."
     },
     "images": [
-      "/images/natural-red-jasper-gemstone-shivling.webp",
+      "/images/natural-red-jasper-gemstone-shivling.webp"
     ],
     "categoryId": {
       "_id": "6a55bc292dcf49aacd71ef65",
@@ -2573,7 +2948,7 @@ export const FALLBACK_PRODUCTS = [
       "vedicBenefits": "Awakens inner fearlessness, yogic clarity, mental discipline, and destroys deep-seated anxiety."
     },
     "images": [
-      "/images/blue-sodalite-carving-shiva-face-idol.webp",
+      "/images/blue-sodalite-carving-shiva-face-idol.webp"
     ],
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
@@ -2638,7 +3013,7 @@ export const FALLBACK_PRODUCTS = [
       "vedicBenefits": "Awakens inner fearlessness, yogic clarity, mental discipline, and destroys deep-seated anxiety."
     },
     "images": [
-      "/images/labradorite-power-mini-shiva-face.webp",
+      "/images/labradorite-power-mini-shiva-face.webp"
     ],
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
@@ -2703,7 +3078,7 @@ export const FALLBACK_PRODUCTS = [
       "vedicBenefits": "Vighnaharta grace removing professional blockages, awakening creative clarity, and protecting new business ventures."
     },
     "images": [
-      "/images/natural-yellow-jade-ganesha-statue.webp",
+      "/images/natural-yellow-jade-ganesha-statue.webp"
     ],
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
@@ -2768,7 +3143,7 @@ export const FALLBACK_PRODUCTS = [
       "vedicBenefits": "Radiates Ahimsa (universal compassion), detachment from stress, inner conquest of passions, and soulful peace."
     },
     "images": [
-      "/images/rose-quartz-bhagwan-mahaveer-statue.webp",
+      "/images/rose-quartz-bhagwan-mahaveer-statue.webp"
     ],
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
@@ -2833,7 +3208,7 @@ export const FALLBACK_PRODUCTS = [
       "vedicBenefits": "Awakens inner fearlessness, yogic clarity, mental discipline, and destroys deep-seated anxiety."
     },
     "images": [
-      "/images/tiger-eye-carving-shiva-statue.webp",
+      "/images/tiger-eye-carving-shiva-statue.webp"
     ],
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
@@ -4354,7 +4729,7 @@ export const FALLBACK_PRODUCTS = [
       "vedicBenefits": "Purifies household Vastu doshas, dispels negative astral energies, and bestows profound meditative stillness."
     },
     "images": [
-      "/images/green-jade-panchmukhi-shivling.webp",
+      "/images/green-jade-panchmukhi-shivling.webp"
     ],
     "categoryId": {
       "_id": "6a55bc292dcf49aacd71ef65",
@@ -4485,7 +4860,7 @@ export const FALLBACK_PRODUCTS = [
       "vedicBenefits": "Airavata royal power anchor, locking in business stability, family prestige, and enduring financial strength."
     },
     "images": [
-      "/images/green-jade-elephant-staute.webp",
+      "/images/green-jade-elephant-staute.webp"
     ],
     "categoryId": {
       "_id": "6a55bc492dcf49aacd71ef68",
@@ -4617,7 +4992,7 @@ export const FALLBACK_PRODUCTS = [
       "vedicBenefits": "Awakens inner fearlessness, yogic clarity, mental discipline, and destroys deep-seated anxiety."
     },
     "images": [
-      "/images/green-jade-carving-shiva-face-statue.webp",
+      "/images/green-jade-carving-shiva-face-statue.webp"
     ],
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
@@ -4748,7 +5123,7 @@ export const FALLBACK_PRODUCTS = [
       "vedicBenefits": "Vighnaharta grace removing professional blockages, awakening creative clarity, and protecting new business ventures."
     },
     "images": [
-      "/images/black-agate-gemstone-carving-of-ganesh.webp",
+      "/images/black-agate-gemstone-carving-of-ganesh.webp"
     ],
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
@@ -6184,794 +6559,409 @@ export const FALLBACK_PRODUCTS = [
     "pricePerCarat": 126
   },
   {
-  "_id": "6abd50150000000000000000",
-  "name": "Natural Black Agate Diya",
-  "slug": "black-agate-diya",
-  "price": 4000,
-  "discountPrice": 6999,
-  "detail": "Handcrafted from 100% natural volcanic Black Agate (Kala Akik), this sacred teardrop Diya is sculpted by master lapidary artisans of Jaipur (est. 1989). Featuring a smooth polished glossy finish, distinctive natural stone patterns, and a deep sculpted oil bowl, this protective gemstone deepak shields your sacred space against evil eye (Nazar dosha) and negative energies while anchoring root chakra stability.",
-  "description": "<p>Handcrafted from 100% certified <strong>Natural Black Agate (Kala Akik)</strong>, this exquisite teardrop <strong>Natural Black Agate Diya</strong> is meticulously sculpted by master generational artisans at Crystal Jaipuria, Jaipur (est. 1989). Combining classical Vedic craft with authentic earth-mined healing gemstone, it radiates grounding vibrations, dispels negative aura, and brings timeless protective elegance to your home mandir, altar, and sacred spaces.</p>\n\n<h2>Spiritual Significance & Protective Shani-Rahu Energies</h2>\n<p>In Vedic Vastu and lapidary traditions, Black Agate (Akik) is revered as a powerful energetic vacuum and protective amulet:</p>\n<ul>\n  <li><strong>Supreme Shield Against Evil Eye (Nazar Raksha):</strong> Black Agate neutralizes malevolent environmental frequencies, jealousy, and psychic toxicity, casting a protective energetic barrier around the home.</li>\n  <li><strong>Root Chakra (Muladhara) Grounding:</strong> Balances the root chakra, anchoring calm emotional resilience, unshakeable mental clarity, and relieving anxiety during spiritual contemplation.</li>\n  <li><strong>Distinctive Teardrop Sculpted Bowl:</strong> Hand-carved with smooth polished contours, a deep oil reservoir, and an ergonomic wick spout for steady, soot-free flame offering.</li>\n  <li><strong>Ideal for Daily Puja & Sacred Gifting:</strong> Auspicious for evening aarti, Diwali celebrations, Navratri, and housewarming gifts.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Natural Black Agate Diya</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Black Agate (Microcrystalline Quartz)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Estimated Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">95 Grams (Approx. 85 - 110 g)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size & Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">3.0 in (L) x 2.2 in (W) x 1.0 in (H)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">South, South-West, or Temple Altar</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
-  "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Natural Black Agate Diya</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Natural Black Agate</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 95 Grams</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 3.0 in (L) x 2.2 in (W) x 1.0 in (H)</li>\n  <li><strong class=\"font-bold text-gray-900\">Listed Price :</strong> ₹4,000</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> South or South-West corner, facing North</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone (Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof box with 100% insured express delivery</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"What are the spiritual benefits of lighting a Black Agate Diya?\",\"answer\":\"Black Agate acts as a natural energetic vacuum that absorbs psychic negativity, evil eye (nazar), and domestic stress while grounding the root chakra for peace.\"},{\"question\":\"Which oil or ghee is recommended for this Black Agate Diya?\",\"answer\":\"Pure mustard (Sarson) oil or sesame (Til) oil is particularly auspicious for Saturn and protective rites, while pure desi cow ghee can be used for daily sattvic prayers.\"},{\"question\":\"Does the flame heat damage the natural Black Agate gemstone?\",\"answer\":\"No, natural Agate has high thermal durability (Mohs hardness 6.5-7.0) and thick handcrafted walls that safely withstand daily puja flames.\"},{\"question\":\"How do I clean and care for this gemstone diya?\",\"answer\":\"Wash gently with lukewarm water and mild organic soap using a soft cotton cloth. Wipe completely dry after use.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Natural Black Agate Diya | Handcrafted Gemstone Deepak | Crystal Jaipuria\",\"metaDescription\":\"Buy 100% certified Natural Black Agate Diya in teardrop shape. Protective gemstone lamp for mandir, evil eye protection & home decor at ₹1,250 from Crystal Jaipuria.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"South or South-West corner facing North, or Temple Altar\",\"chakraPlanet\":\"Root Chakra (Muladhara) · Planet Saturn (Shani) & Rahu\",\"poojaVidhi\":\"Fill with pure cow ghee or sesame/mustard oil with a cotton wick. Light during evening Aarti or Saturday prayers.\",\"vedicBenefits\":\"Dissolves negative energy, shields against evil eye (Nazar dosha), and anchors emotional resilience and courage.\"} -->",
-  "faqs": [
-    {
-      "question": "What are the spiritual benefits of lighting a Black Agate Diya?",
-      "answer": "Black Agate acts as a natural energetic vacuum that absorbs psychic negativity, evil eye (nazar), and domestic stress while grounding the root chakra for peace."
+    "_id": "6abd50150000000000000000",
+    "name": "Natural Black Agate Diya",
+    "slug": "black-agate-diya",
+    "price": 4000,
+    "discountPrice": 6999,
+    "detail": "Handcrafted from 100% natural volcanic Black Agate (Kala Akik), this sacred teardrop Diya is sculpted by master lapidary artisans of Jaipur (est. 1989). Featuring a smooth polished glossy finish, distinctive natural stone patterns, and a deep sculpted oil bowl, this protective gemstone deepak shields your sacred space against evil eye (Nazar dosha) and negative energies while anchoring root chakra stability.",
+    "description": "<p>Handcrafted from 100% certified <strong>Natural Black Agate (Kala Akik)</strong>, this exquisite teardrop <strong>Natural Black Agate Diya</strong> is meticulously sculpted by master generational artisans at Crystal Jaipuria, Jaipur (est. 1989). Combining classical Vedic craft with authentic earth-mined healing gemstone, it radiates grounding vibrations, dispels negative aura, and brings timeless protective elegance to your home mandir, altar, and sacred spaces.</p>\n\n<h2>Spiritual Significance & Protective Shani-Rahu Energies</h2>\n<p>In Vedic Vastu and lapidary traditions, Black Agate (Akik) is revered as a powerful energetic vacuum and protective amulet:</p>\n<ul>\n  <li><strong>Supreme Shield Against Evil Eye (Nazar Raksha):</strong> Black Agate neutralizes malevolent environmental frequencies, jealousy, and psychic toxicity, casting a protective energetic barrier around the home.</li>\n  <li><strong>Root Chakra (Muladhara) Grounding:</strong> Balances the root chakra, anchoring calm emotional resilience, unshakeable mental clarity, and relieving anxiety during spiritual contemplation.</li>\n  <li><strong>Distinctive Teardrop Sculpted Bowl:</strong> Hand-carved with smooth polished contours, a deep oil reservoir, and an ergonomic wick spout for steady, soot-free flame offering.</li>\n  <li><strong>Ideal for Daily Puja & Sacred Gifting:</strong> Auspicious for evening aarti, Diwali celebrations, Navratri, and housewarming gifts.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Natural Black Agate Diya</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Black Agate (Microcrystalline Quartz)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Estimated Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">95 Grams (Approx. 85 - 110 g)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size & Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">3.0 in (L) x 2.2 in (W) x 1.0 in (H)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">South, South-West, or Temple Altar</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Natural Black Agate Diya</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Natural Black Agate</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 95 Grams</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 3.0 in (L) x 2.2 in (W) x 1.0 in (H)</li>\n  <li><strong class=\"font-bold text-gray-900\">Listed Price :</strong> ₹4,000</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> South or South-West corner, facing North</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone (Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof box with 100% insured express delivery</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"What are the spiritual benefits of lighting a Black Agate Diya?\",\"answer\":\"Black Agate acts as a natural energetic vacuum that absorbs psychic negativity, evil eye (nazar), and domestic stress while grounding the root chakra for peace.\"},{\"question\":\"Which oil or ghee is recommended for this Black Agate Diya?\",\"answer\":\"Pure mustard (Sarson) oil or sesame (Til) oil is particularly auspicious for Saturn and protective rites, while pure desi cow ghee can be used for daily sattvic prayers.\"},{\"question\":\"Does the flame heat damage the natural Black Agate gemstone?\",\"answer\":\"No, natural Agate has high thermal durability (Mohs hardness 6.5-7.0) and thick handcrafted walls that safely withstand daily puja flames.\"},{\"question\":\"How do I clean and care for this gemstone diya?\",\"answer\":\"Wash gently with lukewarm water and mild organic soap using a soft cotton cloth. Wipe completely dry after use.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Natural Black Agate Diya | Handcrafted Gemstone Deepak | Crystal Jaipuria\",\"metaDescription\":\"Buy 100% certified Natural Black Agate Diya in teardrop shape. Protective gemstone lamp for mandir, evil eye protection & home decor at ₹1,250 from Crystal Jaipuria.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"South or South-West corner facing North, or Temple Altar\",\"chakraPlanet\":\"Root Chakra (Muladhara) · Planet Saturn (Shani) & Rahu\",\"poojaVidhi\":\"Fill with pure cow ghee or sesame/mustard oil with a cotton wick. Light during evening Aarti or Saturday prayers.\",\"vedicBenefits\":\"Dissolves negative energy, shields against evil eye (Nazar dosha), and anchors emotional resilience and courage.\"} -->",
+    "faqs": [
+      {
+        "question": "What are the spiritual benefits of lighting a Black Agate Diya?",
+        "answer": "Black Agate acts as a natural energetic vacuum that absorbs psychic negativity, evil eye (nazar), and domestic stress while grounding the root chakra for peace."
+      },
+      {
+        "question": "Which oil or ghee is recommended for this Black Agate Diya?",
+        "answer": "Pure mustard (Sarson) oil or sesame (Til) oil is particularly auspicious for Saturn and protective rites, while pure desi cow ghee can be used for daily sattvic prayers."
+      },
+      {
+        "question": "Does the flame heat damage the natural Black Agate gemstone?",
+        "answer": "No, natural Agate has high thermal durability (Mohs hardness 6.5-7.0) and thick handcrafted walls that safely withstand daily puja flames."
+      },
+      {
+        "question": "How do I clean and care for this gemstone diya?",
+        "answer": "Wash gently with lukewarm water and mild organic soap using a soft cotton cloth. Wipe completely dry after use."
+      }
+    ],
+    "metaTitle": "Natural Black Agate Diya | Handcrafted Gemstone Deepak | Crystal Jaipuria",
+    "metaDescription": "Buy 100% certified Natural Black Agate Diya in teardrop shape. Protective gemstone lamp for mandir, evil eye protection & home decor at ₹1,250 from Crystal Jaipuria.",
+    "vedicVastu": {
+      "placementDirection": "South or South-West corner facing North, or Temple Altar",
+      "chakraPlanet": "Root Chakra (Muladhara) · Planet Saturn (Shani) & Rahu",
+      "poojaVidhi": "Fill with pure cow ghee or sesame/mustard oil with a cotton wick. Light during evening Aarti or Saturday prayers.",
+      "vedicBenefits": "Dissolves negative energy, shields against evil eye (Nazar dosha), and anchors emotional resilience and courage."
     },
-    {
-      "question": "Which oil or ghee is recommended for this Black Agate Diya?",
-      "answer": "Pure mustard (Sarson) oil or sesame (Til) oil is particularly auspicious for Saturn and protective rites, while pure desi cow ghee can be used for daily sattvic prayers."
+    "images": [
+      "/images/black-agate-diya.webp",
+      "/images/black-agate-diya-2.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bc522dcf49aacd71ef69",
+      "name": "Diya",
+      "slug": "diya"
     },
-    {
-      "question": "Does the flame heat damage the natural Black Agate gemstone?",
-      "answer": "No, natural Agate has high thermal durability (Mohs hardness 6.5-7.0) and thick handcrafted walls that safely withstand daily puja flames."
+    "categoryName": "Diya",
+    "subCategoryId": {
+      "_id": "6a55bcad2dcf49aacd71ef6e",
+      "name": "Diya",
+      "slug": "diya"
     },
-    {
-      "question": "How do I clean and care for this gemstone diya?",
-      "answer": "Wash gently with lukewarm water and mild organic soap using a soft cotton cloth. Wipe completely dry after use."
-    }
-  ],
-  "metaTitle": "Natural Black Agate Diya | Handcrafted Gemstone Deepak | Crystal Jaipuria",
-  "metaDescription": "Buy 100% certified Natural Black Agate Diya in teardrop shape. Protective gemstone lamp for mandir, evil eye protection & home decor at ₹1,250 from Crystal Jaipuria.",
-  "vedicVastu": {
-    "placementDirection": "South or South-West corner facing North, or Temple Altar",
-    "chakraPlanet": "Root Chakra (Muladhara) · Planet Saturn (Shani) & Rahu",
-    "poojaVidhi": "Fill with pure cow ghee or sesame/mustard oil with a cotton wick. Light during evening Aarti or Saturday prayers.",
-    "vedicBenefits": "Dissolves negative energy, shields against evil eye (Nazar dosha), and anchors emotional resilience and courage."
+    "subCategoryName": "Diya",
+    "size": "3.0 Inch",
+    "weight": "95 g",
+    "stock": 15,
+    "featured": true,
+    "pricePerUnit": "",
+    "pricePerCarat": ""
   },
-  "images": [
-    "/images/black-agate-diya.webp",
-    "/images/black-agate-diya-2.webp"
-  ],
-  "categoryId": {
-    "_id": "6a55bc522dcf49aacd71ef69",
-    "name": "Diya",
-    "slug": "diya"
-  },
-  "categoryName": "Diya",
-  "subCategoryId": {
-    "_id": "6a55bcad2dcf49aacd71ef6e",
-    "name": "Diya",
-    "slug": "diya"
-  },
-  "subCategoryName": "Diya",
-  "size": "3.0 Inch",
-  "weight": "95 g",
-  "stock": 15,
-  "featured": true,
-  "pricePerUnit": "",
-  "pricePerCarat": ""
-},
   {
-  "_id": "6abd50160000000000000000",
-  "name": "Natural Lapis Lazuli Diya",
-  "slug": "lapis-lazuli-diya",
-  "price": 515,
-  "discountPrice": 650,
-  "detail": "Hand-carved from 100% certified royal blue Lapis Lazuli gemstone studded with glittering golden pyrite flecks. This sacred teardrop Diya symbolizes wisdom, divine protection, and inner peace. Meticulously handcrafted by master artisans of Jaipur (est. 1989), it enhances third eye clarity and radiates auspicious sattvic light across your altar.",
-  "description": "<p>Sculpted from 100% natural earth-mined <strong>Lapis Lazuli (Lajward)</strong>, this majestic <strong>Natural Lapis Lazuli Diya</strong> combines deep celestial blue mineral matrix with sparkling golden pyrite (fool's gold) inclusions. Hand-carved by hereditary lapidary artisans of Jaipur (est. 1989), it brings positive energy, truth, wisdom, and protection to your sacred space.</p>\n\n<h2>Symbol of Wisdom, Protection & Positive Energy</h2>\n<p>Revered for over 6,000 years across ancient civilizations and Vedic texts as a stone of royalty and divine communion:</p>\n<ul>\n  <li><strong>Third Eye (Ajna) & Throat Chakra Awakening:</strong> Illuminates higher spiritual awareness, deepens meditation, and dispels mental restlessness and stress.</li>\n  <li><strong>Celestial Golden Pyrite Flecks:</strong> Natural golden specks attract abundance, ward off negative auric vibrations, and balance planetary influences of Shani and Brihaspati.</li>\n  <li><strong>Artisanal Teardrop Design:</strong> Seamless polished bowl and spout specifically sculpted for pure cow ghee and fragrant sesame oil offerings.</li>\n  <li><strong>Ideal for Puja, Meditation & Sacred Gifting:</strong> Brings majestic temple elegance to home sanctums and study rooms.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Natural Lapis Lazuli Diya</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Lapis Lazuli with Golden Pyrite Flecks</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Estimated Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">105 Grams (Approx. 90 - 120 g)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size & Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">3.0 in (L) x 2.2 in (W) x 1.0 in (H)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North-East (Ishanya Kon), East, or Study Shrine</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
-  "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Natural Lapis Lazuli Diya</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Natural Lapis Lazuli with Pyrite</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 105 Grams</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 3.0 in (L) x 2.2 in (W) x 1.0 in (H)</li>\n  <li><strong class=\"font-bold text-gray-900\">Listed Price :</strong> ₹515</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North-East (Ishanya Kon) or East</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone (Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof box with 100% insured express delivery</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"Why is Lapis Lazuli considered sacred for lighting lamps?\",\"answer\":\"Lapis Lazuli is the gemstone of cosmic truth and higher intellect. When combined with sacred Agni (fire), it stimulates the Ajna (third eye) chakra and purifies the household mental environment.\"},{\"question\":\"How can I identify genuine Lapis Lazuli?\",\"answer\":\"Authentic natural Lapis Lazuli has deep royal ultramarine blue tones with irregular natural golden pyrite flecks and calcite veining, never uniform or synthetic.\"},{\"question\":\"Can daily ghee aarti be done in this diya?\",\"answer\":\"Yes, absolutely. The dense hand-carved stone walls are highly heat-resilient and ideal for daily cow ghee or sesame oil aarti.\"},{\"question\":\"How should this gemstone diya be cared for?\",\"answer\":\"Clean gently with lukewarm water and a soft microfiber cloth. Avoid harsh chemical cleaners or abrasive scouring pads.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Natural Lapis Lazuli Diya | Handcrafted Royal Blue Gemstone Deepak | Crystal Jaipuria\",\"metaDescription\":\"Buy certified Natural Lapis Lazuli Diya with golden pyrite inclusions. Handcrafted deepak for mandir puja, meditation, and spiritual protection at ₹1,850.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North-East (Ishanya Kon), East, or Study Shrine\",\"chakraPlanet\":\"Third Eye (Ajna) & Throat Chakra · Planet Saturn (Shani) & Jupiter (Brihaspati)\",\"poojaVidhi\":\"Fill with pure cow ghee or sesame oil with cotton wick. Light while chanting Shiva or Gayatri Mantra.\",\"vedicBenefits\":\"Inspires divine wisdom, clears mental confusion, enhances intuition and spiritual peace.\"} -->",
-  "faqs": [
-    {
-      "question": "Why is Lapis Lazuli considered sacred for lighting lamps?",
-      "answer": "Lapis Lazuli is the gemstone of cosmic truth and higher intellect. When combined with sacred Agni (fire), it stimulates the Ajna (third eye) chakra and purifies the household mental environment."
+    "_id": "6abd50160000000000000000",
+    "name": "Natural Lapis Lazuli Diya",
+    "slug": "lapis-lazuli-diya",
+    "price": 515,
+    "discountPrice": 650,
+    "detail": "Hand-carved from 100% certified royal blue Lapis Lazuli gemstone studded with glittering golden pyrite flecks. This sacred teardrop Diya symbolizes wisdom, divine protection, and inner peace. Meticulously handcrafted by master artisans of Jaipur (est. 1989), it enhances third eye clarity and radiates auspicious sattvic light across your altar.",
+    "description": "<p>Sculpted from 100% natural earth-mined <strong>Lapis Lazuli (Lajward)</strong>, this majestic <strong>Natural Lapis Lazuli Diya</strong> combines deep celestial blue mineral matrix with sparkling golden pyrite (fool's gold) inclusions. Hand-carved by hereditary lapidary artisans of Jaipur (est. 1989), it brings positive energy, truth, wisdom, and protection to your sacred space.</p>\n\n<h2>Symbol of Wisdom, Protection & Positive Energy</h2>\n<p>Revered for over 6,000 years across ancient civilizations and Vedic texts as a stone of royalty and divine communion:</p>\n<ul>\n  <li><strong>Third Eye (Ajna) & Throat Chakra Awakening:</strong> Illuminates higher spiritual awareness, deepens meditation, and dispels mental restlessness and stress.</li>\n  <li><strong>Celestial Golden Pyrite Flecks:</strong> Natural golden specks attract abundance, ward off negative auric vibrations, and balance planetary influences of Shani and Brihaspati.</li>\n  <li><strong>Artisanal Teardrop Design:</strong> Seamless polished bowl and spout specifically sculpted for pure cow ghee and fragrant sesame oil offerings.</li>\n  <li><strong>Ideal for Puja, Meditation & Sacred Gifting:</strong> Brings majestic temple elegance to home sanctums and study rooms.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Natural Lapis Lazuli Diya</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Lapis Lazuli with Golden Pyrite Flecks</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Estimated Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">105 Grams (Approx. 90 - 120 g)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size & Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">3.0 in (L) x 2.2 in (W) x 1.0 in (H)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North-East (Ishanya Kon), East, or Study Shrine</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Natural Lapis Lazuli Diya</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Natural Lapis Lazuli with Pyrite</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 105 Grams</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 3.0 in (L) x 2.2 in (W) x 1.0 in (H)</li>\n  <li><strong class=\"font-bold text-gray-900\">Listed Price :</strong> ₹515</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North-East (Ishanya Kon) or East</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone (Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof box with 100% insured express delivery</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"Why is Lapis Lazuli considered sacred for lighting lamps?\",\"answer\":\"Lapis Lazuli is the gemstone of cosmic truth and higher intellect. When combined with sacred Agni (fire), it stimulates the Ajna (third eye) chakra and purifies the household mental environment.\"},{\"question\":\"How can I identify genuine Lapis Lazuli?\",\"answer\":\"Authentic natural Lapis Lazuli has deep royal ultramarine blue tones with irregular natural golden pyrite flecks and calcite veining, never uniform or synthetic.\"},{\"question\":\"Can daily ghee aarti be done in this diya?\",\"answer\":\"Yes, absolutely. The dense hand-carved stone walls are highly heat-resilient and ideal for daily cow ghee or sesame oil aarti.\"},{\"question\":\"How should this gemstone diya be cared for?\",\"answer\":\"Clean gently with lukewarm water and a soft microfiber cloth. Avoid harsh chemical cleaners or abrasive scouring pads.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Natural Lapis Lazuli Diya | Handcrafted Royal Blue Gemstone Deepak | Crystal Jaipuria\",\"metaDescription\":\"Buy certified Natural Lapis Lazuli Diya with golden pyrite inclusions. Handcrafted deepak for mandir puja, meditation, and spiritual protection at ₹1,850.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North-East (Ishanya Kon), East, or Study Shrine\",\"chakraPlanet\":\"Third Eye (Ajna) & Throat Chakra · Planet Saturn (Shani) & Jupiter (Brihaspati)\",\"poojaVidhi\":\"Fill with pure cow ghee or sesame oil with cotton wick. Light while chanting Shiva or Gayatri Mantra.\",\"vedicBenefits\":\"Inspires divine wisdom, clears mental confusion, enhances intuition and spiritual peace.\"} -->",
+    "faqs": [
+      {
+        "question": "Why is Lapis Lazuli considered sacred for lighting lamps?",
+        "answer": "Lapis Lazuli is the gemstone of cosmic truth and higher intellect. When combined with sacred Agni (fire), it stimulates the Ajna (third eye) chakra and purifies the household mental environment."
+      },
+      {
+        "question": "How can I identify genuine Lapis Lazuli?",
+        "answer": "Authentic natural Lapis Lazuli has deep royal ultramarine blue tones with irregular natural golden pyrite flecks and calcite veining, never uniform or synthetic."
+      },
+      {
+        "question": "Can daily ghee aarti be done in this diya?",
+        "answer": "Yes, absolutely. The dense hand-carved stone walls are highly heat-resilient and ideal for daily cow ghee or sesame oil aarti."
+      },
+      {
+        "question": "How should this gemstone diya be cared for?",
+        "answer": "Clean gently with lukewarm water and a soft microfiber cloth. Avoid harsh chemical cleaners or abrasive scouring pads."
+      }
+    ],
+    "metaTitle": "Natural Lapis Lazuli Diya | Handcrafted Royal Blue Gemstone Deepak | Crystal Jaipuria",
+    "metaDescription": "Buy certified Natural Lapis Lazuli Diya with golden pyrite inclusions. Handcrafted deepak for mandir puja, meditation, and spiritual protection at ₹1,850.",
+    "vedicVastu": {
+      "placementDirection": "North-East (Ishanya Kon), East, or Study Shrine",
+      "chakraPlanet": "Third Eye (Ajna) & Throat Chakra · Planet Saturn (Shani) & Jupiter (Brihaspati)",
+      "poojaVidhi": "Fill with pure cow ghee or sesame oil with cotton wick. Light while chanting Shiva or Gayatri Mantra.",
+      "vedicBenefits": "Inspires divine wisdom, clears mental confusion, enhances intuition and spiritual peace."
     },
-    {
-      "question": "How can I identify genuine Lapis Lazuli?",
-      "answer": "Authentic natural Lapis Lazuli has deep royal ultramarine blue tones with irregular natural golden pyrite flecks and calcite veining, never uniform or synthetic."
+    "images": [
+      "/images/lapis-lazuli-diya.webp",
+      "/images/lapis-lazuli-diya-2.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bc522dcf49aacd71ef69",
+      "name": "Diya",
+      "slug": "diya"
     },
-    {
-      "question": "Can daily ghee aarti be done in this diya?",
-      "answer": "Yes, absolutely. The dense hand-carved stone walls are highly heat-resilient and ideal for daily cow ghee or sesame oil aarti."
+    "categoryName": "Diya",
+    "subCategoryId": {
+      "_id": "6a55bcad2dcf49aacd71ef6e",
+      "name": "Diya",
+      "slug": "diya"
     },
-    {
-      "question": "How should this gemstone diya be cared for?",
-      "answer": "Clean gently with lukewarm water and a soft microfiber cloth. Avoid harsh chemical cleaners or abrasive scouring pads."
-    }
-  ],
-  "metaTitle": "Natural Lapis Lazuli Diya | Handcrafted Royal Blue Gemstone Deepak | Crystal Jaipuria",
-  "metaDescription": "Buy certified Natural Lapis Lazuli Diya with golden pyrite inclusions. Handcrafted deepak for mandir puja, meditation, and spiritual protection at ₹1,850.",
-  "vedicVastu": {
-    "placementDirection": "North-East (Ishanya Kon), East, or Study Shrine",
-    "chakraPlanet": "Third Eye (Ajna) & Throat Chakra · Planet Saturn (Shani) & Jupiter (Brihaspati)",
-    "poojaVidhi": "Fill with pure cow ghee or sesame oil with cotton wick. Light while chanting Shiva or Gayatri Mantra.",
-    "vedicBenefits": "Inspires divine wisdom, clears mental confusion, enhances intuition and spiritual peace."
+    "subCategoryName": "Diya",
+    "size": "3.0 Inch",
+    "weight": "105 g",
+    "stock": 12,
+    "featured": true,
+    "pricePerUnit": "",
+    "pricePerCarat": ""
   },
-  "images": [
-    "/images/lapis-lazuli-diya.webp",
-    "/images/lapis-lazuli-diya-2.webp"
-  ],
-  "categoryId": {
-    "_id": "6a55bc522dcf49aacd71ef69",
-    "name": "Diya",
-    "slug": "diya"
-  },
-  "categoryName": "Diya",
-  "subCategoryId": {
-    "_id": "6a55bcad2dcf49aacd71ef6e",
-    "name": "Diya",
-    "slug": "diya"
-  },
-  "subCategoryName": "Diya",
-  "size": "3.0 Inch",
-  "weight": "105 g",
-  "stock": 12,
-  "featured": true,
-  "pricePerUnit": "",
-  "pricePerCarat": ""
-},
   {
-  "_id": "6abd50170000000000000000",
-  "name": "Natural Rose Quartz Diya",
-  "slug": "rose-quartz-diya",
-  "price": 600,
-  "discountPrice": 799,
-  "detail": "Hand-carved from genuine pastel pink Rose Quartz gemstone, this graceful teardrop Diya is a sacred symbol of love, peace, and emotional healing. Handcrafted by master artisans in Jaipur (est. 1989), it activates the Heart Chakra (Anahata), soothes stress, and fills your sacred space with pure, gentle sattvic light.",
-  "description": "<p>Handcrafted from 100% natural earth-mined <strong>Rose Quartz (Gulabi Sphatik)</strong>, this enchanting <strong>Natural Rose Quartz Diya</strong> radiates tender pink luster and soft crystalline veils. Sculpted by generational Jaipur lapidaries (est. 1989), it brings unconditional love, relationship harmony, and emotional equilibrium into your home.</p>\n\n<h2>Symbol of Love, Peace & Positive Energy</h2>\n<p>Known universally as the ultimate stone of unconditional love and heart healing:</p>\n<ul>\n  <li><strong>Heart Chakra (Anahata) Healing:</strong> Dissolves relationship friction, emotional blockages, and anxiety, nurturing warmth and affection among family members.</li>\n  <li><strong>Venus (Shukra) Grace:</strong> Harmonizes Venusian vibrations, inviting prosperity, beauty, and peaceful bliss into the household.</li>\n  <li><strong>Translucent Teardrop Bowl:</strong> Beautifully transmits warm glowing candlelight through translucent pink gemstone quartz.</li>\n  <li><strong>Ideal for Puja, Meditation & Thoughtful Gifting:</strong> A cherished auspicious gift for weddings, anniversaries, housewarmings, and festive occasions.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Natural Rose Quartz Diya</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Rose Quartz (Silicon Dioxide)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Estimated Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100 Grams (Approx. 90 - 115 g)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size & Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">3.2 in (L) x 2.3 in (W) x 1.0 in (H)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">South-West (Relationship corner) or North-East Altar</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
-  "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Natural Rose Quartz Diya</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Natural Rose Quartz</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 100 Grams</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 3.2 in (L) x 2.3 in (W) x 1.0 in (H)</li>\n  <li><strong class=\"font-bold text-gray-900\">Listed Price :</strong> ₹600</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> South-West (Nairutya) or North-East</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone (Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof box with 100% insured express delivery</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"What energy does a Rose Quartz Diya radiate?\",\"answer\":\"Rose Quartz radiates unconditional love, peace, and emotional soothing. When lit, it harmonizes household relationships and dispels tension.\"},{\"question\":\"Where should I keep this Rose Quartz Diya according to Vastu?\",\"answer\":\"Place in the South-West corner of the master bedroom or living room for relationship bliss, or in the North-East mandir for divine bhakti.\"},{\"question\":\"Can pure cow ghee be used in Rose Quartz?\",\"answer\":\"Yes, pure desi cow ghee with a soft cotton wick is the most auspicious fuel for Rose Quartz lamps.\"},{\"question\":\"How do I maintain the pink luster of Rose Quartz?\",\"answer\":\"Gently wipe with a soft damp cotton cloth after cooling. Keep away from harsh acidic detergents.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Natural Rose Quartz Diya | Handcrafted Pink Gemstone Deepak | Crystal Jaipuria\",\"metaDescription\":\"Buy hand-carved Natural Rose Quartz Diya in teardrop shape. Sacred pink crystal deepak for love, harmony, peace & puja mandir at ₹1,450 from Crystal Jaipuria.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"South-West (Relationship corner) or North-East Altar\",\"chakraPlanet\":\"Heart Chakra (Anahata) · Planet Venus (Shukra)\",\"poojaVidhi\":\"Fill with pure desi cow ghee with a soft organic cotton wick. Light during morning or evening prayers, offering pink or red flowers.\",\"vedicBenefits\":\"Radiates unconditional love, resolves relationship conflicts, fosters peace, tranquility, and harmony in the household.\"} -->",
-  "faqs": [
-    {
-      "question": "What energy does a Rose Quartz Diya radiate?",
-      "answer": "Rose Quartz radiates unconditional love, peace, and emotional soothing. When lit, it harmonizes household relationships and dispels tension."
+    "_id": "6abd50170000000000000000",
+    "name": "Natural Rose Quartz Diya",
+    "slug": "rose-quartz-diya",
+    "price": 600,
+    "discountPrice": 799,
+    "detail": "Hand-carved from genuine pastel pink Rose Quartz gemstone, this graceful teardrop Diya is a sacred symbol of love, peace, and emotional healing. Handcrafted by master artisans in Jaipur (est. 1989), it activates the Heart Chakra (Anahata), soothes stress, and fills your sacred space with pure, gentle sattvic light.",
+    "description": "<p>Handcrafted from 100% natural earth-mined <strong>Rose Quartz (Gulabi Sphatik)</strong>, this enchanting <strong>Natural Rose Quartz Diya</strong> radiates tender pink luster and soft crystalline veils. Sculpted by generational Jaipur lapidaries (est. 1989), it brings unconditional love, relationship harmony, and emotional equilibrium into your home.</p>\n\n<h2>Symbol of Love, Peace & Positive Energy</h2>\n<p>Known universally as the ultimate stone of unconditional love and heart healing:</p>\n<ul>\n  <li><strong>Heart Chakra (Anahata) Healing:</strong> Dissolves relationship friction, emotional blockages, and anxiety, nurturing warmth and affection among family members.</li>\n  <li><strong>Venus (Shukra) Grace:</strong> Harmonizes Venusian vibrations, inviting prosperity, beauty, and peaceful bliss into the household.</li>\n  <li><strong>Translucent Teardrop Bowl:</strong> Beautifully transmits warm glowing candlelight through translucent pink gemstone quartz.</li>\n  <li><strong>Ideal for Puja, Meditation & Thoughtful Gifting:</strong> A cherished auspicious gift for weddings, anniversaries, housewarmings, and festive occasions.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Natural Rose Quartz Diya</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Rose Quartz (Silicon Dioxide)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Estimated Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100 Grams (Approx. 90 - 115 g)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size & Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">3.2 in (L) x 2.3 in (W) x 1.0 in (H)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">South-West (Relationship corner) or North-East Altar</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Natural Rose Quartz Diya</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Natural Rose Quartz</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 100 Grams</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 3.2 in (L) x 2.3 in (W) x 1.0 in (H)</li>\n  <li><strong class=\"font-bold text-gray-900\">Listed Price :</strong> ₹600</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> South-West (Nairutya) or North-East</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone (Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof box with 100% insured express delivery</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"What energy does a Rose Quartz Diya radiate?\",\"answer\":\"Rose Quartz radiates unconditional love, peace, and emotional soothing. When lit, it harmonizes household relationships and dispels tension.\"},{\"question\":\"Where should I keep this Rose Quartz Diya according to Vastu?\",\"answer\":\"Place in the South-West corner of the master bedroom or living room for relationship bliss, or in the North-East mandir for divine bhakti.\"},{\"question\":\"Can pure cow ghee be used in Rose Quartz?\",\"answer\":\"Yes, pure desi cow ghee with a soft cotton wick is the most auspicious fuel for Rose Quartz lamps.\"},{\"question\":\"How do I maintain the pink luster of Rose Quartz?\",\"answer\":\"Gently wipe with a soft damp cotton cloth after cooling. Keep away from harsh acidic detergents.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Natural Rose Quartz Diya | Handcrafted Pink Gemstone Deepak | Crystal Jaipuria\",\"metaDescription\":\"Buy hand-carved Natural Rose Quartz Diya in teardrop shape. Sacred pink crystal deepak for love, harmony, peace & puja mandir at ₹1,450 from Crystal Jaipuria.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"South-West (Relationship corner) or North-East Altar\",\"chakraPlanet\":\"Heart Chakra (Anahata) · Planet Venus (Shukra)\",\"poojaVidhi\":\"Fill with pure desi cow ghee with a soft organic cotton wick. Light during morning or evening prayers, offering pink or red flowers.\",\"vedicBenefits\":\"Radiates unconditional love, resolves relationship conflicts, fosters peace, tranquility, and harmony in the household.\"} -->",
+    "faqs": [
+      {
+        "question": "What energy does a Rose Quartz Diya radiate?",
+        "answer": "Rose Quartz radiates unconditional love, peace, and emotional soothing. When lit, it harmonizes household relationships and dispels tension."
+      },
+      {
+        "question": "Where should I keep this Rose Quartz Diya according to Vastu?",
+        "answer": "Place in the South-West corner of the master bedroom or living room for relationship bliss, or in the North-East mandir for divine bhakti."
+      },
+      {
+        "question": "Can pure cow ghee be used in Rose Quartz?",
+        "answer": "Yes, pure desi cow ghee with a soft cotton wick is the most auspicious fuel for Rose Quartz lamps."
+      },
+      {
+        "question": "How do I maintain the pink luster of Rose Quartz?",
+        "answer": "Gently wipe with a soft damp cotton cloth after cooling. Keep away from harsh acidic detergents."
+      }
+    ],
+    "metaTitle": "Natural Rose Quartz Diya | Handcrafted Pink Gemstone Deepak | Crystal Jaipuria",
+    "metaDescription": "Buy hand-carved Natural Rose Quartz Diya in teardrop shape. Sacred pink crystal deepak for love, harmony, peace & puja mandir at ₹1,450 from Crystal Jaipuria.",
+    "vedicVastu": {
+      "placementDirection": "South-West (Relationship corner) or North-East Altar",
+      "chakraPlanet": "Heart Chakra (Anahata) · Planet Venus (Shukra)",
+      "poojaVidhi": "Fill with pure desi cow ghee with a soft organic cotton wick. Light during morning or evening prayers, offering pink or red flowers.",
+      "vedicBenefits": "Radiates unconditional love, resolves relationship conflicts, fosters peace, tranquility, and harmony in the household."
     },
-    {
-      "question": "Where should I keep this Rose Quartz Diya according to Vastu?",
-      "answer": "Place in the South-West corner of the master bedroom or living room for relationship bliss, or in the North-East mandir for divine bhakti."
+    "images": [
+      "/images/rose-quartz-diya.webp",
+      "/images/rose-quartz-diya-2.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bc522dcf49aacd71ef69",
+      "name": "Diya",
+      "slug": "diya"
     },
-    {
-      "question": "Can pure cow ghee be used in Rose Quartz?",
-      "answer": "Yes, pure desi cow ghee with a soft cotton wick is the most auspicious fuel for Rose Quartz lamps."
+    "categoryName": "Diya",
+    "subCategoryId": {
+      "_id": "6a55bcad2dcf49aacd71ef6e",
+      "name": "Diya",
+      "slug": "diya"
     },
-    {
-      "question": "How do I maintain the pink luster of Rose Quartz?",
-      "answer": "Gently wipe with a soft damp cotton cloth after cooling. Keep away from harsh acidic detergents."
-    }
-  ],
-  "metaTitle": "Natural Rose Quartz Diya | Handcrafted Pink Gemstone Deepak | Crystal Jaipuria",
-  "metaDescription": "Buy hand-carved Natural Rose Quartz Diya in teardrop shape. Sacred pink crystal deepak for love, harmony, peace & puja mandir at ₹1,450 from Crystal Jaipuria.",
-  "vedicVastu": {
-    "placementDirection": "South-West (Relationship corner) or North-East Altar",
-    "chakraPlanet": "Heart Chakra (Anahata) · Planet Venus (Shukra)",
-    "poojaVidhi": "Fill with pure desi cow ghee with a soft organic cotton wick. Light during morning or evening prayers, offering pink or red flowers.",
-    "vedicBenefits": "Radiates unconditional love, resolves relationship conflicts, fosters peace, tranquility, and harmony in the household."
+    "subCategoryName": "Diya",
+    "size": "3.2 Inch",
+    "weight": "100 g",
+    "stock": 20,
+    "featured": true,
+    "pricePerUnit": "",
+    "pricePerCarat": ""
   },
-  "images": [
-    "/images/rose-quartz-diya.webp",
-    "/images/rose-quartz-diya-2.webp"
-  ],
-  "categoryId": {
-    "_id": "6a55bc522dcf49aacd71ef69",
-    "name": "Diya",
-    "slug": "diya"
-  },
-  "categoryName": "Diya",
-  "subCategoryId": {
-    "_id": "6a55bcad2dcf49aacd71ef6e",
-    "name": "Diya",
-    "slug": "diya"
-  },
-  "subCategoryName": "Diya",
-  "size": "3.2 Inch",
-  "weight": "100 g",
-  "stock": 20,
-  "featured": true,
-  "pricePerUnit": "",
-  "pricePerCarat": ""
-},
   {
-  "_id": "6abd50180000000000000000",
-  "name": "Natural Yellow Aventurine Diya",
-  "slug": "yellow-aventurine-diya",
-  "price": 639,
-  "discountPrice": 799,
-  "detail": "Hand-carved from vibrant golden Yellow Aventurine stone, this radiant teardrop Diya is a powerful symbol of solar vitality, confidence, and commercial prosperity. Crafted by Jaipur master lapidaries (est. 1989), it activates the Solar Plexus Chakra (Manipura), dispels lethargy, and attracts auspicious wealth.",
-  "description": "<p>Hand-carved from genuine earth-mined <strong>Yellow Aventurine (Peela Aventurine)</strong>, this lustrous golden <strong>Natural Yellow Aventurine Diya</strong> captures warm solar radiance. Sculpted with a glossy mirror polish by master artisans of Jaipur (est. 1989), it creates an uplifting atmosphere of prosperity, self-assurance, and divine joy.</p>\n\n<h2>Radiant Solar Energy, Confidence & Prosperity</h2>\n<p>In Vedic gemology, Yellow Aventurine resonates strongly with solar and Jupiterian energies:</p>\n<ul>\n  <li><strong>Solar Plexus (Manipura) Activation:</strong> Rekindles inner willpower, decisive leadership, creative vitality, and clear mental focus.</li>\n  <li><strong>Wealth & Commercial Abundance:</strong> Associated with Lord Kubera and Sun God (Surya Dev), attracting new financial opportunities and business growth.</li>\n  <li><strong>Graceful Teardrop Silhouette:</strong> Smooth contoured rim and pointed wick guide ensure a clean, serene flame presentation.</li>\n  <li><strong>Ideal for Puja & Home Décor:</strong> Illuminates your mandir with rich golden warmth and positivity.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Natural Yellow Aventurine Diya</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Yellow Aventurine (Quartz)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Estimated Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">95 Grams (Approx. 85 - 110 g)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size & Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">3.0 in (L) x 2.2 in (W) x 1.0 in (H)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North (Kubera), East (Surya), or Cash Altar</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
-  "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Natural Yellow Aventurine Diya</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Natural Yellow Aventurine</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 95 Grams</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 3.0 in (L) x 2.2 in (W) x 1.0 in (H)</li>\n  <li><strong class=\"font-bold text-gray-900\">Listed Price :</strong> ₹639</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North (Kubera) or East (Surya)</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone (Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof box with 100% insured express delivery</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"What are the benefits of Yellow Aventurine Diya?\",\"answer\":\"Yellow Aventurine brings optimism, wealth, and decisive self-confidence by energizing the Solar Plexus chakra and balancing Sun-Jupiter energies.\"},{\"question\":\"Which direction is best for this golden diya?\",\"answer\":\"Place in the North for wealth enhancement or in the East to invoke the blessings of Surya Dev during morning worship.\"},{\"question\":\"Can sesame oil be used in this diya?\",\"answer\":\"Yes, pure sesame (til) oil and cow ghee are both highly recommended for daily use.\"},{\"question\":\"How to clean this stone lamp?\",\"answer\":\"Wipe with a soft cotton cloth after cooling. Rinse gently with normal water if needed.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Natural Yellow Aventurine Diya | Golden Gemstone Deepak | Crystal Jaipuria\",\"metaDescription\":\"Buy hand-carved Natural Yellow Aventurine Diya in teardrop shape. Auspicious golden deepak for prosperity, confidence, and temple puja at ₹1,350.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North (Kubera), East (Surya), or Cash Altar\",\"chakraPlanet\":\"Solar Plexus Chakra (Manipura) · Planet Sun (Surya) & Jupiter (Brihaspati)\",\"poojaVidhi\":\"Light with pure cow ghee or sesame oil. Offer yellow chandan and yellow marigold flowers on Thursdays or daily.\",\"vedicBenefits\":\"Ignites positivity, self-confidence, leadership energy, solar vitality, commercial prosperity, and attracts auspicious wealth.\"} -->",
-  "faqs": [
-    {
-      "question": "What are the benefits of Yellow Aventurine Diya?",
-      "answer": "Yellow Aventurine brings optimism, wealth, and decisive self-confidence by energizing the Solar Plexus chakra and balancing Sun-Jupiter energies."
+    "_id": "6abd50180000000000000000",
+    "name": "Natural Yellow Aventurine Diya",
+    "slug": "yellow-aventurine-diya",
+    "price": 639,
+    "discountPrice": 799,
+    "detail": "Hand-carved from vibrant golden Yellow Aventurine stone, this radiant teardrop Diya is a powerful symbol of solar vitality, confidence, and commercial prosperity. Crafted by Jaipur master lapidaries (est. 1989), it activates the Solar Plexus Chakra (Manipura), dispels lethargy, and attracts auspicious wealth.",
+    "description": "<p>Hand-carved from genuine earth-mined <strong>Yellow Aventurine (Peela Aventurine)</strong>, this lustrous golden <strong>Natural Yellow Aventurine Diya</strong> captures warm solar radiance. Sculpted with a glossy mirror polish by master artisans of Jaipur (est. 1989), it creates an uplifting atmosphere of prosperity, self-assurance, and divine joy.</p>\n\n<h2>Radiant Solar Energy, Confidence & Prosperity</h2>\n<p>In Vedic gemology, Yellow Aventurine resonates strongly with solar and Jupiterian energies:</p>\n<ul>\n  <li><strong>Solar Plexus (Manipura) Activation:</strong> Rekindles inner willpower, decisive leadership, creative vitality, and clear mental focus.</li>\n  <li><strong>Wealth & Commercial Abundance:</strong> Associated with Lord Kubera and Sun God (Surya Dev), attracting new financial opportunities and business growth.</li>\n  <li><strong>Graceful Teardrop Silhouette:</strong> Smooth contoured rim and pointed wick guide ensure a clean, serene flame presentation.</li>\n  <li><strong>Ideal for Puja & Home Décor:</strong> Illuminates your mandir with rich golden warmth and positivity.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Natural Yellow Aventurine Diya</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Yellow Aventurine (Quartz)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Estimated Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">95 Grams (Approx. 85 - 110 g)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size & Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">3.0 in (L) x 2.2 in (W) x 1.0 in (H)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North (Kubera), East (Surya), or Cash Altar</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Natural Yellow Aventurine Diya</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Natural Yellow Aventurine</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 95 Grams</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 3.0 in (L) x 2.2 in (W) x 1.0 in (H)</li>\n  <li><strong class=\"font-bold text-gray-900\">Listed Price :</strong> ₹639</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North (Kubera) or East (Surya)</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone (Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof box with 100% insured express delivery</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"What are the benefits of Yellow Aventurine Diya?\",\"answer\":\"Yellow Aventurine brings optimism, wealth, and decisive self-confidence by energizing the Solar Plexus chakra and balancing Sun-Jupiter energies.\"},{\"question\":\"Which direction is best for this golden diya?\",\"answer\":\"Place in the North for wealth enhancement or in the East to invoke the blessings of Surya Dev during morning worship.\"},{\"question\":\"Can sesame oil be used in this diya?\",\"answer\":\"Yes, pure sesame (til) oil and cow ghee are both highly recommended for daily use.\"},{\"question\":\"How to clean this stone lamp?\",\"answer\":\"Wipe with a soft cotton cloth after cooling. Rinse gently with normal water if needed.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Natural Yellow Aventurine Diya | Golden Gemstone Deepak | Crystal Jaipuria\",\"metaDescription\":\"Buy hand-carved Natural Yellow Aventurine Diya in teardrop shape. Auspicious golden deepak for prosperity, confidence, and temple puja at ₹1,350.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North (Kubera), East (Surya), or Cash Altar\",\"chakraPlanet\":\"Solar Plexus Chakra (Manipura) · Planet Sun (Surya) & Jupiter (Brihaspati)\",\"poojaVidhi\":\"Light with pure cow ghee or sesame oil. Offer yellow chandan and yellow marigold flowers on Thursdays or daily.\",\"vedicBenefits\":\"Ignites positivity, self-confidence, leadership energy, solar vitality, commercial prosperity, and attracts auspicious wealth.\"} -->",
+    "faqs": [
+      {
+        "question": "What are the benefits of Yellow Aventurine Diya?",
+        "answer": "Yellow Aventurine brings optimism, wealth, and decisive self-confidence by energizing the Solar Plexus chakra and balancing Sun-Jupiter energies."
+      },
+      {
+        "question": "Which direction is best for this golden diya?",
+        "answer": "Place in the North for wealth enhancement or in the East to invoke the blessings of Surya Dev during morning worship."
+      },
+      {
+        "question": "Can sesame oil be used in this diya?",
+        "answer": "Yes, pure sesame (til) oil and cow ghee are both highly recommended for daily use."
+      },
+      {
+        "question": "How to clean this stone lamp?",
+        "answer": "Wipe with a soft cotton cloth after cooling. Rinse gently with normal water if needed."
+      }
+    ],
+    "metaTitle": "Natural Yellow Aventurine Diya | Golden Gemstone Deepak | Crystal Jaipuria",
+    "metaDescription": "Buy hand-carved Natural Yellow Aventurine Diya in teardrop shape. Auspicious golden deepak for prosperity, confidence, and temple puja at ₹1,350.",
+    "vedicVastu": {
+      "placementDirection": "North (Kubera), East (Surya), or Cash Altar",
+      "chakraPlanet": "Solar Plexus Chakra (Manipura) · Planet Sun (Surya) & Jupiter (Brihaspati)",
+      "poojaVidhi": "Light with pure cow ghee or sesame oil. Offer yellow chandan and yellow marigold flowers on Thursdays or daily.",
+      "vedicBenefits": "Ignites positivity, self-confidence, leadership energy, solar vitality, commercial prosperity, and attracts auspicious wealth."
     },
-    {
-      "question": "Which direction is best for this golden diya?",
-      "answer": "Place in the North for wealth enhancement or in the East to invoke the blessings of Surya Dev during morning worship."
+    "images": [
+      "/images/yellow-aventurine-diya.webp",
+      "/images/yellow-aventurine-diya-2.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bc522dcf49aacd71ef69",
+      "name": "Diya",
+      "slug": "diya"
     },
-    {
-      "question": "Can sesame oil be used in this diya?",
-      "answer": "Yes, pure sesame (til) oil and cow ghee are both highly recommended for daily use."
+    "categoryName": "Diya",
+    "subCategoryId": {
+      "_id": "6a55bcad2dcf49aacd71ef6e",
+      "name": "Diya",
+      "slug": "diya"
     },
-    {
-      "question": "How to clean this stone lamp?",
-      "answer": "Wipe with a soft cotton cloth after cooling. Rinse gently with normal water if needed."
-    }
-  ],
-  "metaTitle": "Natural Yellow Aventurine Diya | Golden Gemstone Deepak | Crystal Jaipuria",
-  "metaDescription": "Buy hand-carved Natural Yellow Aventurine Diya in teardrop shape. Auspicious golden deepak for prosperity, confidence, and temple puja at ₹1,350.",
-  "vedicVastu": {
-    "placementDirection": "North (Kubera), East (Surya), or Cash Altar",
-    "chakraPlanet": "Solar Plexus Chakra (Manipura) · Planet Sun (Surya) & Jupiter (Brihaspati)",
-    "poojaVidhi": "Light with pure cow ghee or sesame oil. Offer yellow chandan and yellow marigold flowers on Thursdays or daily.",
-    "vedicBenefits": "Ignites positivity, self-confidence, leadership energy, solar vitality, commercial prosperity, and attracts auspicious wealth."
+    "subCategoryName": "Diya",
+    "size": "3.0 Inch",
+    "weight": "95 g",
+    "stock": 16,
+    "featured": true,
+    "pricePerUnit": "",
+    "pricePerCarat": ""
   },
-  "images": [
-    "/images/yellow-aventurine-diya.webp",
-    "/images/yellow-aventurine-diya-2.webp"
-  ],
-  "categoryId": {
-    "_id": "6a55bc522dcf49aacd71ef69",
-    "name": "Diya",
-    "slug": "diya"
-  },
-  "categoryName": "Diya",
-  "subCategoryId": {
-    "_id": "6a55bcad2dcf49aacd71ef6e",
-    "name": "Diya",
-    "slug": "diya"
-  },
-  "subCategoryName": "Diya",
-  "size": "3.0 Inch",
-  "weight": "95 g",
-  "stock": 16,
-  "featured": true,
-  "pricePerUnit": "",
-  "pricePerCarat": ""
-},
   {
-  "_id": "6abd50190000000000000000",
-  "name": "Natural Moonstone Diya",
-  "slug": "moonstone-diya",
-  "price": 639,
-  "discountPrice": 799,
-  "detail": "Hand-carved from 100% certified Natural White Moonstone (Chandrakant Mani) exhibiting ethereal adularescent shimmer. This sacred teardrop Diya symbolizes purity, calm, and emotional balance. Handcrafted by master lapidaries of Jaipur (est. 1989), it channels cooling lunar vibrations to relieve mental stress and deepen meditation.",
-  "description": "<p>Sculpted from genuine natural <strong>White Moonstone (Chandrakant Mani)</strong>, this ethereal <strong>Natural Moonstone Diya</strong> displays milky-white crystalline sheen with delicate soft shimmer (adularescence). Crafted by master artisans in Jaipur (est. 1989), it fills your sanctuary with tranquility, mental clarity, and divine feminine grace.</p>\n\n<h2>Symbol of Purity, Calmness & Emotional Balance</h2>\n<p>Sacred in Indian mythology as the gem imbued with crystallized rays of the Moon:</p>\n<ul>\n  <li><strong>Lunar Calm & Stress Relief:</strong> Governed by Lord Chandra, soothing racing thoughts, sleep disturbances, and emotional turbulence.</li>\n  <li><strong>Sacral & Third Eye Alignment:</strong> Awakens spiritual intuition, psychic sensitivity, and receptive meditative stillness.</li>\n  <li><strong>Footed Base & Elegant Leaf Shape:</strong> Crafted with an elevated foot ring and graceful leaf contours for stable altar placement.</li>\n  <li><strong>Ideal for Puja, Meditation & Sacred Gifting:</strong> Brings gentle sattvic stillness to your spiritual practice.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Natural Moonstone Diya</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural White Moonstone (Feldspar)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Estimated Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">105 Grams (Approx. 95 - 120 g)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size & Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">3.1 in (L) x 2.2 in (W) x 1.1 in (H)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North-West (Chandra Kon), North-East, or Meditation Altar</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
-  "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Natural Moonstone Diya</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Natural Moonstone</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 105 Grams</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 3.1 in (L) x 2.2 in (W) x 1.1 in (H)</li>\n  <li><strong class=\"font-bold text-gray-900\">Listed Price :</strong> ₹639</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North-West (Vayu / Chandra Kon) or North-East</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone (Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof box with 100% insured express delivery</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"What spiritual significance does a Moonstone Diya hold?\",\"answer\":\"Moonstone connects with the cooling, peaceful energy of Chandra Dev (the Moon). It brings mental peace, emotional stability, and removes anxiety when lit.\"},{\"question\":\"Can daily puja be performed with this Moonstone lamp?\",\"answer\":\"Yes, it is carved from durable natural feldspar mineral and is safe for daily cow ghee lighting.\"},{\"question\":\"Which day is most auspicious to light the Moonstone Diya?\",\"answer\":\"Mondays and Purnima (full moon) evenings are especially potent for invoking lunar serenity and peace.\"},{\"question\":\"How do I care for my Moonstone Diya?\",\"answer\":\"Clean gently with lukewarm water and a clean microfiber cloth. Avoid dropping or harsh abrasives.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Natural Moonstone Diya | Handcrafted White Gemstone Deepak | Crystal Jaipuria\",\"metaDescription\":\"Buy certified Natural Moonstone Diya with gentle adularescent shimmer. Pure white crystal deepak for calmness, meditation, and temple worship at ₹1,650.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North-West (Chandra Kon), North-East, or Meditation Altar\",\"chakraPlanet\":\"Sacral Chakra (Swadhisthana) & Third Eye · Planet Moon (Chandra Dev)\",\"poojaVidhi\":\"Cleanse with raw milk and gangajal on a Monday. Light with pure desi cow ghee and white cotton wick. Offer white flowers.\",\"vedicBenefits\":\"Calms restless mind, stabilizes erratic emotions, connects with soothing lunar energies, brings mental clarity and spiritual serenity.\"} -->",
-  "faqs": [
-    {
-      "question": "What spiritual significance does a Moonstone Diya hold?",
-      "answer": "Moonstone connects with the cooling, peaceful energy of Chandra Dev (the Moon). It brings mental peace, emotional stability, and removes anxiety when lit."
+    "_id": "6abd50190000000000000000",
+    "name": "Natural Moonstone Diya",
+    "slug": "moonstone-diya",
+    "price": 639,
+    "discountPrice": 799,
+    "detail": "Hand-carved from 100% certified Natural White Moonstone (Chandrakant Mani) exhibiting ethereal adularescent shimmer. This sacred teardrop Diya symbolizes purity, calm, and emotional balance. Handcrafted by master lapidaries of Jaipur (est. 1989), it channels cooling lunar vibrations to relieve mental stress and deepen meditation.",
+    "description": "<p>Sculpted from genuine natural <strong>White Moonstone (Chandrakant Mani)</strong>, this ethereal <strong>Natural Moonstone Diya</strong> displays milky-white crystalline sheen with delicate soft shimmer (adularescence). Crafted by master artisans in Jaipur (est. 1989), it fills your sanctuary with tranquility, mental clarity, and divine feminine grace.</p>\n\n<h2>Symbol of Purity, Calmness & Emotional Balance</h2>\n<p>Sacred in Indian mythology as the gem imbued with crystallized rays of the Moon:</p>\n<ul>\n  <li><strong>Lunar Calm & Stress Relief:</strong> Governed by Lord Chandra, soothing racing thoughts, sleep disturbances, and emotional turbulence.</li>\n  <li><strong>Sacral & Third Eye Alignment:</strong> Awakens spiritual intuition, psychic sensitivity, and receptive meditative stillness.</li>\n  <li><strong>Footed Base & Elegant Leaf Shape:</strong> Crafted with an elevated foot ring and graceful leaf contours for stable altar placement.</li>\n  <li><strong>Ideal for Puja, Meditation & Sacred Gifting:</strong> Brings gentle sattvic stillness to your spiritual practice.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Natural Moonstone Diya</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural White Moonstone (Feldspar)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Estimated Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">105 Grams (Approx. 95 - 120 g)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size & Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">3.1 in (L) x 2.2 in (W) x 1.1 in (H)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North-West (Chandra Kon), North-East, or Meditation Altar</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Natural Moonstone Diya</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Natural Moonstone</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 105 Grams</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 3.1 in (L) x 2.2 in (W) x 1.1 in (H)</li>\n  <li><strong class=\"font-bold text-gray-900\">Listed Price :</strong> ₹639</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North-West (Vayu / Chandra Kon) or North-East</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone (Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof box with 100% insured express delivery</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"What spiritual significance does a Moonstone Diya hold?\",\"answer\":\"Moonstone connects with the cooling, peaceful energy of Chandra Dev (the Moon). It brings mental peace, emotional stability, and removes anxiety when lit.\"},{\"question\":\"Can daily puja be performed with this Moonstone lamp?\",\"answer\":\"Yes, it is carved from durable natural feldspar mineral and is safe for daily cow ghee lighting.\"},{\"question\":\"Which day is most auspicious to light the Moonstone Diya?\",\"answer\":\"Mondays and Purnima (full moon) evenings are especially potent for invoking lunar serenity and peace.\"},{\"question\":\"How do I care for my Moonstone Diya?\",\"answer\":\"Clean gently with lukewarm water and a clean microfiber cloth. Avoid dropping or harsh abrasives.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Natural Moonstone Diya | Handcrafted White Gemstone Deepak | Crystal Jaipuria\",\"metaDescription\":\"Buy certified Natural Moonstone Diya with gentle adularescent shimmer. Pure white crystal deepak for calmness, meditation, and temple worship at ₹1,650.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North-West (Chandra Kon), North-East, or Meditation Altar\",\"chakraPlanet\":\"Sacral Chakra (Swadhisthana) & Third Eye · Planet Moon (Chandra Dev)\",\"poojaVidhi\":\"Cleanse with raw milk and gangajal on a Monday. Light with pure desi cow ghee and white cotton wick. Offer white flowers.\",\"vedicBenefits\":\"Calms restless mind, stabilizes erratic emotions, connects with soothing lunar energies, brings mental clarity and spiritual serenity.\"} -->",
+    "faqs": [
+      {
+        "question": "What spiritual significance does a Moonstone Diya hold?",
+        "answer": "Moonstone connects with the cooling, peaceful energy of Chandra Dev (the Moon). It brings mental peace, emotional stability, and removes anxiety when lit."
+      },
+      {
+        "question": "Can daily puja be performed with this Moonstone lamp?",
+        "answer": "Yes, it is carved from durable natural feldspar mineral and is safe for daily cow ghee lighting."
+      },
+      {
+        "question": "Which day is most auspicious to light the Moonstone Diya?",
+        "answer": "Mondays and Purnima (full moon) evenings are especially potent for invoking lunar serenity and peace."
+      },
+      {
+        "question": "How do I care for my Moonstone Diya?",
+        "answer": "Clean gently with lukewarm water and a clean microfiber cloth. Avoid dropping or harsh abrasives."
+      }
+    ],
+    "metaTitle": "Natural Moonstone Diya | Handcrafted White Gemstone Deepak | Crystal Jaipuria",
+    "metaDescription": "Buy certified Natural Moonstone Diya with gentle adularescent shimmer. Pure white crystal deepak for calmness, meditation, and temple worship at ₹1,650.",
+    "vedicVastu": {
+      "placementDirection": "North-West (Chandra Kon), North-East, or Meditation Altar",
+      "chakraPlanet": "Sacral Chakra (Swadhisthana) & Third Eye · Planet Moon (Chandra Dev)",
+      "poojaVidhi": "Cleanse with raw milk and gangajal on a Monday. Light with pure desi cow ghee and white cotton wick. Offer white flowers.",
+      "vedicBenefits": "Calms restless mind, stabilizes erratic emotions, connects with soothing lunar energies, brings mental clarity and spiritual serenity."
     },
-    {
-      "question": "Can daily puja be performed with this Moonstone lamp?",
-      "answer": "Yes, it is carved from durable natural feldspar mineral and is safe for daily cow ghee lighting."
+    "images": [
+      "/images/moonstone-diya.webp",
+      "/images/moonstone-diya-2.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bc522dcf49aacd71ef69",
+      "name": "Diya",
+      "slug": "diya"
     },
-    {
-      "question": "Which day is most auspicious to light the Moonstone Diya?",
-      "answer": "Mondays and Purnima (full moon) evenings are especially potent for invoking lunar serenity and peace."
+    "categoryName": "Diya",
+    "subCategoryId": {
+      "_id": "6a55bcad2dcf49aacd71ef6e",
+      "name": "Diya",
+      "slug": "diya"
     },
-    {
-      "question": "How do I care for my Moonstone Diya?",
-      "answer": "Clean gently with lukewarm water and a clean microfiber cloth. Avoid dropping or harsh abrasives."
-    }
-  ],
-  "metaTitle": "Natural Moonstone Diya | Handcrafted White Gemstone Deepak | Crystal Jaipuria",
-  "metaDescription": "Buy certified Natural Moonstone Diya with gentle adularescent shimmer. Pure white crystal deepak for calmness, meditation, and temple worship at ₹1,650.",
-  "vedicVastu": {
-    "placementDirection": "North-West (Chandra Kon), North-East, or Meditation Altar",
-    "chakraPlanet": "Sacral Chakra (Swadhisthana) & Third Eye · Planet Moon (Chandra Dev)",
-    "poojaVidhi": "Cleanse with raw milk and gangajal on a Monday. Light with pure desi cow ghee and white cotton wick. Offer white flowers.",
-    "vedicBenefits": "Calms restless mind, stabilizes erratic emotions, connects with soothing lunar energies, brings mental clarity and spiritual serenity."
+    "subCategoryName": "Diya",
+    "size": "3.1 Inch",
+    "weight": "105 g",
+    "stock": 14,
+    "featured": true,
+    "pricePerUnit": "",
+    "pricePerCarat": ""
   },
-  "images": [
-    "/images/moonstone-diya.webp",
-    "/images/moonstone-diya-2.webp"
-  ],
-  "categoryId": {
-    "_id": "6a55bc522dcf49aacd71ef69",
-    "name": "Diya",
-    "slug": "diya"
-  },
-  "categoryName": "Diya",
-  "subCategoryId": {
-    "_id": "6a55bcad2dcf49aacd71ef6e",
-    "name": "Diya",
-    "slug": "diya"
-  },
-  "subCategoryName": "Diya",
-  "size": "3.1 Inch",
-  "weight": "105 g",
-  "stock": 14,
-  "featured": true,
-  "pricePerUnit": "",
-  "pricePerCarat": ""
-},
   {
-  "_id": "6abd501a0000000000000000",
-  "name": "Natural Green Jade Diya",
-  "slug": "green-jade-diya",
-  "price": 639,
-  "discountPrice": 799,
-  "detail": "Hand-carved from solid natural Green Jade gemstone with rich emerald tones and distinctive dark mineral veining. This sacred teardrop Diya symbolizes prosperity, business growth, and positive energy. Sculpted by master artisans of Jaipur (est. 1989), it brings emotional healing and continuous financial abundance into your home and office.",
-  "description": "<p>Hand-carved from genuine earth-mined <strong>Green Jade (Haritashma)</strong>, this luxurious <strong>Natural Green Jade Diya</strong> features rich forest-to-emerald green tones adorned with organic natural veining. Sculpted by generational lapidary artisans in Jaipur (est. 1989), it stands as a timeless beacon of prosperity, good luck, and emotional healing.</p>\n\n<h2>Symbol of Prosperity, Growth & Positive Energy</h2>\n<p>Celebrated across Asian and Vedic civilizations as the supreme gemstone of fortune and abundance:</p>\n<ul>\n  <li><strong>Heart Chakra (Anahata) Harmonization:</strong> Balances heart vibrations, fostering compassion, emotional security, and tranquil domestic relationships.</li>\n  <li><strong>Wealth & Financial Luck:</strong> Attracts business expansion, removes monetary obstacles, and promotes career recognition.</li>\n  <li><strong>Polished Handcrafted Finish:</strong> Mirror-smooth surface with a deep sculpted oil cavity and natural stone marbling.</li>\n  <li><strong>Ideal for Home, Puja, Meditation & Corporate Gifting:</strong> Auspicious for office desks, cash counters, and home mandirs.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Natural Green Jade Diya</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Green Jade (Nephrite/Jadeite)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Estimated Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">95 Grams (Approx. 85 - 110 g)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size & Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">3.0 in (L) x 2.2 in (W) x 1.0 in (H)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North (Kubera), North-East (Ishanya), or Office Cash Desk</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
-  "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Natural Green Jade Diya</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Natural Green Jade</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 95 Grams</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 3.0 in (L) x 2.2 in (W) x 1.0 in (H)</li>\n  <li><strong class=\"font-bold text-gray-900\">Listed Price :</strong> ₹639</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North (Kubera) or North-East</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone (Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof box with 100% insured express delivery</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"Why is Green Jade considered the stone of wealth and luck?\",\"answer\":\"Green Jade has been cherished for millennia as a prosperity talisman that aligns heart frequency with monetary growth and divine fortune.\"},{\"question\":\"Where should this Green Jade Diya be kept?\",\"answer\":\"Place in the North direction (governed by Lord Kubera) of your home mandir or near your office cash box for business growth.\"},{\"question\":\"Is this diya made of natural green jade or synthetic glass?\",\"answer\":\"Every Diya is sculpted from single-piece, certified 100% natural earth-mined green jade with organic veining, completely free of artificial dyes or resins.\"},{\"question\":\"How to clean and care for Green Jade?\",\"answer\":\"Wash with normal lukewarm water and mild soap. Wipe thoroughly dry with a soft cloth.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Natural Green Jade Diya | Prosperity Gemstone Deepak | Crystal Jaipuria\",\"metaDescription\":\"Buy certified Natural Green Jade Diya in teardrop shape. Sacred green deepak for wealth, prosperity, heart chakra healing & puja mandir at ₹1,550.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North (Kubera), North-East (Ishanya), or Office Cash Desk\",\"chakraPlanet\":\"Heart Chakra (Anahata) · Planet Mercury (Budha) & Venus (Shukra)\",\"poojaVidhi\":\"Fill with cow ghee with a long cotton wick. Light during Lakshmi-Ganesha puja or daily evening sandhya aarti.\",\"vedicBenefits\":\"Revered as the stone of wealth and good fortune, brings steady business growth, financial stability, dissolves negative luck, and harmonizes household energies.\"} -->",
-  "faqs": [
-    {
-      "question": "Why is Green Jade considered the stone of wealth and luck?",
-      "answer": "Green Jade has been cherished for millennia as a prosperity talisman that aligns heart frequency with monetary growth and divine fortune."
+    "_id": "6abd501a0000000000000000",
+    "name": "Natural Green Jade Diya",
+    "slug": "green-jade-diya",
+    "price": 639,
+    "discountPrice": 799,
+    "detail": "Hand-carved from solid natural Green Jade gemstone with rich emerald tones and distinctive dark mineral veining. This sacred teardrop Diya symbolizes prosperity, business growth, and positive energy. Sculpted by master artisans of Jaipur (est. 1989), it brings emotional healing and continuous financial abundance into your home and office.",
+    "description": "<p>Hand-carved from genuine earth-mined <strong>Green Jade (Haritashma)</strong>, this luxurious <strong>Natural Green Jade Diya</strong> features rich forest-to-emerald green tones adorned with organic natural veining. Sculpted by generational lapidary artisans in Jaipur (est. 1989), it stands as a timeless beacon of prosperity, good luck, and emotional healing.</p>\n\n<h2>Symbol of Prosperity, Growth & Positive Energy</h2>\n<p>Celebrated across Asian and Vedic civilizations as the supreme gemstone of fortune and abundance:</p>\n<ul>\n  <li><strong>Heart Chakra (Anahata) Harmonization:</strong> Balances heart vibrations, fostering compassion, emotional security, and tranquil domestic relationships.</li>\n  <li><strong>Wealth & Financial Luck:</strong> Attracts business expansion, removes monetary obstacles, and promotes career recognition.</li>\n  <li><strong>Polished Handcrafted Finish:</strong> Mirror-smooth surface with a deep sculpted oil cavity and natural stone marbling.</li>\n  <li><strong>Ideal for Home, Puja, Meditation & Corporate Gifting:</strong> Auspicious for office desks, cash counters, and home mandirs.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Natural Green Jade Diya</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Green Jade (Nephrite/Jadeite)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Estimated Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">95 Grams (Approx. 85 - 110 g)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size & Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">3.0 in (L) x 2.2 in (W) x 1.0 in (H)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North (Kubera), North-East (Ishanya), or Office Cash Desk</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Natural Green Jade Diya</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Natural Green Jade</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 95 Grams</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 3.0 in (L) x 2.2 in (W) x 1.0 in (H)</li>\n  <li><strong class=\"font-bold text-gray-900\">Listed Price :</strong> ₹639</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North (Kubera) or North-East</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone (Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof box with 100% insured express delivery</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"Why is Green Jade considered the stone of wealth and luck?\",\"answer\":\"Green Jade has been cherished for millennia as a prosperity talisman that aligns heart frequency with monetary growth and divine fortune.\"},{\"question\":\"Where should this Green Jade Diya be kept?\",\"answer\":\"Place in the North direction (governed by Lord Kubera) of your home mandir or near your office cash box for business growth.\"},{\"question\":\"Is this diya made of natural green jade or synthetic glass?\",\"answer\":\"Every Diya is sculpted from single-piece, certified 100% natural earth-mined green jade with organic veining, completely free of artificial dyes or resins.\"},{\"question\":\"How to clean and care for Green Jade?\",\"answer\":\"Wash with normal lukewarm water and mild soap. Wipe thoroughly dry with a soft cloth.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Natural Green Jade Diya | Prosperity Gemstone Deepak | Crystal Jaipuria\",\"metaDescription\":\"Buy certified Natural Green Jade Diya in teardrop shape. Sacred green deepak for wealth, prosperity, heart chakra healing & puja mandir at ₹1,550.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North (Kubera), North-East (Ishanya), or Office Cash Desk\",\"chakraPlanet\":\"Heart Chakra (Anahata) · Planet Mercury (Budha) & Venus (Shukra)\",\"poojaVidhi\":\"Fill with cow ghee with a long cotton wick. Light during Lakshmi-Ganesha puja or daily evening sandhya aarti.\",\"vedicBenefits\":\"Revered as the stone of wealth and good fortune, brings steady business growth, financial stability, dissolves negative luck, and harmonizes household energies.\"} -->",
+    "faqs": [
+      {
+        "question": "Why is Green Jade considered the stone of wealth and luck?",
+        "answer": "Green Jade has been cherished for millennia as a prosperity talisman that aligns heart frequency with monetary growth and divine fortune."
+      },
+      {
+        "question": "Where should this Green Jade Diya be kept?",
+        "answer": "Place in the North direction (governed by Lord Kubera) of your home mandir or near your office cash box for business growth."
+      },
+      {
+        "question": "Is this diya made of natural green jade or synthetic glass?",
+        "answer": "Every Diya is sculpted from single-piece, certified 100% natural earth-mined green jade with organic veining, completely free of artificial dyes or resins."
+      },
+      {
+        "question": "How to clean and care for Green Jade?",
+        "answer": "Wash with normal lukewarm water and mild soap. Wipe thoroughly dry with a soft cloth."
+      }
+    ],
+    "metaTitle": "Natural Green Jade Diya | Prosperity Gemstone Deepak | Crystal Jaipuria",
+    "metaDescription": "Buy certified Natural Green Jade Diya in teardrop shape. Sacred green deepak for wealth, prosperity, heart chakra healing & puja mandir at ₹1,550.",
+    "vedicVastu": {
+      "placementDirection": "North (Kubera), North-East (Ishanya), or Office Cash Desk",
+      "chakraPlanet": "Heart Chakra (Anahata) · Planet Mercury (Budha) & Venus (Shukra)",
+      "poojaVidhi": "Fill with cow ghee with a long cotton wick. Light during Lakshmi-Ganesha puja or daily evening sandhya aarti.",
+      "vedicBenefits": "Revered as the stone of wealth and good fortune, brings steady business growth, financial stability, dissolves negative luck, and harmonizes household energies."
     },
-    {
-      "question": "Where should this Green Jade Diya be kept?",
-      "answer": "Place in the North direction (governed by Lord Kubera) of your home mandir or near your office cash box for business growth."
+    "images": [
+      "/images/green-jade-diya.webp",
+      "/images/green-jade-diya-2.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bc522dcf49aacd71ef69",
+      "name": "Diya",
+      "slug": "diya"
     },
-    {
-      "question": "Is this diya made of natural green jade or synthetic glass?",
-      "answer": "Every Diya is sculpted from single-piece, certified 100% natural earth-mined green jade with organic veining, completely free of artificial dyes or resins."
+    "categoryName": "Diya",
+    "subCategoryId": {
+      "_id": "6a55bcad2dcf49aacd71ef6e",
+      "name": "Diya",
+      "slug": "diya"
     },
-    {
-      "question": "How to clean and care for Green Jade?",
-      "answer": "Wash with normal lukewarm water and mild soap. Wipe thoroughly dry with a soft cloth."
-    }
-  ],
-  "metaTitle": "Natural Green Jade Diya | Prosperity Gemstone Deepak | Crystal Jaipuria",
-  "metaDescription": "Buy certified Natural Green Jade Diya in teardrop shape. Sacred green deepak for wealth, prosperity, heart chakra healing & puja mandir at ₹1,550.",
-  "vedicVastu": {
-    "placementDirection": "North (Kubera), North-East (Ishanya), or Office Cash Desk",
-    "chakraPlanet": "Heart Chakra (Anahata) · Planet Mercury (Budha) & Venus (Shukra)",
-    "poojaVidhi": "Fill with cow ghee with a long cotton wick. Light during Lakshmi-Ganesha puja or daily evening sandhya aarti.",
-    "vedicBenefits": "Revered as the stone of wealth and good fortune, brings steady business growth, financial stability, dissolves negative luck, and harmonizes household energies."
+    "subCategoryName": "Diya",
+    "size": "3.0 Inch",
+    "weight": "95 g",
+    "stock": 15,
+    "featured": true,
+    "pricePerUnit": "",
+    "pricePerCarat": ""
   },
-  "images": [
-    "/images/green-jade-diya.webp",
-    "/images/green-jade-diya-2.webp"
-  ],
-  "categoryId": {
-    "_id": "6a55bc522dcf49aacd71ef69",
-    "name": "Diya",
-    "slug": "diya"
-  },
-  "categoryName": "Diya",
-  "subCategoryId": {
-    "_id": "6a55bcad2dcf49aacd71ef6e",
-    "name": "Diya",
-    "slug": "diya"
-  },
-  "subCategoryName": "Diya",
-  "size": "3.0 Inch",
-  "weight": "95 g",
-  "stock": 15,
-  "featured": true,
-  "pricePerUnit": "",
-  "pricePerCarat": ""
-},
   {
-  "_id": "6abd501b0000000000000000",
-  "name": "Natural Green Aventurine Diya",
-  "slug": "green-aventurine-diya",
-  "price": 499,
-  "discountPrice": 699,
-  "detail": "Hand-carved from 100% natural Green Aventurine gemstone with soothing pistachio-green hues and subtle crystalline aventurescence shimmer. Known as the Stone of Opportunity, this graceful teardrop Diya symbolizes growth, happiness, and vitality. Handcrafted by master artisans in Jaipur (est. 1989), it brings good fortune and positive warmth to your home mandir.",
-  "description": "<p>Handcrafted from 100% earth-mined <strong>Green Aventurine</strong>, this serene <strong>Natural Green Aventurine Diya</strong> displays soothing translucent mint-to-pistachio shades with microscopic mineral mica shimmer (aventurescence). Sculpted by Jaipur master lapidaries (est. 1989), it inspires vitality, emotional comfort, and unhindered good luck.</p>\n\n<h2>Symbol of Growth, Happiness & Positive Energy</h2>\n<p>Revered in modern crystal therapy and Vedic Shilpa traditions as an auspicious catalyst for good luck:</p>\n<ul>\n  <li><strong>Stone of Opportunity & Luck:</strong> Amplifies optimism, opens new avenues of personal and financial growth, and clears emotional inertia.</li>\n  <li><strong>Heart Chakra (Anahata) Awakening:</strong> Infuses peace and unconditional calm, dissolving daily tension and workplace fatigue.</li>\n  <li><strong>Teardrop Artisan Carving:</strong> Sleek polished finish with a deep bowl engineered for pure ghee or sesame oil with steady cotton wick flame.</li>\n  <li><strong>Ideal for Home, Puja, Meditation & Auspicious Gifting:</strong> Brings fresh green vitality to your home altar.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Natural Green Aventurine Diya</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Green Aventurine (Quartz with Fuchsite)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Estimated Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">95 Grams (Approx. 85 - 110 g)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size & Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">3.0 in (L) x 2.2 in (W) x 1.0 in (H)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North (Financial growth), East, or Home Mandir Altar</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
-  "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Natural Green Aventurine Diya</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Natural Green Aventurine</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 95 Grams</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 3.0 in (L) x 2.2 in (W) x 1.0 in (H)</li>\n  <li><strong class=\"font-bold text-gray-900\">Listed Price :</strong> ₹499</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North or East facing Altar</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone (Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof box with 100% insured express delivery</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"Why is Green Aventurine known as the Stone of Opportunity?\",\"answer\":\"Green Aventurine is believed to be the luckiest of all crystals, particularly in manifesting financial prosperity, career promotions, and emotional vitality.\"},{\"question\":\"Where should this Green Aventurine Diya be placed?\",\"answer\":\"Place in the North or East of your puja mandir to attract fresh opportunities and unhindered good fortune.\"},{\"question\":\"Can pure ghee be used in Green Aventurine Diya?\",\"answer\":\"Yes, pure cow ghee or sesame oil with a soft cotton wick is completely safe and auspicious.\"},{\"question\":\"How to clean this gemstone lamp?\",\"answer\":\"Wipe gently with a soft cotton cloth after cooling. Avoid harsh acidic cleaners.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Natural Green Aventurine Diya | Prosperity Gemstone Deepak | Crystal Jaipuria\",\"metaDescription\":\"Buy hand-carved Natural Green Aventurine Diya in teardrop shape. Healing green crystal deepak for luck, heart chakra harmony & mandir worship at ₹1,350.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North (Financial growth), East, or Home Mandir Altar\",\"chakraPlanet\":\"Heart Chakra (Anahata) · Planet Mercury (Budha)\",\"poojaVidhi\":\"Light with pure desi cow ghee or sesame oil during daily prayer. Offer green durva grass or fresh flowers.\",\"vedicBenefits\":\"Renowned as the Stone of Opportunity and prosperity, opens the heart chakra, inspires optimism, manifests good luck, commercial success, and vital health.\"} -->",
-  "faqs": [
-    {
-      "question": "Why is Green Aventurine known as the Stone of Opportunity?",
-      "answer": "Green Aventurine is believed to be the luckiest of all crystals, particularly in manifesting financial prosperity, career promotions, and emotional vitality."
+    "_id": "6abd501b0000000000000000",
+    "name": "Natural Green Aventurine Diya",
+    "slug": "green-aventurine-diya",
+    "price": 499,
+    "discountPrice": 699,
+    "detail": "Hand-carved from 100% natural Green Aventurine gemstone with soothing pistachio-green hues and subtle crystalline aventurescence shimmer. Known as the Stone of Opportunity, this graceful teardrop Diya symbolizes growth, happiness, and vitality. Handcrafted by master artisans in Jaipur (est. 1989), it brings good fortune and positive warmth to your home mandir.",
+    "description": "<p>Handcrafted from 100% earth-mined <strong>Green Aventurine</strong>, this serene <strong>Natural Green Aventurine Diya</strong> displays soothing translucent mint-to-pistachio shades with microscopic mineral mica shimmer (aventurescence). Sculpted by Jaipur master lapidaries (est. 1989), it inspires vitality, emotional comfort, and unhindered good luck.</p>\n\n<h2>Symbol of Growth, Happiness & Positive Energy</h2>\n<p>Revered in modern crystal therapy and Vedic Shilpa traditions as an auspicious catalyst for good luck:</p>\n<ul>\n  <li><strong>Stone of Opportunity & Luck:</strong> Amplifies optimism, opens new avenues of personal and financial growth, and clears emotional inertia.</li>\n  <li><strong>Heart Chakra (Anahata) Awakening:</strong> Infuses peace and unconditional calm, dissolving daily tension and workplace fatigue.</li>\n  <li><strong>Teardrop Artisan Carving:</strong> Sleek polished finish with a deep bowl engineered for pure ghee or sesame oil with steady cotton wick flame.</li>\n  <li><strong>Ideal for Home, Puja, Meditation & Auspicious Gifting:</strong> Brings fresh green vitality to your home altar.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Natural Green Aventurine Diya</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Earth-Mined Natural Green Aventurine (Quartz with Fuchsite)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Estimated Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">95 Grams (Approx. 85 - 110 g)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Size & Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">3.0 in (L) x 2.2 in (W) x 1.0 in (H)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Lapidary Provenance</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Jaipur Heritage Workshops, Rajasthan, India (Est. 1989)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North (Financial growth), East, or Home Mandir Altar</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Earth-Mined Natural Gemstone (Lab Certified)</td>\n    </tr>\n  </tbody>\n</table>",
+    "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Natural Green Aventurine Diya</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Natural Green Aventurine</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 95 Grams</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 3.0 in (L) x 2.2 in (W) x 1.0 in (H)</li>\n  <li><strong class=\"font-bold text-gray-900\">Listed Price :</strong> ₹499</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Vastu Direction :</strong> North or East facing Altar</li>\n  <li><strong class=\"font-bold text-gray-900\">Authenticity Guarantee :</strong> 100% Earth-Mined Natural Gemstone (Lab Certified)</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof box with 100% insured express delivery</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"Why is Green Aventurine known as the Stone of Opportunity?\",\"answer\":\"Green Aventurine is believed to be the luckiest of all crystals, particularly in manifesting financial prosperity, career promotions, and emotional vitality.\"},{\"question\":\"Where should this Green Aventurine Diya be placed?\",\"answer\":\"Place in the North or East of your puja mandir to attract fresh opportunities and unhindered good fortune.\"},{\"question\":\"Can pure ghee be used in Green Aventurine Diya?\",\"answer\":\"Yes, pure cow ghee or sesame oil with a soft cotton wick is completely safe and auspicious.\"},{\"question\":\"How to clean this gemstone lamp?\",\"answer\":\"Wipe gently with a soft cotton cloth after cooling. Avoid harsh acidic cleaners.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Natural Green Aventurine Diya | Prosperity Gemstone Deepak | Crystal Jaipuria\",\"metaDescription\":\"Buy hand-carved Natural Green Aventurine Diya in teardrop shape. Healing green crystal deepak for luck, heart chakra harmony & mandir worship at ₹1,350.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North (Financial growth), East, or Home Mandir Altar\",\"chakraPlanet\":\"Heart Chakra (Anahata) · Planet Mercury (Budha)\",\"poojaVidhi\":\"Light with pure desi cow ghee or sesame oil during daily prayer. Offer green durva grass or fresh flowers.\",\"vedicBenefits\":\"Renowned as the Stone of Opportunity and prosperity, opens the heart chakra, inspires optimism, manifests good luck, commercial success, and vital health.\"} -->",
+    "faqs": [
+      {
+        "question": "Why is Green Aventurine known as the Stone of Opportunity?",
+        "answer": "Green Aventurine is believed to be the luckiest of all crystals, particularly in manifesting financial prosperity, career promotions, and emotional vitality."
+      },
+      {
+        "question": "Where should this Green Aventurine Diya be placed?",
+        "answer": "Place in the North or East of your puja mandir to attract fresh opportunities and unhindered good fortune."
+      },
+      {
+        "question": "Can pure ghee be used in Green Aventurine Diya?",
+        "answer": "Yes, pure cow ghee or sesame oil with a soft cotton wick is completely safe and auspicious."
+      },
+      {
+        "question": "How to clean this gemstone lamp?",
+        "answer": "Wipe gently with a soft cotton cloth after cooling. Avoid harsh acidic cleaners."
+      }
+    ],
+    "metaTitle": "Natural Green Aventurine Diya | Prosperity Gemstone Deepak | Crystal Jaipuria",
+    "metaDescription": "Buy hand-carved Natural Green Aventurine Diya in teardrop shape. Healing green crystal deepak for luck, heart chakra harmony & mandir worship at ₹1,350.",
+    "vedicVastu": {
+      "placementDirection": "North (Financial growth), East, or Home Mandir Altar",
+      "chakraPlanet": "Heart Chakra (Anahata) · Planet Mercury (Budha)",
+      "poojaVidhi": "Light with pure desi cow ghee or sesame oil during daily prayer. Offer green durva grass or fresh flowers.",
+      "vedicBenefits": "Renowned as the Stone of Opportunity and prosperity, opens the heart chakra, inspires optimism, manifests good luck, commercial success, and vital health."
     },
-    {
-      "question": "Where should this Green Aventurine Diya be placed?",
-      "answer": "Place in the North or East of your puja mandir to attract fresh opportunities and unhindered good fortune."
+    "images": [
+      "/images/green-aventurine-diya.webp",
+      "/images/green-aventurine-diya-2.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bc522dcf49aacd71ef69",
+      "name": "Diya",
+      "slug": "diya"
     },
-    {
-      "question": "Can pure ghee be used in Green Aventurine Diya?",
-      "answer": "Yes, pure cow ghee or sesame oil with a soft cotton wick is completely safe and auspicious."
+    "categoryName": "Diya",
+    "subCategoryId": {
+      "_id": "6a55bcad2dcf49aacd71ef6e",
+      "name": "Diya",
+      "slug": "diya"
     },
-    {
-      "question": "How to clean this gemstone lamp?",
-      "answer": "Wipe gently with a soft cotton cloth after cooling. Avoid harsh acidic cleaners."
-    }
-  ],
-  "metaTitle": "Natural Green Aventurine Diya | Prosperity Gemstone Deepak | Crystal Jaipuria",
-  "metaDescription": "Buy hand-carved Natural Green Aventurine Diya in teardrop shape. Healing green crystal deepak for luck, heart chakra harmony & mandir worship at ₹1,350.",
-  "vedicVastu": {
-    "placementDirection": "North (Financial growth), East, or Home Mandir Altar",
-    "chakraPlanet": "Heart Chakra (Anahata) · Planet Mercury (Budha)",
-    "poojaVidhi": "Light with pure desi cow ghee or sesame oil during daily prayer. Offer green durva grass or fresh flowers.",
-    "vedicBenefits": "Renowned as the Stone of Opportunity and prosperity, opens the heart chakra, inspires optimism, manifests good luck, commercial success, and vital health."
-  },
-  "images": [
-    "/images/green-aventurine-diya.webp",
-    "/images/green-aventurine-diya-2.webp"
-  ],
-  "categoryId": {
-    "_id": "6a55bc522dcf49aacd71ef69",
-    "name": "Diya",
-    "slug": "diya"
-  },
-  "categoryName": "Diya",
-  "subCategoryId": {
-    "_id": "6a55bcad2dcf49aacd71ef6e",
-    "name": "Diya",
-    "slug": "diya"
-  },
-  "subCategoryName": "Diya",
-  "size": "3.0 Inch",
-  "weight": "95 g",
-  "stock": 18,
-  "featured": true,
-  "pricePerUnit": "",
-  "pricePerCarat": ""
-},
-{
-  "_id": "6a55cf012e9a358fc926c001",
-  "name": "Corundum Ruby Gemstone Ganesh Statue",
-  "slug": "corundum-ruby-gemstone-ganesh-statue",
-  "price": 74500,
-  "discountPrice": 98000,
-  "detail": "Exquisite hand-carved Natural Corundum Ruby Gemstone Ganesha Statue sculpted from authentic single-piece ruby rough in Jaipur. Weighing 12.5 kg with majestic Lalitasana posture and fine details, this museum-grade ruby murti radiates deep raspberry-crimson luster and powerful solar vitality for sacred puja rooms and luxury vastu interiors.",
-  "description": "<p>Exquisite hand-carved Natural Corundum Ruby Gemstone Ganesha Statue sculpted from authentic single-piece unheated ruby rough in Jaipur. Lord Ganesha is seated in majestic Lalitasana blessing devotees with Abhaya mudra and holding sacred modak in trunk. Weighing an impressive 12.5 kg, this museum-grade ruby murti radiates deep raspberry-crimson luster and powerful solar vitality for sacred puja rooms and luxury vastu interiors.</p>\n\n<h2>Vedic Ruby Craftsmanship & Divine Auspiciousness</h2>\n<p>Masterfully carved by generational Jaipur lapidaries adhering to ancient Shilpa Shastra proportions:</p>\n<ul>\n  <li><strong>Natural Corundum Ruby Material:</strong> Earth-mined natural corundum mineral with natural silk inclusions and intense solar resonance.</li>\n  <li><strong>Exquisite Master Detailing:</strong> Detailed crown (Mukut), divine ornaments, ornate trunk curve, and carved pedestal.</li>\n  <li><strong>Sacred Vastu Energy:</strong> Aligns with Sun (Surya) and Muladhara chakra, dispelling negative energies and bestowing unstoppable commercial progress.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Corundum Ruby Gemstone Ganesh Statue</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Natural Earth-Mined Corundum Ruby Gemstone</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Gross Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">12.5 kg</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">15.0 in (H) x 11.5 in (W) x 6.0 in (D)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Basis</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Direct Jaipur Manufacturer Wholesale Rate (₹74,500)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Placement</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North, Northeast (Ishanya), or East Altar</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Certificate</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Natural Gemstone Guarantee</td>\n    </tr>\n  </tbody>\n</table>",
-  "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Corundum Ruby Gemstone Ganesh Statue</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Natural Earth-Mined Corundum Ruby</li>\n  <li><strong class=\"font-bold text-gray-900\">Gross Weight :</strong> 12.5 kg</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 15.0 in (H) x 11.5 in (W) x 6.0 in (D)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing :</strong> ₹74,500 (Direct Workshop Price)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Direction :</strong> North, Northeast (Ishanya), or East</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Wooden crate packing with 100% transit insurance</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"Is this Corundum Ruby Ganesha statue made of real single-block natural ruby?\",\"answer\":\"Yes, it is carved entirely from a single solid block of 100% natural earth-mined corundum ruby rough by master artisans in Jaipur, displaying authentic natural crystal grain and natural inclusions.\"},{\"question\":\"What are the spiritual and astrological benefits of keeping a Ruby Ganesha idol?\",\"answer\":\"Ruby represents the Sun (Surya), symbolizing leadership, vitality, and power. Combined with Lord Ganesha (Vighnaharta), it removes financial obstacles, safeguards prestige, and invites enduring commercial success.\"},{\"question\":\"How should I clean and maintain this 12.5 kg gemstone idol?\",\"answer\":\"Wipe gently with a clean soft microfiber cloth. For ritual Abhishek, use holy Gangajal, raw milk, and pure water, then dry completely with a cotton towel.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Natural Corundum Ruby Ganesha Statue (12.5 kg) | Crystal Jaipuria\",\"metaDescription\":\"Buy authentic 12.5 kg Hand-Carved Corundum Ruby Gemstone Ganesha Statue from Crystal Jaipuria. Certified natural ruby idol for puja & vastu at direct factory price.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North (Kubera wealth direction), Northeast (Ishanya temple corner), or East-facing altar\",\"chakraPlanet\":\"Root Chakra (Muladhara) & Solar Plexus · Ruling Planet Sun (Surya Dev)\",\"poojaVidhi\":\"Consecrate on Sunday or Ganesh Chaturthi with holy Gangajal, raw cow milk, and red kumkum. Offer red hibiscus flowers, pure ghee deepak, and modak prasad.\",\"vedicBenefits\":\"Corundum Ruby radiates powerful solar energy that enhances leadership, attracts immense wealth, dispels obstacles (Vighnaharta), and protects family from negative energies.\"} -->",
-  "faqs": [
-    {
-      "question": "Is this Corundum Ruby Ganesha statue made of real single-block natural ruby?",
-      "answer": "Yes, it is carved entirely from a single solid block of 100% natural earth-mined corundum ruby rough by master artisans in Jaipur, displaying authentic natural crystal grain and natural inclusions."
-    },
-    {
-      "question": "What are the spiritual and astrological benefits of keeping a Ruby Ganesha idol?",
-      "answer": "Ruby represents the Sun (Surya), symbolizing leadership, vitality, and power. Combined with Lord Ganesha (Vighnaharta), it removes financial obstacles, safeguards prestige, and invites enduring commercial success."
-    },
-    {
-      "question": "How should I clean and maintain this 12.5 kg gemstone idol?",
-      "answer": "Wipe gently with a clean soft microfiber cloth. For ritual Abhishek, use holy Gangajal, raw milk, and pure water, then dry completely with a cotton towel."
-    }
-  ],
-  "metaTitle": "Natural Corundum Ruby Ganesha Statue (12.5 kg) | Crystal Jaipuria",
-  "metaDescription": "Buy authentic 12.5 kg Hand-Carved Corundum Ruby Gemstone Ganesha Statue from Crystal Jaipuria. Certified natural ruby idol for puja & vastu at direct factory price.",
-  "vedicVastu": {
-    "placementDirection": "North (Kubera wealth direction), Northeast (Ishanya temple corner), or East-facing altar",
-    "chakraPlanet": "Root Chakra (Muladhara) & Solar Plexus · Ruling Planet Sun (Surya Dev)",
-    "poojaVidhi": "Consecrate on Sunday or Ganesh Chaturthi with holy Gangajal, raw cow milk, and red kumkum. Offer red hibiscus flowers, pure ghee deepak, and modak prasad.",
-    "vedicBenefits": "Corundum Ruby radiates powerful solar energy that enhances leadership, attracts immense wealth, dispels obstacles (Vighnaharta), and protects family from negative energies."
-  },
-  "images": [
-    "/images/corundum-ruby-gemstone-ganesh-statue.webp",
-    "/images/corundum-ruby-gemstone-ganesh-statue-2.webp"
-  ],
-  "categoryId": {
-    "_id": "6a55bb1f2e9a358fc926cbab",
-    "name": "God Statues",
-    "slug": "god-statues"
-  },
-  "categoryName": "God Statues",
-  "subCategoryId": {
-    "_id": "6a55bc842dcf49aacd71ef6b",
-    "name": "Ganesh",
-    "slug": "ganesh"
-  },
-  "subCategoryName": "Ganesh",
-  "size": "15.0 in (H) x 11.5 in (W) x 6.0 in (D)",
-  "weight": "12.5 kg",
-  "stock": 4,
-  "featured": true,
-  "pricePerUnit": "₹74,500",
-  "pricePerCarat": ""
-},
-{
-  "_id": "6a55cf012e9a358fc926c002",
-  "name": "Natural Jade Stone Ganesha with Arch",
-  "slug": "natural-jade-stone-ganesha-with-arch",
-  "price": 68500,
-  "discountPrice": 89000,
-  "detail": "Majestic 5.80 kg Natural Green Jade Stone Ganesha sculpture adorned with an ornate carved arch (Prabhavali). Masterfully sculpted by Jaipur craftsmen from certified natural jade boulder, this auspicious idol invites boundless abundance, luck, and supreme Vastu harmony into homes and luxury workplaces.",
-  "description": "<p>Majestic 5.80 kg Natural Green Jade Stone Ganesha sculpture adorned with an ornate carved arch (Prabhavali). Masterfully sculpted by Jaipur craftsmen from a certified natural jade boulder, this auspicious idol invites boundless abundance, luck, and supreme Vastu harmony into homes and luxury workplaces.</p>\n\n<h2>Imperial Green Jade & Cosmic Prabhavali Symbolism</h2>\n<p>Sculpted adhering to sacred Shilpa Shastra traditions from natural earth-mined green jade:</p>\n<ul>\n  <li><strong>Protective Prabhavali Arch:</strong> Intricately carved halo arch symbolizes the infinite cosmic shield and divine aura of Vignaharta.</li>\n  <li><strong>Genuine Green Jade Stone:</strong> Earth-mined gemstone with rich natural emerald shades, silky polished surface, and enduring cooling touch.</li>\n  <li><strong>Vastu & Commercial Prosperity:</strong> Associated with Mercury (Budh) and Kubera, ensuring steady commercial wealth and family tranquility.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Natural Jade Stone Ganesha with Arch</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material Composition</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Natural Earth-Mined Green Jade</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Gross Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">5.80 kg</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">14.5 in (H) x 12.0 in (W) x 6.5 in (D)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Basis</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Direct Jaipur Workshop Rate (₹68,500)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Direction</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North (Kubera wealth direction) or East</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Authenticity Guarantee</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Natural Earth-Mined Gemstone</td>\n    </tr>\n  </tbody>\n</table>",
-  "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Natural Jade Stone Ganesha with Arch</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Certified Natural Green Jade</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 5.80 kg</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 14.5 in (H) x 12.0 in (W) x 6.5 in (D)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing :</strong> ₹68,500 (Discounted from ₹89,000)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Direction :</strong> North or East in Mandir or Executive Office</li>\n  <li><strong class=\"font-bold text-gray-900\">Packaging &amp; Transit :</strong> Heavy-duty shockproof crating with 100% insured transit</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"What is the spiritual significance of the arch (Prabhavali) around Lord Ganesha?\",\"answer\":\"The Prabhavali (divine aura arch) symbolizes the halo of supreme cosmic energy radiating from Lord Ganesha, creating a protective shield across the home or sanctuary.\"},{\"question\":\"Is this Jade Ganesha statue carved from 100% natural jade stone?\",\"answer\":\"Yes, each piece is carved from certified earth-mined natural Green Jade in our Jaipur workshop, retaining natural mineral banding and a smooth soothing tactile finish.\"},{\"question\":\"Where is the best place in the home or office to place this Jade Ganesha?\",\"answer\":\"According to Vastu Shastra, place it in the North (Kubera wealth direction) or East in your prayer mandir, living room, or executive desk facing inwards.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Natural Green Jade Ganesha with Arch (5.8 kg) | Crystal Jaipuria\",\"metaDescription\":\"Shop luxury 5.8 kg Natural Green Jade Stone Ganesha with Arch (Prabhavali). Master artisan carved Lord Ganesha for vastu, prosperity & temple decor from Jaipur.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North or Northeast facing East in home temple, executive office, or main entrance\",\"chakraPlanet\":\"Heart Chakra (Anahata) · Ruling Planet Mercury (Budha Dev)\",\"poojaVidhi\":\"Cleanse with Gangajal and unboiled milk on Wednesday. Offer Durva grass, yellow chandan, green cardamom, and fresh modaks.\",\"vedicBenefits\":\"Green Jade is the sacred stone of commercial fortune, harmony, and wisdom. The protective arch (Prabhavali) shields the sanctuary while inviting endless prosperity and peace.\"} -->",
-  "faqs": [
-    {
-      "question": "What is the spiritual significance of the arch (Prabhavali) around Lord Ganesha?",
-      "answer": "The Prabhavali (divine aura arch) symbolizes the halo of supreme cosmic energy radiating from Lord Ganesha, creating a protective shield across the home or sanctuary."
-    },
-    {
-      "question": "Is this Jade Ganesha statue carved from 100% natural jade stone?",
-      "answer": "Yes, each piece is carved from certified earth-mined natural Green Jade in our Jaipur workshop, retaining natural mineral banding and a smooth soothing tactile finish."
-    },
-    {
-      "question": "Where is the best place in the home or office to place this Jade Ganesha?",
-      "answer": "According to Vastu Shastra, place it in the North (Kubera wealth direction) or East in your prayer mandir, living room, or executive desk facing inwards."
-    }
-  ],
-  "metaTitle": "Natural Green Jade Ganesha with Arch (5.8 kg) | Crystal Jaipuria",
-  "metaDescription": "Shop luxury 5.8 kg Natural Green Jade Stone Ganesha with Arch (Prabhavali). Master artisan carved Lord Ganesha for vastu, prosperity & temple decor from Jaipur.",
-  "vedicVastu": {
-    "placementDirection": "North or Northeast facing East in home temple, executive office, or main entrance",
-    "chakraPlanet": "Heart Chakra (Anahata) · Ruling Planet Mercury (Budha Dev)",
-    "poojaVidhi": "Cleanse with Gangajal and unboiled milk on Wednesday. Offer Durva grass, yellow chandan, green cardamom, and fresh modaks.",
-    "vedicBenefits": "Green Jade is the sacred stone of commercial fortune, harmony, and wisdom. The protective arch (Prabhavali) shields the sanctuary while inviting endless prosperity and peace."
-  },
-  "images": [
-    "/images/natural-jade-stone-ganesha-with-arch.webp",
-    "/images/natural-jade-stone-ganesha-with-arch-2.webp",
-    "/images/natural-jade-stone-ganesha-with-arch-3.webp",
-    "/images/natural-jade-stone-ganesha-with-arch-4.webp"
-  ],
-  "categoryId": {
-    "_id": "6a55bb1f2e9a358fc926cbab",
-    "name": "God Statues",
-    "slug": "god-statues"
-  },
-  "categoryName": "God Statues",
-  "subCategoryId": {
-    "_id": "6a55bc842dcf49aacd71ef6b",
-    "name": "Ganesh",
-    "slug": "ganesh"
-  },
-  "subCategoryName": "Ganesh",
-  "size": "14.5 in (H) x 12.0 in (W) x 6.5 in (D)",
-  "weight": "5.80 kg",
-  "stock": 5,
-  "featured": true,
-  "pricePerUnit": "₹68,500",
-  "pricePerCarat": ""
-},
-{
-  "_id": "6a55cf012e9a358fc926c003",
-  "name": "Green Jade Stone Ganesha with Arch",
-  "slug": "green-jade-stone-ganesha-with-arch",
-  "price": 28500,
-  "discountPrice": 38000,
-  "detail": "Handcrafted 11-inch (2.85 kg) Green Jade Stone Ganesha statue surrounded by an intricately carved Prabhavali arch. Carved with exquisite balance and fine lapidary polishing in Jaipur, ideal for home mandirs, office desks, and spiritual gifting.",
-  "description": "<p>Handcrafted 11-inch (2.85 kg) Green Jade Stone Ganesha statue surrounded by an intricately carved Prabhavali arch. Carved with exquisite balance and fine lapidary polishing in Jaipur, ideal for home mandirs, office desks, and spiritual gifting.</p>\n\n<h2>Artisanal Jade Carving & Divine Vastu Energy</h2>\n<p>Honoring centuries-old Rajasthani stone crafting techniques:</p>\n<ul>\n  <li><strong>Single-Piece Jade Carving:</strong> Sculpted from authentic natural green jade featuring natural green translucence.</li>\n  <li><strong>Sacred Iconography:</strong> Ganesha seated in padmasana blessing with Abhaya mudra, holding modak and parashu.</li>\n  <li><strong>Direct Factory Value:</strong> Authentic artisan-direct pricing without distributor overheads.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Green Jade Stone Ganesha with Arch</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Natural Certified Green Jade Stone</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Gross Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">2.85 kg</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">11.0 in (H) x 8.5 in (W) x 4.8 in (D)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Basis</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹28,500 (Discounted from ₹38,000)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Placement</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North, East, or Home Mandir Altar</td>\n    </tr>\n  </tbody>\n</table>",
-  "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Green Jade Stone Ganesha with Arch</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Natural Green Jade</li>\n  <li><strong class=\"font-bold text-gray-900\">Gross Weight :</strong> 2.85 kg</li>\n  <li><strong class=\"font-bold text-gray-900\">Height :</strong> 11.0 in (H) x 8.5 in (W) x 4.8 in (D)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing :</strong> ₹28,500 (Market Retail ₹48,000+)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Direction :</strong> North (Financial Growth) or East</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"How does this 11-inch Green Jade Ganesha compare with competitor retail pieces?\",\"answer\":\"Unlike commercial retail stores selling at ₹48,000+, Crystal Jaipuria crafts every statue directly at our Jaipur lapidary workshop, offering certified natural jade at direct manufacturer pricing of ₹28,500.\"},{\"question\":\"Can I perform daily puja and Jalabhishek on this Jade idol?\",\"answer\":\"Yes, natural green jade is durable and non-porous. You can offer water, Gangajal, and milk Abhishek safely, drying with a soft cotton cloth afterwards.\"},{\"question\":\"What benefits does Green Jade bring according to Vedic Vastu?\",\"answer\":\"Green Jade resonates with the Heart Chakra (Anahata) and planet Mercury (Budh), attracting commercial wealth, sharper decision-making, and harmonious relationships.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Green Jade Stone Ganesha with Arch (11 in) | Crystal Jaipuria\",\"metaDescription\":\"Buy 11-inch Handcrafted Green Jade Stone Ganesha with Arch (2.85 kg). Authentic natural green jade carving for prosperity & spiritual decor at factory direct price.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North, East, or puja room mandir\",\"chakraPlanet\":\"Heart Chakra (Anahata) · Ruling Planet Mercury (Budha)\",\"poojaVidhi\":\"Worship every Wednesday with sacred Gangajal abhishekam, green durva grass, and pure cow ghee diya.\",\"vedicBenefits\":\"Bestows business growth, sharp intellect, stress relief, and auspicious blessings of Siddhivinayak.\"} -->",
-  "faqs": [
-    {
-      "question": "How does this 11-inch Green Jade Ganesha compare with competitor retail pieces?",
-      "answer": "Unlike commercial retail stores selling at ₹48,000+, Crystal Jaipuria crafts every statue directly at our Jaipur lapidary workshop, offering certified natural jade at direct manufacturer pricing of ₹28,500."
-    },
-    {
-      "question": "Can I perform daily puja and Jalabhishek on this Jade idol?",
-      "answer": "Yes, natural green jade is durable and non-porous. You can offer water, Gangajal, and milk Abhishek safely, drying with a soft cotton cloth afterwards."
-    },
-    {
-      "question": "What benefits does Green Jade bring according to Vedic Vastu?",
-      "answer": "Green Jade resonates with the Heart Chakra (Anahata) and planet Mercury (Budh), attracting commercial wealth, sharper decision-making, and harmonious relationships."
-    }
-  ],
-  "metaTitle": "Green Jade Stone Ganesha with Arch (11 in) | Crystal Jaipuria",
-  "metaDescription": "Buy 11-inch Handcrafted Green Jade Stone Ganesha with Arch (2.85 kg). Authentic natural green jade carving for prosperity & spiritual decor at factory direct price.",
-  "vedicVastu": {
-    "placementDirection": "North, East, or puja room mandir",
-    "chakraPlanet": "Heart Chakra (Anahata) · Ruling Planet Mercury (Budha)",
-    "poojaVidhi": "Worship every Wednesday with sacred Gangajal abhishekam, green durva grass, and pure cow ghee diya.",
-    "vedicBenefits": "Bestows business growth, sharp intellect, stress relief, and auspicious blessings of Siddhivinayak."
-  },
-  "images": [
-    "/images/green-jade-stone-ganesha-with-arch.webp",
-    "/images/green-jade-stone-ganesha-with-arch-2.webp",
-    "/images/green-jade-stone-ganesha-with-arch-3.webp"
-  ],
-  "categoryId": {
-    "_id": "6a55bb1f2e9a358fc926cbab",
-    "name": "God Statues",
-    "slug": "god-statues"
-  },
-  "categoryName": "God Statues",
-  "subCategoryId": {
-    "_id": "6a55bc842dcf49aacd71ef6b",
-    "name": "Ganesh",
-    "slug": "ganesh"
-  },
-  "subCategoryName": "Ganesh",
-  "size": "11.0 in (H) x 8.5 in (W) x 4.8 in (D)",
-  "weight": "2.85 kg",
-  "stock": 6,
-  "featured": true,
-  "pricePerUnit": "₹28,500",
-  "pricePerCarat": ""
-},
-{
-  "_id": "6a55cf012e9a358fc926c004",
-  "name": "Dark Green Aventurine Ganesha Idol",
-  "slug": "dark-green-aventurine-ganesha-idol",
-  "price": 14500,
-  "discountPrice": 19500,
-  "detail": "Captivating 2.10 kg Dark Green Aventurine Ganesha Idol exquisitely hand-sculpted in Jaipur. Known globally as the premier 'Stone of Opportunity', this deep forest green Ganpati murti balances heart energy, attracts commercial fortune, and removes hurdles with graceful tranquility.",
-  "description": "<p>Captivating 2.10 kg Dark Green Aventurine Ganesha Idol exquisitely hand-sculpted in Jaipur. Known globally as the premier 'Stone of Opportunity', this deep forest green Ganpati murti balances heart energy, attracts commercial fortune, and removes hurdles with graceful tranquility.</p>\n\n<h2>Vedic Healing & Green Aventurine Energy</h2>\n<p>Carved with sacred devotion by master gemstone carvers:</p>\n<ul>\n  <li><strong>Deep Forest Green Aventurine:</strong> Earth-mined crystal displaying subtle natural aventurescence and soothing tactile polish.</li>\n  <li><strong>Sacred Ganpati Iconography:</strong> Lord Ganesha seated peacefully with blessings of wisdom, abundance, and hurdle elimination.</li>\n  <li><strong>Heart Chakra (Anahata) Healing:</strong> Calms emotional distress, inspires optimism, and invites financial opportunities.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Dark Green Aventurine Ganesha Idol</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Natural Dark Green Aventurine Gemstone</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Gross Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">2.10 kg</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">9.5 in (H) x 7.0 in (W) x 4.2 in (D)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Basis</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹14,500 (Discounted from ₹19,500)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Placement</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">North (Wealth) or East (Spiritual Harmony)</td>\n    </tr>\n  </tbody>\n</table>",
-  "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Dark Green Aventurine Ganesha Idol</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Natural Dark Green Aventurine</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 2.10 kg</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 9.5 in (H) x 7.0 in (W) x 4.2 in (D)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing :</strong> ₹14,500 (Direct Workshop Price)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Direction :</strong> North or East in Study, Altar, or Desk</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"What makes Dark Green Aventurine a favored gemstone for Ganpati idols?\",\"answer\":\"Known in lapidary lore as the 'Stone of Opportunity', Green Aventurine is renowned for drawing positive financial luck, commercial windfalls, and heart chakra balance.\"},{\"question\":\"How can I verify the authenticity of this Green Aventurine idol?\",\"answer\":\"Natural aventurine features characteristic natural shimmer (aventurescence) from microscopic mineral platelets, remains naturally cool, and has substantial weight.\"},{\"question\":\"What is the recommended Wednesday puja ritual for this Ganesha idol?\",\"answer\":\"Bathe the idol in clean water or Gangajal, offer fresh green Durva grass, light a pure cow ghee deepak, and chant 'Om Gam Ganapataye Namaha' 108 times.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Dark Green Aventurine Ganesha Idol (2.1 kg) | Crystal Jaipuria\",\"metaDescription\":\"Handcrafted 2.1 kg Dark Green Aventurine Ganesha Idol from Jaipur. Auspicious Ganpati murti for vastu, heart chakra healing & prosperity at manufacturer price.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"North (Financial abundance) or East (Spiritual harmony) in living room, study, or mandir\",\"chakraPlanet\":\"Heart Chakra (Anahata) · Planet Mercury (Budha)\",\"poojaVidhi\":\"Perform regular morning aarti with fragrant incense and pure ghee lamp. Offer Durva grass on Wednesdays.\",\"vedicBenefits\":\"Celebrated as the Stone of Opportunity, green aventurine aligns with positive luck, emotional tranquility, financial vitality, and clear focus.\"} -->",
-  "faqs": [
-    {
-      "question": "What makes Dark Green Aventurine a favored gemstone for Ganpati idols?",
-      "answer": "Known in lapidary lore as the 'Stone of Opportunity', Green Aventurine is renowned for drawing positive financial luck, commercial windfalls, and heart chakra balance."
-    },
-    {
-      "question": "How can I verify the authenticity of this Green Aventurine idol?",
-      "answer": "Natural aventurine features characteristic natural shimmer (aventurescence) from microscopic mineral platelets, remains naturally cool, and has substantial weight."
-    },
-    {
-      "question": "What is the recommended Wednesday puja ritual for this Ganesha idol?",
-      "answer": "Bathe the idol in clean water or Gangajal, offer fresh green Durva grass, light a pure cow ghee deepak, and chant 'Om Gam Ganapataye Namaha' 108 times."
-    }
-  ],
-  "metaTitle": "Dark Green Aventurine Ganesha Idol (2.1 kg) | Crystal Jaipuria",
-  "metaDescription": "Handcrafted 2.1 kg Dark Green Aventurine Ganesha Idol from Jaipur. Auspicious Ganpati murti for vastu, heart chakra healing & prosperity at manufacturer price.",
-  "vedicVastu": {
-    "placementDirection": "North (Financial abundance) or East (Spiritual harmony) in living room, study, or mandir",
-    "chakraPlanet": "Heart Chakra (Anahata) · Planet Mercury (Budha)",
-    "poojaVidhi": "Perform regular morning aarti with fragrant incense and pure ghee lamp. Offer Durva grass on Wednesdays.",
-    "vedicBenefits": "Celebrated as the Stone of Opportunity, green aventurine aligns with positive luck, emotional tranquility, financial vitality, and clear focus."
-  },
-  "images": [
-    "/images/dark-green-aventurine-ganesha-idol.webp",
-    "/images/dark-green-aventurine-ganesha-idol-2.webp",
-    "/images/dark-green-aventurine-ganesha-idol-3.webp"
-  ],
-  "categoryId": {
-    "_id": "6a55bb1f2e9a358fc926cbab",
-    "name": "God Statues",
-    "slug": "god-statues"
-  },
-  "categoryName": "God Statues",
-  "subCategoryId": {
-    "_id": "6a55bc842dcf49aacd71ef6b",
-    "name": "Ganesh",
-    "slug": "ganesh"
-  },
-  "subCategoryName": "Ganesh",
-  "size": "9.5 in (H) x 7.0 in (W) x 4.2 in (D)",
-  "weight": "2.10 kg",
-  "stock": 7,
-  "featured": true,
-  "pricePerUnit": "₹14,500",
-  "pricePerCarat": ""
-},
-{
-  "_id": "6a55cf012e9a358fc926c005",
-  "name": "Hand-Carved Lapis Lazuli Ganesha with Arch",
-  "slug": "lapis-lazuli-ganesha-with-arch",
-  "price": 34500,
-  "discountPrice": 46000,
-  "detail": "Breathtaking 3.20 kg Natural Lapis Lazuli Lord Ganesha statue framed within a magnificent carved arch. Hand-hewn from prime celestial blue lapis lazuli rich with golden pyrite veins and white calcite matrices, bringing royal prestige, clarity of mind, and divine protection to your sanctuary.",
-  "description": "<p>Breathtaking 3.20 kg Natural Lapis Lazuli Lord Ganesha statue framed within a magnificent carved arch. Hand-hewn from prime celestial blue lapis lazuli rich with golden pyrite veins and white calcite matrices, bringing royal prestige, clarity of mind, and divine protection to your sanctuary.</p>\n\n<h2>Celestial Royal Blue Lapis Lazuli & Divine Wisdom</h2>\n<p>Mastercrafted in Jaipur according to sacred Vedic iconometry:</p>\n<ul>\n  <li><strong>Natural Royal Indigo Lapis Lazuli:</strong> Dense earth-mined stone naturally flecked with shining golden iron pyrite grains.</li>\n  <li><strong>Sacred Carved Archway (Prabhavali):</strong> Surrounds Lord Ganesha in an auspicious mandala of cosmic wisdom and boundary protection.</li>\n  <li><strong>Third Eye (Ajna) Activation:</strong> Sharpens vision, heightens intellectual decision-making, and shields against psychic negativity.</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Hand-Carved Lapis Lazuli Ganesha with Arch</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Natural Lapis Lazuli with Pyrite</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Gross Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">3.20 kg</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">11.5 in (H) x 8.0 in (W) x 4.5 in (D)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Basis</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹34,500 (Discounted from ₹46,000)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Placement</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Northeast (Ishanya), East Altar, or Study Desk</td>\n    </tr>\n  </tbody>\n</table>",
-  "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Hand-Carved Lapis Lazuli Ganesha with Arch</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Natural Lapis Lazuli with Natural Pyrite</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 3.20 kg</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 11.5 in (H) x 8.0 in (W) x 4.5 in (D)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing :</strong> ₹34,500 (Factory Direct Wholesale)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Direction :</strong> Northeast or East facing Altar</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"Why does this Lapis Lazuli Ganesha have golden speckles throughout?\",\"answer\":\"Authentic natural Lapis Lazuli naturally contains genuine golden Pyrite (fool's gold) inclusions and white Calcite veins, validating that the stone is 100% natural and untreated.\"},{\"question\":\"What are the Vedic benefits of worshiping Lord Ganesha in Lapis Lazuli?\",\"answer\":\"Lapis Lazuli activates the Third Eye (Ajna) and Throat (Vishuddha) chakras. It promotes supreme wisdom, royal eloquence, decisive focus, and protection from negative eye.\"},{\"question\":\"Where should I position this 3.2 kg Lapis Lazuli Ganesha with Arch?\",\"answer\":\"Position it facing East or Northeast in your puja room, study library, or executive boardroom to invoke higher intellect and divine protection.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Hand-Carved Lapis Lazuli Ganesha with Arch (3.2 kg) | Crystal Jaipuria\",\"metaDescription\":\"Buy master-crafted 3.2 kg Natural Lapis Lazuli Lord Ganesha with Arch (Prabhavali). Authentic golden pyrite-flecked royal blue gemstone idol from Crystal Jaipuria.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"Northeast (Ishanya) corner, study table, or meditation room facing East\",\"chakraPlanet\":\"Third Eye Chakra (Ajna) & Throat Chakra (Vishuddha) · Planet Saturn (Shani Dev) & Jupiter (Brihaspati)\",\"poojaVidhi\":\"Worship on Saturday or Ganesh Chaturthi with pure water, blue flowers, and frankincense dhoop.\",\"vedicBenefits\":\"Lapis Lazuli promotes supreme intuition, regal wisdom, truth, and mental clarity. Gold pyrite flecks symbolize natural abundance and royal prestige.\"} -->",
-  "faqs": [
-    {
-      "question": "Why does this Lapis Lazuli Ganesha have golden speckles throughout?",
-      "answer": "Authentic natural Lapis Lazuli naturally contains genuine golden Pyrite (fool's gold) inclusions and white Calcite veins, validating that the stone is 100% natural and untreated."
-    },
-    {
-      "question": "What are the Vedic benefits of worshiping Lord Ganesha in Lapis Lazuli?",
-      "answer": "Lapis Lazuli activates the Third Eye (Ajna) and Throat (Vishuddha) chakras. It promotes supreme wisdom, royal eloquence, decisive focus, and protection from negative eye."
-    },
-    {
-      "question": "Where should I position this 3.2 kg Lapis Lazuli Ganesha with Arch?",
-      "answer": "Position it facing East or Northeast in your puja room, study library, or executive boardroom to invoke higher intellect and divine protection."
-    }
-  ],
-  "metaTitle": "Hand-Carved Lapis Lazuli Ganesha with Arch (3.2 kg) | Crystal Jaipuria",
-  "metaDescription": "Buy master-crafted 3.2 kg Natural Lapis Lazuli Lord Ganesha with Arch (Prabhavali). Authentic golden pyrite-flecked royal blue gemstone idol from Crystal Jaipuria.",
-  "vedicVastu": {
-    "placementDirection": "Northeast (Ishanya) corner, study table, or meditation room facing East",
-    "chakraPlanet": "Third Eye Chakra (Ajna) & Throat Chakra (Vishuddha) · Planet Saturn (Shani Dev) & Jupiter (Brihaspati)",
-    "poojaVidhi": "Worship on Saturday or Ganesh Chaturthi with pure water, blue flowers, and frankincense dhoop.",
-    "vedicBenefits": "Lapis Lazuli promotes supreme intuition, regal wisdom, truth, and mental clarity. Gold pyrite flecks symbolize natural abundance and royal prestige."
-  },
-  "images": [
-    "/images/lapis-lazuli-ganesha-with-arch.webp",
-    "/images/lapis-lazuli-ganesha-with-arch-2.webp",
-    "/images/lapis-lazuli-ganesha-with-arch-3.webp"
-  ],
-  "categoryId": {
-    "_id": "6a55bb1f2e9a358fc926cbab",
-    "name": "God Statues",
-    "slug": "god-statues"
-  },
-  "categoryName": "God Statues",
-  "subCategoryId": {
-    "_id": "6a55bc842dcf49aacd71ef6b",
-    "name": "Ganesh",
-    "slug": "ganesh"
-  },
-  "subCategoryName": "Ganesh",
-  "size": "11.5 in (H) x 8.0 in (W) x 4.5 in (D)",
-  "weight": "3.20 kg",
-  "stock": 5,
-  "featured": true,
-  "pricePerUnit": "₹34,500",
-  "pricePerCarat": ""
-},
-{
-  "_id": "6a55cf012e9a358fc926c006",
-  "name": "Natural Lapis Lazuli Ganesha Idol",
-  "slug": "natural-lapis-lazuli-ganesha-idol",
-  "price": 22500,
-  "discountPrice": 32000,
-  "detail": "Exquisitely hand-carved 1.55 kg Natural Lapis Lazuli Ganesha Idol. Features dense royal cobalt blue tone enriched with glittering gold pyrite flecks, sculpted in seated meditative posture with trunk turned gracefully to the left, bestowing peace and obstacle removal.",
-  "description": "<p>Exquisitely hand-carved 1.55 kg Natural Lapis Lazuli Ganesha Idol. Features dense royal cobalt blue tone enriched with glittering gold pyrite flecks, sculpted in seated meditative posture with trunk turned gracefully to the left, bestowing peace and obstacle removal.</p>\n\n<h2>Hand-Carved Lapis Lazuli & Sacred Auspiciousness</h2>\n<p>Meticulously shaped by master Jaipur artisans from raw lapis blocks:</p>\n<ul>\n  <li><strong>Dense Indigo Color:</strong> Premium-grade natural lapis lazuli mineral with natural golden pyrite sparkles.</li>\n  <li><strong>Vamavarti Trunk Posture:</strong> Left-turned trunk represents Ida Nadi (Chandra), creating gentle, peaceful, and auspicious family blessings.</li>\n  <li><strong>Exceptional Factory Price:</strong> Sourced and carved directly in Jaipur at ₹22,500 (competitor retail ₹40,000).</li>\n</ul>\n\n<h2>Technical & Gemological Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Natural Lapis Lazuli Ganesha Idol</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">100% Certified Natural Lapis Lazuli</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Gross Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">1.55 kg</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">5.7 in (H) x 5.3 in (W) x 3.5 in (D)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Basis</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹22,500 (Discounted from ₹32,000)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Placement</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Northeast, East, or Personal Altar / Desk</td>\n    </tr>\n  </tbody>\n</table>",
-  "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Natural Lapis Lazuli Ganesha Idol</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> 100% Natural Lapis Lazuli</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 1.55 kg</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 5.7 in (H) x 5.3 in (W) x 3.5 in (D)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing :</strong> ₹22,500 (Market Retail ₹40,000)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Direction :</strong> Northeast, East, or Mandir</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"What grade of natural Lapis Lazuli is used in this carving?\",\"answer\":\"We use premium deep royal indigo blue Lapis Lazuli richly interspersed with natural golden pyrite flecks, hand-selected and hand-polished by master artisans in Jaipur.\"},{\"question\":\"Is this Ganesha idol suitable for a home temple or office altar?\",\"answer\":\"Yes, at 5.7 inches and 1.55 kg, it is an ideal size for personal shrines, office desks, and spiritual gifting.\"},{\"question\":\"Why is Crystal Jaipuria's pricing lower than luxury retail stores?\",\"answer\":\"As direct gemcutters and manufacturers based in Jaipur, we bypass retail distributors, galleries, and middleman markups to provide authentic factory-direct pricing.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Natural Lapis Lazuli Ganesha Idol (1.55 kg) | Crystal Jaipuria\",\"metaDescription\":\"100% authentic 1.55 kg Natural Lapis Lazuli Ganesha Idol. Hand-carved deep royal blue gemstone Ganpati murti with natural golden pyrite flecks at wholesale price.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"Northeast, East, or personal desk / altar\",\"chakraPlanet\":\"Third Eye Chakra (Ajna) · Planet Saturn (Shani)\",\"poojaVidhi\":\"Clean with soft muslin cloth, bathe periodically with holy Gangajal, and light a sesame oil diya.\",\"vedicBenefits\":\"Fosters deep spiritual focus, protects against evil eye and negative vibrations, enhances decisive leadership and intellectual excellence.\"} -->",
-  "faqs": [
-    {
-      "question": "What grade of natural Lapis Lazuli is used in this carving?",
-      "answer": "We use premium deep royal indigo blue Lapis Lazuli richly interspersed with natural golden pyrite flecks, hand-selected and hand-polished by master artisans in Jaipur."
-    },
-    {
-      "question": "Is this Ganesha idol suitable for a home temple or office altar?",
-      "answer": "Yes, at 5.7 inches and 1.55 kg, it is an ideal size for personal shrines, office desks, and spiritual gifting."
-    },
-    {
-      "question": "Why is Crystal Jaipuria's pricing lower than luxury retail stores?",
-      "answer": "As direct gemcutters and manufacturers based in Jaipur, we bypass retail distributors, galleries, and middleman markups to provide authentic factory-direct pricing."
-    }
-  ],
-  "metaTitle": "Natural Lapis Lazuli Ganesha Idol (1.55 kg) | Crystal Jaipuria",
-  "metaDescription": "100% authentic 1.55 kg Natural Lapis Lazuli Ganesha Idol. Hand-carved deep royal blue gemstone Ganpati murti with natural golden pyrite flecks at wholesale price.",
-  "vedicVastu": {
-    "placementDirection": "Northeast, East, or personal desk / altar",
-    "chakraPlanet": "Third Eye Chakra (Ajna) · Planet Saturn (Shani)",
-    "poojaVidhi": "Clean with soft muslin cloth, bathe periodically with holy Gangajal, and light a sesame oil diya.",
-    "vedicBenefits": "Fosters deep spiritual focus, protects against evil eye and negative vibrations, enhances decisive leadership and intellectual excellence."
-  },
-  "images": [
-    "/images/natural-lapis-lazuli-ganesha-idol.webp",
-    "/images/natural-lapis-lazuli-ganesha-idol-2.webp",
-    "/images/natural-lapis-lazuli-ganesha-idol-3.webp"
-  ],
-  "categoryId": {
-    "_id": "6a55bb1f2e9a358fc926cbab",
-    "name": "God Statues",
-    "slug": "god-statues"
-  },
-  "categoryName": "God Statues",
-  "subCategoryId": {
-    "_id": "6a55bc842dcf49aacd71ef6b",
-    "name": "Ganesh",
-    "slug": "ganesh"
-  },
-  "subCategoryName": "Ganesh",
-  "size": "5.7 in (H) x 5.3 in (W) x 3.5 in (D)",
-  "weight": "1.55 kg",
-  "stock": 6,
-  "featured": true,
-  "pricePerUnit": "₹22,500",
-  "pricePerCarat": ""
-},
-{
-  "_id": "6a55cf012e9a358fc926c007",
-  "name": "Intricately Carved Wooden Ganesha Shrine",
-  "slug": "intricately-carved-wooden-ganesha-shrine",
-  "price": 18500,
-  "discountPrice": 26000,
-  "detail": "Exquisite 12-inch Intricately Carved Wooden Ganesha Shrine and temple sculpture weighing 2.40 kg. Hand-sculpted by master artisans featuring ornate floral jali arches, pillar pillars, and seated Lord Ganesha, creating an awe-inspiring sacred sanctum for home and temple shrines.",
-  "description": "<p>Exquisite 12-inch Intricately Carved Wooden Ganesha Shrine and temple sculpture weighing 2.40 kg. Hand-sculpted by master artisans featuring ornate floral jali arches, pillar pillars, and seated Lord Ganesha, creating an awe-inspiring sacred sanctum for home and temple shrines.</p>\n\n<h2>Master Woodcraft & Architectural Sanctity</h2>\n<p>Carved with sacred precision from seasoned natural wood:</p>\n<ul>\n  <li><strong>Architectural Mandir Carving:</strong> Features grand ornamental archways, tiered crown shikhara, and delicate filigree openwork.</li>\n  <li><strong>Centerpiece Ganesha Murti:</strong> Seated Lord Ganpati in divine blessing pose with sacred trunk, modak, and weapons of protection.</li>\n  <li><strong>Heirloom Durability:</strong> Finished with protective natural wax sealant safeguarding against moisture and aging.</li>\n</ul>\n\n<h2>Technical & Woodcraft Specifications</h2>\n<table style=\"width:100%; border-collapse:collapse; margin:18px 0; border:1px solid #e5e7eb; font-size:14px;\">\n  <thead>\n    <tr style=\"background:#f8fafc;\">\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Attribute</th>\n      <th style=\"border:1px solid #e2e8f0; padding:10px 14px; text-align:left; font-weight:700; color:#1e293b;\">Certified Specification</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Product Name</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Intricately Carved Wooden Ganesha Shrine</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Material</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">Natural Seasoned Hardwood with Natural Sealant</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Gross Weight</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">2.40 kg</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Dimensions</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">12.0 in (H) x 9.5 in (W) x 5.0 in (D)</td>\n    </tr>\n    <tr>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Pricing Basis</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">₹18,500 (Discounted from ₹26,000)</td>\n    </tr>\n    <tr style=\"background:#f8fafc;\">\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; font-weight:600; color:#334155;\">Primary Vastu Placement</td>\n      <td style=\"border:1px solid #e2e8f0; padding:9px 14px; color:#475569;\">East or Northeast Altar, Living Room Shrine</td>\n    </tr>\n  </tbody>\n</table>",
-  "additionalInfo": "<ul class=\"space-y-2.5 list-disc pl-5 text-gray-700 leading-relaxed font-normal\">\n  <li><strong class=\"font-bold text-gray-900\">Product Name :</strong> Intricately Carved Wooden Ganesha Shrine</li>\n  <li><strong class=\"font-bold text-gray-900\">Brand &amp; Manufacturer :</strong> Crystal Jaipuria, Jaipur (Est. 1989)</li>\n  <li><strong class=\"font-bold text-gray-900\">Material Composition :</strong> Seasoned Natural Hardwood</li>\n  <li><strong class=\"font-bold text-gray-900\">Weight :</strong> 2.40 kg</li>\n  <li><strong class=\"font-bold text-gray-900\">Dimensions :</strong> 12.0 in (H) x 9.5 in (W) x 5.0 in (D)</li>\n  <li><strong class=\"font-bold text-gray-900\">Pricing :</strong> ₹18,500 (Direct Workshop Rate)</li>\n  <li><strong class=\"font-bold text-gray-900\">Auspicious Direction :</strong> East or Northeast Altar</li>\n</ul>\n<!-- FAQS_JSON:[{\"question\":\"What makes this carved wooden Ganesha shrine special?\",\"answer\":\"This spiritual masterpiece features an intricately carved architectural temple shrine with floral jali work and a centered hand-sculpted Lord Ganesha, creating a complete mandir altar.\"},{\"question\":\"What wood is used and how is it preserved?\",\"answer\":\"Crafted from seasoned natural hardwood treated with natural wax and protective sealants to prevent moisture absorption and ensure heirloom longevity.\"},{\"question\":\"Where should this wooden Ganesha temple shrine be placed?\",\"answer\":\"Place in the Northeast (Ishanya) or East of your home, living room mantelpiece, or entryway to welcome divine auspiciousness and Vastu harmony.\"}] -->\n<!-- SEO_META:{\"metaTitle\":\"Intricately Carved Wooden Ganesha Shrine (12 in) | Crystal Jaipuria\",\"metaDescription\":\"Buy exquisite 12-inch Intricately Carved Wooden Ganesha Shrine & Temple Sculpture (2.4 kg). Master handcrafted spiritual artwork for home temple from Crystal Jaipuria.\"} -->\n<!-- VEDIC_VASTU_JSON:{\"placementDirection\":\"East or Northeast in main altar, meditation space, or foyer\",\"chakraPlanet\":\"Root Chakra (Muladhara) & Crown Chakra (Sahasrara) · Planet Jupiter (Guru Dev)\",\"poojaVidhi\":\"Worship on Thursdays or auspicious beginnings with incense, fresh yellow marigold garlands, and chandan tilak.\",\"vedicBenefits\":\"Brings divine architectural sanctity, grounding energy, peaceful family harmony, and auspicious Vastu blessings of Lord Ganpati.\"} -->",
-  "faqs": [
-    {
-      "question": "What makes this carved wooden Ganesha shrine special?",
-      "answer": "This spiritual masterpiece features an intricately carved architectural temple shrine with floral jali work and a centered hand-sculpted Lord Ganesha, creating a complete mandir altar."
-    },
-    {
-      "question": "What wood is used and how is it preserved?",
-      "answer": "Crafted from seasoned natural hardwood treated with natural wax and protective sealants to prevent moisture absorption and ensure heirloom longevity."
-    },
-    {
-      "question": "Where should this wooden Ganesha temple shrine be placed?",
-      "answer": "Place in the Northeast (Ishanya) or East of your home, living room mantelpiece, or entryway to welcome divine auspiciousness and Vastu harmony."
-    }
-  ],
-  "metaTitle": "Intricately Carved Wooden Ganesha Shrine (12 in) | Crystal Jaipuria",
-  "metaDescription": "Buy exquisite 12-inch Intricately Carved Wooden Ganesha Shrine & Temple Sculpture (2.4 kg). Master handcrafted spiritual artwork for home temple from Crystal Jaipuria.",
-  "vedicVastu": {
-    "placementDirection": "East or Northeast in main altar, meditation space, or foyer",
-    "chakraPlanet": "Root Chakra (Muladhara) & Crown Chakra (Sahasrara) · Planet Jupiter (Guru Dev)",
-    "poojaVidhi": "Worship on Thursdays or auspicious beginnings with incense, fresh yellow marigold garlands, and chandan tilak.",
-    "vedicBenefits": "Brings divine architectural sanctity, grounding energy, peaceful family harmony, and auspicious Vastu blessings of Lord Ganpati."
-  },
-  "images": [
-    "/images/intricately-carved-wooden-ganesha-shrine.webp",
-    "/images/intricately-carved-wooden-ganesha-shrine-2.webp",
-    "/images/intricately-carved-wooden-ganesha-shrine-3.webp"
-  ],
-  "categoryId": {
-    "_id": "6a55bb1f2e9a358fc926cbab",
-    "name": "God Statues",
-    "slug": "god-statues"
-  },
-  "categoryName": "God Statues",
-  "subCategoryId": {
-    "_id": "6a55bc842dcf49aacd71ef6b",
-    "name": "Ganesh",
-    "slug": "ganesh"
-  },
-  "subCategoryName": "Ganesh",
-  "size": "12.0 in (H) x 9.5 in (W) x 5.0 in (D)",
-  "weight": "2.40 kg",
-  "stock": 5,
-  "featured": true,
-  "pricePerUnit": "₹18,500",
-  "pricePerCarat": ""
-}
+    "subCategoryName": "Diya",
+    "size": "3.0 Inch",
+    "weight": "95 g",
+    "stock": 18,
+    "featured": true,
+    "pricePerUnit": "",
+    "pricePerCarat": ""
+  }
 ];
