@@ -1102,7 +1102,8 @@ export const runPrerender = async () => {
       ? {
           ...fbMatch,
           ...b,
-          faqs: fbMatch.faqs || b.faqs,
+          content: (fbMatch.content && fbMatch.content.length > (b.content || "").length) ? fbMatch.content : (b.content || fbMatch.content),
+          faqs: (fbMatch.faqs && fbMatch.faqs.length > (b.faqs || []).length) ? fbMatch.faqs : (b.faqs || fbMatch.faqs),
           howTo: fbMatch.howTo || b.howTo,
           about: fbMatch.about || b.about,
           mentions: fbMatch.mentions || b.mentions,

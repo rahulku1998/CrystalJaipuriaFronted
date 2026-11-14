@@ -43,9 +43,10 @@ const BlogDetails = () => {
                 ...fallback,
                 ...data.blog,
                 slug: fallback.slug, // keep clean target slug
+                content: (fallback.content && fallback.content.length > (data.blog.content || "").length) ? fallback.content : (data.blog.content || fallback.content),
                 coverImage: fallback.coverImage || data.blog.coverImage,
                 keyTakeaways: fallback.keyTakeaways || data.blog.keyTakeaways,
-                faqs: fallback.faqs?.length ? fallback.faqs : data.blog.faqs,
+                faqs: (fallback.faqs && fallback.faqs.length > (data.blog.faqs || []).length) ? fallback.faqs : (data.blog.faqs || fallback.faqs),
                 howTo: fallback.howTo || data.blog.howTo,
                 about: fallback.about || data.blog.about,
                 mentions: fallback.mentions || data.blog.mentions,
