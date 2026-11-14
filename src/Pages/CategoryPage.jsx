@@ -8,6 +8,7 @@ import ProductCard from "../Components/ProductCard";
 import BrandLoader from "../Components/BrandLoader";
 import NotFound from "./NotFound";
 import { CATEGORY_CONTENT } from "../utils/categoryContent";
+import { applySmartInterlinking } from "../utils/internalLinker";
 import {
   FALLBACK_PRODUCTS,
   FALLBACK_CATEGORIES,
@@ -587,6 +588,14 @@ const CategoryPage = () => {
     customSeo?.canonical ||
     `https://www.crystaljaipuria.com/${cleanSlug}`;
 
+  const processedIntro = useMemo(() => {
+    if (!categoryContent?.intro) return "";
+    return applySmartInterlinking(categoryContent.intro, {
+      currentUrl: `/${cleanSlug}`,
+      maxTotalLinks: 2,
+    });
+  }, [categoryContent?.intro, cleanSlug]);
+
   const graphSchema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -836,9 +845,10 @@ const CategoryPage = () => {
                   {categoryContent.headline}
                 </h2>
               </div>
-              <p className="text-stone-700 text-sm sm:text-base leading-relaxed mb-6 max-w-4xl">
-                {categoryContent.intro}
-              </p>
+              <p
+                className="text-stone-700 text-sm sm:text-base leading-relaxed mb-6 max-w-4xl"
+                dangerouslySetInnerHTML={{ __html: processedIntro }}
+              />
 
               {/* Trust & Quality Badges */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-5 border-t border-stone-200/60">

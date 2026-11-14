@@ -14,6 +14,7 @@ import {
   SUPER_DESCRIPTION_MAPPINGS,
   getArticleSchema,
 } from "../src/utils/seo.js";
+import { applySmartInterlinking } from "../src/utils/internalLinker.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -681,11 +682,18 @@ export const runPrerender = async () => {
       })
       .join("\n");
 
+    const catIntroLinked = catContent?.intro
+      ? applySmartInterlinking(escapeHtml(catContent.intro), {
+          currentUrl: `/${cat.slug}`,
+          maxTotalLinks: 2,
+        })
+      : "";
+
     const guideHtml = catContent?.intro
       ? `
         <div style="margin-top:40px;background:#FAF8F5;border-radius:16px;padding:24px;border:1px solid #f1f5f9;">
           <h2 style="font-size:20px;font-weight:800;color:#0f172a;margin-bottom:12px;">✨ ${escapeHtml(catContent.headline || `About ${catName}`)}</h2>
-          <p style="font-size:14px;color:#475569;line-height:1.7;margin-bottom:16px;">${escapeHtml(catContent.intro)}</p>
+          <p style="font-size:14px;color:#475569;line-height:1.7;margin-bottom:16px;">${catIntroLinked}</p>
           <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:13px;font-weight:700;color:#334155;">
             <span>✓ 100% Certified Natural Crystals</span>
             <span>✓ Jaipur Heritage Hand-Carving</span>
@@ -1123,6 +1131,12 @@ export const runPrerender = async () => {
       </div>
     ` : "";
 
+    const rawContent = blogData.content || escapeHtml(blogData.description || "");
+    const linkedContent = applySmartInterlinking(rawContent, {
+      currentUrl: `/blog/${bSlug}`,
+      maxTotalLinks: 6,
+    });
+
     const bBodyContent = `
       <div style="max-width:900px;margin:0 auto;padding:32px 16px;font-family:system-ui,-apple-system,sans-serif;">
         <div style="margin-bottom:16px;font-size:13px;color:#64748b;">
@@ -1136,7 +1150,7 @@ export const runPrerender = async () => {
           <img src="${bImg}" alt="${escapeHtml(blogData.title)}" style="width:100%;max-height:480px;object-fit:cover;" />
         </div>
         <div style="font-size:16px;line-height:1.8;color:#334155;">
-          ${blogData.content || escapeHtml(blogData.description || "")}
+          ${linkedContent}
         </div>
         ${bFaqsHtml}
       </div>

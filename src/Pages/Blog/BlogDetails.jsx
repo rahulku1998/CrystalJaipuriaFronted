@@ -6,6 +6,7 @@ import SEO from "../../Components/SEO";
 import BlogItem from "../../Components/Blog/BlogItem";
 import { getArticleSchema } from "../../utils/seo";
 import { FALLBACK_BLOGS, getFallbackBlogBySlug, getDeduplicatedBlogs } from "../../data/fallbackBlogs";
+import { applySmartInterlinking } from "../../utils/internalLinker";
 import {
   FaChevronDown,
   FaCheckCircle,
@@ -95,16 +96,20 @@ const BlogDetails = () => {
     return items;
   }, [blog?.content]);
 
-  // Inject id="section-1", "section-2", etc. into H2 tags for smooth scrolling
+  // Inject id="section-1", "section-2", etc. into H2 tags for smooth scrolling + apply smart interlinking
   const processedContent = useMemo(() => {
     if (!blog?.content) return "";
     let idx = 1;
-    return blog.content.replace(/<h2([^>]*)>/gi, (match, attrs) => {
+    const withIds = blog.content.replace(/<h2([^>]*)>/gi, (match, attrs) => {
       if (attrs.includes("id=")) return match;
       const sectionId = `section-${idx++}`;
       return `<h2 id="${sectionId}" ${attrs}>`;
     });
-  }, [blog?.content]);
+    return applySmartInterlinking(withIds, {
+      currentUrl: `/blog/${blog.slug || slug}`,
+      maxTotalLinks: 6,
+    });
+  }, [blog?.content, blog?.slug, slug]);
 
   // Active section spy on scroll
   useEffect(() => {
