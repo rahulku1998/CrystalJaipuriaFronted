@@ -2,7 +2,7 @@ import React, { Suspense, lazy } from 'react'
 import './App.css'
 import Navbar from './Components/Navbar/Navbar'
 import Footer from './Components/Footer'
-import { Routes, Route, Navigate, useParams, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useParams, useLocation, useNavigate } from "react-router-dom";
 
 import Home from './Pages/Home';
 // Lazy-loaded desktop widgets (code-split so mobile never downloads desktop banners)
@@ -53,20 +53,33 @@ const VijayCategories = lazy(() => import('./admin-vijay/Categories'));
 const VijayBlogs = lazy(() => import('./admin-vijay/Blog'));
 const VijaySubCategories = lazy(() => import('./admin-vijay/SubCategories'));
 
-// Cleanup helper for legacy WordPress query params like ?page_id=10981 or ?p=123
+// Enforce single canonical URL standard (strict non-trailing-slash) and strip legacy spam queries
 const LegacyQueryCleaner = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+
   React.useEffect(() => {
-    if (typeof window !== "undefined" && location.search) {
+    if (typeof window === "undefined") return;
+
+    // 1. Enforce strict single canonical URL without trailing slash (e.g. /product/xyz/ -> /product/xyz)
+    if (location.pathname.length > 1 && location.pathname.endsWith("/")) {
+      const cleanPath = location.pathname.replace(/\/+$/, "");
+      navigate(`${cleanPath}${location.search}${location.hash}`, { replace: true });
+      return;
+    }
+
+    // 2. Strip legacy spam query params like ?page_id= or ?p=
+    if (location.search) {
       const params = new URLSearchParams(location.search);
       if (params.has("page_id") || params.has("p")) {
         params.delete("page_id");
         params.delete("p");
         const cleanSearch = params.toString() ? `?${params.toString()}` : "";
-        window.history.replaceState(null, "", `${location.pathname}${cleanSearch}`);
+        window.history.replaceState(null, "", `${location.pathname}${cleanSearch}${location.hash}`);
       }
     }
-  }, [location]);
+  }, [location, navigate]);
+
   return null;
 };
 
