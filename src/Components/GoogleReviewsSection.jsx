@@ -89,6 +89,19 @@ const GOOGLE_REVIEW_URL = GOOGLE_BUSINESS_STATS.businessUrl;
 const GoogleReviewsSection = () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+  const widgetId = GOOGLE_BUSINESS_STATS.elfsightWidgetId;
+
+  React.useEffect(() => {
+    if (!widgetId) return;
+    const scriptId = "elfsight-platform-script";
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement("script");
+      script.id = scriptId;
+      script.src = "https://static.elfsight.com/platform/platform.js";
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, [widgetId]);
 
   return (
     <section className="relative overflow-hidden bg-[#faf9f6] py-10 sm:py-16 lg:py-20 border-t border-stone-200">
@@ -142,127 +155,135 @@ const GoogleReviewsSection = () => {
               <span>Write a review</span>
             </a>
 
-            {/* Navigation Arrows */}
-            <div className="flex items-center gap-2">
-              <button
-                ref={prevRef}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-stone-300 bg-white text-stone-700 shadow-sm transition-all hover:bg-amber-50 hover:border-amber-400 hover:text-amber-700 cursor-pointer active:scale-95 disabled:opacity-40"
-                aria-label="Previous reviews"
-              >
-                <FaChevronLeft className="text-xs" />
-              </button>
-              <button
-                ref={nextRef}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-stone-300 bg-white text-stone-700 shadow-sm transition-all hover:bg-amber-50 hover:border-amber-400 hover:text-amber-700 cursor-pointer active:scale-95 disabled:opacity-40"
-                aria-label="Next reviews"
-              >
-                <FaChevronRight className="text-xs" />
-              </button>
-            </div>
+            {/* Navigation Arrows (Shown when using built-in Swiper) */}
+            {!widgetId && (
+              <div className="flex items-center gap-2">
+                <button
+                  ref={prevRef}
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-stone-300 bg-white text-stone-700 shadow-sm transition-all hover:bg-amber-50 hover:border-amber-400 hover:text-amber-700 cursor-pointer active:scale-95 disabled:opacity-40"
+                  aria-label="Previous reviews"
+                >
+                  <FaChevronLeft className="text-xs" />
+                </button>
+                <button
+                  ref={nextRef}
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-stone-300 bg-white text-stone-700 shadow-sm transition-all hover:bg-amber-50 hover:border-amber-400 hover:text-amber-700 cursor-pointer active:scale-95 disabled:opacity-40"
+                  aria-label="Next reviews"
+                >
+                  <FaChevronRight className="text-xs" />
+                </button>
+              </div>
+            )}
           </div>
         </div>
 
-        {/* Reviews Slider (4 Cards Desktop, 2 Cards Tablet, 1.15 Cards Mobile) */}
-        <div className="w-full">
-          <Swiper
-            modules={[Navigation, Autoplay]}
-            autoplay={{
-              delay: 4500,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            }}
-            loop={true}
-            spaceBetween={16}
-            slidesPerView={1}
-            breakpoints={{
-              640: {
-                slidesPerView: 2,
-                spaceBetween: 16,
-              },
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-              },
-              1280: {
-                slidesPerView: 4,
-                spaceBetween: 20,
-              },
-            }}
-            onBeforeInit={(swiper) => {
-              swiper.params.navigation.prevEl = prevRef.current;
-              swiper.params.navigation.nextEl = nextRef.current;
-            }}
-            className="w-full !py-2"
-          >
-            {reviews.map((item) => (
-              <SwiperSlide key={item.id} className="!h-auto">
-                <div className="flex h-full flex-col justify-between rounded-2xl border border-stone-200/90 bg-white p-4 sm:p-5 shadow-[0_2px_12px_rgba(0,0,0,0.03)] transition-all duration-300 hover:border-amber-200 hover:shadow-md">
-                  <div>
-                    {/* Header: Avatar, Name, Badge, Google G Icon */}
-                    <div className="flex items-start justify-between gap-2">
-                      <div className="flex items-center gap-2.5">
-                        <div
-                          className={`flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-full ${item.avatarBg} text-white font-bold text-xs sm:text-sm shadow-sm`}
-                        >
-                          {item.avatar}
-                        </div>
-                        <div className="overflow-hidden">
-                          <h4 className="text-xs sm:text-sm font-bold text-stone-900 leading-snug truncate">
-                            {item.name}
-                          </h4>
-                          {item.badge && (
-                            <p className="text-[10px] sm:text-[11px] text-stone-500 truncate">
-                              {item.badge}
+        {/* Reviews Container: Live Elfsight Widget if configured, else Luxury Swiper Slider */}
+        {widgetId ? (
+          <div className="w-full min-h-[380px] py-2">
+            <div className={`elfsight-app-${widgetId}`} data-elfsight-app-lazy />
+          </div>
+        ) : (
+          <div className="w-full">
+            <Swiper
+              modules={[Navigation, Autoplay]}
+              autoplay={{
+                delay: 4500,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+              }}
+              loop={true}
+              spaceBetween={16}
+              slidesPerView={1}
+              breakpoints={{
+                640: {
+                  slidesPerView: 2,
+                  spaceBetween: 16,
+                },
+                1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 20,
+                },
+                1280: {
+                  slidesPerView: 4,
+                  spaceBetween: 20,
+                },
+              }}
+              onBeforeInit={(swiper) => {
+                swiper.params.navigation.prevEl = prevRef.current;
+                swiper.params.navigation.nextEl = nextRef.current;
+              }}
+              className="w-full !py-2"
+            >
+              {reviews.map((item) => (
+                <SwiperSlide key={item.id} className="!h-auto">
+                  <div className="flex h-full flex-col justify-between rounded-2xl border border-stone-200/90 bg-white p-4 sm:p-5 shadow-[0_2px_12px_rgba(0,0,0,0.03)] transition-all duration-300 hover:border-amber-200 hover:shadow-md">
+                    <div>
+                      {/* Header: Avatar, Name, Badge, Google G Icon */}
+                      <div className="flex items-start justify-between gap-2">
+                        <div className="flex items-center gap-2.5">
+                          <div
+                            className={`flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-full ${item.avatarBg} text-white font-bold text-xs sm:text-sm shadow-sm`}
+                          >
+                            {item.avatar}
+                          </div>
+                          <div className="overflow-hidden">
+                            <h4 className="text-xs sm:text-sm font-bold text-stone-900 leading-snug truncate">
+                              {item.name}
+                            </h4>
+                            {item.badge && (
+                              <p className="text-[10px] sm:text-[11px] text-stone-500 truncate">
+                                {item.badge}
+                              </p>
+                            )}
+                            <p className="text-[10px] text-stone-400">
+                              {item.time}
                             </p>
-                          )}
-                          <p className="text-[10px] text-stone-400">
-                            {item.time}
-                          </p>
+                          </div>
+                        </div>
+
+                        <div className="shrink-0 text-lg sm:text-xl" title="Verified Google Review">
+                          <FcGoogle />
                         </div>
                       </div>
 
-                      <div className="shrink-0 text-lg sm:text-xl" title="Verified Google Review">
-                        <FcGoogle />
+                      {/* Stars & Verified Badge */}
+                      <div className="mt-2.5 flex items-center gap-1.5">
+                        <div className="flex items-center gap-0.5 text-amber-400 text-xs">
+                          {[...Array(item.rating)].map((_, i) => (
+                            <FaStar key={i} />
+                          ))}
+                        </div>
+                        <MdVerified
+                          className="text-amber-600 text-xs"
+                          title="Verified Reviewer"
+                        />
                       </div>
+
+                      {/* Review Text */}
+                      <p className="mt-2.5 text-xs leading-relaxed text-stone-600 line-clamp-5">
+                        "{item.review}"
+                      </p>
                     </div>
 
-                    {/* Stars & Verified Badge */}
-                    <div className="mt-2.5 flex items-center gap-1.5">
-                      <div className="flex items-center gap-0.5 text-amber-400 text-xs">
-                        {[...Array(item.rating)].map((_, i) => (
-                          <FaStar key={i} />
-                        ))}
-                      </div>
-                      <MdVerified
-                        className="text-amber-600 text-xs"
-                        title="Verified Reviewer"
-                      />
+                    {/* Read on Google Link */}
+                    <div className="mt-3.5 pt-2.5 border-t border-stone-100 flex items-center justify-between text-[11px]">
+                      <span className="text-stone-400 font-medium">Google Review</span>
+                      <a
+                        href={item.googleUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-stone-700 hover:text-amber-700 font-semibold hover:underline"
+                      >
+                        <span>Read on Google</span>
+                        <FaExternalLinkAlt className="text-[8px]" />
+                      </a>
                     </div>
-
-                    {/* Review Text */}
-                    <p className="mt-2.5 text-xs leading-relaxed text-stone-600 line-clamp-5">
-                      "{item.review}"
-                    </p>
                   </div>
-
-                  {/* Read on Google Link */}
-                  <div className="mt-3.5 pt-2.5 border-t border-stone-100 flex items-center justify-between text-[11px]">
-                    <span className="text-stone-400 font-medium">Google Review</span>
-                    <a
-                      href={item.googleUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-stone-700 hover:text-amber-700 font-semibold hover:underline"
-                    >
-                      <span>Read on Google</span>
-                      <FaExternalLinkAlt className="text-[8px]" />
-                    </a>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        )}
       </div>
     </section>
   );

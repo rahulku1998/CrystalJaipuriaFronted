@@ -7,6 +7,7 @@ export const GOOGLE_BUSINESS_STATS = {
   reviewCount: 45,
   reviewsLabel: "45 Google reviews",
   placeId: "ChIJ1TgWlFvLbTkRfcjCYK6CbNw",
+  elfsightWidgetId: "", // Set Elfsight Google Reviews widget ID here for automatic realtime sync
   phone: "08955613237",
   formattedPhone: "+91 89556 13237",
   address: {
