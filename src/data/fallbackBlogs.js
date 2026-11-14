@@ -5,6 +5,493 @@
 
 export const FALLBACK_BLOGS = [
   // ========================================================
+  // BLOG: Gemstone Types, Colours, Patterns & Natural Inclusions
+  // ========================================================
+  {
+    _id: "blog_gemstone_types_colours_patterns_inclusions",
+    title: "A Beginner's Guide to Gemstone Types, Colours, Patterns and Natural Inclusions",
+    metaTitle: "Gemstone Types, Colours and Natural Inclusions Guide",
+    metaDescription: "Explore common gemstone types, colours, patterns and natural inclusions. Learn how mineral composition and formation influence gemstone appearance.",
+    description: "Explore common gemstone types, colours, patterns and natural inclusions. Learn how mineral composition and formation influence gemstone appearance.",
+    keyTakeaways: [
+      "Gemstones derive their unique colours, patterns, and optical depth from mineral chemistry, trace elements, and geological formation processes.",
+      "Common carving varieties include quartz minerals (Clear, Rose, Amethyst, Agate), rocks (Lapis Lazuli), and jade minerals (Nephrite and Jadeite).",
+      "Natural inclusions such as rutile needles, fluid cavities, and colour zoning are authentic geological hallmarks rather than defects.",
+      "Evaluating gemstone durability, surface finish, and accurate mineral disclosure ensures informed purchasing of carvings and decorative objects."
+    ],
+    slug: "gemstone-types-colours-patterns-inclusions",
+    aliases: [
+      "a-beginners-guide-to-gemstone-types-colours-patterns-and-natural-inclusions",
+      "types-of-gemstones-and-their-colours",
+      "gemstone-types-colours-patterns-and-natural-inclusions"
+    ],
+    category: "Gemstone Guide",
+    author: "Crystal Jaipuria Master Gemologists",
+    readTime: "8 min read",
+    createdAt: "2026-11-15T00:00:00.000Z",
+    updatedAt: "2026-11-15T00:00:00.000Z",
+    coverImage: {
+      url: "/images/gemstone-types-colours-patterns-inclusions.webp",
+      alt: "Gemstone Types, Colours and Natural Inclusions Guide - Crystal Jaipuria"
+    },
+    keywords: [
+      "types of gemstones and their colours",
+      "gemstone colour variations",
+      "natural gemstone inclusions",
+      "gemstone patterns",
+      "gemstone varieties",
+      "gemstone characteristics",
+      "gemstone identification jaipur",
+      "natural crystal carvings"
+    ],
+    about: [
+      { "@type": "Thing", "name": "Gemstones", "sameAs": "https://en.wikipedia.org/wiki/Gemstone" },
+      { "@type": "Thing", "name": "Quartz", "sameAs": "https://en.wikipedia.org/wiki/Quartz" },
+      { "@type": "Thing", "name": "Amethyst", "sameAs": "https://en.wikipedia.org/wiki/Amethyst" },
+      { "@type": "Thing", "name": "Rose Quartz", "sameAs": "https://en.wikipedia.org/wiki/Rose_quartz" },
+      { "@type": "Thing", "name": "Jade", "sameAs": "https://en.wikipedia.org/wiki/Jade" },
+      { "@type": "Thing", "name": "Lapis Lazuli", "sameAs": "https://en.wikipedia.org/wiki/Lapis_lazuli" },
+      { "@type": "Thing", "name": "Agate", "sameAs": "https://en.wikipedia.org/wiki/Agate" }
+    ],
+    mentions: [
+      { "@type": "WebPage", "name": "Crystal Statues", "url": "https://www.crystaljaipuria.com/crystal-statues" },
+      { "@type": "WebPage", "name": "Gemstone God Statues", "url": "https://www.crystaljaipuria.com/god-statues" },
+      { "@type": "WebPage", "name": "Gemstone Authenticity Guide", "url": "https://www.crystaljaipuria.com/gemstone-authenticity-guide" }
+    ],
+    faqs: [
+      {
+        question: "What are the most common types of gemstones?",
+        answer: "Common examples include quartz varieties (clear quartz, amethyst, rose quartz, agate), metamorphic rocks like lapis lazuli, jade (jadeite and nephrite), and precious gems such as sapphire and emerald."
+      },
+      {
+        question: "Why do natural gemstones have different colours?",
+        answer: "Colour depends on crystal chemical composition, transition metal trace elements (such as iron, chromium, or manganese), natural irradiation, structural lattice distortions, and geological formation conditions. Thermal or chemical treatments can also modify a gemstone's appearance."
+      },
+      {
+        question: "What are inclusions in gemstones?",
+        answer: "Inclusions are internal structural features formed during geological crystallization, such as mineral crystals (rutile, pyrite), multiphase fluid cavities, growth zoning, internal fractures, and veil lines."
+      },
+      {
+        question: "Are inclusions always a sign of natural gemstones?",
+        answer: "No. Inclusions can also occur in synthetic lab-grown materials (such as flux remnants or seed plates), and some natural gems can be exceptionally clean. Visual features alone cannot establish a gemstone's origin; gemological testing is recommended."
+      },
+      {
+        question: "What is the difference between jadeite and nephrite?",
+        answer: "Both minerals are commercially called jade, but they are mineralogically distinct. Nephrite is a calcium-magnesium-iron amphibole silicate renowned for fibrous toughness, while jadeite is a sodium-aluminum pyroxene with higher hardness, vibrant emerald tones, and greater translucency."
+      },
+      {
+        question: "Do natural gemstone carvings have identical patterns?",
+        answer: "No. Earth-mined rough stones possess organic variations in banding, veiling, colour zoning, and inclusions, making each hand-sculpted gemstone carving completely unique in appearance."
+      }
+    ],
+    content: `
+      <p class="text-base sm:text-lg text-slate-700 leading-relaxed mb-5">
+        Gemstones are valued worldwide for their mesmerizing colours, natural patterns, unique mineral characteristics, and suitability for sacred sculpture, architectural decor, and fine jewellery. However, even stones belonging to the exact same mineral family rarely appear identical.
+      </p>
+      <p class="text-base sm:text-lg text-slate-700 leading-relaxed mb-6">
+        A gemstone's visual appearance is fundamentally shaped by its chemical composition, crystal lattice structure, geological formation conditions, and any human treatments it may have received. Understanding gemstone types, colours, and natural inclusions enables collectors, worshipers, and art enthusiasts to evaluate quality, authenticity, and aesthetic value before purchasing a finished gemstone carving.
+      </p>
+
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-6 border-t border-slate-200">
+        1. What Are Gemstones?
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Gemstones are naturally occurring minerals, mineral aggregates, or organic materials that possess sufficient beauty, durability, and rarity to be prized for ornamental and sculptural use.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        The vast majority of gemstones are <strong>crystalline minerals</strong>—solids with an orderly, repeating internal atomic arrangement (such as quartz, corundum, and beryl). Other prized materials, such as amber, jet, and natural pearls, are of <strong>organic origin</strong>, formed through biological processes rather than geological crystallization.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Gemstones span a broad optical spectrum from water-clear transparency and soft translucency to rich, velvety opacity. Across millennia, these stones have been sculpted into sacred deity idols, temple lingams, talismans, and heirloom jewellery. Classic examples revered in Indian lapidary traditions include clear quartz (Sphatik), amethyst, green jade, lapis lazuli, agate, ruby, emerald, and sapphire.
+      </p>
+
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-6 border-t border-slate-200">
+        2. Understanding Common Gemstone Types
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-6">
+        Different gemstone varieties possess distinct chemical formulas, physical hardness, and internal optical phenomena. Below are the primary varieties most frequently encountered in master lapidary carvings and decorative art:
+      </p>
+
+      <div class="space-y-6 my-6">
+        <!-- Clear Quartz -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200/90 shadow-2xs hover:border-amber-300 transition-colors">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <h3 class="text-lg sm:text-xl font-bold text-slate-900 flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-slate-300 border border-slate-400"></span>
+              Clear Quartz (Sphatik)
+            </h3>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
+              SiO₂ &bull; Mohs 7
+            </span>
+          </div>
+          <p class="text-sm text-slate-700 leading-relaxed mb-2">
+            Clear quartz is a transparent to translucent crystalline variety of silicon dioxide. Revered in India as sacred <em>Sphatik</em>, it is colourless and displays remarkable optical clarity, often exhibiting natural internal veil fractures, rainbow reflections, or rutile needles.
+          </p>
+          <div class="text-xs text-slate-500 font-medium">
+            <strong>Primary Carving Applications:</strong> Sphatik Shivlings, Shree Yantras, meditating Buddha statues, and fine faceted beads.
+          </div>
+        </div>
+
+        <!-- Rose Quartz -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200/90 shadow-2xs hover:border-pink-300 transition-colors">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <h3 class="text-lg sm:text-xl font-bold text-pink-950 flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-pink-400"></span>
+              Rose Quartz
+            </h3>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-pink-50 text-pink-800 border border-pink-200">
+              Pink Quartz Variety &bull; Mohs 7
+            </span>
+          </div>
+          <p class="text-sm text-slate-700 leading-relaxed mb-2">
+            Rose quartz is celebrated for its delicate, calming pink hue ranging from pale blush to deep rose tones. The colour is typically attributed to microscopic inclusions of fibrous dumortierite-like borosilicate minerals within the quartz matrix. Most rose quartz specimens exhibit a soft, cloudy translucency rather than complete transparency.
+          </p>
+          <div class="text-xs text-slate-500 font-medium">
+            <strong>Primary Carving Applications:</strong> Sculptures of Goddess Lakshmi, Radha Krishna idols, meditating figurines, and heart carvings.
+          </div>
+        </div>
+
+        <!-- Amethyst -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200/90 shadow-2xs hover:border-purple-300 transition-colors">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <h3 class="text-lg sm:text-xl font-bold text-purple-950 flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-purple-600"></span>
+              Amethyst
+            </h3>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-purple-50 text-purple-800 border border-purple-200">
+              Purple Quartz Variety &bull; Mohs 7
+            </span>
+          </div>
+          <p class="text-sm text-slate-700 leading-relaxed mb-2">
+            Amethyst is the purple variety of quartz, prized since antiquity for royal ornamentation. Its majestic purple hue—ranging from soft lilac to deep imperial violet—results from trace ferric iron (Fe³⁺) impurities irradiated by natural geological gamma rays. Natural amethyst frequently displays distinct colour zoning across crystal growth pyramids.
+          </p>
+          <div class="text-xs text-slate-500 font-medium">
+            <strong>Primary Carving Applications:</strong> Lord Shiva sculptures, Ganesh statues, crystal clusters, and ornamental deity carvings.
+          </div>
+        </div>
+
+        <!-- Green Jade -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200/90 shadow-2xs hover:border-emerald-300 transition-colors">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <h3 class="text-lg sm:text-xl font-bold text-emerald-950 flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-emerald-600"></span>
+              Green Jade (Nephrite &amp; Jadeite)
+            </h3>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+              Amphibole / Pyroxene &bull; Mohs 6 – 6.5
+            </span>
+          </div>
+          <p class="text-sm text-slate-700 leading-relaxed mb-2">
+            "Jade" encompasses two distinct mineral species: <strong>nephrite</strong> (an amphibole mineral renowned for interlocking fibrous toughness) and <strong>jadeite</strong> (a pyroxene mineral possessing vivid emerald-green coloration and higher hardness). Both stones occur in rich green tones and greasy-to-vitreous lusters. Discerning buyers should always confirm whether a piece is nephrite or jadeite.
+          </p>
+          <div class="text-xs text-slate-500 font-medium">
+            <strong>Primary Carving Applications:</strong> Intricately pierced sculptures, Lord Buddha idols, Green Tara statues, and ornate ritual bowls.
+          </div>
+        </div>
+
+        <!-- Lapis Lazuli -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200/90 shadow-2xs hover:border-blue-300 transition-colors">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <h3 class="text-lg sm:text-xl font-bold text-blue-950 flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-blue-700"></span>
+              Lapis Lazuli
+            </h3>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-50 text-blue-800 border border-blue-200">
+              Metamorphic Rock &bull; Mohs 5 – 5.5
+            </span>
+          </div>
+          <p class="text-sm text-slate-700 leading-relaxed mb-2">
+            Lapis lazuli is a metamorphic rock prized for its deep celestial blue color, primarily composed of the mineral lazurite. High-grade Afghan and Badakhshan lapis features sparkling golden specks of pyrite (fool's gold) and white swirls of calcite, giving each hand-carved piece the appearance of a starry night sky.
+          </p>
+          <div class="text-xs text-slate-500 font-medium">
+            <strong>Primary Carving Applications:</strong> Sacred Ganesha idols, Krishna statues, luxury tabletop accents, and inlay panels.
+          </div>
+        </div>
+
+        <!-- Agate -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200/90 shadow-2xs hover:border-amber-300 transition-colors">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <h3 class="text-lg sm:text-xl font-bold text-amber-950 flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-amber-600"></span>
+              Agate (Banded Chalcedony)
+            </h3>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200">
+              Microcrystalline SiO₂ &bull; Mohs 6.5 – 7
+            </span>
+          </div>
+          <p class="text-sm text-slate-700 leading-relaxed mb-2">
+            Agate is a banded variety of chalcedony—a microcrystalline form of quartz formed in volcanic cavities. It displays rhythmic, concentric bands and layers of varying translucency in earth tones, warm ambers, whites, and greys. These organic bands make every sculpted piece completely unique.
+          </p>
+          <div class="text-xs text-slate-500 font-medium">
+            <strong>Primary Carving Applications:</strong> Carved bowls, cameo reliefs, animal totems, and ornamental gemstone slices.
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Reference Comparison Matrix for the 6 Gemstone Types -->
+      <div class="my-8 rounded-2xl border border-amber-200/90 bg-white shadow-xs overflow-hidden">
+        <div class="sm:hidden flex items-center justify-between px-3.5 py-2.5 bg-gradient-to-r from-amber-50 to-orange-50 border-b border-amber-200/80 text-[11px] font-semibold text-amber-900">
+          <span class="flex items-center gap-1.5">
+            <span>👉</span> Swipe horizontally to compare gemstones
+          </span>
+          <span class="bg-amber-200/80 text-amber-950 font-bold px-2 py-0.5 rounded-full text-[10px]">
+            6 Varieties
+          </span>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full min-w-[620px] text-left text-xs sm:text-sm border-collapse">
+            <thead class="bg-amber-50/90 text-amber-950 text-xs uppercase tracking-wider font-extrabold border-b border-amber-200">
+              <tr>
+                <th class="p-3.5 sm:p-4 sticky left-0 bg-[#FFF7E8] z-10 shadow-[2px_0_4px_rgba(0,0,0,0.04)] w-[130px] font-extrabold text-slate-900">
+                  Gemstone
+                </th>
+                <th class="p-3.5 sm:p-4 font-extrabold text-slate-900 w-[130px]">Mineral Family</th>
+                <th class="p-3.5 sm:p-4 font-extrabold text-slate-900 w-[110px]">Hardness</th>
+                <th class="p-3.5 sm:p-4 font-extrabold text-slate-900 w-[130px]">Typical Colours</th>
+                <th class="p-3.5 sm:p-4 font-extrabold text-slate-900 w-[140px]">Signature Features</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 text-slate-700">
+              <tr class="hover:bg-amber-50/30 transition-colors">
+                <td class="p-3.5 sm:p-4 font-bold text-slate-900 sticky left-0 bg-white sm:bg-transparent z-10 shadow-[2px_0_4px_rgba(0,0,0,0.03)] sm:shadow-none">
+                  Clear Quartz
+                </td>
+                <td class="p-3.5 sm:p-4">Crystalline Quartz</td>
+                <td class="p-3.5 sm:p-4"><span class="inline-block bg-slate-100 font-bold px-2 py-0.5 rounded text-xs">7 Mohs</span></td>
+                <td class="p-3.5 sm:p-4">Water-clear, colourless</td>
+                <td class="p-3.5 sm:p-4">Natural veils, rainbow reflections</td>
+              </tr>
+              <tr class="hover:bg-amber-50/30 bg-slate-50/40 transition-colors">
+                <td class="p-3.5 sm:p-4 font-bold text-slate-900 sticky left-0 bg-[#fbfbfb] sm:bg-transparent z-10 shadow-[2px_0_4px_rgba(0,0,0,0.03)] sm:shadow-none">
+                  Rose Quartz
+                </td>
+                <td class="p-3.5 sm:p-4">Crystalline Quartz</td>
+                <td class="p-3.5 sm:p-4"><span class="inline-block bg-slate-100 font-bold px-2 py-0.5 rounded text-xs">7 Mohs</span></td>
+                <td class="p-3.5 sm:p-4">Blush pink to deep rose</td>
+                <td class="p-3.5 sm:p-4">Dumortierite fibers, soft cloudiness</td>
+              </tr>
+              <tr class="hover:bg-amber-50/30 transition-colors">
+                <td class="p-3.5 sm:p-4 font-bold text-slate-900 sticky left-0 bg-white sm:bg-transparent z-10 shadow-[2px_0_4px_rgba(0,0,0,0.03)] sm:shadow-none">
+                  Amethyst
+                </td>
+                <td class="p-3.5 sm:p-4">Crystalline Quartz</td>
+                <td class="p-3.5 sm:p-4"><span class="inline-block bg-slate-100 font-bold px-2 py-0.5 rounded text-xs">7 Mohs</span></td>
+                <td class="p-3.5 sm:p-4">Lilac to royal violet</td>
+                <td class="p-3.5 sm:p-4">Iron colour centres, chevron zoning</td>
+              </tr>
+              <tr class="hover:bg-amber-50/30 bg-slate-50/40 transition-colors">
+                <td class="p-3.5 sm:p-4 font-bold text-slate-900 sticky left-0 bg-[#fbfbfb] sm:bg-transparent z-10 shadow-[2px_0_4px_rgba(0,0,0,0.03)] sm:shadow-none">
+                  Green Jade
+                </td>
+                <td class="p-3.5 sm:p-4">Nephrite / Jadeite</td>
+                <td class="p-3.5 sm:p-4"><span class="inline-block bg-slate-100 font-bold px-2 py-0.5 rounded text-xs">6 – 6.5 Mohs</span></td>
+                <td class="p-3.5 sm:p-4">Mutton-fat, olive, emerald</td>
+                <td class="p-3.5 sm:p-4">Fibrous toughness, greasy luster</td>
+              </tr>
+              <tr class="hover:bg-amber-50/30 transition-colors">
+                <td class="p-3.5 sm:p-4 font-bold text-slate-900 sticky left-0 bg-white sm:bg-transparent z-10 shadow-[2px_0_4px_rgba(0,0,0,0.03)] sm:shadow-none">
+                  Lapis Lazuli
+                </td>
+                <td class="p-3.5 sm:p-4">Metamorphic Rock</td>
+                <td class="p-3.5 sm:p-4"><span class="inline-block bg-slate-100 font-bold px-2 py-0.5 rounded text-xs">5 – 5.5 Mohs</span></td>
+                <td class="p-3.5 sm:p-4">Deep azure &amp; royal blue</td>
+                <td class="p-3.5 sm:p-4">Golden pyrite flecks, calcite clouds</td>
+              </tr>
+              <tr class="hover:bg-amber-50/30 bg-slate-50/40 transition-colors">
+                <td class="p-3.5 sm:p-4 font-bold text-slate-900 sticky left-0 bg-[#fbfbfb] sm:bg-transparent z-10 shadow-[2px_0_4px_rgba(0,0,0,0.03)] sm:shadow-none">
+                  Agate
+                </td>
+                <td class="p-3.5 sm:p-4">Banded Chalcedony</td>
+                <td class="p-3.5 sm:p-4"><span class="inline-block bg-slate-100 font-bold px-2 py-0.5 rounded text-xs">6.5 – 7 Mohs</span></td>
+                <td class="p-3.5 sm:p-4">Multicolour earth tones</td>
+                <td class="p-3.5 sm:p-4">Concentric bands, geode cavities</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-6 border-t border-slate-200">
+        3. Why Do Gemstones Have Different Colours?
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        The extraordinary palette of gemstones is created by complex interactions between light, chemical elements, and crystal physics. Gemstone coloration is driven by four primary mechanisms:
+      </p>
+      <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6 text-slate-700">
+        <li><strong>Trace Element Impurities (Allochromatic):</strong> Pure mineral crystals are often colourless. When tiny percentages of transition metal ions (such as iron, chromium, titanium, vanadium, or manganese) substitute for native elements in the crystal lattice, they absorb specific wavelengths of light. For example, trace chromium yields the intense green of emerald and the vivid red of ruby.</li>
+        <li><strong>Inherent Chemistry (Idiochromatic):</strong> In some stones, colour-causing elements are an essential part of the chemical formula. Malachite is always green due to copper, and peridot is olive-green due to its essential iron content.</li>
+        <li><strong>Colour Centres &amp; Natural Irradiation:</strong> Radiation from surrounding rocks can dislodge electrons in the crystal lattice, creating "colour centres" that absorb light. Amethyst's purple hue is formed when natural gamma radiation interacts with trace iron in quartz.</li>
+        <li><strong>Structural Interference:</strong> Optical phenomena such as labradorescence in labradorite, play-of-colour in opal, and adularescence in moonstone arise from light scattering off microscopic internal layers and sphere lattices.</li>
+      </ul>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        In fine decorative carvings, colour distribution is paramount. A single rough gemstone may exhibit dramatic <strong>colour zoning</strong>. Master artisans in Jaipur carefully study this natural zoning before sculpting, positioning darker zones in the base or drapery and keeping the deity's facial features in serene, translucent tones.
+      </p>
+
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-6 border-t border-slate-200">
+        4. What Are Natural Gemstone Inclusions?
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Natural inclusions are solid minerals, fluid cavities, or structural anomalies enclosed within a gemstone during its geological crystallization millions of years ago deep within the Earth's crust.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-4 font-semibold text-slate-900">
+        Common types of natural inclusions include:
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
+        <div class="p-4 rounded-xl bg-amber-50/60 border border-amber-200/80">
+          <h4 class="font-bold text-slate-900 text-sm mb-1">Solid Mineral Inclusions</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Pre-existing or concurrent crystals trapped inside, such as golden pyrite crystals in lapis lazuli, dark tourmaline rods, or golden rutile needles in rutilated quartz.
+          </p>
+        </div>
+        <div class="p-4 rounded-xl bg-amber-50/60 border border-amber-200/80">
+          <h4 class="font-bold text-slate-900 text-sm mb-1">Fluid &amp; Multiphase Cavities</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Microscopic negative cavities containing liquid, a moving gas bubble, and sometimes a tiny mineral crystal—representing the primordial mineral fluid from which the gemstone crystallized.
+          </p>
+        </div>
+        <div class="p-4 rounded-xl bg-amber-50/60 border border-amber-200/80">
+          <h4 class="font-bold text-slate-900 text-sm mb-1">Healed Fissures &amp; "Veils"</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Delicate, feather-like planes where ancient fractures healed during geological growth, reflecting iridescent rainbow fringes when viewed under directional light.
+          </p>
+        </div>
+        <div class="p-4 rounded-xl bg-amber-50/60 border border-amber-200/80">
+          <h4 class="font-bold text-slate-900 text-sm mb-1">Growth Zoning &amp; Phantom Planes</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Outlines of earlier crystal growth stages ("phantom crystals") preserved as chemistry or temperature changed during millions of years of formation.
+          </p>
+        </div>
+      </div>
+      <p class="text-slate-700 leading-relaxed mb-6">
+        To professional gemologists, inclusions serve as indelible geological birthmarks. They provide indispensable diagnostic evidence distinguishing natural earth-mined gemstones from synthetic lab-grown alternatives and factory-melted glass imitations.
+      </p>
+
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-6 border-t border-slate-200">
+        5. Are Gemstone Inclusions Defects?
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        <strong>Not necessarily.</strong> In the world of natural gemstones and Vedic carvings, inclusions are celebrated as nature's authentic signature.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Whether an inclusion affects a gemstone depends on its size, location, and structural impact. It is crucial to distinguish between three very different phenomena:
+      </p>
+      <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6 text-slate-700">
+        <li><strong>Natural Inclusions:</strong> Inherent mineral features formed geologically. In many stones—such as the pyrite flecks in lapis lazuli or silk in star sapphires—they are essential to the stone's beauty and identity.</li>
+        <li><strong>Mechanical Damage:</strong> Chips, open fractures, or scratches sustained during mining, cutting, or transport. Open surface fissures that threaten structural integrity during pooja rituals or handling are genuine defects.</li>
+        <li><strong>Human Treatments:</strong> Artificial processes such as dye injection, lead-glass fracture filling, or resin impregnation designed to conceal fractures or simulate higher clarity.</li>
+      </ul>
+      <div class="bg-amber-50/60 p-4 rounded-xl border border-amber-200 text-amber-950 text-xs sm:text-sm mb-6">
+        <strong>Expert Insight:</strong> Completely sterile, 100% inclusion-free stones in large sizes at unusually low prices are almost always glass imitations or lab-grown synthetics. Subtle natural veiling confirms genuine earth-mined heritage.
+      </div>
+
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-6 border-t border-slate-200">
+        6. Understanding Gemstone Patterns
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Natural geological events create breathtaking visual patterns that ensure no two hand-carved gemstones ever look alike:
+      </p>
+      <ul class="list-disc pl-5 sm:pl-6 space-y-2.5 mb-6 text-slate-700">
+        <li><strong>Concentric Banding:</strong> Repeated rhythmic layers deposited sequentially in cavity walls, creating the mesmerizing concentric rings of agate and onyx.</li>
+        <li><strong>Colour Zoning:</strong> Dramatic geometric colour variations along crystal growth faces, as seen in bi-colour tourmalines and chevron amethyst.</li>
+        <li><strong>Brecciation &amp; Veining:</strong> Interlocking fragmented rock masses re-cemented by quartz or calcite, creating the dramatic cobweb patterns in turquoise and lapis lazuli.</li>
+        <li><strong>Mottling &amp; Cloudiness:</strong> Soft, cloud-like patches of varying translucency created by microscopic mineral dispersions in rose quartz and nephrite jade.</li>
+        <li><strong>Dendritic Formations:</strong> Fern-like manganese oxide or iron silicate tree patterns crystallizing in micro-fractures, characteristic of scenic dendritic agate.</li>
+      </ul>
+
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-6 border-t border-slate-200">
+        7. How Do Gemstones Get Their Natural Appearance?
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Every natural gemstone is a tangible testament to geological deep time, originating from one of four major formation environments:
+      </p>
+      <ol class="list-decimal pl-5 sm:pl-6 space-y-2.5 mb-6 text-slate-700">
+        <li><strong>Igneous / Magmatic:</strong> Crystallizing slowly from molten rock as magma cools deep within the Earth or in fluid-rich pegmatite veins, forming massive quartz crystals, tourmaline, and feldspars.</li>
+        <li><strong>Hydrothermal:</strong> Formed when superheated, mineral-saturated water circulates through deep fissures and tectonic faults. As temperature and pressure drop, minerals crystallize along cavity walls (e.g., amethyst geodes and quartz veins).</li>
+        <li><strong>Metamorphic:</strong> Intense heat and tectonic pressure recrystallize existing minerals without melting, giving birth to lapis lazuli, ruby, and jadeite.</li>
+        <li><strong>Sedimentary:</strong> Weathering, mineral precipitation, and fossilization across millions of years, producing banded agates and opals.</li>
+      </ol>
+
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-6 border-t border-slate-200">
+        8. How Should Beginners Evaluate Gemstones?
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        You do not need a complete gemological laboratory to make smart, confident purchasing decisions. Use this practical 7-point evaluation framework:
+      </p>
+      <div class="space-y-3 my-6">
+        <div class="p-3.5 sm:p-4 rounded-xl bg-white border border-slate-200 shadow-2xs">
+          <strong class="text-slate-900 text-sm">1. Confirm Exact Mineral Variety:</strong>
+          <span class="text-xs sm:text-sm text-slate-600 block mt-1">Inquire about the scientific mineral name rather than vague commercial trade terms (e.g., asking if "jade" is nephrite, jadeite, or dyed serpentine).</span>
+        </div>
+        <div class="p-3.5 sm:p-4 rounded-xl bg-white border border-slate-200 shadow-2xs">
+          <strong class="text-slate-900 text-sm">2. Inspect Colour Uniformity vs Natural Zoning:</strong>
+          <span class="text-xs sm:text-sm text-slate-600 block mt-1">Check if the colour looks organic with natural gradients, or artificially uniform and concentrated in cracks (a sign of chemical dye).</span>
+        </div>
+        <div class="p-3.5 sm:p-4 rounded-xl bg-white border border-slate-200 shadow-2xs">
+          <strong class="text-slate-900 text-sm">3. Examine Surface Polish &amp; Edges:</strong>
+          <span class="text-xs sm:text-sm text-slate-600 block mt-1">Look under bright light for smooth, mirror-like polish without pits, orange-peel ripples, or careless chipping along facet edges.</span>
+        </div>
+        <div class="p-3.5 sm:p-4 rounded-xl bg-white border border-slate-200 shadow-2xs">
+          <strong class="text-slate-900 text-sm">4. Distinguish Inclusions from Fractures:</strong>
+          <span class="text-xs sm:text-sm text-slate-600 block mt-1">Confirm that internal veils are securely healed within the crystal matrix and do not breach the exterior surface where they could compromise structural durability.</span>
+        </div>
+        <div class="p-3.5 sm:p-4 rounded-xl bg-white border border-slate-200 shadow-2xs">
+          <strong class="text-slate-900 text-sm">5. Verify Verified Physical Dimensions &amp; Weight:</strong>
+          <span class="text-xs sm:text-sm text-slate-600 block mt-1">Review weight in grams/carats and measurements in millimeters/inches rather than judging size from close-up photographs.</span>
+        </div>
+        <div class="p-3.5 sm:p-4 rounded-xl bg-white border border-slate-200 shadow-2xs">
+          <strong class="text-slate-900 text-sm">6. Request Transparent Treatment Disclosure:</strong>
+          <span class="text-xs sm:text-sm text-slate-600 block mt-1">Reputable sellers clearly disclose whether a stone is natural untreated, heat-treated, or clarity-enhanced.</span>
+        </div>
+        <div class="p-3.5 sm:p-4 rounded-xl bg-white border border-slate-200 shadow-2xs">
+          <strong class="text-slate-900 text-sm">7. Ask for Independent Gemological Documentation:</strong>
+          <span class="text-xs sm:text-sm text-slate-600 block mt-1">For sacred deity idols, temple lingams, or substantial investments, insist on a verifiable gemological lab test report verifying natural mineral identity.</span>
+        </div>
+      </div>
+
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-6 border-t border-slate-200">
+        9. Why Do Gemstone Characteristics Matter in Carvings?
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Sculpting a deity statue or decorative masterpiece from natural rough crystal is fundamentally different from casting synthetic resin or carving soft wood. A master lapidary must read the stone's grain before making a single cut.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Cleavage planes, crystal orientation, and internal fracture lines dictate where delicate details—such as Lord Ganesha's trunk, Goddess Saraswati's veena, or Lord Shiva's trishul—can be safely sculpted. Rather than fighting natural colour zoning or inclusions, master lapidary artisans in Jaipur incorporate the stone's innate features into the final divine form.
+      </p>
+
+      <div class="p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-[#FFF9EE] via-[#FFF4E0] to-amber-50/70 border border-amber-200/90 my-8 shadow-2xs">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-amber-600"></span>
+          <h4 class="font-bold text-base text-slate-900">
+            Explore Handcrafted Natural Gemstone Idols &amp; Sculptures
+          </h4>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed mb-4">
+          At Crystal Jaipuria, every statue is hand-sculpted in Jaipur by master generational artisans from 100% natural, certified rough crystals. Explore our specialized collections to examine individual carving specifications, weights, and verifiable lab certifications:
+        </p>
+        <div class="flex flex-wrap gap-2.5">
+          <a href="/crystal-statues" class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-900 bg-amber-100/90 hover:bg-amber-200 px-3.5 py-2 rounded-xl border border-amber-200 transition">
+            <span>Crystal Statues Collection →</span>
+          </a>
+          <a href="/god-statues" class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-900 bg-amber-100/90 hover:bg-amber-200 px-3.5 py-2 rounded-xl border border-amber-200 transition">
+            <span>Gemstone God Statues →</span>
+          </a>
+        </div>
+      </div>
+
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-6 border-t border-slate-200">
+        Conclusion
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Gemstones are geological masterpieces, each bearing the unique visual signature of its elemental chemistry, crystal lattice, and millions of years of subterranean formation. By understanding gemstone types, vibrant colour mechanisms, natural inclusion patterns, and proper evaluation standards, you can appreciate the true artistry of natural crystal carvings.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-6">
+        When acquiring gemstone sculptures for worship, meditation sanctums, or architectural collections, prioritize accurate mineral identification, exquisite lapidary craftsmanship, and verifiable authenticity documentation.
+      </p>
+    `
+  },
+
+  // ========================================================
   // BLOG: Sphatik vs Clear Quartz vs Glass
   // ========================================================
   {

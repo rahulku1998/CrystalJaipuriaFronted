@@ -1809,7 +1809,16 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Blog Detail Pages (6 Stories) -->
+  <!-- Blog Detail Pages (7 Stories) -->
+  <url>
+    <loc>https://www.crystaljaipuria.com/blog/gemstone-types-colours-patterns-inclusions</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/gemstone-types-colours-patterns-inclusions.webp</image:loc>
+      <image:title>A Beginner&apos;s Guide to Gemstone Types, Colours, Patterns and Natural Inclusions | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
   <url>
     <loc>https://www.crystaljaipuria.com/blog/sphatik-clear-quartz-vs-glass</loc>
     <image:image>
