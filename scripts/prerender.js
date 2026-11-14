@@ -70,6 +70,7 @@ export const runPrerender = async () => {
     ogDescription,
     ogImage,
     schema,
+    robots = "index, follow",
     bodyContent = "",
     noscriptContent = "",
     productMeta = null,
@@ -86,6 +87,17 @@ export const runPrerender = async () => {
     const safeOgDesc = escapeHtml(ogDescription || safeDesc);
     const safeOgImage = ogImage || `${BASE_URL}/logo.png`;
     const safeCanonical = canonical || `${BASE_URL}/`;
+    const safeRobots = escapeHtml(robots || "index, follow");
+
+    // 0. Replace Robots
+    if (html.includes('<meta name="robots"')) {
+      html = html.replace(
+        /<meta\s+name="robots"\s+content=".*?"\s*\/?>/i,
+        `<meta name="robots" content="${safeRobots}" />`
+      );
+    } else {
+      html = html.replace("<head>", `<head>\n  <meta name="robots" content="${safeRobots}" />`);
+    }
 
     // 1. Replace Title
     html = html.replace(/<title>.*?<\/title>/i, `<title>${safeTitle}</title>`);
@@ -1378,12 +1390,18 @@ export const runPrerender = async () => {
     </div>
   `.trim();
 
-  const notFoundHtml = buildPageHtml({
+  let notFoundHtml = buildPageHtml({
     title: "404 - Page Not Found | Crystal Jaipuria",
     description: "The page you are looking for does not exist. Explore authentic handcrafted gemstone statues, Shivlings, Shree Yantra, and crystal spiritual decor from Crystal Jaipuria.",
     canonical: `${BASE_URL}/404`,
+    robots: "noindex, nofollow, noarchive",
     bodyContent: notFoundBodyPreview,
   });
+  // Strip aggregateRating schema from 404 page so GSC does not extract review snippets on 404
+  notFoundHtml = notFoundHtml.replace(
+    /<script type="application\/ld\+json">[\s\S]*?<\/script>/i,
+    ""
+  );
   saveFile("404.html", notFoundHtml);
   saveFile("404/index.html", notFoundHtml);
   console.log("✓ Pre-rendered 404 page to /dist/404.html and /dist/404/index.html");

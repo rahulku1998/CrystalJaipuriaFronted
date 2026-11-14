@@ -124,7 +124,9 @@ function App() {
         />
         <Route path="/blog/:slug" element={<BlogDetails />} />
         <Route path="/about" element={<About />} />
+        <Route path="/about-us" element={<Navigate to="/about" replace />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/contact-us" element={<Navigate to="/contact" replace />} />
         <Route path="/shop" element={<Shop />} />
 
         {/* CUSTOMER POLICIES (Google Merchant Center Compliance) */}
@@ -158,8 +160,18 @@ function App() {
         <Route path="/information/:slug" element={<SpamRemoved />} />
         <Route path="/information/*" element={<SpamRemoved />} />
         <Route path="/information" element={<SpamRemoved />} />
+        <Route path="/shop/pg/*" element={<SpamRemoved />} />
+        <Route path="/shop/pg" element={<SpamRemoved />} />
+        <Route path="/shop/customer/*" element={<SpamRemoved />} />
+        <Route path="/shop/customer" element={<SpamRemoved />} />
+        <Route path="/toyu/*" element={<SpamRemoved />} />
+        <Route path="/toyu" element={<SpamRemoved />} />
+        <Route path="/CSfTop/*" element={<SpamRemoved />} />
+        <Route path="/CSfTop" element={<SpamRemoved />} />
         <Route path="/CSFTop/*" element={<SpamRemoved />} />
         <Route path="/CSFTop" element={<SpamRemoved />} />
+        <Route path="/contents/*" element={<SpamRemoved />} />
+        <Route path="/contents" element={<SpamRemoved />} />
         <Route path="/renga/*" element={<SpamRemoved />} />
         <Route path="/renga" element={<SpamRemoved />} />
         <Route path="/home-*" element={<SpamRemoved />} />

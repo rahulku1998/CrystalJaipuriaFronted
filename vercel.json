@@ -1,4 +1,6 @@
 {
+  "cleanUrls": true,
+  "trailingSlash": false,
   "headers": [
     {
       "source": "/assets/(.*)",
@@ -148,6 +150,71 @@
       ]
     },
     {
+      "source": "/shop/pg/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-store, no-cache, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/shop/customer/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-store, no-cache, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/toyu/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-store, no-cache, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/contents/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-store, no-cache, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/CSfTop(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-store, no-cache, must-revalidate"
+        }
+      ]
+    },
+    {
       "source": "/product-category/(.*)",
       "headers": [
         {
@@ -279,8 +346,188 @@
   ],
   "redirects": [
     {
-      "source": "/products/:path*",
-      "destination": "/product/:path*",
+      "source": "/about-us/:path*",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/about-us",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us/:path*",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/product/black-agate-carving-shiva-face/:path*",
+      "destination": "/product/blue-sodalite-carving-shiva-face-idol",
+      "permanent": true
+    },
+    {
+      "source": "/product/black-agate-carving-shiva-face",
+      "destination": "/product/blue-sodalite-carving-shiva-face-idol",
+      "permanent": true
+    },
+    {
+      "source": "/product/natural-tiger-eye-angel/:path*",
+      "destination": "/product/amethyst-gemston-angel",
+      "permanent": true
+    },
+    {
+      "source": "/product/natural-tiger-eye-angel",
+      "destination": "/product/amethyst-gemston-angel",
+      "permanent": true
+    },
+    {
+      "source": "/product/natural-pyrite-angel/:path*",
+      "destination": "/product/amethyst-gemston-angel",
+      "permanent": true
+    },
+    {
+      "source": "/product/natural-pyrite-angel",
+      "destination": "/product/amethyst-gemston-angel",
+      "permanent": true
+    },
+    {
+      "source": "/product/black-jade-gemston-handicraft-shree-yantra/:path*",
+      "destination": "/product/green-jade-shree-yantra",
+      "permanent": true
+    },
+    {
+      "source": "/product/black-jade-gemston-handicraft-shree-yantra",
+      "destination": "/product/green-jade-shree-yantra",
+      "permanent": true
+    },
+    {
+      "source": "/product/mahalakshmi-idol-in-natural-columbian-green-jade/:path*",
+      "destination": "/product/green-jade-mahalakshmi-ji-idol",
+      "permanent": true
+    },
+    {
+      "source": "/product/mahalakshmi-idol-in-natural-columbian-green-jade",
+      "destination": "/product/green-jade-mahalakshmi-ji-idol",
+      "permanent": true
+    },
+    {
+      "source": "/product/green-hade-laxmi-ji-idol/:path*",
+      "destination": "/product/green-jade-mahalakshmi-ji-idol",
+      "permanent": true
+    },
+    {
+      "source": "/product/green-hade-laxmi-ji-idol",
+      "destination": "/product/green-jade-mahalakshmi-ji-idol",
+      "permanent": true
+    },
+    {
+      "source": "/product/rose-quartz-shivling/:path*",
+      "destination": "/product/crystal-shivling",
+      "permanent": true
+    },
+    {
+      "source": "/product/rose-quartz-shivling",
+      "destination": "/product/crystal-shivling",
+      "permanent": true
+    },
+    {
+      "source": "/product/gemston-green-avernturine-shiva-head/:path*",
+      "destination": "/product/green-jade-carving-shiva-face-statue",
+      "permanent": true
+    },
+    {
+      "source": "/product/gemston-green-avernturine-shiva-head",
+      "destination": "/product/green-jade-carving-shiva-face-statue",
+      "permanent": true
+    },
+    {
+      "source": "/product/rose-quartz-shivling-with-face/:path*",
+      "destination": "/product/clear-crystal-quartz-shivling-with-shiva-face",
+      "permanent": true
+    },
+    {
+      "source": "/product/rose-quartz-shivling-with-face",
+      "destination": "/product/clear-crystal-quartz-shivling-with-shiva-face",
+      "permanent": true
+    },
+    {
+      "source": "/product/green-aventurine-parasnath-ji-statue/:path*",
+      "destination": "/product/green-aventurine-parshvanath-ji-statue",
+      "permanent": true
+    },
+    {
+      "source": "/product/green-aventurine-parasnath-ji-statue",
+      "destination": "/product/green-aventurine-parshvanath-ji-statue",
+      "permanent": true
+    },
+    {
+      "source": "/product/lapis-lazuli-carving-ganesha-statue/:path*",
+      "destination": "/product/lapis-lazuli-ganesha-with-arch",
+      "permanent": true
+    },
+    {
+      "source": "/product/lapis-lazuli-carving-ganesha-statue",
+      "destination": "/product/lapis-lazuli-ganesha-with-arch",
+      "permanent": true
+    },
+    {
+      "source": "/product/rose-quartz-carved-shree-krishan-ji-idol/:path*",
+      "destination": "/product/rose-quartz-carved-shree-krishna-ji-idol",
+      "permanent": true
+    },
+    {
+      "source": "/product/rose-quartz-carved-shree-krishan-ji-idol",
+      "destination": "/product/rose-quartz-carved-shree-krishna-ji-idol",
+      "permanent": true
+    },
+    {
+      "source": "/product/yellow-jad-ganesh-statue/:path*",
+      "destination": "/product/natural-yellow-jade-ganesha-statue",
+      "permanent": true
+    },
+    {
+      "source": "/product/yellow-jad-ganesh-statue",
+      "destination": "/product/natural-yellow-jade-ganesha-statue",
+      "permanent": true
+    },
+    {
+      "source": "/product/natural-tiger-eye-stone-carved-ganesha-statue/:path*",
+      "destination": "/product/tiger-eye-ganesha-idol",
+      "permanent": true
+    },
+    {
+      "source": "/product/natural-tiger-eye-stone-carved-ganesha-statue",
+      "destination": "/product/tiger-eye-ganesha-idol",
+      "permanent": true
+    },
+    {
+      "source": "/product/rose-quartz-shiva-statue-with-gold-panting/:path*",
+      "destination": "/product/rose-quartz-shiva-statue-with-gold-painting",
+      "permanent": true
+    },
+    {
+      "source": "/product/rose-quartz-shiva-statue-with-gold-panting",
+      "destination": "/product/rose-quartz-shiva-statue-with-gold-painting",
+      "permanent": true
+    },
+    {
+      "source": "/product/clear-crystal-shivling/:path*",
+      "destination": "/product/crystal-shivling",
+      "permanent": true
+    },
+    {
+      "source": "/product/clear-crystal-shivling",
+      "destination": "/product/crystal-shivling",
+      "permanent": true
+    },
+    {
+      "source": "/products/((?!detail).*)",
+      "destination": "/product/$1",
       "permanent": true
     },
     {
@@ -464,7 +711,7 @@
       "destination": "/assets/vendor-swiper.css"
     },
     {
-      "source": "/((?!images/|assets/|favicon|products/detail|product/detail|contents|wp-content|wp-includes|wp-admin|information|CSFTop|renga|product-category|product-tag|hg|shop/userreview|shop/storeSearch|.*\\.(?:webp|jpg|jpeg|png|svg|ico|txt|xml|json|tsv|html)).*)",
+      "source": "/((?!images/|assets/|favicon|products/detail|product/detail|contents|wp-content|wp-includes|wp-admin|information|CSFTop|CSfTop|renga|product-category|product-tag|hg|shop/userreview|shop/storeSearch|shop/pg|shop/customer|toyu|.*\\.(?:webp|jpg|jpeg|png|svg|ico|txt|xml|json|tsv|html)).*)",
       "destination": "/index.html"
     }
   ]

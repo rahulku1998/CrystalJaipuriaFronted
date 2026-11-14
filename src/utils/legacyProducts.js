@@ -33,9 +33,24 @@ export const SLUG_ALIASES = {
   "lord-parshvanath-in-lapis-lazuli": "lord-parasnath-in-lapis-lazuli",
   "black-obsidian-goddess-kali": "goddess-kali-in-black-obsidian",
   "green-aventurine-lord-ganesha": "lord-ganesha-in-green-aventurine",
-  "ruby-zoisite-lord-krishna": "lord-krishna-in-ruby-zoisite",
   "labradorite-laughing-buddha": "laughing-buddha-in-labradorite",
-  "luxurious-idols-&-decor": "luxurious-idols-decor"
+  "luxurious-idols-&-decor": "luxurious-idols-decor",
+  "black-agate-carving-shiva-face": "blue-sodalite-carving-shiva-face-idol",
+  "natural-tiger-eye-angel": "amethyst-gemston-angel",
+  "natural-pyrite-angel": "amethyst-gemston-angel",
+  "black-jade-gemston-handicraft-shree-yantra": "green-jade-shree-yantra",
+  "mahalakshmi-idol-in-natural-columbian-green-jade": "green-jade-mahalakshmi-ji-idol",
+  "green-hade-laxmi-ji-idol": "green-jade-mahalakshmi-ji-idol",
+  "rose-quartz-shivling": "crystal-shivling",
+  "gemston-green-avernturine-shiva-head": "green-jade-carving-shiva-face-statue",
+  "rose-quartz-shivling-with-face": "clear-crystal-quartz-shivling-with-shiva-face",
+  "green-aventurine-parasnath-ji-statue": "green-aventurine-parshvanath-ji-statue",
+  "lapis-lazuli-carving-ganesha-statue": "lapis-lazuli-ganesha-with-arch",
+  "rose-quartz-carved-shree-krishan-ji-idol": "rose-quartz-carved-shree-krishna-ji-idol",
+  "yellow-jad-ganesh-statue": "natural-yellow-jade-ganesha-statue",
+  "natural-tiger-eye-stone-carved-ganesha-statue": "tiger-eye-ganesha-idol",
+  "rose-quartz-shiva-statue-with-gold-panting": "rose-quartz-shiva-statue-with-gold-painting",
+  "clear-crystal-shivling": "crystal-shivling",
 };
 
 export function resolveProductSlug(slug) {
