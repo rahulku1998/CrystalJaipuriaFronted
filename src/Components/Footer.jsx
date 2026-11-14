@@ -372,12 +372,12 @@ const Footer = () => {
           <p className="text-left sm:text-right">
             Designed &amp; Developed with <span className="text-red-500">❤️</span> by{" "}
             <a
-              href="https://www.codewithrahulkumawat.com/contact"
+              href="https://www.linkedin.com/in/vijay-kumawat-432646242/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-amber-700 hover:text-amber-800 font-bold hover:underline transition"
             >
-              Rahul Kumawat
+              Vijay Kumawat
             </a>
           </p>
         </div>

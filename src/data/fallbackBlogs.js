@@ -537,8 +537,8 @@ export const FALLBACK_BLOGS = [
       { "@type": "Thing", "name": "Gemology", "sameAs": "https://en.wikipedia.org/wiki/Gemology" }
     ],
     mentions: [
-      { "@type": "Product", "name": "Sphatik Shivling", "url": "https://www.crystaljaipuria.com/shivling" },
-      { "@type": "Product", "name": "Crystal Shree Yantra", "url": "https://www.crystaljaipuria.com/shree-yantra" },
+      { "@type": "WebPage", "name": "Sphatik Shivling", "url": "https://www.crystaljaipuria.com/shivling" },
+      { "@type": "WebPage", "name": "Crystal Shree Yantra", "url": "https://www.crystaljaipuria.com/shree-yantra" },
       { "@type": "WebPage", "name": "Gemstone Authenticity Guide", "url": "https://www.crystaljaipuria.com/gemstone-authenticity-guide" }
     ],
     faqs: [
@@ -962,8 +962,8 @@ export const FALLBACK_BLOGS = [
       { "@type": "Thing", "name": "Sphatik Quartz" }
     ],
     mentions: [
-      { "@type": "Product", "name": "Sphatik Shivling", "url": "https://www.crystaljaipuria.com/shivling" },
-      { "@type": "Product", "name": "Gemstone God Statues", "url": "https://www.crystaljaipuria.com/god-statues" },
+      { "@type": "WebPage", "name": "Sphatik Shivling", "url": "https://www.crystaljaipuria.com/shivling" },
+      { "@type": "WebPage", "name": "Gemstone God Statues", "url": "https://www.crystaljaipuria.com/god-statues" },
       { "@type": "WebPage", "name": "Gemstone Authenticity Guide", "url": "https://www.crystaljaipuria.com/gemstone-authenticity-guide" }
     ],
     faqs: [
@@ -1231,9 +1231,9 @@ export const FALLBACK_BLOGS = [
       { "@type": "Thing", "name": "Jaipur Handicrafts" }
     ],
     mentions: [
-      { "@type": "Product", "name": "Crystal Statues", "url": "https://www.crystaljaipuria.com/crystal-statues" },
-      { "@type": "Product", "name": "Natural Sphatik Shivling", "url": "https://www.crystaljaipuria.com/shivling" },
-      { "@type": "Product", "name": "Gemstone God Statues", "url": "https://www.crystaljaipuria.com/god-statues" }
+      { "@type": "WebPage", "name": "Crystal Statues", "url": "https://www.crystaljaipuria.com/crystal-statues" },
+      { "@type": "WebPage", "name": "Natural Sphatik Shivling", "url": "https://www.crystaljaipuria.com/shivling" },
+      { "@type": "WebPage", "name": "Gemstone God Statues", "url": "https://www.crystaljaipuria.com/god-statues" }
     ],
     howTo: {
       name: "How Gemstone Carving Works: The 8-Step Lapidary Process",
@@ -1531,9 +1531,9 @@ export const FALLBACK_BLOGS = [
       { "@type": "Thing", "name": "Abhisheka Ritual Care", "sameAs": "https://en.wikipedia.org/wiki/Abhisheka" }
     ],
     mentions: [
-      { "@type": "Product", "name": "Sphatik Shivling", "url": "https://www.crystaljaipuria.com/shivling" },
+      { "@type": "WebPage", "name": "Sphatik Shivling", "url": "https://www.crystaljaipuria.com/shivling" },
       { "@type": "WebPage", "name": "Gemstone Authenticity Guide", "url": "https://www.crystaljaipuria.com/gemstone-authenticity-guide" },
-      { "@type": "Product", "name": "Crystal Statues", "url": "https://www.crystaljaipuria.com/crystal-statues" }
+      { "@type": "WebPage", "name": "Crystal Statues", "url": "https://www.crystaljaipuria.com/crystal-statues" }
     ],
     howTo: {
       name: "How to Clean and Care for Natural Gemstone Carvings",
@@ -1798,9 +1798,9 @@ export const FALLBACK_BLOGS = [
       { "@type": "Thing", "name": "Gemological Testing" }
     ],
     mentions: [
-      { "@type": "Product", "name": "Natural Gemstone Statues", "url": "https://www.crystaljaipuria.com/shop" },
-      { "@type": "Product", "name": "Gemstone God Statues", "url": "https://www.crystaljaipuria.com/god-statues" },
-      { "@type": "Product", "name": "Original Sphatik Shivling", "url": "https://www.crystaljaipuria.com/shivling" }
+      { "@type": "WebPage", "name": "Natural Gemstone Statues", "url": "https://www.crystaljaipuria.com/shop" },
+      { "@type": "WebPage", "name": "Gemstone God Statues", "url": "https://www.crystaljaipuria.com/god-statues" },
+      { "@type": "WebPage", "name": "Original Sphatik Shivling", "url": "https://www.crystaljaipuria.com/shivling" }
     ],
     faqs: [
       {
@@ -2048,9 +2048,9 @@ export const FALLBACK_BLOGS = [
       { "@type": "Thing", "name": "Vedic Vastu Decor" }
     ],
     mentions: [
-      { "@type": "Product", "name": "Crystal Statues", "url": "https://www.crystaljaipuria.com/crystal-statues" },
-      { "@type": "Product", "name": "Gemstone God Statues", "url": "https://www.crystaljaipuria.com/god-statues" },
-      { "@type": "Product", "name": "Sphatik Shivling", "url": "https://www.crystaljaipuria.com/shivling" }
+      { "@type": "WebPage", "name": "Crystal Statues", "url": "https://www.crystaljaipuria.com/crystal-statues" },
+      { "@type": "WebPage", "name": "Gemstone God Statues", "url": "https://www.crystaljaipuria.com/god-statues" },
+      { "@type": "WebPage", "name": "Sphatik Shivling", "url": "https://www.crystaljaipuria.com/shivling" }
     ],
     faqs: [
       {

@@ -589,8 +589,13 @@ export const getArticleSchema = (blog, canonicalUrl) => {
   if (blog.about) {
     articleSchema.about = blog.about;
   }
-  if (blog.mentions) {
-    articleSchema.mentions = blog.mentions;
+  if (blog.mentions && Array.isArray(blog.mentions)) {
+    articleSchema.mentions = blog.mentions.map((item) => {
+      if (item && item["@type"] === "Product") {
+        return { ...item, "@type": "WebPage" };
+      }
+      return item;
+    });
   }
 
   const breadcrumbsSchema = {
