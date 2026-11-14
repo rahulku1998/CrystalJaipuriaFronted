@@ -973,8 +973,11 @@ export const runPrerender = async () => {
   console.log(`✓ Pre-rendered ${subCount} subcategory pages and old ID redirects to /dist/subcategory/*/index.html`);
 
   // ==========================================
-  // 3. Pre-render Core Pages
+  // 3. Pre-render Core Pages & Blogs
   // ==========================================
+  const blogsRes = await fetchData("/blogs");
+  const allBlogs = getDeduplicatedBlogs(blogsRes?.blogs || [], FALLBACK_BLOGS);
+
   const corePages = [
     {
       slug: "shop",
@@ -1032,6 +1035,37 @@ export const runPrerender = async () => {
     </div>
   `.trim();
 
+  const blogCardsHtml = allBlogs
+    .map((b) => {
+      const bSlug = b.slug || b._id;
+      const rawImg = b.coverImage?.url || "/Gemstone.webp";
+      const fullImg = rawImg.startsWith("http") ? rawImg : `${BASE_URL}${rawImg}`;
+      return `
+        <a href="${BASE_URL}/blog/${bSlug}" style="text-decoration:none;background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:16px;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="aspect-ratio:16/9;background:#faf8f5;border-radius:8px;overflow:hidden;margin-bottom:12px;">
+              <img src="${fullImg}" alt="${escapeHtml(b.title)}" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+            </div>
+            <div style="font-size:11px;font-weight:700;color:#c05646;text-transform:uppercase;margin-bottom:6px;">${escapeHtml(b.category || "Guide")}</div>
+            <h3 style="font-size:16px;font-weight:800;color:#0f172a;line-height:1.4;margin:0 0 8px 0;">${escapeHtml(b.title)}</h3>
+            <p style="font-size:13px;color:#64748b;line-height:1.6;margin:0;">${escapeHtml(b.description || "")}</p>
+          </div>
+          <div style="font-size:12px;font-weight:700;color:#c05646;margin-top:16px;">Read Article &rarr;</div>
+        </a>
+      `;
+    })
+    .join("\n");
+
+  const blogBodyPreview = `
+    <div style="max-width:1200px;margin:0 auto;padding:32px 16px;font-family:system-ui,-apple-system,sans-serif;">
+      <h1 style="font-size:32px;font-weight:800;color:#0f172a;margin-bottom:8px;">Gemstone &amp; Spiritual Vastu Insights Blog</h1>
+      <p style="font-size:15px;color:#64748b;margin-bottom:32px;">Explore expert guides on natural gemstone identification, Vedic art, Sphatik Shivlings, and craftsmanship.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));gap:24px;">
+        ${blogCardsHtml}
+      </div>
+    </div>
+  `.trim();
+
   corePages.forEach((cp) => {
     const pageHtml = buildPageHtml({
       title: cp.title,
@@ -1039,7 +1073,7 @@ export const runPrerender = async () => {
       canonical: `${BASE_URL}/${cp.slug}`,
       ogTitle: cp.title,
       ogDescription: cp.description,
-      bodyContent: cp.slug === "shop" ? shopBodyPreview : "",
+      bodyContent: cp.slug === "shop" ? shopBodyPreview : cp.slug === "blog" ? blogBodyPreview : "",
     });
     saveFile(`${cp.slug}/index.html`, pageHtml);
   });
@@ -1049,8 +1083,6 @@ export const runPrerender = async () => {
   // ==========================================
   // 3b. Pre-render All Blog Detail Pages
   // ==========================================
-  const blogsRes = await fetchData("/blogs");
-  const allBlogs = getDeduplicatedBlogs(blogsRes?.blogs || [], FALLBACK_BLOGS);
 
   allBlogs.forEach((b) => {
     const bSlug = b.slug || b._id;
