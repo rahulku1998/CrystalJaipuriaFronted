@@ -528,6 +528,9 @@ Hello Crystal Jaipuria, I have a query regarding this product.
   }
   if (!Array.isArray(productFaqs)) productFaqs = [];
   productFaqs = productFaqs.filter((f) => f && (f.question || f.answer));
+  if (productFaqs.length === 0 && unpackedMetadata?.faqs?.length > 0) {
+    productFaqs = unpackedMetadata.faqs;
+  }
   if (productFaqs.length === 0 && product?.name) {
     productFaqs = getDefaultProductFaqs(product.name);
   }

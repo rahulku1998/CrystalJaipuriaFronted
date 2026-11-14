@@ -321,6 +321,69 @@ export const getVedicVastuForProduct = (productOrName) => {
       poojaVidhi = "Light natural sandalwood dhoop incense, maintaining a quiet, clean, and elevated platform.";
       vedicBenefits = "Dispels mental turbulence, anxiety, and insomnia, fostering zen mindfulness and restorative tranquility.";
       break;
+
+    case "horses":
+      placementDirection = "South wall facing North, or North/East wall of living room or executive office";
+      chakraPlanet = "Solar Plexus (Manipura) & Third Eye · Sun (Surya) & Mars (Mangal)";
+      poojaVidhi = "Keep dusted with a soft microfiber cloth. Anoint lightly with fragrant natural sandalwood or rose attar during sunrise.";
+      vedicBenefits = "Symbolizes unrelenting momentum, career promotion, commercial victory, swift obstacle removal, and rapid financial growth in business ventures.";
+      break;
+
+    case "ram-darbar":
+      placementDirection = "North-East (Ishanya Kon) or East facing altar upon a clean elevated chowki";
+      chakraPlanet = "Anahata (Heart) & Crown Chakra · Sun (Surya) & Jupiter (Brihaspati)";
+      poojaVidhi = "Gently wipe with pure Gangajal. Offer fresh yellow flowers, chandan tilak, and light a pure cow ghee deepak chanting 'Shree Ram Jai Ram Jai Jai Ram'.";
+      vedicBenefits = "Brings Maryada (righteous family harmony), protection against conflicts, mutual respect among family members, and auspicious Ram Rajya prosperity.";
+      break;
+
+    case "balaji":
+      placementDirection = "North quadrant (Kubera Sthana) or North-East (Ishanya Kon) temple altar";
+      chakraPlanet = "Heart (Anahata) & Solar Plexus · Venus (Shukra), Sun & Lord Venkateswara Abundance";
+      poojaVidhi = "Wipe with holy Gangajal or pure floral water. Offer white chandan, Tulsi garland, and light a ghee lamp on Friday mornings reciting 'Om Namo Venkateshaya'.";
+      vedicBenefits = "Manifests profound debt relief (Rina Vimochana), magnetic commercial expansion, supreme financial security, and divine Vaikuntha blessings.";
+      break;
+
+    case "tara":
+      placementDirection = "North or North-East quadrant of meditation altar or sacred living space";
+      chakraPlanet = "Heart Chakra (Anahata) & Throat Chakra · Mercury (Budh) & Compassionate Green Ray";
+      poojaVidhi = "Maintain a clean, fragrant altar. Light natural herbal incense and recite the sacred Green Tara mantra: 'Om Tare Tuttare Ture Soha'.";
+      vedicBenefits = "Swift deliverance from fears and spiritual dangers (Tarini), maternal protection, accelerated compassion, and effortless manifestation of goals.";
+      break;
+
+    case "kali":
+      placementDirection = "North or North-East on an elevated altar facing South or East (or dedicated private sadhana room)";
+      chakraPlanet = "Root Chakra (Muladhara) & Crown · Saturn (Shani), Rahu & Divine Mahashakti Shield";
+      poojaVidhi = "Consecrate during Amavasya or Tuesday/Saturday evening. Offer red hibiscus flowers, camphor aarti, and chant 'Om Krim Kalikaye Namah'.";
+      vedicBenefits = "Supreme psychic protection, absolute annihilation of fear, black magic, and enemy obstacles, transmuting darkness into radiant spiritual courage.";
+      break;
+
+    case "durga":
+      placementDirection = "North, North-East, or East quadrant of home temple altar";
+      chakraPlanet = "Solar Plexus (Manipura) & Heart Chakra · Rahu Shield & Mars (Mangal)";
+      poojaVidhi = "Consecrate during Navratri or Friday morning. Offer red vermillion (sindoor), red flowers, and pure cow ghee diya reciting Durga Saptashati.";
+      vedicBenefits = "Invincible protective armor against enemies, evil eye, and court litigations; bestows fearless leadership, victory, and domestic serenity.";
+      break;
+
+    case "shankh":
+      placementDirection = "North-East (Ishanya Kon) or Right side of Altar with the open beak pointing towards deity/center";
+      chakraPlanet = "Throat Chakra (Vishuddha) & Heart Chakra · Moon (Chandra) & Varuna Deva";
+      poojaVidhi = "Keep filled with pure Gangajal or consecrated water overnight. Sprinkle around the house in the morning to sanctify the atmosphere.";
+      vedicBenefits = "Emits purifying cosmic primordial sound vibration (Omkara), attracts Goddess Mahalakshmi, dispels negative Vastu doshas, and brings purity.";
+      break;
+
+    case "tea-set":
+      placementDirection = "Dining area, North-East or North living room credenza or showcase";
+      chakraPlanet = "Crown & Solar Plexus Chakras · Clear Crystalline Water Harmonizer";
+      poojaVidhi = "Rinse gently with pure warm water and mild organic soap; dry with a lint-free cotton towel. Recharge occasionally under gentle morning sunlight.";
+      vedicBenefits = "Harmonizes household communication, infuses shared refreshments with pure crystalline frequencies, and fosters warm cordial relations.";
+      break;
+
+    case "angel":
+      placementDirection = "North-East, bedside table, meditation corner, or child's study desk";
+      chakraPlanet = "Crown & Third Eye Chakras · Celestial Guardian Frequencies";
+      poojaVidhi = "Dust with soft cloth, smudge with natural lavender or frankincense, recharge under moonlight.";
+      vedicBenefits = "Provides gentle auric shielding, calms anxiety and nightmares, inspires peaceful sleep, and connects to angelic guidance.";
+      break;
   }
 
   return {

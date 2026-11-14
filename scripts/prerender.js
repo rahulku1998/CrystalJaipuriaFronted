@@ -408,6 +408,9 @@ export const runPrerender = async () => {
         productFaqs = JSON.parse(faqMatch[1]);
       } catch (e) {}
     }
+    if ((!productFaqs || productFaqs.length === 0) && Array.isArray(prod.faqs) && prod.faqs.length > 0) {
+      productFaqs = prod.faqs;
+    }
     if (Array.isArray(productFaqs)) {
       productFaqs = productFaqs.map((f) => ({
         question: sanitizeNaturalStutter(f.question || ""),

@@ -7,6 +7,7 @@ import {
   FALLBACK_BLOGS,
   getFallbackBlogBySlug,
 } from "../data/fallbackBlogs.js";
+import { getStandardizedProduct } from "../utils/productStandardizer.js";
 
 // Bulletproof offline fallback resolver for public read endpoints
 export const getFallbackResponse = (rawUrl) => {
@@ -38,7 +39,7 @@ export const getFallbackResponse = (rawUrl) => {
     });
     return {
       data: {
-        latestProducts: FALLBACK_PRODUCTS.slice(0, 10),
+        latestProducts: FALLBACK_PRODUCTS.slice(0, 10).map((p) => getStandardizedProduct(p)),
         categories: FALLBACK_CATEGORIES,
         categoryProducts,
       },
@@ -46,7 +47,7 @@ export const getFallbackResponse = (rawUrl) => {
   }
 
   if (cleanUrl === "/products") {
-    return { data: { products: FALLBACK_PRODUCTS } };
+    return { data: { products: FALLBACK_PRODUCTS.map((p) => getStandardizedProduct(p)) } };
   }
   if (cleanUrl === "/categories") {
     return { data: { categories: FALLBACK_CATEGORIES } };
@@ -77,7 +78,7 @@ export const getFallbackResponse = (rawUrl) => {
             .replace(/^-|-$/g, "") === slug)
     );
     if (prod) {
-      return { data: { product: prod } };
+      return { data: { product: getStandardizedProduct(prod) } };
     }
   }
   if (cleanUrl.startsWith("/products/category/")) {
@@ -88,7 +89,7 @@ export const getFallbackResponse = (rawUrl) => {
         p.categoryId === catId ||
         p.categoryId?.slug === catId
     );
-    return { data: { products: prods } };
+    return { data: { products: prods.map((p) => getStandardizedProduct(p)) } };
   }
   if (cleanUrl.startsWith("/products/subcategory/")) {
     const subId = cleanUrl.replace("/products/subcategory/", "").toLowerCase();
@@ -105,7 +106,7 @@ export const getFallbackResponse = (rawUrl) => {
         (subId === "sphatik-crystal-yantra" && pSlug === "sphatik-crystal-shree-yantra")
       );
     });
-    return { data: { products: prods } };
+    return { data: { products: prods.map((p) => getStandardizedProduct(p)) } };
   }
   if (cleanUrl.startsWith("/products/")) {
     const idOrSlug = cleanUrl.replace("/products/", "").toLowerCase();
@@ -120,7 +121,7 @@ export const getFallbackResponse = (rawUrl) => {
             .replace(/^-|-$/g, "") === idOrSlug)
     );
     if (prod) {
-      return { data: { product: prod } };
+      return { data: { product: getStandardizedProduct(prod) } };
     }
   }
 

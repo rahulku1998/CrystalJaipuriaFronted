@@ -1,5 +1,6 @@
 import { STATIC_CATALOG_SLUGS } from "./imageOptimizer.js";
 import { formatPricePerUnit } from "./price.js";
+import { generateBuiltInContent } from "./aiGenerator.js";
 
 /**
  * Product Data Standardizer for Crystal Jaipuria
@@ -933,7 +934,15 @@ export const getStandardizedProduct = (product) => {
     : formatPricePerUnit(product.pricePerUnit, standardizedPrice, standardizedWeight);
 
   const dimensions = spec?.dimensions || product.dimensions || standardizedSize;
-  const formattedAdditionalInfo = formatAdditionalInfo(product.additionalInfo, {
+  const builtIn = generateBuiltInContent(
+    cleanName,
+    product.categoryId?.name || "",
+    standardizedWeight,
+    standardizedSize,
+    dimensions
+  );
+
+  let formattedAdditionalInfo = formatAdditionalInfo(product.additionalInfo || builtIn.additionalInfo, {
     ...product,
     name: cleanName,
     slug,
@@ -942,7 +951,41 @@ export const getStandardizedProduct = (product) => {
     dimensions,
   });
 
-  let cleanDescription = product.description || (product.detail ? `<p>${product.detail}</p>` : "");
+  let productFaqs = product.faqs;
+  if (typeof productFaqs === "string") {
+    try {
+      productFaqs = JSON.parse(productFaqs);
+    } catch {
+      productFaqs = [];
+    }
+  }
+  if (!Array.isArray(productFaqs) || productFaqs.length === 0) {
+    const faqMatch = String(product.additionalInfo || "").match(/<!-- FAQS_JSON:([\s\S]*?)-->/);
+    if (faqMatch && faqMatch[1]) {
+      try {
+        productFaqs = JSON.parse(faqMatch[1]);
+      } catch {}
+    }
+  }
+  if (!Array.isArray(productFaqs) || productFaqs.length === 0) {
+    productFaqs = builtIn.faqs;
+  }
+
+  if (!formattedAdditionalInfo.includes("<!-- FAQS_JSON:") && productFaqs && productFaqs.length > 0) {
+    formattedAdditionalInfo += `\n<!-- FAQS_JSON:${JSON.stringify(productFaqs)} -->`;
+  }
+  if (!formattedAdditionalInfo.includes("<!-- SEO_META:")) {
+    formattedAdditionalInfo += `\n<!-- SEO_META:${JSON.stringify({
+      metaTitle: product.metaTitle || builtIn.metaTitle,
+      metaDescription: product.metaDescription || builtIn.metaDescription,
+      heading: cleanName
+    })} -->`;
+  }
+
+  let cleanDescription = product.description;
+  if (!cleanDescription || cleanDescription.trim().length < 60 || !cleanDescription.includes("<table")) {
+    cleanDescription = builtIn.fullDescription;
+  }
   if (slug === "natural-opal-stone-shivling" && cleanDescription) {
     cleanDescription = cleanDescription
       .replace(/Natural Sphatik \(100% Certified Clear Quartz\)/gi, "Certified Natural Opal Stone (Upal Gemstone)")
@@ -1159,7 +1202,9 @@ export const getStandardizedProduct = (product) => {
   }
 
   let cleanDetail = product.detail;
-  if (slug === "green-jade-panchmukhi-shivling") {
+  if (!cleanDetail || cleanDetail.trim().length < 25) {
+    cleanDetail = builtIn.citationHook;
+  } else if (slug === "green-jade-panchmukhi-shivling") {
     cleanDetail = `Buy 100% Certified Natural Green Jade Stone Panchmukhi Shivling (${standardizedWeight || "1 kg to 10 kg"}, ${standardizedSize || "1 inch to 6 inch"}) handcrafted in Jaipur, India. Sacred Pashupatinath Mahadev Swaroop with 5 divine faces for home temple pooja, Jalabhishek, and Vastu prosperity at factory direct price.`;
   } else if (cleanDetail) {
     if (slug.includes("labradorite")) {
@@ -1541,6 +1586,7 @@ export const getStandardizedProduct = (product) => {
     detail: cleanDetail,
     description: cleanDescription,
     additionalInfo: formattedAdditionalInfo,
+    faqs: productFaqs,
     images: standardizedImages,
     stock: (product.stock === 0 || product.stock === "0") ? 0 : (product.stock || 10),
   };
