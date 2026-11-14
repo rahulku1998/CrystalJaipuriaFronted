@@ -98,8 +98,8 @@ const ProductDetails = () => {
     return fb ? getStandardizedProduct(fb) : null;
   }, [cleanSlug]);
 
-  const [product, setProduct] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [product, setProduct] = useState(() => fallbackProduct);
+  const [loading, setLoading] = useState(() => !fallbackProduct);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [copied, setCopied] = useState(false);
   const [relatedProducts, setRelatedProducts] = useState([]);
@@ -146,8 +146,13 @@ Hello Crystal Jaipuria, I have a query regarding this product.
   };
 
   useEffect(() => {
-    setProduct(null);
-    setLoading(true);
+    if (fallbackProduct) {
+      setProduct(fallbackProduct);
+      setLoading(false);
+    } else {
+      setProduct(null);
+      setLoading(true);
+    }
     setSelectedImageIndex(0);
     if (slug) {
       const curSlug = (slug || "").toLowerCase().trim();
@@ -165,71 +170,119 @@ Hello Crystal Jaipuria, I have a query regarding this product.
 
   const fetchRelatedProducts = async (prod) => {
     try {
-      const catId = prod?.categoryId?._id || (typeof prod?.categoryId === 'string' ? prod.categoryId : null);
-      if (!catId) return;
+      if (!prod) return;
 
-      const res = await API.get(`/products/category/${catId}`);
-      let candidates = (res.data?.products || []).filter(
-        (p) => (p.slug || p._id) !== (prod.slug || prod._id)
-      );
-
-      // If category has fewer than 5 items, supplement from all products for broad matching
-      if (candidates.length < 5) {
-        try {
-          const allRes = await API.get("/products");
-          const allProds = (allRes.data?.products || allRes.data || []).filter(
-            (p) => (p.slug || p._id) !== (prod.slug || prod._id)
-          );
-          const existingIds = new Set(candidates.map((c) => c._id || c.slug));
-          for (const p of allProds) {
-            if (!existingIds.has(p._id || p.slug)) {
-              candidates.push(p);
-            }
-          }
-        } catch {
-          // ignore
-        }
+      // 1. Gather all candidates across entire catalog (API + Fallback data)
+      let allCandidates = [];
+      try {
+        const allRes = await API.get("/products");
+        allCandidates = allRes.data?.products || allRes.data || [];
+      } catch {
+        allCandidates = [];
       }
 
-      // Entity-Smart Relevance Scoring (Material + Deity + Category)
-      const currentText = `${prod.name || ""} ${prod.slug || ""}`.toLowerCase();
-      const MATERIALS = [
-        "ruby", "sphatik", "quartz", "jade", "rose quartz", "amethyst", 
-        "lapis lazuli", "lapis", "agate", "aventurine", "labradorite", 
-        "howlite", "opal", "tiger eye", "sapphire", "pyrite", "selenite"
-      ];
-      const DEITIES = [
-        "shivling", "shiva", "shree yantra", "yantra", "ganesha", "ganesh", 
-        "krishna", "mahalakshmi", "lakshmi", "saraswati", "hanuman", 
-        "mahaveer", "parshvanath", "angel", "diya", "elephant", "swan"
+      const candidateMap = new Map();
+      [...allCandidates, ...FALLBACK_PRODUCTS].forEach((item) => {
+        const key = item.slug || item._id;
+        if (key && !candidateMap.has(key)) {
+          candidateMap.set(key, item);
+        }
+      });
+
+      const currentSlug = (prod.slug || "").toLowerCase().trim();
+      const currentId = String(prod._id || "").toLowerCase().trim();
+      const candidates = Array.from(candidateMap.values()).filter((p) => {
+        const pSlug = (p.slug || "").toLowerCase().trim();
+        const pId = String(p._id || "").toLowerCase().trim();
+        return pSlug !== currentSlug && pId !== currentId;
+      });
+
+      if (candidates.length === 0) return;
+
+      // 2. Comprehensive Subject & Deity Groups
+      const DEITY_GROUPS = [
+        { key: "buddha", terms: ["buddha", "gautam buddha", "laughing buddha"] },
+        { key: "ganesha", terms: ["ganesh", "ganesha", "ganpati", "vinayaka"] },
+        { key: "shrinathji", terms: ["shrinath", "shree nath", "nathji"] },
+        { key: "krishna", terms: ["krishna", "radha", "laddu gopal", "kanha", "murlidhar"] },
+        { key: "shivling", terms: ["shivling", "lingam", "shiva linga", "jalhari"] },
+        { key: "shiva", terms: ["shiva", "shiv ", "mahadev", "bholenath", "nataraja", "adiyogi"] },
+        { key: "shree-yantra", terms: ["shree yantra", "sri yantra", "meru yantra", "yantra"] },
+        { key: "hanuman", terms: ["hanuman", "bajrang", "anjaneya", "maruti"] },
+        { key: "durga-kali", terms: ["durga", "kali", "tara", "devi", "shakti", "parvati"] },
+        { key: "lakshmi", terms: ["lakshmi", "laxmi", "vaibhav"] },
+        { key: "saraswati", terms: ["saraswati", "veena vadini"] },
+        { key: "jain", terms: ["mahaveer", "mahavir", "parshvanath", "tirthankar", "jain"] },
+        { key: "ram", terms: ["ram darbar", "shree ram", "lord ram", "ram chandra"] },
+        { key: "horses", terms: ["horse", "horses", "ashwa", "running horse"] },
+        { key: "elephant", terms: ["elephant", "hathi", "gaja"] },
+        { key: "swan", terms: ["swan", "swans", "hans"] },
+        { key: "shankh", terms: ["shankh", "conch"] },
+        { key: "diya", terms: ["diya", "deepak", "lamp"] },
+        { key: "angel", terms: ["angel"] },
+        { key: "tea-set", terms: ["tea set", "teapot", "cup"] },
       ];
 
+      // 3. Comprehensive Gemstone Materials
+      const MATERIALS = [
+        "ruby kyanite", "ruby zoisite", "lapis lazuli", "rose quartz", "clear quartz",
+        "smokey quartz", "crystal quartz", "green aventurine", "dark green aventurine",
+        "green jade", "australian jade", "black obsidian", "black agate", "black tourmaline",
+        "tiger eye", "sunstone", "sodalite", "labradorite", "lepidolite", "howlite",
+        "amethyst", "sphatik", "pyrite", "ruby", "jade", "opal", "agate", "jasper",
+        "unakite", "cats eye", "gomedh", "sapphire", "corundum", "selenite"
+      ];
+
+      const currentText = `${prod.name || ""} ${prod.slug || ""}`.toLowerCase();
+      const currentDeityKeys = DEITY_GROUPS
+        .filter((g) => g.terms.some((t) => currentText.includes(t)))
+        .map((g) => g.key);
       const currentMaterials = MATERIALS.filter((m) => currentText.includes(m));
-      const currentDeities = DEITIES.filter((d) => currentText.includes(d));
+      const curCatId = prod.categoryId?._id || prod.categoryId?.slug || prod.categoryId;
 
       const scored = candidates.map((item) => {
         const itemText = `${item.name || ""} ${item.slug || ""}`.toLowerCase();
         let score = 0;
 
-        // Same material match (+20 points) - e.g. Ruby with Ruby, Jade with Jade
-        for (const mat of currentMaterials) {
-          if (itemText.includes(mat)) score += 20;
-        }
-
-        // Same deity / form match (+10 points) - e.g. Shiva with Shiva, Ganesha with Ganesha
-        for (const deity of currentDeities) {
-          if (itemText.includes(deity)) {
-            score += 10;
+        // 1. Primary Deity/Subject match (Highest weight: 100 points)
+        for (const dKey of currentDeityKeys) {
+          const group = DEITY_GROUPS.find((g) => g.key === dKey);
+          if (group && group.terms.some((t) => itemText.includes(t))) {
+            score += 100;
             break;
           }
         }
 
-        // Same category (+2 points)
-        if (item.categoryId?._id === catId || item.categoryId === catId) {
-          score += 2;
+        // Cross-match between Shrinathji and Krishna (+60 points)
+        if (currentDeityKeys.includes("shrinathji") && (itemText.includes("krishna") || itemText.includes("radha"))) {
+          score += 60;
+        }
+        if (currentDeityKeys.includes("krishna") && (itemText.includes("shrinath") || itemText.includes("nathji"))) {
+          score += 60;
         }
 
-        return { item, score };
+        // 2. Material match (40 points for specific multi-word, 25 points for base mineral)
+        for (const mat of currentMaterials) {
+          if (itemText.includes(mat)) {
+            score += (mat.includes(" ") ? 40 : 25);
+            break;
+          }
+        }
+
+        // 3. Category match (+10 points)
+        const itemCatId = item.categoryId?._id || item.categoryId?.slug || item.categoryId;
+        if (itemCatId && curCatId && (itemCatId === curCatId || String(itemCatId) === String(curCatId))) {
+          score += 10;
+        }
+
+        // 4. Subcategory match (+15 points)
+        const itemSubId = item.subCategoryId?._id || item.subCategoryId?.slug || item.subCategoryId;
+        const curSubId = prod.subCategoryId?._id || prod.subCategoryId?.slug || prod.subCategoryId;
+        if (itemSubId && curSubId && String(itemSubId) === String(curSubId)) {
+          score += 15;
+        }
+
+        return { item: getStandardizedProduct(item), score };
       });
 
       scored.sort((a, b) => b.score - a.score);

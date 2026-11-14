@@ -2,10 +2,12 @@ import React, { Suspense, lazy } from 'react'
 import './App.css'
 import Navbar from './Components/Navbar/Navbar'
 import Footer from './Components/Footer'
-import Home from './Pages/Home'
-import HeroSlider from './Components/Hero/HeroSlider'
-import FeaturesBar from './Components/FeaturesBar'
 import { Routes, Route, Navigate, useParams, useLocation } from "react-router-dom";
+
+import Home from './Pages/Home';
+// Lazy-loaded desktop widgets (code-split so mobile never downloads desktop banners)
+const HeroSlider = lazy(() => import('./Components/Hero/HeroSlider'));
+const FeaturesBar = lazy(() => import('./Components/FeaturesBar'));
 import ErrorBoundary from './Components/ErrorBoundary';
 import ProtectedRoute from "./Components/ProtectedRoute";
 import VijayProtectedRoute from './Components/VijayProtectedRoute';
@@ -91,7 +93,7 @@ function App() {
       <FloatingWhatsApp />
       <main id="main-content" className="flex-grow">
         <ErrorBoundary>
-          <Suspense fallback={<BrandLoader minHeight="50vh" message="Loading..." />}>
+          <Suspense fallback={<div className="min-h-[40vh]" aria-busy="true" />}>
             <Routes>
               <Route
                 path="/"

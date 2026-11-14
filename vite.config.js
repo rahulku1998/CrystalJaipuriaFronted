@@ -15,20 +15,30 @@ export default defineConfig({
     },
   },
   build: {
+    target: 'es2022',
     cssCodeSplit: true,
     chunkSizeWarningLimit: 600,
     rollupOptions: {
       output: {
         manualChunks(id) {
+          if (id.includes('fallbackData') || id.includes('fallbackResolver')) {
+            return 'catalog-fallback-data';
+          }
+          if (id.includes('fallbackBlogs')) {
+            return 'blog-fallback-data';
+          }
           if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {
-              return 'vendor-react';
-            }
             if (id.includes('react-icons')) {
               return 'vendor-icons';
             }
             if (id.includes('swiper')) {
               return 'vendor-swiper';
+            }
+            if (id.includes('react-router-dom') || id.includes('react-router') || id.includes('@remix-run')) {
+              return 'vendor-router';
+            }
+            if (id.includes('/react/') || id.includes('/react-dom/') || id.includes('scheduler') || id.includes('\\react\\') || id.includes('\\react-dom\\')) {
+              return 'vendor-react';
             }
             return 'vendor';
           }

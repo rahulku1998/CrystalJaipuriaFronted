@@ -156,7 +156,24 @@
     <priority>0.80</priority>
   </url>
 
-  <!-- Dynamic Product Pages (110 Live Products) -->
+  <!-- Dynamic Product Pages (111 Live Products) -->
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/silver-natural-rose-quartz-stone-shrinath-ji</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/silver-natural-rose-quartz-stone-shrinath-ji.webp</image:loc>
+      <image:title>Silver Natural Rose Quartz Stone Shrinath Ji | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/silver-natural-rose-quartz-stone-shrinath-ji-2.webp</image:loc>
+      <image:title>Silver Natural Rose Quartz Stone Shrinath Ji - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dd6akzezt/image/upload/v1794134143/products/jej60rabqttacwcae3hm.webp</image:loc>
+      <image:title>Silver Natural Rose Quartz Stone Shrinath Ji - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://www.crystaljaipuria.com/product/shiva-in-lepidolite</loc>
     <image:image>

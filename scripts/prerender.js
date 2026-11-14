@@ -56,6 +56,7 @@ export const runPrerender = async () => {
     .replace(/<script type="application\/ld\+json" id="page-dynamic-schema">[\s\S]*?<\/script>/gi, "")
     .replace(/<noscript>[\s\S]*?<\/noscript>/gi, "")
     .replace(/<meta property="og:type" content="product" \/>\s*<meta property="product:[\s\S]*?\/>/gi, "")
+    .replace(/<link\s+rel="preload"\s+as="image"[^>]*\/?>/gi, "")
     .replace(/<div id="root">[\s\S]*?<\/div>/i, '<div id="root"></div>');
   const baseHtml = rawBaseHtml;
 
@@ -72,6 +73,7 @@ export const runPrerender = async () => {
     noscriptContent = "",
     productMeta = null,
     articleMeta = null,
+    preloadImage = null,
   }) => {
     let html = baseHtml;
 
@@ -139,6 +141,14 @@ export const runPrerender = async () => {
         schema
       )}</script>\n</head>`;
       html = html.replace("</head>", schemaScript);
+    }
+
+    if (preloadImage) {
+      if (preloadImage === "homepage") {
+        html = html.replace("</head>", `  <link rel="preload" as="image" href="/Gemstone-mobile.webp" type="image/webp" fetchpriority="high" media="(max-width: 640px)" />\n  <link rel="preload" as="image" href="/Gemstone.webp" type="image/webp" fetchpriority="high" media="(min-width: 641px)" />\n</head>`);
+      } else {
+        html = html.replace("</head>", `  <link rel="preload" as="image" href="${preloadImage}" type="image/webp" fetchpriority="high" />\n</head>`);
+      }
     }
 
     // 6. Pre-rendered Body Content (instant visual paint before React hydrates)
@@ -592,6 +602,7 @@ export const runPrerender = async () => {
       ogDescription: metaDesc,
       ogImage: imageUrl,
       schema,
+      preloadImage: imageUrl,
       bodyContent: bodyPreview,
       productMeta: {
         price: priceNum,
@@ -1179,17 +1190,27 @@ export const runPrerender = async () => {
 
   const homepageBodyPreview = `
     <div style="max-width:1200px;margin:0 auto;padding:24px 16px;font-family:system-ui,-apple-system,sans-serif;">
-      <!-- Hero / Brand Introduction -->
-      <div style="margin-bottom:32px;background:#FAF8F5;border-radius:16px;padding:32px 24px;border:1px solid #f1f5f9;">
-        <span style="font-size:11px;font-weight:700;color:#b45309;text-transform:uppercase;letter-spacing:1px;background:#fef3c7;padding:4px 10px;border-radius:9999px;">Est. 1989 • Jaipur Heritage</span>
-        <h1 style="font-size:32px;font-weight:800;color:#0f172a;margin:16px 0 12px 0;line-height:1.2;">
-          Handcrafted Gemstone Statues &amp; Crystal Carvings <span style="color:#d97706;">Manufacturer in Jaipur, India</span>
-        </h1>
-        <p style="font-size:15px;color:#475569;line-height:1.7;max-width:850px;margin-bottom:20px;">
-          Crystal Jaipuria is Rajasthan&#039;s premier manufacturer, wholesale supplier, and global exporter of certified natural gemstone god statues, Sphatik Shivlings, and sacred Vedic yantras. Handcrafted with traditional Jaipur craftsmanship and Shilpa Shastra proportions.
-        </p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;">
-          ${homeCategoriesHtml}
+      <!-- Hero / Brand Introduction with Gemstone Image -->
+      <div style="margin-bottom:32px;background:#FAF8F5;border-radius:16px;padding:24px;border:1px solid #f1f5f9;display:flex;flex-wrap:wrap;gap:24px;align-items:center;">
+        <div style="flex:1;min-width:260px;max-width:400px;margin:0 auto;">
+          <div style="aspect-ratio:1/1;border-radius:16px;overflow:hidden;border:1px solid #e2e8f0;background:#ffffff;padding:8px;">
+            <picture>
+              <source media="(max-width: 640px)" srcset="${BASE_URL}/Gemstone-mobile.webp" type="image/webp" />
+              <img src="${BASE_URL}/Gemstone.webp" alt="Handcrafted Gemstone Statues & Crystal Carvings Manufacturer in Jaipur, India" width="480" height="480" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;border-radius:12px;" />
+            </picture>
+          </div>
+        </div>
+        <div style="flex:1.4;min-width:280px;">
+          <span style="font-size:11px;font-weight:700;color:#b45309;text-transform:uppercase;letter-spacing:1px;background:#fef3c7;padding:4px 10px;border-radius:9999px;">Est. 1989 • Jaipur Heritage</span>
+          <h1 style="font-size:26px;font-weight:800;color:#0f172a;margin:12px 0 10px 0;line-height:1.25;">
+            Handcrafted Gemstone Statues &amp; Crystal Carvings <span style="color:#d97706;">Manufacturer in Jaipur, India</span>
+          </h1>
+          <p style="font-size:14px;color:#475569;line-height:1.6;margin-bottom:16px;">
+            Crystal Jaipuria is Rajasthan&#039;s premier manufacturer, wholesale supplier, and global exporter of certified natural gemstone god statues, Sphatik Shivlings, and sacred Vedic yantras. Handcrafted with traditional Jaipur craftsmanship and Shilpa Shastra proportions.
+          </p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            ${homeCategoriesHtml}
+          </div>
         </div>
       </div>
 
@@ -1266,8 +1287,8 @@ export const runPrerender = async () => {
     canonical: `${BASE_URL}/`,
     ogTitle: "Gemstone God Statues Manufacturer & Wholesale Supplier in Jaipur, India | Crystal Jaipuria",
     ogDescription: "Leading gemstone god statues manufacturer & wholesale supplier in Jaipur, Rajasthan (India). Handcrafted natural crystal idols, Sphatik Shivlings & Vedic spiritual decor since 1989.",
-    bodyContent: luxuryHomepageLoader,
-    noscriptContent: homepageBodyPreview,
+    preloadImage: "homepage",
+    bodyContent: homepageBodyPreview,
   });
   saveFile("index.html", homeHtml);
   console.log("✓ Pre-rendered homepage with luxury brand loader & noscript SEO content to /dist/index.html");

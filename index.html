@@ -24,11 +24,12 @@
     <!-- Performance & Resource Hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="preconnect" href="https://shop.codewithrahulkumawat.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet" /></noscript>
+    <link rel="preload" as="image" href="/Gemstone-mobile.webp" type="image/webp" fetchpriority="high" media="(max-width: 640px)" />
+    <link rel="preload" as="image" href="/Gemstone.webp" type="image/webp" fetchpriority="high" media="(min-width: 641px)" />
     <link rel="dns-prefetch" href="https://shop.codewithrahulkumawat.com" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    <link rel="preconnect" href="https://connect.facebook.net" crossorigin />
     <link rel="dns-prefetch" href="https://connect.facebook.net" />
     
     <!-- OpenGraph & Twitter Defaults -->
@@ -43,57 +44,14 @@
     <meta name="twitter:description" content="Leading gemstone god statues manufacturer &amp; wholesale supplier in Jaipur, Rajasthan (India). Handcrafted natural crystal idols, Sphatik Shivlings &amp; Vedic spiritual decor since 1989." />
     <meta name="twitter:image" content="https://www.crystaljaipuria.com/logo.png" />
 
-    <!-- Google Tag Manager (GTM-T97ZFVLW) & Google Analytics 4 (G-QRDN0FM5QF) -->
+    <!-- Google Analytics / Tag Manager DataLayer Initializer (zero render blocking) -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-QRDN0FM5QF', {
-        send_page_view: true
-      });
-
-      window.addEventListener('DOMContentLoaded', function() {
-        setTimeout(function() {
-          // Google Tag Manager
-          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-T97ZFVLW');
-
-          // Google Analytics 4 Tag
-          var gaScript = document.createElement('script');
-          gaScript.async = true;
-          gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-QRDN0FM5QF';
-          document.head.appendChild(gaScript);
-        }, 1000);
-      });
-    </script>
-    <!-- End Google Tag Manager & GA4 -->
-
-    <!-- Google Customer Reviews Platform & Badge Integration (Merchant ID: 5540789348) -->
-    <script src="https://apis.google.com/js/platform.js?onload=renderOptIn" async defer></script>
-    <script id="merchantWidgetScript" src="https://www.gstatic.com/shopping/merchant/merchantwidget.js" defer></script>
-    <script>
+      gtag('config', 'G-QRDN0FM5QF', { send_page_view: true });
       window.renderOptIn = function() {};
-      window.addEventListener('load', function () {
-        var script = document.getElementById('merchantWidgetScript');
-        function initBadge() {
-          if (window.merchantwidget) {
-            window.merchantwidget.start({
-              merchant_id: 5540789348,
-              position: "BOTTOM_LEFT"
-            });
-          }
-        }
-        if (window.merchantwidget) {
-          initBadge();
-        } else if (script) {
-          script.addEventListener('load', initBadge);
-        }
-      });
     </script>
-    <!-- End Google Customer Reviews -->
 
     <script type="application/ld+json">
     {
@@ -269,26 +227,69 @@
     }
     </script>
 
-    <!-- Meta Pixel Code -->
-    <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '998359479958860');
-      fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=998359479958860&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
+    
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <!-- Non-critical third-party scripts loaded after initial mobile paint -->
+    <script>
+      (function() {
+        var executed = false;
+        function loadDeferredScripts() {
+          if (executed) return;
+          executed = true;
+
+          // 1. Google Tag Manager & GA4 Tag
+          var gtm = document.createElement('script');
+          gtm.async = true;
+          gtm.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-T97ZFVLW';
+          document.head.appendChild(gtm);
+
+          var ga = document.createElement('script');
+          ga.async = true;
+          ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-QRDN0FM5QF';
+          document.head.appendChild(ga);
+
+          // 2. Meta Pixel Full Script
+          var fb = document.createElement('script');
+          fb.async = true;
+          fb.src = 'https://connect.facebook.net/en_US/fbevents.js';
+          document.head.appendChild(fb);
+
+          // 3. Google Customer Reviews Widget & Platform
+          var gplat = document.createElement('script');
+          gplat.src = 'https://apis.google.com/js/platform.js?onload=renderOptIn';
+          gplat.async = true;
+          document.head.appendChild(gplat);
+
+          var mw = document.createElement('script');
+          mw.id = 'merchantWidgetScript';
+          mw.src = 'https://www.gstatic.com/shopping/merchant/merchantwidget.js';
+          mw.defer = true;
+          mw.onload = function() {
+            if (window.merchantwidget) {
+              window.merchantwidget.start({
+                merchant_id: 5540789348,
+                position: "BOTTOM_LEFT"
+              });
+            }
+          };
+          document.head.appendChild(mw);
+        }
+
+        // Trigger on first user interaction or after window load idle
+        ['scroll', 'touchstart', 'mousemove', 'click', 'keydown'].forEach(function(e) {
+          window.addEventListener(e, loadDeferredScripts, { once: true, passive: true });
+        });
+        if (document.readyState === 'complete') {
+          setTimeout(loadDeferredScripts, 3000);
+        } else {
+          window.addEventListener('load', function() {
+            setTimeout(loadDeferredScripts, 3000);
+          });
+        }
+      })();
+    </script>
   </body>
 </html>

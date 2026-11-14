@@ -141,20 +141,28 @@ const TopBar = ({ onOpenMenu }) => {
           to="/"
           className="flex flex-col items-center cursor-pointer group"
         >
-          <img
-            src="/logo.jpeg"
-            alt="Crystal Jaipuria - Handcrafted Gemstone Statues & Crystal Manufacturer Jaipur"
-            className="
-            h-8
-            sm:h-12
-            md:h-14
-            lg:h-18
-            w-auto
-            object-contain
-            group-hover:opacity-90
-            transition
-            "
-          />
+          <picture>
+            <source media="(max-width: 640px)" srcSet="/logo-mobile.webp" type="image/webp" />
+            <img
+              src="/logo.webp"
+              alt="Crystal Jaipuria - Handcrafted Gemstone Statues & Crystal Manufacturer Jaipur"
+              width="216"
+              height="48"
+              fetchPriority="high"
+              loading="eager"
+              decoding="async"
+              className="
+              h-8
+              sm:h-12
+              md:h-14
+              lg:h-18
+              w-auto
+              object-contain
+              group-hover:opacity-90
+              transition
+              "
+            />
+          </picture>
 
           <p
             className="

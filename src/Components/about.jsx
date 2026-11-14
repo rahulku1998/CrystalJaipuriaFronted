@@ -18,16 +18,19 @@ const AboutGemstoneSection = () => {
           {/* LEFT: SQUARE IMAGE SHOWCASE (Span 5) */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative w-full max-w-[480px] aspect-square rounded-2xl overflow-hidden border border-stone-200 bg-white p-2 shadow-lg group">
-              <img
-                src="/Gemstone.webp"
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
-                width="480"
-                height="480"
-                alt="Handcrafted gemstone statues and crystal carvings manufacturer in Jaipur"
-                className="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-103"
-              />
+              <picture>
+                <source media="(max-width: 640px)" srcSet="/Gemstone-mobile.webp" type="image/webp" />
+                <img
+                  src="/Gemstone.webp"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  width="480"
+                  height="480"
+                  alt="Handcrafted gemstone statues and crystal carvings manufacturer in Jaipur"
+                  className="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-103"
+                />
+              </picture>
 
               {/* Top Right Floating Badge */}
               <div className="absolute top-4 right-4 rounded-full bg-white/95 backdrop-blur-md px-3 py-1 border border-stone-200 shadow-sm flex items-center gap-1.5">

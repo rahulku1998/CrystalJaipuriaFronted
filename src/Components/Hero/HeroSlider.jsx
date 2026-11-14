@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import { trackHeroBannerClick } from "../../utils/analytics";
 
 import "swiper/css";
@@ -16,6 +17,17 @@ const img10 = "/images/slider-krishna-desk.webp";
 const img10Mob = "/images/slider-krishna-mob.webp";
 
 export default function HeroSlider() {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsDesktop(typeof window !== "undefined" && window.innerWidth >= 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  if (!isDesktop) return null;
+
   return (
     <div className="hidden md:block w-full overflow-hidden">
       <Swiper

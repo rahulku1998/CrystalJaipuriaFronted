@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import { formatPrice } from "../utils/price";
 import { getProductImageUrl } from "../utils/imageOptimizer";
-import { getStandardizedProduct } from "../utils/productStandardizer";
-import { FALLBACK_PRODUCTS } from "../data/fallbackData";
+import { getStandardizedProduct, STANDARDIZED_SPECS } from "../utils/productStandardizer";
 
 const ProductCard = ({ product, headingTag = "p" }) => {
   const item = getStandardizedProduct(product);
@@ -13,9 +12,9 @@ const ProductCard = ({ product, headingTag = "p" }) => {
   const initialSrc = getProductImageUrl(item, 0);
 
   const unitPriceLabel = item.pricePerUnit || (() => {
-    if (!item.slug && !item._id) return "";
-    const fb = FALLBACK_PRODUCTS.find(p => p.slug === item.slug || p._id === item._id);
-    return fb?.pricePerUnit || "";
+    const slug = item.slug || item._id;
+    if (!slug) return "";
+    return STANDARDIZED_SPECS[slug]?.pricePerUnit || "";
   })();
 
   return (

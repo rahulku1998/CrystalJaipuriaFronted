@@ -333,6 +333,8 @@ const Home = () => {
   <Link to="/shop" className="block w-full">
     <img
       src={homeImg}
+      width="1898"
+      height="721"
       loading="lazy"
       decoding="async"
       alt="Handcrafted Gemstone God Statues, Vastu Decor & Healing Crystals Manufacturer - Crystal Jaipuria"

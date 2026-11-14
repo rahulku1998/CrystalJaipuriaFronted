@@ -68,11 +68,18 @@ const Footer = () => {
               to="/"
               className="inline-block hover:opacity-90 transition"
             >
-              <img
-                src="/logo-transparent.png"
-                alt="Crystal Jaipuria - Gemstone Statues & Crystal Manufacturer"
-                className="h-10 sm:h-12 w-auto object-contain mix-blend-multiply"
-              />
+              <picture>
+                <source media="(max-width: 640px)" srcSet="/logo-transparent-mobile.webp" type="image/webp" />
+                <img
+                  src="/logo-transparent.webp"
+                  alt="Crystal Jaipuria - Gemstone Statues & Crystal Manufacturer"
+                  width="216"
+                  height="48"
+                  loading="lazy"
+                  decoding="async"
+                  className="h-10 sm:h-12 w-auto object-contain mix-blend-multiply"
+                />
+              </picture>
             </Link>
 
             <p className="text-[14px] sm:text-[15px] leading-relaxed text-slate-600 max-w-sm">

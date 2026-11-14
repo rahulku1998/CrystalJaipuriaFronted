@@ -510,7 +510,7 @@ export const detectArchetype = (text = "") => {
   if (t.includes("hanuman") || t.includes("bajrang") || t.includes("anjaneya")) return "hanuman";
   if (t.includes("saraswati") || t.includes("veena vadini")) return "saraswati";
   if (t.includes("lakshmi") || t.includes("laxmi") || t.includes("vaibhav")) return "lakshmi";
-  if (t.includes("krishna") || t.includes("radha") || t.includes("laddu gopal")) return "krishna";
+  if (t.includes("krishna") || t.includes("radha") || t.includes("laddu gopal") || t.includes("shrinath") || t.includes("shree nath") || t.includes("nathji")) return "krishna";
   if (t.includes("buddha") || t.includes("gautam buddha")) return "buddha";
   if (t.includes("angel")) return "angel";
   if (t.includes("swan") || t.includes("hans")) return "swan";

@@ -126,6 +126,12 @@ export const STANDARDIZED_SPECS = {
   "tiger-eye-ganesha-idol": { price: 7200, size: "2.5 L × 1.1 W × 4 H in", weight: "260 g", pricePerUnit: "₹27.7 / gram" },
   "emerald-ganesha-idol": { price: 64300, size: "1.6 L × 1.1 W × 2.7 H in", weight: "102 g / 509.10 carats", pricePerUnit: "₹126.3 / carat" },
 
+  "silver-natural-rose-quartz-stone-shrinath-ji": {
+    price: 12000,
+    weight: "Approx. 2.5 – 3 kg",
+    size: "3.5 in (H) x 2.8 in (W) x 2.0 in (D)",
+    pricePerUnit: "₹4 / gram",
+  },
   "hand-carved-rose-quartz-ganesha-with-sterling-silver-testing": {
     price: 5800,
     weight: "371 g to 2 kg",
@@ -653,6 +659,11 @@ export const SACRED_SHLOKAS = {
     source: "Gita Dhyanam",
     meaning: "Salutations to Lord Krishna, the supreme divine guide, radiating joy and wisdom.",
   },
+  shrinathji: {
+    shloka: "श्री कृष्णः शरणं मम । अधरं मधुरं वदनं मधुरं नयनं मधुरं हसितं मधुरम् ॥",
+    source: "Vallabhacharya - Madhurashtakam",
+    meaning: "Lord Krishna is my supreme refuge. Sweet is His divine countenance, sweet His grace, and sweet His boundless compassion.",
+  },
   jain: {
     shloka: "नमो अरिहंताणं नमो सिद्धाणं नमो आयरियाणं। नमो उवज्झायाणं नमो लोए सव्व साहूणं॥",
     source: "Ṇamōkāra Mahamantra",
@@ -675,6 +686,7 @@ export const getSacredShloka = (nameOrSlug = "") => {
   if (text.includes("shivling") || text.includes("lingam") || text.includes("shiva-linga")) return SACRED_SHLOKAS.shivling;
   if (text.includes("shree yantra") || text.includes("shree-yantra") || text.includes("meru")) return SACRED_SHLOKAS["shree-yantra"];
   if (text.includes("ganesh") || text.includes("ganpati")) return SACRED_SHLOKAS.ganesha;
+  if (text.includes("shrinath") || text.includes("shree nath") || text.includes("nathji")) return SACRED_SHLOKAS.shrinathji;
   if (text.includes("krishna") || text.includes("krishana") || text.includes("radha")) return SACRED_SHLOKAS.krishna;
   if (text.includes("durga") || text.includes("devi") || text.includes("shakti")) return SACRED_SHLOKAS.durga;
   if (text.includes("shankh") || text.includes("conch")) return SACRED_SHLOKAS.shankh;

@@ -28,8 +28,10 @@ export default function BrandLoader({
         {/* Center Logo Icon with gentle breathing pulse */}
         <div className="absolute flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-md p-1.5 border border-amber-100">
           <img
-            src="/logo.png"
+            src="/logo-mobile.webp"
             alt="Crystal Jaipuria"
+            width="48"
+            height="48"
             className="w-full h-full object-contain animate-pulse"
             style={{ animationDuration: "2s" }}
           />

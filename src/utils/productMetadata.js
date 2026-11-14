@@ -208,6 +208,16 @@ export const getVedicVastuForProduct = (productOrName) => {
   }
 
   const name = typeof productOrName === "string" ? productOrName : (productOrName.name || productOrName.slug || "");
+  const nLower = name.toLowerCase();
+  if (nLower.includes("shrinath") || nLower.includes("shree nath") || nLower.includes("nathji")) {
+    return {
+      placementDirection: "North-East (Ishanya Kon) or East altar upon an elevated wooden or silver chowki (Pushtimarg Seva direction)",
+      chakraPlanet: "Heart Chakra (Anahata) & Crown Chakra · Venus (Shukra) & Lord Krishna",
+      poojaVidhi: "Gently wipe with holy Gangajal or pure floral water using soft cotton. Offer fresh Tulsi leaves, white sandalwood (Chandan), and light a pure desi cow ghee diya while reciting 'Shree Krishnah Sharanam Mama'.",
+      vedicBenefits: "Radiates supreme Pushtimarg divine grace (Anugraha), dissolves domestic friction, nurtures loving family bonds, and anchors lasting peace and prosperity.",
+    };
+  }
+
   const stoneKey = detectGemstone(name);
   const archetype = detectArchetype(name);
   const stone = GEMSTONE_PROFILES[stoneKey] || GEMSTONE_PROFILES.sphatik;
