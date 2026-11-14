@@ -163,61 +163,151 @@ export const FALLBACK_BLOGS = [
         To help you quickly compare these three materials side by side, review the essential distinctions across origin, mineral structure, hardness, and internal characteristics:
       </p>
 
-      <div class="overflow-x-auto my-8 rounded-xl border border-slate-200 shadow-xs">
-        <table class="w-full text-left text-sm text-slate-700">
-          <thead class="bg-amber-50 text-amber-950 text-xs uppercase tracking-wider font-bold">
-            <tr>
-              <th class="p-3.5 border-b border-amber-200">Characteristic</th>
-              <th class="p-3.5 border-b border-amber-200">Sphatik</th>
-              <th class="p-3.5 border-b border-amber-200">Clear Quartz</th>
-              <th class="p-3.5 border-b border-amber-200">Ordinary Glass</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-slate-100">
-            <tr class="hover:bg-amber-50/30">
-              <td class="p-3.5 font-bold text-slate-900">Meaning</td>
-              <td class="p-3.5">Traditional / commercial term commonly used for clear quartz</td>
-              <td class="p-3.5">Mineral variety</td>
-              <td class="p-3.5">Manufactured amorphous material</td>
-            </tr>
-            <tr class="hover:bg-amber-50/30 bg-slate-50/50">
-              <td class="p-3.5 font-bold text-slate-900">Composition</td>
-              <td class="p-3.5">Usually represented as quartz; verify the actual item</td>
-              <td class="p-3.5">Silicon dioxide (SiO₂)</td>
-              <td class="p-3.5">Silica-based glass with flux ingredients</td>
-            </tr>
-            <tr class="hover:bg-amber-50/30">
-              <td class="p-3.5 font-bold text-slate-900">Structure</td>
-              <td class="p-3.5">Depends on actual material (crystalline if genuine)</td>
-              <td class="p-3.5">Crystalline (ordered lattice)</td>
-              <td class="p-3.5">Amorphous (non-crystalline)</td>
-            </tr>
-            <tr class="hover:bg-amber-50/30 bg-slate-50/50">
-              <td class="p-3.5 font-bold text-slate-900">Appearance</td>
-              <td class="p-3.5">Usually transparent or translucent</td>
-              <td class="p-3.5">Transparent to translucent</td>
-              <td class="p-3.5">Can be highly transparent</td>
-            </tr>
-            <tr class="hover:bg-amber-50/30">
-              <td class="p-3.5 font-bold text-slate-900">Natural Inclusions</td>
-              <td class="p-3.5">May occur naturally</td>
-              <td class="p-3.5">May occur naturally (veils, phantom lines)</td>
-              <td class="p-3.5">Manufacturing bubbles, swirls, or flow lines</td>
-            </tr>
-            <tr class="hover:bg-amber-50/30 bg-slate-50/50">
-              <td class="p-3.5 font-bold text-slate-900">Hardness</td>
-              <td class="p-3.5">Depends on material; natural quartz is ~7 Mohs</td>
-              <td class="p-3.5">Approximately 7 Mohs</td>
-              <td class="p-3.5">Varies (~5 to 5.5 Mohs, softer)</td>
-            </tr>
-            <tr class="hover:bg-amber-50/30">
-              <td class="p-3.5 font-bold text-slate-900">Origin</td>
-              <td class="p-3.5">Must be verified for each item</td>
-              <td class="p-3.5">Natural when geologically formed</td>
-              <td class="p-3.5">Man-made / factory manufactured</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="my-8 rounded-2xl border border-amber-200/90 bg-white shadow-xs overflow-hidden">
+        {/* Mobile Swipe Hint */}
+        <div class="sm:hidden flex items-center justify-between px-3.5 py-2.5 bg-gradient-to-r from-amber-50 to-orange-50 border-b border-amber-200/80 text-[11px] font-semibold text-amber-900">
+          <span class="flex items-center gap-1.5">
+            <span>👉</span> Swipe horizontally to compare
+          </span>
+          <span class="bg-amber-200/80 text-amber-950 font-bold px-2 py-0.5 rounded-full text-[10px]">
+            4 Columns
+          </span>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full min-w-[620px] text-left text-xs sm:text-sm border-collapse">
+            <thead class="bg-amber-50/90 text-amber-950 text-xs uppercase tracking-wider font-extrabold border-b border-amber-200">
+              <tr>
+                <th class="p-3.5 sm:p-4 sticky left-0 bg-[#FFF7E8] z-10 shadow-[2px_0_4px_rgba(0,0,0,0.04)] w-[130px] font-extrabold text-slate-900">
+                  Characteristic
+                </th>
+                <th class="p-3.5 sm:p-4 text-amber-900 font-extrabold w-[160px]">
+                  Sphatik
+                </th>
+                <th class="p-3.5 sm:p-4 text-emerald-900 font-extrabold w-[165px]">
+                  Clear Quartz
+                </th>
+                <th class="p-3.5 sm:p-4 text-slate-700 font-extrabold w-[165px]">
+                  Ordinary Glass
+                </th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 text-slate-700">
+              <tr class="hover:bg-amber-50/30 transition-colors">
+                <td class="p-3.5 sm:p-4 font-bold text-slate-900 sticky left-0 bg-white sm:bg-transparent z-10 shadow-[2px_0_4px_rgba(0,0,0,0.03)] sm:shadow-none">
+                  Meaning
+                </td>
+                <td class="p-3.5 sm:p-4">
+                  Traditional / commercial Indian term commonly used for clear quartz
+                </td>
+                <td class="p-3.5 sm:p-4">
+                  <span class="inline-block bg-emerald-50 text-emerald-800 font-semibold px-2 py-0.5 rounded text-xs mb-1">Mineral Variety</span>
+                  <div class="text-xs text-slate-600">Naturally crystallized silica</div>
+                </td>
+                <td class="p-3.5 sm:p-4">
+                  <span class="inline-block bg-slate-100 text-slate-700 font-semibold px-2 py-0.5 rounded text-xs mb-1">Manufactured</span>
+                  <div class="text-xs text-slate-600">Amorphous solid material</div>
+                </td>
+              </tr>
+
+              <tr class="hover:bg-amber-50/30 bg-slate-50/40 transition-colors">
+                <td class="p-3.5 sm:p-4 font-bold text-slate-900 sticky left-0 bg-[#fbfbfb] sm:bg-transparent z-10 shadow-[2px_0_4px_rgba(0,0,0,0.03)] sm:shadow-none">
+                  Composition
+                </td>
+                <td class="p-3.5 sm:p-4">
+                  Usually represented as quartz; verify the actual individual item
+                </td>
+                <td class="p-3.5 sm:p-4">
+                  <strong class="text-slate-900">Silicon dioxide (SiO₂)</strong>
+                </td>
+                <td class="p-3.5 sm:p-4">
+                  Silica-based melt with soda ash, lime, and flux additives
+                </td>
+              </tr>
+
+              <tr class="hover:bg-amber-50/30 transition-colors">
+                <td class="p-3.5 sm:p-4 font-bold text-slate-900 sticky left-0 bg-white sm:bg-transparent z-10 shadow-[2px_0_4px_rgba(0,0,0,0.03)] sm:shadow-none">
+                  Structure
+                </td>
+                <td class="p-3.5 sm:p-4">
+                  Depends on actual material (crystalline if authentic)
+                </td>
+                <td class="p-3.5 sm:p-4">
+                  <span class="inline-block bg-emerald-100 text-emerald-900 font-bold px-2 py-0.5 rounded text-[11px] mb-1">Crystalline</span>
+                  <div class="text-xs text-slate-600">Ordered 3D trigonal lattice</div>
+                </td>
+                <td class="p-3.5 sm:p-4">
+                  <span class="inline-block bg-slate-200 text-slate-800 font-bold px-2 py-0.5 rounded text-[11px] mb-1">Amorphous</span>
+                  <div class="text-xs text-slate-600">Random non-crystalline network</div>
+                </td>
+              </tr>
+
+              <tr class="hover:bg-amber-50/30 bg-slate-50/40 transition-colors">
+                <td class="p-3.5 sm:p-4 font-bold text-slate-900 sticky left-0 bg-[#fbfbfb] sm:bg-transparent z-10 shadow-[2px_0_4px_rgba(0,0,0,0.03)] sm:shadow-none">
+                  Appearance
+                </td>
+                <td class="p-3.5 sm:p-4">
+                  Transparent to translucent with soft optical clarity
+                </td>
+                <td class="p-3.5 sm:p-4">
+                  Transparent to translucent with distinct double refraction
+                </td>
+                <td class="p-3.5 sm:p-4">
+                  Can be exceptionally transparent, glass-like high surface gloss
+                </td>
+              </tr>
+
+              <tr class="hover:bg-amber-50/30 transition-colors">
+                <td class="p-3.5 sm:p-4 font-bold text-slate-900 sticky left-0 bg-white sm:bg-transparent z-10 shadow-[2px_0_4px_rgba(0,0,0,0.03)] sm:shadow-none">
+                  Inclusions
+                </td>
+                <td class="p-3.5 sm:p-4">
+                  May show natural internal veils, wisps, and fractures
+                </td>
+                <td class="p-3.5 sm:p-4">
+                  Natural crystal veils, 2-phase fluid bubbles, growth zoning
+                </td>
+                <td class="p-3.5 sm:p-4">
+                  Spherical gas bubbles, cooling swirl lines, or sterile clarity
+                </td>
+              </tr>
+
+              <tr class="hover:bg-amber-50/30 bg-slate-50/40 transition-colors">
+                <td class="p-3.5 sm:p-4 font-bold text-slate-900 sticky left-0 bg-[#fbfbfb] sm:bg-transparent z-10 shadow-[2px_0_4px_rgba(0,0,0,0.03)] sm:shadow-none">
+                  Hardness
+                </td>
+                <td class="p-3.5 sm:p-4">
+                  Depends on material; natural quartz is ~7 Mohs
+                </td>
+                <td class="p-3.5 sm:p-4">
+                  <span class="inline-block bg-emerald-100 text-emerald-900 font-bold px-2 py-0.5 rounded text-[11px] mb-1">7 Mohs Scale</span>
+                  <div class="text-xs text-slate-600">Scratches glass &amp; steel knife</div>
+                </td>
+                <td class="p-3.5 sm:p-4">
+                  <span class="inline-block bg-rose-100 text-rose-800 font-bold px-2 py-0.5 rounded text-[11px] mb-1">5 – 5.5 Mohs</span>
+                  <div class="text-xs text-slate-600">Softer; easily scratched by quartz</div>
+                </td>
+              </tr>
+
+              <tr class="hover:bg-amber-50/30 transition-colors">
+                <td class="p-3.5 sm:p-4 font-bold text-slate-900 sticky left-0 bg-white sm:bg-transparent z-10 shadow-[2px_0_4px_rgba(0,0,0,0.03)] sm:shadow-none">
+                  Origin
+                </td>
+                <td class="p-3.5 sm:p-4">
+                  <span class="inline-block bg-amber-100 text-amber-900 font-semibold px-2 py-0.5 rounded text-xs">Verify Each Item</span>
+                </td>
+                <td class="p-3.5 sm:p-4">
+                  <span class="inline-block bg-emerald-100 text-emerald-900 font-bold px-2 py-0.5 rounded text-xs">100% Geological</span>
+                  <div class="text-xs text-slate-600">Mined from earth deposits</div>
+                </td>
+                <td class="p-3.5 sm:p-4">
+                  <span class="inline-block bg-slate-200 text-slate-800 font-bold px-2 py-0.5 rounded text-xs">Factory Manufactured</span>
+                  <div class="text-xs text-slate-600">Molded or cast in furnaces</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
       <p class="text-xs text-slate-500 italic mb-6">
         * Note: The table provides general distinctions for commercial reference. It should not be used as a substitute for professional laboratory gemological testing.
@@ -308,17 +398,24 @@ export const FALLBACK_BLOGS = [
         <li><strong>Material Certification:</strong> Ensure the seller offers verifiable authenticity documentation confirming natural quartz origin.</li>
       </ul>
 
-      <div class="p-6 rounded-2xl bg-stone-50 border border-stone-200 my-8">
-        <h4 class="font-bold text-base text-stone-900 mb-2">
-          Explore Handcrafted Crystal Carvings from Jaipur
-        </h4>
-        <p class="text-sm text-stone-600 leading-relaxed mb-4">
-          At Crystal Jaipuria, every piece is sculpted from certified earth-mined quartz by traditional Jaipur lapidary masters. Explore our authentic 
-          <a href="/shivling" class="text-amber-800 font-bold hover:underline">Shivling collection</a> 
-          and sacred 
-          <a href="/shree-yantra" class="text-amber-800 font-bold hover:underline">Shree Yantra collection</a> 
-          to review detailed product dimensions, weight specifications, and laboratory certifications.
+      <div class="p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-[#FFF9EE] via-[#FFF4E0] to-amber-50/70 border border-amber-200/90 my-8 shadow-2xs">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-amber-600"></span>
+          <h4 class="font-bold text-base text-slate-900">
+            Explore Handcrafted Crystal Carvings from Jaipur
+          </h4>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed mb-4">
+          At Crystal Jaipuria, every idol is sculpted from certified earth-mined quartz by traditional Jaipur lapidary masters. Explore our authentic collections to review detailed product dimensions, weight specifications, and laboratory certifications:
         </p>
+        <div class="flex flex-wrap gap-2.5">
+          <a href="/shivling" class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-900 bg-amber-100/90 hover:bg-amber-200 px-3.5 py-2 rounded-xl border border-amber-200 transition">
+            <span>Natural Sphatik Shivlings →</span>
+          </a>
+          <a href="/shree-yantra" class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-900 bg-amber-100/90 hover:bg-amber-200 px-3.5 py-2 rounded-xl border border-amber-200 transition">
+            <span>Sphatik Shree Yantras →</span>
+          </a>
+        </div>
       </div>
 
       <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-4 border-t border-slate-200">
@@ -474,7 +571,7 @@ export const FALLBACK_BLOGS = [
       </p>
 
       <div class="overflow-x-auto my-6 border border-slate-200 rounded-xl shadow-xs">
-        <table class="w-full border-collapse bg-white text-sm sm:text-base text-left">
+        <table class="w-full min-w-[540px] border-collapse bg-white text-sm sm:text-base text-left">
           <thead>
             <tr class="bg-slate-100/90 text-slate-900 border-b border-slate-200 font-bold">
               <th class="p-3.5 sm:p-4">Key Parameter</th>
@@ -1361,7 +1458,7 @@ export const FALLBACK_BLOGS = [
       </p>
 
       <div class="overflow-x-auto my-6 border border-slate-200 rounded-xl shadow-xs">
-        <table class="w-full border-collapse bg-white text-sm sm:text-base text-left">
+        <table class="w-full min-w-[500px] border-collapse bg-white text-sm sm:text-base text-left">
           <thead>
             <tr class="bg-slate-100/90 text-slate-900 border-b border-slate-200 font-bold">
               <th class="p-3.5 sm:p-4">Quotation Factor</th>

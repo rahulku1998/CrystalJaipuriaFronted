@@ -29,6 +29,7 @@ const BlogDetails = () => {
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
   const [copied, setCopied] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const [showMobileToc, setShowMobileToc] = useState(false);
 
   const fetchBlog = async () => {
     const fallback = getFallbackBlogBySlug(slug);
@@ -388,9 +389,67 @@ const BlogDetails = () => {
 
             {/* CENTER COLUMN: KEY TAKEAWAYS + ARTICLE PROSE + FAQS */}
             <main className="lg:col-span-6 space-y-8 min-w-0">
+              {/* MOBILE TABLE OF CONTENTS (COLLAPSIBLE FOR MOBILE / TABLET) */}
+              {tocItems.length > 0 && (
+                <div className="lg:hidden bg-white rounded-2xl border border-amber-200/90 shadow-2xs overflow-hidden">
+                  <button
+                    type="button"
+                    onClick={() => setShowMobileToc((prev) => !prev)}
+                    className="w-full flex items-center justify-between p-3.5 sm:p-4 bg-gradient-to-r from-amber-50/90 to-orange-50/70 text-left font-bold text-slate-900 text-xs sm:text-sm cursor-pointer"
+                    aria-expanded={showMobileToc}
+                  >
+                    <span className="flex items-center gap-2">
+                      <span className="w-5 h-5 rounded-md bg-amber-600 text-white flex items-center justify-center text-[10px] font-extrabold shrink-0">
+                        {tocItems.length}
+                      </span>
+                      <span>Table of Contents</span>
+                    </span>
+                    <span className="flex items-center gap-1.5 text-xs text-amber-800 font-semibold">
+                      <span>{showMobileToc ? "Hide" : "Jump to Section"}</span>
+                      <FaChevronDown
+                        className={`text-xs transition-transform duration-200 ${
+                          showMobileToc ? "rotate-180" : ""
+                        }`}
+                      />
+                    </span>
+                  </button>
+                  {showMobileToc && (
+                    <nav aria-label="Mobile table of contents" className="p-3 bg-white border-t border-amber-100 space-y-1">
+                      {tocItems.map((item) => {
+                        const isActive = activeSection === item.id;
+                        return (
+                          <button
+                            key={item.id}
+                            type="button"
+                            onClick={() => {
+                              scrollToSection(item.id);
+                              setShowMobileToc(false);
+                            }}
+                            className={`w-full text-left p-2.5 rounded-xl transition-all flex items-start gap-2.5 text-xs font-semibold cursor-pointer ${
+                              isActive
+                                ? "bg-amber-100/80 text-amber-950 font-bold"
+                                : "text-slate-700 hover:text-slate-900 hover:bg-slate-50"
+                            }`}
+                          >
+                            <span
+                              className={`shrink-0 text-[10px] font-bold px-1.5 py-0.5 rounded-sm ${
+                                isActive ? "bg-amber-600 text-white" : "bg-slate-100 text-slate-600"
+                              }`}
+                            >
+                              {item.number}
+                            </span>
+                            <span className="leading-snug line-clamp-2">{item.title}</span>
+                          </button>
+                        );
+                      })}
+                    </nav>
+                  )}
+                </div>
+              )}
+
               {/* KEY TAKEAWAYS CARD (Screenshot 3 & 4) */}
               {Array.isArray(blog.keyTakeaways) && blog.keyTakeaways.length > 0 && (
-                <div className="bg-white rounded-2xl border border-amber-200/90 p-6 shadow-xs border-l-4 border-l-amber-600 space-y-3.5">
+                <div className="bg-white rounded-2xl border border-amber-200/90 p-5 sm:p-6 shadow-xs border-l-4 border-l-amber-600 space-y-3.5">
                   <h3 className="font-extrabold text-slate-900 text-base sm:text-lg flex items-center justify-between">
                     <span>Key takeaways:</span>
                     <FaCheckCircle className="text-amber-600 text-base" />
@@ -409,15 +468,15 @@ const BlogDetails = () => {
               {/* RICH BLOG BODY */}
               <article
                 className="text-slate-700 text-base sm:text-lg leading-relaxed sm:leading-8 prose max-w-none 
-                [&_h2]:text-2xl [&_h2]:sm:text-3xl [&_h2]:font-bold [&_h2]:text-slate-900 [&_h2]:mt-10 [&_h2]:mb-4 [&_h2]:pt-6 [&_h2]:border-t [&_h2]:border-slate-200/70 [&_h2]:scroll-mt-28
-                [&_h3]:text-xl [&_h3]:sm:text-2xl [&_h3]:font-bold [&_h3]:text-slate-800 [&_h3]:mt-6 [&_h3]:mb-3 [&_h3]:scroll-mt-28
+                [&_h2]:text-xl [&_h2]:sm:text-2xl [&_h2]:lg:text-3xl [&_h2]:font-bold [&_h2]:text-slate-900 [&_h2]:mt-10 [&_h2]:mb-4 [&_h2]:pt-6 [&_h2]:border-t [&_h2]:border-slate-200/70 [&_h2]:scroll-mt-28
+                [&_h3]:text-lg [&_h3]:sm:text-xl [&_h3]:font-bold [&_h3]:text-slate-800 [&_h3]:mt-6 [&_h3]:mb-3 [&_h3]:scroll-mt-28
                 [&_p]:mb-5 [&_p]:text-slate-700 [&_p]:leading-relaxed
-                [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-6 [&_ul]:space-y-2.5 [&_ul]:text-slate-700
-                [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-6 [&_ol]:space-y-2.5 [&_ol]:text-slate-700
-                [&_blockquote]:border-l-4 [&_blockquote]:border-amber-500 [&_blockquote]:bg-amber-50/60 [&_blockquote]:p-4 [&_blockquote]:rounded-r-lg [&_blockquote]:my-6 [&_blockquote]:text-slate-800 [&_blockquote]:italic
-                [&_table]:w-full [&_table]:border-collapse [&_table]:my-6
-                [&_th]:bg-slate-100 [&_th]:border [&_th]:border-slate-200 [&_th]:p-3.5 [&_th]:text-slate-900 [&_th]:font-bold [&_th]:text-left
-                [&_td]:border [&_td]:border-slate-200 [&_td]:p-3.5 [&_td]:text-slate-700"
+                [&_ul]:list-disc [&_ul]:pl-5 sm:[&_ul]:pl-6 [&_ul]:mb-6 [&_ul]:space-y-2.5 [&_ul]:text-slate-700
+                [&_ol]:list-decimal [&_ol]:pl-5 sm:[&_ol]:pl-6 [&_ol]:mb-6 [&_ol]:space-y-2.5 [&_ol]:text-slate-700
+                [&_blockquote]:border-l-4 [&_blockquote]:border-amber-500 [&_blockquote]:bg-amber-50/60 [&_blockquote]:p-4 [&_blockquote]:rounded-r-xl [&_blockquote]:my-6 [&_blockquote]:text-slate-800 [&_blockquote]:italic
+                [&_table]:w-full [&_table]:border-collapse
+                [&_th]:p-3 sm:[&_th]:p-3.5 [&_th]:font-bold [&_th]:text-left
+                [&_td]:p-3 sm:[&_td]:p-3.5"
                 dangerouslySetInnerHTML={{ __html: processedContent }}
               />
 
@@ -474,32 +533,37 @@ const BlogDetails = () => {
                 </section>
               )}
 
-              {/* ARTISAN DIRECT CALLOUT BANNER */}
-              <div className="mt-10 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200/80 rounded-2xl p-6 sm:p-7 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xs">
-                <div className="space-y-2 text-center sm:text-left">
-                  <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-amber-800 bg-amber-200/60 px-3 py-1 rounded-full">
-                    <FaCheckCircle className="text-amber-600 text-xs" /> 100% Certified Natural Carvings
-                  </span>
-                  <h4 className="text-base sm:text-lg font-bold text-slate-900">
+              {/* ARTISAN DIRECT CALLOUT BANNER (Screenshot Fix - Full Width Flow) */}
+              <div className="mt-10 bg-gradient-to-br from-[#FFF9EE] via-[#FFF5E6] to-[#FDF0D5] border border-amber-200/90 rounded-2xl sm:rounded-3xl p-5 sm:p-7 shadow-xs space-y-4">
+                <div className="space-y-2.5">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-amber-900 bg-amber-200/80 px-3 py-1 rounded-full">
+                      <FaCheckCircle className="text-amber-700 text-xs" /> 100% Certified Natural Carvings
+                    </span>
+                    <span className="inline-flex items-center text-[11px] font-semibold text-stone-600 bg-white/80 border border-amber-200/70 px-2.5 py-1 rounded-full">
+                      Jaipur Master Lapidary
+                    </span>
+                  </div>
+                  <h4 className="text-lg sm:text-xl font-extrabold text-slate-900 leading-snug">
                     Looking for Certified Natural Gemstone Statues &amp; Shivlings?
                   </h4>
-                  <p className="text-xs sm:text-sm text-slate-600 max-w-xl">
+                  <p className="text-xs sm:text-sm text-slate-700 leading-relaxed max-w-2xl">
                     Every idol at Crystal Jaipuria is hand-sculpted in Jaipur from certified natural rough crystals with verifiable test reports and direct manufacturer pricing.
                   </p>
                 </div>
-                <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full sm:w-auto">
+                <div className="pt-1 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                   <a
                     href="https://wa.me/918306317032?text=Hello%20Crystal%20Jaipuria,%20I%20read%20your%20guide%20and%20want%20to%20inquire%20about%20natural%20carvings."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebd59] text-white px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm shadow-sm transition"
+                    className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebd59] text-white px-5 py-3 rounded-xl font-bold text-xs sm:text-sm shadow-sm transition active:scale-[0.99]"
                   >
                     <FaWhatsapp className="text-base" />
                     WhatsApp Inquiry
                   </a>
                   <Link
                     to="/gemstone-authenticity-guide"
-                    className="w-full sm:w-auto inline-flex items-center justify-center bg-white border border-slate-300 hover:border-slate-400 text-slate-800 px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm transition"
+                    className="inline-flex items-center justify-center bg-white border border-amber-300 hover:border-amber-400 hover:bg-amber-50/50 text-slate-800 px-5 py-3 rounded-xl font-semibold text-xs sm:text-sm shadow-2xs transition active:scale-[0.99]"
                   >
                     Authenticity Guide
                   </Link>
