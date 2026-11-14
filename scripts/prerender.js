@@ -447,7 +447,7 @@ export const runPrerender = async () => {
         aggregateRating: {
           "@type": "AggregateRating",
           ratingValue: "4.9",
-          reviewCount: "40",
+          reviewCount: "45",
           bestRating: "5",
           worstRating: "1",
         },

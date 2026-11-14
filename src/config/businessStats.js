@@ -4,8 +4,8 @@
  */
 export const GOOGLE_BUSINESS_STATS = {
   rating: "5.0",
-  reviewCount: 41,
-  reviewsLabel: "41 Google reviews",
+  reviewCount: 45,
+  reviewsLabel: "45 Google reviews",
   placeId: "ChIJ1TgWlFvLbTkRfcjCYK6CbNw",
   phone: "08955613237",
   formattedPhone: "+91 89556 13237",
