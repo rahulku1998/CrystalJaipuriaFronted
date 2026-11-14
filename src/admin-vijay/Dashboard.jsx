@@ -1,4 +1,16 @@
 import { useEffect, useState } from "react";
+import { FALLBACK_PRODUCTS, FALLBACK_CATEGORIES, FALLBACK_SUBCATEGORIES } from "../data/fallbackData";
+import { FALLBACK_BLOGS, getDeduplicatedBlogs } from "../data/fallbackBlogs";
+
+const getProductImg = (p) => {
+  if (Array.isArray(p.images) && p.images.length > 0) {
+    const first = p.images[0];
+    if (typeof first === "string") return first;
+    if (first?.url) return first.url;
+  }
+  return `/images/${p.slug}.webp`;
+};
+
 import API from "../api/axios";
 import { formatPrice } from "../utils/price";
 import { useNavigate, Link } from "react-router-dom";
@@ -49,17 +61,42 @@ const AdminDashboard = () => {
 
   const fetchData = async () => {
     try {
-      const productRes = await API.get("/products");
-      const catRes = await API.get("/categories");
-      const subCatRes = await API.get("/subcategories");
-      const blogRes = await API.get("/blogs");
+      const [productRes, catRes, subCatRes, blogRes] = await Promise.allSettled([
+        API.get("/products"),
+        API.get("/categories"),
+        API.get("/subcategories"),
+        API.get("/blogs"),
+      ]);
 
-      setProducts(productRes.data.products || []);
-      setCategories(catRes.data.categories || []);
-      setSubCategories(subCatRes.data.subCategories || []);
-      setBlogs(blogRes.data.blogs || []);
+      const dbProducts = productRes.status === "fulfilled" ? (productRes.value.data.products || []) : [];
+      const existingSlugs = new Set(dbProducts.map((p) => p.slug || p._id));
+      const missingFallbacks = FALLBACK_PRODUCTS.filter(
+        (fb) => !existingSlugs.has(fb.slug) && !existingSlugs.has(fb._id)
+      );
+      const mergedProducts = [...missingFallbacks, ...dbProducts];
+
+      const dbCategories = catRes.status === "fulfilled" ? (catRes.value.data.categories || []) : [];
+      const cleanCategories = (dbCategories.length > 0 ? dbCategories : FALLBACK_CATEGORIES).filter((c) => {
+        const s = (c.slug || "").toLowerCase().trim();
+        return s !== "angel" && s !== "diya";
+      });
+
+      const dbSubs = subCatRes.status === "fulfilled" ? (subCatRes.value.data.subCategories || []) : [];
+      const mergedSubs = dbSubs.length > 0 ? dbSubs : FALLBACK_SUBCATEGORIES;
+
+      const dbBlogs = blogRes.status === "fulfilled" ? (blogRes.value.data.blogs || []) : [];
+      const mergedBlogs = getDeduplicatedBlogs(dbBlogs, FALLBACK_BLOGS);
+
+      setProducts(mergedProducts.length > 0 ? mergedProducts : FALLBACK_PRODUCTS);
+      setCategories(cleanCategories);
+      setSubCategories(mergedSubs);
+      setBlogs(mergedBlogs);
     } catch (err) {
       console.log(err);
+      setProducts(FALLBACK_PRODUCTS);
+      setCategories(FALLBACK_CATEGORIES.filter((c) => c.slug !== "angel" && c.slug !== "diya"));
+      setSubCategories(FALLBACK_SUBCATEGORIES);
+      setBlogs(FALLBACK_BLOGS);
     }
   };
 
@@ -492,7 +529,7 @@ className="border-b hover:bg-gray-50"
 
 <img
 
-src={p.images?.[0]?.url}
+src={getProductImg(p)} onError={(e) => { e.target.src = "/logo.png"; }}
 
 className="w-14 h-14 rounded-lg object-cover"
 
@@ -513,7 +550,7 @@ className="w-14 h-14 rounded-lg object-cover"
 
 
 <td>
-{p.categoryId?.name || "-"}
+{p.categoryId?.name || p.categoryName || "-"}
 </td>
 
 
@@ -523,7 +560,7 @@ className="w-14 h-14 rounded-lg object-cover"
 
 <button
 
-onClick={()=>navigate(`/admin-vijay/edit-product/${p._id}`)}
+onClick={()=>navigate(`/admin-vijay/edit-product/${p._id || p.slug}`)}
 
 className="bg-blue-600 text-white px-3 py-1 rounded mr-2"
 
@@ -637,7 +674,7 @@ className="border-b"
 
 <img
 
-src={blog.image}
+src={blog.coverImage?.url || blog.image || "/Gemstone.webp"}
 
 className="w-14 h-14 rounded object-cover"
 

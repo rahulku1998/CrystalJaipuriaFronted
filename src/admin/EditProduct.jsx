@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import API from "../api/axios";
+import { FALLBACK_PRODUCTS } from "../data/fallbackData";
 import RichTextEditor from "../Components/RichTextEditor";
 import {
   packProductMetadata,
@@ -122,8 +123,22 @@ const EditProduct = () => {
     try {
       setLoading(true);
 
-      const res = await API.get(`/products/${id}`);
-      const p = res.data.product;
+      let p = null;
+      try {
+        const res = await API.get(`/products/${id}`);
+        p = res.data?.product;
+      } catch (err) {
+        console.warn("Product not found in database, looking in catalog fallbacks:", err);
+      }
+
+      if (!p) {
+        p = FALLBACK_PRODUCTS.find((fp) => fp._id === id || fp.slug === id);
+      }
+
+      if (!p) {
+        alert("Product not found");
+        return;
+      }
 
       // Unpack embedded metadata (FAQs, Super Meta Title & Description)
       const unpacked = unpackProductMetadata(p);

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import API from "../api/axios";
+import { FALLBACK_BLOGS, getDeduplicatedBlogs } from "../data/fallbackBlogs";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import RichTextEditor from "../Components/RichTextEditor";
@@ -23,21 +24,17 @@ const [editId,setEditId] = useState(null);
 
 
 
-const fetchBlogs = async()=>{
-
-    try{
-
-        const res = await API.get("/blogs");
-
-        setBlogs(res.data.blogs || res.data || []);
-
-    }catch(err){
-
-        console.log(err);
-
+const fetchBlogs = async () => {
+    try {
+      const res = await API.get("/blogs");
+      const dbBlogs = res.data.blogs || res.data || [];
+      const merged = getDeduplicatedBlogs(dbBlogs, FALLBACK_BLOGS);
+      setBlogs(merged);
+    } catch (err) {
+      console.log(err);
+      setBlogs(FALLBACK_BLOGS);
     }
-
-};
+  };
 
 
 
