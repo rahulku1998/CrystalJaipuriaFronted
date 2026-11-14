@@ -199,29 +199,31 @@ Hello Crystal Jaipuria, I have a query regarding this product.
 
       if (candidates.length === 0) return;
 
-      // 2. Comprehensive Subject & Deity Groups
-      const DEITY_GROUPS = [
-        { key: "buddha", terms: ["buddha", "gautam buddha", "laughing buddha"] },
-        { key: "ganesha", terms: ["ganesh", "ganesha", "ganpati", "vinayaka"] },
-        { key: "shrinathji", terms: ["shrinath", "shree nath", "nathji"] },
-        { key: "krishna", terms: ["krishna", "radha", "laddu gopal", "kanha", "murlidhar"] },
-        { key: "shivling", terms: ["shivling", "lingam", "shiva linga", "jalhari"] },
-        { key: "shiva", terms: ["shiva", "shiv ", "mahadev", "bholenath", "nataraja", "adiyogi"] },
-        { key: "shree-yantra", terms: ["shree yantra", "sri yantra", "meru yantra", "yantra"] },
-        { key: "hanuman", terms: ["hanuman", "bajrang", "anjaneya", "maruti"] },
-        { key: "durga-kali", terms: ["durga", "kali", "tara", "devi", "shakti", "parvati"] },
-        { key: "lakshmi", terms: ["lakshmi", "laxmi", "vaibhav"] },
-        { key: "saraswati", terms: ["saraswati", "veena vadini"] },
-        { key: "jain", terms: ["mahaveer", "mahavir", "parshvanath", "tirthankar", "jain"] },
-        { key: "ram", terms: ["ram darbar", "shree ram", "lord ram", "ram chandra"] },
-        { key: "horses", terms: ["horse", "horses", "ashwa", "running horse"] },
-        { key: "elephant", terms: ["elephant", "hathi", "gaja"] },
-        { key: "swan", terms: ["swan", "swans", "hans"] },
-        { key: "shankh", terms: ["shankh", "conch"] },
-        { key: "diya", terms: ["diya", "deepak", "lamp"] },
-        { key: "angel", terms: ["angel"] },
-        { key: "tea-set", terms: ["tea set", "teapot", "cup"] },
-      ];
+      // 2. Strict Subject & Deity Classification Engine
+      const getProductArchetype = (item) => {
+        const text = `${item?.name || ""} ${item?.slug || ""}`.toLowerCase();
+        if (text.includes("shree yantra") || text.includes("sri yantra") || text.includes("meru yantra") || text.includes("yantra")) return "yantra";
+        if (text.includes("shivling") || text.includes("lingam") || text.includes("shiva linga") || text.includes("jalhari")) return "shivling";
+        if (text.includes("buddha") || text.includes("gautam buddha") || text.includes("laughing buddha")) return "buddha";
+        if (text.includes("ganesh") || text.includes("ganpati") || text.includes("vinayaka")) return "ganesha";
+        if (text.includes("shrinath") || text.includes("shree nath") || text.includes("nathji")) return "shrinathji";
+        if (text.includes("krishna") || text.includes("radha") || text.includes("laddu gopal") || text.includes("kanha")) return "krishna";
+        if (text.includes("hanuman") || text.includes("bajrang") || text.includes("anjaneya") || text.includes("maruti")) return "hanuman";
+        if (text.includes("shiva") || text.includes("shiv ") || text.includes("mahadev") || text.includes("bholenath") || text.includes("nataraja") || text.includes("adiyogi")) return "shiva";
+        if (text.includes("durga") || text.includes("kali") || text.includes("tara") || text.includes("devi") || text.includes("shakti")) return "devi";
+        if (text.includes("lakshmi") || text.includes("laxmi") || text.includes("vaibhav")) return "lakshmi";
+        if (text.includes("saraswati") || text.includes("veena vadini")) return "saraswati";
+        if (text.includes("mahaveer") || text.includes("mahavir") || text.includes("parshvanath") || text.includes("tirthankar") || text.includes("jain")) return "jain";
+        if (text.includes("ram darbar") || text.includes("shree ram") || text.includes("lord ram")) return "ram";
+        if (text.includes("horse") || text.includes("horses") || text.includes("ashwa")) return "horses";
+        if (text.includes("elephant") || text.includes("hathi") || text.includes("gaja")) return "elephant";
+        if (text.includes("swan") || text.includes("swans") || text.includes("hans")) return "swan";
+        if (text.includes("shankh") || text.includes("conch")) return "shankh";
+        if (text.includes("diya") || text.includes("deepak") || text.includes("lamp")) return "diya";
+        if (text.includes("angel")) return "angel";
+        if (text.includes("tea set") || text.includes("teapot") || text.includes("cup")) return "tea-set";
+        return "other";
+      };
 
       // 3. Comprehensive Gemstone Materials
       const MATERIALS = [
@@ -233,53 +235,42 @@ Hello Crystal Jaipuria, I have a query regarding this product.
         "unakite", "cats eye", "gomedh", "sapphire", "corundum", "selenite"
       ];
 
+      const currentArchetype = getProductArchetype(prod);
       const currentText = `${prod.name || ""} ${prod.slug || ""}`.toLowerCase();
-      const currentDeityKeys = DEITY_GROUPS
-        .filter((g) => g.terms.some((t) => currentText.includes(t)))
-        .map((g) => g.key);
       const currentMaterials = MATERIALS.filter((m) => currentText.includes(m));
       const curCatId = prod.categoryId?._id || prod.categoryId?.slug || prod.categoryId;
+      const curSubId = prod.subCategoryId?._id || prod.subCategoryId?.slug || prod.subCategoryId;
 
       const scored = candidates.map((item) => {
+        const itemArchetype = getProductArchetype(item);
         const itemText = `${item.name || ""} ${item.slug || ""}`.toLowerCase();
         let score = 0;
 
-        // 1. Primary Deity/Subject match (Highest weight: 100 points)
-        for (const dKey of currentDeityKeys) {
-          const group = DEITY_GROUPS.find((g) => g.key === dKey);
-          if (group && group.terms.some((t) => itemText.includes(t))) {
-            score += 100;
-            break;
-          }
+        // 1. Same Subject / Deity (Supreme Priority: 10,000 points ensures same product type ALWAYS wins)
+        if (currentArchetype !== "other" && itemArchetype === currentArchetype) {
+          score += 10000;
+        } else if ((currentArchetype === "shrinathji" && itemArchetype === "krishna") || (currentArchetype === "krishna" && itemArchetype === "shrinathji")) {
+          score += 8000;
         }
 
-        // Cross-match between Shrinathji and Krishna (+60 points)
-        if (currentDeityKeys.includes("shrinathji") && (itemText.includes("krishna") || itemText.includes("radha"))) {
-          score += 60;
-        }
-        if (currentDeityKeys.includes("krishna") && (itemText.includes("shrinath") || itemText.includes("nathji"))) {
-          score += 60;
-        }
-
-        // 2. Material match (40 points for specific multi-word, 25 points for base mineral)
+        // 2. Material match (70 points for multi-word exact match, 50 points for base mineral)
         for (const mat of currentMaterials) {
           if (itemText.includes(mat)) {
-            score += (mat.includes(" ") ? 40 : 25);
+            score += (mat.includes(" ") ? 70 : 50);
             break;
           }
         }
 
-        // 3. Category match (+10 points)
-        const itemCatId = item.categoryId?._id || item.categoryId?.slug || item.categoryId;
-        if (itemCatId && curCatId && (itemCatId === curCatId || String(itemCatId) === String(curCatId))) {
-          score += 10;
+        // 3. Subcategory match (+30 points)
+        const itemSubId = item.subCategoryId?._id || item.subCategoryId?.slug || item.subCategoryId;
+        if (itemSubId && curSubId && String(itemSubId) === String(curSubId)) {
+          score += 30;
         }
 
-        // 4. Subcategory match (+15 points)
-        const itemSubId = item.subCategoryId?._id || item.subCategoryId?.slug || item.subCategoryId;
-        const curSubId = prod.subCategoryId?._id || prod.subCategoryId?.slug || prod.subCategoryId;
-        if (itemSubId && curSubId && String(itemSubId) === String(curSubId)) {
-          score += 15;
+        // 4. Category match (+20 points)
+        const itemCatId = item.categoryId?._id || item.categoryId?.slug || item.categoryId;
+        if (itemCatId && curCatId && (itemCatId === curCatId || String(itemCatId) === String(curCatId))) {
+          score += 20;
         }
 
         return { item: getStandardizedProduct(item), score };
