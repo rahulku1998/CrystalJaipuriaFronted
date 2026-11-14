@@ -5,6 +5,335 @@
 
 export const FALLBACK_BLOGS = [
   // ========================================================
+  // BLOG: Sphatik vs Clear Quartz vs Glass
+  // ========================================================
+  {
+    _id: "blog_sphatik_clear_quartz_vs_glass",
+    title: "Sphatik, Clear Quartz and Glass: Understanding the Differences",
+    metaTitle: "Sphatik vs Clear Quartz vs Glass: Key Differences",
+    metaDescription: "Understand the differences between Sphatik, clear quartz and glass. Explore their composition, appearance, inclusions, properties and identification methods.",
+    description: "Understand the differences between Sphatik, clear quartz and glass. Explore their composition, appearance, inclusions, properties and identification methods.",
+    keyTakeaways: [
+      "Sphatik is the traditional Indian Sanskrit term commonly associated with clear, natural crystalline quartz (SiO₂).",
+      "Clear quartz is a naturally formed mineral with an organised crystal lattice and a Mohs hardness of 7, whereas ordinary glass is an amorphous manufactured material.",
+      "Visual transparency alone cannot verify quartz from glass; high-quality glass can appear strikingly clear, while natural quartz often contains microscopic inclusions and internal growth features.",
+      "When purchasing sacred items such as Sphatik Shivlings or Shree Yantras, confirming authentic geological origin and independent lab testing is essential."
+    ],
+    slug: "sphatik-clear-quartz-vs-glass",
+    aliases: [
+      "sphatik-clear-quartz-and-glass-understanding-the-differences",
+      "sphatik-vs-clear-quartz-vs-glass"
+    ],
+    category: "Gemstone Guide",
+    author: "Crystal Jaipuria Master Gemologists",
+    readTime: "7 min read",
+    createdAt: "2026-11-14T10:00:00.000Z",
+    updatedAt: "2026-11-14T10:00:00.000Z",
+    coverImage: {
+      url: "/images/sphatik-clear-quartz-vs-glass.webp",
+      alt: "Sphatik vs Clear Quartz vs Glass: Key Differences - Crystal Jaipuria"
+    },
+    keywords: [
+      "sphatik vs clear quartz vs glass",
+      "what is sphatik stone",
+      "clear quartz vs glass",
+      "natural quartz identification",
+      "sphatik properties",
+      "quartz inclusions",
+      "how to identify sphatik",
+      "sphatik shivling jaipur"
+    ],
+    about: [
+      { "@type": "Thing", "name": "Sphatik Quartz", "sameAs": "https://en.wikipedia.org/wiki/Quartz" },
+      { "@type": "Thing", "name": "Clear Quartz", "sameAs": "https://en.wikipedia.org/wiki/Quartz" },
+      { "@type": "Thing", "name": "Glass", "sameAs": "https://en.wikipedia.org/wiki/Glass" },
+      { "@type": "Thing", "name": "Gemology", "sameAs": "https://en.wikipedia.org/wiki/Gemology" }
+    ],
+    mentions: [
+      { "@type": "Product", "name": "Sphatik Shivling", "url": "https://www.crystaljaipuria.com/shivling" },
+      { "@type": "Product", "name": "Crystal Shree Yantra", "url": "https://www.crystaljaipuria.com/shree-yantra" },
+      { "@type": "WebPage", "name": "Gemstone Authenticity Guide", "url": "https://www.crystaljaipuria.com/gemstone-authenticity-guide" }
+    ],
+    faqs: [
+      {
+        question: "Is Sphatik the same as clear quartz?",
+        answer: "Sphatik is commonly used in India to refer to clear quartz. However, buyers should verify the actual material of a particular product instead of relying on its commercial name alone."
+      },
+      {
+        question: "Is quartz better than glass?",
+        answer: "They are different materials with different properties. Quartz is a crystalline mineral, whereas ordinary glass is an amorphous manufactured material. Which is suitable depends on the intended application."
+      },
+      {
+        question: "Does natural quartz always have inclusions?",
+        answer: "No. Some natural quartz specimens are very clear, while others contain inclusions, fractures or cloudy areas."
+      },
+      {
+        question: "Can quartz be identified by scratching it?",
+        answer: "A scratch test is not recommended. It can damage the product and is not a reliable standalone identification method."
+      },
+      {
+        question: "What is the hardness of clear quartz?",
+        answer: "Clear quartz has a hardness of approximately 7 on the Mohs scale."
+      },
+      {
+        question: "Can glass look like natural quartz?",
+        answer: "Yes. High-quality glass can be highly transparent and may visually resemble quartz. Professional testing may be needed to distinguish them."
+      }
+    ],
+    content: `
+      <p class="lead text-lg text-slate-700 leading-relaxed mb-6 font-medium">
+        Sphatik, clear quartz and glass may look similar at first glance because all three can appear transparent, colourless and polished. However, they are fundamentally different materials with distinct chemical compositions, internal atomic structures and physical characteristics.
+      </p>
+
+      <p class="text-slate-700 leading-relaxed mb-6">
+        The key difference is that <strong>clear quartz is a naturally occurring mineral</strong> when it has formed geologically, while <strong>glass is an amorphous manufactured material</strong>. The term <em>Sphatik</em> is commonly used in Indian markets for transparent quartz, particularly in spiritual and decorative products. However, the exact material of an individual product should always be verified.
+      </p>
+
+      <div class="bg-amber-50/80 border-l-4 border-amber-500 p-5 rounded-r-xl my-8 text-amber-950">
+        <h4 class="font-bold text-base mb-1 text-amber-900 flex items-center gap-2">
+          <span>💎</span> Why Understanding Material Differences Matters
+        </h4>
+        <p class="text-sm leading-relaxed text-amber-900/90 mb-0">
+          Understanding these differences helps buyers make informed decisions when purchasing crystal carvings, spiritual idols, and gemstone products. Visual transparency alone cannot establish authenticity—knowing how mineral formation, hardness, and internal inclusions work protects you from synthetic imitations.
+        </p>
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-4 border-t border-slate-200">
+        1. What is Sphatik?
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        <strong>Sphatik</strong> is a traditional Indian term commonly associated with clear, transparent quartz used in spiritual, decorative and ornamental objects. In Vedic tradition and Sanskrit literature, Sphatik is revered as a pure, cooling mineral possessing positive vibrational energy.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        From a mineralogical perspective, clear quartz is a crystalline variety of silicon dioxide (SiO₂). It forms naturally through geological processes deep within the Earth over hundreds of thousands of years and is widely used in jewellery, deity carvings, decorative objects and mineral collections.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Natural quartz can vary in transparency, internal structure and appearance. Some specimens are remarkably clear and flawless, while others contain visible natural inclusions, internal veil-like fractures, or cloudy areas.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        In India, Sphatik is frequently associated with religious and spiritual objects, including sacred prayer malas (rosaries), decorative carvings, Sphatik Shivlings, and temple-related items.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-6">
+        However, it is important to understand that <strong>the word Sphatik alone does not establish the origin, purity or quality of a particular item</strong>. Because the term is used colloquially in retail markets, buyers should always confirm the exact mineral material, natural origin, and any treatments with the seller.
+      </p>
+
+      <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-4 border-t border-slate-200">
+        2. What is Clear Quartz?
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        <strong>Clear quartz</strong> is a transparent to translucent mineral variety belonging to the quartz species. Its chemical composition is silicon dioxide (SiO₂), and its regular trigonal crystalline structure fundamentally distinguishes it from ordinary glass.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Natural clear quartz forms under high-temperature hydrothermal and pegmatitic geological conditions over extended periods. In nature, it occurs as well-terminated individual prism crystals, dramatic crystal clusters, veins within host rock, and large massive boulders suitable for master lapidary carving.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-3 font-semibold text-slate-900">
+        Some commonly observed characteristics of clear quartz include:
+      </p>
+      <ul class="list-disc pl-6 space-y-2 mb-6 text-slate-700">
+        <li><strong>Transparent or translucent appearance:</strong> Allowing light to pass through with crisp refractive brilliance.</li>
+        <li><strong>Colourless body:</strong> Colorless to nearly colourless body without artificial tints.</li>
+        <li><strong>Natural crystal growth features:</strong> Hexagonal prism forms, striations, and growth twin planes.</li>
+        <li><strong>Natural internal features:</strong> Possible internal inclusions, delicate negative crystals, and wispy fractures.</li>
+        <li><strong>High Mohs hardness:</strong> A hardness of approximately <strong>7 on the Mohs scale</strong>, making it significantly harder than glass and resistant to everyday scratching.</li>
+      </ul>
+      <p class="text-slate-700 leading-relaxed mb-6">
+        While quartz is relatively resistant to everyday scratches compared with softer materials, it possesses a conchoidal fracture pattern and can still chip or fracture under strong mechanical impact. Today, natural clear quartz is celebrated in high-end decorative sculptures, sacred temple idols, ornamental lapidary carvings, and fine jewellery.
+      </p>
+
+      <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-4 border-t border-slate-200">
+        3. What is Glass?
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        <strong>Glass is an amorphous solid</strong>, meaning it does not possess the regular, repeating, long-range crystalline lattice found in minerals such as quartz. Instead, its atomic structure resembles that of a supercooled liquid frozen in place.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Ordinary commercial glass is manufactured by melting silica sand (SiO₂) at high temperatures along with fluxing ingredients such as soda ash (sodium carbonate), lime (calcium oxide), and other chemical stabilizers that influence its melting point, refractive properties, and moldability.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Modern industrial manufacturing can produce glass in exceptionally transparent, bubble-free, coloured, or textured decorative forms. Because advanced casting techniques can create crystal-clear decorative objects with sharp facets, <strong>visual transparency alone cannot establish whether an item is quartz or glass</strong>.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-6">
+        Glass is frequently used in the gemstone trade to imitate natural crystals. While high-lead crystal glass or molded glass figurines may look visually appealing and sparkling, they lack the geological origin, physical durability, thermal properties, and sacred resonance of natural quartz specimens.
+      </p>
+
+      <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-4 border-t border-slate-200">
+        4. Sphatik vs Clear Quartz vs Glass: Key Differences
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        To help you quickly compare these three materials side by side, review the essential distinctions across origin, mineral structure, hardness, and internal characteristics:
+      </p>
+
+      <div class="overflow-x-auto my-8 rounded-xl border border-slate-200 shadow-xs">
+        <table class="w-full text-left text-sm text-slate-700">
+          <thead class="bg-amber-50 text-amber-950 text-xs uppercase tracking-wider font-bold">
+            <tr>
+              <th class="p-3.5 border-b border-amber-200">Characteristic</th>
+              <th class="p-3.5 border-b border-amber-200">Sphatik</th>
+              <th class="p-3.5 border-b border-amber-200">Clear Quartz</th>
+              <th class="p-3.5 border-b border-amber-200">Ordinary Glass</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            <tr class="hover:bg-amber-50/30">
+              <td class="p-3.5 font-bold text-slate-900">Meaning</td>
+              <td class="p-3.5">Traditional / commercial term commonly used for clear quartz</td>
+              <td class="p-3.5">Mineral variety</td>
+              <td class="p-3.5">Manufactured amorphous material</td>
+            </tr>
+            <tr class="hover:bg-amber-50/30 bg-slate-50/50">
+              <td class="p-3.5 font-bold text-slate-900">Composition</td>
+              <td class="p-3.5">Usually represented as quartz; verify the actual item</td>
+              <td class="p-3.5">Silicon dioxide (SiO₂)</td>
+              <td class="p-3.5">Silica-based glass with flux ingredients</td>
+            </tr>
+            <tr class="hover:bg-amber-50/30">
+              <td class="p-3.5 font-bold text-slate-900">Structure</td>
+              <td class="p-3.5">Depends on actual material (crystalline if genuine)</td>
+              <td class="p-3.5">Crystalline (ordered lattice)</td>
+              <td class="p-3.5">Amorphous (non-crystalline)</td>
+            </tr>
+            <tr class="hover:bg-amber-50/30 bg-slate-50/50">
+              <td class="p-3.5 font-bold text-slate-900">Appearance</td>
+              <td class="p-3.5">Usually transparent or translucent</td>
+              <td class="p-3.5">Transparent to translucent</td>
+              <td class="p-3.5">Can be highly transparent</td>
+            </tr>
+            <tr class="hover:bg-amber-50/30">
+              <td class="p-3.5 font-bold text-slate-900">Natural Inclusions</td>
+              <td class="p-3.5">May occur naturally</td>
+              <td class="p-3.5">May occur naturally (veils, phantom lines)</td>
+              <td class="p-3.5">Manufacturing bubbles, swirls, or flow lines</td>
+            </tr>
+            <tr class="hover:bg-amber-50/30 bg-slate-50/50">
+              <td class="p-3.5 font-bold text-slate-900">Hardness</td>
+              <td class="p-3.5">Depends on material; natural quartz is ~7 Mohs</td>
+              <td class="p-3.5">Approximately 7 Mohs</td>
+              <td class="p-3.5">Varies (~5 to 5.5 Mohs, softer)</td>
+            </tr>
+            <tr class="hover:bg-amber-50/30">
+              <td class="p-3.5 font-bold text-slate-900">Origin</td>
+              <td class="p-3.5">Must be verified for each item</td>
+              <td class="p-3.5">Natural when geologically formed</td>
+              <td class="p-3.5">Man-made / factory manufactured</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-slate-500 italic mb-6">
+        * Note: The table provides general distinctions for commercial reference. It should not be used as a substitute for professional laboratory gemological testing.
+      </p>
+
+      <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-4 border-t border-slate-200">
+        5. How Can You Distinguish Quartz from Glass?
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Accurately identifying quartz and distinguishing it from imitation glass requires looking deeper than surface shine and transparency. Gemologists rely on several diagnostic physical and optical characteristics:
+      </p>
+
+      <h3 class="text-xl sm:text-2xl font-semibold text-slate-800 mt-6 mb-3">
+        A. Internal Features & Inclusions
+      </h3>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Natural quartz frequently contains unique geological fingerprints formed during crystallization. These include delicate veil-like fractures, tiny two-phase fluid inclusions (liquid and gas bubbles trapped inside), needle-like rutile or tourmaline fibers, and subtle cloudy zoning.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Manufactured glass, on the other hand, frequently contains spherical gas bubbles formed during the melting and cooling process, curved flow striae (swirl marks), or mold seams from casting. However, clean optical glass may lack bubbles entirely, while high-clarity quartz can be almost free of inclusions, so microscopic inspection is recommended.
+      </p>
+
+      <h3 class="text-xl sm:text-2xl font-semibold text-slate-800 mt-6 mb-3">
+        B. Crystal Structure & Polariscopic Reaction
+      </h3>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Because quartz is a crystalline mineral, it is <strong>anisotropic (doubly refractive)</strong>. When examined under a gemological polariscope or crossed polarizing filters, quartz will display light and dark blinking as it is rotated, often revealing a classic "bull's eye" optic figure in convergent light.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Ordinary glass is <strong>isotropic (singly refractive)</strong> and will remain dark through 360-degree rotation, or show irregular snake-like anomalous double refraction (ADR) caused by internal manufacturing strain.
+      </p>
+
+      <h3 class="text-xl sm:text-2xl font-semibold text-slate-800 mt-6 mb-3">
+        C. Mohs Hardness & Scratch Resistance
+      </h3>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Natural quartz possesses a hardness of approximately <strong>7 on the Mohs scale</strong>. Most window glass, bottle glass, and decorative glassware rate between 5.0 and 5.5 Mohs. This means quartz will readily scratch ordinary glass, while a steel knife blade (hardness ~5.5) will not scratch quartz.
+      </p>
+      <div class="bg-amber-50/60 p-4 rounded-xl border border-amber-200 text-amber-900 text-sm mb-4">
+        <strong>Important Advisory:</strong> Performing a destructive scratch test is <em>strictly not recommended</em> on finished gemstone carvings or idols, as it can cause irreversible cosmetic damage to polished surfaces and sharp facets.
+      </div>
+
+      <h3 class="text-xl sm:text-2xl font-semibold text-slate-800 mt-6 mb-3">
+        D. Thermal Conductivity (Cold Touch)
+      </h3>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Natural quartz conducts heat away from the skin much faster than glass. When you touch genuine natural Sphatik to your lips or forehead, it feels distinctively cold to the touch and takes longer to warm up. Glass feels comparatively neutral or warms up almost immediately.
+      </p>
+
+      <h3 class="text-xl sm:text-2xl font-semibold text-slate-800 mt-6 mb-3">
+        E. Professional Gemological Testing
+      </h3>
+      <p class="text-slate-700 leading-relaxed mb-6">
+        Certified gemologists employ non-destructive instruments—including refractometers (measuring quartz's 1.544–1.553 refractive index and +0.009 birefringence), specific gravity hydrostatic balances (~2.65 SG), and gemological microscopes. For significant investments or temple installations, independent gemological testing provides conclusive verification.
+      </p>
+
+      <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-4 border-t border-slate-200">
+        6. Why Does Material Identification Matter When Buying Sphatik Products?
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Accurate material disclosure ensures buyers receive authentic value and that product claims match reality. A transparent decorative carving may look identical in online photographs, but a cast-glass piece manufactured in minutes has negligible intrinsic value compared to a hand-carved natural crystal sculpture.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-4 font-semibold text-slate-900">
+        Before finalizing a purchase, always ask the supplier:
+      </p>
+      <ul class="list-disc pl-6 space-y-2 mb-6 text-slate-700">
+        <li><strong>Exact Material:</strong> Is this item 100% natural earth-mined quartz, synthetic quartz, or manufactured glass?</li>
+        <li><strong>Treatments:</strong> Has the crystal undergone any clarity enhancement, heat treatment, or glass filling?</li>
+        <li><strong>Natural Inclusions:</strong> Are natural veil patterns or crystal zoning visible upon close inspection?</li>
+        <li><strong>Physical Specifications:</strong> Are precise weight (in grams/kg) and dimensions (in inches/cm) provided?</li>
+        <li><strong>Independent Documentation:</strong> Does the carving come with an authentic gemological laboratory test certificate?</li>
+      </ul>
+      <p class="text-slate-700 leading-relaxed mb-6">
+        For wholesale dealers and temple committees, insisting on clear material specifications in purchase orders ensures consistent quality across bulk deliveries.
+      </p>
+
+      <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-4 border-t border-slate-200">
+        7. What Should You Consider When Selecting Clear Quartz Carvings?
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Choosing the right natural crystal idol depends on your personal spiritual practice, interior aesthetic, and budget. When evaluating fine clear quartz sculptures, keep these key criteria in mind:
+      </p>
+      <ul class="list-disc pl-6 space-y-2 mb-6 text-slate-700">
+        <li><strong>Transparency Grade:</strong> Decide whether you prefer water-clear gem grade, translucent soothing crystal, or character-rich naturally included quartz.</li>
+        <li><strong>Natural Veiling:</strong> Understand that subtle wisps, feather inclusions, and rainbow reflections are hallmarks of natural earth crystallization, not structural defects.</li>
+        <li><strong>Carving Proportions & Shilpa Shastra:</strong> Inspect facial symmetry, hand mudras, and precision polishing as per authentic Vedic sculpting traditions.</li>
+        <li><strong>Verified Dimensions:</strong> Review millimeter and inch specifications to gauge physical presence rather than relying solely on photo scales.</li>
+        <li><strong>Material Certification:</strong> Ensure the seller offers verifiable authenticity documentation confirming natural quartz origin.</li>
+      </ul>
+
+      <div class="p-6 rounded-2xl bg-stone-50 border border-stone-200 my-8">
+        <h4 class="font-bold text-base text-stone-900 mb-2">
+          Explore Handcrafted Crystal Carvings from Jaipur
+        </h4>
+        <p class="text-sm text-stone-600 leading-relaxed mb-4">
+          At Crystal Jaipuria, every piece is sculpted from certified earth-mined quartz by traditional Jaipur lapidary masters. Explore our authentic 
+          <a href="/shivling" class="text-amber-800 font-bold hover:underline">Shivling collection</a> 
+          and sacred 
+          <a href="/shree-yantra" class="text-amber-800 font-bold hover:underline">Shree Yantra collection</a> 
+          to review detailed product dimensions, weight specifications, and laboratory certifications.
+        </p>
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-4 border-t border-slate-200">
+        Conclusion
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        While Sphatik, clear quartz and glass can appear remarkably similar on display, their geological origins, crystalline structures, physical durability, and vibrational heritage are entirely distinct.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-6">
+        When acquiring transparent gemstone carvings for worship, home sanctums, or collectors' galleries, focus on verifiable material disclosure, master lapidary finishing, accurate physical measurements, and reputable laboratory documentation rather than visual appearance alone.
+      </p>
+    `
+  },
+
+  // ========================================================
   // BLOG 1: Natural vs Synthetic Gemstones
   // ========================================================
   {

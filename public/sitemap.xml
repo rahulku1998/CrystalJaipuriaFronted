@@ -1809,7 +1809,16 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Blog Detail Pages (5 Stories) -->
+  <!-- Blog Detail Pages (6 Stories) -->
+  <url>
+    <loc>https://www.crystaljaipuria.com/blog/sphatik-clear-quartz-vs-glass</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/sphatik-clear-quartz-vs-glass.webp</image:loc>
+      <image:title>Sphatik, Clear Quartz and Glass: Understanding the Differences | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
   <url>
     <loc>https://www.crystaljaipuria.com/blog/natural-vs-synthetic-gemstones</loc>
     <image:image>
