@@ -1262,63 +1262,60 @@ export const getStandardizedProduct = (product) => {
 
     } else if (slug === "ruby-ram-darbar-carving" || slug === "elegant-ruby-ram-darbar-carving") {
       standardizedImages = [
-        { url: "/images/ruby-ram-darbar-carving.webp", public_id: "products/ruby-ram-darbar-carving" },
-        { url: "/images/ruby-ram-darbar-carving-2.webp", public_id: "products/ruby-ram-darbar-carving-2" },
-        { url: "/images/ruby-ram-darbar-carving-3.webp", public_id: "products/ruby-ram-darbar-carving-3" },
-        { url: "/images/ruby-ram-darbar-carving-4.webp", public_id: "products/ruby-ram-darbar-carving-4" },
+        { url: "/images/ruby-ram-darbar-carving-front.webp", public_id: "products/ruby-ram-darbar-carving-front" },
+        { url: "/images/ruby-ram-darbar-carving-left.webp", public_id: "products/ruby-ram-darbar-carving-left" },
+        { url: "/images/ruby-ram-darbar-carving-right.webp", public_id: "products/ruby-ram-darbar-carving-right" },
+        { url: "/images/ruby-ram-darbar-carving-infographic.webp", public_id: "products/ruby-ram-darbar-carving-infographic" },
       ];
     } else if (slug === "green-aventurine-lord-shiva") {
       standardizedImages = [
-        { url: "/images/green-aventurine-lord-shiva.webp", public_id: "products/green-aventurine-lord-shiva" },
-        { url: "/images/green-aventurine-lord-shiva-2.webp", public_id: "products/green-aventurine-lord-shiva-2" },
-        { url: "/images/green-aventurine-lord-shiva-3.webp", public_id: "products/green-aventurine-lord-shiva-3" },
-        { url: "/images/green-aventurine-lord-shiva-4.webp", public_id: "products/green-aventurine-lord-shiva-4" },
+        { url: "/images/green-aventurine-lord-shiva-front.webp", public_id: "products/green-aventurine-lord-shiva-front" },
+        { url: "/images/green-aventurine-lord-shiva-left.webp", public_id: "products/green-aventurine-lord-shiva-left" },
+        { url: "/images/green-aventurine-lord-shiva-right.webp", public_id: "products/green-aventurine-lord-shiva-right" },
+        { url: "/images/green-aventurine-lord-shiva-infographic.webp", public_id: "products/green-aventurine-lord-shiva-infographic" },
       ];
     } else if (slug === "goddess-tara-in-green-aventurine" || slug === "green-aventurine-goddess-tara") {
       standardizedImages = [
-        { url: "/images/goddess-tara-in-green-aventurine.webp", public_id: "products/goddess-tara-in-green-aventurine" },
-        { url: "/images/goddess-tara-in-green-aventurine-2.webp", public_id: "products/goddess-tara-in-green-aventurine-2" },
-        { url: "/images/goddess-tara-in-green-aventurine-3.webp", public_id: "products/goddess-tara-in-green-aventurine-3" },
-        { url: "/images/goddess-tara-in-green-aventurine-4.webp", public_id: "products/goddess-tara-in-green-aventurine-4" },
+        { url: "/images/goddess-tara-in-green-aventurine-front.webp", public_id: "products/goddess-tara-in-green-aventurine-front" },
+        { url: "/images/goddess-tara-in-green-aventurine-left.webp", public_id: "products/goddess-tara-in-green-aventurine-left" },
+        { url: "/images/goddess-tara-in-green-aventurine-right.webp", public_id: "products/goddess-tara-in-green-aventurine-right" },
+        { url: "/images/goddess-tara-in-green-aventurine-infographic.webp", public_id: "products/goddess-tara-in-green-aventurine-infographic" },
       ];
     } else if (slug === "tirupati-balaji-in-tiger-eye" || slug === "tiger-eye-tirupati-balaji") {
       standardizedImages = [
-        { url: "/images/tirupati-balaji-in-tiger-eye.webp", public_id: "products/tirupati-balaji-in-tiger-eye" },
-        { url: "/images/tirupati-balaji-in-tiger-eye-2.webp", public_id: "products/tirupati-balaji-in-tiger-eye-2" },
-        { url: "/images/tirupati-balaji-in-tiger-eye-3.webp", public_id: "products/tirupati-balaji-in-tiger-eye-3" },
-        { url: "/images/tirupati-balaji-in-tiger-eye-4.webp", public_id: "products/tirupati-balaji-in-tiger-eye-4" },
+        { url: "/images/tirupati-balaji-in-tiger-eye-front.webp", public_id: "products/tirupati-balaji-in-tiger-eye-front" },
+        { url: "/images/tirupati-balaji-in-tiger-eye-left.webp", public_id: "products/tirupati-balaji-in-tiger-eye-left" },
+        { url: "/images/tirupati-balaji-in-tiger-eye-right.webp", public_id: "products/tirupati-balaji-in-tiger-eye-right" },
+        { url: "/images/tirupati-balaji-in-tiger-eye-infographic.webp", public_id: "products/tirupati-balaji-in-tiger-eye-infographic" },
       ];
     } else if (slug === "carving-of-4-horse-bust-together-in-lapis-lazuli" || slug === "lapis-lazuli-four-horse-carving" || slug === "4-horse-bust-together-in-lapis-lazuli") {
       standardizedImages = [
-        { url: "/images/carving-of-4-horse-bust-together-in-lapis-lazuli.webp", public_id: "products/carving-of-4-horse-bust-together-in-lapis-lazuli" },
-        { url: "/images/carving-of-4-horse-bust-together-in-lapis-lazuli-2.webp", public_id: "products/carving-of-4-horse-bust-together-in-lapis-lazuli-2" },
-        { url: "/images/carving-of-4-horse-bust-together-in-lapis-lazuli-3.webp", public_id: "products/carving-of-4-horse-bust-together-in-lapis-lazuli-3" },
-        { url: "/images/carving-of-4-horse-bust-together-in-lapis-lazuli-4.webp", public_id: "products/carving-of-4-horse-bust-together-in-lapis-lazuli-4" },
+        { url: "/images/carving-of-4-horse-bust-together-in-lapis-lazuli-front.webp", public_id: "products/carving-of-4-horse-bust-together-in-lapis-lazuli-front" },
+        { url: "/images/carving-of-4-horse-bust-together-in-lapis-lazuli-infographic.webp", public_id: "products/carving-of-4-horse-bust-together-in-lapis-lazuli-infographic" },
       ];
     } else if (slug === "7-running-horses-in-lapis-lazuli" || slug === "lapis-lazuli-7-running-horses" || slug === "seven-running-horses-in-lapis-lazuli") {
       standardizedImages = [
-        { url: "/images/7-running-horses-in-lapis-lazuli.webp", public_id: "products/7-running-horses-in-lapis-lazuli" },
-        { url: "/images/7-running-horses-in-lapis-lazuli-2.webp", public_id: "products/7-running-horses-in-lapis-lazuli-2" },
-        { url: "/images/7-running-horses-in-lapis-lazuli-3.webp", public_id: "products/7-running-horses-in-lapis-lazuli-3" },
+        { url: "/images/7-running-horses-in-lapis-lazuli-front.webp", public_id: "products/7-running-horses-in-lapis-lazuli-front" },
+        { url: "/images/7-running-horses-in-lapis-lazuli-infographic.webp", public_id: "products/7-running-horses-in-lapis-lazuli-infographic" },
       ];
     } else if (slug === "tea-set-in-crystal-quartz" || slug === "crystal-quartz-tea-set") {
       standardizedImages = [
-        { url: "/images/tea-set-in-crystal-quartz.webp", public_id: "products/tea-set-in-crystal-quartz" },
-        { url: "/images/tea-set-in-crystal-quartz-2.webp", public_id: "products/tea-set-in-crystal-quartz-2" },
+        { url: "/images/tea-set-in-crystal-quartz-front.webp", public_id: "products/tea-set-in-crystal-quartz-front" },
+        { url: "/images/tea-set-in-crystal-quartz-infographic.webp", public_id: "products/tea-set-in-crystal-quartz-infographic" },
       ];
     } else if (slug === "sodalite-buddha") {
       standardizedImages = [
-        { url: "/images/sodalite-buddha.webp", public_id: "products/sodalite-buddha" },
-        { url: "/images/sodalite-buddha-2.webp", public_id: "products/sodalite-buddha-2" },
-        { url: "/images/sodalite-buddha-3.webp", public_id: "products/sodalite-buddha-3" },
-        { url: "/images/sodalite-buddha-4.webp", public_id: "products/sodalite-buddha-4" },
+        { url: "/images/sodalite-buddha-front.webp", public_id: "products/sodalite-buddha-front" },
+        { url: "/images/sodalite-buddha-left.webp", public_id: "products/sodalite-buddha-left" },
+        { url: "/images/sodalite-buddha-right.webp", public_id: "products/sodalite-buddha-right" },
+        { url: "/images/sodalite-buddha-infographic.webp", public_id: "products/sodalite-buddha-infographic" },
       ];
     } else if (slug === "ruby-kyanite-buddha") {
       standardizedImages = [
-        { url: "/images/ruby-kyanite-buddha.webp", public_id: "products/ruby-kyanite-buddha" },
-        { url: "/images/ruby-kyanite-buddha-2.webp", public_id: "products/ruby-kyanite-buddha-2" },
-        { url: "/images/ruby-kyanite-buddha-3.webp", public_id: "products/ruby-kyanite-buddha-3" },
-        { url: "/images/ruby-kyanite-buddha-4.webp", public_id: "products/ruby-kyanite-buddha-4" },
+        { url: "/images/ruby-kyanite-buddha-front.webp", public_id: "products/ruby-kyanite-buddha-front" },
+        { url: "/images/ruby-kyanite-buddha-left.webp", public_id: "products/ruby-kyanite-buddha-left" },
+        { url: "/images/ruby-kyanite-buddha-right.webp", public_id: "products/ruby-kyanite-buddha-right" },
+        { url: "/images/ruby-kyanite-buddha-infographic.webp", public_id: "products/ruby-kyanite-buddha-infographic" },
       ];
     } else if (slug === "goddess-kali-in-black-obsidian" || slug === "black-obsidian-goddess-kali") {
       standardizedImages = [
@@ -1334,36 +1331,37 @@ export const getStandardizedProduct = (product) => {
       ];
     } else if (slug === "laughing-buddha-in-labradorite" || slug === "labradorite-laughing-buddha") {
       standardizedImages = [
-        { url: "/images/laughing-buddha-in-labradorite.webp", public_id: "products/laughing-buddha-in-labradorite" },
-        { url: "/images/laughing-buddha-in-labradorite-2.webp", public_id: "products/laughing-buddha-in-labradorite-2" },
-        { url: "/images/laughing-buddha-in-labradorite-3.webp", public_id: "products/laughing-buddha-in-labradorite-3" },
+        { url: "/images/laughing-buddha-in-labradorite-front.webp", public_id: "products/laughing-buddha-in-labradorite-front" },
+        { url: "/images/laughing-buddha-in-labradorite-left.webp", public_id: "products/laughing-buddha-in-labradorite-left" },
+        { url: "/images/laughing-buddha-in-labradorite-infographic.webp", public_id: "products/laughing-buddha-in-labradorite-infographic" },
       ];
     } else if (slug === "lord-ganesha-in-green-aventurine" || slug === "green-aventurine-lord-ganesha") {
       standardizedImages = [
-        { url: "/images/lord-ganesha-in-green-aventurine.webp", public_id: "products/lord-ganesha-in-green-aventurine" },
-        { url: "/images/lord-ganesha-in-green-aventurine-2.webp", public_id: "products/lord-ganesha-in-green-aventurine-2" },
-        { url: "/images/lord-ganesha-in-green-aventurine-3.webp", public_id: "products/lord-ganesha-in-green-aventurine-3" },
+        { url: "/images/lord-ganesha-in-green-aventurine-front.webp", public_id: "products/lord-ganesha-in-green-aventurine-front" },
+        { url: "/images/lord-ganesha-in-green-aventurine-left.webp", public_id: "products/lord-ganesha-in-green-aventurine-left" },
+        { url: "/images/lord-ganesha-in-green-aventurine-right.webp", public_id: "products/lord-ganesha-in-green-aventurine-right" },
+        { url: "/images/lord-ganesha-in-green-aventurine-infographic.webp", public_id: "products/lord-ganesha-in-green-aventurine-infographic" },
       ];
     } else if (slug === "buddha-in-ruby-kyanite" || slug === "vibrant-ruby-kyanite-buddha") {
       standardizedImages = [
-        { url: "/images/buddha-in-ruby-kyanite.webp", public_id: "products/buddha-in-ruby-kyanite" },
-        { url: "/images/buddha-in-ruby-kyanite-2.webp", public_id: "products/buddha-in-ruby-kyanite-2" },
-        { url: "/images/buddha-in-ruby-kyanite-3.webp", public_id: "products/buddha-in-ruby-kyanite-3" },
-        { url: "/images/buddha-in-ruby-kyanite-4.webp", public_id: "products/buddha-in-ruby-kyanite-4" },
+        { url: "/images/buddha-in-ruby-kyanite-front.webp", public_id: "products/buddha-in-ruby-kyanite-front" },
+        { url: "/images/buddha-in-ruby-kyanite-left.webp", public_id: "products/buddha-in-ruby-kyanite-left" },
+        { url: "/images/buddha-in-ruby-kyanite-right.webp", public_id: "products/buddha-in-ruby-kyanite-right" },
+        { url: "/images/buddha-in-ruby-kyanite-infographic.webp", public_id: "products/buddha-in-ruby-kyanite-infographic" },
       ];
     } else if (slug === "lord-parasnath-in-lapis-lazuli" || slug === "lord-parshvanath-in-lapis-lazuli") {
       standardizedImages = [
-        { url: "/images/lord-parasnath-in-lapis-lazuli.webp", public_id: "products/lord-parasnath-in-lapis-lazuli" },
-        { url: "/images/lord-parasnath-in-lapis-lazuli-2.webp", public_id: "products/lord-parasnath-in-lapis-lazuli-2" },
-        { url: "/images/lord-parasnath-in-lapis-lazuli-3.webp", public_id: "products/lord-parasnath-in-lapis-lazuli-3" },
-        { url: "/images/lord-parasnath-in-lapis-lazuli-4.webp", public_id: "products/lord-parasnath-in-lapis-lazuli-4" },
+        { url: "/images/lord-parasnath-in-lapis-lazuli-front.webp", public_id: "products/lord-parasnath-in-lapis-lazuli-front" },
+        { url: "/images/lord-parasnath-in-lapis-lazuli-left.webp", public_id: "products/lord-parasnath-in-lapis-lazuli-left" },
+        { url: "/images/lord-parasnath-in-lapis-lazuli-right.webp", public_id: "products/lord-parasnath-in-lapis-lazuli-right" },
+        { url: "/images/lord-parasnath-in-lapis-lazuli-infographic.webp", public_id: "products/lord-parasnath-in-lapis-lazuli-infographic" },
       ];
     } else if (slug === "lord-krishna-in-ruby-zoisite" || slug === "ruby-zoisite-lord-krishna") {
       standardizedImages = [
-        { url: "/images/lord-krishna-in-ruby-zoisite.webp", public_id: "products/lord-krishna-in-ruby-zoisite" },
-        { url: "/images/lord-krishna-in-ruby-zoisite-2.webp", public_id: "products/lord-krishna-in-ruby-zoisite-2" },
-        { url: "/images/lord-krishna-in-ruby-zoisite-3.webp", public_id: "products/lord-krishna-in-ruby-zoisite-3" },
-        { url: "/images/lord-krishna-in-ruby-zoisite-4.webp", public_id: "products/lord-krishna-in-ruby-zoisite-4" },
+        { url: "/images/lord-krishna-in-ruby-zoisite-front.webp", public_id: "products/lord-krishna-in-ruby-zoisite-front" },
+        { url: "/images/lord-krishna-in-ruby-zoisite-left.webp", public_id: "products/lord-krishna-in-ruby-zoisite-left" },
+        { url: "/images/lord-krishna-in-ruby-zoisite-right.webp", public_id: "products/lord-krishna-in-ruby-zoisite-right" },
+        { url: "/images/lord-krishna-in-ruby-zoisite-infographic.webp", public_id: "products/lord-krishna-in-ruby-zoisite-infographic" },
       ];
     } else if (slug === "durga-devi-ruby-idol" || slug === "durga-devi-ruby-idol-432-carats") {
       standardizedImages = [

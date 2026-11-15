@@ -456,9 +456,9 @@ export const FALLBACK_PRODUCTS = [
     "weight": "4.5 kg",
     "size": "10 in (H) x 8 in (W) x 4.2 in (D)",
     "images": [
-      "/images/laughing-buddha-in-labradorite.webp",
-      "/images/laughing-buddha-in-labradorite-2.webp",
-      "/images/laughing-buddha-in-labradorite-3.webp"
+      "/images/laughing-buddha-in-labradorite-front.webp",
+      "/images/laughing-buddha-in-labradorite-left.webp",
+      "/images/laughing-buddha-in-labradorite-infographic.webp"
     ],
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
@@ -481,9 +481,10 @@ export const FALLBACK_PRODUCTS = [
     "weight": "6.2 kg",
     "size": "13 in (H) x 9 in (W) x 5 in (D)",
     "images": [
-      "/images/lord-ganesha-in-green-aventurine.webp",
-      "/images/lord-ganesha-in-green-aventurine-2.webp",
-      "/images/lord-ganesha-in-green-aventurine-3.webp"
+      "/images/lord-ganesha-in-green-aventurine-front.webp",
+      "/images/lord-ganesha-in-green-aventurine-left.webp",
+      "/images/lord-ganesha-in-green-aventurine-right.webp",
+      "/images/lord-ganesha-in-green-aventurine-infographic.webp"
     ],
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
@@ -506,10 +507,10 @@ export const FALLBACK_PRODUCTS = [
     "weight": "8.5 kg",
     "size": "12 in (H) x 15 in (W) x 5.5 in (D)",
     "images": [
-      "/images/buddha-in-ruby-kyanite.webp",
-      "/images/buddha-in-ruby-kyanite-2.webp",
-      "/images/buddha-in-ruby-kyanite-3.webp",
-      "/images/buddha-in-ruby-kyanite-4.webp"
+      "/images/buddha-in-ruby-kyanite-front.webp",
+      "/images/buddha-in-ruby-kyanite-left.webp",
+      "/images/buddha-in-ruby-kyanite-right.webp",
+      "/images/buddha-in-ruby-kyanite-infographic.webp"
     ],
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
@@ -532,10 +533,10 @@ export const FALLBACK_PRODUCTS = [
     "weight": "1.25 kg",
     "size": "6.5 in (H) x 4 in (W) x 2.5 in (D)",
     "images": [
-      "/images/lord-parasnath-in-lapis-lazuli.webp",
-      "/images/lord-parasnath-in-lapis-lazuli-2.webp",
-      "/images/lord-parasnath-in-lapis-lazuli-3.webp",
-      "/images/lord-parasnath-in-lapis-lazuli-4.webp"
+      "/images/lord-parasnath-in-lapis-lazuli-front.webp",
+      "/images/lord-parasnath-in-lapis-lazuli-left.webp",
+      "/images/lord-parasnath-in-lapis-lazuli-right.webp",
+      "/images/lord-parasnath-in-lapis-lazuli-infographic.webp"
     ],
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
@@ -558,10 +559,10 @@ export const FALLBACK_PRODUCTS = [
     "weight": "220 g",
     "size": "3 in (H) x 2 in (W) x 1.2 in (D)",
     "images": [
-      "/images/lord-krishna-in-ruby-zoisite.webp",
-      "/images/lord-krishna-in-ruby-zoisite-2.webp",
-      "/images/lord-krishna-in-ruby-zoisite-3.webp",
-      "/images/lord-krishna-in-ruby-zoisite-4.webp"
+      "/images/lord-krishna-in-ruby-zoisite-front.webp",
+      "/images/lord-krishna-in-ruby-zoisite-left.webp",
+      "/images/lord-krishna-in-ruby-zoisite-right.webp",
+      "/images/lord-krishna-in-ruby-zoisite-infographic.webp"
     ],
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
@@ -584,10 +585,10 @@ export const FALLBACK_PRODUCTS = [
     "weight": "4.85 kg",
     "size": "8.5 in (H) x 7.5 in (W) x 3.5 in (D)",
     "images": [
-      "/images/ruby-ram-darbar-carving.webp",
-      "/images/ruby-ram-darbar-carving-2.webp",
-      "/images/ruby-ram-darbar-carving-3.webp",
-      "/images/ruby-ram-darbar-carving-4.webp"
+      "/images/ruby-ram-darbar-carving-front.webp",
+      "/images/ruby-ram-darbar-carving-left.webp",
+      "/images/ruby-ram-darbar-carving-right.webp",
+      "/images/ruby-ram-darbar-carving-infographic.webp"
     ],
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
@@ -610,10 +611,10 @@ export const FALLBACK_PRODUCTS = [
     "weight": "6.4 kg",
     "size": "10 in (H) x 7 in (W) x 4.5 in (D)",
     "images": [
-      "/images/green-aventurine-lord-shiva.webp",
-      "/images/green-aventurine-lord-shiva-2.webp",
-      "/images/green-aventurine-lord-shiva-3.webp",
-      "/images/green-aventurine-lord-shiva-4.webp"
+      "/images/green-aventurine-lord-shiva-front.webp",
+      "/images/green-aventurine-lord-shiva-left.webp",
+      "/images/green-aventurine-lord-shiva-right.webp",
+      "/images/green-aventurine-lord-shiva-infographic.webp"
     ],
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
@@ -636,10 +637,10 @@ export const FALLBACK_PRODUCTS = [
     "weight": "4.2 kg",
     "size": "10 in (H) x 6 in (W) x 3.8 in (D)",
     "images": [
-      "/images/goddess-tara-in-green-aventurine.webp",
-      "/images/goddess-tara-in-green-aventurine-2.webp",
-      "/images/goddess-tara-in-green-aventurine-3.webp",
-      "/images/goddess-tara-in-green-aventurine-4.webp"
+      "/images/goddess-tara-in-green-aventurine-front.webp",
+      "/images/goddess-tara-in-green-aventurine-left.webp",
+      "/images/goddess-tara-in-green-aventurine-right.webp",
+      "/images/goddess-tara-in-green-aventurine-infographic.webp"
     ],
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
@@ -662,10 +663,10 @@ export const FALLBACK_PRODUCTS = [
     "weight": "3.6 kg",
     "size": "9 in (H) x 5 in (W) x 3.2 in (D)",
     "images": [
-      "/images/tirupati-balaji-in-tiger-eye.webp",
-      "/images/tirupati-balaji-in-tiger-eye-2.webp",
-      "/images/tirupati-balaji-in-tiger-eye-3.webp",
-      "/images/tirupati-balaji-in-tiger-eye-4.webp"
+      "/images/tirupati-balaji-in-tiger-eye-front.webp",
+      "/images/tirupati-balaji-in-tiger-eye-left.webp",
+      "/images/tirupati-balaji-in-tiger-eye-right.webp",
+      "/images/tirupati-balaji-in-tiger-eye-infographic.webp"
     ],
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
@@ -688,10 +689,8 @@ export const FALLBACK_PRODUCTS = [
     "weight": "11.2 kg",
     "size": "11 in (H) x 14 in (W) x 5.5 in (D)",
     "images": [
-      "/images/carving-of-4-horse-bust-together-in-lapis-lazuli.webp",
-      "/images/carving-of-4-horse-bust-together-in-lapis-lazuli-2.webp",
-      "/images/carving-of-4-horse-bust-together-in-lapis-lazuli-3.webp",
-      "/images/carving-of-4-horse-bust-together-in-lapis-lazuli-4.webp"
+      "/images/carving-of-4-horse-bust-together-in-lapis-lazuli-front.webp",
+      "/images/carving-of-4-horse-bust-together-in-lapis-lazuli-infographic.webp"
     ],
     "categoryId": {
       "_id": "6a55bc492dcf49aacd71ef68",
@@ -714,9 +713,8 @@ export const FALLBACK_PRODUCTS = [
     "weight": "14.5 kg",
     "size": "12 in (H) x 16 in (W) x 6.2 in (D)",
     "images": [
-      "/images/7-running-horses-in-lapis-lazuli.webp",
-      "/images/7-running-horses-in-lapis-lazuli-2.webp",
-      "/images/7-running-horses-in-lapis-lazuli-3.webp"
+      "/images/7-running-horses-in-lapis-lazuli-front.webp",
+      "/images/7-running-horses-in-lapis-lazuli-infographic.webp"
     ],
     "categoryId": {
       "_id": "6a55bc492dcf49aacd71ef68",
@@ -739,8 +737,8 @@ export const FALLBACK_PRODUCTS = [
     "weight": "2.45 kg",
     "size": "Teapot: 5.5 x 7.5 in, 4 Cups: 2.2 x 2.8 in",
     "images": [
-      "/images/tea-set-in-crystal-quartz.webp",
-      "/images/tea-set-in-crystal-quartz-2.webp"
+      "/images/tea-set-in-crystal-quartz-front.webp",
+      "/images/tea-set-in-crystal-quartz-infographic.webp"
     ],
     "categoryId": {
       "_id": "6a55bc492dcf49aacd71ef68",
@@ -763,10 +761,10 @@ export const FALLBACK_PRODUCTS = [
     "weight": "18.2 kg",
     "size": "17 in (H) x 13 in (W) x 7.5 in (D)",
     "images": [
-      "/images/sodalite-buddha.webp",
-      "/images/sodalite-buddha-2.webp",
-      "/images/sodalite-buddha-3.webp",
-      "/images/sodalite-buddha-4.webp"
+      "/images/sodalite-buddha-front.webp",
+      "/images/sodalite-buddha-left.webp",
+      "/images/sodalite-buddha-right.webp",
+      "/images/sodalite-buddha-infographic.webp"
     ],
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",
@@ -789,10 +787,10 @@ export const FALLBACK_PRODUCTS = [
     "weight": "12.6 kg",
     "size": "14 in (H) x 8.5 in (W) x 5.2 in (D)",
     "images": [
-      "/images/ruby-kyanite-buddha.webp",
-      "/images/ruby-kyanite-buddha-2.webp",
-      "/images/ruby-kyanite-buddha-3.webp",
-      "/images/ruby-kyanite-buddha-4.webp"
+      "/images/ruby-kyanite-buddha-front.webp",
+      "/images/ruby-kyanite-buddha-left.webp",
+      "/images/ruby-kyanite-buddha-right.webp",
+      "/images/ruby-kyanite-buddha-infographic.webp"
     ],
     "categoryId": {
       "_id": "6a55bb1f2e9a358fc926cbab",

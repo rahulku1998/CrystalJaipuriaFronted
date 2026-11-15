@@ -148,13 +148,16 @@ const generateSitemap = async () => {
       const cleanName = (prod.name || "Gemstone Product").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
       const cleanProductSlug = (prod.slug || slug || "product").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
       let imageMain = "";
-      const localMainPath = path.join(__dirname, `../public/images/${cleanProductSlug}.webp`);
-      if (fs.existsSync(localMainPath)) {
-        imageMain = `${BASE_URL}/images/${cleanProductSlug}.webp`;
-      } else if (Array.isArray(prod.images) && prod.images.length > 0) {
+      if (Array.isArray(prod.images) && prod.images.length > 0) {
         const first = typeof prod.images[0] === "string" ? prod.images[0] : prod.images[0]?.url;
         if (first) {
           imageMain = first.startsWith("http") ? first : `${BASE_URL}${first.startsWith("/") ? "" : "/"}${first}`;
+        }
+      }
+      if (!imageMain) {
+        const localMainPath = path.join(__dirname, `../public/images/${cleanProductSlug}.webp`);
+        if (fs.existsSync(localMainPath)) {
+          imageMain = `${BASE_URL}/images/${cleanProductSlug}.webp`;
         }
       }
       if (!imageMain) {
@@ -334,13 +337,16 @@ const generateSitemap = async () => {
     
     // 100% Valid Google Merchant Center Compliant Image URLs (Clean without query params)
     let imageMain = "";
-    const localMainPath = path.join(__dirname, `../public/images/${cleanProductSlug}.webp`);
-    if (fs.existsSync(localMainPath)) {
-      imageMain = `${BASE_URL}/images/${cleanProductSlug}.webp`;
-    } else if (Array.isArray(prod.images) && prod.images.length > 0) {
+    if (Array.isArray(prod.images) && prod.images.length > 0) {
       const first = typeof prod.images[0] === "string" ? prod.images[0] : prod.images[0]?.url;
       if (first) {
         imageMain = first.startsWith("http") ? first : `${BASE_URL}${first.startsWith("/") ? "" : "/"}${first}`;
+      }
+    }
+    if (!imageMain) {
+      const localMainPath = path.join(__dirname, `../public/images/${cleanProductSlug}.webp`);
+      if (fs.existsSync(localMainPath)) {
+        imageMain = `${BASE_URL}/images/${cleanProductSlug}.webp`;
       }
     }
     if (!imageMain) {

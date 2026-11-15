@@ -315,13 +315,16 @@ export const runPrerender = async () => {
       .replace(/^-|-$/g, "");
 
     let imageUrl = "";
-    const localMainPath = path.join(__dirname, `../public/images/${cleanProductSlug}.webp`);
-    if (fs.existsSync(localMainPath)) {
-      imageUrl = `${BASE_URL}/images/${cleanProductSlug}.webp`;
-    } else if (Array.isArray(prod.images) && prod.images.length > 0) {
+    if (Array.isArray(prod.images) && prod.images.length > 0) {
       const first = typeof prod.images[0] === "string" ? prod.images[0] : prod.images[0]?.url;
       if (first) {
         imageUrl = first.startsWith("http") ? first : `${BASE_URL}${first.startsWith("/") ? "" : "/"}${first}`;
+      }
+    }
+    if (!imageUrl) {
+      const localMainPath = path.join(__dirname, `../public/images/${cleanProductSlug}.webp`);
+      if (fs.existsSync(localMainPath)) {
+        imageUrl = `${BASE_URL}/images/${cleanProductSlug}.webp`;
       }
     }
     if (!imageUrl) {
