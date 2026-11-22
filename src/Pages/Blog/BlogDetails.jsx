@@ -482,7 +482,11 @@ const BlogDetails = () => {
                 [&_blockquote]:border-l-4 [&_blockquote]:border-amber-500 [&_blockquote]:bg-amber-50/60 [&_blockquote]:p-4 [&_blockquote]:rounded-r-xl [&_blockquote]:my-6 [&_blockquote]:text-slate-800 [&_blockquote]:italic
                 [&_table]:w-full [&_table]:border-collapse
                 [&_th]:p-3 sm:[&_th]:p-3.5 [&_th]:font-bold [&_th]:text-left
-                [&_td]:p-3 sm:[&_td]:p-3.5"
+                [&_td]:p-3 sm:[&_td]:p-3.5
+                [&_:is(.bg-slate-900,.bg-slate-800,.bg-slate-950)_h3]:!text-white
+                [&_:is(.bg-slate-900,.bg-slate-800,.bg-slate-950)_p]:!text-slate-200
+                [&_:is(.bg-slate-900,.bg-slate-800,.bg-slate-950)_span]:!text-slate-200
+                [&_:is(.bg-slate-900,.bg-slate-800,.bg-slate-950)_a]:!text-white"
                 dangerouslySetInnerHTML={{ __html: processedContent }}
               />
 

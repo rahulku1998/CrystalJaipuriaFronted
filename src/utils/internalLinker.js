@@ -190,6 +190,122 @@ export const INTERLINK_RULES = [
       "Jade elephant carving",
     ],
   },
+
+  // 5. EDITORIAL GUIDES & DEEP CONTEXTUAL CROSS-LINKING
+  {
+    targetUrl: "/blog/how-to-choose-gemstone-sculpture",
+    label: "Gemstone Sculpture Buyer's Guide",
+    priority: 8,
+    keywords: [
+      "how to choose a gemstone sculpture",
+      "choosing gemstone sculptures",
+      "choosing a gemstone sculpture",
+    ],
+  },
+  {
+    targetUrl: "/blog/hand-carved-vs-machine-made-stone-decor",
+    label: "Hand-Carved vs Machine-Made Stone Guide",
+    priority: 8,
+    keywords: [
+      "hand-carved vs machine-made",
+      "machine-assisted stone carving",
+      "hand carving vs machine carving",
+    ],
+  },
+  {
+    targetUrl: "/blog/how-to-evaluate-gemstone-carving-supplier",
+    label: "Evaluating Gemstone Suppliers",
+    priority: 8,
+    keywords: [
+      "evaluate a gemstone carving supplier",
+      "evaluating gemstone suppliers",
+      "gemstone supplier verification",
+    ],
+  },
+  {
+    targetUrl: "/blog/wholesale-gemstone-carvings-india",
+    label: "Wholesale Gemstone Sourcing Guide",
+    priority: 8,
+    keywords: [
+      "wholesale gemstone carvings from India",
+      "sourcing gemstone carvings from India",
+      "wholesale gemstone sourcing",
+    ],
+  },
+  {
+    targetUrl: "/blog/how-to-pack-and-ship-stone-sculptures",
+    label: "Safe Stone Packaging & Shipping",
+    priority: 8,
+    keywords: [
+      "pack and ship fragile stone sculptures",
+      "shipping stone sculptures safely",
+      "safe packaging for stone sculptures",
+    ],
+  },
+  {
+    targetUrl: "/blog/jaipur-gemstone-carving-tradition",
+    label: "Jaipur Gemstone Carving Tradition",
+    priority: 8,
+    keywords: [
+      "Jaipur gemstone carving tradition",
+      "Jaipur's gemstone carving tradition",
+      "Jaipur lapidary tradition",
+    ],
+  },
+  {
+    targetUrl: "/blog/gemstone-carving-process",
+    label: "Gemstone Carving Process Guide",
+    priority: 7,
+    keywords: [
+      "gemstone carving process",
+      "how gemstone carving works",
+    ],
+  },
+  {
+    targetUrl: "/blog/how-to-care-for-gemstone-carvings",
+    label: "Gemstone Carving Care Tips",
+    priority: 7,
+    keywords: [
+      "care for gemstone carvings",
+      "cleaning gemstone carvings",
+    ],
+  },
+  {
+    targetUrl: "/blog/factors-affecting-gemstone-carving-price",
+    label: "Gemstone Carving Pricing Factors",
+    priority: 7,
+    keywords: [
+      "factors affecting gemstone carving price",
+      "price of a natural gemstone carving",
+    ],
+  },
+  {
+    targetUrl: "/shipping-policy",
+    label: "Breakage-Free Shipping Guarantee",
+    priority: 6,
+    keywords: [
+      "breakage-free transit guarantee",
+      "shipping and delivery policy",
+    ],
+  },
+  {
+    targetUrl: "/about",
+    label: "Our Jaipur Lapidary Heritage",
+    priority: 6,
+    keywords: [
+      "Jaipur workshop in Sanganer",
+      "35+ years of craftsmanship in Jaipur",
+    ],
+  },
+  {
+    targetUrl: "/contact",
+    label: "Wholesale & Custom Inquiries",
+    priority: 6,
+    keywords: [
+      "wholesale export desk",
+      "custom carving inquiries",
+    ],
+  },
 ];
 
 /**

@@ -4005,6 +4005,8 @@ export const getDeduplicatedBlogs = (liveBlogs = [], fallbackBlogs = FALLBACK_BL
     });
   }
 
-  return Array.from(canonicalMap.values());
+  return Array.from(canonicalMap.values()).sort(
+    (a, b) => new Date(b.publishDate || b.createdAt || 0) - new Date(a.publishDate || a.createdAt || 0)
+  );
 };
 

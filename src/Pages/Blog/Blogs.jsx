@@ -39,20 +39,13 @@ const Blogs = () => {
     fetchBlogs();
   }, []);
 
-  // Sort blogs chronologically descending (newest published first)
-  // And filter future scheduled blogs unless ?preview=true is set
+  // Sort blogs chronologically descending (newest published first at the top)
   const publishedBlogs = useMemo(() => {
-    const isPreview =
-      typeof window !== "undefined" &&
-      new URLSearchParams(window.location.search).get("preview") === "true";
-    const now = new Date();
-    return blogs
-      .filter((b) => isPreview || !b.publishDate || new Date(b.publishDate) <= now)
-      .sort(
-        (a, b) =>
-          new Date(b.publishDate || b.createdAt || 0) -
-          new Date(a.publishDate || a.createdAt || 0)
-      );
+    return blogs.slice().sort(
+      (a, b) =>
+        new Date(b.publishDate || b.createdAt || 0) -
+        new Date(a.publishDate || a.createdAt || 0)
+    );
   }, [blogs]);
 
   // Filtered blogs based on Category and Search Query
