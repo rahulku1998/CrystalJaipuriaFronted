@@ -568,7 +568,7 @@ export const detectGemstone = (text = "") => {
   if (lower.includes("green jade") || lower.includes("columbian green") || lower.includes("jade")) return "green-jade";
   if (lower.includes("amethyst") || lower.includes("jamunia") || lower.includes("purple")) return "amethyst";
   if (lower.includes("pyrite") || lower.includes("golden") || lower.includes("fool's gold")) return "pyrite";
-  if (lower.includes("tiger eye") || lower.includes("tigereye")) return "tiger-eye";
+  if (lower.includes("tiger eye") || lower.includes("tiger's eye") || lower.includes("tigers eye") || lower.includes("tigereye")) return "tiger-eye";
   if (lower.includes("black tourmaline") || lower.includes("tourmaline")) return "black-tourmaline";
   if (lower.includes("black agate") || lower.includes("black jade") || lower.includes("agate") || lower.includes("hakik")) return "black-agate";
   if (lower.includes("lapis") || lower.includes("lajward")) return "lapis-lazuli";

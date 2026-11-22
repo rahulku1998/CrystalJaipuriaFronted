@@ -400,7 +400,7 @@ const generateSitemap = async () => {
     } else if (titleSlug.includes("smokey quartz") || text.includes("smokey quartz")) {
       material = "Natural Smokey Quartz";
       color = "Smoky Brown";
-    } else if (titleSlug.includes("tiger eye") || text.includes("tiger eye")) {
+    } else if (titleSlug.includes("tiger eye") || titleSlug.includes("tiger's eye") || text.includes("tiger eye") || text.includes("tiger's eye")) {
       material = "Natural Tiger Eye Gemstone";
       color = "Golden Brown";
     } else if (titleSlug.includes("labradorite") || text.includes("labradorite")) {
@@ -465,8 +465,16 @@ const generateSitemap = async () => {
       }
     }
 
-    // Clean base name: strip -Testing, testing, duplicate spaces, and old raw spec tags
+    // Clean base name: strip typos, -Testing, duplicate spaces, and old raw spec tags
     let baseName = cleanName
+      .replace(/\bGemston\b/gi, "Gemstone")
+      .replace(/\bPanting\b/gi, "Painting")
+      .replace(/\bKrishana\b/gi, "Krishna")
+      .replace(/\bMahvaveer\b/gi, "Mahaveer")
+      .replace(/\bStaute\b/gi, "Statue")
+      .replace(/\bSphtik\b/gi, "Sphatik")
+      .replace(/\bGord Shiva\b/gi, "Lord Shiva")
+      .replace(/\bHade\b/gi, "Jade")
       .replace(/\s*-\s*testing\b/gi, "")
       .replace(/\btesting\b/gi, "")
       .replace(/\s*-\s*100%\s*certified/gi, "")
@@ -523,13 +531,57 @@ const generateSitemap = async () => {
       feedTitle = `${baseName} ${specString}`.replace(/\s{2,}/g, " ").trim();
     }
 
-    if (slug === "green-jade-panchmukhi-shivling") {
-      feedTitle = "Natural Green Jade Stone Panchmukhi Shivling for Home Temple";
+    // High-Intent Custom Titles & Overrides for Maximum CTR and Google Shopping Relevance
+    const HIGH_INTENT_TITLES = {
+      "green-jade-panchmukhi-shivling": "Natural Green Jade Stone Panchmukhi Shivling for Home Temple",
+      "tirupati-balaji-in-tiger-eye": "Natural Tiger Eye Hand-Carved Tirupati Balaji Idol Statue for Mandir & Vastu (9 Inch, 3.6 kg)",
+      "crystal-clear-mahvaveer-ji-statue": "Authentic Sphatik Crystal Clear Bhagwan Mahaveer Swami Statue for Jain Mandir (7 Inch, 500 g)",
+      "blue-sodalite-carved-lord-shiva-statue": "Natural Blue Sodalite Hand Carved Lord Shiva Idol Statue for Home Temple (5 Inch, 1 kg)",
+      "natural-sphatik-shivling": "Original 100% Natural Sphatik (Clear Quartz) Shivling for Pooja & Daily Jalabhishek (1 Inch, 20 g)",
+      "green-jade-shree-yantra": "Original Green Jade Shree Yantra 3D Meru for Wealth & Vastu (1 Inch, 50 g)",
+      "clear-crystal-quartz-shivling-with-shiva-face": "Natural Sphatik Crystal Quartz Shivling with Shiva Face (Mukhalingam) for Home Temple (1 Inch, 500 g)",
+      "blue-sapphire-carving-shiva-statue": "Natural Blue Sapphire (Neelam) Hand Carved Shiva Idol Statue for Home Temple (2 Inch)",
+      "goddess-kali-in-black-obsidian": "Hand Carved Natural Black Obsidian Goddess Kali Maa Statue for Mandir & Vastu (11 Inch, 3.8 kg)",
+      "natural-blue-sodalite-hanuman-ji-statue": "Natural Blue Sodalite Hand Carved Hanuman Ji Statue for Home Temple & Vastu (5 Inch, 1 kg)",
+      "green-jade-shivling": "Natural Green Jade Stone Shivling for Home Temple & Jalabhishek (1 Inch, 20 g)",
+      "special-sphatik-crystal-lingam-for-temple": "Large Original Sphatik Crystal Shiva Lingam for Temple Mandir (13 Inch, 16.3 kg)",
+      "natural-ruby-shivling": "Original Natural Ruby (Manikya) Gemstone Shivling for Home Temple & Jalabhishek (1 Inch, 50 g)",
+      "pyrite-gemston-shivling": "Natural Golden Pyrite Gemstone Shivling for Wealth & Home Temple (1 Inch, 20 g)",
+      "amethyst-gemston-angel": "Natural Amethyst Gemstone Carved Angel for Reiki Healing & Positive Energy (1 Inch, 37 g)",
+      "gemston-amethyst-diya": "Handcrafted Natural Amethyst Gemstone Diya for Mandir Pooja (2.5 Inch, 66 g)",
+      "gemston-ruby-shree-yantra": "Natural Manikya Ruby Gemstone Shree Yantra 3D Meru for Wealth & Vastu (1 Inch, 40 g)",
+      "green-jade-elephant-staute": "Hand Carved Natural Green Jade Elephant Statue for Vastu & Good Luck (1 Inch, 100 g)",
+      "green-jade-shiva-statue-with-gold-panting": "Natural Green Jade Shiva Statue with Real Gold Painting for Home Temple (5 Inch, 5 kg)",
+      "green-jade-carved-shree-krishana-statue": "Natural Green Jade Hand Carved Shree Krishna Statue for Home Temple & Vastu (15 Inch, 10 kg)",
+      "tea-set-in-crystal-quartz": "Luxury Handcrafted Natural Clear Quartz Crystal Tea Set (Teapot with 4 Cups, 2.45 kg)",
+      "rose-quartz-carved-shree-krishna-ji-idol": "Natural Rose Quartz Hand Carved Shree Krishna Idol for Home Temple & Love (4 Inch, 5 kg)",
+      "rose-quartz-bhagwan-mahaveer-statue": "Natural Pink Rose Quartz Bhagwan Mahaveer Swami Statue for Jain Mandir (5 Inch, 1 kg)",
+      "tiger-eye-carving-shiva-statue": "Natural Tiger Eye Hand Carved Lord Shiva Statue for Home Temple & Protection (4 Inch, 500 g)",
+      "smokey-quartz-crystal-shiva-face-idol": "Natural Smokey Quartz Crystal Shiva Face Idol for Home Temple & Vastu (5 Inch, 200 g)",
+      "natural-opal-stone-shivling": "Natural White Opal Stone Shivling for Home Temple & Jalabhishek (1 Inch, 20 g)",
+      "natural-labradorite-gemstone-shivling": "Natural Labradorite Gemstone Shivling with Blue Fire for Jalabhishek (1 Inch, 20 g)",
+      "natural-howlite-gemstone-shivling": "Natural White Howlite Gemstone Shivling for Peace & Jalabhishek (1 Inch, 20 g)",
+      "natural-tiger-eye-gemstone-shivling": "Natural Tiger Eye Gemstone Shivling for Power & Jalabhishek (1 Inch, 20 g)",
+      "rose-quartz-shiva-statue-with-gold-painting": "Natural Rose Quartz Shiva Statue with 24K Gold Painting for Home Temple (10 Inch, 1 kg)",
+      "green-jade-mahalakshmi-ji-idol": "Natural Green Jade Goddess Mahalakshmi Ji Idol for Wealth & Diwali Pooja (5 Inch, 1 kg)",
+      "green-jade-goddess-maa-saraswati-carving": "Natural Green Jade Goddess Maa Saraswati Statue for Vidya & Temple (5 Inch, 1 kg)",
+      "green-aventurine-parshvanath-ji-statue": "Natural Green Aventurine Parshvanath Ji Tirthankara Statue for Jain Mandir (5 Inch, 1 kg)"
+    };
+
+    if (HIGH_INTENT_TITLES[slug]) {
+      feedTitle = HIGH_INTENT_TITLES[slug];
     }
 
-    const feedDesc = (slug === "green-jade-panchmukhi-shivling")
-      ? `Authentic Natural Green Jade Stone Panchmukhi Shivling (${prod.weight || "1 kg to 10 kg"}, ${prod.size || "1 inch to 6 inch"}) handcrafted by Jaipur master artisans. Sacred Pashupatinath Mahadev Swaroop with 5 divine faces (Sadyojata, Vamadeva, Aghora, Tatpurusha, Ishana) for home pooja and Jalabhishek at factory direct price.`
-      : cleanDesc;
+    const CUSTOM_FEED_DESCS = {
+      "green-jade-panchmukhi-shivling": `Authentic Natural Green Jade Stone Panchmukhi Shivling (${prod.weight || "1 kg to 10 kg"}, ${prod.size || "1 inch to 6 inch"}) handcrafted by Jaipur master artisans. Sacred Pashupatinath Mahadev Swaroop with 5 divine faces (Sadyojata, Vamadeva, Aghora, Tatpurusha, Ishana) for home pooja and Jalabhishek at factory direct price.`,
+      "tirupati-balaji-in-tiger-eye": `Handcrafted from certified 100% natural earth-mined Tiger Eye gemstone, this auspicious Lord Tirupati Balaji (Venkateswara) idol statue is masterfully sculpted by hereditary lapidaries in Jaipur. Known for attracting unbounded financial prosperity, removing Vastu dosha, and dissolving debts. Ideal for home temple and office worship.`,
+      "crystal-clear-mahvaveer-ji-statue": `Sacred 100% authentic natural Sphatik (clear quartz crystal) Bhagwan Mahaveer Swami idol statue hand-carved in Jaipur for Jain Derasar, home mandir, and spiritual meditation. Pure, unblemished, cold-to-touch crystal blessed for peace, ahimsa, and spiritual elevation.`,
+      "blue-sodalite-carved-lord-shiva-statue": `Majestic Lord Shiva idol hand-carved from genuine deep royal-blue Sodalite gemstone by Jaipur master craftsmen. Complete with divine blessing posture for home temple worship, positive aura, and spiritual protection.`,
+      "natural-sphatik-shivling": `Original 100% natural certified Sphatik (Clear Quartz) Shivling for daily Jalabhishek and home temple pooja. Hand-carved in sacred Vedic Shilpa Shastra proportions by master artisans of Jaipur (est. 1989). Radiates divine peaceful vibrations.`,
+      "green-jade-shree-yantra": `Authentic 100% natural Green Jade Shree Yantra 3D Meru hand-carved by Jaipur master lapidaries. Sacred geometric Yantraraj for continuous financial growth, Kubera blessings, and Vastu energization.`
+    };
+
+    const feedDesc = CUSTOM_FEED_DESCS[slug] || cleanDesc;
 
     gmcXml += `    <item>\n`;
     gmcXml += `      <g:id>${prod._id}</g:id>\n`;

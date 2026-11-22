@@ -50,6 +50,7 @@ export const SLUG_ALIASES = {
   "yellow-jad-ganesh-statue": "natural-yellow-jade-ganesha-statue",
   "natural-tiger-eye-stone-carved-ganesha-statue": "tiger-eye-ganesha-idol",
   "rose-quartz-shiva-statue-with-gold-panting": "rose-quartz-shiva-statue-with-gold-painting",
+  "green-jade-shiva-statue-with-gold-painting": "green-jade-shiva-statue-with-gold-panting",
   "clear-crystal-shivling": "crystal-shivling",
 };
 

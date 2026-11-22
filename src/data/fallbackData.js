@@ -1822,7 +1822,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a93ffb431429323dcbafcb6",
-    "name": "Green Jade Shiva Statue with Gold Panting for Home Temple & Vastu",
+    "name": "Green Jade Shiva Statue with Gold Painting for Home Temple & Vastu",
     "slug": "green-jade-shiva-statue-with-gold-panting",
     "price": 4200,
     "pricePerUnit": "₹5 / gram",
@@ -1870,7 +1870,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a93f8e131429323dcbafb11",
-    "name": "Gemston Ruby Shree Yantra 3D Meru for Wealth & Vastu",
+    "name": "Natural Gemstone Ruby Shree Yantra 3D Meru for Wealth & Vastu",
     "slug": "gemston-ruby-shree-yantra",
     "price": 16800,
     "pricePerUnit": "₹40 / carat",
@@ -1918,7 +1918,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a93f43331429323dcbafa32",
-    "name": "Green Jade Carved Shree Krishana Statue for Home Temple & Vastu",
+    "name": "Green Jade Carved Shree Krishna Statue for Home Temple & Vastu",
     "slug": "green-jade-carved-shree-krishana-statue",
     "price": 5400,
     "pricePerUnit": "₹10 / gram",
@@ -1942,7 +1942,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a93f23c31429323dcbaf931",
-    "name": "Pyrite Gemston Shivling for Home Temple & Jalabhishek",
+    "name": "Natural Pyrite Gemstone Shivling for Home Temple & Jalabhishek",
     "slug": "pyrite-gemston-shivling",
     "price": 3800,
     "pricePerUnit": "₹10 / gram",
@@ -2013,7 +2013,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a91697b31429323dcbaf2cd",
-    "name": "Green Jade Elephant Staute",
+    "name": "Green Jade Elephant Statue",
     "slug": "green-jade-elephant-staute",
     "price": 800,
     "pricePerUnit": "₹6 / gram",
@@ -2131,7 +2131,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a55beb62dcf49aacd71ef9e",
-    "name": "Gemston Amethyst Diya for Mandir Pooja",
+    "name": "Natural Amethyst Gemstone Diya for Mandir Pooja",
     "slug": "gemston-amethyst-diya",
     "price": 250,
     "pricePerUnit": "",
@@ -2155,7 +2155,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a55be4f2dcf49aacd71ef80",
-    "name": "Crystal Clear Mahvaveer Ji Statue",
+    "name": "Crystal Clear Mahaveer Ji Statue",
     "slug": "crystal-clear-mahvaveer-ji-statue",
     "price": 4200,
     "pricePerUnit": "₹100 / gram",
@@ -2179,7 +2179,7 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     "_id": "6a55bdcd2dcf49aacd71ef71",
-    "name": "Amethyst Gemston Angel for Reiki Healing & Positive Energy",
+    "name": "Natural Amethyst Gemstone Angel for Reiki Healing & Positive Energy",
     "slug": "amethyst-gemston-angel",
     "price": 350,
     "pricePerUnit": "",

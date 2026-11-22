@@ -328,3 +328,73 @@ export const trackMapClick = () => {
     destination: "Jaipur Workshop",
   });
 };
+
+/**
+ * Track Standard GA4 / GTM / GMC E-commerce Begin Checkout
+ */
+export const trackBeginCheckout = (product, quantity = 1, unitPrice = 0) => {
+  if (!product) return;
+  const price = unitPrice || Number(String(product.discountPrice || product.price || "0").replace(/[^\d.]/g, "")) || 0;
+  const totalPrice = price * quantity;
+
+  pushEvent("begin_checkout", {
+    currency: "INR",
+    value: totalPrice,
+    items: [
+      {
+        item_id: product._id,
+        item_name: product.name,
+        item_category: product.categoryId?.name || "Gemstone Statues",
+        price: price,
+        quantity: quantity,
+      },
+    ],
+  });
+
+  if (typeof window !== "undefined" && typeof window.fbq === "function") {
+    try {
+      window.fbq("track", "InitiateCheckout", {
+        content_name: product.name,
+        content_ids: [product._id],
+        value: totalPrice,
+        currency: "INR",
+      });
+    } catch (e) {}
+  }
+};
+
+/**
+ * Track Standard GA4 / GTM / GMC E-commerce Purchase (Conversions for Google Shopping)
+ */
+export const trackPurchase = (orderData, product) => {
+  if (!orderData) return;
+
+  const value = Number(orderData.totalPrice) || 0;
+  pushEvent("purchase", {
+    transaction_id: orderData.orderId,
+    value: value,
+    currency: "INR",
+    tax: 0,
+    shipping: 0,
+    items: [
+      {
+        item_id: product?._id || orderData.orderId,
+        item_name: orderData.productName || product?.name || "Gemstone Product",
+        item_category: product?.categoryId?.name || "Gemstone Statues",
+        price: Number(orderData.unitPrice) || value,
+        quantity: orderData.quantity || 1,
+      },
+    ],
+  });
+
+  if (typeof window !== "undefined" && typeof window.fbq === "function") {
+    try {
+      window.fbq("track", "Purchase", {
+        value: value,
+        currency: "INR",
+        content_name: orderData.productName,
+        content_type: "product",
+      });
+    } catch (e) {}
+  }
+};

@@ -14,6 +14,7 @@ import {
   FaExclamationTriangle,
 } from "react-icons/fa";
 import { getProductImageUrl } from "../utils/imageOptimizer";
+import { trackBeginCheckout, trackPurchase } from "../utils/analytics";
 
 const calculateDeliveryDate = (code) => {
   if (!code || !/^\d{6}$/.test(code)) return null;
@@ -82,6 +83,9 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
 
   useEffect(() => {
     if (isOpen) {
+      if (product) {
+        trackBeginCheckout(product, quantity, unitPrice);
+      }
       try {
         const saved = localStorage.getItem("cj_delivery_pincode");
         if (saved && /^\d{6}$/.test(saved)) {
@@ -195,6 +199,10 @@ const BuyNowModal = ({ isOpen, onClose, product }) => {
       deliveryAddress: `${address}, ${city}, ${state}${pincode ? ` - ${pincode}` : ""}`,
       placedAt: new Date().toISOString()
     };
+
+    // Track standard GA4 / GTM / GMC E-commerce Purchase conversion
+    trackPurchase(orderData, product);
+
     try {
       const prev = JSON.parse(localStorage.getItem("cj_store_orders") || "[]");
       localStorage.setItem("cj_store_orders", JSON.stringify([orderData, ...prev]));
