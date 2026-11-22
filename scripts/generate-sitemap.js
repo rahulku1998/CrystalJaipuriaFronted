@@ -309,7 +309,7 @@ const generateSitemap = async () => {
       .replace(/\s*-\s*100%\s*certified/gi, "")
       .replace(/\s*100%\s*certified/gi, "")
       .trim();
-    const cleanDesc = (prod.detail || prod.description || cleanName)
+    const cleanDesc = (prod.metaDescription || prod.detail || prod.description || cleanName)
       .replace(/<[^>]*>?/gm, "")
       .replace(/100%\s*certified\s*/gi, "")
       .replace(/(\b100%\s*)?natural\s+natural\b/gi, "Natural")
