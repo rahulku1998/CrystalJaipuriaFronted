@@ -2246,7 +2246,818 @@ export const FALLBACK_BLOGS = [
         Explore our curated collection of certified natural gemstone God statues, Sphatik Shivlings, and Vastu decor at Crystal Jaipuria. Each creation is individually sculpted in our Jaipur workshops and delivered in luxury gift-ready protective packaging worldwide.
       </p>
     `
+  },
+
+  // ========================================================
+  // BLOG 7: How to Choose a Gemstone Sculpture for Your Home, Office or Gift
+  // ========================================================
+  {
+    _id: "blog_how_to_choose_gemstone_sculpture",
+    title: "How to Choose a Gemstone Sculpture for Your Home, Office or Gift",
+    metaTitle: "How to Choose a Gemstone Sculpture | Buyer's Guide | Crystal Jaipuria",
+    metaDescription: "Learn how to choose a gemstone sculpture by material, size, design, craftsmanship and budget. A practical guide for home décor, offices and gifting.",
+    description: "Learn how to choose a gemstone sculpture by material, size, design, craftsmanship and budget. A practical guide for home décor, offices and gifting.",
+    keyTakeaways: [
+      "Select sculpture dimensions and weight based on the designated space (living console, office desk, or mandir altar).",
+      "Evaluate gemstone material characteristics (transparency, Mohs hardness, natural inclusions, and care needs) beyond colour alone.",
+      "Inspect craftsmanship standards including anatomical symmetry, facial feature detailing, polishing transitions, and structural stability.",
+      "Understand budget factors—mineral rarity, artisan carving hours, and documentation—while ensuring secure transit packaging."
+    ],
+    slug: "how-to-choose-gemstone-sculpture",
+    aliases: [
+      "how-to-choose-a-gemstone-sculpture-for-your-home-office-or-gift",
+      "how-to-choose-gemstone-sculptures",
+      "choosing-gemstone-carvings-guide"
+    ],
+    category: "Buyer's Guide",
+    author: "Crystal Jaipuria Master Gemologists",
+    readTime: "9 min read",
+    createdAt: "2026-11-22T00:00:00.000Z",
+    updatedAt: "2026-11-22T00:00:00.000Z",
+    coverImage: {
+      url: "/images/how-to-choose-gemstone-sculpture.webp",
+      alt: "How to Choose a Gemstone Sculpture for Home, Office or Gift - Crystal Jaipuria"
+    },
+    keywords: [
+      "how to choose a gemstone sculpture",
+      "gemstone sculptures for home décor",
+      "gemstone decorative gifts",
+      "choosing gemstone carvings",
+      "natural stone sculptures",
+      "gemstone décor ideas",
+      "jaipur gemstone sculptures",
+      "crystal idol buying guide"
+    ],
+    about: [
+      { "@type": "Thing", "name": "Gemstone Carving", "sameAs": "https://en.wikipedia.org/wiki/Carving" },
+      { "@type": "Thing", "name": "Sculpture", "sameAs": "https://en.wikipedia.org/wiki/Sculpture" },
+      { "@type": "Thing", "name": "Interior Design", "sameAs": "https://en.wikipedia.org/wiki/Interior_design" }
+    ],
+    mentions: [
+      { "@type": "WebPage", "name": "God Statues", "url": "https://www.crystaljaipuria.com/god-statues" },
+      { "@type": "WebPage", "name": "Crystal Statues", "url": "https://www.crystaljaipuria.com/crystal-statues" },
+      { "@type": "WebPage", "name": "Luxurious Idols & Decor", "url": "https://www.crystaljaipuria.com/luxurious-idols-decor" }
+    ],
+    faqs: [
+      {
+        question: "Which gemstone sculpture is suitable for home décor?",
+        answer: "The right choice depends on your interior style, available space, preferred material, and decorative purpose. Rose quartz, clear quartz, and green jade offer subtle neutral harmony, while deep blue lapis lazuli and amethyst create bold accent focal points."
+      },
+      {
+        question: "How do I select the correct sculpture size?",
+        answer: "Always measure the display surface width, depth, and vertical clearance before ordering. Compare actual product dimensions in inches or centimetres rather than relying on perspective photos alone."
+      },
+      {
+        question: "Are natural gemstone sculptures identical?",
+        answer: "No. Natural earth-mined stones vary in colour zoning, internal veil patterns, transparency, and inclusions. Each handcrafted gemstone carving is an organic, one-of-a-kind artwork."
+      },
+      {
+        question: "What should I check before buying a gemstone sculpture online?",
+        answer: "Verify the exact mineral variety, actual weight and dimensions, multi-angle high-resolution photographs, artisan finishing standards, safe transit packaging, and return policies."
+      },
+      {
+        question: "Can gemstone sculptures be customised?",
+        answer: "Yes. Experienced manufacturers like Crystal Jaipuria in Jaipur offer custom bespoke deity and decorative carvings from 2 inches to 5+ feet based on material availability and client specifications."
+      },
+      {
+        question: "How should gemstone sculptures be displayed safely?",
+        answer: "Place sculptures on stable, level furniture away from high-traffic edges where accidental bumps might occur. Avoid direct prolonged sunlight for light-sensitive stones like amethyst or rose quartz."
+      }
+    ],
+    content: `
+      <p class="text-base sm:text-lg text-slate-700 leading-relaxed mb-5">
+        Choosing a gemstone sculpture involves far more than simply selecting an attractive colour or aesthetic silhouette. A truly exceptional piece must harmonize with its intended architectural location, available spatial proportions, decorative style, and practical structural requirements.
+      </p>
+      <p class="text-base sm:text-lg text-slate-700 leading-relaxed mb-6">
+        Natural gemstone sculptures encompass an expansive variety of materials, geometries, dimensions, and craftsmanship traditions. While some feature minimalist polished geometric forms, others showcase intricate hand-carved figurines, symbolic animals, sacred religious deities, and heirloom decorative centerpieces.
+      </p>
+      <p class="text-base sm:text-lg text-slate-700 leading-relaxed mb-8">
+        The most reliable method to choose a gemstone sculpture is to methodically evaluate its <strong>mineral material, physical dimensions, artistic design, lapidary finishing, intended environment, and budget</strong> before making a purchase. This comprehensive guide outlines the critical criteria to consider when investing in a gemstone carving for a home, corporate workspace, or commemorative gift.
+      </p>
+
+      <!-- Key Takeaways Highlight Box -->
+      <div class="my-8 p-6 rounded-2xl bg-amber-50/60 border border-amber-200 shadow-2xs">
+        <h3 class="text-lg font-bold text-amber-950 mb-3 flex items-center gap-2">
+          <span class="text-amber-700 text-xl">✨</span> Core Selection Summary
+        </h3>
+        <ul class="space-y-2 text-sm text-amber-900 leading-relaxed">
+          <li class="flex items-start gap-2">
+            <span class="text-amber-700 font-bold mt-0.5">&bull;</span>
+            <span><strong>Location First:</strong> Align the sculpture's scale and weight with the furniture stability and lighting of the room.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-amber-700 font-bold mt-0.5">&bull;</span>
+            <span><strong>Material Awareness:</strong> Choose minerals suited to the ambient environment (e.g., Mohs hardness, light sensitivity, and cleaning needs).</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-amber-700 font-bold mt-0.5">&bull;</span>
+            <span><strong>Craftsmanship Inspection:</strong> Look beyond surface polish to examine anatomical proportions, undercut details, and base balance.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-amber-700 font-bold mt-0.5">&bull;</span>
+            <span><strong>Transparent Verification:</strong> Request precise measurements, weight verification, and authenticity certification before ordering.</span>
+          </li>
+        </ul>
+      </div>
+
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-6 border-t border-slate-200">
+        1. Decide Where the Sculpture Will Be Displayed
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        The selection process must always begin with the physical space. A sculpture conceived as a striking living-room focal point demands different proportions and visual presence than an intimate piece curated for an executive desk or an apartment reception foyer.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+        <div class="p-5 rounded-xl bg-white border border-slate-200/90 shadow-2xs">
+          <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-600"></span> Living Room Displays
+          </h4>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Larger sculptures serve as compelling statement centerpieces on console tables, display credenzas, and dedicated niches. Ensure sufficient negative space around the sculpture so it does not visually crowd neighboring accessories.
+          </p>
+        </div>
+        <div class="p-5 rounded-xl bg-white border border-slate-200/90 shadow-2xs">
+          <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-600"></span> Executive Office & Desks
+          </h4>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Workplace sculptures should be stable, compact (3 to 6 inches), and proportionate to the desk surface. Pieces in reception lounges or conference rooms should convey quiet authority and professional elegance.
+          </p>
+        </div>
+        <div class="p-5 rounded-xl bg-white border border-slate-200/90 shadow-2xs">
+          <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-600"></span> Sacred Home Temple (Pooja Altar)
+          </h4>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            For religious sculptures, evaluate traditional Vedic Shilpa Shastra proportions, suitable Jalabhishek tolerance, and altar vertical clearance to ensure reverence and ritual ease.
+          </p>
+        </div>
+        <div class="p-5 rounded-xl bg-white border border-slate-200/90 shadow-2xs">
+          <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-600"></span> Bedroom & Personal Sanctuaries
+          </h4>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Soft, harmonizing minerals like rose quartz or calming clear quartz work best on bedside consoles and vanity tables, encouraging emotional relaxation and serene balance.
+          </p>
+        </div>
+      </div>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Display location also imposes structural demands. Substantial natural sculptures (weighing 3 kg to 20+ kg) require solid hardwood or reinforced stone consoles with dependable load-bearing support.
+      </p>
+
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-6 border-t border-slate-200">
+        2. Choose the Right Gemstone Material
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        The mineral composition defines the sculpture's optical brilliance, tactile weight, physical durability (Mohs hardness), and long-term care requirements. Do not select a stone based solely on surface colour; understand its mineral properties:
+      </p>
+      <div class="space-y-4 my-6">
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <h4 class="font-bold text-slate-900">Clear Quartz (Sphatik) &bull; Mohs 7</h4>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1">
+              Revered for optical brilliance and natural internal veil inclusions. Highly durable for sacred lingams, geometric yantras, and architectural carvings.
+            </p>
+          </div>
+          <a href="/crystal-statues" class="shrink-0 text-xs font-bold text-amber-800 hover:text-amber-900 underline">Explore Quartz &rarr;</a>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <h4 class="font-bold text-slate-900">Rose Quartz &bull; Mohs 7</h4>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1">
+              Celebrated for delicate translucent blush-pink hues. Ideal for love-bird swans, compassionate Ganesha figurines, and tranquil bedroom decor.
+            </p>
+          </div>
+          <a href="/crystal-statues" class="shrink-0 text-xs font-bold text-amber-800 hover:text-amber-900 underline">Explore Rose Quartz &rarr;</a>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <h4 class="font-bold text-slate-900">Green Jade (Nephrite & Jadeite) &bull; Mohs 6.0–6.5</h4>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1">
+              Legendary for its microcrystalline fibrous toughness. Resistant to chipping, jade is the historical medium of choice for heirloom deity idols and imperial carvings.
+            </p>
+          </div>
+          <a href="/god-statues" class="shrink-0 text-xs font-bold text-amber-800 hover:text-amber-900 underline">Explore Jade &rarr;</a>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <h4 class="font-bold text-slate-900">Lapis Lazuli &bull; Mohs 5.0–5.5</h4>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1">
+              Metamorphic deep celestial blue rock flecked with golden brassy pyrite. Offers dramatic visual richness for executive desks, Vastu horses, and temple murtis.
+            </p>
+          </div>
+          <a href="/god-statues" class="shrink-0 text-xs font-bold text-amber-800 hover:text-amber-900 underline">Explore Lapis &rarr;</a>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <h4 class="font-bold text-slate-900">Natural Amethyst &bull; Mohs 7</h4>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1">
+              Vibrant lilac to royal velvet purple quartz. Captivating under natural daylight, perfect for meditating Buddhas, protective angels, and spiritual sanctuaries.
+            </p>
+          </div>
+          <a href="/crystal-statues" class="shrink-0 text-xs font-bold text-amber-800 hover:text-amber-900 underline">Explore Amethyst &rarr;</a>
+        </div>
+      </div>
+
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-6 border-t border-slate-200">
+        3. Select the Appropriate Size and Physical Dimensions
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        A frequent misstep in acquiring sculptures online is relying on perspective studio photographs. Macro photography and close-up camera angles can make a 2-inch carving appear monumental, or cause a 15-inch statement statue to look compact.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Always verify the three essential spatial metrics:
+      </p>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li><strong>Overall Height:</strong> From the base bottom to the highest carving crest or arch (Prabhavali).</li>
+        <li><strong>Footprint Base (Width &times; Depth):</strong> Determines whether the sculpture fits securely on the shelf, niche, or display pedestal without hanging over edges.</li>
+        <li><strong>Total Density & Weight:</strong> Natural minerals possess substantial specific gravities (2.65 g/cm³ for quartz up to 4.00 g/cm³ for corundum ruby and sapphire). Ensure your furniture supports the weight.</li>
+      </ul>
+
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-6 border-t border-slate-200">
+        4. Choose a Design That Suits the Purpose
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Gemstone carvings encompass both sacred and secular iconography. Select an artistic archetype aligned with your intent:
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
+        <div class="p-4 rounded-xl bg-white border border-slate-200">
+          <h4 class="font-bold text-slate-900 mb-1">Deities & Spiritual</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Ganesha, Shiva, Krishna, Mahalakshmi, and Jain Tirthankaras carved adhering to traditional Shilpa Shastra iconography for daily worship and temple shrines.
+          </p>
+        </div>
+        <div class="p-4 rounded-xl bg-white border border-slate-200">
+          <h4 class="font-bold text-slate-900 mb-1">Vastu & Animal Figurines</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Elephants for strength and royal dignity, galloping horses for career momentum, tortoise for longevity, and swans for grace in reception foyers.
+          </p>
+        </div>
+        <div class="p-4 rounded-xl bg-white border border-slate-200">
+          <h4 class="font-bold text-slate-900 mb-1">Abstract & Contemporary</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Polished mineral monoliths, organic flame forms, natural freeform druzy geode slices, and obelisks tailored for modern minimalist living spaces.
+          </p>
+        </div>
+      </div>
+
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-6 border-t border-slate-200">
+        5. Evaluate the Level of Craftsmanship
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Craftsmanship defines the artistic soul and longevity of a stone carving. Examine these key hallmarks:
+      </p>
+      <ul class="space-y-3 text-slate-700 mb-6">
+        <li class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+          <strong class="text-slate-900">Anatomical Harmony & Proportions:</strong> Check the symmetry of limbs, trunk curl in Ganesha idols, facial calmness, and the delicate posture of ornamental figurines.
+        </li>
+        <li class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+          <strong class="text-slate-900">Surface Finish & Diamond Polish:</strong> High-grade lapidary work displays an even mirror lustre across curved contours without dull blotches, abrasive wheel gouges, or uneven pitting.
+        </li>
+        <li class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+          <strong class="text-slate-900">Undercuts and Fine Piercing:</strong> Skilled artisans invest dozens of hours carefully carving negative spaces under arms, jewelry ornaments, and crown plumes without shattering the natural stone matrix.
+        </li>
+        <li class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+          <strong class="text-slate-900">Base Stability:</strong> Ensure the base is level and ground smooth so the idol stands firmly without wobbling or risking accidental tipping.
+        </li>
+      </ul>
+
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-6 border-t border-slate-200">
+        6. How to Select a Gemstone Sculpture as a Gift
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Gemstone sculptures are enduring, heirloom-grade gifts for housewarmings (Griha Pravesh), weddings, corporate milestones, and Diwali celebrations:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+        <div class="p-4 rounded-xl bg-amber-50/50 border border-amber-200">
+          <h4 class="font-bold text-amber-950 mb-1">Housewarmings & Diwali</h4>
+          <p class="text-xs sm:text-sm text-amber-900 leading-relaxed">
+            Sphatik Ganesha or Green Jade Lakshmi-Ganesha pairs symbolize prosperity, auspicious beginnings, and positive spiritual vibrations for a new home.
+          </p>
+        </div>
+        <div class="p-4 rounded-xl bg-amber-50/50 border border-amber-200">
+          <h4 class="font-bold text-amber-950 mb-1">Weddings & Anniversaries</h4>
+          <p class="text-xs sm:text-sm text-amber-900 leading-relaxed">
+            Rose quartz Radha Krishna or entwined swan pairs represent enduring affection, harmony, emotional warmth, and mutual devotion.
+          </p>
+        </div>
+        <div class="p-4 rounded-xl bg-amber-50/50 border border-amber-200">
+          <h4 class="font-bold text-amber-950 mb-1">Corporate & Retirement Gifts</h4>
+          <p class="text-xs sm:text-sm text-amber-900 leading-relaxed">
+            Lapis lazuli eagles, tiger eye galloping horses, or polished quartz pyramids symbolize strategic vision, wisdom, leadership, and stability.
+          </p>
+        </div>
+        <div class="p-4 rounded-xl bg-amber-50/50 border border-amber-200">
+          <h4 class="font-bold text-amber-950 mb-1">Packaging Considerations</h4>
+          <p class="text-xs sm:text-sm text-amber-900 leading-relaxed">
+            Ensure the gift arrives in a velvet-lined satin gift box accompanied by a certificate of authenticity detailing the mineral origins and gemstone care instructions.
+          </p>
+        </div>
+      </div>
+
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-6 border-t border-slate-200">
+        7. Buyer's Pre-Purchase Verification Checklist
+      </h2>
+      <div class="overflow-x-auto my-6">
+        <table class="w-full text-left text-sm border-collapse border border-slate-200 rounded-xl overflow-hidden shadow-2xs">
+          <thead class="bg-slate-100 text-slate-800 font-bold border-b border-slate-200">
+            <tr>
+              <th class="p-3 border-r border-slate-200">Checkpoint</th>
+              <th class="p-3">What to Verify Before Ordering</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200 text-slate-700 bg-white">
+            <tr class="hover:bg-slate-50">
+              <td class="p-3 font-semibold text-slate-900 border-r border-slate-200">Material Authenticity</td>
+              <td class="p-3">Confirm exact geological mineral variety; ensure zero composite powders or synthetic resins.</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-3 font-semibold text-slate-900 border-r border-slate-200">Exact Dimensions</td>
+              <td class="p-3">Height, base width, and depth in inches or cm; verify spatial clearance for your space.</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-3 font-semibold text-slate-900 border-r border-slate-200">Weight Verification</td>
+              <td class="p-3">Actual recorded weight in grams, kg, or carats to confirm natural mineral density.</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-3 font-semibold text-slate-900 border-r border-slate-200">Carving Quality</td>
+              <td class="p-3">Request multi-angle 360-degree high-definition photos or video inspection of the actual piece.</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-3 font-semibold text-slate-900 border-r border-slate-200">Surface Finish</td>
+              <td class="p-3">Inspect for unintentional chips, deep fractures, or abrasive tool marks on focal surfaces.</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-3 font-semibold text-slate-900 border-r border-slate-200">Documentation</td>
+              <td class="p-3">Independent gemological laboratory test report or manufacturer authenticity guarantee.</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-3 font-semibold text-slate-900 border-r border-slate-200">Packaging & Transit</td>
+              <td class="p-3">Custom multi-layer foam and reinforced wooden crate packaging with full transit insurance.</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-3 font-semibold text-slate-900 border-r border-slate-200">Return Policy</td>
+              <td class="p-3">Clear damage replacement guarantees and documented transit insurance coverage.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="my-8 p-6 rounded-2xl bg-slate-900 text-white">
+        <h3 class="text-xl font-bold mb-2">Explore Certified Gemstone Carvings from Jaipur</h3>
+        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+          Browse our curated artisanal collections at Crystal Jaipuria, handcrafted by master lapidary sculptors in Sanganer, Jaipur since 1989.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/god-statues" class="px-4 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition">Explore God Statues</a>
+          <a href="/crystal-statues" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold border border-slate-700 transition">View Crystal Statues</a>
+          <a href="/luxurious-idols-decor" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold border border-slate-700 transition">Luxurious Idols & Decor</a>
+        </div>
+      </div>
+    `
+  },
+
+
+  // ========================================================
+  // BLOG 8: Hand-Carved vs Machine-Made Stone Decor: Craftsmanship, Finish and Quality
+  // ========================================================
+  {
+    _id: "blog_hand_carved_vs_machine_made_stone_decor",
+    title: "Hand-Carved vs Machine-Made Stone Decor: Craftsmanship, Finish and Quality",
+    metaTitle: "Hand-Carved vs Machine-Made Stone Decor | Craftsmanship & Quality | Crystal Jaipuria",
+    metaDescription: "Compare hand-carved and machine-made stone décor. Understand carving techniques, craftsmanship, finishing, consistency and what to check before buying.",
+    description: "Compare hand-carved and machine-made stone décor. Understand carving techniques, craftsmanship, finishing, consistency and what to check before buying.",
+    keyTakeaways: [
+      "Hand carving allows master artisans to adapt instinctively to natural stone variations, mineral veining, and delicate undercuts, imparting one-of-a-kind artistic soul.",
+      "Machine carving (CNC milling, rotary profiling, automated saws) provides high dimensional repeatability, symmetrical consistency, and rapid production scaling.",
+      "High-end gemstone sculptures rarely rely on a single process; leading Jaipur lapidaries combine machine-assisted rough blocking with meticulous manual carving and multi-stage hand-polishing.",
+      "Quality evaluation should always focus on finished artistic proportions, smooth polish transitions, and certified material authenticity rather than simplistic marketing labels."
+    ],
+    slug: "hand-carved-vs-machine-made-stone-decor",
+    aliases: [
+      "hand-carved-vs-machine-made-stone-decor-craftsmanship-finish-and-quality",
+      "hand-carved-vs-machine-made",
+      "stone-carving-techniques-guide"
+    ],
+    category: "Craftsmanship",
+    author: "Crystal Jaipuria Master Gemologists",
+    readTime: "10 min read",
+    createdAt: "2026-11-22T00:00:00.000Z",
+    updatedAt: "2026-11-22T00:00:00.000Z",
+    coverImage: {
+      url: "/images/hand-carved-vs-machine-made-stone-decor.webp",
+      alt: "Hand-Carved vs Machine-Made Stone Decor - Craftsmanship, Finish and Quality - Crystal Jaipuria"
+    },
+    keywords: [
+      "hand carved vs machine made stone decor",
+      "handmade stone sculptures",
+      "machine carved stone products",
+      "stone carving techniques",
+      "gemstone carving craftsmanship",
+      "handcrafted gemstone statues",
+      "jaipur stone carving",
+      "cnc stone carving vs hand carving"
+    ],
+    about: [
+      { "@type": "Thing", "name": "Stone Carving", "sameAs": "https://en.wikipedia.org/wiki/Stone_carving" },
+      { "@type": "Thing", "name": "Lapidary", "sameAs": "https://en.wikipedia.org/wiki/Lapidary" },
+      { "@type": "Thing", "name": "Craftsmanship", "sameAs": "https://en.wikipedia.org/wiki/Craftsmanship" },
+      { "@type": "Thing", "name": "Computer numerical control", "sameAs": "https://en.wikipedia.org/wiki/Computer_numerical_control" }
+    ],
+    mentions: [
+      { "@type": "WebPage", "name": "Crystal Statues", "url": "https://www.crystaljaipuria.com/crystal-statues" },
+      { "@type": "WebPage", "name": "God Statues", "url": "https://www.crystaljaipuria.com/god-statues" },
+      { "@type": "WebPage", "name": "About Us", "url": "https://www.crystaljaipuria.com/about" }
+    ],
+    faqs: [
+      {
+        question: "Is hand-carved stone décor always better than machine-made décor?",
+        answer: "No. Actual quality depends on the raw mineral grade, design complexity, workmanship, and finishing standards. A poorly executed hand carving with visible fractures is inferior to a precision machine-cut piece, whereas a master artisan hand carving possesses unique expressive character and nuance that machinery cannot duplicate."
+      },
+      {
+        question: "Can machines create intricate, detailed gemstone sculptures?",
+        answer: "Yes. Advanced multi-axis CNC routers and ultrasonic carving machines can carve complex geometries, repeatable relief patterns, and precise dimensions. However, delicate anatomical undercuts, facial bhavas, and micro-polishing in hard-to-reach recesses still require skilled artisan handwork."
+      },
+      {
+        question: "Are handmade gemstone sculptures identical across units?",
+        answer: "Not necessarily. Individual pieces can vary due to natural material characteristics and manual production methods. Natural earth-mined stones have unique crystal structures, colour banding, and internal inclusions, ensuring that every handcrafted statue is inherently one of a kind."
+      },
+      {
+        question: "What is machine-assisted stone carving?",
+        answer: "Machine-assisted carving combines specialized equipment for primary block cutting and rough bulk shaping with human artisan involvement in design, anatomical detailing, undercut refinement, and progressive multi-stage polishing."
+      },
+      {
+        question: "How can I identify a hand-finished stone sculpture?",
+        answer: "Ask the manufacturer about their production process and inspect surface transitions, fine curves, and recessed corners. Hand-finished pieces display subtle artisan tool marks, natural organic flowing curves, and meticulous polish even within deep drapery folds that standard mechanical tools cannot reach."
+      },
+      {
+        question: "Which carving method is suitable for wholesale production?",
+        answer: "The suitable method depends on order volume, design complexity, mineral hardness, consistency requirements, and production lead times. Machine-assisted roughing with artisan hand-finishing is generally the optimal solution for commercial and wholesale orders requiring both scale and fine aesthetics."
+      }
+    ],
+    content: `
+      <p class="text-base sm:text-lg text-slate-700 leading-relaxed mb-5">
+        Stone décor products are created using a spectrum of carving and manufacturing techniques. While some pieces require hundreds of hours of painstaking manual craftsmanship by master artisans, others utilize sophisticated computer-controlled machinery for cutting, shaping, profiling, and polishing.
+      </p>
+      <p class="text-base sm:text-lg text-slate-700 leading-relaxed mb-6">
+        Both approaches are capable of producing visually striking decorative objects and sacred artifacts. However, they differ substantially in <strong>design flexibility, dimensional repeatability, anatomical detailing, production speed, and labour requirements</strong>.
+      </p>
+      <p class="text-base sm:text-lg text-slate-700 leading-relaxed mb-8">
+        The fundamental difference between hand-carved and machine-made stone décor lies in the level and type of human involvement during the sculpting journey. Today, modern lapidary studios in Jaipur frequently combine both methods—harnessing the speed and precision of machinery for rough blocking while relying on artisan mastery for expressive detailing and surface finishing. Understanding these methodologies empowers collectors and interior designers to evaluate gemstone figurines and stone sculptures with discernment.
+      </p>
+
+      <!-- Key Takeaways Highlight Box -->
+      <div class="my-8 p-6 rounded-2xl bg-amber-50/60 border border-amber-200 shadow-2xs">
+        <h3 class="text-lg font-bold text-amber-950 mb-3 flex items-center gap-2">
+          <span class="text-amber-700 text-xl">✨</span> Core Comparison Takeaways
+        </h3>
+        <ul class="space-y-2 text-sm text-amber-900 leading-relaxed">
+          <li class="flex items-start gap-2">
+            <span class="text-amber-700 font-bold mt-0.5">&bull;</span>
+            <span><strong>Artisan Adaptability:</strong> Hand carving allows sculptors to read natural crystal grain, adjust for mineral inclusions, and sculpt expressive facial contours.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-amber-700 font-bold mt-0.5">&bull;</span>
+            <span><strong>Machine Precision:</strong> Automated equipment achieves exact dimensional repeatability and efficient batch production for geometric designs.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-amber-700 font-bold mt-0.5">&bull;</span>
+            <span><strong>The Hybrid Reality:</strong> High-end gemstone sculptures frequently employ machine-assisted initial blocking followed by manual carving and diamond hand-polishing.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-amber-700 font-bold mt-0.5">&bull;</span>
+            <span><strong>Holistic Evaluation:</strong> Finished artistic symmetry, surface polish uniformity, and certified gemstone authenticity matter far more than simplistic marketing claims.</span>
+          </li>
+        </ul>
+      </div>
+
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-6 border-t border-slate-200">
+        1. What Is Hand-Carved Stone Décor?
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Hand-carved stone décor refers to artifacts shaped through manual craftsmanship using tools directed entirely by skilled human artisans. Depending on the material hardness and design complexity, these tools range from traditional steel chisels, hammers, and wooden laps to specialized rotary diamond burrs, abrasives, and hand-held flexible shafts.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        The sculptor works subtractively, gradually removing material layer by layer to unveil the required form, anatomical proportions, and delicate surface details. For intricate sacred idols and gemstone sculptures, the master carving process encompasses seven deliberate phases:
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 my-6">
+        <div class="p-4 rounded-xl bg-white border border-slate-200">
+          <span class="text-xs font-bold text-amber-800 uppercase tracking-wider">Step 1</span>
+          <h4 class="font-bold text-slate-900 mt-1">Geological Examination</h4>
+          <p class="text-xs text-slate-600 mt-1">Studying the rough crystal's natural grain, cleavage lines, colour zoning, and internal veil inclusions.</p>
+        </div>
+        <div class="p-4 rounded-xl bg-white border border-slate-200">
+          <span class="text-xs font-bold text-amber-800 uppercase tracking-wider">Step 2</span>
+          <h4 class="font-bold text-slate-900 mt-1">Iconographic Layout</h4>
+          <p class="text-xs text-slate-600 mt-1">Marking reference coordinates and Shilpa Shastra proportions directly onto the stone face.</p>
+        </div>
+        <div class="p-4 rounded-xl bg-white border border-slate-200">
+          <span class="text-xs font-bold text-amber-800 uppercase tracking-wider">Step 3</span>
+          <h4 class="font-bold text-slate-900 mt-1">Rough Chipping & Massing</h4>
+          <p class="text-xs text-slate-600 mt-1">Carefully knocking away peripheral waste rock to isolate the primary anatomical volume.</p>
+        </div>
+        <div class="p-4 rounded-xl bg-white border border-slate-200">
+          <span class="text-xs font-bold text-amber-800 uppercase tracking-wider">Step 4</span>
+          <h4 class="font-bold text-slate-900 mt-1">Establishing Primary Form</h4>
+          <p class="text-xs text-slate-600 mt-1">Carving torso, limbs, crown, and pedestal with careful spatial balance.</p>
+        </div>
+        <div class="p-4 rounded-xl bg-white border border-slate-200">
+          <span class="text-xs font-bold text-amber-800 uppercase tracking-wider">Step 5</span>
+          <h4 class="font-bold text-slate-900 mt-1">Intricate Detailing & Undercuts</h4>
+          <p class="text-xs text-slate-600 mt-1">Sculpting facial features, eyes, jewelry ornaments, drapery folds, and negative spaces.</p>
+        </div>
+        <div class="p-4 rounded-xl bg-white border border-slate-200">
+          <span class="text-xs font-bold text-amber-800 uppercase tracking-wider">Step 6 & 7</span>
+          <h4 class="font-bold text-slate-900 mt-1">Smoothing & Diamond Polish</h4>
+          <p class="text-xs text-slate-600 mt-1">Refining surfaces with emery grits, followed by multi-stage diamond paste buffing for brilliant lustre.</p>
+        </div>
+      </div>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Hand carving grants the artisan unmatched adaptability during production. If an unexpected colour vein or natural fissure appears within the mineral during carving, the sculptor can dynamically alter the posture, drapery angle, or ornament placement to incorporate or bypass the feature safely.
+      </p>
+
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-6 border-t border-slate-200">
+        2. What Is Machine-Made Stone Décor?
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Machine-made stone décor utilizes powered mechanical and automated equipment to execute some or all material-removal and shaping operations. In contemporary production facilities, machinery commonly includes:
+      </p>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li><strong>Diamond Bridge Saws:</strong> Heavy circular blades that cut large raw boulder blocks into rectilinear slabs with micron precision.</li>
+        <li><strong>Automated Grinding Wheels:</strong> Profile-shaping abrasive discs used for rough cylindrical or flat geometric outlines.</li>
+        <li><strong>Rotary & Ultrasonic Tools:</strong> High-frequency vibratory tools that carve intricate relief impressions without exerting mechanical stress on fragile stones.</li>
+        <li><strong>Multi-Axis CNC Carving Routers:</strong> Computer Numerical Control routers capable of tracing 3D CAD digital models directly into stone blocks.</li>
+        <li><strong>Mechanical Tumbling & Vibratory Polishers:</strong> Bulk polishing vessels that tumble small stone objects in abrasive slurries to achieve uniform gloss.</li>
+      </ul>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Machinery excels at achieving uniform dimensions, identical proportions, and rapid repeatability when manufacturing series of decorative items or architectural medallions. However, machine-made production does not mean human expertise is eliminated. Skilled operators must still prepare 3D CAD blueprints, calibrate spindle feed rates according to mineral hardness, align rough blocks, and perform post-machining inspection.
+      </p>
+
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-6 border-t border-slate-200">
+        3. Hand-Carved vs Machine-Made: Key Differences Comparison Table
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Neither method is universally superior; each satisfies specific aesthetic, architectural, and production needs. The table below illustrates how the two approaches compare across core parameters:
+      </p>
+      <div class="overflow-x-auto my-6">
+        <table class="w-full text-left text-sm border-collapse border border-slate-200 rounded-xl overflow-hidden shadow-2xs">
+          <thead class="bg-slate-100 text-slate-800 font-bold border-b border-slate-200">
+            <tr>
+              <th class="p-3 border-r border-slate-200">Factor</th>
+              <th class="p-3 border-r border-slate-200">Hand-Carved Stone Décor</th>
+              <th class="p-3">Machine-Made Stone Décor</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200 text-slate-700 bg-white">
+            <tr class="hover:bg-slate-50">
+              <td class="p-3 font-semibold text-slate-900 border-r border-slate-200">Main Process</td>
+              <td class="p-3 border-r border-slate-200">Manual shaping, progressive chiselling, and hand abrasive detailing</td>
+              <td class="p-3">Equipment-assisted, CNC router milling, or automated profilometry</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-3 font-semibold text-slate-900 border-r border-slate-200">Human Involvement</td>
+              <td class="p-3 border-r border-slate-200">Direct, continuous master artisan craftsmanship at every stage</td>
+              <td class="p-3">CAD design preparation, machine setup, tooling oversight, and manual finishing</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-3 font-semibold text-slate-900 border-r border-slate-200">Design Flexibility</td>
+              <td class="p-3 border-r border-slate-200">Dynamic; artisan instantly adapts to unexpected inclusions and crystal grain</td>
+              <td class="p-3">Rigidly governed by programmed 3D path; cannot adapt to hidden interior flaws</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-3 font-semibold text-slate-900 border-r border-slate-200">Consistency & Repeatability</td>
+              <td class="p-3 border-r border-slate-200">Individual artistic variations occur; every finished creation is unique</td>
+              <td class="p-3">High dimensional consistency across large multi-piece batches</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-3 font-semibold text-slate-900 border-r border-slate-200">Production Speed</td>
+              <td class="p-3 border-r border-slate-200">Time-intensive (days to months depending on sculpture scale and hardness)</td>
+              <td class="p-3">Rapid and highly efficient for standard repeatable geometric operations</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-3 font-semibold text-slate-900 border-r border-slate-200">Fine Detailing & Undercuts</td>
+              <td class="p-3 border-r border-slate-200">Deep negative spaces, intricate jewellery undercuts, and expressive facial eyes</td>
+              <td class="p-3">Constrained by machine tool axis angles; deep undercuts often require hand touch-up</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-3 font-semibold text-slate-900 border-r border-slate-200">Production Volume</td>
+              <td class="p-3 border-r border-slate-200">Best for one-of-a-kind heirlooms, sacred temple murtis, and bespoke art</td>
+              <td class="p-3">Ideal for high-volume commercial architectural runs and standardized items</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-3 font-semibold text-slate-900 border-r border-slate-200">Surface Finish Quality</td>
+              <td class="p-3 border-r border-slate-200">Soft, organic curves with deep mirror shine even in tight recesses</td>
+              <td class="p-3">Smooth on flat surfaces; step marks or tool paths may require manual buffering</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-6 border-t border-slate-200">
+        4. How Hand Carving Creates Individual Character & Artistic Soul
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Natural earth-mined gemstones are not uniform synthetic slabs. A single block of natural emerald rough, multi-coloured tourmaline, or banded agate exhibits variegated colour saturation, phantom crystal ghosts, and distinctive veining patterns.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        A master artisan utilizes these natural traits to elevate the piece:
+      </p>
+      <ul class="space-y-3 text-slate-700 mb-6">
+        <li class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+          <strong class="text-slate-900">Strategic Colour Placement:</strong> An artisan can orient a green inclusion in ruby-in-zoisite so that it becomes the ornate crown or lotus pedestal of a Ganesha carving, transforming an inclusion into an artistic triumph.
+        </li>
+        <li class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+          <strong class="text-slate-900">Expression & Bhava:</strong> In sacred deity sculpture, capturing the compassionate, divine expression (*bhava*) of Lakshmi or the tranquil meditation of Shiva requires micro-millimetre manual carving of the eyes and lips that rigid digital tooling cannot replicate.
+        </li>
+        <li class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+          <strong class="text-slate-900">Natural Organic Transitions:</strong> Hand-carved drapery and flowing hair cascade with natural fluidity, avoiding the rigid, sterile geometry typical of pure automated milling.
+        </li>
+      </ul>
+      <div class="p-4 rounded-xl bg-amber-50/70 border border-amber-200 text-sm text-amber-950 mb-6">
+        <strong>Important Note:</strong> Natural variations must not be confused with crude workmanship. Even a one-of-a-kind hand-carved statue must maintain strict structural equilibrium, clean anatomical balance, and professional surface polish.
+      </div>
+
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-6 border-t border-slate-200">
+        5. How Machinery Supports Modern Stone Carving
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Rather than replacing artisans, modern stone workshops integrate machinery to eliminate strenuous, low-skill physical toil. Heavy stone saws safely slice raw multi-ton boulder blocks into workable segments without micro-fracturing the stone through blunt hammer blows.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Automated grinding discs can remove 70% of redundant outer stone mass within hours—a task that previously took days of manual chisel labour. By delegating rough massing to machines, artisans can dedicate their full creative focus and energy to intricate anatomical detailing, ornate jewellery engraving, and mirror polishing.
+      </p>
+
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-6 border-t border-slate-200">
+        6. Why Many Stone Products Use Both Methods: The 6-Stage Hybrid Workflow
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        In high-end lapidary centers like Jaipur, the finest gemstone statues and décor pieces are produced through a collaborative hybrid workflow that maximizes both machine efficiency and manual artistry:
+      </p>
+      <div class="space-y-3 my-6">
+        <div class="flex items-start gap-4 p-4 rounded-xl bg-white border border-slate-200 shadow-2xs">
+          <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-800 font-bold flex items-center justify-center shrink-0">1</div>
+          <div>
+            <h4 class="font-bold text-slate-900">Stage 1: Material Preparation</h4>
+            <p class="text-sm text-slate-600 mt-1">Diamond circular saws slice boulder rough into balanced blocks aligned with the stone's optical axis.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 rounded-xl bg-white border border-slate-200 shadow-2xs">
+          <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-800 font-bold flex items-center justify-center shrink-0">2</div>
+          <div>
+            <h4 class="font-bold text-slate-900">Stage 2: Rough Profile Shaping</h4>
+            <p class="text-sm text-slate-600 mt-1">Grinding wheels or CNC routers carve the basic silhouette and principal spatial masses.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 rounded-xl bg-white border border-slate-200 shadow-2xs">
+          <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-800 font-bold flex items-center justify-center shrink-0">3</div>
+          <div>
+            <h4 class="font-bold text-slate-900">Stage 3: Artisan Detailing & Sculpting</h4>
+            <p class="text-sm text-slate-600 mt-1">Master sculptors manually carve facial expressions, crown ornaments, undercuts, and symbolic mudras.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 rounded-xl bg-white border border-slate-200 shadow-2xs">
+          <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-800 font-bold flex items-center justify-center shrink-0">4</div>
+          <div>
+            <h4 class="font-bold text-slate-900">Stage 4: Progressive Abrasive Refinement</h4>
+            <p class="text-sm text-slate-600 mt-1">Successively finer silicon carbide and diamond abrasive papers eliminate machining ridges and chisel marks.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 rounded-xl bg-white border border-slate-200 shadow-2xs">
+          <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-800 font-bold flex items-center justify-center shrink-0">5</div>
+          <div>
+            <h4 class="font-bold text-slate-900">Stage 5: Hand Polishing to High Gloss</h4>
+            <p class="text-sm text-slate-600 mt-1">Artisans use felt buffs and cerium/diamond oxide slurries to achieve a flawless, reflective glass-like polish.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 rounded-xl bg-white border border-slate-200 shadow-2xs">
+          <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-800 font-bold flex items-center justify-center shrink-0">6</div>
+          <div>
+            <h4 class="font-bold text-slate-900">Stage 6: Multi-Angle Quality Inspection</h4>
+            <p class="text-sm text-slate-600 mt-1">Final audit examining anatomical symmetry, absence of fractures, base flatness, and gemological authenticity.</p>
+          </div>
+        </div>
+      </div>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        A creation developed through this process is accurately described as <em>artisan hand-finished with machine-assisted preparation</em>. Ethical sellers avoid labeling such products as "100% hand-carved from start to finish" when mechanical preparation was employed.
+      </p>
+
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-6 border-t border-slate-200">
+        7. How to Evaluate the Quality of a Carved Stone Product
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        When evaluating decorative stone carvings or sacred idols, evaluate the physical piece using these six criteria:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+        <div class="p-5 rounded-xl bg-white border border-slate-200/90 shadow-2xs">
+          <h4 class="font-bold text-slate-900 mb-2">1. Design & Proportions</h4>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Ensure the piece looks visually stable and balanced. In deity sculptures, check whether arm proportions, crown height, and posture adhere to traditional iconography.
+          </p>
+        </div>
+        <div class="p-5 rounded-xl bg-white border border-slate-200/90 shadow-2xs">
+          <h4 class="font-bold text-slate-900 mb-2">2. Surface Finishing Transitions</h4>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Inspect the transition between curved and recessed zones. A high-quality piece exhibits continuous, uniform polish without dull grey abrasive patches or circular tooling scratches.
+          </p>
+        </div>
+        <div class="p-5 rounded-xl bg-white border border-slate-200/90 shadow-2xs">
+          <h4 class="font-bold text-slate-900 mb-2">3. Detail Execution</h4>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Scrutinize intricate areas: eyes, fingernails, jewellery beads, and fabric fringes. Master craftsmanship displays sharp, crisp definition rather than blunted, rounded-off contours.
+          </p>
+        </div>
+        <div class="p-5 rounded-xl bg-white border border-slate-200/90 shadow-2xs">
+          <h4 class="font-bold text-slate-900 mb-2">4. Bilateral Symmetry</h4>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            For symmetrical designs (such as Sphatik Shivlings or meditating figures), compare left and right profiles to confirm harmonious balance without unintended tilt.
+          </p>
+        </div>
+        <div class="p-5 rounded-xl bg-white border border-slate-200/90 shadow-2xs">
+          <h4 class="font-bold text-slate-900 mb-2">5. Structural Integrity</h4>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Examine thin projections, fingers, and halos for internal shock cracks or glued repairs. The bottom pedestal must sit completely flush and level on a flat surface.
+          </p>
+        </div>
+        <div class="p-5 rounded-xl bg-white border border-slate-200/90 shadow-2xs">
+          <h4 class="font-bold text-slate-900 mb-2">6. Certified Material Authenticity</h4>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Verify whether the carving is fashioned from solid, genuine natural earth-mined gemstone rather than bonded stone powder, glass, or dyed synthetic resin.
+          </p>
+        </div>
+      </div>
+
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-6 border-t border-slate-200">
+        8. Which Method Excels for Intricate Gemstone Sculptures?
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        The ideal carving method depends intimately on the mineral's physical characteristics. Precious and semi-precious gemstones possess varying crystal systems, Mohs hardness ratings, and cleavage tendencies:
+      </p>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li><strong>Fibrous & Tough Stones (Jade, Chalcedony, Agate):</strong> Highly resistant to fracturing under vibration. Machines can sculpt complex reliefs reliably, while artisans carve intricate openwork loops and interlocking rings.</li>
+        <li><strong>Crystalline & Cleavable Stones (Quartz, Amethyst, Tourmaline, Emerald):</strong> Possess internal stress fractures and distinct cleavage planes. Excessive machine router heat or high-speed vibration can shatter the entire block. Such minerals require the gentle, responsive touch of an artisan operating variable-speed water-cooled diamond burs.</li>
+      </ul>
+
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-6 border-t border-slate-200">
+        9. Essential Questions Buyers & Wholesale Clients Should Ask Manufacturers
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Before commissioning a bespoke deity statue or ordering wholesale collections, ask the supplier:
+      </p>
+      <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 my-6">
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li class="flex items-start gap-2">
+            <span class="text-amber-700 font-bold">1.</span>
+            <span>Which production stages are performed manually and which use automated machinery?</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-amber-700 font-bold">2.</span>
+            <span>Is the final facial detailing and surface polishing completed by master artisans?</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-amber-700 font-bold">3.</span>
+            <span>What exact geological mineral variety is used, and can gemological lab certification be provided?</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-amber-700 font-bold">4.</span>
+            <span>What degree of dimensional and colour variation should be anticipated across pieces?</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-amber-700 font-bold">5.</span>
+            <span>Can multi-angle high-resolution photographs or video walkthroughs of the exact piece be shared before dispatch?</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-amber-700 font-bold">6.</span>
+            <span>What transit packaging protocols (shockproof foam, wooden boxing) are used to prevent transit fracture?</span>
+          </li>
+        </ul>
+      </div>
+
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mt-10 mb-4 pt-6 border-t border-slate-200">
+        10. Jaipur's World-Renowned Gemstone Carving Heritage
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        For over three centuries, Jaipur, Rajasthan has stood as the global epicenter of colored gemstone cutting and lapidary sculpture. Supported by royal patronage since the reign of Maharaja Sawai Jai Singh II, generations of master stonecutters (*shilpkars*) have perfected the art of translating raw earth-mined quartz, jade, ruby, and lapis into breathtaking sacred icons.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Academic field documentation published by <strong>IIT Bombay's Industrial Design Centre through the D'Source National Design Innovation Initiative</strong> meticulously records Jaipur's traditional lapidary methods—demonstrating how sculptors sketch geometries directly onto stone slabs, execute diamond wheel roughing, perform specialized miniature carving, and buff surfaces with corundum-wood laps.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        This living heritage proves that gemstone carving transcends mechanical cutting; it represents an intimate dialogue between geological nature and human artistry. Today, Crystal Jaipuria preserves this venerable tradition, offering discerning collectors worldwide access to masterfully sculpted collections across our <a href="/crystal-statues" class="text-amber-800 hover:text-amber-900 font-semibold underline">Crystal Statues</a> and <a href="/god-statues" class="text-amber-800 hover:text-amber-900 font-semibold underline">God Statues</a> galleries.
+      </p>
+
+      <div class="my-8 p-6 rounded-2xl bg-slate-900 text-white">
+        <h3 class="text-xl font-bold mb-2">Explore Artisanal Gemstone Décor & Custom Statues</h3>
+        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+          Looking for a custom-carved deity idol or statement stone sculpture tailored to your precise space? Consult with our master lapidary sculptors in Jaipur for bespoke commissions.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/god-statues" class="px-4 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition">Browse God Statues</a>
+          <a href="/crystal-statues" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold border border-slate-700 transition">View Crystal Statues</a>
+          <a href="/about" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold border border-slate-700 transition">Our Jaipur Heritage</a>
+        </div>
+      </div>
+    `
   }
+
 ];
 
 /**

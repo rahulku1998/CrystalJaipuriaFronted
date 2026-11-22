@@ -2049,7 +2049,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Blog Detail Pages (7 Stories) -->
+  <!-- Blog Detail Pages (9 Stories) -->
   <url>
     <loc>https://www.crystaljaipuria.com/blog/gemstone-types-colours-patterns-inclusions</loc>
     <image:image>
@@ -2109,6 +2109,24 @@
     <image:image>
       <image:loc>https://res.cloudinary.com/dd6akzezt/image/upload/v1784822704/blogs/e4ochhkgcizlyf3v1fqm.jpg</image:loc>
       <image:title>Crystal Statues: A Unique and Meaningful Gift Idea | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/blog/how-to-choose-gemstone-sculpture</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/how-to-choose-gemstone-sculpture.webp</image:loc>
+      <image:title>How to Choose a Gemstone Sculpture for Your Home, Office or Gift | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/blog/hand-carved-vs-machine-made-stone-decor</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/hand-carved-vs-machine-made-stone-decor.webp</image:loc>
+      <image:title>Hand-Carved vs Machine-Made Stone Decor: Craftsmanship, Finish and Quality | Crystal Jaipuria</image:title>
     </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>

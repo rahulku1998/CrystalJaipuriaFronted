@@ -127,12 +127,12 @@ async function runApiChecks() {
   // -------------------------------------------------------------
   // STEP 4: Vite Production Build Test
   // -------------------------------------------------------------
-  console.log('\n🔍 Step 4: Running Production Build Verification...');
+  console.log('\n🔍 Step 4: Running Production Build & Pre-render Verification...');
   try {
-    execSync('npx vite build', { stdio: 'pipe' });
-    pass('Vite production build completed with 0 compilation errors');
+    execSync('npx vite build && node scripts/postbuild-clarity-assets.js && node scripts/prerender.js', { stdio: 'pipe' });
+    pass('Vite production build and pre-rendering completed with 0 compilation errors');
   } catch (err) {
-    fail('Vite build failed', err.stderr ? err.stderr.toString() : err.message);
+    fail('Vite build/prerender failed', err.stderr ? err.stderr.toString() : err.message);
   }
 
   console.log('\n═══════════════════════════════════════════════════════════');

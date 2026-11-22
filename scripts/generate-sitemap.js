@@ -247,10 +247,12 @@ const generateSitemap = async () => {
   llms += `- [Home](${BASE_URL}/): Official homepage with latest collections and featured handicrafts.\n`;
   llms += `- [Shop](${BASE_URL}/shop): Browse all handcrafted gemstone statues, carvings, and spiritual items.\n`;
   llms += `- [Our Blog](${BASE_URL}/blog): Insights on gemstones, Vastu guidelines, crystal healing, and Indian handicrafts.\n`;
-  llms += `- [Natural vs Synthetic Gemstones Guide](${BASE_URL}/blog/natural-vs-synthetic-gemstones): In-depth comparison of earth-mined vs lab-grown stones, inclusion analysis, optical testing, and buying guide for gemstone carvings.\n`;
-  llms += `- [How Gemstone Carving Works](${BASE_URL}/blog/gemstone-carving-process): Step-by-step master lapidary guide from raw crystal selection to rough shaping, detailing, diamond polishing, and Jaipur craftsmanship.\n`;
-  llms += `- [How to Care for Gemstone Carvings](${BASE_URL}/blog/how-to-care-for-gemstone-carvings): Expert maintenance guide on gentle cleaning, safe water usage, puja abhishek guidelines, and impact protection.\n`;
-  llms += `- [What Determines Gemstone Carving Price](${BASE_URL}/blog/factors-affecting-gemstone-carving-price): Comprehensive buyer's guide on mineral rarity, weight yield, carving labor hours, Jaipur finishing, and certification.\n`;
+  blogs.forEach((b) => {
+    const bSlug = b.slug || b._id;
+    const bTitle = b.title || "Gemstone Guide";
+    const bDesc = (b.metaDescription || b.description || "Expert guide from Crystal Jaipuria").replace(/<[^>]*>?/gm, "").slice(0, 160);
+    llms += `- [${bTitle}](${BASE_URL}/blog/${bSlug}): ${bDesc}\n`;
+  });
   llms += `- [About Us](${BASE_URL}/about): Brand history, 35+ years of craftsmanship, workshop details, and values.\n`;
   llms += `- [Contact Us](${BASE_URL}/contact): Direct contact, manufacturing queries, and wholesale inquiries.\n`;
   llms += `- [Gemstone Authenticity Guide](${BASE_URL}/gemstone-authenticity-guide): Authoritative guide on verifying 100% natural earth-mined gemstones, cold-touch tests, inclusion checks, and Vedic Shilpa Shastra care.\n`;
