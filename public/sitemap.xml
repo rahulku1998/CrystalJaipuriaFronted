@@ -2049,7 +2049,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Blog Detail Pages (9 Stories) -->
+  <!-- Blog Detail Pages (13 Stories) -->
   <url>
     <loc>https://www.crystaljaipuria.com/blog/gemstone-types-colours-patterns-inclusions</loc>
     <image:image>
@@ -2127,6 +2127,42 @@
     <image:image>
       <image:loc>https://www.crystaljaipuria.com/images/hand-carved-vs-machine-made-stone-decor.webp</image:loc>
       <image:title>Hand-Carved vs Machine-Made Stone Decor: Craftsmanship, Finish and Quality | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/blog/how-to-evaluate-gemstone-carving-supplier</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/how-to-evaluate-gemstone-carving-supplier.webp</image:loc>
+      <image:title>How to Evaluate a Gemstone Carving Supplier: Authenticity, Craftsmanship and Documentation | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/blog/wholesale-gemstone-carvings-india</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/wholesale-gemstone-carvings-india.webp</image:loc>
+      <image:title>A Wholesale Buyer&apos;s Checklist for Sourcing Gemstone Carvings from India | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/blog/how-to-pack-and-ship-stone-sculptures</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/how-to-pack-and-ship-stone-sculptures.webp</image:loc>
+      <image:title>How to Pack and Ship Fragile Stone Sculptures Safely: A Guide for Buyers and Retailers | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/blog/jaipur-gemstone-carving-tradition</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/jaipur-gemstone-carving-tradition.webp</image:loc>
+      <image:title>Inside Jaipur&apos;s Gemstone Carving Tradition: Materials, Artisan Skills and Craftsmanship | Crystal Jaipuria</image:title>
     </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>

@@ -39,9 +39,25 @@ const Blogs = () => {
     fetchBlogs();
   }, []);
 
+  // Sort blogs chronologically descending (newest published first)
+  // And filter future scheduled blogs unless ?preview=true is set
+  const publishedBlogs = useMemo(() => {
+    const isPreview =
+      typeof window !== "undefined" &&
+      new URLSearchParams(window.location.search).get("preview") === "true";
+    const now = new Date();
+    return blogs
+      .filter((b) => isPreview || !b.publishDate || new Date(b.publishDate) <= now)
+      .sort(
+        (a, b) =>
+          new Date(b.publishDate || b.createdAt || 0) -
+          new Date(a.publishDate || a.createdAt || 0)
+      );
+  }, [blogs]);
+
   // Filtered blogs based on Category and Search Query
   const filteredBlogs = useMemo(() => {
-    return blogs.filter((blog) => {
+    return publishedBlogs.filter((blog) => {
       const matchesCategory =
         selectedCategory === "All" ||
         (blog.category && blog.category.toLowerCase() === selectedCategory.toLowerCase());
@@ -57,17 +73,18 @@ const Blogs = () => {
 
       return matchesCategory && matchesSearch;
     });
-  }, [blogs, selectedCategory, searchQuery]);
+  }, [publishedBlogs, selectedCategory, searchQuery]);
 
   const isFiltering = selectedCategory !== "All" || searchQuery.trim().length > 0;
 
   // Split for Appinventiv homepage layout when not filtering:
-  // 1. Hero post (item 0)
+  // 1. Hero post (item 0 - newest published guide)
   // 2. Secondary grid posts (items 1, 2, 3)
   // 3. Latest posts list (items 4, ...)
-  const heroPost = blogs[0];
-  const secondaryPosts = blogs.slice(1, 4);
-  const latestPosts = blogs.slice(1); // Show all remaining or all in Latest section
+  const heroPost = publishedBlogs[0];
+  const secondaryPosts = publishedBlogs.slice(1, 4);
+  const latestPosts = publishedBlogs.slice(1); // Show all remaining in Latest section
+
 
   const seo = (
     <SEO
@@ -239,7 +256,7 @@ const Blogs = () => {
                     Latest Articles
                   </h2>
                   <span className="text-xs sm:text-sm font-semibold text-slate-500">
-                    {blogs.length} Curated Guides
+                    {publishedBlogs.length} Curated Guides
                   </span>
                 </div>
 
