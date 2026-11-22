@@ -3,7 +3,17 @@ import API from "../../api/axios";
 import BlogItem from "../../Components/Blog/BlogItem";
 import SEO from "../../Components/SEO";
 import { FALLBACK_BLOGS, getDeduplicatedBlogs } from "../../data/fallbackBlogs";
-import { FaSearch, FaTimes, FaWhatsapp, FaPhoneAlt, FaGem, FaShieldAlt, FaAward } from "react-icons/fa";
+import {
+  FaSearch,
+  FaTimes,
+  FaWhatsapp,
+  FaPhoneAlt,
+  FaGem,
+  FaShieldAlt,
+  FaAward,
+  FaChevronLeft,
+  FaChevronRight,
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const CATEGORIES = [
@@ -15,11 +25,15 @@ const CATEGORIES = [
   "Gifting & Decor",
 ];
 
+const FILTERED_PAGE_SIZE = 6;
+const EDITORIAL_PAGE_SIZE = 6;
+
 const Blogs = () => {
   const [blogs, setBlogs] = useState(() => getDeduplicatedBlogs([], FALLBACK_BLOGS));
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
 
   const fetchBlogs = async () => {
     try {
@@ -70,14 +84,111 @@ const Blogs = () => {
 
   const isFiltering = selectedCategory !== "All" || searchQuery.trim().length > 0;
 
+  // Filter handlers with page reset
+  const handleCategorySelect = (cat) => {
+    setSelectedCategory(cat);
+    setCurrentPage(1);
+  };
+
+  const handleSearchChange = (query) => {
+    setSearchQuery(query);
+    setCurrentPage(1);
+  };
+
+  const handleClearFilters = () => {
+    setSelectedCategory("All");
+    setSearchQuery("");
+    setCurrentPage(1);
+  };
+
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   // Split for Appinventiv homepage layout when not filtering:
   // 1. Hero post (item 0 - newest published guide)
   // 2. Secondary grid posts (items 1, 2, 3)
-  // 3. Latest posts list (items 4, ...)
+  // 3. Paginated remaining posts (items 4, ...)
   const heroPost = publishedBlogs[0];
   const secondaryPosts = publishedBlogs.slice(1, 4);
-  const latestPosts = publishedBlogs.slice(1); // Show all remaining in Latest section
+  const remainingPosts = publishedBlogs.slice(4);
 
+  // Pagination computations
+  const totalFilteredPages = Math.ceil(filteredBlogs.length / FILTERED_PAGE_SIZE) || 1;
+  const paginatedFilteredBlogs = useMemo(() => {
+    const start = (currentPage - 1) * FILTERED_PAGE_SIZE;
+    return filteredBlogs.slice(start, start + FILTERED_PAGE_SIZE);
+  }, [filteredBlogs, currentPage]);
+
+  const totalEditorialPages = Math.ceil(remainingPosts.length / EDITORIAL_PAGE_SIZE) || 1;
+  const paginatedEditorialPosts = useMemo(() => {
+    const start = (currentPage - 1) * EDITORIAL_PAGE_SIZE;
+    return remainingPosts.slice(start, start + EDITORIAL_PAGE_SIZE);
+  }, [remainingPosts, currentPage]);
+
+  // Reusable Pagination Controller
+  const renderPagination = (totalPages) => {
+    if (totalPages <= 1) return null;
+
+    return (
+      <nav
+        aria-label="Blog pagination"
+        className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-10 pt-6 border-t border-slate-200/80"
+      >
+        <div className="text-xs sm:text-sm text-slate-500 font-medium">
+          Page <span className="font-bold text-slate-900">{currentPage}</span> of{" "}
+          <span className="font-bold text-slate-900">{totalPages}</span>
+        </div>
+
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          <button
+            type="button"
+            onClick={() => handlePageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+            aria-label="Previous page"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 hover:text-slate-900 disabled:opacity-40 disabled:cursor-not-allowed transition shadow-2xs cursor-pointer"
+          >
+            <FaChevronLeft className="text-[10px]" />
+            <span>Previous</span>
+          </button>
+
+          <div className="flex items-center gap-1">
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => {
+              const isActive = pageNum === currentPage;
+              return (
+                <button
+                  key={pageNum}
+                  type="button"
+                  onClick={() => handlePageChange(pageNum)}
+                  aria-label={`Go to page ${pageNum}`}
+                  aria-current={isActive ? "page" : undefined}
+                  className={`min-w-[38px] h-9 px-2 rounded-xl text-xs sm:text-sm font-bold transition shadow-2xs cursor-pointer ${
+                    isActive
+                      ? "bg-slate-900 text-white shadow-xs"
+                      : "bg-white text-slate-700 hover:bg-amber-50 hover:border-amber-300 border border-slate-200"
+                  }`}
+                >
+                  {pageNum}
+                </button>
+              );
+            })}
+          </div>
+
+          <button
+            type="button"
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+            aria-label="Next page"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 hover:text-slate-900 disabled:opacity-40 disabled:cursor-not-allowed transition shadow-2xs cursor-pointer"
+          >
+            <span>Next</span>
+            <FaChevronRight className="text-[10px]" />
+          </button>
+        </div>
+      </nav>
+    );
+  };
 
   const seo = (
     <SEO
@@ -130,7 +241,7 @@ const Blogs = () => {
                   <button
                     key={cat}
                     type="button"
-                    onClick={() => setSelectedCategory(cat)}
+                    onClick={() => handleCategorySelect(cat)}
                     className={`whitespace-nowrap px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer ${
                       isActive
                         ? "bg-slate-900 text-white shadow-xs"
@@ -149,15 +260,15 @@ const Blogs = () => {
               <input
                 type="text"
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                onChange={(e) => handleSearchChange(e.target.value)}
                 placeholder="Search articles..."
                 className="w-full pl-10 pr-9 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-hidden focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 bg-slate-50 transition"
               />
               {searchQuery && (
                 <button
                   type="button"
-                  onClick={() => setSearchQuery("")}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                  onClick={() => handleSearchChange("")}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 cursor-pointer"
                 >
                   <FaTimes className="text-xs" />
                 </button>
@@ -175,10 +286,7 @@ const Blogs = () => {
               </span>
               <button
                 type="button"
-                onClick={() => {
-                  setSelectedCategory("All");
-                  setSearchQuery("");
-                }}
+                onClick={handleClearFilters}
                 className="text-xs font-bold text-orange-600 hover:text-orange-700 underline cursor-pointer"
               >
                 Clear all filters
@@ -192,11 +300,14 @@ const Blogs = () => {
           {isFiltering ? (
             <div>
               {filteredBlogs.length > 0 ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {filteredBlogs.map((blog) => (
-                    <BlogItem key={blog.slug || blog._id} blog={blog} variant="grid" />
-                  ))}
-                </div>
+                <>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {paginatedFilteredBlogs.map((blog) => (
+                      <BlogItem key={blog.slug || blog._id} blog={blog} variant="grid" />
+                    ))}
+                  </div>
+                  {renderPagination(totalFilteredPages)}
+                </>
               ) : (
                 <div className="bg-white rounded-3xl p-12 text-center border border-slate-200/80 shadow-xs max-w-lg mx-auto space-y-4">
                   <div className="w-16 h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mx-auto text-2xl">
@@ -208,11 +319,8 @@ const Blogs = () => {
                   </p>
                   <button
                     type="button"
-                    onClick={() => {
-                      setSelectedCategory("All");
-                      setSearchQuery("");
-                    }}
-                    className="inline-block bg-orange-600 hover:bg-orange-700 text-white font-semibold text-xs px-5 py-2.5 rounded-xl transition"
+                    onClick={handleClearFilters}
+                    className="inline-block bg-orange-600 hover:bg-orange-700 text-white font-semibold text-xs px-5 py-2.5 rounded-xl transition cursor-pointer"
                   >
                     View All Guides
                   </button>
@@ -224,29 +332,34 @@ const Blogs = () => {
             /* CASE 2: DEFAULT APPINVENTIV CURATED EDITORIAL LAYOUT     */
             /* ======================================================== */
             <>
-              {/* SECTION 1: HERO FEATURED POST (2 Columns) */}
-              {heroPost && (
-                <section aria-label="Featured Guide">
-                  <BlogItem blog={heroPost} variant="hero" />
-                </section>
-              )}
+              {/* Show Hero and Secondary Grid on Page 1 only to keep Page 2+ streamlined */}
+              {currentPage === 1 && (
+                <>
+                  {/* SECTION 1: HERO FEATURED POST (2 Columns) */}
+                  {heroPost && (
+                    <section aria-label="Featured Guide">
+                      <BlogItem blog={heroPost} variant="hero" />
+                    </section>
+                  )}
 
-              {/* SECTION 2: SECONDARY 3-CARD GRID */}
-              {secondaryPosts.length > 0 && (
-                <section aria-label="Highlighted Guides">
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                    {secondaryPosts.map((blog) => (
-                      <BlogItem key={blog.slug || blog._id} blog={blog} variant="grid" />
-                    ))}
-                  </div>
-                </section>
+                  {/* SECTION 2: SECONDARY 3-CARD GRID */}
+                  {secondaryPosts.length > 0 && (
+                    <section aria-label="Highlighted Guides">
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                        {secondaryPosts.map((blog) => (
+                          <BlogItem key={blog.slug || blog._id} blog={blog} variant="grid" />
+                        ))}
+                      </div>
+                    </section>
+                  )}
+                </>
               )}
 
               {/* SECTION 3: "LATEST" 2-COLUMN SECTION (Horizontal Cards + Sidebar) */}
               <section aria-label="Latest Articles" className="pt-6 sm:pt-10">
                 <div className="flex items-center justify-between mb-8 pb-4 border-b border-slate-200/80">
                   <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
-                    Latest Articles
+                    {currentPage === 1 ? "Latest Articles" : `Editorial Guides — Page ${currentPage}`}
                   </h2>
                   <span className="text-xs sm:text-sm font-semibold text-slate-500">
                     {publishedBlogs.length} Curated Guides
@@ -256,9 +369,12 @@ const Blogs = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
                   {/* Left Column: Horizontal Articles List */}
                   <div className="lg:col-span-8 space-y-6">
-                    {latestPosts.map((blog) => (
+                    {paginatedEditorialPosts.map((blog) => (
                       <BlogItem key={blog.slug || blog._id} blog={blog} variant="horizontal" />
                     ))}
+
+                    {/* Pagination Controls */}
+                    {renderPagination(totalEditorialPages)}
                   </div>
 
                   {/* Right Column: Sidebar (Categories + CTA) */}

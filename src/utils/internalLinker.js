@@ -280,6 +280,50 @@ export const INTERLINK_RULES = [
     ],
   },
   {
+    targetUrl: "/blog/sphatik-clear-quartz-vs-glass",
+    label: "Sphatik vs Glass Identification Guide",
+    priority: 8,
+    keywords: [
+      "Sphatik vs glass",
+      "how to identify real Sphatik",
+      "Clear Quartz vs glass",
+      "distinguishing real Sphatik from glass",
+      "real Sphatik test",
+    ],
+  },
+  {
+    targetUrl: "/blog/natural-vs-synthetic-gemstones",
+    label: "Natural vs Synthetic Gemstones Guide",
+    priority: 8,
+    keywords: [
+      "natural vs synthetic gemstones",
+      "identifying synthetic stones",
+      "natural vs lab-grown stones",
+      "detecting simulated gemstones",
+    ],
+  },
+  {
+    targetUrl: "/blog/gemstone-types-colours-patterns-inclusions",
+    label: "Gemstone Inclusions & Patterns Guide",
+    priority: 7,
+    keywords: [
+      "gemstone inclusions and colors",
+      "natural gemstone inclusions",
+      "gemstone color variations",
+    ],
+  },
+  {
+    targetUrl: "/blog/crystal-statues-a-unique-and-meaningful-gift-idea",
+    label: "Crystal Statues as Meaningful Gifts",
+    priority: 7,
+    keywords: [
+      "meaningful gemstone gift",
+      "crystal statue as a gift",
+      "gemstone gifts for housewarming",
+      "spiritual gemstone gifts",
+    ],
+  },
+  {
     targetUrl: "/shipping-policy",
     label: "Breakage-Free Shipping Guarantee",
     priority: 6,
