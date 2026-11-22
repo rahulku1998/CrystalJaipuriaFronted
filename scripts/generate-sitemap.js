@@ -565,7 +565,19 @@ const generateSitemap = async () => {
       "rose-quartz-shiva-statue-with-gold-painting": "Natural Rose Quartz Shiva Statue with 24K Gold Painting for Home Temple (10 Inch, 1 kg)",
       "green-jade-mahalakshmi-ji-idol": "Natural Green Jade Goddess Mahalakshmi Ji Idol for Wealth & Diwali Pooja (5 Inch, 1 kg)",
       "green-jade-goddess-maa-saraswati-carving": "Natural Green Jade Goddess Maa Saraswati Statue for Vidya & Temple (5 Inch, 1 kg)",
-      "green-aventurine-parshvanath-ji-statue": "Natural Green Aventurine Parshvanath Ji Tirthankara Statue for Jain Mandir (5 Inch, 1 kg)"
+      "green-aventurine-parshvanath-ji-statue": "Natural Green Aventurine Parshvanath Ji Tirthankara Statue for Jain Mandir (5 Inch, 1 kg)",
+      "australian-jade-chrysoprase-ganesha": "Natural Australian Jade Chrysoprase Ganesha Statue with Arch (7 Inch, 1.45 kg)",
+      "ruby-panchmukhi-ganesha-carving-833": "Natural Ruby Panchmukhi Ganesha Carving with Zoisite Arch (833 Carats, 167 g)",
+      "milky-quartz-ganesh-statue-with-gold": "Natural Milky Quartz Ganesh Statue with 24K Gold Foil Painting (6.5 Inch, 1.35 kg)",
+      "natural-hand-carved-rose-quartz-ganesha": "Hand-Carved Natural Rose Quartz Ganesha Gemstone Statue for Home Mandir (4.5 Inch, 850 g)",
+      "natural-handmade-emerald-ganesha-statue": "Natural Handmade Emerald Ganesha Gemstone Statue for Temple & Vastu (1420 Carats, 284 g)",
+      "ruby-ganesha-2195-carat-hand-carved-ruby": "Large Natural Ruby Ganesha 2195 Carat Hand Carved Gemstone Statue in Zoisite (5.2 Inch, 439 g)",
+      "ruby-ganesha-idol-25-handcrafted-statue": "Handcrafted Natural Ruby Ganesha Idol 2.5 Inch Gemstone Statue (560 Carats, 112 g)",
+      "blue-sapphire-shiva-head-handmade": "Natural Blue Sapphire Shiva Head Handmade Gemstone Sculpture (5.5 Inch, 1.15 kg)",
+      "ruby-zoisite-ganesha-statue-hand-carved": "Hand Carved Natural Ruby Zoisite Ganesha Statue with Floral Arch (4.8 Inch, 1180 Carats)",
+      "natural-emerald-green-stone-shivling": "Natural Emerald Green Stone Shivling for Jalabhishek & Home Temple (2.8 Inch, 420 g)",
+      "breathtaking-natural-hessonite-garnet-shivling": "Breathtaking Natural Hessonite Garnet (Gomed) Shivling for Rahu Shanti (2.6 Inch, 385 g)",
+      "emerald-ganesh-statue-3625-carat-ganesh": "Museum Grade Natural Emerald Ganesh Statue Hand-Carved (3625 Carats, 725 g)"
     };
 
     if (HIGH_INTENT_TITLES[slug]) {
@@ -578,7 +590,19 @@ const generateSitemap = async () => {
       "crystal-clear-mahvaveer-ji-statue": `Sacred 100% authentic natural Sphatik (clear quartz crystal) Bhagwan Mahaveer Swami idol statue hand-carved in Jaipur for Jain Derasar, home mandir, and spiritual meditation. Pure, unblemished, cold-to-touch crystal blessed for peace, ahimsa, and spiritual elevation.`,
       "blue-sodalite-carved-lord-shiva-statue": `Majestic Lord Shiva idol hand-carved from genuine deep royal-blue Sodalite gemstone by Jaipur master craftsmen. Complete with divine blessing posture for home temple worship, positive aura, and spiritual protection.`,
       "natural-sphatik-shivling": `Original 100% natural certified Sphatik (Clear Quartz) Shivling for daily Jalabhishek and home temple pooja. Hand-carved in sacred Vedic Shilpa Shastra proportions by master artisans of Jaipur (est. 1989). Radiates divine peaceful vibrations.`,
-      "green-jade-shree-yantra": `Authentic 100% natural Green Jade Shree Yantra 3D Meru hand-carved by Jaipur master lapidaries. Sacred geometric Yantraraj for continuous financial growth, Kubera blessings, and Vastu energization.`
+      "green-jade-shree-yantra": `Authentic 100% natural Green Jade Shree Yantra 3D Meru hand-carved by Jaipur master lapidaries. Sacred geometric Yantraraj for continuous financial growth, Kubera blessings, and Vastu energization.`,
+      "australian-jade-chrysoprase-ganesha": `Exquisitely hand-carved from certified Australian Jade Chrysoprase gemstone by master lapidaries in Jaipur. Features Lord Ganesha seated on a lotus base beneath an intricately carved sacred Prabhavali arch with divine Mooshak attendants. 100% natural earth-mined gemstone at Jaipur direct manufacturer price.`,
+      "ruby-panchmukhi-ganesha-carving-833": `Auspicious 833-carat natural corundum Ruby Panchmukhi (5-faced) Ganesha idol masterfully carved with natural green zoisite backing. Symbolizes multi-dimensional spiritual protection, obstacle removal, and cosmic blessings. Certified authentic gemstone from Jaipur.`,
+      "milky-quartz-ganesh-statue-with-gold": `Regal Lord Ganesha idol meticulously carved from solid natural milky quartz crystal and adorned with authentic 24K pure gold foil relief artwork. Brings divine peace, purity, and luxurious Vastu harmony to living spaces and temple altars.`,
+      "natural-hand-carved-rose-quartz-ganesha": `Sculpted from genuine translucent pink Madagascar Rose Quartz, this divine Lord Ganesha idol radiates unconditional love, heart healing, and peaceful family harmony. Expertly hand-polished with sacred lotus throne at direct factory price.`,
+      "natural-handmade-emerald-ganesha-statue": `Crafted from 100% natural earth-mined green Emerald gemstone (1420 Carats), featuring intricate crown detailing, sacred modak, and mirror-finished lotus pedestal. Highly auspicious for Mercury (Budh) alignment, commercial success, and intelligence.`,
+      "ruby-ganesha-2195-carat-hand-carved-ruby": `Magnificent 2195-carat natural Ruby Ganesha sculpture seated inside an organic carved green Zoisite arch. Authentic collector-grade masterpiece directly from the gemstone capital of Jaipur with lab certification.`,
+      "ruby-ganesha-idol-25-handcrafted-statue": `Handcrafted 2.5-inch natural Ruby Ganesha idol in divine Abhaya Mudra posture. Carved from genuine untreated Ruby corundum with rich deep magenta tones. Sacred Vastu idol for office desk, home temple, and auspicious gifting.`,
+      "blue-sapphire-shiva-head-handmade": `Monumental hand-carved Shiva Head (Mukhalingam) sculpture sculpted from natural Blue Sapphire corundum (1.15 kg / 5750 Carats). Displays intricate matted Jata hair, sacred crescent moon, third-eye Tripundra, and coiled serpent. Masterpiece of Jaipur heritage carving.`,
+      "ruby-zoisite-ganesha-statue-hand-carved": `Divine Lord Ganesha hand-sculpted from natural Ruby in Zoisite gemstone featuring a dual-tone carved floral arch. Harnesses the vibrant passion of natural Ruby and the revitalizing heart chakra energy of Zoisite.`,
+      "natural-emerald-green-stone-shivling": `Sacred Natural Emerald Green Stone Shivling (420 g, 2.8 Inch) complete with smooth polished lingam pillar and traditionally carved Jaladhari Yoni base. Pure, non-porous natural stone ideal for daily sacred Jalabhishek and temple worship.`,
+      "breathtaking-natural-hessonite-garnet-shivling": `Rare and sacred natural Hessonite Garnet (Gomed) Shivling handcrafted in Jaipur with smooth glossy mirror polish. Displays warm cinnamon-amber tones with authentic natural inclusions. Revered in Vedic astrology for neutralizing Rahu dosha and elevating spiritual focus.`,
+      "emerald-ganesh-statue-3625-carat-ganesh": `Extraordinary 3625-carat museum-grade Natural Emerald Ganesha statue. Hand-sculpted over months by Jaipur master artisans with elaborate beaded crown, sacred ornaments, and floral motifs. Truly one-of-a-kind divine heirloom.`
     };
 
     const feedDesc = CUSTOM_FEED_DESCS[slug] || cleanDesc;

@@ -403,6 +403,16 @@
   ],
   "redirects": [
     {
+      "source": "/product/breathtaking-natural-hessonite-garnet",
+      "destination": "/product/breathtaking-natural-hessonite-garnet-shivling",
+      "permanent": true
+    },
+    {
+      "source": "/product/breathtaking-natural-hessonite-garnet/:path*",
+      "destination": "/product/breathtaking-natural-hessonite-garnet-shivling",
+      "permanent": true
+    },
+    {
       "source": "/about-us/:path*",
       "destination": "/about",
       "permanent": true

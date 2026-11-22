@@ -2916,5 +2916,328 @@ export const FALLBACK_PRODUCTS = [
       "slug": "diya"
     },
     "stock": 18
+  },
+  {
+    "_id": "6a55cf012e9a358fc926e001",
+    "name": "Natural Australian Jade Chrysoprase Ganesha Statue with Arch",
+    "slug": "australian-jade-chrysoprase-ganesha",
+    "price": 28500,
+    "discountPrice": 38000,
+    "pricePerUnit": "₹28,500",
+    "weight": "1.45 kg",
+    "size": "7.0 in (H) x 5.2 in (W) x 2.8 in (D)",
+    "images": [
+      "/images/australian-jade-chrysoprase-ganesha-statue.webp",
+      "/images/australian-jade-chrysoprase-ganesha-statue-features.webp",
+      "/images/australian-jade-chrysoprase-ganesha-statue-side.webp",
+      "/images/australian-jade-chrysoprase-ganesha-statue-angle.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "subCategoryId": {
+      "_id": "6a55bc842dcf49aacd71ef6b",
+      "name": "Ganesh",
+      "slug": "ganesh"
+    },
+    "stock": 3
+  },
+  {
+    "_id": "6a55cf012e9a358fc926e002",
+    "name": "Natural Ruby Panchmukhi Ganesha Carving (833 Carats)",
+    "slug": "ruby-panchmukhi-ganesha-carving-833",
+    "price": 19500,
+    "discountPrice": 26000,
+    "pricePerUnit": "₹23.4 / carat",
+    "weight": "833 Carats (166.6 g)",
+    "size": "3.2 in (H) x 2.5 in (W) x 1.8 in (D)",
+    "images": [
+      "/images/natural-ruby-panchmukhi-ganesha-carving-833-carat.webp",
+      "/images/natural-ruby-panchmukhi-ganesha-carving-833-carat-features.webp",
+      "/images/natural-ruby-panchmukhi-ganesha-carving-833-carat-side.webp",
+      "/images/natural-ruby-panchmukhi-ganesha-carving-833-carat-angle.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "subCategoryId": {
+      "_id": "6a55bc842dcf49aacd71ef6b",
+      "name": "Ganesh",
+      "slug": "ganesh"
+    },
+    "stock": 2
+  },
+  {
+    "_id": "6a55cf012e9a358fc926e003",
+    "name": "Natural Milky Quartz Ganesh Statue with 24K Gold Foil Painting",
+    "slug": "milky-quartz-ganesh-statue-with-gold",
+    "price": 17800,
+    "discountPrice": 24000,
+    "pricePerUnit": "₹17,800",
+    "weight": "1.35 kg",
+    "size": "6.5 in (H) x 4.8 in (W) x 3.0 in (D)",
+    "images": [
+      "/images/milky-quartz-ganesh-statue-gold-foil-painting.webp",
+      "/images/milky-quartz-ganesh-statue-gold-foil-painting-features.webp",
+      "/images/milky-quartz-ganesh-statue-gold-foil-painting-side.webp",
+      "/images/milky-quartz-ganesh-statue-gold-foil-painting-angle.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "subCategoryId": {
+      "_id": "6a55bc842dcf49aacd71ef6b",
+      "name": "Ganesh",
+      "slug": "ganesh"
+    },
+    "stock": 3
+  },
+  {
+    "_id": "6a55cf012e9a358fc926e004",
+    "name": "Natural Hand Carved Rose Quartz Ganesha Gemstone Statue",
+    "slug": "natural-hand-carved-rose-quartz-ganesha",
+    "price": 6800,
+    "discountPrice": 9500,
+    "pricePerUnit": "₹6,800",
+    "weight": "850 g",
+    "size": "4.5 in (H) x 3.5 in (W) x 2.2 in (D)",
+    "images": [
+      "/images/natural-hand-carved-rose-quartz-ganesha-statue.webp",
+      "/images/natural-hand-carved-rose-quartz-ganesha-statue-features.webp",
+      "/images/natural-hand-carved-rose-quartz-ganesha-statue-side.webp",
+      "/images/natural-hand-carved-rose-quartz-ganesha-statue-angle.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "subCategoryId": {
+      "_id": "6a55bc842dcf49aacd71ef6b",
+      "name": "Ganesh",
+      "slug": "ganesh"
+    },
+    "stock": 5
+  },
+  {
+    "_id": "6a55cf012e9a358fc926e005",
+    "name": "Natural Handmade Emerald Ganesha Gemstone Statue",
+    "slug": "natural-handmade-emerald-ganesha-statue",
+    "price": 29500,
+    "discountPrice": 39000,
+    "pricePerUnit": "₹20.7 / carat",
+    "weight": "1420 Carats (284 g)",
+    "size": "4.2 in (H) x 3.0 in (W) x 2.0 in (D)",
+    "images": [
+      "/images/natural-handmade-emerald-ganesha-statue.webp",
+      "/images/natural-handmade-emerald-ganesha-statue-features.webp",
+      "/images/natural-handmade-emerald-ganesha-statue-side.webp",
+      "/images/natural-handmade-emerald-ganesha-statue-angle.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "subCategoryId": {
+      "_id": "6a55bc842dcf49aacd71ef6b",
+      "name": "Ganesh",
+      "slug": "ganesh"
+    },
+    "stock": 2
+  },
+  {
+    "_id": "6a55cf012e9a358fc926e006",
+    "name": "Natural Ruby Ganesha 2195 Carat Hand Carved Gemstone Statue in Zoisite Arch",
+    "slug": "ruby-ganesha-2195-carat-hand-carved-ruby",
+    "price": 34500,
+    "discountPrice": 46000,
+    "pricePerUnit": "₹15.7 / carat",
+    "weight": "2195 Carats (439 g)",
+    "size": "5.2 in (H) x 4.0 in (W) x 2.6 in (D)",
+    "images": [
+      "/images/ruby-ganesha-2195-carat-hand-carved-gemstone-statue.webp",
+      "/images/ruby-ganesha-2195-carat-hand-carved-gemstone-statue-features.webp",
+      "/images/ruby-ganesha-2195-carat-hand-carved-gemstone-statue-side.webp",
+      "/images/ruby-ganesha-2195-carat-hand-carved-gemstone-statue-angle.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "subCategoryId": {
+      "_id": "6a55bc842dcf49aacd71ef6b",
+      "name": "Ganesh",
+      "slug": "ganesh"
+    },
+    "stock": 2
+  },
+  {
+    "_id": "6a55cf012e9a358fc926e007",
+    "name": "Handcrafted Natural Ruby Ganesha Idol 2.5 Inch Gemstone Statue",
+    "slug": "ruby-ganesha-idol-25-handcrafted-statue",
+    "price": 11900,
+    "discountPrice": 16000,
+    "pricePerUnit": "₹21.2 / carat",
+    "weight": "560 Carats (112 g)",
+    "size": "2.5 in (H) x 1.8 in (W) x 1.4 in (D)",
+    "images": [
+      "/images/ruby-ganesha-idol-2-5-inch-handcrafted-statue.webp",
+      "/images/ruby-ganesha-idol-2-5-inch-handcrafted-statue-features.webp",
+      "/images/ruby-ganesha-idol-2-5-inch-handcrafted-statue-side.webp",
+      "/images/ruby-ganesha-idol-2-5-inch-handcrafted-statue-angle.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "subCategoryId": {
+      "_id": "6a55bc842dcf49aacd71ef6b",
+      "name": "Ganesh",
+      "slug": "ganesh"
+    },
+    "stock": 4
+  },
+  {
+    "_id": "6a55cf012e9a358fc926e008",
+    "name": "Natural Blue Sapphire Shiva Head Handmade Gemstone Sculpture",
+    "slug": "blue-sapphire-shiva-head-handmade",
+    "price": 13900,
+    "discountPrice": 19500,
+    "pricePerUnit": "₹13,900",
+    "weight": "1.15 kg (5750 Carats)",
+    "size": "5.5 in (H) x 3.8 in (W) x 2.5 in (D)",
+    "images": [
+      "/images/natural-blue-sapphire-shiva-head-handmade-sculpture.webp",
+      "/images/natural-blue-sapphire-shiva-head-handmade-sculpture-features.webp",
+      "/images/natural-blue-sapphire-shiva-head-handmade-sculpture-side.webp",
+      "/images/natural-blue-sapphire-shiva-head-handmade-sculpture-angle.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "subCategoryId": {
+      "_id": "6a55bc772dcf49aacd71ef6a",
+      "name": "Shiva",
+      "slug": "shiva"
+    },
+    "stock": 2
+  },
+  {
+    "_id": "6a55cf012e9a358fc926e009",
+    "name": "Hand Carved Ruby Zoisite Ganesha Gemstone Statue with Floral Arch",
+    "slug": "ruby-zoisite-ganesha-statue-hand-carved",
+    "price": 14500,
+    "discountPrice": 19500,
+    "pricePerUnit": "₹12.2 / carat",
+    "weight": "1180 Carats (236 g)",
+    "size": "4.8 in (H) x 3.2 in (W) x 2.2 in (D)",
+    "images": [
+      "/images/ruby-zoisite-ganesha-statue-hand-carved-gemstone.webp",
+      "/images/ruby-zoisite-ganesha-statue-hand-carved-gemstone-features.webp",
+      "/images/ruby-zoisite-ganesha-statue-hand-carved-gemstone-side.webp",
+      "/images/ruby-zoisite-ganesha-statue-hand-carved-gemstone-angle.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "subCategoryId": {
+      "_id": "6a55bc842dcf49aacd71ef6b",
+      "name": "Ganesh",
+      "slug": "ganesh"
+    },
+    "stock": 3
+  },
+  {
+    "_id": "6a55cf012e9a358fc926e010",
+    "name": "Natural Emerald Green Stone Shivling for Jalabhishek & Home Temple",
+    "slug": "natural-emerald-green-stone-shivling",
+    "price": 8900,
+    "discountPrice": 12500,
+    "pricePerUnit": "₹8,900",
+    "weight": "420 g",
+    "size": "2.8 in (H) x 3.2 in (L) x 2.0 in (W)",
+    "images": [
+      "/images/natural-emerald-green-stone-shivling.webp",
+      "/images/natural-emerald-green-stone-shivling-features.webp",
+      "/images/natural-emerald-green-stone-shivling-side.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bc292dcf49aacd71ef65",
+      "name": "Shivling",
+      "slug": "shivling"
+    },
+    "subCategoryId": {
+      "_id": "6abfff473618032686f07d16",
+      "name": "Natural Gemstone Shivling",
+      "slug": "natural-gemstone-shivling"
+    },
+    "stock": 4
+  },
+  {
+    "_id": "6a55cf012e9a358fc926e011",
+    "name": "Natural Hessonite Garnet (Gomed) Shivling for Rahu Shanti & Pooja",
+    "slug": "breathtaking-natural-hessonite-garnet-shivling",
+    "price": 9800,
+    "discountPrice": 14000,
+    "pricePerUnit": "₹9,800",
+    "weight": "385 g",
+    "size": "2.6 in (H) x 3.0 in (L) x 1.9 in (W)",
+    "images": [
+      "/images/natural-hessonite-garnet-gomed-shivling.webp",
+      "/images/natural-hessonite-garnet-gomed-shivling-features.webp",
+      "/images/natural-hessonite-garnet-gomed-shivling-side.webp",
+      "/images/natural-hessonite-garnet-gomed-shivling-angle.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bc292dcf49aacd71ef65",
+      "name": "Shivling",
+      "slug": "shivling"
+    },
+    "subCategoryId": {
+      "_id": "6abfff473618032686f07d16",
+      "name": "Natural Gemstone Shivling",
+      "slug": "natural-gemstone-shivling"
+    },
+    "stock": 3
+  },
+  {
+    "_id": "6a55cf012e9a358fc926e012",
+    "name": "Museum Grade Natural Emerald Ganesh Statue (3625 Carats)",
+    "slug": "emerald-ganesh-statue-3625-carat-ganesh",
+    "price": 58000,
+    "discountPrice": 78000,
+    "pricePerUnit": "₹16.0 / carat",
+    "weight": "3625 Carats (725 g)",
+    "size": "6.0 in (H) x 5.0 in (W) x 3.2 in (D)",
+    "images": [
+      "/images/emerald-ganesh-statue-3625-carat-gemstone.webp",
+      "/images/emerald-ganesh-statue-3625-carat-gemstone-features.webp",
+      "/images/emerald-ganesh-statue-3625-carat-gemstone-side.webp",
+      "/images/emerald-ganesh-statue-3625-carat-gemstone-angle.webp"
+    ],
+    "categoryId": {
+      "_id": "6a55bb1f2e9a358fc926cbab",
+      "name": "God Statues",
+      "slug": "god-statues"
+    },
+    "subCategoryId": {
+      "_id": "6a55bc842dcf49aacd71ef6b",
+      "name": "Ganesh",
+      "slug": "ganesh"
+    },
+    "stock": 1
   }
 ];

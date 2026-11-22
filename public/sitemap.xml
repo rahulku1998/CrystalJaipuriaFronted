@@ -156,7 +156,7 @@
     <priority>0.80</priority>
   </url>
 
-  <!-- Dynamic Product Pages (111 Live Products) -->
+  <!-- Dynamic Product Pages (123 Live Products) -->
   <url>
     <loc>https://www.crystaljaipuria.com/product/silver-natural-rose-quartz-stone-shrinath-ji</loc>
     <image:image>
@@ -1796,6 +1796,254 @@
     <image:image>
       <image:loc>https://www.crystaljaipuria.com/images/green-aventurine-diya-2.webp</image:loc>
       <image:title>Natural Green Aventurine Diya - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/australian-jade-chrysoprase-ganesha</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/australian-jade-chrysoprase-ganesha-statue.webp</image:loc>
+      <image:title>Natural Australian Jade Chrysoprase Ganesha Statue with Arch | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/australian-jade-chrysoprase-ganesha-statue-features.webp</image:loc>
+      <image:title>Natural Australian Jade Chrysoprase Ganesha Statue with Arch - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/australian-jade-chrysoprase-ganesha-statue-side.webp</image:loc>
+      <image:title>Natural Australian Jade Chrysoprase Ganesha Statue with Arch - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/australian-jade-chrysoprase-ganesha-statue-angle.webp</image:loc>
+      <image:title>Natural Australian Jade Chrysoprase Ganesha Statue with Arch - View 4 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/ruby-panchmukhi-ganesha-carving-833</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-ruby-panchmukhi-ganesha-carving-833-carat.webp</image:loc>
+      <image:title>Natural Ruby Panchmukhi Ganesha Carving | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-ruby-panchmukhi-ganesha-carving-833-carat-features.webp</image:loc>
+      <image:title>Natural Ruby Panchmukhi Ganesha Carving - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-ruby-panchmukhi-ganesha-carving-833-carat-side.webp</image:loc>
+      <image:title>Natural Ruby Panchmukhi Ganesha Carving - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-ruby-panchmukhi-ganesha-carving-833-carat-angle.webp</image:loc>
+      <image:title>Natural Ruby Panchmukhi Ganesha Carving - View 4 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/milky-quartz-ganesh-statue-with-gold</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/milky-quartz-ganesh-statue-gold-foil-painting.webp</image:loc>
+      <image:title>Natural Milky Quartz Ganesh Statue with 24K Gold Foil Painting | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/milky-quartz-ganesh-statue-gold-foil-painting-features.webp</image:loc>
+      <image:title>Natural Milky Quartz Ganesh Statue with 24K Gold Foil Painting - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/milky-quartz-ganesh-statue-gold-foil-painting-side.webp</image:loc>
+      <image:title>Natural Milky Quartz Ganesh Statue with 24K Gold Foil Painting - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/milky-quartz-ganesh-statue-gold-foil-painting-angle.webp</image:loc>
+      <image:title>Natural Milky Quartz Ganesh Statue with 24K Gold Foil Painting - View 4 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/natural-hand-carved-rose-quartz-ganesha</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-hand-carved-rose-quartz-ganesha-statue.webp</image:loc>
+      <image:title>Natural Hand Carved Rose Quartz Ganesha Gemstone Statue | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-hand-carved-rose-quartz-ganesha-statue-features.webp</image:loc>
+      <image:title>Natural Hand Carved Rose Quartz Ganesha Gemstone Statue - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-hand-carved-rose-quartz-ganesha-statue-side.webp</image:loc>
+      <image:title>Natural Hand Carved Rose Quartz Ganesha Gemstone Statue - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-hand-carved-rose-quartz-ganesha-statue-angle.webp</image:loc>
+      <image:title>Natural Hand Carved Rose Quartz Ganesha Gemstone Statue - View 4 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/natural-handmade-emerald-ganesha-statue</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-handmade-emerald-ganesha-statue.webp</image:loc>
+      <image:title>Natural Handmade Emerald Ganesha Gemstone Statue | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-handmade-emerald-ganesha-statue-features.webp</image:loc>
+      <image:title>Natural Handmade Emerald Ganesha Gemstone Statue - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-handmade-emerald-ganesha-statue-side.webp</image:loc>
+      <image:title>Natural Handmade Emerald Ganesha Gemstone Statue - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-handmade-emerald-ganesha-statue-angle.webp</image:loc>
+      <image:title>Natural Handmade Emerald Ganesha Gemstone Statue - View 4 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/ruby-ganesha-2195-carat-hand-carved-ruby</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/ruby-ganesha-2195-carat-hand-carved-gemstone-statue.webp</image:loc>
+      <image:title>Natural Ruby Ganesha 2195 Carat Hand Carved Gemstone Statue | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/ruby-ganesha-2195-carat-hand-carved-gemstone-statue-features.webp</image:loc>
+      <image:title>Natural Ruby Ganesha 2195 Carat Hand Carved Gemstone Statue - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/ruby-ganesha-2195-carat-hand-carved-gemstone-statue-side.webp</image:loc>
+      <image:title>Natural Ruby Ganesha 2195 Carat Hand Carved Gemstone Statue - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/ruby-ganesha-2195-carat-hand-carved-gemstone-statue-angle.webp</image:loc>
+      <image:title>Natural Ruby Ganesha 2195 Carat Hand Carved Gemstone Statue - View 4 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/ruby-ganesha-idol-25-handcrafted-statue</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/ruby-ganesha-idol-2-5-inch-handcrafted-statue.webp</image:loc>
+      <image:title>Handcrafted Natural Ruby Ganesha Idol 2.5 Inch Gemstone Statue | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/ruby-ganesha-idol-2-5-inch-handcrafted-statue-features.webp</image:loc>
+      <image:title>Handcrafted Natural Ruby Ganesha Idol 2.5 Inch Gemstone Statue - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/ruby-ganesha-idol-2-5-inch-handcrafted-statue-side.webp</image:loc>
+      <image:title>Handcrafted Natural Ruby Ganesha Idol 2.5 Inch Gemstone Statue - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/ruby-ganesha-idol-2-5-inch-handcrafted-statue-angle.webp</image:loc>
+      <image:title>Handcrafted Natural Ruby Ganesha Idol 2.5 Inch Gemstone Statue - View 4 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/blue-sapphire-shiva-head-handmade</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-blue-sapphire-shiva-head-handmade-sculpture.webp</image:loc>
+      <image:title>Natural Blue Sapphire Shiva Head Handmade Gemstone Sculpture | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-blue-sapphire-shiva-head-handmade-sculpture-features.webp</image:loc>
+      <image:title>Natural Blue Sapphire Shiva Head Handmade Gemstone Sculpture - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-blue-sapphire-shiva-head-handmade-sculpture-side.webp</image:loc>
+      <image:title>Natural Blue Sapphire Shiva Head Handmade Gemstone Sculpture - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-blue-sapphire-shiva-head-handmade-sculpture-angle.webp</image:loc>
+      <image:title>Natural Blue Sapphire Shiva Head Handmade Gemstone Sculpture - View 4 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/ruby-zoisite-ganesha-statue-hand-carved</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/ruby-zoisite-ganesha-statue-hand-carved-gemstone.webp</image:loc>
+      <image:title>Hand Carved Ruby Zoisite Ganesha Gemstone Statue with Floral Arch | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/ruby-zoisite-ganesha-statue-hand-carved-gemstone-features.webp</image:loc>
+      <image:title>Hand Carved Ruby Zoisite Ganesha Gemstone Statue with Floral Arch - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/ruby-zoisite-ganesha-statue-hand-carved-gemstone-side.webp</image:loc>
+      <image:title>Hand Carved Ruby Zoisite Ganesha Gemstone Statue with Floral Arch - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/ruby-zoisite-ganesha-statue-hand-carved-gemstone-angle.webp</image:loc>
+      <image:title>Hand Carved Ruby Zoisite Ganesha Gemstone Statue with Floral Arch - View 4 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/natural-emerald-green-stone-shivling</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-emerald-green-stone-shivling.webp</image:loc>
+      <image:title>Natural Emerald Green Stone Shivling for Jalabhishek | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-emerald-green-stone-shivling-features.webp</image:loc>
+      <image:title>Natural Emerald Green Stone Shivling for Jalabhishek - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-emerald-green-stone-shivling-side.webp</image:loc>
+      <image:title>Natural Emerald Green Stone Shivling for Jalabhishek - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/breathtaking-natural-hessonite-garnet-shivling</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-hessonite-garnet-gomed-shivling.webp</image:loc>
+      <image:title>Natural Hessonite Garnet Shivling for Rahu Shanti | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-hessonite-garnet-gomed-shivling-features.webp</image:loc>
+      <image:title>Natural Hessonite Garnet Shivling for Rahu Shanti - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-hessonite-garnet-gomed-shivling-side.webp</image:loc>
+      <image:title>Natural Hessonite Garnet Shivling for Rahu Shanti - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/natural-hessonite-garnet-gomed-shivling-angle.webp</image:loc>
+      <image:title>Natural Hessonite Garnet Shivling for Rahu Shanti - View 4 | Crystal Jaipuria</image:title>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crystaljaipuria.com/product/emerald-ganesh-statue-3625-carat-ganesh</loc>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/emerald-ganesh-statue-3625-carat-gemstone.webp</image:loc>
+      <image:title>Museum Grade Natural Emerald Ganesh Statue | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/emerald-ganesh-statue-3625-carat-gemstone-features.webp</image:loc>
+      <image:title>Museum Grade Natural Emerald Ganesh Statue - View 2 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/emerald-ganesh-statue-3625-carat-gemstone-side.webp</image:loc>
+      <image:title>Museum Grade Natural Emerald Ganesh Statue - View 3 | Crystal Jaipuria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.crystaljaipuria.com/images/emerald-ganesh-statue-3625-carat-gemstone-angle.webp</image:loc>
+      <image:title>Museum Grade Natural Emerald Ganesh Statue - View 4 | Crystal Jaipuria</image:title>
     </image:image>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

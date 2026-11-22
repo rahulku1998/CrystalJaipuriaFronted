@@ -535,6 +535,40 @@ export const GEMSTONE_PROFILES = {
     authenticityTest: "Rich earthy green zoisite interwoven with deep magenta-red ruby crystals and black hornblende flecks; natural ruby spots fluoresce intense red under longwave UV light.",
     careVidhi: "Cleanse with warm water and soft brush; recharge under early morning sun.",
     vibeKeywords: ["divine love", "heart healing", "vital life force", "grief recovery", "relationship harmony"]
+  },
+  "hessonite": {
+    name: "Natural Hessonite Garnet (Certified Gomed)",
+    mineral: "Calcium Aluminium Silicate (Ca3Al2(SiO4)3)",
+    crystalSystem: "Isometric (Cubic)",
+    hardness: "7.0 – 7.5 Mohs Scale",
+    refractiveIndex: "1.734 – 1.759",
+    specificGravity: "3.59 – 3.65 g/cm³",
+    density: 3.60,
+    basePricePerGram: 25.0,
+    chakra: "Root (Muladhara) & Sacral Chakra (Swadhisthana)",
+    deity: "Lord Shiva & Rahu Deva",
+    planet: "Rahu",
+    element: "Fire & Earth",
+    authenticityTest: "Warm honey-amber to cinnamon-red hue with signature treacle or scotch-in-water internal swirl inclusions under 10x magnification. Unmatched density and rich oily vitreous luster.",
+    careVidhi: "Cleanse with pure Gangajal or raw cow milk during Saturday Rahu Kaal or Wednesday morning. Consecrate with Om Raam Rahave Namaha mantra.",
+    vibeKeywords: ["Rahu Shanti", "karmic victory", "phantom fear removal", "financial breakthrough", "sharp analytical mind"]
+  },
+  "milky-quartz": {
+    name: "Natural Milky Quartz with 24K Gold Foil Art (Snow Quartz)",
+    mineral: "Silicon Dioxide with Fluid Inclusions (SiO2)",
+    crystalSystem: "Trigonal",
+    hardness: "7.0 Mohs Scale",
+    refractiveIndex: "1.544 – 1.553",
+    specificGravity: "2.65 g/cm³",
+    density: 2.65,
+    basePricePerGram: 13.0,
+    chakra: "Crown (Sahasrara) & Heart Chakra (Anahata)",
+    deity: "Lord Ganesha & Goddess Lakshmi",
+    planet: "Moon (Chandra) & Venus (Shukra)",
+    element: "Water & Ether",
+    authenticityTest: "Naturally cool milky white translucent quartz matrix hand-painted with pure 24K gold foil embellishments. Natural internal feather veining without resin smell or surface bubbles.",
+    careVidhi: "Wipe gently with a soft dry or slightly damp lint-free microfiber cloth to safeguard real 24K gold foil detailing. Avoid abrasive wire brushes and chemical solvents.",
+    vibeKeywords: ["divine purity", "serene home harmony", "24K gold regal luxury", "Vastu obstacle clearance", "wealth attraction"]
   }
 };
 
@@ -551,6 +585,8 @@ export const detectGemstone = (text = "") => {
   if (lower.includes("ruby zoisite") || lower.includes("ruby-zoisite")) return "ruby-zoisite";
   if (lower.includes("ruby") || lower.includes("manik") || lower.includes("rube")) return "ruby";
   if (lower.includes("emerald") || lower.includes("panna")) return "emerald";
+  if (lower.includes("hessonite") || lower.includes("gomed") || lower.includes("garnet")) return "hessonite";
+  if (lower.includes("milky quartz") || lower.includes("milky")) return "milky-quartz";
 
   // 2. Specific Quartz Varieties & Unique Gemstones (Check BEFORE generic jade or quartz)
   if (lower.includes("obsidian")) return "black-obsidian";

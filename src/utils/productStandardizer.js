@@ -9,6 +9,78 @@ import { generateBuiltInContent } from "./aiGenerator.js";
  */
 
 export const STANDARDIZED_SPECS = {
+  "australian-jade-chrysoprase-ganesha": {
+    price: 28500,
+    weight: "1.45 kg",
+    size: "7.0 in (H) x 5.2 in (W) x 2.8 in (D)",
+    pricePerUnit: "₹28,500",
+  },
+  "ruby-panchmukhi-ganesha-carving-833": {
+    price: 19500,
+    weight: "833 Carats (166.6 g)",
+    size: "3.2 in (H) x 2.5 in (W) x 1.8 in (D)",
+    pricePerUnit: "₹23.4 / carat",
+  },
+  "milky-quartz-ganesh-statue-with-gold": {
+    price: 17800,
+    weight: "1.35 kg",
+    size: "6.5 in (H) x 4.8 in (W) x 3.0 in (D)",
+    pricePerUnit: "₹17,800",
+  },
+  "natural-hand-carved-rose-quartz-ganesha": {
+    price: 6800,
+    weight: "850 g",
+    size: "4.5 in (H) x 3.5 in (W) x 2.2 in (D)",
+    pricePerUnit: "₹6,800",
+  },
+  "natural-handmade-emerald-ganesha-statue": {
+    price: 29500,
+    weight: "1420 Carats (284 g)",
+    size: "4.2 in (H) x 3.0 in (W) x 2.0 in (D)",
+    pricePerUnit: "₹20.7 / carat",
+  },
+  "ruby-ganesha-2195-carat-hand-carved-ruby": {
+    price: 34500,
+    weight: "2195 Carats (439 g)",
+    size: "5.2 in (H) x 4.0 in (W) x 2.6 in (D)",
+    pricePerUnit: "₹15.7 / carat",
+  },
+  "ruby-ganesha-idol-25-handcrafted-statue": {
+    price: 11900,
+    weight: "560 Carats (112 g)",
+    size: "2.5 in (H) x 1.8 in (W) x 1.4 in (D)",
+    pricePerUnit: "₹21.2 / carat",
+  },
+  "blue-sapphire-shiva-head-handmade": {
+    price: 13900,
+    weight: "1.15 kg (5750 Carats)",
+    size: "5.5 in (H) x 3.8 in (W) x 2.5 in (D)",
+    pricePerUnit: "₹13,900",
+  },
+  "ruby-zoisite-ganesha-statue-hand-carved": {
+    price: 14500,
+    weight: "1180 Carats (236 g)",
+    size: "4.8 in (H) x 3.2 in (W) x 2.2 in (D)",
+    pricePerUnit: "₹12.2 / carat",
+  },
+  "natural-emerald-green-stone-shivling": {
+    price: 8900,
+    weight: "420 g",
+    size: "2.8 in (H) x 3.2 in (L) x 2.0 in (W)",
+    pricePerUnit: "₹8,900",
+  },
+  "breathtaking-natural-hessonite-garnet-shivling": {
+    price: 9800,
+    weight: "385 g",
+    size: "2.6 in (H) x 3.0 in (L) x 1.9 in (W)",
+    pricePerUnit: "₹9,800",
+  },
+  "emerald-ganesh-statue-3625-carat-ganesh": {
+    price: 58000,
+    weight: "3625 Carats (725 g)",
+    size: "6.0 in (H) x 5.0 in (W) x 3.2 in (D)",
+    pricePerUnit: "₹16.0 / carat",
+  },
   "ruby-ram-darbar-carving": {
     price: 759000,
     weight: "4.85 kg",
@@ -857,10 +929,34 @@ export const STANDARDIZED_NAMES = {
   "green-jade-elephant-staute": "Green Jade Elephant Statue",
   "green-jade-shiva-statue-with-gold-panting": "Green Jade Shiva Statue With Gold Painting",
   "green-jade-carved-shree-krishana-statue": "Green Jade Carved Shree Krishna Statue",
-  "green-jade-panchmukhi-shivling": "Natural Green Jade Stone Panchmukhi Shivling"
+  "green-jade-panchmukhi-shivling": "Natural Green Jade Stone Panchmukhi Shivling",
+  "australian-jade-chrysoprase-ganesha": "Natural Australian Jade Chrysoprase Ganesha Statue with Arch",
+  "ruby-panchmukhi-ganesha-carving-833": "Natural Ruby Panchmukhi Ganesha Carving (833 Carats)",
+  "milky-quartz-ganesh-statue-with-gold": "Natural Milky Quartz Ganesh Statue with 24K Gold Foil Painting",
+  "natural-hand-carved-rose-quartz-ganesha": "Natural Hand Carved Rose Quartz Ganesha Gemstone Statue",
+  "natural-handmade-emerald-ganesha-statue": "Natural Handmade Emerald Ganesha Gemstone Statue",
+  "ruby-ganesha-2195-carat-hand-carved-ruby": "Natural Ruby Ganesha 2195 Carat Hand Carved Gemstone Statue",
+  "ruby-ganesha-idol-25-handcrafted-statue": "Handcrafted Natural Ruby Ganesha Idol 2.5 Inch Gemstone Statue",
+  "blue-sapphire-shiva-head-handmade": "Natural Blue Sapphire Shiva Head Handmade Gemstone Sculpture",
+  "ruby-zoisite-ganesha-statue-hand-carved": "Hand Carved Ruby Zoisite Ganesha Gemstone Statue with Floral Arch",
+  "natural-emerald-green-stone-shivling": "Natural Emerald Green Stone Shivling for Jalabhishek",
+  "breathtaking-natural-hessonite-garnet-shivling": "Natural Hessonite Garnet (Gomed) Shivling for Rahu Shanti",
+  "emerald-ganesh-statue-3625-carat-ganesh": "Museum Grade Natural Emerald Ganesh Statue (3625 Carats)"
 };
 
 export const MULTI_IMAGE_SLUGS = new Set([
+  "australian-jade-chrysoprase-ganesha",
+  "ruby-panchmukhi-ganesha-carving-833",
+  "milky-quartz-ganesh-statue-with-gold",
+  "natural-hand-carved-rose-quartz-ganesha",
+  "natural-handmade-emerald-ganesha-statue",
+  "ruby-ganesha-2195-carat-hand-carved-ruby",
+  "ruby-ganesha-idol-25-handcrafted-statue",
+  "blue-sapphire-shiva-head-handmade",
+  "ruby-zoisite-ganesha-statue-hand-carved",
+  "natural-emerald-green-stone-shivling",
+  "breathtaking-natural-hessonite-garnet-shivling",
+  "emerald-ganesh-statue-3625-carat-ganesh",
   "amethyst-gemston-angel",
   "blue-sapphire-carving-shiva-statue",
   "clear-crystal-quartz-shivling-with-shiva-face",
@@ -1253,7 +1349,90 @@ export const getStandardizedProduct = (product) => {
 
   // 2. If product.images had only 1 image or was empty, check if catalog known multi-images exist:
   if (standardizedImages.length <= 1 && slug) {
-    if (slug === "natural-sphatik-shivling") {
+    if (slug === "australian-jade-chrysoprase-ganesha") {
+      standardizedImages = [
+        { url: "/images/australian-jade-chrysoprase-ganesha-statue.webp", public_id: "products/australian-jade-chrysoprase-ganesha-statue" },
+        { url: "/images/australian-jade-chrysoprase-ganesha-statue-features.webp", public_id: "products/australian-jade-chrysoprase-ganesha-statue-features" },
+        { url: "/images/australian-jade-chrysoprase-ganesha-statue-side.webp", public_id: "products/australian-jade-chrysoprase-ganesha-statue-side" },
+        { url: "/images/australian-jade-chrysoprase-ganesha-statue-angle.webp", public_id: "products/australian-jade-chrysoprase-ganesha-statue-angle" },
+      ];
+    } else if (slug === "ruby-panchmukhi-ganesha-carving-833") {
+      standardizedImages = [
+        { url: "/images/natural-ruby-panchmukhi-ganesha-carving-833-carat.webp", public_id: "products/natural-ruby-panchmukhi-ganesha-carving-833-carat" },
+        { url: "/images/natural-ruby-panchmukhi-ganesha-carving-833-carat-features.webp", public_id: "products/natural-ruby-panchmukhi-ganesha-carving-833-carat-features" },
+        { url: "/images/natural-ruby-panchmukhi-ganesha-carving-833-carat-side.webp", public_id: "products/natural-ruby-panchmukhi-ganesha-carving-833-carat-side" },
+        { url: "/images/natural-ruby-panchmukhi-ganesha-carving-833-carat-angle.webp", public_id: "products/natural-ruby-panchmukhi-ganesha-carving-833-carat-angle" },
+      ];
+    } else if (slug === "milky-quartz-ganesh-statue-with-gold") {
+      standardizedImages = [
+        { url: "/images/milky-quartz-ganesh-statue-gold-foil-painting.webp", public_id: "products/milky-quartz-ganesh-statue-gold-foil-painting" },
+        { url: "/images/milky-quartz-ganesh-statue-gold-foil-painting-features.webp", public_id: "products/milky-quartz-ganesh-statue-gold-foil-painting-features" },
+        { url: "/images/milky-quartz-ganesh-statue-gold-foil-painting-side.webp", public_id: "products/milky-quartz-ganesh-statue-gold-foil-painting-side" },
+        { url: "/images/milky-quartz-ganesh-statue-gold-foil-painting-angle.webp", public_id: "products/milky-quartz-ganesh-statue-gold-foil-painting-angle" },
+      ];
+    } else if (slug === "natural-hand-carved-rose-quartz-ganesha") {
+      standardizedImages = [
+        { url: "/images/natural-hand-carved-rose-quartz-ganesha-statue.webp", public_id: "products/natural-hand-carved-rose-quartz-ganesha-statue" },
+        { url: "/images/natural-hand-carved-rose-quartz-ganesha-statue-features.webp", public_id: "products/natural-hand-carved-rose-quartz-ganesha-statue-features" },
+        { url: "/images/natural-hand-carved-rose-quartz-ganesha-statue-side.webp", public_id: "products/natural-hand-carved-rose-quartz-ganesha-statue-side" },
+        { url: "/images/natural-hand-carved-rose-quartz-ganesha-statue-angle.webp", public_id: "products/natural-hand-carved-rose-quartz-ganesha-statue-angle" },
+      ];
+    } else if (slug === "natural-handmade-emerald-ganesha-statue") {
+      standardizedImages = [
+        { url: "/images/natural-handmade-emerald-ganesha-statue.webp", public_id: "products/natural-handmade-emerald-ganesha-statue" },
+        { url: "/images/natural-handmade-emerald-ganesha-statue-features.webp", public_id: "products/natural-handmade-emerald-ganesha-statue-features" },
+        { url: "/images/natural-handmade-emerald-ganesha-statue-side.webp", public_id: "products/natural-handmade-emerald-ganesha-statue-side" },
+        { url: "/images/natural-handmade-emerald-ganesha-statue-angle.webp", public_id: "products/natural-handmade-emerald-ganesha-statue-angle" },
+      ];
+    } else if (slug === "ruby-ganesha-2195-carat-hand-carved-ruby") {
+      standardizedImages = [
+        { url: "/images/ruby-ganesha-2195-carat-hand-carved-gemstone-statue.webp", public_id: "products/ruby-ganesha-2195-carat-hand-carved-gemstone-statue" },
+        { url: "/images/ruby-ganesha-2195-carat-hand-carved-gemstone-statue-features.webp", public_id: "products/ruby-ganesha-2195-carat-hand-carved-gemstone-statue-features" },
+        { url: "/images/ruby-ganesha-2195-carat-hand-carved-gemstone-statue-side.webp", public_id: "products/ruby-ganesha-2195-carat-hand-carved-gemstone-statue-side" },
+        { url: "/images/ruby-ganesha-2195-carat-hand-carved-gemstone-statue-angle.webp", public_id: "products/ruby-ganesha-2195-carat-hand-carved-gemstone-statue-angle" },
+      ];
+    } else if (slug === "ruby-ganesha-idol-25-handcrafted-statue") {
+      standardizedImages = [
+        { url: "/images/ruby-ganesha-idol-2-5-inch-handcrafted-statue.webp", public_id: "products/ruby-ganesha-idol-2-5-inch-handcrafted-statue" },
+        { url: "/images/ruby-ganesha-idol-2-5-inch-handcrafted-statue-features.webp", public_id: "products/ruby-ganesha-idol-2-5-inch-handcrafted-statue-features" },
+        { url: "/images/ruby-ganesha-idol-2-5-inch-handcrafted-statue-side.webp", public_id: "products/ruby-ganesha-idol-2-5-inch-handcrafted-statue-side" },
+        { url: "/images/ruby-ganesha-idol-2-5-inch-handcrafted-statue-angle.webp", public_id: "products/ruby-ganesha-idol-2-5-inch-handcrafted-statue-angle" },
+      ];
+    } else if (slug === "blue-sapphire-shiva-head-handmade") {
+      standardizedImages = [
+        { url: "/images/natural-blue-sapphire-shiva-head-handmade-sculpture.webp", public_id: "products/natural-blue-sapphire-shiva-head-handmade-sculpture" },
+        { url: "/images/natural-blue-sapphire-shiva-head-handmade-sculpture-features.webp", public_id: "products/natural-blue-sapphire-shiva-head-handmade-sculpture-features" },
+        { url: "/images/natural-blue-sapphire-shiva-head-handmade-sculpture-side.webp", public_id: "products/natural-blue-sapphire-shiva-head-handmade-sculpture-side" },
+        { url: "/images/natural-blue-sapphire-shiva-head-handmade-sculpture-angle.webp", public_id: "products/natural-blue-sapphire-shiva-head-handmade-sculpture-angle" },
+      ];
+    } else if (slug === "ruby-zoisite-ganesha-statue-hand-carved") {
+      standardizedImages = [
+        { url: "/images/ruby-zoisite-ganesha-statue-hand-carved-gemstone.webp", public_id: "products/ruby-zoisite-ganesha-statue-hand-carved-gemstone" },
+        { url: "/images/ruby-zoisite-ganesha-statue-hand-carved-gemstone-features.webp", public_id: "products/ruby-zoisite-ganesha-statue-hand-carved-gemstone-features" },
+        { url: "/images/ruby-zoisite-ganesha-statue-hand-carved-gemstone-side.webp", public_id: "products/ruby-zoisite-ganesha-statue-hand-carved-gemstone-side" },
+        { url: "/images/ruby-zoisite-ganesha-statue-hand-carved-gemstone-angle.webp", public_id: "products/ruby-zoisite-ganesha-statue-hand-carved-gemstone-angle" },
+      ];
+    } else if (slug === "natural-emerald-green-stone-shivling") {
+      standardizedImages = [
+        { url: "/images/natural-emerald-green-stone-shivling.webp", public_id: "products/natural-emerald-green-stone-shivling" },
+        { url: "/images/natural-emerald-green-stone-shivling-features.webp", public_id: "products/natural-emerald-green-stone-shivling-features" },
+        { url: "/images/natural-emerald-green-stone-shivling-side.webp", public_id: "products/natural-emerald-green-stone-shivling-side" },
+      ];
+    } else if (slug === "breathtaking-natural-hessonite-garnet-shivling") {
+      standardizedImages = [
+        { url: "/images/natural-hessonite-garnet-gomed-shivling.webp", public_id: "products/natural-hessonite-garnet-gomed-shivling" },
+        { url: "/images/natural-hessonite-garnet-gomed-shivling-features.webp", public_id: "products/natural-hessonite-garnet-gomed-shivling-features" },
+        { url: "/images/natural-hessonite-garnet-gomed-shivling-side.webp", public_id: "products/natural-hessonite-garnet-gomed-shivling-side" },
+        { url: "/images/natural-hessonite-garnet-gomed-shivling-angle.webp", public_id: "products/natural-hessonite-garnet-gomed-shivling-angle" },
+      ];
+    } else if (slug === "emerald-ganesh-statue-3625-carat-ganesh") {
+      standardizedImages = [
+        { url: "/images/emerald-ganesh-statue-3625-carat-gemstone.webp", public_id: "products/emerald-ganesh-statue-3625-carat-gemstone" },
+        { url: "/images/emerald-ganesh-statue-3625-carat-gemstone-features.webp", public_id: "products/emerald-ganesh-statue-3625-carat-gemstone-features" },
+        { url: "/images/emerald-ganesh-statue-3625-carat-gemstone-side.webp", public_id: "products/emerald-ganesh-statue-3625-carat-gemstone-side" },
+        { url: "/images/emerald-ganesh-statue-3625-carat-gemstone-angle.webp", public_id: "products/emerald-ganesh-statue-3625-carat-gemstone-angle" },
+      ];
+    } else if (slug === "natural-sphatik-shivling") {
       standardizedImages = [
         { url: `/images/${slug}.webp`, public_id: `products/${slug}` },
         { url: `/images/${slug}-2.webp`, public_id: `products/${slug}-2` },
