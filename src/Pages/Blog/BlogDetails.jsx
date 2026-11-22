@@ -148,11 +148,19 @@ const BlogDetails = () => {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  // Other blogs for "Read More Blogs" (Screenshot 5)
+  // Other blogs for "Read More Blogs" (prioritize same category for tighter topical relevance)
   const relatedBlogs = useMemo(() => {
     const all = getDeduplicatedBlogs([], FALLBACK_BLOGS);
-    return all.filter((b) => b.slug !== slug && b.slug !== blog?.slug).slice(0, 3);
-  }, [slug, blog?.slug]);
+    const currentSlug = blog?.slug || slug;
+    const others = all.filter((b) => b.slug !== currentSlug && b._id !== blog?._id);
+    const sameCat = others.filter(
+      (b) => b.category && blog?.category && b.category.toLowerCase() === blog.category.toLowerCase()
+    );
+    const diffCat = others.filter(
+      (b) => !b.category || !blog?.category || b.category.toLowerCase() !== blog.category.toLowerCase()
+    );
+    return [...sameCat, ...diffCat].slice(0, 3);
+  }, [slug, blog?.slug, blog?._id, blog?.category]);
 
   if (loading && !blog) {
     return (
