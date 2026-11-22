@@ -223,6 +223,56 @@ const Home = () => {
           (rawCategoryProducts[godCat._id] || []).forEach(addGodProduct);
         }
 
+        let shivlingCat = rawCategories.find((c) => {
+          const s = (c.slug || "").toLowerCase().trim();
+          const n = (c.name || "").toLowerCase().trim();
+          return s === "shivling" || n.includes("shivling");
+        });
+        const mergedShivlingProducts = [];
+        const seenShivlingKeys = new Set();
+        const addShivlingProduct = (p) => {
+          if (!p) return;
+          const key = p._id || p.slug || p.name;
+          if (key && !seenShivlingKeys.has(key)) {
+            seenShivlingKeys.add(key);
+            mergedShivlingProducts.push(p);
+          }
+        };
+        FALLBACK_PRODUCTS.filter(
+          (p) =>
+            p.categoryId?.slug === "shivling" ||
+            (p.name && p.name.toLowerCase().includes("shivling")) ||
+            (p.slug && p.slug.toLowerCase().includes("shivling"))
+        ).forEach(addShivlingProduct);
+        if (shivlingCat) {
+          (rawCategoryProducts[shivlingCat._id] || []).forEach(addShivlingProduct);
+        }
+
+        let yantraCat = rawCategories.find((c) => {
+          const s = (c.slug || "").toLowerCase().trim();
+          const n = (c.name || "").toLowerCase().trim();
+          return s === "shree-yantra" || n.includes("yantra");
+        });
+        const mergedYantraProducts = [];
+        const seenYantraKeys = new Set();
+        const addYantraProduct = (p) => {
+          if (!p) return;
+          const key = p._id || p.slug || p.name;
+          if (key && !seenYantraKeys.has(key)) {
+            seenYantraKeys.add(key);
+            mergedYantraProducts.push(p);
+          }
+        };
+        FALLBACK_PRODUCTS.filter(
+          (p) =>
+            p.categoryId?.slug === "shree-yantra" ||
+            (p.name && p.name.toLowerCase().includes("yantra")) ||
+            (p.slug && p.slug.toLowerCase().includes("yantra"))
+        ).forEach(addYantraProduct);
+        if (yantraCat) {
+          (rawCategoryProducts[yantraCat._id] || []).forEach(addYantraProduct);
+        }
+
         const updatedCategoryProducts = {
           ...rawCategoryProducts,
           [crystalCat._id]: mergedCrystalProducts,
@@ -230,6 +280,8 @@ const Home = () => {
           [luxCat._id]: mergedLuxProducts,
           "luxurious-idols-decor": mergedLuxProducts,
           ...(godCat ? { [godCat._id]: mergedGodProducts, "god-statues": mergedGodProducts } : {}),
+          ...(shivlingCat ? { [shivlingCat._id]: mergedShivlingProducts, "shivling": mergedShivlingProducts } : {}),
+          ...(yantraCat ? { [yantraCat._id]: mergedYantraProducts, "shree-yantra": mergedYantraProducts } : {}),
         };
 
         // 3. Exclude standalone Angel and Diya from homepage categories
@@ -257,8 +309,8 @@ const Home = () => {
         const missingLatestFallbacks = FALLBACK_PRODUCTS.filter(
           (fb) => !latest.some((p) => (p.slug || p._id) === (fb.slug || fb._id))
         );
-        const combinedLatest = [...missingLatestFallbacks.slice(0, 8), ...latest];
-        setProducts(combinedLatest.slice(0, 10));
+        const combinedLatest = [...missingLatestFallbacks, ...latest];
+        setProducts(combinedLatest.slice(0, 12));
         setCategories(finalCategories);
         setCategoryProducts(updatedCategoryProducts);
       } catch (err) {
@@ -293,11 +345,15 @@ const Home = () => {
       <div className="container mx-auto px-3 sm:px-6 lg:px-8 py-8 sm:py-12">
         <div className="flex justify-between items-center mb-4 sm:mb-6 gap-3">
           <div>
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-100 text-amber-800 uppercase tracking-wide mb-1">
+              <span>✨</span>
+              <span>Latest Arrivals</span>
+            </div>
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-850">
-              Our Products
+              Latest Gemstone Creations &amp; Statues
             </h2>
             <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
-              Handcrafted, certified gemstone idols &amp; sacred Vedic decor
+              Handcrafted, certified natural gemstone idols &amp; sacred Vedic decor &mdash; newly added to our collection
             </p>
           </div>
           <Link
@@ -305,12 +361,12 @@ const Home = () => {
             className="text-amber-800 hover:text-amber-900 font-semibold text-xs sm:text-sm whitespace-nowrap transition flex items-center gap-1"
           >
             <span>View All</span>
-            <span>→</span>
+            <span>&rarr;</span>
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4 lg:gap-6">
-          {products.slice(0, 10).map((product) => (
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-4 lg:gap-6">
+          {products.slice(0, 12).map((product) => (
             <ProductCard key={product._id || product.slug} product={product} />
           ))}
         </div>

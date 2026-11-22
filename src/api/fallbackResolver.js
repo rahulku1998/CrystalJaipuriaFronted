@@ -39,7 +39,7 @@ export const getFallbackResponse = (rawUrl) => {
     });
     return {
       data: {
-        latestProducts: FALLBACK_PRODUCTS.slice(0, 10).map((p) => getStandardizedProduct(p)),
+        latestProducts: FALLBACK_PRODUCTS.slice(0, 12).map((p) => getStandardizedProduct(p)),
         categories: FALLBACK_CATEGORIES,
         categoryProducts,
       },

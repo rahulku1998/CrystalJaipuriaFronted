@@ -3,7 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import API from "../api/axios";
 import ProductCard from "../Components/ProductCard";
 import SEO from "../Components/SEO";
-import { FaSearch, FaArrowRight, FaTimes, FaFilter } from "react-icons/fa";
+import { FaSearch, FaArrowRight, FaTimes, FaFilter, FaSortAmountDown } from "react-icons/fa";
 import { trackSearchNoResults } from "../utils/analytics";
 
 import { FALLBACK_PRODUCTS } from "../data/fallbackData";
@@ -112,6 +112,7 @@ const Shop = () => {
   const [selectedCategory, setSelectedCategory] = useState(
     searchParams.get("category") || "all"
   );
+  const [sortBy, setSortBy] = useState("latest");
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
 
@@ -123,7 +124,7 @@ const Shop = () => {
       const missingFallbacks = FALLBACK_PRODUCTS.filter(
         (fb) => !dbList.some((p) => (p.slug || p._id) === (fb.slug || fb._id))
       );
-      // Prepend missing fallbacks in natural order so new arrivals appear at the top on Page 1
+      // Prepend missing fallbacks in chronological latest order so new arrivals appear at the top on Page 1
       const mergedList = [...missingFallbacks, ...dbList];
       setAllProducts(mergedList.length > 0 ? mergedList : FALLBACK_PRODUCTS);
     } catch (error) {
@@ -164,7 +165,7 @@ const Shop = () => {
   };
 
   const filteredProducts = useMemo(() => {
-    return allProducts.filter((product) => {
+    let list = allProducts.filter((product) => {
       const catOk = matchesCategory(product, selectedCategory);
       if (!catOk) return false;
 
@@ -175,7 +176,18 @@ const Shop = () => {
       const descMatch = product.detail?.toLowerCase().includes(q);
       return nameMatch || catMatch || descMatch;
     });
-  }, [allProducts, selectedCategory, search]);
+
+    if (sortBy === "price-low") {
+      list = [...list].sort((a, b) => (Number(a.price) || 0) - (Number(b.price) || 0));
+    } else if (sortBy === "price-high") {
+      list = [...list].sort((a, b) => (Number(b.price) || 0) - (Number(a.price) || 0));
+    } else if (sortBy === "name") {
+      list = [...list].sort((a, b) => (a.name || "").localeCompare(b.name || ""));
+    }
+    // 'latest' retains the newest-first chronological order
+
+    return list;
+  }, [allProducts, selectedCategory, search, sortBy]);
 
   const totalPages = Math.max(1, Math.ceil(filteredProducts.length / ITEMS_PER_PAGE));
   const displayedProducts = filteredProducts.slice(
@@ -210,7 +222,7 @@ const Shop = () => {
       {seo}
       <div className="min-h-screen bg-[#FAF9F6] py-5 sm:py-10">
         <div className="max-w-[1400px] mx-auto px-3 sm:px-5 lg:px-8">
-          {/* HEADER & SEARCH BAR */}
+          {/* HEADER & SEARCH BAR & SORT */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 sm:mb-8">
             <div>
               <h1 className="text-xl sm:text-3xl lg:text-4xl font-bold text-gray-850">
@@ -221,18 +233,45 @@ const Shop = () => {
               </p>
             </div>
 
-            <div className="w-full sm:w-[350px] lg:w-[400px] relative">
-              <input
-                type="text"
-                placeholder="Search Ruby, Jade, Shivling, Ganesha..."
-                value={search}
-                onChange={(event) => {
-                  setSearch(event.target.value);
-                  setPage(1);
-                }}
-                className="w-full px-4 py-3 pr-12 rounded-xl border border-stone-300 bg-white shadow-xs outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 text-sm transition-all"
-              />
-              <FaSearch className="absolute right-4 top-1/2 -translate-y-1/2 text-stone-400" />
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full md:w-auto">
+              {/* SORT DROPDOWN */}
+              <div className="relative shrink-0 flex items-center">
+                <label htmlFor="shop-sort-select" className="sr-only">
+                  Sort products
+                </label>
+                <div className="w-full relative">
+                  <select
+                    id="shop-sort-select"
+                    value={sortBy}
+                    onChange={(e) => {
+                      setSortBy(e.target.value);
+                      setPage(1);
+                    }}
+                    className="w-full sm:w-auto pl-3 pr-8 py-3 rounded-xl border border-stone-300 bg-white text-stone-700 text-xs sm:text-sm font-semibold shadow-xs outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 cursor-pointer appearance-none transition-all"
+                  >
+                    <option value="latest">Sort by: Latest Arrivals (Newest First)</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="name">Product Name: A to Z</option>
+                  </select>
+                  <FaSortAmountDown className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 pointer-events-none text-xs" />
+                </div>
+              </div>
+
+              {/* SEARCH BAR */}
+              <div className="w-full sm:w-[260px] lg:w-[320px] relative">
+                <input
+                  type="text"
+                  placeholder="Search Ruby, Jade, Shivling, Ganesha..."
+                  value={search}
+                  onChange={(event) => {
+                    setSearch(event.target.value);
+                    setPage(1);
+                  }}
+                  className="w-full px-4 py-3 pr-12 rounded-xl border border-stone-300 bg-white shadow-xs outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 text-xs sm:text-sm transition-all"
+                />
+                <FaSearch className="absolute right-4 top-1/2 -translate-y-1/2 text-stone-400" />
+              </div>
             </div>
           </div>
 
