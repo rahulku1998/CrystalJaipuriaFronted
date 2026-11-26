@@ -1030,6 +1030,56 @@ export const runPrerender = async () => {
       title: "Gemstone Authenticity Guide - 100% Natural Verification | Crystal Jaipuria",
       description: "Learn how to verify authentic 100% natural gemstones, cold touch test, microscopic inclusions, and lab certification by Crystal Jaipuria experts.",
     },
+    {
+      slug: "shipping-policy",
+      title: "Shipping & Delivery Policy | Worldwide Insured Shipping | Crystal Jaipuria",
+      description: "Crystal Jaipuria worldwide insured shipping policy. Free express delivery across India, 5-layer shockproof packaging, and 100% breakage-free transit guarantee.",
+      bodyContent: `
+        <div style="max-width:900px;margin:0 auto;padding:32px 16px;font-family:system-ui,-apple-system,sans-serif;color:#334155;line-height:1.7;">
+          <h1 style="font-size:28px;font-weight:800;color:#0f172a;margin-bottom:12px;">Shipping &amp; Delivery Policy</h1>
+          <p>Crystal Jaipuria ships handcrafted natural gemstone statues, Sphatik Shivlings, and Shree Yantras across India and worldwide with 5-layer shockproof packaging and a 100% breakage-free transit guarantee.</p>
+          <p>Standard dispatch takes 1-2 business days from our Jaipur atelier, with free express delivery across India (3-7 business days) and tracked DHL/FedEx air shipping internationally.</p>
+          <p><a href="${BASE_URL}/shop">Explore Collection</a> | <a href="${BASE_URL}/refund-policy">Return &amp; Refund Policy</a> | <a href="${BASE_URL}/contact">Contact Us</a></p>
+        </div>
+      `.trim(),
+    },
+    {
+      slug: "refund-policy",
+      title: "Refund and Return Policy | 7 Days Easy Replacement | Crystal Jaipuria",
+      description: "Crystal Jaipuria's 7-day hassle-free return and replacement policy. 100% money-back or replacement guarantee on transit damages or authentic gemstone discrepancies.",
+      bodyContent: `
+        <div style="max-width:900px;margin:0 auto;padding:32px 16px;font-family:system-ui,-apple-system,sans-serif;color:#334155;line-height:1.7;">
+          <h1 style="font-size:28px;font-weight:800;color:#0f172a;margin-bottom:12px;">Return, Replacement &amp; Refund Policy</h1>
+          <p>Crystal Jaipuria offers a 7-day hassle-free return and replacement guarantee from the date of delivery for transit damage, incorrect items, or material discrepancies.</p>
+          <p>Zero-cost return pickup and re-shipment are provided for transit damages, with fast refunds processed within 5-7 business days to your original payment method.</p>
+          <p><a href="${BASE_URL}/shipping-policy">Shipping Policy</a> | <a href="${BASE_URL}/gemstone-authenticity-guide">Authenticity Guide</a> | <a href="${BASE_URL}/contact">Contact Support</a></p>
+        </div>
+      `.trim(),
+    },
+    {
+      slug: "privacy-policy",
+      title: "Privacy Policy | Crystal Jaipuria",
+      description: "Read Crystal Jaipuria's privacy policy detailing how we collect, protect, and respect your personal information when you shop for natural gemstone statues.",
+      bodyContent: `
+        <div style="max-width:900px;margin:0 auto;padding:32px 16px;font-family:system-ui,-apple-system,sans-serif;color:#334155;line-height:1.7;">
+          <h1 style="font-size:28px;font-weight:800;color:#0f172a;margin-bottom:12px;">Privacy Policy</h1>
+          <p>Crystal Jaipuria respects your privacy and protects all personal, contact, and order details shared through our store, WhatsApp inquiries, and checkout workflows.</p>
+          <p><a href="${BASE_URL}/terms-and-conditions">Terms &amp; Conditions</a> | <a href="${BASE_URL}/refund-policy">Refund Policy</a> | <a href="${BASE_URL}/contact">Contact Us</a></p>
+        </div>
+      `.trim(),
+    },
+    {
+      slug: "terms-and-conditions",
+      title: "Terms & Conditions | Crystal Jaipuria",
+      description: "Read the Terms and Conditions for purchasing handcrafted natural gemstone statues, Shivlings, and crystal artifacts from Crystal Jaipuria, Jaipur.",
+      bodyContent: `
+        <div style="max-width:900px;margin:0 auto;padding:32px 16px;font-family:system-ui,-apple-system,sans-serif;color:#334155;line-height:1.7;">
+          <h1 style="font-size:28px;font-weight:800;color:#0f172a;margin-bottom:12px;">Terms &amp; Conditions</h1>
+          <p>These Terms &amp; Conditions govern orders, custom gemstone carvings, natural stone variations, shipping, and returns at Crystal Jaipuria, Jaipur.</p>
+          <p><a href="${BASE_URL}/privacy-policy">Privacy Policy</a> | <a href="${BASE_URL}/shipping-policy">Shipping Policy</a> | <a href="${BASE_URL}/refund-policy">Refund Policy</a></p>
+        </div>
+      `.trim(),
+    },
   ];
 
   const shopCardsHtml = products.slice(0, 15)
@@ -1099,7 +1149,7 @@ export const runPrerender = async () => {
       canonical: `${BASE_URL}/${cp.slug}`,
       ogTitle: cp.title,
       ogDescription: cp.description,
-      bodyContent: cp.slug === "shop" ? shopBodyPreview : cp.slug === "blog" ? blogBodyPreview : "",
+      bodyContent: cp.slug === "shop" ? shopBodyPreview : cp.slug === "blog" ? blogBodyPreview : (cp.bodyContent || ""),
     });
     saveFile(`${cp.slug}/index.html`, pageHtml);
   });
@@ -1323,7 +1373,17 @@ export const runPrerender = async () => {
       <div style="margin-top:32px;padding:20px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;font-size:13px;color:#64748b;text-align:center;">
         <p style="font-weight:700;color:#1e293b;margin:0 0 6px 0;">Crystal Jaipuria — Gemstone God Statues Manufacturer &amp; Wholesale Supplier</p>
         <p style="margin:0 0 4px 0;">Workshop Address: West Part, Prabha Mangal Vihar, Plot No.03, Mod, Sanganer, Muhana, Jaipur, Rajasthan 302029, India</p>
-        <p style="margin:0;">Phone / WhatsApp: +91 8306317032 | Email: crystaljaipurya@gmail.com | Worldwide Delivery</p>
+        <p style="margin:0 0 10px 0;">Phone / WhatsApp: +91 8306317032 | Email: crystaljaipurya@gmail.com | Worldwide Delivery</p>
+        <p style="margin:0;">
+          <a href="${BASE_URL}/about">About Us</a> &bull;
+          <a href="${BASE_URL}/contact">Contact Us</a> &bull;
+          <a href="${BASE_URL}/blog">Blog</a> &bull;
+          <a href="${BASE_URL}/gemstone-authenticity-guide">Authenticity Guide</a> &bull;
+          <a href="${BASE_URL}/shipping-policy">Shipping Policy</a> &bull;
+          <a href="${BASE_URL}/refund-policy">Refund Policy</a> &bull;
+          <a href="${BASE_URL}/privacy-policy">Privacy Policy</a> &bull;
+          <a href="${BASE_URL}/terms-and-conditions">Terms &amp; Conditions</a>
+        </p>
       </div>
     </div>
   `.trim();
