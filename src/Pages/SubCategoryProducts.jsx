@@ -139,8 +139,15 @@ const SubCategoryProducts = () => {
               {
                 "@type": "ListItem",
                 position: 2,
-                name: matchedSub.categoryId.name,
-                item: `https://www.crystaljaipuria.com/${matchedSub.categoryId.slug || ""}`,
+                name:
+                  matchedSub.categoryId.slug === "angel" || matchedSub.categoryId.slug === "diya"
+                    ? "Crystal Statues"
+                    : matchedSub.categoryId.name,
+                item: `https://www.crystaljaipuria.com/${
+                  matchedSub.categoryId.slug === "angel" || matchedSub.categoryId.slug === "diya"
+                    ? "crystal-statues"
+                    : matchedSub.categoryId.slug || ""
+                }`,
               },
               {
                 "@type": "ListItem",
@@ -193,10 +200,16 @@ const SubCategoryProducts = () => {
           {matchedSub?.categoryId?.slug ? (
             <>
               <Link
-                to={`/${matchedSub.categoryId.slug}`}
+                to={`/${
+                  matchedSub.categoryId.slug === "angel" || matchedSub.categoryId.slug === "diya"
+                    ? "crystal-statues"
+                    : matchedSub.categoryId.slug
+                }`}
                 className="hover:text-amber-800 transition"
               >
-                {matchedSub.categoryId.name}
+                {matchedSub.categoryId.slug === "angel" || matchedSub.categoryId.slug === "diya"
+                  ? "Crystal Statues"
+                  : matchedSub.categoryId.name}
               </Link>
               <span>/</span>
             </>

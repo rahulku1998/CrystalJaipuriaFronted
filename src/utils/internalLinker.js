@@ -124,7 +124,7 @@ export const INTERLINK_RULES = [
     ],
   },
   {
-    targetUrl: "/product/green-jade-ganesha-statue",
+    targetUrl: "/product/green-jade-ganesha",
     label: "Green Jade Ganesha Statue",
     priority: 8,
     keywords: [
@@ -135,7 +135,7 @@ export const INTERLINK_RULES = [
     ],
   },
   {
-    targetUrl: "/product/crystal-shree-yantra-100-certified",
+    targetUrl: "/product/crystal-shree-yantra",
     label: "Certified Crystal Shree Yantra",
     priority: 8,
     keywords: [
@@ -144,7 +144,7 @@ export const INTERLINK_RULES = [
     ],
   },
   {
-    targetUrl: "/product/rose-quartz-ganesha-statue",
+    targetUrl: "/product/rose-quartz-ganesha",
     label: "Rose Quartz Ganesha Statue",
     priority: 7,
     keywords: [
@@ -172,7 +172,7 @@ export const INTERLINK_RULES = [
     ],
   },
   {
-    targetUrl: "/product/rose-quartz-pair-of-swan",
+    targetUrl: "/product/natural-rose-quartz-pair-of-swan",
     label: "Rose Quartz Pair of Swans",
     priority: 7,
     keywords: [

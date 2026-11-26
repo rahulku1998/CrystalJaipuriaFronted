@@ -927,12 +927,16 @@ export const runPrerender = async () => {
       })
       .join("\n");
 
+    const rawCatSlug = String(sub.categoryId?.slug || "").toLowerCase();
+    const resolvedCatSlug = (rawCatSlug === "angel" || rawCatSlug === "diya") ? "crystal-statues" : rawCatSlug;
+    const resolvedCatName = (rawCatSlug === "angel" || rawCatSlug === "diya") ? "Crystal Statues" : (sub.categoryId?.name || "");
+
     const subBody = `
       <div style="max-width:1200px;margin:0 auto;padding:24px 16px;font-family:system-ui,-apple-system,sans-serif;">
         <nav style="display:flex;gap:8px;font-size:13px;color:#64748b;margin-bottom:20px;">
           <a href="${BASE_URL}/" style="color:#64748b;text-decoration:none;">Home</a>
           <span>/</span>
-          ${sub.categoryId?.slug ? `<a href="${BASE_URL}/${sub.categoryId.slug}" style="color:#64748b;text-decoration:none;">${escapeHtml(sub.categoryId.name)}</a><span>/</span>` : ""}
+          ${resolvedCatSlug ? `<a href="${BASE_URL}/${resolvedCatSlug}" style="color:#64748b;text-decoration:none;">${escapeHtml(resolvedCatName)}</a><span>/</span>` : ""}
           <span style="color:#1e293b;font-weight:600;">${escapeHtml(sub.name)}</span>
         </nav>
         <div style="margin-bottom:24px;">
@@ -955,8 +959,8 @@ export const runPrerender = async () => {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: `${BASE_URL}/` },
-          ...(sub.categoryId ? [{ "@type": "ListItem", position: 2, name: sub.categoryId.name, item: `${BASE_URL}/${sub.categoryId.slug}` }] : []),
-          { "@type": "ListItem", position: sub.categoryId ? 3 : 2, name: sub.name, item: subCanonical },
+          ...(resolvedCatSlug ? [{ "@type": "ListItem", position: 2, name: resolvedCatName, item: `${BASE_URL}/${resolvedCatSlug}` }] : []),
+          { "@type": "ListItem", position: resolvedCatSlug ? 3 : 2, name: sub.name, item: subCanonical },
         ],
       },
     };
@@ -1445,7 +1449,7 @@ export const runPrerender = async () => {
             <a href="${BASE_URL}/shivling" style="font-size:12px;font-weight:600;color:#475569;background:#faf8f5;border:1px solid #e2e8f0;padding:6px 14px;border-radius:6px;text-decoration:none;">Gemstone Shivling</a>
             <a href="${BASE_URL}/god-statues" style="font-size:12px;font-weight:600;color:#475569;background:#faf8f5;border:1px solid #e2e8f0;padding:6px 14px;border-radius:6px;text-decoration:none;">God Statues</a>
             <a href="${BASE_URL}/shree-yantra" style="font-size:12px;font-weight:600;color:#475569;background:#faf8f5;border:1px solid #e2e8f0;padding:6px 14px;border-radius:6px;text-decoration:none;">Crystal Shree Yantra</a>
-            <a href="${BASE_URL}/diya" style="font-size:12px;font-weight:600;color:#475569;background:#faf8f5;border:1px solid #e2e8f0;padding:6px 14px;border-radius:6px;text-decoration:none;">Handcrafted Diyas</a>
+            <a href="${BASE_URL}/subcategory/diya" style="font-size:12px;font-weight:600;color:#475569;background:#faf8f5;border:1px solid #e2e8f0;padding:6px 14px;border-radius:6px;text-decoration:none;">Handcrafted Diyas</a>
             <a href="${BASE_URL}/shop" style="font-size:12px;font-weight:600;color:#475569;background:#faf8f5;border:1px solid #e2e8f0;padding:6px 14px;border-radius:6px;text-decoration:none;">All Products</a>
           </div>
         </div>
